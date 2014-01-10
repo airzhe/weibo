@@ -1,0 +1,232 @@
+/**
+ *注册页面
+ */
+ .body_login{
+ 	background: url(../images/bg_repeat_reg.png) repeat-x
+ }
+ .body_login a{
+ 	color:#0a8cd2;
+ 	text-decoration: none;
+ }
+ .body_login a:hover{
+ 	color:#0a8cd2;
+ 	text-decoration: underline;
+ }
+ .container{
+ 	width:900px;margin:0 auto;
+ }
+ .header{
+ 	padding:10px 0;
+ }
+ .logo{
+ 	width: 130px;
+ 	height: 40px;
+ 	background: url(../images/logo.png) no-repeat;
+ }
+ .body_login .content{border-top:2px solid #F62638;
+ 	background: url(../images/main_bg.png) no-repeat 0 bottom;
+ }
+ .leftbox{
+ 	width: 567px;
+ 	padding-right: 3px;
+ 	background: url(../images/login_vline.png) no-repeat right center;
+ 	color: #333;
+ }
+ .leftbox .top{
+ 	padding: 17px 0 17px 30px;
+ 	border-bottom: 1px solid #e6e6e6;
+ 	line-height: 32px;
+ 	font-size: 26px;
+ 	font-family: "Microsoft Yahei";
+ 	font-style: italic;
+ 	background-color: #fafafa;
+ }
+ .leftbox .top span{
+
+ 	background: #e64141;
+
+ 	width: 143px;
+ 	height: 36px;
+ 	display: inline-block;
+ 	border: 1px solid #eb6767;
+ 	line-height: 36px;
+ }
+ .leftbox .top a{
+ 	font-style: normal;
+ 	display: inline-block;
+
+ 	color:#fff;
+ 	text-align: center;
+ 	border-radius: 2px;
+ 	box-shadow: 0px 1px rgba(0,0,0,.3);
+ 	font-size:22px;
+ 	border: 1px solid #e64141;
+ 	margin-left:25px;
+ }
+ .leftbox .top a:hover span{
+ 	background: -webkit-linear-gradient(top, #f95959 50%,#f04d4d 80%,#e74242 100%);
+ }
+ .leftbox .show_img{
+ 	background: #fff;
+ 	padding: 15px 6px 15px 10px;
+ }
+ .loginbox{
+ 	width: 271px;
+ 	padding-left:59px;
+ 	font-size:12px;
+ }
+ .login_form{
+ 	width: 210px;
+ 	margin: 29px 0 0;
+ }
+ .login_form .title{
+ 	line-height: 30px;
+ }
+ .login_form .title a{
+ 	line-height: 30px;
+ }
+
+ .login_form .title i{
+ 	margin:0 8px;
+ }
+
+ .login_form form p{
+ 	position: relative;
+ }
+ .login_form form p span{
+ 	position: absolute;
+ 	left:40px;
+ 	top:9px;
+ 	color:#808080;
+ }
+ .login_form input[type=text]{
+ 	border-radius: 2px;
+ 	width: 167px;
+ 	box-shadow: 1px 1px 1px 0px #eaeaea inset;
+ 	padding-left:37px;
+ 	background-image: url(../images/form_login.png);
+ 	background-repeat: no-repeat;
+ 	margin: 2px 0px;
+ }
+ .login_form input[type=text]:focus{
+ 	border-color: #FFB941;
+ }
+
+ .loginbox input[name=passwd]{
+ 	background-position: 0 -50px;
+ }
+ #login_form_savestate{
+ 	margin-right: 3px;
+ 	vertical-align:-2px;
+ }
+ .icon_ask{
+ 	width: 16px;
+ 	height: 16px;
+ 	background: url(../images/ico_warn.png) 0 -150px;
+ 	margin-left: 3px;
+ 	overflow: hidden;
+ 	display: inline-block;
+ 	vertical-align:middle;
+ }
+
+ .auto_login a{
+ 	text-decoration:none
+ }
+
+ .login_form button{
+ 	width:100%;
+ 	border:1px solid #ffb33b;
+ 	line-height: 26px;
+ 	padding:0px;
+ 	font-weight: bold;
+ 	border-radius:2px;
+ 	text-align: center;
+ 	color:#fff;
+ 	font-size:14px;
+ }
+ .login_form .submit{
+ 	border:1px solid #ff9b01;
+ 	background-color: #ffa00a;
+ 	font-weight: bold;
+ }
+ .login_form .submit:hover{
+ 	background: #FFAB25;
+ }
+ .login_form .submit i{
+ 	width: 16px;
+ 	height: 16px;
+ 	display: inline-block;
+ 	background: url(../images/loading.gif) no-repeat;
+ 	vertical-align: -2px;
+ }
+ .login_form .submit+p{
+ 	color: #808080;
+ }
+ .login_mode{
+ 	margin-top:25px;
+ 	width: 149px;
+ 	height: 71px;
+ 	background: url(../images/login_mode.jpg) no-repeat;
+ }
+ .body_login .footer{
+ 	clear:both;
+ 	background: #f7f7f8 url(../images/footer_top_bg.jpg) no-repeat center top;
+ 	text-align: center;
+ 	font-size: 12px;
+ 	color:#808080;
+ 	line-height:8px;
+ 	padding:15px 30px 30px;
+ }
+ .footer a{
+ 	color:#808080;
+ }
+ .footer i{
+ 	margin:0 8px;
+ }
+
+/**
+ *注册页面
+ */
+ .body_signup{
+ 	background: url(../images/reg_repeat_bg.png) repeat-x;
+ }
+ .header_line{
+ 	height: 3px;
+ 	border-bottom: 1px solid #e6f1f9;
+ 	background: url(../images/top_line_bg.png) repeat-x;
+ }
+ .reg_header{
+ 	height: 164px;
+ 	padding:10px 0;
+ 	background: url(../images/bg_reg_wave.png) no-repeat center bottom;
+ }
+ .logo_big{
+ 	width: 278px;
+ 	height: 72px;
+ 	margin: 0 auto;
+ 	margin-top: 26px;
+ 	background: url(../images/logo_big.png) no-repeat;
+ }
+ .body_signup .content{
+ 	border-radius: 5px;
+ 	box-shadow: 0 1px 5px rgba(0,0,0,.3);
+ 	background: #fff;
+ 	height: 600px;
+ 	
+ }
+ .body_signup .footer{	
+ 	font-size: 12px;
+ 	color:#6e9ab8;
+ }
+ .body_signup span{	
+ 	display: block;
+ 	height: 24px;
+ 	line-height:24px;
+ }
+ .footer .footer_logo{
+ 	display: inline-block;
+ 	width: 26px;
+ 	height: 21px;
+ 	background: url(../images/reg_ico.png) no-repeat 0 4px;
+ 	vertical-align: -4px;
+ }
