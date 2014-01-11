@@ -1,14 +1,15 @@
+.S_txt2{color:#808080;}
 /**
  *注册页面
  */
  .body_login{
  	background: url(../images/bg_repeat_reg.png) repeat-x
  }
- .body_login a{
+ a{
  	color:#0a8cd2;
  	text-decoration: none;
  }
- .body_login a:hover{
+ a:hover{
  	color:#0a8cd2;
  	text-decoration: underline;
  }
@@ -190,6 +191,7 @@
  .body_signup{
  	background: url(../images/reg_repeat_bg.png) repeat-x;
  }
+
  .header_line{
  	height: 3px;
  	border-bottom: 1px solid #e6f1f9;
@@ -211,18 +213,164 @@
  	border-radius: 5px;
  	box-shadow: 0 1px 5px rgba(0,0,0,.3);
  	background: #fff;
- 	height: 600px;
- 	
+ 	padding:30px 40px;
+ }
+ .body_signup .reg_title{
+ 	font-size: 22px;
+ 	padding-bottom: 15px;
+ }
+ .body_signup .reg_title a.cur{
+ 	border-bottom: 3px solid #FFA00A;
+ 	padding-bottom: 5px;
+ }
+ .body_signup .reg_title i{
+ 	color:#999;
+ 	height:10px;
+ 	line-height: 10px;
+ 	font-weight: normal;
+ 	font-size: 12px;margin:0 15px;
+ }
+ .reg_info{
+ 	background: url(../images/reg_vline.png) no-repeat 630px 0;
+ 	font-size: 14px;
+ 	margin-top:30px;
+ 	padding-bottom: 60px;
+ }
+ .info_list{
+ 	margin: 0 0 15px;
+ 	position: relative;
+ }
+ .info_list input[type=text],.info_list input[type=password]{
+ 	width: 196px;
+ 	border: 1px solid #CCCCCC;
+ 	border-radius: 2px;
+ 	box-shadow: 0 1px 1px 0 #EAEAEA inset;
+ 	color: #808080;
+ 	height: 28px;
+ 	padding: 0 0 0 2px;
+ 	vertical-align: middle;
+ }
+
+ .info_list input[type=text]:focus,.info_list input[type=password]:focus{
+ 	border-color: #FFB941;
+ }
+
+ .info_list .tit{
+ 	width:160px;
+ 	line-height: 30px;
+ 	text-align: right;
+ }
+ .info_list .tit i{
+ 	color:#FF0000;
+ 	padding-right: 4px;
+ }
+ .info_list .inp{
+ 	margin-left:160px;
+ }
+ .info_list .attachment{
+ 	padding-top:10px;
+ 	font-size: 12px;
+ }
+ .info_list .tips{
+ 	left: 375px;
+ 	position: absolute;
+ 	top: 6px;
+ 	font-size: 12px;
+ 	width: 200px;
+ }
+ .info_list .error{
+ 	color:#E64141;
+
+ }
+ .info_list .error i{
+ 	background-image: url(../images/ico_warn.png);
+ 	background-position: 0 -250px;
+ 	background-repeat: no-repeat;
+ 	width: 16px;
+ 	height: 16px;
+ 	display: inline-block;
+ 	vertical-align: middle;
+ 	margin-right: 3px;
+ }
+ .info_list .choose label {
+ 	line-height: 30px;
+ 	margin-right: 10px;
+ }
+ .info_list .choose input {
+ 	vertical-align: -2px;
+ }
+ .info_list input[name=code]{
+ 	width: 70px;
+ }
+ .info_list #code{
+ 	vertical-align:middle;
+ }
+ .info_list .verify_refresh{
+ 	background: url(../images/verify_refresh.png) no-repeat;
+ 	display: inline-block;
+ 	height: 17px;
+ 	margin-left: 7px;
+ 	margin-top: 7px;
+ 	overflow: hidden;
+ 	width: 18px;
+ }
+  .info_list .verify_refresh:hover{
+ 	background-position: 0 -18px;
+ }
+ .info_list .verify_refresh + .error{
+ 	position: relative;
+ 	top:-5px;
+ }
+ .reg_form button{
+ 	width:100%;
+ 	border:1px solid #ffb33b;
+ 	line-height: 26px;
+ 	padding:5px 0;
+ 	font-weight: bold;
+ 	border-radius:2px;
+ 	text-align: center;
+ 	font-size: 16px;
+ 	color:#fff;
+ }
+ .reg_form .submit{
+ 	width: 196px;
+ 	border:1px solid #ff9b01;
+ 	background-color: #ffa00a;
+ 	font-weight: bold;
+ }
+ .reg_form .submit:hover{
+ 	background: #FFAB25;
+ }
+ .reg_form .submit i{
+ 	width: 16px;
+ 	height: 16px;
+ 	display: inline-block;
+ 	background: url(../images/loading.gif) no-repeat;
+ 	vertical-align: -2px;
+ }
+ .reg_form .agreement{
+ 	font-size: 12px;
+ 	line-height: 20px;
+ }
+
+ .reg_sidebar{
+ 	width: 160px;
+ 	line-height: .8em;
+ }
+ .reg_sidebar p:first-child{
+ 	border-bottom: 1px dotted #ccc;
+ 	padding-bottom: 14px;
+ }
+ .reg_sidebar .p3{
+ 	color:#FFA00A;
+ 	font-weight: bold;
+ 	font-size: 16px;
  }
  .body_signup .footer{	
  	font-size: 12px;
  	color:#6e9ab8;
  }
- .body_signup span{	
- 	display: block;
- 	height: 24px;
- 	line-height:24px;
- }
+
  .footer .footer_logo{
  	display: inline-block;
  	width: 26px;

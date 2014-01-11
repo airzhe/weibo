@@ -449,6 +449,16 @@ input[type=submit],button{
  .left{
   float: left;
 }
- .right{
+.right{
   float: right;
+}
+
+/**
+ * ul li
+ */
+ ul{
+  padding:0;
+}
+ul li{
+  list-style: none;
 }
