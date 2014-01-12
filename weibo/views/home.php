@@ -220,6 +220,14 @@
 						</div>
 					</div>
 				</div>
+				<!-- 返回顶部 -->
+				<a class="gotop S_txt2" href="javascript:void(0);">
+					<span>
+						<s class="icon_gotop"></s>
+						返回顶部
+					</span>
+				</a>
+				<!-- 返回顶部结束 -->
 			</div>
 			<div class="global_footer"></div>
 		</div>
