@@ -1326,6 +1326,9 @@ body .global_nav .container{
  	padding: 20px 0px 0px;
  	border-bottom: 1px solid rgb(230, 230, 230);
  }
+ .feed_self .item:last-child{
+ 	border:none;
+ }
  .feed_self .detail{
  	padding-bottom: 11px;
  }
@@ -1338,6 +1341,23 @@ body .global_nav .container{
  	margin-right: -20px;
  	padding-bottom: 10px;
  }
+ .feed_self .item .media_prev li{
+ 	float: left;
+ }
+  .feed_self .item .media_prev .lotspic_list li{
+ 	float: left;
+ 	display: inline;
+ 	width: 80px;
+ 	height: 80px;
+ 	margin: 5px 0 0 5px;
+ 	overflow: hidden;
+ 	position: relative;
+ }
+ .feed_self .item .media_prev .lotspic_list{
+ 	width: 255px;
+ 	margin-left: -5px;
+ 	font-size: 0;
+ }
  .feed_self .item .media_prev img{
  	cursor:url(../images/big.cur), auto!important;
  }
@@ -1347,6 +1367,9 @@ body .global_nav .container{
  }
  .feed_self  .item .detail .func i{
  	margin: 0 6px 0 8px;
+ }
+ .feed_self .item .detail .left a{
+ 	color:#6cbae4;
  }
  .feed_self .item .detail .func .time{
  	margin-right: 7px;
@@ -1358,6 +1381,23 @@ body .global_nav .container{
  	background-image:url(../images/icon.png);
  	background-position: -75px 0;
  	vertical-align: text-bottom;
+ }
+ .feed_self .item .detail .forwardContent{
+ 	border: 1px solid #d9d9d9;
+ 	padding: 10px 20px 10px;
+ 	margin: 5px 0 15px;
+ 	border-radius: 3px;
+ 	background-color:#f2f2f2;
+ }
+ .feed_self .item .detail .forwardContent .name{
+ 	font-size:12px;
+ }
+ .feed_self .item .detail .forwardContent .content{
+ 	font-size:12px;
+ 	line-height: 21px;
+ }
+ .feed_self .item .detail .forwardContent .func a{
+ 	color:#6cbae4;
  }
  /*关注/粉丝*/
  .wrap .sidebar h4{
@@ -1419,12 +1459,11 @@ body .global_nav .container{
  	margin-top: 4px;
  }
  /*微相册*/
+ .wrap .sidebar .album h4 {
+ 	border-top:1px solid #d9d9d9;
+ }
  .wrap .sidebar .album .picitems {
  	margin: -10px 0 15px -8px;
- }
-
- .wrap .sidebar .album .picitems h4 {
- 	border-top:1px solid #d9d9d9;
  }
  .wrap .sidebar .album li{
  	margin: 10px 0 0 8px;
