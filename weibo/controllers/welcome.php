@@ -41,6 +41,14 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('msg');
 	}
+	public function follow()
+	{
+		$this->load->view('follow');
+	}
+	public function fans()
+	{
+		$this->load->view('fans');
+	}
 }
 
 /* End of file welcome.php */

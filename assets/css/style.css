@@ -20,6 +20,12 @@ fieldset {
 .S_func1:hover{
 	color:#0a8cd2;
 }
+.S_link2{
+	color: #6cbae4;
+}
+.S_line1_c {
+	color: #d9d9d9;
+}
 body .global_nav .container{
 	background: transparent;;
 }
@@ -670,7 +676,7 @@ body .global_nav .container{
  }
 
  .box_center{
- 	padding:28px 0 30px;
+ 	padding:20px 0 30px;
  	width: 600px;
  	min-height: 800px;
  	overflow: hidden;
@@ -1341,10 +1347,7 @@ body .global_nav .container{
  	margin-right: -20px;
  	padding-bottom: 10px;
  }
- .feed_self .item .media_prev li{
- 	float: left;
- }
-  .feed_self .item .media_prev .lotspic_list li{
+ .feed_self .item .media_prev .lotspic_list li{
  	float: left;
  	display: inline;
  	width: 80px;
@@ -1483,6 +1486,8 @@ body .global_nav .container{
  	font-size:14px;
  	font-weight: bold;
  	color: #333;
+ 	height: 24px;
+ 	line-height: 28px;
  }
  .box_center .tab_normal{
  	margin: 0px 20px;
@@ -1517,7 +1522,7 @@ body .global_nav .container{
  	margin-right: 2px;
  }
 
- .box_center .tab_normal .left a:hover{
+ .box_center .tab_normal .left a:not(.disable):hover,.box_center .tab_normal .left a.active{
  	background: rgb(255, 206, 130);
  	color:#fff;
  	border-color: rgb(255, 155, 1);
@@ -1526,7 +1531,7 @@ body .global_nav .container{
  .box_center .tab_normal .left a:hover .icon_mes{
  	background-position: -18px 0px;
  }
- .box_center .tab_normal .left a:hover span{
+ .box_center .tab_normal .left a:not(.disable):hover span,.box_center .tab_normal .left a.active span{
  	border-color: rgb(255, 206, 130);
  }
  .box_center .tab_normal .icon_lock{
@@ -1538,6 +1543,10 @@ body .global_nav .container{
  }
  .box_center .tab_normal .set{
  	margin-left:10px;
+ }
+ /*按钮不可用disable样式*/
+ .box_center .tab_normal .left a.disable{
+ 	color:#ccc;
  }
  .box_center .msg_list .item{
  	border-bottom:1px solid rgb(230, 230, 230);
@@ -1606,6 +1615,228 @@ body .global_nav .container{
  }
  .box_right .item{
  	margin-bottom: 20px;
+ }
+ /*关注中心*/
+ .container.main{
+ 	background: #fff;
+ }
+ .body_follow .left_nav .lev{
+ 	font-weight: bold;
+ }
+ .ico_connect{
+ 	display: inline-block;
+ 	width: 20px;
+ 	height: 20px;
+ 	vertical-align: -5px;
+ 	margin-right: 3px;
+ 	background: url(../images/icon_connect.png) 0px 0px no-repeat;
+ }
+ .curr .ico_connect{
+ 	background-position: -25px 0px;
+ }
+ .body_follow .left_nav fieldset{
+ 	margin-top:10px;
+ }
+ .body_follow .box_center{
+ 	width: auto;
+ 	background: #fff;
+ }
+
+ .box_center .title span, .box_center .title  a{
+ 	font-size: 12px;
+ 	font-weight: normal;
+ }
+ .box_center .title a.tips{
+ 	color:#f48c12;
+ }
+ .box_center .title i.icon_warnS{
+ 	width: 16px;
+ 	height: 16px;
+ 	background: url(../images/ico_warn.png) 0 -200px no-repeat; 
+ 	margin: 0 3px 0 10px;
+ 	overflow: hidden;
+ 	display: inline-block;
+ 	vertical-align: -3px;
+ }
+ .body_follow .tab_normal{
+ 	background: #f1f1f1;
+ 	padding:5px;
+ 	margin-top:25px;
+ }
+ .box_center .tab_normal .input_search{
+ 	position: relative;
+ }
+ .box_center .tab_normal .input_search input{
+ 	min-height: 15px;
+ 	border: 1px solid #ccc;
+ 	width: 122px;
+ 	color: gray;
+ 	border-radius: 15px;
+ 	padding:2px 8px;
+ }
+ .box_center .tab_normal .input_search input:focus{
+ 	border-color: #ffa00a;
+ 	box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
+ }
+ .box_center .tab_normal .input_search .iconsearch{
+ 	width:19px;
+ 	height: 20px;
+ 	display: inline-block;
+ 	background: url(../images/icon.png) -72px -172px no-repeat;
+ 	position: absolute;
+ 	right: 10px;
+ 	top:1px;
+ }
+ .box_center .tab_normal .input_search .iconsearch:hover{
+ 	background-position: -97px -172px;
+ }
+ .myfollow_list {
+ 	padding: 0 0px 20px 20px;
+ }
+ .myfollow_list .avatar{
+ 	float: left;
+ }
+ .myfollow_list .info{
+ 	height: 54px;
+ 	overflow: hidden;
+ 	float: left;
+ 	margin: 0 0 0 9px;
+ 	line-height: 18px;
+ }
+ .myfollow_list .intro{
+ 	clear: both;
+ }
+ .myfollow_list .item{
+ 	width: 227px;
+ 	height: 96px;
+ 	margin: 20px 20px 0 0;
+ 	float: left;
+ 	padding: 10px;
+ 	border: 1px solid #e6e6e6;
+ 	border-radius: 2px;
+ 	box-shadow: 0px 1px 2px 0px #ededed;
+ 	cursor: pointer;
+ }
+ .myfollow_list .item:hover{
+ 	background: url(../images/select.gif) no-repeat right top;
+ 	border-color: #FDA316;
+ 	border-width: 2px;
+ 	cursor: pointer;
+ 	padding: 10px;
+ 	margin:19px 19px -1px -1px;
+ }
+ .myfollow_list  .icon_addone{
+ 	width:12px;
+ 	height: 12px;
+ 	display: inline-block;
+ 	background: url(../images/icon.png) -125px -49px no-repeat;
+ 	margin-right: 3px;
+ 	vertical-align: middle;
+ }
+ .myfollow_list .icon_addtwo{
+ 	width:12px;
+ 	height: 12px;
+ 	display: inline-block;
+ 	background: url(../images/icon.png) -125px -25px no-repeat;
+ 	margin-right: 3px;
+ 	vertical-align: middle;
+ }
+ .myfollow_list  .W_chat_stat{
+ 	background-color: #D4D4D4;
+ 	border-color: #B8B8B8;
+ 	display: inline-block;
+ 	width: 7px;
+ 	height: 7px;
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	border-radius: 2px;
+ 	overflow: hidden;
+ 	margin-right: 3px;
+ }
+ .myfollow_list .intro {
+ 	height: 13px;
+ 	padding: 8px 0 0;
+ 	overflow: hidden;
+ 	clear: both;
+ 	display: block;
+ 	text-overflow: ellipsis;
+ 	white-space: nowrap;
+ }
+ .myfollow_list .introHover {
+ 	height: 13px;
+ 	padding: 8px 0 0;
+ 	overflow: hidden;
+ 	clear: both;
+ 	display: block;
+ 	text-overflow: ellipsis;
+ 	white-space: nowrap;
+ }
+ .myfollow_list .introHover i{
+ 	margin:0 10px;
+ }
+ .myfollow_list .item .introHover:nth-last-of-type(2), .myfollow_list .item:hover .intro{
+ 	display: none;
+ }
+ .myfollow_list .item:hover .introHover:nth-last-of-type(2){
+ 	display: block;
+ }
+ .box_center .page{
+ 	margin:0 20px;
+ 	padding-top: 10px;
+ 	text-align: right;
+ 	border-top:1px solid #e6e6e6;
+ }
+ .box_center .page a {
+ 	display: inline-block;
+ 	color: #333;
+ 	border-radius: 2px;
+ 	border: 1px solid #ccc;
+ 	background: rgb(242, 242, 242);
+ 	margin-right: 10px;
+ }
+ .box_center .page span{
+ 	padding: 0px 9px 0px 10px;
+ 	white-space: nowrap;
+ 	display: inline-block;
+ 	border-style: solid;
+ 	border-width: 1px;
+ 	border-radius: 2px;
+ 	height: 18px;
+ 	line-height: 18px;
+ 	border-color: #fff;
+ }
+ /*粉丝页面*/
+ .icon_trash{
+ 	display: inline-block;
+ 	width: 16px;
+ 	height: 16px;
+ 	background: url(../images/icon.png) -123px -275px no-repeat;
+ 	vertical-align: middle;
+ 	margin-left: 10px;
+ }
+ 
+ .box_center .title a.tips{
+ 	margin-left: 20px;
+ }
+ .myfans_list .item{
+ 	padding:14px 0 13px;
+ 	color: #333;
+ }
+ .myfans_list{
+ 	margin:0 20px;
+ 	line-height: 22px;
+ }
+ .myfans_list .con{
+ 	margin-left: 65px;
+ 	/*margin:0 20px;*/
+ 	line-height: 22px;
+ }
+ .myfans_list .con .name{
+ 	font-size: 14px;
+ 	font-weight: bold;
+ }
+ .myfans_list .con .detail_more{
+ 	margin-left:5px;
  }
  /*公共脚模板*/
  .global_footer{
