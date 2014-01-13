@@ -27,7 +27,6 @@
 							<a href="javascript:void(0)" class="btn"></a>
 						</div>
 
-
 						<ul class="user clearfix">
 							<li class="username" ><a href="javascript:void(0)">air_zhe</a></li>
 							<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
@@ -96,8 +95,8 @@
 						<li><a href="#">更多</a></li>
 					</ul>
 				</div>
-				<div class="wrap">
-					<div class="main">
+				<div class="wrap clearfix">
+					<div class="main left">
 						<p class="tab_radious">
 							<a href="#" class="active"><strong>全部</strong><span class="tabarrow"></span></a>
 							<i class="S_txt2">|</i>
@@ -136,9 +135,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="relation">
-						<h4>微关系</h4>
-						<span>我们之间的共同关系</span>
+					<div class="relation right">
+						<h4><a href=""></a>关注/粉丝<span>我的关注和粉丝</span></h4>
 					</div>
 				</div>
 				<!-- 返回顶部 -->

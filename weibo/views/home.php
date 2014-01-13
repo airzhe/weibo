@@ -88,6 +88,7 @@
 											<p class="txt">发布成功</p>
 										</div>
 									</div>
+									<div class="num S_txt2">发言请遵守社区公约，还可以输入<span>140</span>字</div>
 									<div class="func_area clearfix">
 										<div class="kind_detail left">
 											<a href="javascript:void(0)"><i class="icon_face"></i>表情</a>

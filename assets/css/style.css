@@ -671,6 +671,9 @@ body .global_nav .container{
  .box_center>div:first-child{
  	padding:0 20px 11px;
  }
+ .box_center .send_weibo{
+ 	position: relative;
+ }
  .box_center .title_area{
  	height:22px;
  	position: relative;
@@ -685,7 +688,20 @@ body .global_nav .container{
  	top:0;
  	right: 0;
  	bottom: 0;
- 	background:url(../images/all_iconbtn.png) no-repeat;
+ 	background:url(../images/all_iconbtn.pfng) no-repeat;
+ }
+ /*还能输入140字*/
+ .box_center .send_weibo .num{
+ 	position: absolute;
+ 	top:0;
+ 	right:0;
+ 	line-height: 24px;
+ }
+ .box_center .send_weibo .num span {
+ 	font-weight: 700;
+ 	font-size: 22px;
+ 	font-style: italic;
+ 	font-family: Constantia, Georgia;
  }
  .box_center div.input{
  	height: 88px;
@@ -1267,7 +1283,7 @@ body .global_nav .container{
  .tab_radious{
  	margin:0;
  	padding-bottom: 5px;
- 	border-bottom: 1px solid rgb(230, 230, 230);
+ 	border-bottom: 1px solid #e6e6e6;
  	position: relative;
  }
  .tab_radious a{
@@ -1294,6 +1310,10 @@ body .global_nav .container{
  /*博文*/
  .wrap .main{
  	width: 560px;
+ }
+ .wrap .relation{
+ 	width: 358px;
+ 	border: 1px solid #d9d9d9;
  }
  .feed_self .item{
  	padding: 20px 0px 0px;
@@ -1436,10 +1456,14 @@ body .global_nav .container{
  .box_right{
  	padding:30px 0px;
  }
+ .box_right fieldset{
+ 	border-color: #e6e6e6;
+ }
  .box_right .title{
  	font-weight: bold;
  	font-size:14px;
  	color:#333;
+ 	padding:0 5px;
  }
  .box_right  .qa{
  	margin: 0px 20px;
