@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>我的首页 新浪微博-随时随地分享身边的新鲜事儿</title>
+	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>

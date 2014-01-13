@@ -1318,7 +1318,7 @@ body .global_nav .container{
  .wrap .main{
  	width: 560px;
  }
- .wrap .relation{
+ .wrap .sidebar{
  	width: 358px;
  	border: 1px solid #d9d9d9;
  }
@@ -1360,63 +1360,81 @@ body .global_nav .container{
  	vertical-align: text-bottom;
  }
  /*关注/粉丝*/
- .wrap .relation h4{
+ .wrap .sidebar h4{
  	margin:0;
  	padding:8px 20px 9px;
  	/*padding: 8px 20px 9px;*/
  	line-height: 17px;
  	background: #f2f2f2;
  }
- .wrap .relation h4 a{
+ .wrap .sidebar h4 a{
  	color:#333;
  	text-decoration: none;
  }
- .wrap .relation h4 a:hover{
+ .wrap .sidebar h4 a:hover{
  	color:#0a8cd2;
  }
- .wrap .relation h4 span{
+ .wrap .sidebar h4 span{
  	display: block;
  	font-weight: 400;
  	height: 16px;
  }
- .wrap .relation .piclist{
+ .wrap .sidebar h4 + div{
  	padding:20px 19px 0 19px;
  }
- .wrap .relation .piclist fieldset{
+ .wrap .sidebar .relation fieldset{
  	height: 18px;
  	padding:0;
  	border-color: #e6e6e6;
  	position: relative;
  }
- .wrap .relation .piclist fieldset .more{
+ .wrap .sidebar .relation fieldset .more{
  	position: absolute;
  	top:0;
  	right: 0;
  	background: #fff;
  	padding-left:10px;
  }
- .wrap .relation .piclist fieldset legend{
+ .wrap .sidebar .relation fieldset legend{
  	padding-right: 10px;
  }
- .wrap .relation .piclist ul{
+ .wrap .sidebar .relation ul{
  	margin: 0 0 0 -22px;
  }
- .wrap .relation .piclist li{
+ .wrap .sidebar .relation li{
  	position: relative;
  	float: left;
  	margin: 0 0 20px 20px;
  	padding: 0 2px;
  }
- .wrap .relation .piclist li a{
+ .wrap .sidebar .relation li a{
  	display: block;
  }
- .wrap .relation .piclist li a:last-child{
+ .wrap .sidebar .relation li a:first-child + a{
  	text-overflow: ellipsis;
  	white-space: nowrap;
  	width: 61px;
  	height: 14px;
  	overflow: hidden;
  	margin-top: 4px;
+ }
+ /*微相册*/
+ .wrap .sidebar .album .picitems {
+ 	margin: -10px 0 15px -8px;
+ }
+
+ .wrap .sidebar .album .picitems h4 {
+ 	border-top:1px solid #d9d9d9;
+ }
+ .wrap .sidebar .album li{
+ 	margin: 10px 0 0 8px;
+ 	padding: 0;
+ }
+ .wrap .sidebar .album .picitems li img{
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	border-radius: 3px;
+ 	border-color: #d5dfda;
  }
  /*消息页面*/
  .box_center div.title{
