@@ -136,7 +136,29 @@
 						</div>
 					</div>
 					<div class="relation right">
-						<h4><a href=""></a>关注/粉丝<span>我的关注和粉丝</span></h4>
+						<h4><a href="#">关注/粉丝</a><span class="S_txt2">我的关注和粉丝</span></h4>
+						<div class="piclist">
+							<fieldset>
+								<legend class="title"><a href="#" class="S_func1">我的关注(36)</a></legend>
+								<a class="more" href="#">更多»</a>
+							</fieldset>
+							<ul class="clearfix">
+								<li><a href="#"><img src="./assets/images/1.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">小殷爱录像</a></li>
+								<li><a href="#"><img src="./assets/images/2.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">包子包子肉肉</a></li>
+								<li><a href="#"><img src="./assets/images/3.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">梦境漫游指南</a></li>
+								<li><a href="#"><img src="./assets/images/4.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">糗事百科</a></li>
+							</ul>
+							<fieldset>
+								<legend class="title"><a href="#" class="S_func1">我的粉丝(11)</a></legend>
+								<a class="more" href="#">更多»</a>
+							</fieldset>
+							<ul class="clearfix">
+								<li><a href="#"><img src="./assets/images/01.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">Babyface_乖乖M</a></li>
+								<li><a href="#"><img src="./assets/images/02.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">南方周末</a></li>
+								<li><a href="#"><img src="./assets/images/03.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">超级无敌小葡萄</a></li>
+								<li><a href="#"><img src="./assets/images/04.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">苍井空</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<!-- 返回顶部 -->
