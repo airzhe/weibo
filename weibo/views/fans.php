@@ -80,18 +80,82 @@
 							</div>
 							<div class="myfans_list">
 								<div class="item clearfix">
-									<div class="avatar left"> <img src="assets/images/2.jpg" width="50" height="50" alt=""></div>
+									<div class="avatar left"> <img src="assets/images/4.jpg" width="50" height="50" alt=""></div>
 									<div class="con clearfix">
 										<div class="con_left left">
-											<div class="name">亚龙r阴阳v乄木鱼 其他</div>
-											<div>关注<a href="javascript:void(0)">288</a><i class="S_line1_c">|</i>粉丝<a href="#">9</a><i class="S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
+											<div class="name">可以随心所欲__的优秀大众男 <span class="addr"><i class="W_ico12 male"></i>其他</span></div>
+											<div>关注<a href="javascript:void(0)">288</a><i class="W_vline S_line1_c">|</i>粉丝<a href="#">9</a><i class="W_vline S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
+											<div>通过 <a href="#" class="S_link2">微博搜索</a> 关注 <a href="#" class="detail_more">更多</a></div>
+										</div>
+										<div class="con_right right">
+											<a href="" class="addFollow"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a><a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a href="">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
+										</div>
+									</div>
+								</div>
+								<div class="item clearfix">
+									<div class="avatar left"> <img src="assets/images/1.jpg" width="50" height="50" alt=""></div>
+									<div class="con clearfix">
+										<div class="con_left left">
+											<div class="name">亚龙r阴阳v乄木鱼 <span class="addr"><i class="W_ico12 male"></i>其他</span></div>
+											<div>关注<a href="javascript:void(0)">288</a><i class="W_vline S_line1_c">|</i>粉丝<a href="#">9</a><i class="W_vline S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
 											<div>通过 <a href="#" class="S_link2">iPhone客户端</a> 关注 <a href="#" class="detail_more">更多</a></div>
 										</div>
 										<div class="con_right right">
-											<a href=""><span>|+关注</span></a> <a href="#">私信</a> | <a href="">移除粉丝</a> | <a href="">举报</a>
+											<a href="" class="addFollow"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a><a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a href="">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
 										</div>
 									</div>
-									
+								</div>
+								<div class="item clearfix">
+									<div class="avatar left"> <img src="assets/images/01.jpg" width="50" height="50" alt=""></div>
+									<div class="con clearfix">
+										<div class="con_left left">
+											<div class="name">shisero <span class="addr"><i class="W_ico12 male"></i>其他</span></div>
+											<div>关注<a href="javascript:void(0)">288</a><i class="W_vline S_line1_c">|</i>粉丝<a href="#">9</a><i class="W_vline S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
+											<div>通过 <a href="#" class="S_link2">iPhone客户端</a> 关注 <a href="#" class="detail_more">更多</a></div>
+										</div>
+										<div class="con_right right">
+											<a href="" class="addFollow"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a><a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a href="">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
+										</div>
+									</div>
+								</div>
+								<div class="item clearfix">
+									<div class="avatar left"> <img src="assets/images/4.jpg" width="50" height="50" alt=""></div>
+									<div class="con clearfix">
+										<div class="con_left left">
+											<div class="name">苍穹晴天 <span class="addr"><i class="W_ico12 male"></i>其他</span></div>
+											<div>关注<a href="javascript:void(0)">288</a><i class="W_vline S_line1_c">|</i>粉丝<a href="#">9</a><i class="W_vline S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
+											<div>通过 <a href="#" class="S_link2">iPhone客户端</a> 关注 <a href="#" class="detail_more">更多</a></div>
+										</div>
+										<div class="con_right right">
+											<a href="" class="addFollow"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a><a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a href="">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
+										</div>
+									</div>
+								</div>
+								<div class="item clearfix">
+									<div class="avatar left"> <img src="assets/images/3.jpg" width="50" height="50" alt=""></div>
+									<div class="con clearfix">
+										<div class="con_left left">
+											<div class="name">爱房玉静 <span class="addr"><i class="W_ico12 male"></i>上海 浦东新区</span></div>
+											<div>关注<a href="javascript:void(0)">288</a><i class="W_vline S_line1_c">|</i>粉丝<a href="#">9</a><i class="W_vline S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
+											<div>通过 <a href="#" class="S_link2">iPhone客户端</a> 关注 <a href="#" class="detail_more">更多</a></div>
+										</div>
+										<div class="con_right right">
+											<a href="" class="addFollow"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a><a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a href="">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
+										</div>
+									</div>
+								</div>
+								<div class="item clearfix">
+									<div class="avatar left"> <img src="assets/images/2.jpg" width="50" height="50" alt=""></div>
+									<div class="con clearfix">
+										<div class="con_left left">
+											<div class="name">空山萧声 <span class="addr"><i class="W_ico12 female"></i>其他</span></div>
+											<div>关注<a href="javascript:void(0)">288</a><i class="W_vline S_line1_c">|</i>粉丝<a href="#">9</a><i class="W_vline S_line1_c">|</i>微博<a href="javascript:void(0)">28</a></div>
+											<div>通过 <a href="#" class="S_link2">iPhone客户端</a> 关注 <a href="#" class="detail_more">更多</a></div>
+										</div>
+										<div class="con_right right">
+											<a href="" class="addFollow"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a><a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a href="">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
+										</div>
+									</div>
 								</div>
 							</div>
 							<p class="page">

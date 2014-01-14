@@ -1214,12 +1214,21 @@ body .global_nav .container{
  	margin: 0 9px 0 5px;
  	color:#d9d9d9;
  }
- .body_index .user_info p .male{
+ /*可以集体定义*/
+ i.male{
  	display: inline-block;
  	width:13px;
  	height: 13px;
  	vertical-align: -2px;
  	background: url(../images/bg_line-x2.png) no-repeat 0px -6px;
+ 	background-size: 2000px 43px;
+ }
+ i.female{
+ 	display: inline-block;
+ 	width:13px;
+ 	height: 13px;
+ 	vertical-align: -2px;
+ 	background: url(../images/bg_line-x2.png) no-repeat -25px -6px;
  	background-size: 2000px 43px;
  }
  .body_index .user_info p.edit a{
@@ -1725,7 +1734,7 @@ body .global_nav .container{
  	padding: 10px;
  	margin:19px 19px -1px -1px;
  }
- .myfollow_list  .icon_addone{
+ /*.myfollow_list  */.icon_addone{
  	width:12px;
  	height: 12px;
  	display: inline-block;
@@ -1741,7 +1750,8 @@ body .global_nav .container{
  	margin-right: 3px;
  	vertical-align: middle;
  }
- .myfollow_list  .W_chat_stat{
+ /*可以集体定义*/
+ .W_chat_stat{
  	background-color: #D4D4D4;
  	border-color: #B8B8B8;
  	display: inline-block;
@@ -1806,6 +1816,17 @@ body .global_nav .container{
  	border-color: #fff;
  }
  /*粉丝页面*/
+ .curr .ico_myfollow{
+ 	background-position: -25px -25px;
+ }
+ .ico_myfollow{
+ 	display: inline-block;
+ 	width: 20px;
+ 	height: 20px;
+ 	vertical-align: -5px;
+ 	margin-right: 3px;
+ 	background: url(../images/icon_connect.png) 0px -25px no-repeat;
+ }
  .icon_trash{
  	display: inline-block;
  	width: 16px;
@@ -1824,20 +1845,61 @@ body .global_nav .container{
  }
  .myfans_list{
  	margin:0 20px;
- 	line-height: 22px;
+ 	
  }
  .myfans_list .con{
  	margin-left: 65px;
  	/*margin:0 20px;*/
- 	line-height: 22px;
+ 	/*line-height: 22px;*/
  }
  .myfans_list .con .name{
  	font-size: 14px;
  	font-weight: bold;
  }
- .myfans_list .con .detail_more{
- 	margin-left:5px;
+ .myfans_list .con .addr{
+ 	font-size: 12px;
+ 	font-weight: normal;
  }
+ .W_vline{
+ 	margin: 0 8px;
+ }
+ .con_left{
+ 	line-height: 22px;
+ }
+ .con_right i{
+ 	margin:0 5px;
+ }
+ .myfans_list .con .detail_more{
+ 	margin-left:12px;
+ }
+ .addFollow {
+ 	display: inline-block;
+ 	color: #333;
+ 	border-radius: 2px;
+ 	border: 1px solid #ccc;
+ 	background: rgb(242, 242, 242);
+ 	margin-right: 10px;
+ }
+ .addFollow span{
+ 	padding: 0px 9px 0px 10px;
+ 	white-space: nowrap;
+ 	display: inline-block;
+ 	border-style: solid;
+ 	border-width: 1px;
+ 	border-radius: 2px;
+ 	height: 18px;
+ 	line-height: 18px;
+ 	border-color: #fff;
+ }
+ .addicon{
+ 	font: bold 16px Arial;
+ 	height: 16px;
+ 	text-decoration: none;
+ 	color: #FFA00A;
+ 	margin-right: 2px;
+ 	vertical-align: -2px;
+ }
+
  /*公共脚模板*/
  .global_footer{
  	margin:0 auto;
