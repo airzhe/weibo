@@ -27,6 +27,56 @@ fieldset {
 .S_line1_c {
 	color: #d9d9d9;
 }
+.W_btn_a,.W_btn_b:hover {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ff9b01;
+	background-color: #ffa00a;
+	color: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.W_btn_a span,.W_btn_b span{
+	padding: 0 9px 0 10px;
+	white-space: nowrap;
+	display: inline-block;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 2px;
+	height: 18px;
+	line-height: 18px;
+}
+.W_btn_a span {
+	border-color: #ffb33b;
+	color: #fff;
+}
+
+.W_btn_b {
+	display: inline-block;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 2px;
+	overflow: hidden;
+	vertical-align: middle;
+	cursor: pointer;
+	border-color: #d9d9d9;
+	background-color: #f2f2f2;
+}
+.W_btn_b span {
+	border-color: #ffffff;
+	color: #333333;
+}
+
+.W_btn_a:hover span, .W_btn_b:hover span {
+	border-color: #FFCE82;
+	border-style: solid;
+	border-width: 1px;
+	color: #FFFFFF;
+}
+
 body .global_nav .container{
 	background: transparent;;
 }
@@ -2025,6 +2075,81 @@ body .global_nav .container{
  }
  .upload_avatar .preview .img_30{
  	margin-top:15px;
+ }
+ /*个人信息*/
+ .personinfo .item{
+ 	margin:20px;
+ 	border: 1px solid #D9D9D9;
+ 	padding:0px 20px;
+ 	background: #f2f2f2;
+ 	cursor: pointer;
+ 	/*background: #fff;*/
+ }
+ .personinfo .item:hover{
+ 	background: #fff;
+ }
+ .personinfo .item:hover .acc_form{
+ 	display: block;
+ }
+ .personinfo ul{
+ 	height: 40px;
+ 	line-height: 40px;
+ }
+ .personinfo ul li{
+ 	float:left;
+ }
+ .personinfo ul li:first-child{
+ 	width: 204px;
+ 	font-weight: 700;
+ }
+ .personinfo ul li:nth-child(2){
+ 	width: 488px;
+ }
+ .acc_form{
+ 	margin-bottom: 20px;
+ }
+ .acc_form .info_item{
+ 	position: relative;
+ }
+ .acc_form .info_item div:not(.btn){
+ 	line-height: 30px;
+ }
+ .acc_form .info_item .tit{
+ 	width: 48px;
+ 	text-align: right;
+ 	float: left;
+ }
+ .acc_form .info_item .inp{
+ 	width: 222px;
+ 	margin-left: 70px;
+ }
+ .acc_form .info_item .tips{
+ 	position: absolute;
+ 	left: 280px;
+ 	top: 0px;
+ 	line-height: normal;
+ }
+ .acc_form .info_item .inp input[type=text],.acc_form .info_item .inp textarea{
+ 	border: 1px solid #ccc;
+ 	border-radius: 2px;
+ 	height: 28px;
+ 	padding: 0 0 0 2px;
+ 	vertical-align: middle;
+ 	box-shadow: 0px 1px 1px 0px #eaeaea inset;
+ 	width: 196px;
+ }
+ .acc_form .info_item .inp textarea{
+ 	height: 48px;
+ 	resize:none;
+ }
+ .acc_form .info_item .inp input:focus,.acc_form .info_item .inp textarea:focus{
+ 	border-color: #FFB941;
+ }
+ .acc_form .btn{
+ 	padding: 15px 0 0;
+ }
+ .acc_form .btn .W_btn_a {
+ 	margin-right: 10px;
  }
  /*公共脚模板*/
  .global_footer{

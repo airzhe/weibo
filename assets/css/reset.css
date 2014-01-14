@@ -463,3 +463,9 @@ input[type=submit],button{
 ul li{
   list-style: none;
 }
+/*
+* textarea
+*/
+textarea{
+  outline: none;
+}

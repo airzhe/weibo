@@ -53,6 +53,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('set/photo');
 	}
+	public function setinfo()
+	{
+		$this->load->view('set/index');
+	}
 }
 
 /* End of file welcome.php */
