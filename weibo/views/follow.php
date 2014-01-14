@@ -55,15 +55,15 @@
 						<div class="lev"><a href="" class="curr"><i class="W_ico20 ico_connect"></i>关注</a></div>
 						<div class="group">
 							<ul>
-								<li><a href="#"><i class="ico_group"></i>全部关注</a></li>
-								<li><a href="#"><i class="ico_group"></i>同事</a></li>
-								<li><a href="#"><i class="ico_group"></i>同学</a></li>
-								<li><a href="#"><i class="ico_group"></i>朋友</a></li>
-								<li><a href="#"><i class="ico_group"></i>家人</a></li>
-								<li><a href="#"><i class="ico_group"></i>明星</a></li>
+								<li><a href="#" class="active">全部关注</a></li>
+								<li><a href="#">同事</a></li>
+								<li><a href="#">同学</a></li>
+								<li><a href="#">朋友</a></li>
+								<li><a href="#">家人</a></li>
+								<li><a href="#">明星</a></li>
 							</ul>
 						</div>
-
+						<div class="lev"><a href=""><i class="W_ico20 ico_myfollow"></i>粉丝(11)</a></div>
 					</div>
 					<div class="main">
 						<div class="box_center">

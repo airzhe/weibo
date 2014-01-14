@@ -49,6 +49,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('fans');
 	}
+	public function photo()
+	{
+		$this->load->view('set/photo');
+	}
 }
 
 /* End of file welcome.php */
