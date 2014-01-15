@@ -17,13 +17,15 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index()
-	{
-		// $this->load->view('login');
-		// $this->load->view('signup');
-		// $this->load->view('home');
+	{	
+		$this->load->view('index.html');
+	}
+
+	public function indexs()
+	{	
 		$this->load->view('index');
-		// $this->load->view('msg');
 	}
 	public function login()
 	{
@@ -56,6 +58,30 @@ class Welcome extends CI_Controller {
 	public function setinfo()
 	{
 		$this->load->view('set/index');
+	}
+	public function at()
+	{
+		$this->load->view('at');
+	}
+	public function commin()
+	{
+		$this->load->view('comment_inbox');
+	}
+	public function commout()
+	{
+		$this->load->view('comment_outbox');
+	}
+	public function letter()
+	{
+		$this->load->view('letter');
+	}
+	public function one()
+	{
+		$this->load->view('single_weibo');
+	}
+	public function ta()
+	{
+		$this->load->view('ta');
 	}
 }
 

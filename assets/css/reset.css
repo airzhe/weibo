@@ -469,3 +469,9 @@ ul li{
 textarea{
   outline: none;
 }
+/*
+* em
+*/
+em{
+  font-style: normal;
+}

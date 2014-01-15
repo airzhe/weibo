@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>airzhe的微博|新浪微博-随时随地分享身边的新鲜事儿</title>
+	<title>Babyface_乖乖M的微博|新浪微博-随时随地分享身边的新鲜事儿</title>
 	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
@@ -46,28 +46,28 @@
 				</div>
 			</div>
 			<div class="container">
-				<div class="profile_pic_top" style="background-image:url(<?php echo base_url('assets/images/015.jpg') ?>)">
+				<div class="profile_pic_top" style="background-image:url(<?php echo base_url('assets/images/040.jpg') ?>)">
 					<a class="set_skin" href="#" title="模板设置"></a>
 				</div>
 				<div class="user_info clearfix">
 					<div class="head left">
-						<img class="avatar" src="./assets/images/avatar.jpg" alt="">
+						<img class="avatar" src="./assets/images/abb9e8d9jw8ebmue0d0ebj20e80e8jrq.jpg" alt="" width="180" height="180">
 						<ul class="user_atten clearfix">
 							<li>
 								<a href="">
-									<strong>35</strong>
+									<strong>48</strong>
 									<span>关注</span>
 								</a>
 							</li>
 							<li>
 								<a href="">
-									<strong>8</strong>
+									<strong>199</strong>
 									<span>粉丝</span>
 								</a>
 							</li>
 							<li>
 								<a href="">
-									<strong>42</strong>
+									<strong>237</strong>
 									<span>微博</span>
 								</a>
 							</li>
@@ -75,18 +75,26 @@
 					</div>
 					<div class="info">
 						<div>
-							<span class="name">airzhe</span> 
+							<span class="name">Babyface_乖乖M</span> 
 							<a href="" class="level"><span></span></a>
 							<a href="#">http://weibo.com/airzhe</a>
 						</div>
-						<p class="S_txt2">分手快乐</p>
-						<p><i class="W_ico12 male"></i><i class="W_vline S_line1_c">|</i><a href="#">求交往</a><i class="W_vline S_line1_c">|</i><a href="">河南 郑州</a></p>
-						<p class="edit"><a href=""><span>编辑个人资料</span></a></p>
+						<p class="S_txt2">93后财经和传媒双专业学生。摩羯女，慢吞吞。</p>
+						<p><i class="W_ico12 female"></i><i class="W_vline S_line1_c">|</i><a href="#">摩羯座</a><i class="W_vline S_line1_c">|</i><a href="">北京 海淀区</a><i class="W_vline S_line1_c">|</i><a href="">毕业于中央财经大学</a></p>
+						<!-- <p class="edit"><a href=""><span>编辑个人资料</span></a></p> -->
+						<div class="W_btn_c">
+							<span>
+								<em class="W_ico12 icon_addone"></em>已关注<em class="W_vline S_txt2">|</em>
+								<a class="S_link2" href="javascript:void(0);">取消</a>
+							</span>
+						</div>
+						<a class="W_btn_c"><span><i class="W_chat_stat"></i>私信</span></a>
 					</div>
+					
 				</div>
 				<div >
 					<ul class="core_nav clearfix">
-						<li class="current"><a href="#">我的主页</a></li>
+						<li class="current"><a href="#">她的主页</a></li>
 						<li><a href="#">微博</a></li>
 						<li><a href="#">个人资料</a></li>
 						<li><a href="#">相册</a></li>
@@ -103,7 +111,7 @@
 							<a href="#">原创</a><i class="S_txt3">|</i>
 							<a href="#">图片</a>
 						</p>
-						<div class="feed_self">
+						<div class="feed_self" style="height:1200px;background:#fff;">
 							<div class="item">
 								<div class="detail">
 									<div class="content">
@@ -190,10 +198,10 @@
 					<div class="sidebar right">
 						<!-- 关注/粉丝 -->
 						<div class="relation">
-							<h4><a href="#">关注/粉丝</a><span class="S_txt2">我的关注和粉丝</span></h4>
+							<h4><a href="#">关注/粉丝</a><span class="S_txt2">他的关注和粉丝</span></h4>
 							<div>
 								<fieldset>
-									<legend class="title"><a href="#" class="S_func1">我的关注(36)</a></legend>
+									<legend class="title"><a href="#" class="S_func1">他的关注(36)</a></legend>
 									<a class="more" href="#">更多»</a>
 								</fieldset>
 								<ul class="clearfix">
@@ -203,7 +211,7 @@
 									<li><a href="#"><img src="./assets/images/4.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">糗事百科</a></li>
 								</ul>
 								<fieldset>
-									<legend class="title"><a href="#" class="S_func1">我的粉丝(11)</a></legend>
+									<legend class="title"><a href="#" class="S_func1">他的粉丝(11)</a></legend>
 									<a class="more" href="#">更多»</a>
 								</fieldset>
 								<ul class="clearfix">
