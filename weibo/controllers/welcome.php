@@ -71,6 +71,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('comment_outbox');
 	}
+	public function letter2()
+	{
+		$this->load->view('letter_list');
+	}
 	public function letter()
 	{
 		$this->load->view('letter');

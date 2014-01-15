@@ -1647,7 +1647,7 @@ body .global_nav .container{
  		margin: 0px 20px;
  		padding: 10px 0px 6px;
  	}
- 	.box_center .tab_normal .left a{
+ 	/*.box_center .tab_normal .left a{
  		display: inline-block;
  		color:#333;
  		border-radius: 2px;
@@ -1666,722 +1666,806 @@ body .global_nav .container{
  		height: 18px;
  		line-height: 18px;
  		border-color: #fff;
- 	}
- 	.box_center .tab_normal .left span .icon_mes{
- 		display: inline-block;
- 		width: 12px;
- 		height: 9px;
- 		overflow: hidden;
- 		background: url(../images/msg_icon.png) no-repeat;
- 		margin-right: 2px;
- 	}
+ 		}*/
+ 		.icon_mes{
+ 			display: inline-block;
+ 			width: 12px;
+ 			height: 9px;
+ 			overflow: hidden;
+ 			background: url(../images/msg_icon.png) no-repeat;
+ 			margin-right: 2px;
+ 		}
 
- 	.box_center .tab_normal .left a:not(.disable):hover,.box_center .tab_normal .left a.active{
- 		background: rgb(255, 206, 130);
- 		color:#fff;
- 		border-color: rgb(255, 155, 1);
- 		background-color: rgb(255, 160, 10);
- 	}
- 	.box_center .tab_normal .left a:hover .icon_mes{
- 		background-position: -18px 0px;
- 	}
- 	.box_center .tab_normal .left a:not(.disable):hover span,.box_center .tab_normal .left a.active span{
- 		border-color: rgb(255, 206, 130);
- 	}
- 	.box_center .tab_normal .icon_lock{
- 		display: inline-block;
- 		width: 16px;
- 		height: 16px;
- 		background: url(../images/msg_icon.png) -35px -70px no-repeat;
- 		vertical-align: -2px;
- 	}
- 	.box_center .tab_normal .set{
- 		margin-left:10px;
- 	}
- 	/*按钮不可用disable样式*/
- 	.box_center .tab_normal .left a.disable{
- 		color:#ccc;
- 	}
- 	.box_center .msg_list .item{
- 		border-bottom:1px solid rgb(230, 230, 230);
- 		margin: 0 20px;
- 		padding:20px 0;
- 	}
- 	.box_center .msg_list .avatar{
- 		float: left;
- 	}
- 	.box_center .msg_list .msg_main{
- 		margin-left: 65px;
- 		height: 50px;
- 		overflow: hidden;
- 		font-size: 14px;
- 		position: relative;
- 	}
- 	.msg_main .msg_title{
- 		font-weight: 700;
- 		margin-bottom: 5px;
- 		color:#333;
- 	}
- 	.msg_main .msg_detail{
- 		line-height: 30px;
- 		white-space: nowrap;
- 		text-overflow: ellipsis;
- 		overflow: hidden;
- 		margin-right: 2em;
- 	}
- 	.msg_main .msg_time{
- 		position: absolute;
- 		top:0;
- 		right: 0;
- 		font-size: 12px;
- 	}
- 	.box_center .msg_list{
- 		/*margin:20px;*/
- 	}
- 	/*------------*/
- 	.box_right{
- 		padding:30px 0px;
- 	}
- 	.box_right fieldset{
- 		border-color: #e6e6e6;
- 	}
- 	.box_right .title{
- 		font-weight: bold;
- 		font-size:14px;
- 		color:#333;
- 		padding:0 5px;
- 	}
- 	.box_right  .qa{
- 		margin: 0px 20px;
- 		line-height: 22px;
- 		padding: 15px 0px 0px;
- 	}
- 	.qa .ico_q{
- 		float: left;
- 		width: 18px;
- 		height: 17px;
- 		text-align: center;
- 		margin: 3px 0px 0px;
- 		background: url(../images/icon.png) -125px 0px no-repeat;
- 	}
- 	.box_right .qa:last-child{
- 		margin-right: 10px;
- 	}
- 	.box_right .item{
- 		margin-bottom: 20px;
- 	}
- 	/*关注中心*/
- 	.container.main{
- 		background: #fff;
- 	}
- 	.body_follow .left_nav a.curr{
- 		font-weight: bold;
- 	}
- 	.ico_connect{
- 		display: inline-block;
- 		width: 20px;
- 		height: 20px;
- 		vertical-align: -5px;
- 		margin-right: 3px;
- 		background: url(../images/icon_connect.png) 0px 0px no-repeat;
- 	}
- 	.curr .ico_connect{
- 		background-position: -25px 0px;
- 	}
- 	.body_follow .left_nav fieldset{
- 		margin-top:10px;
- 	}
- 	.body_follow .box_center{
- 		width: auto;
- 		background: #fff;
- 	}
+ 		.box_center .tab_normal .left a:not(.disable):hover,.box_center .tab_normal .left a.active{
+ 			background: rgb(255, 206, 130);
+ 			color:#fff;
+ 			border-color: rgb(255, 155, 1);
+ 			background-color: rgb(255, 160, 10);
+ 		}
+ 		.W_btn_a .icon_mes{
+ 			background-position: -18px 0px;
+ 		}
+ 		.box_center .tab_normal .left a:not(.disable):hover span,.box_center .tab_normal .left a.active span{
+ 			border-color: rgb(255, 206, 130);
+ 		}
+ 		.box_center .tab_normal .icon_lock{
+ 			display: inline-block;
+ 			width: 16px;
+ 			height: 16px;
+ 			background: url(../images/msg_icon.png) -35px -70px no-repeat;
+ 			vertical-align: -2px;
+ 		}
+ 		.box_center .tab_normal .set{
+ 			margin-left:10px;
+ 		}
+ 		/*按钮不可用disable样式*/
+ 		.box_center .tab_normal .left a.disable{
+ 			color:#ccc;
+ 		}
+ 		.box_center .msg_list .item{
+ 			border-bottom:1px solid rgb(230, 230, 230);
+ 			/*margin: 0 20px;*/
+ 			padding:20px;
+ 			cursor: pointer;
+ 		}
+ 		.box_center .msg_list .item:hover{
+ 			background: #fff;
+ 		}
+ 		.box_center .msg_list .avatar{
+ 			float: left;
+ 		}
+ 		.box_center .msg_list .msg_main{
+ 			margin-left: 65px;
+ 			height: 50px;
+ 			overflow: hidden;
+ 			font-size: 14px;
+ 			position: relative;
+ 		}
+ 		.msg_main .msg_title{
+ 			font-weight: 700;
+ 			margin-bottom: 5px;
+ 			color:#333;
+ 		}
+ 		.msg_main .msg_detail{
+ 			line-height: 30px;
+ 			white-space: nowrap;
+ 			text-overflow: ellipsis;
+ 			overflow: hidden;
+ 			margin-right: 2em;
+ 		}
+ 		.msg_main .msg_time{
+ 			position: absolute;
+ 			top:0;
+ 			right: 0;
+ 			font-size: 12px;
+ 		}
+ 		.box_center .msg_list{
+ 			/*margin:20px;*/
+ 		}
+ 		/*------------*/
+ 		.box_right{
+ 			padding:30px 0px;
+ 		}
+ 		.box_right fieldset{
+ 			border-color: #e6e6e6;
+ 		}
+ 		.box_right .title{
+ 			font-weight: bold;
+ 			font-size:14px;
+ 			color:#333;
+ 			padding:0 5px;
+ 		}
+ 		.box_right  .qa{
+ 			margin: 0px 20px;
+ 			line-height: 22px;
+ 			padding: 15px 0px 0px;
+ 		}
+ 		.qa .ico_q{
+ 			float: left;
+ 			width: 18px;
+ 			height: 17px;
+ 			text-align: center;
+ 			margin: 3px 0px 0px;
+ 			background: url(../images/icon.png) -125px 0px no-repeat;
+ 		}
+ 		.box_right .qa:last-child{
+ 			margin-right: 10px;
+ 		}
+ 		.box_right .item{
+ 			margin-bottom: 20px;
+ 		}
+ 		/*关注中心*/
+ 		.container.main{
+ 			background: #fff;
+ 		}
+ 		.body_follow .left_nav a.curr{
+ 			font-weight: bold;
+ 		}
+ 		.ico_connect{
+ 			display: inline-block;
+ 			width: 20px;
+ 			height: 20px;
+ 			vertical-align: -5px;
+ 			margin-right: 3px;
+ 			background: url(../images/icon_connect.png) 0px 0px no-repeat;
+ 		}
+ 		.curr .ico_connect{
+ 			background-position: -25px 0px;
+ 		}
+ 		.body_follow .left_nav fieldset{
+ 			margin-top:10px;
+ 		}
+ 		.body_follow .box_center{
+ 			width: auto;
+ 			background: #fff;
+ 		}
 
- 	.box_center .title span, .box_center .title  a{
- 		font-size: 12px;
- 		font-weight: normal;
- 	}
- 	.box_center .title a.tips{
- 		color:#f48c12;
- 	}
- 	.box_center .title i.icon_warnS{
- 		width: 16px;
- 		height: 16px;
- 		background: url(../images/ico_warn.png) 0 -200px no-repeat; 
- 		margin: 0 3px 0 10px;
- 		overflow: hidden;
- 		display: inline-block;
- 		vertical-align: -3px;
- 	}
- 	.body_follow .tab_normal{
- 		background: #f1f1f1;
- 		padding:5px;
- 		margin-top:25px;
- 	}
- 	.box_center .tab_normal .input_search{
- 		position: relative;
- 	}
- 	.box_center .tab_normal .input_search input{
- 		min-height: 15px;
- 		border: 1px solid #ccc;
- 		width: 122px;
- 		color: gray;
- 		border-radius: 15px;
- 		padding:2px 8px;
- 	}
- 	.box_center .tab_normal .input_search input:focus{
- 		border-color: #ffa00a;
- 		box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
- 	}
- 	.box_center .tab_normal .input_search .iconsearch{
- 		width:19px;
- 		height: 20px;
- 		display: inline-block;
- 		background: url(../images/icon.png) -72px -172px no-repeat;
- 		position: absolute;
- 		right: 10px;
- 		top:1px;
- 	}
- 	.box_center .tab_normal .input_search .iconsearch:hover{
- 		background-position: -97px -172px;
- 	}
- 	.myfollow_list {
- 		padding: 0 0px 20px 20px;
- 	}
- 	.myfollow_list .avatar{
- 		float: left;
- 	}
- 	.myfollow_list .info{
- 		height: 54px;
- 		overflow: hidden;
- 		float: left;
- 		margin: 0 0 0 9px;
- 		line-height: 18px;
- 	}
- 	.myfollow_list .intro{
- 		clear: both;
- 	}
- 	.myfollow_list .item{
- 		width: 227px;
- 		height: 96px;
- 		margin: 20px 20px 0 0;
- 		float: left;
- 		padding: 10px;
- 		border: 1px solid #e6e6e6;
- 		border-radius: 2px;
- 		box-shadow: 0px 1px 2px 0px #ededed;
- 		cursor: pointer;
- 	}
- 	.myfollow_list .item:hover{
- 		background: url(../images/select.gif) no-repeat right top;
- 		border-color: #FDA316;
- 		border-width: 2px;
- 		cursor: pointer;
- 		padding: 10px;
- 		margin:19px 19px -1px -1px;
- 	}
- 	/*.myfollow_list  */.icon_addone{
- 		width:12px;
- 		height: 12px;
- 		display: inline-block;
- 		background: url(../images/icon.png) -125px -49px no-repeat;
- 		margin-right: 3px;
- 		vertical-align: middle;
- 	}
- 	.myfollow_list .icon_addtwo{
- 		width:12px;
- 		height: 12px;
- 		display: inline-block;
- 		background: url(../images/icon.png) -125px -25px no-repeat;
- 		margin-right: 3px;
- 		vertical-align: middle;
- 	}
- 	/*可以集体定义*/
- 	.W_chat_stat{
- 		background-color: #D4D4D4;
- 		border-color: #B8B8B8;
- 		display: inline-block;
- 		width: 7px;
- 		height: 7px;
- 		border-width: 1px;
- 		border-style: solid;
- 		border-radius: 2px;
- 		overflow: hidden;
- 		margin-right: 3px;
- 	}
- 	.myfollow_list .intro {
- 		height: 13px;
- 		padding: 8px 0 0;
- 		overflow: hidden;
- 		clear: both;
- 		display: block;
- 		text-overflow: ellipsis;
- 		white-space: nowrap;
- 	}
- 	.myfollow_list .introHover {
- 		height: 13px;
- 		padding: 8px 0 0;
- 		overflow: hidden;
- 		clear: both;
- 		display: block;
- 		text-overflow: ellipsis;
- 		white-space: nowrap;
- 	}
- 	.myfollow_list .introHover i{
- 		margin:0 10px;
- 	}
- 	.myfollow_list .item .introHover:nth-last-of-type(2), .myfollow_list .item:hover .intro{
- 		display: none;
- 	}
- 	.myfollow_list .item:hover .introHover:nth-last-of-type(2){
- 		display: block;
- 	}
- 	.box_center .page{
- 		margin:0 20px;
- 		padding-top: 10px;
- 		text-align: right;
- 		border-top:1px solid #e6e6e6;
- 	}
- 	.box_center .page a {
- 		display: inline-block;
- 		color: #333;
- 		border-radius: 2px;
- 		border: 1px solid #ccc;
- 		background: rgb(242, 242, 242);
- 		margin-right: 10px;
- 	}
- 	.box_center .page span{
- 		padding: 0px 9px 0px 10px;
- 		white-space: nowrap;
- 		display: inline-block;
- 		border-style: solid;
- 		border-width: 1px;
- 		border-radius: 2px;
- 		height: 18px;
- 		line-height: 18px;
- 		border-color: #fff;
- 	}
- 	/*粉丝页面*/
- 	.curr .ico_myfollow{
- 		background-position: -25px -25px;
- 	}
- 	.ico_myfollow{
- 		display: inline-block;
- 		width: 20px;
- 		height: 20px;
- 		vertical-align: -5px;
- 		margin-right: 3px;
- 		background: url(../images/icon_connect.png) 0px -25px no-repeat;
- 	}
- 	.icon_trash{
- 		display: inline-block;
- 		width: 16px;
- 		height: 16px;
- 		background: url(../images/icon.png) -123px -275px no-repeat;
- 		vertical-align: middle;
- 		margin-left: 10px;
- 	}
+ 		.box_center .title span, .box_center .title  a{
+ 			font-size: 12px;
+ 			font-weight: normal;
+ 		}
+ 		.box_center .title a.tips{
+ 			color:#f48c12;
+ 		}
+ 		.box_center .title i.icon_warnS{
+ 			width: 16px;
+ 			height: 16px;
+ 			background: url(../images/ico_warn.png) 0 -200px no-repeat; 
+ 			margin: 0 3px 0 10px;
+ 			overflow: hidden;
+ 			display: inline-block;
+ 			vertical-align: -3px;
+ 		}
+ 		.body_follow .tab_normal{
+ 			background: #f1f1f1;
+ 			padding:5px;
+ 			margin-top:25px;
+ 		}
+ 		.box_center .tab_normal .input_search{
+ 			position: relative;
+ 		}
+ 		.box_center .tab_normal .input_search input{
+ 			min-height: 15px;
+ 			border: 1px solid #ccc;
+ 			width: 122px;
+ 			color: gray;
+ 			border-radius: 15px;
+ 			padding:2px 8px;
+ 		}
+ 		.box_center .tab_normal .input_search input:focus{
+ 			border-color: #ffa00a;
+ 			box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
+ 		}
+ 		.box_center .tab_normal .input_search .iconsearch{
+ 			width:19px;
+ 			height: 20px;
+ 			display: inline-block;
+ 			background: url(../images/icon.png) -72px -172px no-repeat;
+ 			position: absolute;
+ 			right: 10px;
+ 			top:1px;
+ 		}
+ 		.box_center .tab_normal .input_search .iconsearch:hover{
+ 			background-position: -97px -172px;
+ 		}
+ 		.myfollow_list {
+ 			padding: 0 0px 20px 20px;
+ 		}
+ 		.myfollow_list .avatar{
+ 			float: left;
+ 		}
+ 		.myfollow_list .info{
+ 			height: 54px;
+ 			overflow: hidden;
+ 			float: left;
+ 			margin: 0 0 0 9px;
+ 			line-height: 18px;
+ 		}
+ 		.myfollow_list .intro{
+ 			clear: both;
+ 		}
+ 		.myfollow_list .item{
+ 			width: 227px;
+ 			height: 96px;
+ 			margin: 20px 20px 0 0;
+ 			float: left;
+ 			padding: 10px;
+ 			border: 1px solid #e6e6e6;
+ 			border-radius: 2px;
+ 			box-shadow: 0px 1px 2px 0px #ededed;
+ 			cursor: pointer;
+ 		}
+ 		.myfollow_list .item:hover{
+ 			background: url(../images/select.gif) no-repeat right top;
+ 			border-color: #FDA316;
+ 			border-width: 2px;
+ 			cursor: pointer;
+ 			padding: 10px;
+ 			margin:19px 19px -1px -1px;
+ 		}
+ 		/*.myfollow_list  */.icon_addone{
+ 			width:12px;
+ 			height: 12px;
+ 			display: inline-block;
+ 			background: url(../images/icon.png) -125px -49px no-repeat;
+ 			margin-right: 3px;
+ 			vertical-align: middle;
+ 		}
+ 		.myfollow_list .icon_addtwo{
+ 			width:12px;
+ 			height: 12px;
+ 			display: inline-block;
+ 			background: url(../images/icon.png) -125px -25px no-repeat;
+ 			margin-right: 3px;
+ 			vertical-align: middle;
+ 		}
+ 		/*可以集体定义*/
+ 		.W_chat_stat{
+ 			background-color: #D4D4D4;
+ 			border-color: #B8B8B8;
+ 			display: inline-block;
+ 			width: 7px;
+ 			height: 7px;
+ 			border-width: 1px;
+ 			border-style: solid;
+ 			border-radius: 2px;
+ 			overflow: hidden;
+ 			margin-right: 3px;
+ 		}
+ 		.myfollow_list .intro {
+ 			height: 13px;
+ 			padding: 8px 0 0;
+ 			overflow: hidden;
+ 			clear: both;
+ 			display: block;
+ 			text-overflow: ellipsis;
+ 			white-space: nowrap;
+ 		}
+ 		.myfollow_list .introHover {
+ 			height: 13px;
+ 			padding: 8px 0 0;
+ 			overflow: hidden;
+ 			clear: both;
+ 			display: block;
+ 			text-overflow: ellipsis;
+ 			white-space: nowrap;
+ 		}
+ 		.myfollow_list .introHover i{
+ 			margin:0 10px;
+ 		}
+ 		.myfollow_list .item .introHover:nth-last-of-type(2), .myfollow_list .item:hover .intro{
+ 			display: none;
+ 		}
+ 		.myfollow_list .item:hover .introHover:nth-last-of-type(2){
+ 			display: block;
+ 		}
+ 		.box_center .page{
+ 			margin:0 20px;
+ 			padding-top: 10px;
+ 			text-align: right;
+ 			border-top:1px solid #e6e6e6;
+ 		}
+ 		.box_center .page a {
+ 			display: inline-block;
+ 			color: #333;
+ 			border-radius: 2px;
+ 			border: 1px solid #ccc;
+ 			background: rgb(242, 242, 242);
+ 			margin-right: 10px;
+ 		}
+ 		.box_center .page span{
+ 			padding: 0px 9px 0px 10px;
+ 			white-space: nowrap;
+ 			display: inline-block;
+ 			border-style: solid;
+ 			border-width: 1px;
+ 			border-radius: 2px;
+ 			height: 18px;
+ 			line-height: 18px;
+ 			border-color: #fff;
+ 		}
+ 		/*粉丝页面*/
+ 		.curr .ico_myfollow{
+ 			background-position: -25px -25px;
+ 		}
+ 		.ico_myfollow{
+ 			display: inline-block;
+ 			width: 20px;
+ 			height: 20px;
+ 			vertical-align: -5px;
+ 			margin-right: 3px;
+ 			background: url(../images/icon_connect.png) 0px -25px no-repeat;
+ 		}
+ 		.icon_trash{
+ 			display: inline-block;
+ 			width: 16px;
+ 			height: 16px;
+ 			background: url(../images/icon.png) -123px -275px no-repeat;
+ 			vertical-align: middle;
+ 			margin-left: 10px;
+ 		}
 
- 	.box_center .title a.tips{
- 		margin-left: 20px;
- 	}
- 	.myfans_list .item{
- 		padding:14px 0 13px;
- 		color: #333;
- 	}
- 	.myfans_list{
- 		margin:0 20px;
+ 		.box_center .title a.tips{
+ 			margin-left: 20px;
+ 		}
+ 		.myfans_list .item{
+ 			padding:14px 0 13px;
+ 			color: #333;
+ 		}
+ 		.myfans_list{
+ 			margin:0 20px;
 
- 	}
- 	.myfans_list .con{
- 		margin-left: 65px;
- 		/*margin:0 20px;*/
- 		/*line-height: 22px;*/
- 	}
- 	.myfans_list .con .name{
- 		font-size: 14px;
- 		font-weight: bold;
- 	}
- 	.myfans_list .con .addr{
- 		font-size: 12px;
- 		font-weight: normal;
- 	}
- 	.W_vline{
- 		margin: 0 8px;
- 	}
- 	.con_left{
- 		line-height: 22px;
- 	}
- 	.con_right i{
- 		margin:0 5px;
- 	}
- 	.myfans_list .con .detail_more{
- 		margin-left:12px;
- 	}
- 	.addFollow {
- 		display: inline-block;
- 		color: #333;
- 		border-radius: 2px;
- 		border: 1px solid #ccc;
- 		background: rgb(242, 242, 242);
- 		margin-right: 10px;
- 	}
- 	.addFollow span{
- 		padding: 0px 9px 0px 10px;
- 		white-space: nowrap;
- 		display: inline-block;
- 		border-style: solid;
- 		border-width: 1px;
- 		border-radius: 2px;
- 		height: 18px;
- 		line-height: 18px;
- 		border-color: #fff;
- 	}
- 	.addicon{
- 		font: bold 16px Arial;
- 		height: 16px;
- 		text-decoration: none;
- 		color: #FFA00A;
- 		margin-right: 2px;
- 		vertical-align: -2px;
- 	}
- 	/*头像设置*/
- 	.level_Box{
- 		border-bottom: 1px solid #d9d9d9;
- 		padding-bottom: 10px;
- 	}
- 	.level_Box:last-of-type{
- 		padding-top:10px;
- 	}
- 	.lev .W_ico20 {
- 		margin-right: 10px;
- 		vertical-align: -5px;
- 		background-image: url(../images/account_ico.png);
- 	}
- 	.W_ico20 {
- 		display: inline-block;
- 		width: 20px;
- 		height: 20px;
- 	}
- 	.ico_avater{
- 		background-position: 0 -25px;
- 	}
- 	.curr .ico_avater{
- 		background-position: -25px -25px;
- 	}
+ 		}
+ 		.myfans_list .con{
+ 			margin-left: 65px;
+ 			/*margin:0 20px;*/
+ 			/*line-height: 22px;*/
+ 		}
+ 		.myfans_list .con .name{
+ 			font-size: 14px;
+ 			font-weight: bold;
+ 		}
+ 		.myfans_list .con .addr{
+ 			font-size: 12px;
+ 			font-weight: normal;
+ 		}
+ 		.W_vline{
+ 			margin: 0 8px;
+ 		}
+ 		.con_left{
+ 			line-height: 22px;
+ 		}
+ 		.con_right i{
+ 			margin:0 5px;
+ 		}
+ 		.myfans_list .con .detail_more{
+ 			margin-left:12px;
+ 		}
+ 		.addFollow {
+ 			display: inline-block;
+ 			color: #333;
+ 			border-radius: 2px;
+ 			border: 1px solid #ccc;
+ 			background: rgb(242, 242, 242);
+ 			margin-right: 10px;
+ 		}
+ 		.addFollow span{
+ 			padding: 0px 9px 0px 10px;
+ 			white-space: nowrap;
+ 			display: inline-block;
+ 			border-style: solid;
+ 			border-width: 1px;
+ 			border-radius: 2px;
+ 			height: 18px;
+ 			line-height: 18px;
+ 			border-color: #fff;
+ 		}
+ 		.addicon{
+ 			font: bold 16px Arial;
+ 			height: 16px;
+ 			text-decoration: none;
+ 			color: #FFA00A;
+ 			margin-right: 2px;
+ 			vertical-align: -2px;
+ 		}
+ 		/*头像设置*/
+ 		.level_Box{
+ 			border-bottom: 1px solid #d9d9d9;
+ 			padding-bottom: 10px;
+ 		}
+ 		.level_Box:last-of-type{
+ 			padding-top:10px;
+ 		}
+ 		.lev .W_ico20 {
+ 			margin-right: 10px;
+ 			vertical-align: -5px;
+ 			background-image: url(../images/account_ico.png);
+ 		}
+ 		.W_ico20 {
+ 			display: inline-block;
+ 			width: 20px;
+ 			height: 20px;
+ 		}
+ 		.ico_avater{
+ 			background-position: 0 -25px;
+ 		}
+ 		.curr .ico_avater{
+ 			background-position: -25px -25px;
+ 		}
 
- 	.ico_security {
- 		background-position: 0 -125px;
- 	}
- 	.curr .ico_security {
- 		background-position: -25px -125px;
- 	}
- 	.curr .ico_privacy {
- 		background-position: -25px -75px;
- 	}
- 	.ico_privacy {
- 		background-position: 0 -75px
- 	}
- 	.ico_message {
- 		background-position: 0 -100px;
- 	}
- 	.ico_prefer {
- 		background-position: 0 -50px;
- 	}
- 	.upload_avatar{
- 		margin:20px;
+ 		.ico_security {
+ 			background-position: 0 -125px;
+ 		}
+ 		.curr .ico_security {
+ 			background-position: -25px -125px;
+ 		}
+ 		.curr .ico_privacy {
+ 			background-position: -25px -75px;
+ 		}
+ 		.ico_privacy {
+ 			background-position: 0 -75px
+ 		}
+ 		.ico_message {
+ 			background-position: 0 -100px;
+ 		}
+ 		.ico_prefer {
+ 			background-position: 0 -50px;
+ 		}
+ 		.upload_avatar{
+ 			margin:20px;
 
- 	}
- 	.upload_btn a{
- 		display: inline-block;
- 		border-radius: 2px;
- 		background: #f2f2f2;
- 		border:1px solid #d9d9d9;
- 		margin-right: 10px;
- 	}
- 	.upload_btn span{
- 		display: inline-block;
- 		border:1px solid #fff;
- 		padding:4px 14px;
- 		/*color: #333;*/
- 	}
- 	.upload_avatar input[type=checkbox]{
- 		vertical-align: middle;
- 		margin-right: 3px;
- 	}
- 	.upload_avatar .S_txt2 + p{
- 		color:#5F5F5F;
- 	}
- 	.upload_avatar .preview{
- 		height: 320px;
- 		padding:10px 0;
- 	}
- 	.upload_avatar .preview .big{
- 		width:330px;
- 		height: 100%;
- 		border-right: 1px solid #d9d9d9;
- 	}
- 	.upload_avatar .preview .small{
- 		float: left;
- 		width:300px;
- 		height: 100%;
- 		line-height: 20px;
- 		margin-left: 28px;
- 	}
- 	.upload_avatar .preview .small p{
- 		margin: 0;
- 	}
- 	.upload_avatar .preview .img_300{
- 		width:300px;
- 		height: 300px;
- 		border: 1px solid #ccc;
- 		overflow: hidden;
- 	}
- 	.upload_avatar .preview .avatar{
- 		margin-top:20px;
- 	}
- 	.upload_avatar .preview .avatar{
- 		text-align: center;
- 		color:#808080;
- 	}
- 	/*生成头像*/
- 	.upload_avatar #img_180{
- 		width: 180px;
- 		height: 180px;
- 	}
- 	.upload_avatar #img_50{
- 		width: 50px;
- 		height: 50px;
- 	}
- 	.upload_avatar #img_30{
- 		width: 30px;
- 		height: 30px;
- 	}
- 	#img_180,#img_50,#img_30{
- 		border:1px solid #ccc;
- 		overflow: hidden;
- 	}
- 	.upload_avatar .preview .img_30{
- 		margin-top:15px;
- 	}
- 	/*个人信息*/
- 	.personinfo .item{
- 		margin:20px;
- 		border: 1px solid #D9D9D9;
- 		padding:0px 20px;
- 		background: #f2f2f2;
- 		cursor: pointer;
- 		/*background: #fff;*/
- 	}
- 	.personinfo .item:hover{
- 		background: #fff;
- 	}
- 	.personinfo .item:hover .acc_form{
- 		display: block;
- 	}
- 	.personinfo ul{
- 		height: 40px;
- 		line-height: 40px;
- 	}
- 	.personinfo ul li{
- 		float:left;
- 	}
- 	.personinfo ul li:first-child{
- 		width: 204px;
- 		font-weight: 700;
- 	}
- 	.personinfo ul li:nth-child(2){
- 		width: 488px;
- 	}
- 	.acc_form{
- 		margin-bottom: 20px;
- 	}
- 	.acc_form .info_item{
- 		position: relative;
- 	}
- 	.acc_form .info_item div:not(.btn){
- 		line-height: 30px;
- 	}
- 	.acc_form .info_item .tit{
- 		width: 48px;
- 		text-align: right;
- 		float: left;
- 	}
- 	.acc_form .info_item .inp{
- 		width: 222px;
- 		margin-left: 70px;
- 	}
- 	.acc_form .info_item .tips{
- 		position: absolute;
- 		left: 280px;
- 		top: 0px;
- 		line-height: normal;
- 	}
- 	.acc_form .info_item .inp input[type=text],.acc_form .info_item .inp textarea{
- 		border: 1px solid #ccc;
- 		border-radius: 2px;
- 		height: 28px;
- 		padding: 0 0 0 2px;
- 		vertical-align: middle;
- 		box-shadow: 0px 1px 1px 0px #eaeaea inset;
- 		width: 196px;
- 	}
- 	.acc_form .info_item .inp textarea{
- 		height: 48px;
- 		resize:none;
- 	}
- 	.acc_form .info_item .inp input:focus,.acc_form .info_item .inp textarea:focus{
- 		border-color: #FFB941;
- 	}
- 	.acc_form .btn{
- 		padding: 15px 0 0;
- 	}
- 	.acc_form .btn .W_btn_a {
- 		margin-right: 10px;
- 	}
- 	/*评论页面*/
- 	.comment_list .item {
- 		margin:21px 20px 0 20px;
- 	}
+ 		}
+ 		.upload_btn a{
+ 			display: inline-block;
+ 			border-radius: 2px;
+ 			background: #f2f2f2;
+ 			border:1px solid #d9d9d9;
+ 			margin-right: 10px;
+ 		}
+ 		.upload_btn span{
+ 			display: inline-block;
+ 			border:1px solid #fff;
+ 			padding:4px 14px;
+ 			/*color: #333;*/
+ 		}
+ 		.upload_avatar input[type=checkbox]{
+ 			vertical-align: middle;
+ 			margin-right: 3px;
+ 		}
+ 		.upload_avatar .S_txt2 + p{
+ 			color:#5F5F5F;
+ 		}
+ 		.upload_avatar .preview{
+ 			height: 320px;
+ 			padding:10px 0;
+ 		}
+ 		.upload_avatar .preview .big{
+ 			width:330px;
+ 			height: 100%;
+ 			border-right: 1px solid #d9d9d9;
+ 		}
+ 		.upload_avatar .preview .small{
+ 			float: left;
+ 			width:300px;
+ 			height: 100%;
+ 			line-height: 20px;
+ 			margin-left: 28px;
+ 		}
+ 		.upload_avatar .preview .small p{
+ 			margin: 0;
+ 		}
+ 		.upload_avatar .preview .img_300{
+ 			width:300px;
+ 			height: 300px;
+ 			border: 1px solid #ccc;
+ 			overflow: hidden;
+ 		}
+ 		.upload_avatar .preview .avatar{
+ 			margin-top:20px;
+ 		}
+ 		.upload_avatar .preview .avatar{
+ 			text-align: center;
+ 			color:#808080;
+ 		}
+ 		/*生成头像*/
+ 		.upload_avatar #img_180{
+ 			width: 180px;
+ 			height: 180px;
+ 		}
+ 		.upload_avatar #img_50{
+ 			width: 50px;
+ 			height: 50px;
+ 		}
+ 		.upload_avatar #img_30{
+ 			width: 30px;
+ 			height: 30px;
+ 		}
+ 		#img_180,#img_50,#img_30{
+ 			border:1px solid #ccc;
+ 			overflow: hidden;
+ 		}
+ 		.upload_avatar .preview .img_30{
+ 			margin-top:15px;
+ 		}
+ 		/*个人信息*/
+ 		.personinfo .item{
+ 			margin:20px;
+ 			border: 1px solid #D9D9D9;
+ 			padding:0px 20px;
+ 			background: #f2f2f2;
+ 			cursor: pointer;
+ 			/*background: #fff;*/
+ 		}
+ 		.personinfo .item:hover{
+ 			background: #fff;
+ 		}
+ 		.personinfo .item:hover .acc_form{
+ 			display: block;
+ 		}
+ 		.personinfo ul{
+ 			height: 40px;
+ 			line-height: 40px;
+ 		}
+ 		.personinfo ul li{
+ 			float:left;
+ 		}
+ 		.personinfo ul li:first-child{
+ 			width: 204px;
+ 			font-weight: 700;
+ 		}
+ 		.personinfo ul li:nth-child(2){
+ 			width: 488px;
+ 		}
+ 		.acc_form{
+ 			margin-bottom: 20px;
+ 		}
+ 		.acc_form .info_item{
+ 			position: relative;
+ 		}
+ 		.acc_form .info_item div:not(.btn){
+ 			line-height: 30px;
+ 		}
+ 		.acc_form .info_item .tit{
+ 			width: 48px;
+ 			text-align: right;
+ 			float: left;
+ 		}
+ 		.acc_form .info_item .inp{
+ 			width: 222px;
+ 			margin-left: 70px;
+ 		}
+ 		.acc_form .info_item .tips{
+ 			position: absolute;
+ 			left: 280px;
+ 			top: 0px;
+ 			line-height: normal;
+ 		}
+ 		.acc_form .info_item .inp input[type=text],.acc_form .info_item .inp textarea{
+ 			border: 1px solid #ccc;
+ 			border-radius: 2px;
+ 			height: 28px;
+ 			padding: 0 0 0 2px;
+ 			vertical-align: middle;
+ 			box-shadow: 0px 1px 1px 0px #eaeaea inset;
+ 			width: 196px;
+ 		}
+ 		.acc_form .info_item .inp textarea{
+ 			height: 48px;
+ 			resize:none;
+ 		}
+ 		.acc_form .info_item .inp input:focus,.acc_form .info_item .inp textarea:focus{
+ 			border-color: #FFB941;
+ 		}
+ 		.acc_form .btn{
+ 			padding: 15px 0 0;
+ 		}
+ 		.acc_form .btn .W_btn_a {
+ 			margin-right: 10px;
+ 		}
+ 		/*评论页面*/
+ 		.comment_list .item {
+ 			margin:21px 20px 0 20px;
+ 		}
 
- 	.comment_list .item .face{
- 		float: left;
- 		width: 50px;
- 		position: relative;
- 	}
- 	.comment_list .comment{
- 		/*margin-left: 65px;*/
- 		border: 1px solid #d9d9d9;
- 		padding: 15px 20px;
- 		margin-left: 65px;
- 		border-radius: 2px;
- 		background-color: #f2f2f2;
- 		line-height: 21px;
- 	}
- 	.comment_list .comment p{
- 		margin:0;
- 	}
- 	.comment_list .comment p .del{
- 		float: right;
- 	}
- 	.comment_list .item:hover .del{
- 		display: block;
- 	}
- 	/*收到的评论*/
- 	.comment_list .comment {
- 		position: relative;
- 	}
- 	.comment_list .comment .message_arrow {
- 		position: absolute;
- 		top: 15px;
- 		left: -9px;
- 		width: 10px;
- 		overflow: hidden;
- 	}
- 	.comment_list .comment .message_arrow  * {
- 		font-family: "SimSun";
- 		overflow: hidden;
- 		font-size: 20px;
- 		line-height: 1.231;
- 		display: block;
- 		height: 20px;
- 	}
- 	.comment_list .comment .message_arrow span{
- 		margin: -20px 0 0 1px;
- 		color:#f2f2f2;
- 	}
- 	/*单条微博页面*/
- 	.wrap .comment{
- 		background: #FAFAFA;
- 		border-width: 1px;
- 		border-style: solid;
- 		padding: 10px 20px;
- 		margin: 10px 0px 15px;
- 		border-radius: 3px;
- 	}
- 	.comment textarea{
- 		width: 99%;
- 		height:45px;
- 	}
- 	.comment .item{
- 		padding: 7px 0px 10px;
- 		margin: 1px 0px 0px;
- 		border-width: 1px 0px 0px;
- 		border-style: solid;
- 	}
- 	.comment .item .detail{
- 		margin: 0px 0px 0px 40px;
- 		line-height: 21px;
- 		word-wrap: break-word;
- 		vertical-align: text-bottom;
- 	}
- 	.comment .item .detail p{
- 		margin:0;
- 	}
- 	.comment .item .detail .info {
- 		text-align: right;
- 	}
- 	.comment .item .detail .info .S_txt3{
- 		margin:0px 5px
- 	}
- 	.comment .W_tips {
- 		margin:10px 0;
- 	}
- 	/*私信页面*/
- 	.tit_plus {
- 		font-size: 12px;
- 		font-weight: 300;
- 	}
- 	.msg_dialogue .comment{
- 		border-radius: 5px;
- 	}
- 	.msg_time_line{
- 		margin: 5px 65px 25px;
- 		text-align: center;
- 		padding: 0px 0px 0px 148px;
- 	}
- 	.msg_time_line .time_tit {
- 		width: 120px;
- 		text-align: center;
- 		font-weight: 400;
- 	}
- 	/*消息左侧菜单*/
- 	.left_nav li ul a{
- 		font-size: 12px;
- 		height: 28px;
- 		line-height: 28px;
- 		padding-left: 30px;
- 	}
- 	.left_nav li ul a .W_ico20 {
- 		width: 19px;
- 		vertical-align: -8px;
- 		margin-right: 0;
- 	}
- 	.ico_lev_at {
- 		background-position: 0px -149px;
- 	}
- 	.ico_lev_comment {
- 		background-position: 0px -174px;
- 	}
- 	.ico_lev_like {
- 		background-position: 0px -198px;
- 	}
- 	.ico_lev_letter {
- 		background-position: 0px -223px;
- 	}
- 	.ico_lev_leave {
- 		background-position: 0px -248px;
- 	}
- 	.active .ico_lev_letter{
- 		background-position: -25px -223px;
- 	}
- 	.active .ico_lev_leave{
- 		background-position: -25px -248px;
- 	}
- 	/*公共脚模板*/
- 	.global_footer{
- 		margin:0 auto;
- 		margin-top:10px;
- 		width: 980px;
- 		height: 208px;
- 		background:#fff url(../images/global_footer.gif);
- 	}
+ 		.comment_list .item .face{
+ 			float: left;
+ 			width: 50px;
+ 			position: relative;
+ 		}
+ 		.comment_list .comment{
+ 			border: 1px solid #d9d9d9;
+ 			padding: 15px 20px;
+ 			margin-left: 65px;
+ 			border-radius: 2px;
+ 			background-color: #f2f2f2;
+ 			line-height: 21px;
+ 		}
+ 		.comment_list .comment p{
+ 			margin:0;
+ 		}
+ 		.comment_list .comment p .del{
+ 			float: right;
+ 		}
+ 		.comment_list .item:hover .del{
+ 			display: block;
+ 		}
+ 		/*收到的评论*/
+ 		.comment_list .comment {
+ 			position: relative;
+ 		}
+ 		.comment_list .comment .message_arrow {
+ 			position: absolute;
+ 			top: 15px;
+ 			left: -9px;
+ 			width: 10px;
+ 			overflow: hidden;
+ 		}
+ 		.comment_list .comment .message_arrow  * {
+ 			font-family: "SimSun";
+ 			overflow: hidden;
+ 			font-size: 20px;
+ 			line-height: 1.231;
+ 			display: block;
+ 			height: 20px;
+ 		}
+ 		.comment_list .comment .message_arrow span{
+ 			margin: -20px 0 0 1px;
+ 			color:#f2f2f2;
+ 		}
+ 		/*单条微博页面*/
+ 		.wrap .comment{
+ 			background: #FAFAFA;
+ 			border-width: 1px;
+ 			border-style: solid;
+ 			padding: 10px 20px;
+ 			margin: 10px 0px 15px;
+ 			border-radius: 3px;
+ 		}
+ 		.comment textarea{
+ 			width: 99%;
+ 			height:45px;
+ 		}
+ 		.comment .item{
+ 			padding: 7px 0px 10px;
+ 			margin: 1px 0px 0px;
+ 			border-width: 1px 0px 0px;
+ 			border-style: solid;
+ 		}
+ 		.comment .item .detail{
+ 			margin: 0px 0px 0px 40px;
+ 			line-height: 21px;
+ 			word-wrap: break-word;
+ 			vertical-align: text-bottom;
+ 		}
+ 		.comment .item .detail p{
+ 			margin:0;
+ 		}
+ 		.comment .item .detail .info {
+ 			text-align: right;
+ 		}
+ 		.comment .item .detail .info .S_txt3{
+ 			margin:0px 5px
+ 		}
+ 		.comment .W_tips {
+ 			margin:10px 0;
+ 		}
+ 		/*私信页面*/
+ 		.tit_plus {
+ 			font-size: 12px;
+ 			font-weight: 300;
+ 		}
+ 		.msg_dialogue .comment{
+ 			border-radius: 5px;
+ 		}
+ 		.msg_time_line{
+ 			margin: 5px 65px 25px;
+ 			text-align: center;
+ 			padding: 0px 0px 0px 148px;
+ 		}
+ 		.msg_time_line .time_tit {
+ 			width: 120px;
+ 			text-align: center;
+ 			font-weight: 400;
+ 		}
+ 		/*消息左侧菜单*/
+ 		.left_nav li ul a{
+ 			font-size: 12px;
+ 			height: 28px;
+ 			line-height: 28px;
+ 			padding-left: 30px;
+ 		}
+ 		.left_nav li ul a .W_ico20 {
+ 			width: 19px;
+ 			vertical-align: -8px;
+ 			margin-right: 0;
+ 		}
+ 		.ico_lev_at {
+ 			background-position: 0px -149px;
+ 		}
+ 		.ico_lev_comment {
+ 			background-position: 0px -174px;
+ 		}
+ 		.ico_lev_like {
+ 			background-position: 0px -198px;
+ 		}
+ 		.ico_lev_letter {
+ 			background-position: 0px -223px;
+ 		}
+ 		.ico_lev_leave {
+ 			background-position: 0px -248px;
+ 		}
+ 		.active .ico_lev_letter{
+ 			background-position: -25px -223px;
+ 		}
+ 		.active .ico_lev_leave{
+ 			background-position: -25px -248px;
+ 		}
+ 		
+ 		/*私信*/
+ 		.W_new_count {
+ 			display: inline-block;
+ 			padding: 0 2px;
+ 			font-family: arial;
+ 			font-size: 10px;
+ 			-webkit-transform: scale(0.875);
+ 			background-color: #dd3838;
+ 			color: #fff;
+ 			border-radius: 2px;
+ 			min-width: 11px;
+ 			height: 12px;
+ 			line-height: 12px;
+ 			text-align: center;
+ 		}
+ 		.msg_new_state{
+ 			float: right;
+ 			margin-top: 11px;
+ 			margin-left: 5px;
+ 			width: 27px;
+ 			text-align: right;
+ 		}
+ 		.msg_new .msg_detail{
+ 			font-weight: bold;
+ 		}
+ 		.S_bg1, a.W_gotop, .SW_fun_bg {
+ 			background-color: #f2f2f2;
+ 		}
+ 		.left_nav li .W_new_count{
+ 			margin: 11px 5px 0 0;
+ 			float: right;
+ 		}
+ 		.msg_ico{
+ 			display: inline-block;
+ 			background: url(../images/msg_icon.png) no-repeat;
+ 		}
+ 		.msg_ico_reply {
+ 			width: 16px;
+ 			height: 17px;
+ 			background-position: -71px 0;
+ 			vertical-align: middle;
+ 			margin-right: 2px;
+ 		}
+ 		.box_center .tab_normal .W_btn_a{
+ 			margin-right: 10px;
+ 		}
+ 		/*私信list页面*/
+ 		.item_ta .comment{
+ 			float: left;
+ 		}
+ 		.item_ta .face{
+ 			margin-left: 15px;
+ 		}
+ 		.comment_list  .item_ta .message_arrow{
+ 			position: absolute;
+ 			top: 15px;
+ 			right: -10px;
+ 			left:auto;
+ 			width: 10px;
+ 			overflow: hidden;
+ 		}
+ 		
+ 		.comment_list .item_ta .message_arrow * {
+ 			margin-left: -10px;
+ 		}
+ 		.comment_list .item_ta .message_arrow span{
+ 			margin: -20px 0 0 -11px;
+ 		}
+ 		.item_my .comment{
+ 			background: #fff;
+ 		}
+ 		.send_private_msgbox{
+ 			margin: 20px;
+ 		}
+ 		.send_private_msgbox textarea{
+ 			height: 24px;
+ 		}
+ 		.send_private_msgbox textarea:focus{
+ 			height: 70px;
+ 		}
+ 		/*公共脚模板*/
+ 		.global_footer{
+ 			margin:0 auto;
+ 			margin-top:10px;
+ 			width: 980px;
+ 			height: 208px;
+ 			background:#fff url(../images/global_footer.gif);
+ 		}

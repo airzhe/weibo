@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>我的私信 新浪微博-随时随地分享身边的新鲜事儿</title>
+	<title>私信对话 新浪微博-随时随地分享身边的新鲜事儿</title>
 	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
@@ -52,15 +52,16 @@
 						<ul>
 							<li><a href="#"><i class="ico_myhomepage"></i>首页<i class="new"></i></a></li>
 							<li>
-								<a href="#" class="curr"><i class="ico_message"></i><em class="W_new_count">2</em>私信</a>
+								<a href="#" class="curr"><i class="ico_message"></i>消息</a>
 								<ul>
 									<li><a href=""><i class="W_ico20 ico_lev_at"></i>提到我的</a></li>
 									<li><a href=""><i class="W_ico20 ico_lev_comment"></i>评论</a></li>
 									<li><a href=""><i class="W_ico20 ico_lev_like"></i>赞</a></li>
-									<li><a href="" class="active"><i class="W_ico20 ico_lev_letter"></i>私信</a></li>
-									<li><a href=""><i class="W_ico20 ico_lev_leave"></i>未关注人的私信</a></li>
+									<li><a href=""><i class="W_ico20 ico_lev_letter"></i>私信</a></li>
+									<li><a href="" class="active"><i class="W_ico20 ico_lev_leave"></i>未关注人的私信</a></li>
 								</ul>
 							</li>
+
 							<li><a href="#"><i class="ico_favor"></i>收藏</a></li>
 							<li><a href="#"><i class="ico_sendtome"></i>发给我的</a></li>
 						</ul>
@@ -84,47 +85,97 @@
 					</div>
 					<div class="main clearfix">
 						<div class="box_center left">
-							<div class="title">私信</div>
+							<div class="title">与 runpur 的对话</div>
 							<div class="tab_normal clearfix">
 								<div class="left">
-									<a href="" class="W_btn_a"><span><i class="icon_mes"></i>发私信</span></a>
-									<a href="" class="W_btn_b"><span>清空所有私信</span></a>
+									<a href="" class="W_btn_b"><span>批量删除</span></a>
 								</div>
 								<div class="right">
 									<span class="S_txt2"><i class="icon_lock"></i>消息箱功能设置设置</span>
 									<a href="#" class="set">设置</a>
 								</div>
 							</div>
-							<div class="msg_list">
-								<div>
-									<div class="item S_bg1">
-										<div class="avatar"> <img src="assets/images/01.jpg" width="50" height="50" alt=""></div>
-										<div class="msg_main msg_new ">
-											<div class="msg_title">Babyface_乖乖M</div>
-											<div class="msg_new_state"><em class="W_new_count">2</em></div>
-											<div class="msg_detail S_txt2">我们的成熟是由两部分组成，一半是对美好的追求，一半是对残缺的接纳。我们的成熟是由两部分组成，一半是对美好的追求，一半是对残缺的接纳.</div>
-											<span class="msg_time S_txt2">2013-5-4 22:31</span>
+							<div class="send_private_msgbox">
+								<p style="line-height:24px;">
+									<span class="left"><em class="icon_mes"></em>发私信给：runpur</span><span class="right">还可以输入10000</span>
+								</p>
+								<textarea class="W_input" placeholder="发私信" title="输入要发送的私信">发私信</textarea>
+								<p class="clearfix"><a href="">表情</a><a href="" class="W_btn_b right"><span>发送</span></a></p>
+							</div>
+							<div class="comment_list msg_dialogue">
+
+								<div class="item item_my clearfix">
+									<fieldset class="S_line2 msg_time_line">
+										<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
+									</fieldset>
+									<div class="face">
+										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/avatar.jpg" alt="">
+									</div>
+									<div class="comment " style="width:388px">
+										<div class="message_arrow">
+											<em class="S_line1_c">◆</em>
+											<span class="S_bg1_c">◆</span>
 										</div>
+										<p>
+											<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
+										</p>
 									</div>
 								</div>
-								<div>
-									<div class="item">
-										<div class="avatar"> <img src="assets/images/0" width="50" height="50" alt=""></div>
-										<div class="msg_main">
-											<div class="msg_title">微博小秘书 ：</div>
-											<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span>好吧</div>
-											<span class="msg_time S_txt2">2013-9-19 11:41</span>
+								<div class="item item_ta clearfix">
+									<fieldset class="S_line2 msg_time_line">
+										<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
+									</fieldset>
+									
+									<div class="comment " style="width:388px">
+										<div class="message_arrow">
+											<em class="S_line1_c">◆</em>
+											<span class="S_bg1_c">◆</span>
 										</div>
+										<p>
+											<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
+										</p>
+									</div>
+									<div class="face">
+										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/_01.jpg" alt="">
 									</div>
 								</div>
-								<div class="item">
-									<div class="avatar"> <img src="assets/images/04.jpg" width="50" height="50" alt=""></div>
-									<div class="msg_main">
-										<div class="msg_title">苍井空</div>
-										<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span>好的，我知道了</div>
-										<span class="msg_time S_txt2">2013-4-5 22:26</span>
+								<div class="item item_my clearfix">
+									<fieldset class="S_line2 msg_time_line">
+										<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
+									</fieldset>
+									<div class="face">
+										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/avatar.jpg" alt="">
+									</div>
+									<div class="comment " style="width:388px">
+										<div class="message_arrow">
+											<em class="S_line1_c">◆</em>
+											<span class="S_bg1_c">◆</span>
+										</div>
+										<p>
+											<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
+										</p>
 									</div>
 								</div>
+								<div class="item item_ta clearfix">
+									<fieldset class="S_line2 msg_time_line">
+										<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
+									</fieldset>
+									
+									<div class="comment " style="width:388px">
+										<div class="message_arrow">
+											<em class="S_line1_c">◆</em>
+											<span class="S_bg1_c">◆</span>
+										</div>
+										<p>
+											<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
+										</p>
+									</div>
+									<div class="face">
+										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/_01.jpg" alt="">
+									</div>
+								</div>
+								
+
 							</div>
 						</div>
 						<div class="box_right right">
