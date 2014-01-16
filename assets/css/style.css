@@ -2040,13 +2040,15 @@ body .global_nav .container{
  			line-height: 18px;
  			border-color: #fff;
  		}
+ 		.addFollow .addicon{
+ 			color: #FFA00A;
+ 			vertical-align: -2px;
+ 		}
  		.addicon{
  			font: bold 16px Arial;
  			height: 16px;
  			text-decoration: none;
- 			color: #FFA00A;
  			margin-right: 2px;
- 			vertical-align: -2px;
  		}
  		/*头像设置*/
  		.level_Box{
@@ -2468,4 +2470,166 @@ body .global_nav .container{
  			width: 980px;
  			height: 208px;
  			background:#fff url(../images/global_footer.gif);
+ 		}
+ 		/*搜索页面*/
+ 		#body_search  .miniblog_fb>.container{
+ 			width: 950px;
+ 			background: transparent;
+ 		}
+ 		#body_search .footer{
+ 			width: 910px;
+ 			margin:0 auto;
+ 			background: #fff;
+ 			padding:10px 20px;
+ 			border-top:1px dotted #eaeaea;
+ 		}
+ 		.search_head{
+ 			line-height: 24px;
+ 			margin:13px 0;
+ 		}
+ 		.search_head .logo{
+ 			background: url(../images/search_logo.png) no-repeat;
+ 			width: 106px;
+ 			height: 30px;
+ 			float: left;
+ 			margin-right: 40px;
+ 		}
+ 		.search_head .type{
+ 			margin:0 0 9px 6px;
+ 			padding-top: 10px;
+ 		}
+ 		.search_head  a{
+ 			margin-right: 22px;
+ 			font-size: 14px;
+ 			line-height: 20px;
+ 			color: #fff;
+ 			text-decoration: underline;
+ 		}
+ 		.search_head .type a.curr{
+ 			font-weight: bold;
+ 			text-decoration: none;
+ 			cursor:default;
+ 		}
+ 		.s_from input{
+ 			width: 530px;
+ 			height: 32px;
+ 			padding:0 8px;
+ 			line-height: 28px;
+ 			font-size: 20px;
+ 			color: #333;
+ 			font-family: 微软雅黑;
+ 		}
+ 		.searchBtn{
+ 			background: url(../images/search_btn.png) no-repeat;
+ 			width: 92px;
+ 			height: 34px;
+ 			text-indent: -9999px;
+ 			outline: none;
+ 			display: inline-block;
+ 			vertical-align: top;
+ 			margin-left: 8px;
+ 		}
+ 		.searchBtn:hover{
+ 			background-position: 0 -42px;
+ 		}
+ 		.s_from span{
+ 			display: inline-block;
+ 		}
+ 		.s_from span a{
+ 			font-size: 12px;
+ 			text-decoration: none;
+ 		}
+ 		.s_from span a:hover{
+ 			text-decoration: underline;
+ 		}
+ 		.S_content{
+ 			background:#fff url(../images/c_bg.png) repeat-y;
+ 			min-height: 800px;
+ 		}
+ 		.S_content_l{
+ 			float:left;
+ 			width: 650px;
+ 			padding: 20px 0;
+ 		}
+ 		.S_content_l .S_line1_c{
+ 			margin:0 6px;
+ 		}
+
+ 		.S_content_l>p,.result_list{
+ 			margin: 0 40px 20px;
+ 		}
+
+ 		.S_content_l .filter{
+ 			padding: 10px 0;
+ 			border-bottom: 1px solid #d9d9d9;
+ 		}
+ 		.S_content_l .filter a:first-child{
+ 			margin-left: 8px;
+ 		}
+ 		.S_content_l .item .detail{
+ 			margin-left: 65px;
+ 			position: relative;
+ 		}
+ 		.S_content_l .item .detail .name{
+ 			font-size: 14px;
+ 			font-weight: 700;
+ 		}
+ 		.S_content_l .item .info{
+ 			line-height: 22px;
+ 		}
+ 		.S_content_l .item .operate{
+ 			text-align: right;
+ 			position: absolute;
+ 			right: 0;
+ 			top:0;
+ 		}
+ 		.S_content_l .item .operate .W_addbtn{
+ 			text-decoration: none;
+ 			background-color: #e3ffd5;
+ 			border: 1px solid #d5f7c5;
+ 			color: #389a0a;
+ 			padding:0 5px;
+ 			height: 18px;
+ 			line-height: 18px;
+ 			display: inline-block;
+ 		}
+ 		.S_content_l .item .operate .W_addbtn:hover{
+ 			background-color: #81d300;
+ 			border-color: #4ec000;
+ 			color: #fff;
+ 		}
+ 		.S_content_l .W_ico12,.S_content_l .addr{
+ 			margin-right: 10px;
+ 		}
+ 		.result_list .item{
+ 			border-bottom: dotted 1px #ccc;
+ 			padding-bottom: 16px;
+ 			margin-bottom: 16px;
+ 		}
+ 		.S_content_l .s_from{
+ 			margin-left:40px;
+ 			margin-top:40px;
+ 		}
+ 		.S_content_l .s_from input{
+ 			width: 450px;
+ 		}
+ 		.S_content_r{
+ 			float:right;
+ 		}
+ 		.icon_connect{
+ 			display: inline-block;
+ 			width: 39px;
+ 			height: 14px;
+ 			overflow: hidden;
+ 			background: url(../images/connect_ico.png) no-repeat 0 0;
+ 		}
+ 		.search_icon{
+ 			display: inline-block;
+ 			vertical-align: middle;
+ 			background: url(../images/search_ico.png) no-repeat;
+ 		}
+ 		.searchper_icon {
+ 			background-position: -23px -709px;
+ 			width: 17px;
+ 			height: 17px;
  		}
