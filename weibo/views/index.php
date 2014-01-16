@@ -51,22 +51,25 @@
 				</div>
 				<div class="user_info clearfix">
 					<div class="head left">
-						<img class="avatar" src="./assets/images/avatar.jpg" alt="">
+						<div class="avatar">
+							<img src="./assets/images/avatar.jpg" alt="">
+							<a href="#" class="W_btn_c change_avatar"><span>更换头像</span></a>
+						</div>
 						<ul class="user_atten clearfix">
-							<li>
-								<a href="">
+							<li class="S_line1">
+								<a href="" class="S_func1">
 									<strong>35</strong>
 									<span>关注</span>
 								</a>
 							</li>
-							<li>
-								<a href="">
+							<li class="S_line1">
+								<a href="" class="S_func1">
 									<strong>8</strong>
 									<span>粉丝</span>
 								</a>
 							</li>
-							<li>
-								<a href="">
+							<li class="S_line1">
+								<a href="" class="S_func1">
 									<strong>42</strong>
 									<span>微博</span>
 								</a>
@@ -81,7 +84,7 @@
 						</div>
 						<p class="S_txt2">分手快乐</p>
 						<p><i class="W_ico12 male"></i><i class="W_vline S_line1_c">|</i><a href="#">求交往</a><i class="W_vline S_line1_c">|</i><a href="">河南 郑州</a></p>
-						<p class="edit"><a href=""><span>编辑个人资料</span></a></p>
+						<p class="edit"><a href="" class="W_btn_c"><span>编辑个人资料</span></a></p>
 					</div>
 				</div>
 				<div >
@@ -103,7 +106,7 @@
 							<a href="#">原创</a><i class="S_txt3">|</i>
 							<a href="#">图片</a>
 						</p>
-						<div class="feed_self">
+						<div class="weibo_list feed_self">
 							<div class="item">
 								<div class="detail">
 									<div class="content">
@@ -186,11 +189,12 @@
 								</div>
 							</div>
 						</div>
+						<a class="PRF_feed_list_more SW_fun_bg S_line2" href="#"><span>查看更多微博»</span></a>
 					</div>
 					<div class="sidebar right">
 						<!-- 关注/粉丝 -->
 						<div class="relation">
-							<h4><a href="#">关注/粉丝</a><span class="S_txt2">我的关注和粉丝</span></h4>
+							<h4><a href="#" class="S_func1">关注/粉丝</a><span class="S_txt2">我的关注和粉丝</span></h4>
 							<div>
 								<fieldset>
 									<legend class="title"><a href="#" class="S_func1">我的关注(36)</a></legend>
@@ -215,7 +219,7 @@
 							</div>
 							<!-- 微相册 -->
 							<div class="album">
-								<h4><a href="#">微相册</a><span class="S_txt2">10,000,000+人在用</span></h4>
+								<h4><a href="#" class="S_func1">微相册</a><span class="S_txt2">10,000,000+人在用</span></h4>
 								<div>
 									<ul class="picitems clearfix">
 										<li><a href="#"><img src="./assets/images/pic1.jpg" alt="" width="72" height="72"></a></li>
