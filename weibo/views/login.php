@@ -12,10 +12,10 @@
  			/**
  			 * 登录文本框获得焦点隐藏提示文字，失去焦点显示提示文字
  			 */
- 			 $('.login_form').find('input').on('focus',function(){
+ 			 $('.W_input').on('focus',function(){
  			 	$(this).next('span').hide();
  			 })
- 			 $('.login_form').find('input').on('blur',function(){
+ 			 $('.W_input').on('blur',function(){
  			 	if($(this).val()==''){
  			 		$(this).next('span').show();
  			 	}
@@ -34,22 +34,22 @@
  			<div class="leftbox left">
  				<div class="top">
  					还没有微博帐号？现在加入
- 					<a href=""><span>立即注册</span></a>
+ 					<a href="" class="btn_reg_red"><span>立即注册</span></a>
  				</div>
  				<div class="show_img">
  					<img src="<?php echo base_url('assets/images/wireless.jpg') ?>" alt="">
  				</div>
  			</div>
  			<div class="loginbox right">
- 				<div class="login_form">
- 					<p class="title">普通登录<i>|</i><a href="#">二维码登录</a></p>
+ 				<div class="W_login_form">
+ 					<p class="title">普通登录<i class="W_vline S_txt2">|</i><a href="#">二维码登录</a></p>
  					<form action="">
  						<p>
- 							<input type="text" name="account">
+ 							<input class="W_input" type="text" name="account">
  							<span>请输入帐号</span>
  						</p>
  						<p>
- 							<input type="text" name="passwd">
+ 							<input class="W_input" type="text" name="passwd">
  							<span>请输入密码</span>
  						</p>
  						<p class="auto_login clearfix">
@@ -59,8 +59,8 @@
  							<i class="icon_ask"></i>
  							<a href="#" class="right">忘记密码</a>
  						</p>
- 						<div class="submit"><button><i></i>登录</button></div>
- 						<p class="clearfix">还没微博<a href="#" class="right">立即注册</a></p>
+ 						<a href="#" class="W_btn_g"><span>登录</span></a>
+ 						<p class="S_txt2 clearfix ">还没微博？<a href="#">立即注册！</a></p>
  					</form>
  					<div class="login_mode">
  						

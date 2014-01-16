@@ -422,7 +422,7 @@ sub {
  */
  input[type=text],input[type=password]{
   min-height:20px;
-  padding:3px;
+  /*padding:3px;*/
   border:1px solid #e4e4e4;
   outline:none;
 }
@@ -472,6 +472,6 @@ textarea{
 /*
 * em
 */
-em{
+em,i{
   font-style: normal;
 }

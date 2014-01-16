@@ -8,6 +8,7 @@ fieldset {
 	border-style: solid;
 	border-width: 1px 0 0 0;
 }
+
 .S_txt2{
 	color:#808080;
 }
@@ -25,8 +26,11 @@ fieldset {
 .S_func1:hover{
 	color:#0a8cd2;
 }
-.S_link2{
+.S_link2,.S_func2:hover{
 	color: #6cbae4;
+}
+.S_func2{
+	color: #b1d8ed;
 }
 .S_line1_c {
 	color: #d9d9d9;
@@ -131,6 +135,7 @@ textarea.W_input {
 	line-height: 12px;
 	color: rgb(102, 102, 102);
 }
+/*icon*/
 .icon_error, .icon_del, .icon_succ, .icon_warn, .icon_ask, .icon_rederror, .icon_errorS, .icon_delS, .icon_succS, .icon_warnS, .icon_askS, .icon_rederrorS, .icon_errorM, .icon_delM, .icon_succM, .icon_warnM, .icon_questionM, .icon_rederrorM, .icon_errorB, .icon_delB, .icon_succB, .icon_warnB, .icon_questionB, .icon_rederrorB, .icon_promptS, .icon_noticeS {
 	width: 16px;
 	height: 16px;
@@ -144,6 +149,20 @@ textarea.W_input {
 	display: inline-block;
 	width: 12px;
 	height: 12px;
+	background-image: url(../images/icon.png);
+	background-repeat: no-repeat;
+}
+.W_ico16 {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/icon.png);
+	background-repeat: no-repeat;
+}
+.W_ico20 {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
 	background-image: url(../images/icon.png);
 	background-repeat: no-repeat;
 }
@@ -207,31 +226,65 @@ body .global_nav .container{
  	font-style: italic;
  	background-color: #fafafa;
  }
- .leftbox .top span{
 
- 	background: #e64141;
-
- 	width: 143px;
- 	height: 36px;
+ /*立即注册按钮*/
+ .btn_reg_red, .btn_reg_red span, .W_btn_g ,.W_btn_g span {
  	display: inline-block;
- 	border: 1px solid #eb6767;
- 	line-height: 36px;
+ 	cursor: pointer;
  }
- .leftbox .top a{
+ .btn_reg_red {
+ 	margin-left: 24px;
  	font-style: normal;
- 	display: inline-block;
-
- 	color:#fff;
- 	text-align: center;
+ 	border: 1px solid #e64141;
  	border-radius: 2px;
  	box-shadow: 0px 1px rgba(0,0,0,.3);
- 	font-size:22px;
- 	border: 1px solid #e64141;
- 	margin-left:25px;
  }
- .leftbox .top a:hover span{
- 	background: -webkit-linear-gradient(top, #f95959 50%,#f04d4d 80%,#e74242 100%);
+
+ .btn_reg_red span {
+ 	width: 143px;
+ 	height: 36px;
+ 	line-height: 36px;
+ 	border: 1px solid #eb6767;
+ 	color: #FFF;
+ 	background: #e64141;
+ 	font-size: 22px;
+ 	text-align: center;
+ 	font-family: "Microsoft yahei";
  }
+ .btn_reg_red:hover span {
+ 	background:linear-gradient(#f95959 0%,#f04d4d 50%,#e74242 100%);
+ }
+
+ /*登录按钮*/
+ .W_btn_g {
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	border-color: #ff9b01;
+ 	background-color: #ffa00a;
+ 	border-radius: 2px;
+ 	overflow: hidden;
+ 	vertical-align: middle;
+ }
+ .W_btn_g span{
+ 	text-align: center;
+ 	white-space: nowrap;
+ 	border-style: solid;
+ 	border-width: 1px;
+ 	border-radius: 2px;
+ 	height: 26px;
+ 	line-height: 25px;
+ 	vertical-align: middle;
+ 	font-size: 14px;
+ 	font-weight: bold;
+ 	border-color: #ffb33b;
+ 	padding: 0 79px 0 78px;
+ 	min-width: 49px;
+ 	color: #fff;
+ }
+ .W_btn_g:hover{
+ 	background: linear-gradient(rgba(255,184,71,1) 0%,rgba(255,162,16,1) 100%);
+ }
+
  .leftbox .show_img{
  	background: #fff;
  	padding: 15px 6px 15px 10px;
@@ -241,93 +294,49 @@ body .global_nav .container{
  	padding-left:59px;
  	font-size:12px;
  }
- .login_form{
+ .W_login_form{
  	width: 210px;
  	margin: 29px 0 0;
  }
- .login_form .title{
+ .W_login_form .title{
  	line-height: 30px;
  }
- .login_form .title a{
+ .W_login_form .title a{
  	line-height: 30px;
  }
-
- .login_form .title i{
- 	margin:0 8px;
+ .W_login_form .W_vline{
+ 	margin: 0 8px 0 10px;
  }
 
- .login_form form p{
+ .W_login_form form p{
  	position: relative;
  }
- .login_form form p span{
+ .W_login_form form p span{
  	position: absolute;
  	left:40px;
  	top:9px;
  	color:#808080;
  }
- .login_form input[type=text]{
- 	border-radius: 2px;
+ .W_login_form .W_input{
  	width: 167px;
- 	box-shadow: 1px 1px 1px 0px #eaeaea inset;
  	padding-left:37px;
- 	background-image: url(../images/form_login.png);
- 	background-repeat: no-repeat;
- 	margin: 2px 0px;
+ 	background: url(../images/form_login.png) no-repeat;
  }
- .login_form input[type=text]:focus{
- 	border-color: #FFB941;
- }
-
  .loginbox input[name=passwd]{
  	background-position: 0 -50px;
  }
- #login_form_savestate{
+ #W_login_form_savestate{
  	margin-right: 3px;
  	vertical-align:-2px;
  }
  .icon_ask{
- 	width: 16px;
- 	height: 16px;
- 	background: url(../images/ico_warn.png) 0 -150px;
- 	margin-left: 3px;
- 	overflow: hidden;
- 	display: inline-block;
- 	vertical-align:middle;
+ 	background-position: 0 -150px;
  }
 
  .auto_login a{
  	text-decoration:none
  }
 
- .login_form button{
- 	width:100%;
- 	border:1px solid #ffb33b;
- 	line-height: 26px;
- 	padding:0px;
- 	font-weight: bold;
- 	border-radius:2px;
- 	text-align: center;
- 	color:#fff;
- 	font-size:14px;
- }
- .login_form .submit{
- 	border:1px solid #ff9b01;
- 	background-color: #ffa00a;
- 	font-weight: bold;
- }
- .login_form .submit:hover{
- 	background: #FFAB25;
- }
- .login_form .submit i{
- 	width: 16px;
- 	height: 16px;
- 	display: inline-block;
- 	background: url(../images/loading.gif) no-repeat;
- 	vertical-align: -2px;
- }
- .login_form .submit+p{
- 	color: #808080;
- }
  .login_mode{
  	margin-top:25px;
  	width: 149px;
@@ -388,12 +397,9 @@ body .global_nav .container{
  	border-bottom: 3px solid #FFA00A;
  	padding-bottom: 5px;
  }
- .body_signup .reg_title i{
- 	color:#999;
- 	height:10px;
- 	line-height: 10px;
- 	font-weight: normal;
- 	font-size: 12px;margin:0 15px;
+ .body_signup .reg_title .vline{
+ 	margin: 0 19px;
+ 	color: #999;
  }
  .reg_info{
  	background: url(../images/reg_vline.png) no-repeat 630px 0;
@@ -405,19 +411,12 @@ body .global_nav .container{
  	margin: 0 0 15px;
  	position: relative;
  }
- .info_list input[type=text],.info_list input[type=password]{
- 	width: 196px;
- 	border: 1px solid #CCCCCC;
- 	border-radius: 2px;
- 	box-shadow: 0 1px 1px 0 #EAEAEA inset;
- 	color: #808080;
- 	height: 28px;
- 	padding: 0 0 0 2px;
- 	vertical-align: middle;
- }
 
- .info_list input[type=text]:focus,.info_list input[type=password]:focus{
- 	border-color: #FFB941;
+ .W_reg_form .inp .W_input {
+ 	font-size: 14px;
+ }
+ .W_reg_form .inp .W_input {
+ 	width: 196px;
  }
 
  .info_list .tit{
@@ -444,18 +443,10 @@ body .global_nav .container{
  	width: 200px;
  }
  .info_list .error{
- 	color:#E64141;
-
+ 	color:#e64141;
  }
- .info_list .error i{
- 	background-image: url(../images/ico_warn.png);
+ .info_list .error i{ 
  	background-position: 0 -250px;
- 	background-repeat: no-repeat;
- 	width: 16px;
- 	height: 16px;
- 	display: inline-block;
- 	vertical-align: middle;
- 	margin-right: 3px;
  }
  .info_list .choose label {
  	line-height: 30px;
@@ -464,7 +455,7 @@ body .global_nav .container{
  .info_list .choose input {
  	vertical-align: -2px;
  }
- .info_list input[name=code]{
+ .W_reg_form input[name=code].W_input{
  	width: 70px;
  }
  .info_list #code{
@@ -486,34 +477,13 @@ body .global_nav .container{
  	position: relative;
  	top:-5px;
  }
- .reg_form button{
- 	width:100%;
- 	border:1px solid #ffb33b;
- 	line-height: 26px;
- 	padding:5px 0;
- 	font-weight: bold;
- 	border-radius:2px;
- 	text-align: center;
+ /*立即注册按钮*/
+ .W_btn_big span{
+ 	padding-top: 5px;
+ 	padding-bottom: 5px;
  	font-size: 16px;
- 	color:#fff;
  }
- .reg_form .submit{
- 	width: 196px;
- 	border:1px solid #ff9b01;
- 	background-color: #ffa00a;
- 	font-weight: bold;
- }
- .reg_form .submit:hover{
- 	background: #FFAB25;
- }
- .reg_form .submit i{
- 	width: 16px;
- 	height: 16px;
- 	display: inline-block;
- 	background: url(../images/loading.gif) no-repeat;
- 	vertical-align: -2px;
- }
- .reg_form .agreement{
+ .W_reg_form .agreement{
  	font-size: 12px;
  	line-height: 20px;
  }
@@ -611,7 +581,7 @@ body .global_nav .container{
  .global_nav .nav a:hover{
  	background: url(../images/bg_nav.png) repeat-x 0 -76px;
  }
- .global_nav .nav a .arrow{
+ .ico_down{
  	border-width: 4px;
  	margin-left:3px;
  	vertical-align: -10px;
@@ -791,29 +761,24 @@ body .global_nav .container{
  	font-size: 12px;
  	padding: 1px 5px 0;
  }
- .left_nav ul li i {
- 	display: inline-block;
- 	width: 20px;
- 	height: 20px;
- 	background-image: url(../images/icon.png);
- 	background-repeat: no-repeat;
+ .left_nav .W_ico20 {
  	margin-right: 10px;
  	vertical-align: -5px;
  }
- .left_nav ul i.ico_message {
+ .ico_message {
  	background-position: 0 -25px;
  }
- .left_nav ul i.ico_favor {
+ .ico_favor {
  	background-position: 0 -50px;
  }
- .left_nav ul i.ico_sendtome {
+ .ico_sendtome {
  	background-position: 0 -75px;
  }
 
- .left_nav ul i.ico_goodfriend {
+ .ico_goodfriend {
  	background-position: 0 -299px;
  }
- .left_nav ul i.ico_group {
+ .ico_group {
  	background-position: 0 -124px;
  }
 
@@ -843,58 +808,59 @@ body .global_nav .container{
  	top:0;
  	right: 0;
  	bottom: 0;
- 	background:url(../images/all_iconbtn.pfng) no-repeat;
+ 	background:url(../images/all_iconbtn.png) no-repeat;
  }
  /*还能输入140字*/
- .box_center .send_weibo .num{
+ .send_weibo .num{
  	position: absolute;
  	top:0;
  	right:0;
  	line-height: 24px;
  }
- .box_center .send_weibo .num span {
+ .send_weibo .num span {
  	font-weight: 700;
  	font-size: 22px;
  	font-style: italic;
  	font-family: Constantia, Georgia;
  }
- .box_center div.input{
- 	height: 88px;
+ .send_weibo .input{
  	position: relative;
- 	border-radius: 3px;
  	margin: 15px 0 0;
- 	background-color: #FFFFFF;
- 	border: 1px solid #ccc;
- 	box-shadow: 1px 1px 1px 0px #eaeaea inset;
  }
- .box_center div.clicked{
- 	border-color:#ffb941;
- 	box-shadow: 1px 1px 1px 0px #ddd inset;
- }
- .box_center .input_detail{
- 	background: transparent;
- 	width: 544px;
- 	height: 74px;
- 	padding: 5px;
+
+ .send_weibo .input_detail{
  	font-family: "Tahoma", "SimSun";
- 	font-size: 14px;
  	line-height: 18px;
  	overflow-x: hidden;
  	overflow-y: auto;
  	word-wrap: break-word;
  	outline: none;
- 	border: 0;
- 	margin: 2px 0 0 2px;
+ 	padding: 5px;
  	resize:none;
+ 	width: 548px;
+ 	height: 88px;
+ 	font-size: 14px;
+ 	border-radius: 3px;
+ 	background: #FFF;
+ 	border: 1px solid #ccc;
+ 	box-shadow: 1px 1px 1px 0px #eaeaea inset;
  }
- .box_center div.input .arrow{
+
+ .send_weibo .input .arrow{
  	display: block;
  	width: 11px;
  	height: 19px;
  	position: absolute;
  	top: 19px;
- 	right: -11px;
+ 	right: -10px;
  	background:url(../images/all_iconbtn.png) -475px 0 no-repeat;
+ 	
+ }
+ .send_weibo .input.clicked .input_detail{
+ 	border-color:#ffb941;
+ }
+ .send_weibo .input.clicked .arrow{
+ 	background:url(../images/icon.png) -475px -51px no-repeat;
  }
  /*微博发表成功提示*/
  .box_center .input .send_succpic{
@@ -910,10 +876,8 @@ body .global_nav .container{
  	float: left;
  	width: 37px;
  	height: 50px;
- 	background: url(../images/ico_warn.png) -100px 0 no-repeat;
+ 	background-position: -100px 0;
  	margin: 0 10px 0 0;
- 	overflow: hidden;
- 	display: inline-block;
  }
  .box_center .input .send_succpic .txt {
  	color: #333;
@@ -921,8 +885,8 @@ body .global_nav .container{
  	font: normal 16px/22px Microsoft Yahei;
  	margin-top: 12px;
  }
- .send_btn{
- 	margin-top:5px;
+ /*发布微博按钮*/
+ .W_btn_v, .W_btn_v:hover {
  	border-width: 1px;
  	border-style: solid;
  	border-color: #e64141;
@@ -934,7 +898,23 @@ body .global_nav .container{
  	vertical-align: middle;
  	cursor: pointer;
  }
- .send_btn span{
+ .W_btn_v span {
+ 	padding: 0 9px;
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	border-color: #f57373;
+ 	color: #fff;
+ }
+ .W_btn_a .btn_30px, .W_btn_b .btn_30px, .W_btn_c .btn_30px, .W_btn_v .btn_30px {
+ 	display: inline-block;
+ 	height: 26px;
+ 	line-height: 26px;
+ 	padding: 0 15px;
+ }
+ .send_weibo .send_btn{
+ 	margin-top:5px;
+ }
+ .send_weibo .send_btn span {
  	display: inline-block;
  	width: 78px;
  	padding: 0;
@@ -942,15 +922,9 @@ body .global_nav .container{
  	font-size: 16px;
  	font-family: "Microsoft Yahei";
  	text-shadow: 1px 1px rgba(0,0,0,.2);
- 	border: 1px solid #f57373;
- 	color: #fff;
- 	border-radius: 2px;
- 	height: 26px;
- 	line-height: 26px;
  }
- .send_btn:not(.disable):hover span{
- 	background:#F95959;
- 	background-image: -webkit-linear-gradient(center top,#f95959 0%,#e74343 100%);
+ .send_weibo .send_btn:hover{
+ 	background-image: linear-gradient(rgba(249,89,89,1) 0%,rgba(231,67,67,1) 100%);
  }
 
  .send_btn.disable{
@@ -968,22 +942,12 @@ body .global_nav .container{
  	width: 390px;
  	padding: 10px 0 0;
  }
+
  .kind_detail a{
- 	color:#333;
- 	text-decoration: none;
  	margin-right: 14px;
  }
- .kind_detail a:hover{
- 	color:#0a8cd2;
- }
- .kind_detail i{
- 	display: inline-block;
- 	height: 16px;
- 	width: 16px;
- 	margin-right: 4px;
- 	vertical-align: -4px;
- 	background:url(../images/icon.png) no-repeat;
- }
+
+
  .kind_detail i.icon_face{
  	background-position: -275px -0px;
  }
@@ -999,14 +963,17 @@ body .global_nav .container{
  .kind_detail i.icon_chang{
  	background-position: -275px -100px;
  }
-
- .weibo .title h3{
+ .send_weibo .kind_detail .W_ico16 {
+ 	margin: 0 4px 0 0;
+ 	vertical-align: -4px;
+ }
+ .weibo .feed_nav h3{
  	padding: 0 10px;
  	line-height: 32px;
  	font-size: 14px;
  	border-bottom:2px solid #ea1429;
  }
- .weibo .title h3 +.bg{
+ .weibo .feed_nav h3 +.bg{
  	position: relative;
  	top: -22px;
  	width: 44px;
@@ -1064,8 +1031,6 @@ body .global_nav .container{
  }
  .weibo_list .item .detail .name{
  	font-weight: 700;
- 	text-decoration: none;
- 	color:#333;
  }
  .weibo_list .item .detail .content{
  	font-size: 14px;
@@ -1085,9 +1050,7 @@ body .global_nav .container{
  .weibo_list .item .detail .func i{
  	margin: 0 6px 0 8px;
  }
- .weibo_list .item .detail .left a{
- 	color:#6CBAE4;
- }
+
  .weibo_list .item .detail .func .time{
  	margin-right: 7px;
  }
@@ -1113,9 +1076,8 @@ body .global_nav .container{
  	font-size:12px;
  	line-height: 21px;
  }
- .weibo_list .item .detail .forwardContent .func a{
- 	color:#6cbae4;
- }
+
+
 
  /*右侧边栏*/
 
@@ -1149,14 +1111,10 @@ body .global_nav .container{
  	font-weight: bold;
  	margin:5px 0 0 8px;
  }
- .box_right .user_info div a{
+ .box_right .user_info div .username{
  	word-wrap: break-word;
- 	color:#333;
- 	text-decoration: none;
  }
- .box_right .user_info div a:hover{
- 	color:#0a8cd2;
- }
+
  .box_right .user_info div .level{
  	margin-top:3px;
  	display: inline-block;
@@ -1167,196 +1125,187 @@ body .global_nav .container{
  	padding: 5px 0px 0px 6px;
  	background: url(../images/level.png) no-repeat 0 -30px;
  }
- .box_right .user_info div .level span{
- 	display: inline-block;
- 	height: 10px;
- 	font-size: 0px;
- 	width: 26px;
- 	background: url(../images/level.png) no-repeat 0px -210px;
- }
- .box_right  .user_atten{
- 	padding: 20px;
- }
- .box_right  .user_atten li:not(:last-of-type){
- 	float:left;
- 	margin-right: 5px;
- 	padding-right: 5px;
- 	border-right:1px solid #e6e6e6;
- }
- .box_right  .user_atten li a{
- 	color:#333;
- 	text-decoration: none;
- }
- .box_right  .user_atten li a:hover{
- 	color:#0a8cd2;
- }
- .box_right  .user_atten li strong{
- 	display: block;
- 	font-size: 20px;
- 	margin: 0px 0px 4px;
- 	font-weight: 400;
- 	line-height: 15px;
- 	font-family: tahoma;
- }
-
- .box_right .hot_topics fieldset{
- 	border-color: #e6e6e6;
- 	margin:0;
- 	padding: 0 0 10px 15px;
- }
-
- .box_right .hot_topics fieldset legend{
- 	line-height: 22px;
- 	font-weight: bold;
- 	font-size: 14px;
- 	padding: 1px 5px 0;
- }
- .box_right .hot_topics ul{
- 	line-height: 24px;
- 	padding:0 20px;
- }
- .box_right .hot_topics ul li{
- 	position: relative;
- }
- .box_right .hot_topics ul span{
- 	position: absolute;
- 	right: 0;
- 	top:0px;
- }
- .gotop{
- 	width: 22px;
- 	display: block;
- 	background:#f2f2f2;
- 	border:1px solid #ccc;
- 	position: absolute;
- 	left:50%;
- 	bottom:100px;
- 	margin-left: 490px;
- 	position: fixed;
- }
- .gotop:hover{
- 	color:#808080;
- 	text-decoration: none;
- }
- .gotop span{
- 	display: block;
- 	border: 1px solid #fff;
- 	height: 73px;
- 	width: 20px;
- 	padding-top: 10px;
- 	text-decoration: none;
- 	cursor: pointer;
- 	line-height: 12px;
- 	text-align: center;
- 	font-size:12px;
- }
- .gotop .icon_gotop{
- 	display: inline-block;
- 	width: 12px;
- 	height: 12px;
- 	background:url(../images/icon.png) no-repeat -75px -100px;
- }
- .gotop:hover .icon_gotop{
- 	background-position: -100px -100px;
- }
- /*用户个人主页*/
- .body_index{
- 	background-color:#bee1f5;
- }
- .body_index .container{
- 	width: 980px;
- 	position: relative;
- 	background: #fff;
- }
-
- .body_index .miniblog{
- 	padding-top:40px;
- }
- .body_index .profile_pic_top{
- 	height: 300px;
- 	position: relative;
- 	background-position: center bottom;
- 	background-repeat: no-repeat;
- }
- .body_index .user_info{
- 	position: relative;
- 	/*background:#fff;*/
- 	padding-bottom: 30px;
- }
- .body_index .user_info .head{
- 	position: absolute;
- 	top: -108px;
- 	left: 20px;
- 	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
- 	background:#fafafa;
- 	padding:2px;
- }
- .body_index .user_info .avatar{
- 	display: block;
- }
- .body_index .user_info .user_atten{
- 	margin:5px 0 4px 0;
- }
-
- .body_index .user_info .user_atten li:not(:last-of-type){
- 	float:left;
- 	margin-right: 5px;
- 	padding: 0 3px 3px;
- 	text-align: center;
- 	width: 53px;
- 	border-right:1px solid #e6e6e6;
- }
- .body_index .user_info .user_atten li a{
- 	color:#333;
- 	text-decoration: none;
- }
- .body_index .user_info .user_atten li a:hover{
- 	color:#0a8cd2;
- }
- .body_index .user_info .user_atten li strong{
- 	font-size: 20px;
- 	line-height: 20px;
- 	display: block;
- 	margin-bottom: 5px;
- 	font-family: Tahoma;
- 	font-weight: 400;
- }
- .body_index .user_info .info{
- 	margin-left: 225px;
- 	
- 	padding-top: 10px;
- 	position: relative;
- }
- .body_index .user_info .info p{
- 	margin-bottom:8px;
- 	/*line-height: 22px;*/
- }
- .body_index .user_info .info span.name{
- 	font: normal 20px/30px "Microsoft Yahei";
- 	margin-right: 3px;
- }
-
- .body_index .user_info .level{
- 	margin-top:3px;
+ 
+ .W_level_ico {
  	display: inline-block;
  	overflow: hidden;
  	height: 9px;
  	width: 28px;
- 	font-size: 0px;
- 	padding: 5px 0px 0px 6px;
- 	background: url(../images/level.png) no-repeat 0 -30px;
+ 	font-size: 0;
+ 	padding: 5px 0 0 6px;
+ 	background: url(../images/level.png)
  }
- .body_index .user_info .level span{
+ .W_level_num  {
  	display: inline-block;
- 	height: 15px;
- 	font-size: 0px;
+ 	height: 10px;
+ 	font-size: 0;
  	width: 26px;
- 	background: url(../images/level.png) no-repeat 0px -210px;
+ 	background: url(../images/level.png)
  }
-/* .body_index .user_info p i{
- 	margin: 0 9px 0 5px;
- 	color:#d9d9d9;
- 	}*/
+ .W_level_ico.color3 {
+ 	background-position: 0 -30px;
+ }
+ .W_level_num.l7 {
+ 	background-position: 0 -210px;
+ }
+ 
+ 	.box_right  .user_atten{
+ 		padding: 20px;
+ 	}
+ 	.box_right  .user_atten li:not(:last-of-type){
+ 		float:left;
+ 		margin-right: 5px;
+ 		padding-right: 5px;
+ 		border-right:1px solid #e6e6e6;
+ 	}
+
+ 	.box_right  .user_atten li strong{
+ 		display: block;
+ 		font-size: 20px;
+ 		margin: 0px 0px 4px;
+ 		font-weight: 400;
+ 		line-height: 15px;
+ 		font-family: tahoma;
+ 	}
+
+ 	.box_right .hot_topics fieldset{
+ 		border-color: #e6e6e6;
+ 		margin:0;
+ 		padding: 0 0 10px 15px;
+ 	}
+
+ 	.box_right .hot_topics fieldset legend{
+ 		line-height: 22px;
+ 		font-weight: bold;
+ 		font-size: 14px;
+ 		padding: 1px 5px 0;
+ 	}
+ 	.box_right .hot_topics ul{
+ 		line-height: 24px;
+ 		padding:0 20px;
+ 	}
+ 	.box_right .hot_topics ul li{
+ 		position: relative;
+ 	}
+ 	.box_right .hot_topics ul span{
+ 		position: absolute;
+ 		right: 0;
+ 		top:0px;
+ 	}
+ 	.gotop{
+ 		width: 22px;
+ 		display: block;
+ 		background:#f2f2f2;
+ 		border:1px solid #ccc;
+ 		position: absolute;
+ 		left:50%;
+ 		bottom:100px;
+ 		margin-left: 490px;
+ 		position: fixed;
+ 	}
+ 	.gotop:hover{
+ 		color:#808080;
+ 		text-decoration: none;
+ 	}
+ 	.gotop span{
+ 		display: block;
+ 		border: 1px solid #fff;
+ 		height: 73px;
+ 		width: 20px;
+ 		padding-top: 10px;
+ 		text-decoration: none;
+ 		cursor: pointer;
+ 		line-height: 12px;
+ 		text-align: center;
+ 		font-size:12px;
+ 	}
+ 	.gotop .icon_gotop{
+ 		display: inline-block;
+ 		width: 12px;
+ 		height: 12px;
+ 		background:url(../images/icon.png) no-repeat -75px -100px;
+ 	}
+ 	.gotop:hover .icon_gotop{
+ 		background-position: -100px -100px;
+ 	}
+ 	/*用户个人主页*/
+ 	.body_index{
+ 		background-color:#bee1f5;
+ 	}
+ 	.body_index .container{
+ 		width: 980px;
+ 		position: relative;
+ 		background: #fff;
+ 	}
+
+ 	.body_index .miniblog{
+ 		padding-top:40px;
+ 	}
+ 	.body_index .profile_pic_top{
+ 		height: 300px;
+ 		position: relative;
+ 		background-position: center bottom;
+ 		background-repeat: no-repeat;
+ 	}
+ 	.body_index .user_info{
+ 		position: relative;
+ 		/*background:#fff;*/
+ 		padding-bottom: 30px;
+ 	}
+ 	.body_index .user_info .head{
+ 		position: absolute;
+ 		top: -108px;
+ 		left: 20px;
+ 		box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+ 		background:#fafafa;
+ 		padding:2px;
+ 	}
+ 	.body_index .user_info .avatar{
+ 		display: block;
+ 	}
+ 	.body_index .user_info .user_atten{
+ 		margin:5px 0 4px 0;
+ 	}
+
+ 	.body_index .user_info .user_atten li:not(:last-of-type){
+ 		float:left;
+ 		margin-right: 5px;
+ 		padding: 0 3px 3px;
+ 		text-align: center;
+ 		width: 53px;
+ 		border-right:1px solid #e6e6e6;
+ 	}
+ 	.body_index .user_info .user_atten li a{
+ 		color:#333;
+ 		text-decoration: none;
+ 	}
+ 	.body_index .user_info .user_atten li a:hover{
+ 		color:#0a8cd2;
+ 	}
+ 	.body_index .user_info .user_atten li strong{
+ 		font-size: 20px;
+ 		line-height: 20px;
+ 		display: block;
+ 		margin-bottom: 5px;
+ 		font-family: Tahoma;
+ 		font-weight: 400;
+ 	}
+ 	.body_index .user_info .info{
+ 		margin-left: 225px;
+
+ 		padding-top: 10px;
+ 		position: relative;
+ 	}
+ 	.body_index .user_info .info p{
+ 		margin-bottom:8px;
+ 		/*line-height: 22px;*/
+ 	}
+ 	.body_index .user_info .info span.name{
+ 		font: normal 20px/30px "Microsoft Yahei";
+ 		margin-right: 3px;
+ 	}
+
+ 	
  	/*可以集体定义*/
  	i.male{
  		display: inline-block;
@@ -2063,11 +2012,7 @@ body .global_nav .container{
  			vertical-align: -5px;
  			background-image: url(../images/account_ico.png);
  		}
- 		.W_ico20 {
- 			display: inline-block;
- 			width: 20px;
- 			height: 20px;
- 		}
+ 		
  		.ico_avater{
  			background-position: 0 -25px;
  		}
@@ -2632,4 +2577,44 @@ body .global_nav .container{
  			background-position: -23px -709px;
  			width: 17px;
  			height: 17px;
+ 		}
+ 		/*邮件激活*/
+ 		.mail_active{
+ 			width: 980px;
+ 			margin:0 auto;
+ 			padding-bottom: 9px;
+ 			z-index: 1024;
+ 			background: url(../images/shadow_invite_reg.png) no-repeat  center bottom;
+ 		}
+ 		.mail_active .box{
+ 			padding:10px 0;
+ 			background-color: rgb(255, 253, 229);
+ 			border: 1px solid rgb(252, 237, 177);
+ 		}
+ 		.mail_active .box>div{
+ 			display: inline-block;
+ 			vertical-align: top;
+ 		}
+ 		.mail_active .box div p{
+ 			margin: 5px 0;
+ 		}
+ 		.mail_active .box .icon_errorB{
+ 			margin-left: 53px;
+ 		}
+ 		.mail_active .box .W_btn_b{
+ 			margin-right: 10px;
+ 		}
+ 		.mail_active .S_spetxt{
+ 			margin: 0px 5px;
+ 			color: rgb(228, 68, 67);
+ 			font-size: 16px;
+ 		}
+ 		.mail_active .icon_errorB{
+ 			width: 50px;
+ 			height: 50px;
+ 			background: url(../images/ico_warn.png) no-repeat;
+ 			margin: 0px 3px 0px 0px;
+ 			overflow: hidden;
+ 			display: inline-block;
+ 			background-position: -100px -100px;
  		}

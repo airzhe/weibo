@@ -11,6 +11,7 @@
 <body class="body_home">
 	<div class="miniblog">
 		<div class="miniblog_fb">
+
 			<div class="header global_nav">
 				<div class="nav_bg">
 					<div class="container">
@@ -19,9 +20,9 @@
 						</div>
 						<div class="nav clearfix">
 							<a href="#" class="current">首页</a>
-							<a href="#">热门<i class="arrow"></i></a>
-							<a href="#">游戏<i class="arrow"></i></a>
-							<a href="#">应用<i class="arrow"></i></a>
+							<a href="#">热门<i class="ico_down"></i></a>
+							<a href="#">游戏<i class="ico_down"></i></a>
+							<a href="#">应用<i class="ico_down"></i></a>
 						</div>
 						<div class="search">
 							<input type="text" name="searchInput" value="大家都在搜：香格里拉大火">
@@ -46,17 +47,30 @@
 					</div>
 				</div>
 			</div>
+			<div class="mail_active">
+				<div class="box">
+					<div>
+						<span class="icon_errorB"></span>
+					</div>
+					<div>
+						<p><strong>激活账号</strong></p>
+						<p>-你当前-的体验期还有<i class="S_spetxt">30</i>天，确认你的邮件地址就可以使用 <strong>新浪微博</strong> 的所有功能啦！邮件已经发送至 532499602@qq.com 。</p>
+						<p><a href="#" class="W_btn_b"><span>立即激活</span></a><a href="#">重新发送确认邮件</a></p>
+					</div>
+				</div>
+			</div>
 			<div class="container main">
+
 				<div class="content clearfix">
 					<div class="left_nav left">
 						<ul>
-							<li><a href="#"><i class="ico_myhomepage"></i>首页<i class="new"></i></a></li>
-							<li><a href="#"><i class="ico_message"></i>消息</a></li>
-							<li><a href="#"><i class="ico_favor"></i>收藏</a></li>
-							<li><a href="#"><i class="ico_sendtome"></i>发给我的</a></li>
+							<li><a href="#"><i class="W_ico20 ico_myhomepage"></i>首页<i class="new"></i></a></li>
+							<li><a href="#"><i class="W_ico20 ico_message"></i>消息</a></li>
+							<li><a href="#"><i class="W_ico20 ico_favor"></i>收藏</a></li>
+							<li><a href="#"><i class="W_ico20 ico_sendtome"></i>发给我的</a></li>
 						</ul>
 						<ul class="goodfriend">
-							<li><a href=""><i class="ico_goodfriend"></i>好友圈</a></li>
+							<li><a href=""><i class="W_ico20 ico_goodfriend"></i>好友圈</a></li>
 							<li></li>
 						</ul>
 						<div class="group">
@@ -64,11 +78,11 @@
 								<legend class="S_txt2">分组</legend>
 							</fieldset>
 							<ul>
-								<li><a href="#"><i class="ico_group"></i>同事</a></li>
-								<li><a href="#"><i class="ico_group"></i>同学</a></li>
-								<li><a href="#"><i class="ico_group"></i>朋友</a></li>
-								<li><a href="#"><i class="ico_group"></i>家人</a></li>
-								<li><a href="#"><i class="ico_group"></i>明星</a></li>
+								<li><a href="#"><i class="W_ico20 ico_group"></i>同事</a></li>
+								<li><a href="#"><i class="W_ico20 ico_group"></i>同学</a></li>
+								<li><a href="#"><i class="W_ico20 ico_group"></i>朋友</a></li>
+								<li><a href="#"><i class="W_ico20 ico_group"></i>家人</a></li>
+								<li><a href="#"><i class="W_ico20 ico_group"></i>明星</a></li>
 							</ul>
 						</div>
 
@@ -92,16 +106,16 @@
 									<div class="num S_txt2">发言请遵守社区公约，还可以输入<span>140</span>字</div>
 									<div class="func_area clearfix">
 										<div class="kind_detail left">
-											<a href="javascript:void(0)"><i class="icon_face"></i>表情</a>
-											<a href="javascript:void(0)"><i class="icon_img"></i>图片</a>
-											<a href="javascript:void(0)"><i class="icon_video"></i>视频</a>
-											<a href="javascript:void(0)"><i class="icon_qing"></i>话题</a>
-											<a href="javascript:void(0)"><i class="icon_chang"></i>长微博</a>
+											<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_face"></i>表情</a>
+											<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_img"></i>图片</a>
+											<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_video"></i>视频</a>
+											<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_qing"></i>话题</a>
+											<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_chang"></i>长微博</a>
 										</div>
-										<a href="" class="send_btn right "><span>发布</span></a>
+										<a href="" class="send_btn W_btn_v right "><span class="btn_30px">发布</span></a>
 									</div>
 									<div class="weibo">
-										<div class="title">
+										<div class="feed_nav">
 											<h3>微博</h3>
 											<div class="bg"></div>
 											<p class="weibo_type">
@@ -119,7 +133,7 @@
 													<img  width="50" height="50" src="<?php echo base_url('assets/images/1.jpg') ?>" alt="">
 												</div>
 												<div class="detail">
-													<div><a class="name" href="#">小殷爱录像</a></div>
+													<div><a class="name S_func1" href="#">小殷爱录像</a></div>
 													<div class="content">
 														从前有个国王,他两个女儿的眼泪都会变成钻石.大女儿嫁给了一个用她的眼泪创造了一个个城堡的王子,小女儿却嫁给了牧羊人.国王临死见到他们的时候,大女儿满身金银珠宝,而小女儿和牧羊人仍是贫穷.国王很惊讶的说:明明她的一滴眼泪就够你们生活的很好. 牧羊人说:可是我舍不得让她哭啊.....
 													</div>
@@ -131,7 +145,7 @@
 														</ul>
 													</div>
 													<div class="func clearfix S_txt2">
-														<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">新浪微博</a> </div>
+														<div class="from left"><a href="#" class="S_link2 time">今天 07:48</a> 来自<a href="" class="S_link2">新浪微博</a> </div>
 														<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 													</div>
 												</div>
@@ -141,12 +155,12 @@
 													<img  width="50" height="50" src="<?php echo base_url('assets/images/2.jpg') ?>" alt="">
 												</div>
 												<div class="detail">
-													<div><a class="name" href="#">包子包子肉肉</a></div>
+													<div><a class="name S_func1" href="#">包子包子肉肉</a></div>
 													<div class="content">
 														转发微博
 													</div>
 													<div class="forwardContent"> 
-														<div><a class="name" href="#">@收集世上的美景</a></div>
+														<div><a class="name S_func1" href="#">@收集世上的美景</a></div>
 														<div class="content">
 															【中国最美五大沙漠】巴丹吉林沙漠，塔克拉玛干沙漠，鸣沙山—月牙泉，古尔班通古特沙漠，沙坡头。一生一定要去次沙漠，体验烈日风沙，体味孤独辽远，它在那里等你，等候了千年。什么时候启程吧！
 														</div>	
@@ -158,13 +172,13 @@
 															</ul>
 														</div>
 														<div class="func clearfix S_txt2">
-															<div class="from left"><a href="#" class="time">1月11日 23:01</a> 来自<a href="">pull</a> </div>
-															<div class="handle right"><a href=""><s class="icon_praised_b"></s>(19)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
+															<div class="from left"><a href="#" class="S_func2 time">1月11日 23:01</a> 来自<a href="" class="S_func2">pull</a> </div>
+															<div class="handle right"><a href=""><s class="icon_praised_b"></s>(19)</a><i class="S_txt3">|</i><a href="" class="S_func2">转发(71)</a><i class="S_txt3">|</i><a href="" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="" class="S_func2">评论(22)</a></div>
 														</div>
 													</div>
 													
 													<div class="func clearfix S_txt2">
-														<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">新浪微博</a> </div>
+														<div class="from left"><a href="#" class="time S_link2">今天 07:48</a> 来自<a href="" class="S_link2">新浪微博</a> </div>
 														<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 													</div>
 												</div>
@@ -181,26 +195,26 @@
 							<div class="user_info">
 								<img  width="80" height="80" src="<?php echo base_url('assets/images/avatar.jpg') ?>" alt="">
 								<div>
-									<a href="" class="username">run5324</a>
+									<a href="" class="username S_func1">run5324</a>
 									<br>
-									<a href="" class="level"><span></span></a>
+									<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
 								</div>
 							</div>
 							<ul class="user_atten clearfix">
 								<li>
-									<a href="">
+									<a href="#" class="S_func1">
 										<strong>35</strong>
 										<span>关注</span>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="#" class="S_func1">
 										<strong>8</strong>
 										<span>粉丝</span>
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="#" class="S_func1">
 										<strong>42</strong>
 										<span>微博</span>
 									</a>

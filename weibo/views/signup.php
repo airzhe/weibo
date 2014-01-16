@@ -24,45 +24,45 @@
 			</div>
 		</div>
 		<div class="content">
-			<div class="reg_title"><a  class="cur">个人注册</a> <i>|</i> 企业注册</div>
+			<div class="reg_title"><a  class="cur">个人注册</a> <i class="vline">|</i> 企业注册</div>
 			<div class="reg_info clearfix">
-				<div class="reg_form  left">
+				<div class="W_reg_form  left">
 					<form action="">
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>邮箱：</div>
 							<div class="inp">
-								<input type="text" value="请输入您的常用邮箱" name="account">
+								<input class="W_input" type="text" value="请输入您的常用邮箱" name="account">
 								<div class="attachment">没有邮箱？<a href="#">用手机注册</a></div>
 							</div>
 							<div class="tips">
-								<label class="error"><i></i>请输入正确的邮箱地址</label>
+								<label class="error"><i class="icon_rederrorS"></i>请输入正确的邮箱地址</label>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>设置密码：</div>
 							<div class="inp">
-								<input type="password" name="passwd">
+								<input class="W_input" type="password" name="passwd">
 							</div>
 							<div class="tips">
-								<label class="error"><i></i>请输入密码</label>
+								<label class="error"><i class="icon_rederrorS"></i>请输入密码</label>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>昵称：</div>
 							<div class="inp">
-								<input type="text" name="username">
+								<input class="W_input" type="text" name="username">
 							</div>
 							<div class="tips">
-								<label class="error"><i></i>请输入昵称</label>
+								<label class="error"><i class="icon_rederrorS"></i>请输入昵称</label>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>生日：</div>
 							<div class="inp">
-								<input type="text" name="birthday">
+								<input class="W_input" type="text" name="birthday">
 							</div>
 							<div class="tips">
-								<label class="error"><i></i>请选择生日</label>
+								<label class="error"><i class="icon_rederrorS"></i>请选择生日</label>
 							</div>
 						</div>
 						<div class="info_list clearfix">
@@ -72,34 +72,34 @@
 								<label><input type="radio" name="sex">女</label>
 							</div>
 							<div class="tips">
-								<label class="error"><i></i>请选择性别</label>
+								<label class="error"><i class="icon_rederrorS"></i>请选择性别</label>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>所在地：</div>
 							<div class="inp">
-								<input type="text" name="location">
+								<input class="W_input" type="text" name="location">
 							</div>
 							<div class="tips">
-								<label class="error"><i></i>请选择性别</label>
+								<label class="error"><i class="icon_rederrorS"></i>请选择性别</label>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>验证码：</div>
 							<div class="inp">
-								<input type="text" name="code">
+								<input class="W_input" type="text" name="code">
 								<img src="<?php echo base_url('assets/images/pincode.jpeg') ?>" alt="" id="code">
 
 							</div>
 							<div class="tips">
 								<a href="javascript:void(0);" title="看不清，换一张" class="verify_refresh"></a>
-								<label class="error"><i></i>请输入验证码</label>
+								<label class="error"><i class="icon_rederrorS"></i>请输入验证码</label>
 
 							</div>
 						</div>
 						<div class="info_list">
 							<div class="inp">
-								<div class="submit"><button><i></i>立即注册</button></div>
+								<a href="" class="W_btn_big W_btn_g"><span>立即注册</span></a>
 							</div>
 						</div>
 						<div class="info_list">

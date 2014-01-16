@@ -76,7 +76,7 @@
 					<div class="info">
 						<div>
 							<span class="name">airzhe</span> 
-							<a href="" class="level"><span></span></a>
+							<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
 							<a href="#">http://weibo.com/airzhe</a>
 						</div>
 						<p class="S_txt2">分手快乐</p>
