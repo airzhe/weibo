@@ -23,7 +23,7 @@
  			})
  	</script>
  </head>
- <body class="body_login">
+ <body class="login">
  	<div class="container">
  		<div class="header">
  			<div class="logo">

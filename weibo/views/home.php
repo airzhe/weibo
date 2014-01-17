@@ -8,10 +8,9 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 </head>
-<body class="body_home">
+<body class="home">
 	<div class="miniblog">
 		<div class="miniblog_fb">
-
 			<div class="header global_nav">
 				<div class="nav_bg">
 					<div class="container">
@@ -59,9 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container main">
-
-				<div class="content clearfix">
+			<div class="container main clearfix">
 					<div class="left_nav left">
 						<ul>
 							<li><a href="#"><i class="W_ico20 ico_myhomepage"></i>首页<i class="new"></i></a></li>
@@ -85,7 +82,6 @@
 								<li><a href="#"><i class="W_ico20 ico_group"></i>明星</a></li>
 							</ul>
 						</div>
-
 					</div>
 					<div class="main clearfix">
 						<div class="box_center left">
@@ -270,7 +266,7 @@
 							</div>		
 						</div>
 					</div>
-				</div>
+				
 				<!-- 返回顶部 -->
 				<a class="gotop S_txt2" href="javascript:void(0);">
 					<span>

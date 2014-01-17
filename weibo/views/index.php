@@ -8,10 +8,10 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 </head>
-<body class="body_index">
+<body class="index">
 	<div class="miniblog">
 		<div class="miniblog_fb">
-			<div class="header global_nav">
+			<div class="global_nav">
 				<div class="nav_bg">
 					<div class="container">
 						<div class="logo">
@@ -218,21 +218,21 @@
 									<li><a href="#"><img src="./assets/images/04.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">苍井空</a></li>
 								</ul>
 							</div>
-							<!-- 微相册 -->
-							<div class="album">
-								<h4><a href="#" class="S_func1">微相册</a><span class="S_txt2">10,000,000+人在用</span></h4>
-								<div>
-									<ul class="picitems clearfix">
-										<li><a href="#"><img src="./assets/images/pic1.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic2.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic3.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic4.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic5.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic6.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic7.jpg" alt="" width="72" height="72"></a></li>
-										<li><a href="#"><img src="./assets/images/pic8.jpg" alt="" width="72" height="72"></a></li>
-									</ul>
-								</div>
+						</div>
+						<!-- 微相册 -->
+						<div class="album">
+							<h4><a href="#" class="S_func1">微相册</a><span class="S_txt2">10,000,000+人在用</span></h4>
+							<div>
+								<ul class="picitems clearfix">
+									<li><a href="#"><img src="./assets/images/pic1.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic2.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic3.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic4.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic5.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic6.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic7.jpg" alt="" width="72" height="72"></a></li>
+									<li><a href="#"><img src="./assets/images/pic8.jpg" alt="" width="72" height="72"></a></li>
+								</ul>
 							</div>
 						</div>
 					</div>

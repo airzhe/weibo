@@ -14,7 +14,7 @@
 		})
 	</script>
 </head>
-<body class="body_signup">
+<body class="signup">
 	<div class="header_line">
 		
 	</div>

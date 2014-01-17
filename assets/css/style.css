@@ -8,7 +8,9 @@ fieldset {
 	border-style: solid;
 	border-width: 1px 0 0 0;
 }
-
+.container{
+	margin: 0 auto;
+}
 .S_txt2{
 	color:#808080;
 }
@@ -248,28 +250,31 @@ textarea.W_input {
 .icon_close:hover {
 	background-position: -100px -25px;
 }
-body .global_nav .container{
-	background: transparent;;
+.global_nav .container{
+	background: transparent!important;
+	width: 980px!important;
+	position: relative;
+}
+
+body.login .container,body.signup .container{
+	width:900px;
 }
 /**
  *注册页面
  */
- .body_login{
+ body.login{
  	background: url(../images/bg_repeat_reg.png) repeat-x
  }
  
- .container{
- 	width:900px;margin:0 auto;
- }
- .body_login .header{
+ body.login .header{
  	padding:10px 0;
  }
- .body_login .logo{
+ body.login .logo{
  	width: 130px;
  	height: 40px;
  	background: url(../images/logo.png) no-repeat;
  }
- .body_login .content{border-top:2px solid #F62638;
+ body.login .content{border-top:2px solid #F62638;
  	background: url(../images/main_bg.png) no-repeat 0 bottom;
  }
  .leftbox{
@@ -404,7 +409,7 @@ body .global_nav .container{
  	height: 71px;
  	background: url(../images/login_mode.jpg) no-repeat;
  }
- .body_login .footer{
+ body.login .footer{
  	clear:both;
  	background: #f7f7f8 url(../images/footer_top_bg.jpg) no-repeat center top;
  	text-align: center;
@@ -423,7 +428,7 @@ body .global_nav .container{
 /**
  *注册页面
  */
- .body_signup{
+ body.signup{
  	background: url(../images/reg_repeat_bg.png) repeat-x;
  }
 
@@ -444,21 +449,21 @@ body .global_nav .container{
  	margin-top: 26px;
  	background: url(../images/logo_big.png) no-repeat;
  }
- .body_signup .content{
+ body.signup .content{
  	border-radius: 5px;
  	box-shadow: 0 1px 5px rgba(0,0,0,.3);
  	background: #fff;
  	padding:30px 40px;
  }
- .body_signup .reg_title{
+ body.signup .reg_title{
  	font-size: 22px;
  	padding-bottom: 15px;
  }
- .body_signup .reg_title a.cur{
+ body.signup .reg_title a.cur{
  	border-bottom: 3px solid #FFA00A;
  	padding-bottom: 5px;
  }
- .body_signup .reg_title .vline{
+ body.signup .reg_title .vline{
  	margin: 0 19px;
  	color: #999;
  }
@@ -562,7 +567,7 @@ body .global_nav .container{
  	font-weight: bold;
  	font-size: 16px;
  }
- .body_signup .footer{	
+ body.signup .footer{	
  	font-size: 12px;
  	color:#6e9ab8;
  }
@@ -575,7 +580,7 @@ body .global_nav .container{
  	vertical-align: -4px;
  }
  /*全局导航*/
- .body_home{
+ body{
  	background: #bee1f5 url(../images/body_repeat.png) repeat-x;
  }
  .global_nav {
@@ -606,9 +611,8 @@ body .global_nav .container{
  .miniblog_fb {
  	background: url(../images/footer.png) center bottom no-repeat;
  }
- .body_home .container{
- 	width:980px;
- 	margin:0 auto;
+ body.home .container{
+ 	width: 980px;
  	position: relative;
  }
  .global_nav .logo, .global_nav .nav{
@@ -754,8 +758,8 @@ body .global_nav .container{
  /**
  * 左导航
  */
- .body_home .container.main{
- 	background: url(../images/repeat_bg_y.png) repeat-y;
+ .container.main{
+ 	background: #fff url(../images/repeat_bg_y.png) repeat-y;
  }
  .left_nav{
  	width: 150px;
@@ -1363,29 +1367,29 @@ body .global_nav .container{
  	background-position: -100px -100px;
  }
  /*用户个人主页*/
- .body_index{
+ body.index{
  	background-color:#bee1f5;
  }
- .body_index .container{
+ body.index .container{
  	width: 980px;
  	position: relative;
  	background: #fff;
  }
 
- .body_index .miniblog{
+ body.index .miniblog{
  	padding-top:40px;
  }
- .body_index .profile_pic_top{
+ body.index .profile_pic_top{
  	height: 300px;
  	position: relative;
  	background-position: center bottom;
  	background-repeat: no-repeat;
  }
- .body_index .user_info{
+ body.index .user_info{
  	position: relative;
  	padding-bottom: 30px;
  }
- .body_index .user_info .head{
+ body.index .user_info .head{
  	position: absolute;
  	top: -108px;
  	left: 20px;
@@ -1393,24 +1397,24 @@ body .global_nav .container{
  	background:#fafafa;
  	padding:2px;
  }
- .body_index .user_info .avatar{
+ body.index .user_info .avatar{
  	display: block;
  	position: relative;
  }
- .body_index .user_info .change_avatar{
+ body.index .user_info .change_avatar{
  	position: absolute;
  	right: 12px;
  	bottom:12px;
  	display: none;
  }
- .body_index .user_info .avatar:hover .change_avatar{
+ body.index .user_info .avatar:hover .change_avatar{
  	display: block;
  }
- .body_index .user_info .user_atten{
+ body.index .user_info .user_atten{
  	margin:5px 0 4px 0;
  }
 
- .body_index .user_info .user_atten li{
+ body.index .user_info .user_atten li{
  	padding: 0 3px 3px;
  	float: left;
  	border-right-width: 1px;
@@ -1418,10 +1422,10 @@ body .global_nav .container{
  	text-align: center;
  	width: 53px;
  }
- .body_index .user_info .user_atten li:last-child{
+ body.index .user_info .user_atten li:last-child{
  	border:none;
  }
- .body_index .user_info .user_atten li strong{
+ body.index .user_info .user_atten li strong{
  	font-size: 20px;
  	line-height: 20px;
  	display: block;
@@ -1429,15 +1433,15 @@ body .global_nav .container{
  	font-family: Tahoma;
  	font-weight: 400;
  }
- .body_index .user_info .info{
+ body.index .user_info .info{
  	margin-left: 225px;
  	padding-top: 10px;
  	position: relative;
  }
- .body_index .user_info .info p{
+ body.index .user_info .info p{
  	margin-bottom:8px;
  }
- .body_index .user_info .info span.name{
+ body.index .user_info .info span.name{
  	font: normal 20px/30px "Microsoft Yahei";
  	margin-right: 3px;
  }
@@ -1634,6 +1638,7 @@ body .global_nav .container{
  .wrap .sidebar .album li{
  	margin: 10px 0 0 8px;
  	padding: 0;
+ 	float: left;
  }
  .wrap .sidebar .album .picitems li img{
  	border-width: 1px;
@@ -1747,9 +1752,6 @@ body .global_nav .container{
  	margin-bottom: 20px;
  }
  /*关注中心*/
- .container.main{
- 	background: #fff;
- }
  .body_follow .left_nav a.curr{
  	font-weight: bold;
  }
