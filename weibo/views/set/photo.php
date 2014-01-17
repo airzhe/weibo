@@ -69,7 +69,7 @@
 							<div class="upload_avatar">
 								<p><strong>选择上传方式</strong></p>
 								<div class="upload_btn">
-									<a href="" class="S_func1"><span>选择上传</span></a>
+									<a href="" class="W_btn_b"><span>选择上传</span></a>
 								</div>
 								<p class="S_txt2">仅支持JPG、GIF、PNG格式，文件小于5M（使用高质量图片，可生成高清头像）</p>
 								<p><input type="checkbox" name="" checked="checked">上传原始图片，生成高清头像</p>
@@ -99,7 +99,7 @@
 										</div>
 									</div>
 								</div>
-								<p class="submit upload_btn"><a href=""><span>保存</span></a><a href=""><span>取消</span></a></p>
+								<p class="submit"><a href="" class="W_btn_a"><span>保存</span></a><a href="" class="W_btn_c"><span>取消</span></a></p>
 							</div>
 						</div>
 					</div>

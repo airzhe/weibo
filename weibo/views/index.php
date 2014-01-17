@@ -102,8 +102,9 @@
 					<div class="main left">
 						<p class="tab_radious">
 							<a href="#" class="active"><strong>全部</strong><span class="tabarrow"></span></a>
-							<i class="S_txt2">|</i>
-							<a href="#">原创</a><i class="S_txt3">|</i>
+							<i class="S_txt3">|</i>
+							<a href="#">原创</a>
+							<i class="S_txt3">|</i>
 							<a href="#">图片</a>
 						</p>
 						<div class="weibo_list feed_self">

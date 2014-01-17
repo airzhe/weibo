@@ -28,7 +28,6 @@
 							<a href="javascript:void(0)" class="btn"></a>
 						</div>
 
-
 						<ul class="user clearfix">
 							<li class="username" ><a href="javascript:void(0)">air_zhe</a></li>
 							<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
@@ -78,11 +77,11 @@
 							<div class="title">消息</div>
 							<div class="tab_normal clearfix">
 								<div class="left">
-									<a href=""><span><i class="icon_mes"></i>发私信</span></a>
-									<a href=""><span>全部置为已读</span></a>
+									<a href="" class="W_btn_a"><span><i class="icon_mes"></i>发私信</span></a>
+									<a href="" class="W_btn_b"><span>全部置为已读</span></a>
 								</div>
 								<div class="right">
-									<span class="S_txt2"><i class="icon_lock"></i>消息箱功能设置设置</span>
+									<span class="S_txt2"><i class="W_ico16 icon_lock"></i>消息箱功能设置设置</span>
 									<a href="#" class="set">设置</a>
 								</div>
 							</div>

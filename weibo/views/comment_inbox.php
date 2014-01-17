@@ -75,17 +75,7 @@
 					</div>
 					<div class="main clearfix">
 						<div class="box_center left">
-							<div class="title">发出的评论</div>
-							<div class="tab_normal clearfix">
-								<div class="left">
-									<a href=""><span><i class="icon_mes"></i>发私信</span></a>
-									<a href=""><span>全部置为已读</span></a>
-								</div>
-								<div class="right">
-									<span class="S_txt2"><i class="icon_lock"></i>消息箱功能设置设置</span>
-									<a href="#" class="set">设置</a>
-								</div>
-							</div>
+							<div class="title">收到的评论</div>
 							<div class="comment_list">
 								<div class="item clearfix">
 									<div class="face">

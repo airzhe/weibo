@@ -78,16 +78,15 @@
 							<div class="title">@我的微博</div>
 							<div class="tab_normal clearfix">
 								<div class="left">
-									<a href=""><span><i class="icon_mes"></i>发私信</span></a>
-									<a href=""><span>全部置为已读</span></a>
+									<a href="">所有人</a>	<i class="W_vline S_txt2">|</i><a href="">所有微博</a>
 								</div>
 								<div class="right">
 									<span class="S_txt2"><i class="icon_lock"></i>消息箱功能设置设置</span>
 									<a href="#" class="set">设置</a>
 								</div>
 							</div>
-							<div class="weibo_list">
-								<div class="item clearfix" style="margin:0 20px;">
+							<div class="weibo_list atme">
+								<div class="item clearfix">
 									<div class="face">
 										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/2.jpg" alt="">
 									</div>

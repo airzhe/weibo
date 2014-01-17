@@ -70,11 +70,11 @@
 							<div class="title">全部关注 <span class="num">(35个)</span> <i class="icon_warnS"></i><a href="#" class="tips">开通微博会员</a><span class="S_txt2">可提高关注上限</span></div>
 							<div class="tab_normal clearfix">
 								<div class="left">
-									<a href=""><span><i class="icon_recmd"></i>为你分组</span></a>
-									<a href=""><span>全部关注</span></a>
-									<a href=""><span>按关注时间排序</span></a>
-									<a href="" class="disable"><span>添加到</span></a>
-									<a href="" class="disable"><span>取消关注</span></a>
+									<a href="" class="W_btn_c"><span><i class="icon_recmd"></i>为你分组</span></a>
+									<a href="" class="W_btn_c"><span>全部关注</span></a>
+									<a href="" class="W_btn_c"><span>按关注时间排序</span></a>
+									<a href="" class="W_btn_c_disable"><span>添加到</span></a>
+									<a href="" class="W_btn_c_disable"><span>取消关注</span></a>
 								</div>
 								<div class="right">
 									<div class="input_search">

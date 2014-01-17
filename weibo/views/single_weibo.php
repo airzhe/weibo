@@ -105,7 +105,7 @@
 										今天考试，开卷我就蒙了，不会写，监考老师转圈，将近30分钟，我一个字没写，老师看看我，我看看老师。40分钟的时候，我卷子写满。
 									</div>
 									<div class="func clearfix S_txt2">
-										<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">iPhone客户端</a> </div>
+									<div class="from left"><a href="#" class="S_link2 time">今天 07:48</a> 来自<a href="" class="S_link2">iphone客户端</a> </div>
 										<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 									</div>
 									<!-- 评论 -->

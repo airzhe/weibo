@@ -54,7 +54,7 @@
 					</div>
 					<div>
 						<p><strong>激活账号</strong></p>
-						<p>-你当前-的体验期还有<i class="S_spetxt">30</i>天，确认你的邮件地址就可以使用 <strong>新浪微博</strong> 的所有功能啦！邮件已经发送至 532499602@qq.com 。</p>
+						<p>你当前-的体验期还有<i class="S_spetxt">30</i>天，确认你的邮件地址就可以使用 <strong>新浪微博</strong> 的所有功能啦！邮件已经发送至 532499602@qq.com 。</p>
 						<p><a href="#" class="W_btn_b"><span>立即激活</span></a><a href="#">重新发送确认邮件</a></p>
 					</div>
 				</div>
@@ -146,7 +146,7 @@
 													</div>
 													<div class="func clearfix S_txt2">
 														<div class="from left"><a href="#" class="S_link2 time">今天 07:48</a> 来自<a href="" class="S_link2">新浪微博</a> </div>
-														<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
+														<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 													</div>
 													<!-- 评论 -->
 													<div class="comment S_line1">
@@ -169,7 +169,7 @@
 															</div>
 															<div class="C_detail">
 																<p><a href="">D瓜哥-李_君</a>：回复<a href="">@叉色-xsir</a>:恩，说实话我对这块专门看过一些资料。所以问的比较多。哈哈<span class="S_txt2">(1月5日 22:07)</span></p>
-																<p class="info"><a href="#"><i class="icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">查看对话</a><i class="S_txt3">|</i><a href="#">回复</a></p>
+																<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">查看对话</a><i class="S_txt3">|</i><a href="#">回复</a></p>
 															</div>
 														</div>
 														<div class="C_item S_line1">
@@ -178,7 +178,7 @@
 															</div>
 															<div class="C_detail">
 																<p><a href="">叉色-xsir</a>：前端后端都有啊。。。前端优化问的还蛮细的<span class="S_txt2">(1月5日 22:07)</span></p>
-																<p class="info"><a href="#"><i class="icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">回复</a></p>
+																<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">回复</a></p>
 															</div>
 														</div>
 													</div>
@@ -208,13 +208,13 @@
 														</div>
 														<div class="func clearfix S_txt2">
 															<div class="from left"><a href="#" class="S_func2 time">1月11日 23:01</a> 来自<a href="" class="S_func2">pull</a> </div>
-															<div class="handle right"><a href=""><s class="icon_praised_b"></s>(19)</a><i class="S_txt3">|</i><a href="" class="S_func2">转发(71)</a><i class="S_txt3">|</i><a href="" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="" class="S_func2">评论(22)</a></div>
+															<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(19)</a><i class="S_txt3">|</i><a href="" class="S_func2">转发(71)</a><i class="S_txt3">|</i><a href="" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="" class="S_func2">评论(22)</a></div>
 														</div>
 													</div>
 													
 													<div class="func clearfix S_txt2">
 														<div class="from left"><a href="#" class="time S_link2">今天 07:48</a> 来自<a href="" class="S_link2">新浪微博</a> </div>
-														<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
+														<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 													</div>
 												</div>
 											</div>
@@ -274,7 +274,7 @@
 				<!-- 返回顶部 -->
 				<a class="gotop S_txt2" href="javascript:void(0);">
 					<span>
-						<s class="icon_gotop"></s>
+						<s class="W_ico12 icon_gotop"></s>
 						返回顶部
 					</span>
 				</a>
