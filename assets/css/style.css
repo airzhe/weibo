@@ -20,12 +20,12 @@ fieldset {
 	margin: 0px 6px 0px 8px;
 }
 a{
- 	color:#0a8cd2;
- 	text-decoration: none;
- }
- a:hover{
- 	text-decoration: underline;
- }
+	color:#0a8cd2;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
 .S_func1{
 	color:#333;
 	text-decoration: none;
@@ -41,6 +41,9 @@ a{
 	color: #6cbae4;
 }
 /*皮肤2*/
+body{
+	color:#595959;
+}
 a{
 	color:#da5882;
 }
@@ -2088,7 +2091,7 @@ body .global_nav .container{
  	margin-top:15px;
  }
  .upload_avatar .submit a{
-	margin-right: 10px;
+ 	margin-right: 10px;
  }
  /*设置个人信息*/
  .personinfo .item{
@@ -2350,9 +2353,46 @@ body .global_nav .container{
  .global_footer{
  	margin:0 auto;
  	margin-top:10px;
- 	width: 980px;
- 	height: 208px;
- 	background:#fff url(../images/global_footer.gif);
+ 	width: 940px;
+ 	height: 168px;
+ 	background:#fff;
+ 	padding:20px;
+ }
+ .global_footer .list{
+ 	float: left;
+ 	width: 170px;
+ 	display: inline;
+ 	margin: 0 20px 0 0;
+ 	line-height: 20px;
+ }
+ .global_footer .list:last-child{
+ 	margin-right: 0;
+ }
+ .global_footer .list dt{
+ 	padding-bottom: 5px;
+ }
+ .global_footer .other_link {
+ 	line-height: 0.5;
+ 	margin: 15px 0 0;
+ 	border-top-width: 1px;
+ 	border-top-style: solid;
+ }
+ .global_footer .copyright{
+ 	padding-top: 10px;
+ 	margin-top:10px;
+ 	border-top-width: 1px;
+ 	border-top-style: solid;
+ }
+ .global_footer .copyright p{
+ 	margin:0;
+ 	line-height: 22px;
+ }
+ .global_footer .W_ico16 {
+ 	vertical-align: -2px;
+ 	margin-right: 4px;
+ }
+ .ico_weibo {
+ 	background-position: -350px -125px;
  }
  /*搜索页面*/
  #body_search  .miniblog_fb>.container{
