@@ -19,19 +19,60 @@ fieldset {
 .func .S_txt3 {
 	margin: 0px 6px 0px 8px;
 }
-.S_func1,.S_func1:hover{
+a{
+ 	color:#0a8cd2;
+ 	text-decoration: none;
+ }
+ a:hover{
+ 	text-decoration: underline;
+ }
+.S_func1{
 	color:#333;
 	text-decoration: none;
-}
-.S_func1:hover{
-	color:#0a8cd2;
-}
-.S_link2,.S_func2:hover{
-	color: #6cbae4;
 }
 .S_func2{
 	color: #b1d8ed;
 }
+.S_func1:hover{
+	color:#0a8cd2;
+	text-decoration: none;
+}
+.S_link2,.S_func2:hover{
+	color: #6cbae4;
+}
+/*皮肤2*/
+a{
+	color:#da5882;
+}
+.S_func1:hover{
+	color:#da5882;
+	text-decoration: none;
+}
+.S_func2{
+	color: #eac1ca;
+}
+.S_link2,.S_func2:hover{
+	color: #f453b0;
+}
+/*皮肤2*/
+
+/*皮肤3*/
+a{
+	color:#4d8775;
+}
+.S_func1:hover{
+	color:#4d8775;
+	text-decoration: none;
+}
+.S_func2{
+	color: #a1ceb3;
+}
+.S_link2,.S_func2:hover{
+	color: #7cb4a3;
+}
+/*皮肤3*/
+
+
 .S_line1_c {
 	color: #d9d9d9;
 }
@@ -213,14 +254,7 @@ body .global_nav .container{
  .body_login{
  	background: url(../images/bg_repeat_reg.png) repeat-x
  }
- a{
- 	color:#0a8cd2;
- 	text-decoration: none;
- }
- a:hover{
- 	color:#0a8cd2;
- 	text-decoration: underline;
- }
+ 
  .container{
  	width:900px;margin:0 auto;
  }
