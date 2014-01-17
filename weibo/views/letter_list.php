@@ -111,7 +111,7 @@
 									<div class="face">
 										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/avatar.jpg" alt="">
 									</div>
-									<div class="comment " style="width:388px">
+									<div class="comment">
 										<div class="message_arrow">
 											<em class="S_line1_c">◆</em>
 											<span class="S_bg1_c">◆</span>
@@ -126,7 +126,7 @@
 										<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
 									</fieldset>
 									
-									<div class="comment " style="width:388px">
+									<div class="comment">
 										<div class="message_arrow">
 											<em class="S_line1_c">◆</em>
 											<span class="S_bg1_c">◆</span>
@@ -146,7 +146,7 @@
 									<div class="face">
 										<img width="50" height="50" src="http://localhost/work/weibo/assets/images/avatar.jpg" alt="">
 									</div>
-									<div class="comment " style="width:388px">
+									<div class="comment">
 										<div class="message_arrow">
 											<em class="S_line1_c">◆</em>
 											<span class="S_bg1_c">◆</span>
@@ -161,7 +161,7 @@
 										<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
 									</fieldset>
 									
-									<div class="comment " style="width:388px">
+									<div class="comment">
 										<div class="message_arrow">
 											<em class="S_line1_c">◆</em>
 											<span class="S_bg1_c">◆</span>

@@ -2321,29 +2321,32 @@ body.login .container,body.signup .container{
  	margin-right: 10px;
  }
  /*私信list页面*/
+ .msg_dialogue .comment{
+ 	width:388px;
+ }
+ 
  .item_ta .comment{
  	float: left;
  }
  .item_ta .face{
  	margin-left: 15px;
  }
- .comment_list  .item_ta .message_arrow{
- 	position: absolute;
- 	top: 15px;
+ .item_ta .message_arrow{
  	right: -10px;
- 	left:auto;
- 	width: 10px;
- 	overflow: hidden;
+ 	left:auto!important;
  }
 
- .comment_list .item_ta .message_arrow * {
- 	margin-left: -10px;
+ .item_ta .message_arrow * {
+ 	margin-left: -10px!important;
  }
- .comment_list .item_ta .message_arrow span{
- 	margin: -20px 0 0 -11px;
+ .item_ta .message_arrow span{
+ 	margin: -20px 0 0 -11px!important;
  }
  .item_my .comment{
  	background: #fff;
+ }
+ .item_my .message_arrow span{
+ 	color: #fff!important;
  }
  .send_private_msgbox{
  	margin: 20px;
