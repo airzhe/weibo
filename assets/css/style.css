@@ -38,6 +38,9 @@ fieldset {
 .S_line2 {
 	border-color: #E6E6E6;
 }
+.S_bg4_c {
+	color: #fafafa;
+}
 .W_btn_a,.W_btn_b:hover {
 	border-width: 1px;
 	border-style: solid;
@@ -1028,36 +1031,35 @@ body .global_nav .container{
  	position: relative;
  }
  .weibo_list .item .detail{
- 	color: #333;
  	margin-left:65px;
  	padding:4px 0px;
  }
- .weibo_list .item .detail .name{
+ .weibo_list .detail .name{
  	font-weight: 700;
  }
- .weibo_list .item .detail .content{
+ .weibo_list .detail .content{
  	font-size: 14px;
  	line-height: 23px;
  	padding: 4px 0 4px;
  }
- .weibo_list .item .detail .media_prev {
+ .weibo_list .detail .media_prev {
  	margin-right: -20px;
  	padding-bottom: 10px;
  }
- .weibo_list .item .detail .media_prev img{
+ .weibo_list .detail .media_prev img{
  	cursor:url(../images/big.cur), auto!important;
  }
- .weibo_list .item .detail .func{
+ .weibo_list .detail .func{
  	font-size: 12px;
  }
- .weibo_list .item .detail .func i{
+ .weibo_list .detail .func i{
  	margin: 0 6px 0 8px;
  }
 
- .weibo_list .item .detail .func .time{
+ .weibo_list .detail .func .time{
  	margin-right: 7px;
  }
- .weibo_list .item .detail .func .icon_praised_b{
+ .weibo_list .detail .func .icon_praised_b{
  	display: inline-block;
  	width: 13px;
  	height: 14px;
@@ -1065,21 +1067,21 @@ body .global_nav .container{
  	background-position: -75px 0;
  	vertical-align: text-bottom;
  }
- .weibo_list .item .detail .forwardContent{
+ .weibo_list .detail .forwardContent{
  	border: 1px solid #d9d9d9;
  	padding: 10px 20px 10px;
  	margin: 5px 0 15px;
  	border-radius: 3px;
  	background-color:#f2f2f2;
  }
- .weibo_list .item .detail .forwardContent .name{
+ .weibo_list .detail .forwardContent .name{
  	font-size:12px;
  }
- .weibo_list .item .detail .forwardContent .content{
+ .weibo_list .detail .forwardContent .content{
  	font-size:12px;
  	line-height: 21px;
  }
- .weibo_list .item .media_prev .lotspic_list li{
+ .weibo_list .media_prev .lotspic_list li{
  	float: left;
  	display: inline;
  	width: 80px;
@@ -1088,10 +1090,73 @@ body .global_nav .container{
  	overflow: hidden;
  	position: relative;
  }
- .weibo_list .item .media_prev .lotspic_list{
+ .weibo_list .media_prev .lotspic_list{
  	width: 255px;
  	margin-left: -5px;
  	font-size: 0;
+ }
+
+ .weibo_list .comment{
+ 	background: #FAFAFA;
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	padding: 10px 20px;
+ 	margin: 10px 0px 15px;
+ 	border-radius: 3px;
+ }
+ .weibo_list .comment *{
+ 	font-size: 12px;
+ }
+
+ .weibo_list .comment textarea{
+ 	width: 99%;
+ 	height:45px;
+ }
+ .weibo_list .comment .C_item{
+ 	padding: 7px 0px 10px;
+ 	margin: 1px 0px 0px;
+ 	border-width: 1px 0px 0px;
+ 	border-style: solid;
+ }
+ .weibo_list .comment .C_detail{
+ 	margin: 0px 0px 0px 40px;
+ 	line-height: 21px;
+ 	word-wrap: break-word;
+ 	vertical-align: text-bottom;
+ }
+ .weibo_list .comment .C_detail p{
+ 	margin:0;
+ }
+ .weibo_list .comment .C_detail .info {
+ 	text-align: right;
+ }
+ .weibo_list .comment .C_detail .info .S_txt3{
+ 	margin:0px 5px
+ }
+ .weibo_list .comment .W_tips {
+ 	margin:10px 0;
+ }
+ .weibo_list .comment .WB_arrow {
+ 	position: absolute;
+ 	z-index: 0;
+ 	margin: -18px 0 0;
+ 	margin-left: 445px;
+ 	/*margin-left: 510px;*/
+ 	width: 22px;
+ 	cursor: default;
+ }
+
+ .weibo_list .comment  .WB_arrow * {
+ 	font-family: "SimSun";
+ 	overflow: hidden;
+ 	font-size: 12px;
+ 	line-height: 1.231;
+ 	display: block;
+ 	height: 12px;
+ }
+
+ .weibo_list .comment  .WB_arrow span {
+ 	margin: -11px 0 0;
  }
 
  /*右侧边栏*/
@@ -1427,8 +1492,12 @@ body .global_nav .container{
  	width: 358px;
  	border: 1px solid #d9d9d9;
  }
- .feed_self.weibo_list .item .detail{
+ .feed_self.weibo_list .detail{
  	margin-left: 0;
+ }
+
+.feed_self.weibo_list .comment .WB_arrow{
+ 	margin-left: 510px;
  }
 
  .S_bg1, a.W_gotop, .SW_fun_bg {
@@ -2197,42 +2266,10 @@ body .global_nav .container{
  			color:#f2f2f2;
  		}
  		/*单条微博页面*/
- 		.wrap .comment{
- 			background: #FAFAFA;
- 			border-width: 1px;
- 			border-style: solid;
- 			padding: 10px 20px;
- 			margin: 10px 0px 15px;
- 			border-radius: 3px;
- 		}
- 		.comment textarea{
- 			width: 99%;
- 			height:45px;
- 		}
- 		.comment .item{
- 			padding: 7px 0px 10px;
- 			margin: 1px 0px 0px;
- 			border-width: 1px 0px 0px;
- 			border-style: solid;
- 		}
- 		.comment .item .detail{
- 			margin: 0px 0px 0px 40px;
- 			line-height: 21px;
- 			word-wrap: break-word;
- 			vertical-align: text-bottom;
- 		}
- 		.comment .item .detail p{
- 			margin:0;
- 		}
- 		.comment .item .detail .info {
- 			text-align: right;
- 		}
- 		.comment .item .detail .info .S_txt3{
- 			margin:0px 5px
- 		}
- 		.comment .W_tips {
- 			margin:10px 0;
- 		}
+ 		
+
+ 		
+
  		/*私信页面*/
  		.tit_plus {
  			font-size: 12px;
