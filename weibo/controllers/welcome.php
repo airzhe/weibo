@@ -53,7 +53,7 @@ class Welcome extends CI_Controller {
 	}
 	public function photo()
 	{
-		$this->load->view('set/photo');
+		$this->load->view('set/avatar');
 	}
 	public function setinfo()
 	{

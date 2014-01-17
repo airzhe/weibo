@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 </head>
-<body class="body_index" id="body_search">
+<body class="search">
 	<div class="miniblog">
 		<div class="miniblog_fb">
 			<div class="header global_nav">

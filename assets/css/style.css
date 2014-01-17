@@ -8,9 +8,7 @@ fieldset {
 	border-style: solid;
 	border-width: 1px 0 0 0;
 }
-.container{
-	margin: 0 auto;
-}
+
 .S_txt2{
 	color:#808080;
 }
@@ -252,10 +250,12 @@ textarea.W_input {
 }
 .global_nav .container{
 	background: transparent!important;
-	width: 980px!important;
 	position: relative;
 }
-
+.container{
+	width: 980px;
+	margin: 0 auto;
+}
 body.login .container,body.signup .container{
 	width:900px;
 }
@@ -612,7 +612,7 @@ body.login .container,body.signup .container{
  	background: url(../images/footer.png) center bottom no-repeat;
  }
  body.home .container{
- 	width: 980px;
+ 	margin:0 auto;
  	position: relative;
  }
  .global_nav .logo, .global_nav .nav{
@@ -849,10 +849,17 @@ body.login .container,body.signup .container{
 
  .box_center{
  	padding:20px 0 30px;
- 	width: 600px;
  	min-height: 800px;
  	overflow: hidden;
+ 	background: #fff;
+ 	width: 600px;
+
  }
+ .box_center:only-child{
+ 	width: auto;
+ 	background: #fff;
+ }
+
  .box_center>div:first-child{
  	padding:0 20px 11px;
  }
@@ -1371,7 +1378,6 @@ body.login .container,body.signup .container{
  	background-color:#bee1f5;
  }
  body.index .container{
- 	width: 980px;
  	position: relative;
  	background: #fff;
  }
@@ -1761,10 +1767,7 @@ body.login .container,body.signup .container{
  .body_follow .left_nav fieldset{
  	margin-top:10px;
  }
- .body_follow .box_center{
- 	width: auto;
- 	background: #fff;
- }
+
 
  .box_center .title span, .box_center .title  a{
  	font-size: 12px;
@@ -2397,11 +2400,17 @@ body.login .container,body.signup .container{
  	background-position: -350px -125px;
  }
  /*搜索页面*/
- #body_search  .miniblog_fb>.container{
+ body.search .miniblog{
+ 	background: #b0def5 url(../images/S_body_bg.png) center 0 repeat-x;
+ }
+ body.search .miniblog_fb{
+ 	background: none;
+ }
+ body.search  .miniblog_fb>.container{
  	width: 950px;
  	background: transparent;
  }
- #body_search .footer{
+ body.search .footer{
  	width: 910px;
  	margin:0 auto;
  	background: #fff;

@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 </head>
-<body class="body_index">
+<body class="index">
 	<div class="miniblog">
 		<div class="miniblog_fb">
 			<div class="header global_nav">
@@ -111,7 +111,7 @@
 							<a href="#">原创</a><i class="S_txt3">|</i>
 							<a href="#">图片</a>
 						</p>
-						<div class="feed_self" style="height:1200px;background:#fff;">
+						<div class="weibo_list feed_self">
 							<div class="item">
 								<div class="detail">
 									<div class="content">
