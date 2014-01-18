@@ -1,5 +1,5 @@
 <div class="content clearfix">
-	<?php $this->load->view('components/follow_fans_left_nav');?>
+	<?php $this->load->view('components/set_left_nav');?>
 	<div class="main">
 		<div class="box_center">
 			<div class="title clearfix">个人信息<span class="S_txt2 right"><a href="#">预览个人主页</a></span></div>

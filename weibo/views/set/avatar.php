@@ -1,5 +1,5 @@
 <div class="content clearfix">
-	<?php $this->load->view('components/follow_fans_left_nav');?>
+	<?php $this->load->view('components/set_left_nav');?>
 	<div class="main">
 		<div class="box_center">
 			<div class="title clearfix">头像<span class="S_txt2 right">无法上传头像？<a href="#">尝试普通方式上传</a></span></div>

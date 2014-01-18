@@ -781,16 +781,12 @@ body.login .container,body.signup .container{
  	padding-left:30px;
  	font-size: 12px;
  }
- .left_nav .group a.active{
- 	font-weight: bold;
- }
  .left_nav a.curr{
  	background: #fff;
+ 	font-weight: bold;
  }
- .left_nav  li a.curr i
- {
- 	background-position: -25px -25px;
- }
+
+ /*首页新动态*/
  .left_nav .new{
  	width: 4px;
  	height: 4px;
@@ -811,7 +807,7 @@ body.login .container,body.signup .container{
  	height: 28px;
  	line-height: 28px;
  }
- .left_nav a:not(.curr):hover,.left_nav a.active{
+ .left_nav a:not(.curr):hover,.left_nav li ul a.curr{
  	background: #e6e6e6 url(../images/left_nav_border.png) -150px bottom no-repeat;
  }
  
@@ -848,6 +844,10 @@ body.login .container,body.signup .container{
  	background-position: 0 -124px;
  }
 
+ .curr .ico_message
+ {
+ 	background-position: -25px -25px;
+ }
  .box_center{
  	padding:20px 0 30px;
  	min-height: 800px;
@@ -1760,17 +1760,22 @@ body.login .container,body.signup .container{
  	margin-bottom: 20px;
  }
  /*关注中心*/
- .body_follow .left_nav a.curr{
- 	font-weight: bold;
+
+ .ico_connect {
+ 	background-image: url(../images/icon_connect.png);
  }
- .curr .ico_connect{
+ .curr .ico_myfollow{
  	background-position: -25px 0px;
  }
- .body_follow .left_nav fieldset{
- 	margin-top:10px;
+ .ico_myfollow{
+ 	background-position: 0px 0px;
  }
-
-
+ .curr .ico_myfans{
+ 	background-position: -25px -25px;
+ }
+ .ico_myfans{
+ 	background-position: 0px -25px;
+ }
  .box_center .title span, .box_center .title  a{
  	font-size: 12px;
  	font-weight: normal;
@@ -1903,22 +1908,9 @@ body.login .container,body.signup .container{
  }
  
  /*粉丝页面*/
- .curr .ico_myfollow{
- 	background-position: -25px -25px;
- }
- .ico_myfollow{
- 	display: inline-block;
- 	width: 20px;
- 	height: 20px;
- 	vertical-align: -5px;
- 	margin-right: 3px;
- 	background: url(../images/icon_connect.png) 0px -25px no-repeat;
- }
+ 
  .icon_trash{
- 	display: inline-block;
- 	width: 16px;
- 	height: 16px;
- 	background: url(../images/icon.png) -123px -275px no-repeat;
+ 	background-position: -123px -275px;
  	vertical-align: middle;
  	margin-left: 10px;
  }
@@ -1998,9 +1990,7 @@ body.login .container,body.signup .container{
  .level_Box:last-of-type{
  	padding-top:10px;
  }
- .lev .W_ico20 {
- 	margin-right: 10px;
- 	vertical-align: -5px;
+ .ico_account {
  	background-image: url(../images/account_ico.png);
  }
 
@@ -2033,7 +2023,7 @@ body.login .container,body.signup .container{
  	margin:20px;
 
  }
- 
+
  .upload_btn span{
  	padding:3px 9px;
  }
@@ -2102,7 +2092,7 @@ body.login .container,body.signup .container{
  }
  /*设置个人信息*/
  .personinfo .item{
- 	margin:20px;
+ 	margin:15px 20px;
  	border: 1px solid #D9D9D9;
  	padding:0px 20px;
  	background: #f2f2f2;
@@ -2271,10 +2261,19 @@ body.login .container,body.signup .container{
  .ico_lev_leave {
  	background-position: 0px -248px;
  }
- .active .ico_lev_letter{
+ .curr .ico_lev_at {
+ 	background-position: -25px -149px;
+ }
+ .curr .ico_lev_comment {
+ 	background-position: -25px -174px;
+ }
+ .curr .ico_lev_like {
+ 	background-position: -25px -198px;
+ }
+ .curr .ico_lev_letter{
  	background-position: -25px -223px;
  }
- .active .ico_lev_leave{
+ .curr .ico_lev_leave{
  	background-position: -25px -248px;
  }
 
@@ -2326,7 +2325,7 @@ body.login .container,body.signup .container{
  .msg_dialogue .comment{
  	width:388px;
  }
- 
+
  .item_ta .comment{
  	float: left;
  }
@@ -2555,7 +2554,7 @@ body.login .container,body.signup .container{
  .S_content_r{
  	float:right;
  }
- .icon_connect{
+ .S_content_l .icon_connect{
  	display: inline-block;
  	width: 39px;
  	height: 14px;

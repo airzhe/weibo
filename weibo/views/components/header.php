@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 </head>
-<body <?php if(isset($body_class)) echo 'class="'.$body_class.'"'; ?>>
+<body<?php if(isset($body_class)) echo ' class="'.$body_class.'"'; ?>>
 	<div class="miniblog">
 		<div class="miniblog_fb">
 			<div class="header global_nav">

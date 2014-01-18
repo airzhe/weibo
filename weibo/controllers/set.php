@@ -3,7 +3,7 @@ Class set extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
 	}
-	public function index(){
+	public function info(){
 		$this->data['title'] = '个人信息';
 		$this->view('set/index',$this->data);
 	}
