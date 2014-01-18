@@ -18,80 +18,12 @@ class Welcome extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	// public function index()
-	// {	
-	// 	$this->load->view('index.html');
-	// }
-
-	public function indexs()
+	public function index()
 	{	
-		$this->load->view('index');
+		$this->load->view('index.html');
 	}
-	public function login()
-	{
-		$this->load->view('login');
-	}
-	public function signup()
-	{
-		$this->load->view('signup');
-	}
-	public function home()
-	{
-		$a=$this->load->view('home','',true);
-		echo $a;
-	}
-	public function msg()
-	{
-		$this->load->view('msg');
-	}
-	public function follow()
-	{
-		$this->load->view('follow');
-	}
-	public function fans()
-	{
-		$this->load->view('fans');
-	}
-	public function photo()
-	{
-		$this->load->view('set/avatar');
-	}
-	public function setinfo()
-	{
-		$this->load->view('set/index');
-	}
-	public function at()
-	{
-		$this->load->view('at');
-	}
-	public function commin()
-	{
-		$this->load->view('comment_inbox');
-	}
-	public function commout()
-	{
-		$this->load->view('comment_outbox');
-	}
-	public function letter2()
-	{
-		$this->load->view('letter_list');
-	}
-	public function letter()
-	{
-		$this->load->view('letter');
-	}
-	public function one()
-	{
-		$this->load->view('single_weibo');
-	}
-	public function ta()
-	{
-		$this->load->view('ta');
-	}
-	public function search()
-	{
-		$this->load->view('search');
-	}
+
+	
 }
 
 /* End of file welcome.php */

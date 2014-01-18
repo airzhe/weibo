@@ -1,27 +1,4 @@
-<div class="left_nav left">
-	<ul>
-		<li><a href="#"><i class="W_ico20 ico_myhomepage"></i>首页<i class="new"></i></a></li>
-		<li><a href="#"><i class="W_ico20 ico_message"></i>消息</a></li>
-		<li><a href="#"><i class="W_ico20 ico_favor"></i>收藏</a></li>
-		<li><a href="#"><i class="W_ico20 ico_sendtome"></i>发给我的</a></li>
-	</ul>
-	<ul class="goodfriend">
-		<li><a href=""><i class="W_ico20 ico_goodfriend"></i>好友圈</a></li>
-		<li></li>
-	</ul>
-	<div class="group">
-		<fieldset>
-			<legend class="S_txt2">分组</legend>
-		</fieldset>
-		<ul>
-			<li><a href="#"><i class="W_ico20 ico_group"></i>同事</a></li>
-			<li><a href="#"><i class="W_ico20 ico_group"></i>同学</a></li>
-			<li><a href="#"><i class="W_ico20 ico_group"></i>朋友</a></li>
-			<li><a href="#"><i class="W_ico20 ico_group"></i>家人</a></li>
-			<li><a href="#"><i class="W_ico20 ico_group"></i>明星</a></li>
-		</ul>
-	</div>
-</div>
+<?php $this->load->view('components/common_left_nav');?>
 <div class="main clearfix">
 	<div class="box_center left">
 		<div>

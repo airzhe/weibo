@@ -1,21 +1,5 @@
 <div class="content clearfix">
-	<div class="left_nav left">
-		<fieldset>
-			<legend class="S_txt2">关系中心</legend>
-		</fieldset>
-		<div class="lev"><a href=""><i class="W_ico20 ico_connect"></i>关注</a></div>
-		<div class="group">
-			<ul>
-				<li><a href="#">全部关注(35)</a></li>
-				<li><a href="#">同事</a></li>
-				<li><a href="#">同学</a></li>
-				<li><a href="#">朋友</a></li>
-				<li><a href="#">家人</a></li>
-				<li><a href="#">明星</a></li>
-			</ul>
-		</div>
-		<div class="lev"><a href="" class="curr"><i class="W_ico20 ico_myfollow"></i>粉丝(11)</a></div>
-	</div>
+	<?php $this->load->view('components/follow_fans_left_nav');?>
 	<div class="main">
 		<div class="box_center">
 			<div class="title">已有11人关注你 <a href="#"><i class="W_ico16 icon_trash"></i>垃圾箱 </a><a href="#" class="tips">没有尚未处理的关注请求</a></div>

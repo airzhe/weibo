@@ -583,6 +583,16 @@ body.login .container,body.signup .container{
  body{
  	background: #bee1f5 url(../images/body_repeat.png) repeat-x;
  }
+ .miniblog {
+ 	background-repeat: no-repeat;
+ 	background-position: center 0;
+ 	padding-top: 60px;
+ 	background-image: url(../images/body_bg.png);
+ 	min-width: 980px;
+ }
+ .miniblog_fb {
+ 	background: url(../images/footer.png) center bottom no-repeat;
+ }
  .global_nav {
  	position: fixed;
  	top: 0;
@@ -594,26 +604,11 @@ body.login .container,body.signup .container{
  	background: url(../images/bg_line.png) repeat-x center 38px;
  	
  }
-
  .global_nav .nav_bg{
  	font-size:14px;
  	width: 100%;
  	height: 39px;
  	background: url(../images/bg_nav.png) repeat-x;
- }
- .miniblog {
- 	background-repeat: no-repeat;
- 	background-position: center 0;
- 	padding-top: 60px;
- 	background-image: url(../images/body_bg.png);
- 	min-width: 980px;
- }
- .miniblog_fb {
- 	background: url(../images/footer.png) center bottom no-repeat;
- }
- body.home .container{
- 	margin:0 auto;
- 	position: relative;
  }
  .global_nav .logo, .global_nav .nav{
  	display: inline-block;
@@ -691,7 +686,6 @@ body.login .container,body.signup .container{
  	right:0;
  	top:0;
  	margin:0;
- 	
  }
  .global_nav .user>li{
  	float:left;
@@ -707,7 +701,6 @@ body.login .container,body.signup .container{
  .global_nav .user>li:hover{
  	background: url(../images/bg_nav.png) repeat-x 0 -76px;
  }
-
  .global_nav .user i{
  	vertical-align: middle;
  	background-image: url(../images/bg_line.png);
@@ -754,12 +747,20 @@ body.login .container,body.signup .container{
  .global_nav .user .msg ul li{
  	padding:10px;
  }
+ 
+ body.home .container{
+ 	margin:0 auto;
+ 	position: relative;
+ }
 
  /**
  * 左导航
  */
  .container.main{
  	background: #fff url(../images/repeat_bg_y.png) repeat-y;
+ }
+ body.home .left_nav li ul{
+ 	display: none;
  }
  .left_nav{
  	width: 150px;

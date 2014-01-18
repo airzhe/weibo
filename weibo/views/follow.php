@@ -1,21 +1,5 @@
 <div class="content clearfix">
-	<div class="left_nav left">
-		<fieldset>
-			<legend class="S_txt2">关系中心</legend>
-		</fieldset>
-		<div class="lev"><a href="" class="curr"><i class="W_ico20 ico_connect"></i>关注</a></div>
-		<div class="group">
-			<ul>
-				<li><a href="#" class="active">全部关注</a></li>
-				<li><a href="#">同事</a></li>
-				<li><a href="#">同学</a></li>
-				<li><a href="#">朋友</a></li>
-				<li><a href="#">家人</a></li>
-				<li><a href="#">明星</a></li>
-			</ul>
-		</div>
-		<div class="lev"><a href=""><i class="W_ico20 ico_myfollow"></i>粉丝(11)</a></div>
-	</div>
+	<?php $this->load->view('components/follow_fans_left_nav');?>
 	<div class="main">
 		<div class="box_center">
 			<div class="title">全部关注 <span class="num">(35个)</span> <i class="icon_warnS"></i><a href="#" class="tips">开通微博会员</a><span class="S_txt2">可提高关注上限</span></div>
