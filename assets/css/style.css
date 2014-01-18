@@ -1577,11 +1577,16 @@ body.login .container,body.signup .container{
  }
  
  /*赞图标*/
- .icon_praised_b{
+ .icon_praised_b,.icon_praised_bc{
  	width: 13px;
  	height: 14px;
+ 	vertical-align: middle;
+ }
+ .icon_praised_b{
  	background-position: -75px 0;
- 	vertical-align: text-bottom;
+ }
+ .icon_praised_bc {
+ 	background-position: -100px 0;
  }
  
  /*关注/粉丝*/
@@ -1654,6 +1659,7 @@ body.login .container,body.signup .container{
  	border-radius: 3px;
  	border-color: #d5dfda;
  }
+
  /*消息页面*/
  .box_center div.title{
  	margin: 0px 20px;
@@ -1664,6 +1670,14 @@ body.login .container,body.signup .container{
  	color: #333;
  	height: 24px;
  	line-height: 28px;
+ }
+ .box_center div.title a.tit{
+ 	font-size:14px;
+ 	font-weight: bold;
+ 	color: #333;
+ 	height: 24px;
+ 	line-height: 28px;
+ 	margin-right: 20px;
  }
  .box_center .tab_normal{
  	margin: 0px 20px;
@@ -1691,7 +1705,7 @@ body.login .container,body.signup .container{
 
  .box_center .msg_list .item{
  	border-bottom:1px solid #e6e6e6;
- 	padding:20px;
+ 	padding:15px 20px;
  	cursor: pointer;
  }
  .box_center .msg_list .item:hover{
@@ -1702,15 +1716,17 @@ body.login .container,body.signup .container{
  }
  .box_center .msg_list .msg_main{
  	margin-left: 65px;
- 	height: 50px;
+ 	height: 60px;
  	overflow: hidden;
- 	font-size: 14px;
+ 	line-height: 21px;
  	position: relative;
+ 	top:-5px;
  }
  .msg_main .msg_title{
  	font-weight: 700;
- 	margin-bottom: 5px;
+ 	margin: 5px 0;
  	color:#333;
+ 	font-size: 14px;
  }
  .msg_main .msg_detail{
  	line-height: 30px;
@@ -1718,12 +1734,12 @@ body.login .container,body.signup .container{
  	text-overflow: ellipsis;
  	overflow: hidden;
  	margin-right: 2em;
+ 	font-size: 14px;
  }
  .msg_main .msg_time{
  	position: absolute;
  	top:0;
  	right: 0;
- 	font-size: 12px;
  }
  .box_center .msg_list{
  	/*margin:20px;*/

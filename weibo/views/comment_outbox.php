@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/common_left_nav');?>
 	<div class="main clearfix">
 		<div class="box_center left">
-			<div class="title">发出的评论</div>
+			<div class="title"><a href="#" class="tit">收到的评论</a><a href="#" class="tit">发出的评论</a></div>
 			<div class="comment_list">
 				<div class="item clearfix">
 					<div class="face">
