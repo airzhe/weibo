@@ -18,10 +18,10 @@ class Welcome extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function index()
-	{	
-		$this->load->view('index.html');
-	}
+	// public function index()
+	// {	
+	// 	$this->load->view('index.html');
+	// }
 
 	public function indexs()
 	{	
@@ -37,7 +37,8 @@ class Welcome extends CI_Controller {
 	}
 	public function home()
 	{
-		$this->load->view('home');
+		$a=$this->load->view('home','',true);
+		echo $a;
 	}
 	public function msg()
 	{

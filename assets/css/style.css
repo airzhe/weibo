@@ -851,7 +851,6 @@ body.login .container,body.signup .container{
  	padding:20px 0 30px;
  	min-height: 800px;
  	overflow: hidden;
- 	background: #fff;
  	width: 600px;
 
  }
@@ -1090,6 +1089,9 @@ body.login .container,body.signup .container{
  	overflow: hidden;
  	padding-top:20px;
  }
+ .weibo_list .item:only-child{
+ 	border-bottom: none;
+ }
  .weibo_list .item .face{
  	float: left;
  	width: 50px;
@@ -1197,7 +1199,6 @@ body.login .container,body.signup .container{
  	z-index: 0;
  	margin: -18px 0 0;
  	margin-left: 445px;
- 	/*margin-left: 510px;*/
  	width: 22px;
  	cursor: default;
  }
