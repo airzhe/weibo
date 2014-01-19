@@ -17,7 +17,7 @@
 	<div class="level_Box">
 		<div class="lev"><a href="" data-type='info'><i class="W_ico20 ico_account ico_personinfo"></i>个人信息</a></div>
 		<div class="lev"><a href="" data-type='avatar'><i class="W_ico20 ico_account ico_avater"></i>头像</a></div>
-		<div class="lev"><a href=""><i class="W_ico20 ico_account ico_security"></i>帐号安全</a></div>
+		<div class="lev"><a href="" data-type='security'><i class="W_ico20 ico_account ico_security"></i>帐号安全</a></div>
 	</div>
 	<div class="level_Box">
 		<div class="lev"><a href=""><i class="W_ico20 ico_account ico_privacy"></i>隐私设置</a></div>

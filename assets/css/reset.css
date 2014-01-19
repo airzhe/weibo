@@ -481,3 +481,10 @@ em,i{
 dd{
   margin-left: 0;
 }
+
+/*
+ *
+ */
+ input[type=text], input[type=password]{
+  border-color: #ccc;
+}

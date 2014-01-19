@@ -157,13 +157,13 @@ a{
 	color:#ccc;
 }
 .W_input, .W_inputStp {
-	border: 1px solid rgb(204, 204, 204);
+	border:1px solid #ccc;
 	border-radius: 2px;
 	height: 28px;
 	padding: 0px 0px 0px 2px;
 	vertical-align: middle;
-	color: rgb(128, 128, 128);
-	box-shadow: 0px 1px 1px 0px rgb(234, 234, 234) inset;
+	color: #808080;
+	box-shadow: 0px 1px 1px 0px #eaeaea inset;
 	resize:none;
 }
 .W_input_focus, .W_input:focus, .W_inputStp:focus {
@@ -245,8 +245,14 @@ textarea.W_input {
 .icon_warn, .icon_warnS {
 	background-position: 0px -200px;
 }
+.icon_error, .icon_errorS{
+	background-position: 0 -100px;
+}
 .icon_close:hover {
 	background-position: -100px -25px;
+}
+.icon_rederror, .icon_rederrorS {
+	background-position: 0 -250px;
 }
 .global_nav .container{
 	background: transparent!important;
@@ -2141,7 +2147,7 @@ body.login .container,body.signup .container{
  	position: relative;
  }
  .acc_form .info_item div:not(.btn){
- 	line-height: 30px;
+ 	line-height: 35px;
  }
  .acc_form .info_item .tit{
  	width: 48px;
@@ -2159,12 +2165,7 @@ body.login .container,body.signup .container{
  	line-height: normal;
  }
  .acc_form .info_item .inp input[type=text],.acc_form .info_item .inp textarea{
- 	border: 1px solid #ccc;
- 	border-radius: 2px;
- 	height: 28px;
- 	padding: 0 0 0 2px;
- 	vertical-align: middle;
- 	box-shadow: 0px 1px 1px 0px #eaeaea inset;
+
  	width: 196px;
  }
  .acc_form .info_item .inp textarea{
@@ -2180,6 +2181,30 @@ body.login .container,body.signup .container{
  .acc_form .btn .W_btn_a {
  	margin-right: 10px;
  }
+ /*个性域名*/
+ .domainname .info_item .tit
+ {
+ 	width: 100px;
+ }
+.domainname .info_item .inp {
+ 	margin-left: 135px;
+ }
+.domainname .info_item .tips{
+ 	left:350px;
+ }
+.W_tips.tips_error {
+    background: none repeat scroll 0 0 #FBFAEE;
+    border: 1px solid #FCEDB1;
+    color: #666666;
+    line-height: 12px;
+    margin-bottom: 10px;
+}
+.W_tips.tips_error span{
+	display: inline-block;
+}
+.W_tips.tips_error span.txt{
+	margin-top: 2px;
+}
  /*评论页面*/
  .comment_list .item {
  	margin:21px 20px 0 20px;
