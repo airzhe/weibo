@@ -24,7 +24,7 @@
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_qing"></i>话题</a>
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_chang"></i>长微博</a>
 					</div>
-					<a href="" class="send_btn W_btn_v right "><span class="btn_30px">发布</span></a>
+					<a href="" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
 				</div>
 				<div class="weibo">
 					<div class="feed_nav">

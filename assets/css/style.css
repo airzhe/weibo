@@ -964,57 +964,49 @@ body.login .container,body.signup .container{
  	margin-top: 12px;
  }
  /*发布微博按钮*/
- .W_btn_v, .W_btn_v:hover {
+ .send_weibo .send_btn{
+ 	margin-top:5px;
  	border-width: 1px;
  	border-style: solid;
- 	border-color: #e64141;
- 	background-color: #e64141;
- 	color: #fff;
  	border-radius: 2px;
  	display: inline-block;
  	overflow: hidden;
  	vertical-align: middle;
  	cursor: pointer;
  }
- .W_btn_v span {
- 	padding: 0 9px;
- 	border-width: 1px;
- 	border-style: solid;
- 	border-color: #f57373;
- 	color: #fff;
- }
- .W_btn_a .btn_30px, .W_btn_b .btn_30px, .W_btn_c .btn_30px, .W_btn_v .btn_30px {
- 	display: inline-block;
- 	height: 26px;
- 	line-height: 26px;
- 	padding: 0 15px;
- }
- .send_weibo .send_btn{
- 	margin-top:5px;
- }
  .send_weibo .send_btn span {
  	display: inline-block;
  	width: 78px;
- 	padding: 0;
+ 	height: 26px;
+ 	line-height: 26px;
  	text-align: center;
  	font-size: 16px;
+ 	border-width: 1px;
+ 	border-style: solid;
  	font-family: "Microsoft Yahei";
- 	text-shadow: 1px 1px rgba(0,0,0,.2);
  }
- .send_weibo .send_btn:hover{
+ .W_btn_v, .W_btn_v:hover {
+ 	border-color: #e64141;
+ 	background-color: #e64141;	
+ }
+ .W_btn_v:hover{
  	background-image: linear-gradient(rgba(249,89,89,1) 0%,rgba(231,67,67,1) 100%);
  }
-
- .send_btn.disable{
- 	border-color: #d9d9d9;
- 	background-color: #f2f2f2;
+ .W_btn_v span {
+ 	border-color: #f57373;
+ 	color: #fff;
+ 	text-shadow: 1px 1px rgba(0,0,0,.2);
  }
- .send_btn.disable span{
+ .W_btn_v_disable, .W_btn_v_disable:hover {
+ 	background: #f2f2f2;
+ 	border-color: #d9d9d9;
+ }
+ .W_btn_v_disable span{
  	border-color: #fff;
  	color:#ccc;
  	text-shadow: none;
- 	background-color: #f2f2f2;;
  }
+
  .kind_detail{
  	font-size: 12px;
  	width: 390px;
@@ -1279,7 +1271,7 @@ body.login .container,body.signup .container{
  	padding: 5px 0px 0px 6px;
  	background: url(../images/level.png) no-repeat 0 -30px;
  }
- 
+
  .W_level_ico {
  	display: inline-block;
  	overflow: hidden;
@@ -1303,7 +1295,7 @@ body.login .container,body.signup .container{
  .W_level_num.l7 {
  	background-position: 0 -210px;
  }
- 
+
  .box_right  .user_atten{
  	padding: 20px;
  }
@@ -1559,7 +1551,7 @@ body.login .container,body.signup .container{
  	width: 358px;
  	border: 1px solid #d9d9d9;
  }
- 
+
  .S_bg1, .SW_fun_bg {
  	background-color: #f2f2f2;
  }
@@ -1581,7 +1573,7 @@ body.login .container,body.signup .container{
  	line-height: 24px;
  	text-decoration: none;
  }
- 
+
  /*赞图标*/
  .icon_praised_b,.icon_praised_bc{
  	width: 13px;
@@ -1594,7 +1586,7 @@ body.login .container,body.signup .container{
  .icon_praised_bc {
  	background-position: -100px 0;
  }
- 
+
  /*关注/粉丝*/
  .wrap .sidebar h4{
  	margin:0;
@@ -1928,9 +1920,9 @@ body.login .container,body.signup .container{
  .myfollow_list .item:hover .introHover:nth-last-of-type(2){
  	display: block;
  }
- 
+
  /*粉丝页面*/
- 
+
  .icon_trash{
  	background-position: -123px -275px;
  	vertical-align: middle;
@@ -2186,25 +2178,25 @@ body.login .container,body.signup .container{
  {
  	width: 100px;
  }
-.domainname .info_item .inp {
+ .domainname .info_item .inp {
  	margin-left: 135px;
  }
-.domainname .info_item .tips{
+ .domainname .info_item .tips{
  	left:350px;
  }
-.W_tips.tips_error {
-    background: none repeat scroll 0 0 #FBFAEE;
-    border: 1px solid #FCEDB1;
-    color: #666666;
-    line-height: 12px;
-    margin-bottom: 10px;
-}
-.W_tips.tips_error span{
-	display: inline-block;
-}
-.W_tips.tips_error span.txt{
-	margin-top: 2px;
-}
+ .W_tips.tips_error {
+ 	background: none repeat scroll 0 0 #FBFAEE;
+ 	border: 1px solid #FCEDB1;
+ 	color: #666666;
+ 	line-height: 12px;
+ 	margin-bottom: 10px;
+ }
+ .W_tips.tips_error span{
+ 	display: inline-block;
+ }
+ .W_tips.tips_error span.txt{
+ 	margin-top: 2px;
+ }
  /*评论页面*/
  .comment_list .item {
  	margin:21px 20px 0 20px;
