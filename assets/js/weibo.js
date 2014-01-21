@@ -7,7 +7,7 @@ $(function(){
 		//ajax请求表情gif地址
 		$.ajax(
 		{
-			url:face_url,
+			url:site_url+'face',
 			success:function(data){
 				$('.faces_list').html(data);
 			}
