@@ -17,6 +17,9 @@
 							<em class="S_line1_c">◆</em>
 							<span class="S_bg4_c">◆</span>
 						</div>
+						<div class="W_loading">
+							<span>正在加载，请稍候...</span>
+						</div>
 						<div class="W_tips tips_warn clearfix">
 							<p>
 								<span class="icon_warnS"></span>
@@ -25,14 +28,14 @@
 							</p>
 						</div>
 						<textarea name="" id="" class="W_input"></textarea>
-						<p class="clearfix"><input type="checkbox" name="" class="W_checkbox">同时转发到我的微博<a href="" class="W_btn_b right"><span>评论</span></a></p>
+						<p class="clearfix"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox">同时转发到我的微博<a href="" class="W_btn_b right"><span>评论</span></a></p>
 						<div class="C_item S_line1">
 							<div class="face left">
 								<img src="./assets/images/_1.jpg" width="30" height="30" alt="">
 							</div>
 							<div class="C_detail">
 								<p><a href="">D瓜哥-李_君</a>：回复<a href="">@叉色-xsir</a>:恩，说实话我对这块专门看过一些资料。所以问的比较多。哈哈<span class="S_txt2">(1月5日 22:07)</span></p>
-								<p class="info"><a href="#"><i class="icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">查看对话</a><i class="S_txt3">|</i><a href="#">回复</a></p>
+								<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">查看对话</a><i class="S_txt3">|</i><a href="#">回复</a></p>
 							</div>
 						</div>
 						<div class="C_item S_line1">
@@ -41,7 +44,19 @@
 							</div>
 							<div class="C_detail">
 								<p><a href="">叉色-xsir</a>：前端后端都有啊。。。前端优化问的还蛮细的<span class="S_txt2">(1月5日 22:07)</span></p>
-								<p class="info"><a href="#"><i class="icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">回复</a></p>
+								<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">回复</a></p>
+								<!-- 回复对话框 -->
+								<div class="repeat S_line1 S_bg1">
+									<div class="WB_arrow"><em class="S_line1_c">◆</em><span class=" S_bg1_c">◆</span></div>
+									<div class="S_line1 input clearfix">
+										<textarea name="" class="W_input" cols="30" rows="10"></textarea>
+										<p class="clearfix">
+											<span class="left"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox"> 同时转发到我的微博</span>
+											<a href="" class="W_btn_a right"><span>评论</span></a>
+										</p>
+									</div>
+								</div>
+								<!-- 回复对话框 -->
 							</div>
 						</div>
 					</div>

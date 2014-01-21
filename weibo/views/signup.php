@@ -8,9 +8,29 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery.validate.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/jquery.calendar.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/jquery.cxselect.min.js') ?>"></script>
 	<script>
 		$(document).ready(function(){
+			//生日
+			var myDate = new Date();
+			$("#dateSelector").DateSelector({
+				ctlYearId: 'idYear',
+				ctlMonthId: 'idMonth',
+				ctlDayId: 'idDay',
+				defYear: myDate.getFullYear(),
+				defMonth: (myDate.getMonth()+1),
+				defDay: myDate.getDate(),
+				minYear: 1900,
+				maxYear: (myDate.getFullYear()+1)
+			});
 
+			//地区
+			$.cxSelect.defaults.url="<?php echo base_url('assets/js/city.min.js') ?>";
+			$("#city").cxSelect({
+				selects:["province","city","area"],
+				nodata:"none"
+			});
 		})
 	</script>
 </head>
@@ -59,7 +79,7 @@
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>生日：</div>
 							<div class="inp">
-								<input class="W_input" type="text" name="birthday">
+								<select id="idYear" name="idYear" data="1987"></select>年 <select id="idMonth" name="idMonth" data="1"></select>月 <select id="idDay" name="idDay" data="1"></select>日
 							</div>
 							<div class="tips">
 								<label class="error"><i class="icon_rederrorS"></i>请选择生日</label>
@@ -77,8 +97,10 @@
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>所在地：</div>
-							<div class="inp">
-								<input class="W_input" type="text" name="location">
+							<div class="inp" id="city">
+								<select class="province" data-val="浙江" data-title="选择省"></select>
+								<select class="city" data-val="杭州" data-title="选择市" disabled="disabled"></select>
+								<select class="area" data-val="西湖区" data-title="选择地区" disabled="disabled"></select>
 							</div>
 							<div class="tips">
 								<label class="error"><i class="icon_rederrorS"></i>请选择性别</label>

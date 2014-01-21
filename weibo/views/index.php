@@ -1,5 +1,52 @@
 <?php $this->load->view('components/index_top') ?>
 <div class="wrap clearfix">
+	<div class="W_layer set_template" action-id="undefined" style="left: 240.5px; top: 400px;">
+		<div class="bg">
+			<div class="wrap">
+				<div class="title">
+					个性化设置
+				</div>
+				<div class="content">
+					<ul class="profile_tab S_line1 clearfix ">
+						<li class="current S_line1"><a href="#">套装</a></li>
+						<li class="S_line1"><a href="#">模板</a></li>
+						<li class="S_line1"><a href="#">封面图</a></li>
+						<li class="S_line1"><a href="#">自定义</a></li>
+					</ul>
+					<ul class="tab_nosep clearfix">
+						<li class="current"><a href="#">推荐</a></li>
+						<li><a href="#">七天换装</a></li>
+						<li><a href="#">会员</a></li>
+						<li><a href="#">动态</a></li>
+					</ul>
+					<ul class="templete_list clearfix">
+						<li><a href=""><img src="./assets/images/skin/skin.png" alt="" width="123" height="73"><span>雨夜</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_001.png" alt="" width="123" height="73"><span>太空</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_002.png" alt="" width="123" height="73"><span>团团圆圆</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_003.png" alt="" width="123" height="73"><span>神偷奶爸2</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_004.png" alt="" width="123" height="73"><span>漓彩</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_005.png" alt="" width="123" height="73"><span>保护北冰洋</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_006.png" alt="" width="123" height="73"><span>带TA回家</span></a></li>
+						<li><a href=""><img src="./assets/images/skin/skin_007.png" alt="" width="123" height="73"><span>下雪啦</span></a></li>
+					</ul>
+					<div class="btn clearfix">
+						<span>
+							<label>
+								<input style="" checked="checked" node-type="sync" class="W_checkbox" type="checkbox">
+								<span style="" node-type="syncText">同步到微博</span>
+							</label>
+						</span>
+						<span class="right">
+							<a href="javascript:;"  class="W_btn_a"><span class="btn_30px W_f14">保存</span></a>
+							<a href="javascript:;" action-type="cancel" class="W_btn_b" node-type="canncel"><span class="btn_30px W_f14">取消</span></a>
+						</span>
+					</div>
+				</div>
+				<a class="W_close" href="javascript:void(0);" title="关闭"></a>
+			</div>
+		</div>
+
+	</div>
 	<div class="main left">
 		<p class="tab_radious">
 			<a href="#" class="active"><strong>全部</strong><span class="tabarrow"></span></a>

@@ -1,3 +1,14 @@
+/*
+.W_layer{position:absolute;box-shadow:0 0 10px #333;background:#fff;z-index:10000;position:fixed;}
+.W_layer_title{border-bottom: 1px solid #e5e5e5;height:46px;line-height:46px;position: relative;background-color:#f7f7f7;}
+.W_layer_title h2{font-size:16px;font-weight: 700;padding-left:20px;font-family: "microsoft yahei"}
+.W_layer_title i.close{position: absolute;right:15px;top:0px;cursor: pointer;color:#ccc;font-size: 30px;}
+.W_layer_title i.close:hover{color:#999;}
+.W_layer_body{padding:20px;font-size:14px;}
+.W_layer_footer{padding:15px;border-top: 1px solid #e5e5e5;text-align: right;}
+.W_layer_bg{position:absolute;background:#000;opacity:0.5;z-index:9999;left:0;top:0;}
+.W_layer input[type=submit],.W_layer button{padding:7px 13px;border:1px solid #e4e4e4;outline:none;background: none;cursor:pointer;color:#333;}
+*/
 body{
 	font: 12px/1.125 Arial,Helvetica,sans-serif;
 	color: #333;
@@ -96,6 +107,11 @@ a{
 	overflow: hidden;
 	vertical-align: middle;
 	cursor: pointer;
+}
+.W_btn_a:hover, .W_btn_d:hover, .W_btn_b:hover, .W_btn_a:hover span, .W_btn_d:hover span, .W_btn_b:hover span {
+	text-decoration: none;
+	background: rgb(255,184,71);
+	background: linear-gradient(rgba(255,184,71,1) 0%,rgba(255,162,16,1) 100%);
 }
 .W_btn_a span,.W_btn_b span,.W_btn_c span,.W_btn_c_disable span{
 	padding: 0 9px 0 10px;
@@ -613,7 +629,7 @@ body.login .container,body.signup .container{
  .global_nav .nav_bg{
  	font-size:14px;
  	width: 100%;
- 	height: 39px;
+ 	height: 38px;
  	background: url(../images/bg_nav.png) repeat-x;
  }
  .global_nav .logo, .global_nav .nav{
@@ -735,8 +751,11 @@ body.login .container,body.signup .container{
  .global_nav .user .msg{
  	position: relative;
  }
- .global_nav .user .msg:hover{
- 	background: #fff;
+ .global_nav .user .msg:hover a{
+ 	position: relative;
+ 	padding-bottom: 10px;
+ 	z-index: 1;
+ 	background:  url(../images/bg_line.png) right -3px no-repeat;
  }
  .global_nav .user .msg:hover ul{
  	display: block;
@@ -744,11 +763,11 @@ body.login .container,body.signup .container{
  .global_nav .user .msg ul{
  	display: none;
  	position: absolute;
- 	left:-107px;
+ 	left:-108px;
  	background: #fff;
  	width:150px;
  	border:1px solid #333;
- 	top:44px;
+ 	top:39px;
  }
  .global_nav .user .msg ul li{
  	padding:10px;
@@ -963,6 +982,10 @@ body.login .container,body.signup .container{
  	font: normal 16px/22px Microsoft Yahei;
  	margin-top: 12px;
  }
+ .ico_faces {
+ 	background-position: -275px 0px;
+ 	cursor: pointer;
+ }
  /*发布微博按钮*/
  .send_weibo .send_btn{
  	margin-top:5px;
@@ -1032,9 +1055,189 @@ body.login .container,body.signup .container{
  .kind_detail i.icon_chang{
  	background-position: -275px -100px;
  }
+ /*弹出框*/
+ .W_layer a, .W_layer .S_link1, .W_layer .S_func1:hover, .W_layer .SW_fun:hover .S_func1 {
+ 	color: rgb(10, 140, 210);
+ }
+ .W_layer{
+ 	position: absolute;
+ 	z-index: 9999;
+ }
+ .W_layer .bg{
+ 	padding: 3px;
+ 	border-radius: 4px;
+ 	background: url(../images/layer_bg.png);
+ }
+ .W_layer .title{
+ 	background: none repeat scroll 0% 0% rgb(242, 242, 242);
+ 	height: 30px;
+ 	line-height: 30px;
+ 	font-weight: 700;
+ 	padding: 0px 0px 0px 20px;
+ 	font-size: 12px;
+ 	vertical-align: middle;
+ }
+ .W_layer .wrap{
+ 	width: 417px;
+ 	background: #fff;
+ 	border:1px solid #ccc;
+ }
+
+ .W_layer .wrap .content{
+ 	padding: 0px 20px 15px;
+ }
+ .W_layer .profile_tab{
+ 	background: #fafafa;
+ 	border-bottom-width: 1px;
+ 	border-bottom-style: solid;
+ 	height: 29px;
+ 	padding-left: 20px;
+ 	padding-top: 10px;
+ 	margin: 0px -19px 9px ! important;
+ }
+ .W_layer .profile_tab li{
+ 	float: left;
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	margin-right: -1px;
+ }
+ .W_layer .profile_tab li.current{
+ 	background: #fff;
+ 	padding-bottom: 1px;
+ 	border-bottom: none;
+ 	font-weight: 700;
+ }
+ .W_layer .profile_tab a{
+ 	display: block;
+ 	line-height: 26px;
+ 	padding: 0 15px;
+ 	border:1px solid #fff;
+ 	text-decoration: none;
+ 	color: #333;
+ }
+ 
+ 
+ .W_layer .tab_nosep{
+
+ 	line-height: 23px;
+ 	/*padding: 10px 0 0 24px;*/
+ 	padding: 0px 0px 10px;
+ }
+ .W_layer .tab_nosep li{
+ 	float: left;
+ }
+ .W_layer  .tab_nosep li a{
+ 	display: block;
+ 	line-height: 22px;
+ 	padding: 0 10px;
+ 	border-radius: 2px;
+ }
+ .W_layer .tab_nosep li.current a{
+ 	background: #e6e6e6;
+ 	color: #333;
+ }
+ .W_layer  .W_close{
+ 	position: absolute;
+ 	z-index: 2;
+ 	right: 17px;
+ 	top: 16px;
+ 	display: inline-block;
+ 	width: 16px;
+ 	height: 16px;
+ 	background: url(../images/icon.png) no-repeat -75px -200px;
+ }
+ .W_layer .W_close:hover{
+ 	background-position: -100px -200px;
+ }
+ /*表情弹出框*/
+ .hotFace .wrap{
+ 	width: 417px;
+ }
+ .hotFace .faces_list{
+ 	/*padding: 0 19px 10px;*/
+ 	margin-left: 4px;
+ }
+ .hotFace .faces_list li{
+ 	cursor: pointer;
+ 	float: left;
+ 	border: 1px solid #e8e8e8;
+ 	height: 22px;
+ 	width: 26px;
+ 	overflow: hidden;
+ 	margin: -1px 0 0 -1px;
+ 	padding: 4px 2px;
+ 	text-align: center;
+ }
+ .hotFace .arrow {
+ 	position: absolute;
+ 	width: 14px;
+ 	height: 9px;
+ 	top: -5px;
+ 	left:2px;
+ 	overflow: hidden;
+ 	display: block;
+ 	background: url(../images/layer_arrow.png) no-repeat;
+ }
+ 
+ .face_mask{
+ 	position: absolute;
+ 	left:0;
+ 	top:0;
+ 	right: 0;
+ 	bottom:0;
+ 	opacity: 0;
+ }
+ /*模板个性设置弹出框*/
+ .set_template .wrap{
+ 	width: 569px;
+ }
+ .set_template .tab_nosep{
+ 	border-bottom: 1px dotted rgb(204, 204, 204);
+ }
  .send_weibo .kind_detail .W_ico16 {
  	margin: 0 4px 0 0;
  	vertical-align: -4px;
+ }
+
+ .set_template .templete_list {
+ 	padding: 19px 0px 0px;
+ 	margin: 0px 0px -5px -7px;
+/* 	height: 290px;
+ 	overflow: hidden;*/
+ }
+ .set_template .templete_list li{
+ 	float: left;
+ 	margin: 0px 0px 18px 7px;
+ 	border: 1px solid rgb(255, 255, 255);
+ 	position: relative;
+ 	cursor: pointer;
+ }
+
+ .set_template .templete_list a img {
+ 	border: 1px solid rgb(204, 204, 204);
+ 	display: block;
+ }
+
+ .set_template .templete_list a span{
+ 	position: absolute;
+ 	bottom: 1px;
+ 	left: 1px;
+ 	right: 1px;
+ 	height: auto;
+ 	padding: 2px 0px;
+ 	line-height: 18px;
+ 	background: none repeat scroll 0% 0% rgba(74, 74, 74, 0.6);
+ 	text-align: center;
+ 	color: rgb(255, 255, 255);
+ 	display: none;
+ }
+ .set_template .templete_list a:hover span {
+ 	display: block;
+ }
+ .set_template .btn {
+ 	border-top: 1px solid rgb(204, 204, 204);
+ 	padding: 10px 0px 0px;
+ 	margin: 15px 0px 0px;
  }
  .weibo .feed_nav h3{
  	padding: 0 10px;
@@ -1215,16 +1418,41 @@ body.login .container,body.signup .container{
  	margin: -11px 0 0;
  }
 
+ /*回复评论*/
+ .weibo_list .comment .repeat {
+ 	clear: both;
+ 	line-height: 20px;
+ 	padding: 15px 20px 13px;
+ 	font-size: 12px;
+ 	margin: 10px 0 6px;
+ 	border-radius: 3px;
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	zoom: 1;
+ 	position: relative;
+ }
+ .weibo_list .comment .repeat p{
+ 	margin: 5px 0  8px;
+ }
+ .weibo_list .comment .repeat .WB_arrow{
+ 	margin: -23px 0 0 370px;
+ }
+ .ico_faces{
+ 	vertical-align: -4px;
+ 	margin-right: 10px;
+ }
+ 
  /*个人页面微博样式*/
 
  .weibo_list.feed_self .detail{
  	margin-left: 0;
  }
-
  .weibo_list.feed_self .comment .WB_arrow{
  	margin-left: 510px;
  }
-
+ .weibo_list.feed_self .comment  .repeat .WB_arrow{
+ 	margin-left: 430px;
+ }
  /*右侧边栏*/
 
  .box_right{
@@ -1512,7 +1740,7 @@ body.login .container,body.signup .container{
  	color: #333;
  	text-decoration: none;
  }
- .container .wrap{
+ .container>.wrap{
  	padding: 19px 20px 20px;
  	min-height: 800px;
  }
@@ -1551,7 +1779,9 @@ body.login .container,body.signup .container{
  	width: 358px;
  	border: 1px solid #d9d9d9;
  }
-
+ .S_bg1_c {
+ 	color: #f2f2f2;
+ }
  .S_bg1, .SW_fun_bg {
  	background-color: #f2f2f2;
  }
@@ -2201,7 +2431,18 @@ body.login .container,body.signup .container{
  .comment_list .item {
  	margin:21px 20px 0 20px;
  }
-
+ .W_loading {
+ 	margin: 2px 0 17px;
+ 	text-align: center;
+ 	padding: 20px 0 10px;
+ }
+ .W_loading span {
+ 	background: url(../images/loading.gif) no-repeat 0 1px;
+ 	padding: 0 0 0 20px;
+ 	line-height: 18px;
+ 	height: 18px;
+ 	display: inline-block;
+ }
  .comment_list .item .face{
  	float: left;
  	width: 50px;
@@ -2224,6 +2465,7 @@ body.login .container,body.signup .container{
  .comment_list .item:hover .del{
  	display: block;
  }
+
  /*收到的评论*/
  .comment_list .comment {
  	position: relative;

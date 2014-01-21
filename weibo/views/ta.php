@@ -1,3 +1,10 @@
+<script>
+	$(document).ready(function(){
+		$("[action-type='webim.conversation']").on('click',function(){
+			$.modal();
+		})
+	})
+</script>
 <div class="profile_pic_top" style="background-image:url(<?php echo base_url('assets/images/040.jpg') ?>)">
 	<a class="set_skin" href="#" title="模板设置"></a>
 </div>
@@ -40,7 +47,7 @@
 				<a class="S_link2" href="javascript:void(0);">取消</a>
 			</span>
 		</div>
-		<a class="W_btn_c"><span><i class="W_chat_stat"></i>私信</span></a>
+		<a class="W_btn_c"><span action-type="webim.conversation"><i class="W_chat_stat"></i>私信</span></a>
 	</div>
 
 </div>

@@ -17,7 +17,7 @@
 					<span class="left"><em class="icon_mes"></em>发私信给：runpur</span><span class="right">还可以输入10000</span>
 				</p>
 				<textarea class="W_input" placeholder="发私信" title="输入要发送的私信">发私信</textarea>
-				<p class="clearfix"><a href="">表情</a><a href="" class="W_btn_b right"><span>发送</span></a></p>
+				<p class="clearfix"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><a href="" class="W_btn_b right"><span>发送</span></a></p>
 			</div>
 			<div class="comment_list msg_dialogue">
 
