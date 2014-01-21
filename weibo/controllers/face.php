@@ -5,7 +5,7 @@ class face extends Front_Controller{
 	 */
 	public function index(){
 		if(!$this->input->is_ajax_request()){
-			// show_404();
+			show_404();
 		}
 		$face_url=base_url('assets/images/hotFace');
 		// 读取配置项获得表情数组
