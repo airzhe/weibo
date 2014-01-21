@@ -100,17 +100,19 @@ a{
 .W_btn_a:hover, .W_btn_d:hover, .W_btn_b:hover, .W_btn_a:hover span, .W_btn_d:hover span, .W_btn_b:hover span {
 	text-decoration: none;
 	background: rgb(255,184,71);
-	background: linear-gradient(rgba(255,184,71,1) 0%,rgba(255,162,16,1) 100%);
+	background-image: linear-gradient(rgba(255,184,71,1) 0%,rgba(255,162,16,1) 100%);
 }
-.W_btn_a span,.W_btn_b span,.W_btn_c span,.W_btn_c_disable span{
+.W_btn_a span,.W_btn_b span,.W_btn_c span,.W_btn_c_disable span,.W_btn_a_disable span{
 	padding: 0 9px 0 10px;
 	white-space: nowrap;
 	display: inline-block;
 	border-style: solid;
 	border-width: 1px;
+	border-color: #ffffff;
 	border-radius: 2px;
 	height: 18px;
 	line-height: 18px;
+
 }
 .W_btn_a span {
 	border-color: #ffb33b;
@@ -129,21 +131,18 @@ a{
 	background-color: #f2f2f2;
 }
 .W_btn_b span,.W_btn_c span{
-	border-color: #ffffff;
 	color: #333333;
 }
 
 .W_btn_a:hover span, .W_btn_b:hover span{
 	border-color: #FFCE82;
-	border-style: solid;
-	border-width: 1px;
 	color: #FFFFFF;
 }
 
 .W_btn_c:hover, .W_btn_round:hover, .W_btn_round_ico:hover, .W_btn_round2:hover {
 	background-color: #fafafa;
 }
-.W_btn_c_disable{
+.W_btn_c_disable,.W_btn_a_disable{
 	display: inline-block;
 	border-width: 1px;
 	border-style: solid;
@@ -154,12 +153,21 @@ a{
 	background: #f2f2f2;
 	border-color: #d9d9d9;
 }
-.W_btn_c_disable{
+
+.W_btn_c_disable,.W_btn_a_disable{
 	cursor: default;
 }
-.W_btn_c_disable span{
-	border-color: #ffffff;
+.W_btn_c_disable span,.W_btn_a_disable span,.W_btn_a_disable:hover span{
 	color:#ccc;
+}
+.W_btn_a .W_f14, .W_btn_b .W_f14, .W_btn_c .W_f14,.W_btn_a_disable .W_f14{
+	font-size: 14px;
+}
+.W_btn_a .btn_30px, .W_btn_b .btn_30px, .W_btn_c .btn_30px, .W_btn_v .btn_30px,.W_btn_a_disable .btn_30px{
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 15px;
 }
 .W_input, .W_inputStp {
 	border:1px solid #ccc;
@@ -1220,11 +1228,13 @@ overflow: hidden;*/
 	line-height: 18px;
 	background: none repeat scroll 0% 0% rgba(74, 74, 74, 0.6);
 	text-align: center;
-	color: rgb(255, 255, 255);
-	display: none;
+	color: #fff;
+	opacity: 0;
+	transition: all 0.2s ease-in;
 }
 .set_template .templete_list a:hover span {
 	display: block;
+	opacity: 1;
 }
 .set_template .btn {
 	border-top: 1px solid rgb(204, 204, 204);

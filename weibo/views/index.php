@@ -37,7 +37,7 @@
 							</label>
 						</span>
 						<span class="right">
-							<a href="javascript:;"  class="W_btn_a"><span class="btn_30px W_f14">保存</span></a>
+							<a href="javascript:;"  class="W_btn_a_disable"><span class="btn_30px W_f14">保存</span></a>
 							<a href="javascript:;" action-type="cancel" class="W_btn_b" node-type="canncel"><span class="btn_30px W_f14">取消</span></a>
 						</span>
 					</div>

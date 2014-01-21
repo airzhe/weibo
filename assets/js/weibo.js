@@ -21,10 +21,12 @@ $(document).ready(function(){
 	*/
 	$('body').on('click','.faces_list li',function(){
 		var title = '['+$(this).find('img').attr('title')+']';
-		$('#weibo_input_detail').insertAtCaret(title);
+		var obj_id=$(this).parents('.hotFace').attr('action-id');
+		console.log(obj_id);
+		$('#'+obj_id).insertAtCaret(title);
 	})
 	/**	
 	* 文本框自适应
 	*/
-	$('textarea').autosize();   
+	$('.comment').find('textarea').autosize();   
 })
