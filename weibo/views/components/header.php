@@ -1,4 +1,3 @@
-<?php $body_class='' ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,25 +7,27 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
-	<?php switch ($body_class) {
-		case 'home':
-		?>
-		<!-- home页js -->
-		<script src="<?php echo base_url('assets/js/jquery.autosize.min.js') ?>"></script>
-		<?php 
-		break;
-
-		default:
-			# code...
-		break;
-	} ?>
 	<script src="<?php echo base_url('assets/js/runui.js') ?>"></script>
 	<script>
 		var site_url="<?php echo base_url()?>";
 	</script>
 	<script src="<?php echo base_url('assets/js/weibo.js') ?>"></script>
+	<?php if(isset($body_class)): ?>
+		<?php switch ($body_class) {
+			case 'home':
+			?>
+			<!-- home页js -->
+			<script src="<?php echo base_url('assets/js/jquery.autosize.min.js') ?>"></script>
+			<?php 
+			break;
+
+			default:
+			# code...
+			break;
+		} ?>
+	<?php endif ?>
 </head>
-<body<?php echo ' class="'.$body_class.'"'; ?>>
+<body<?php if(isset($body_class)) echo ' class="'.$body_class.'"'; ?>>
 <div class="miniblog">
 	<div class="miniblog_fb">
 		<div class="header global_nav">

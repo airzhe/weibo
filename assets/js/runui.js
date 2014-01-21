@@ -1,64 +1,68 @@
 /**	
- *===============
+ *==============================
  * 微博表情弹出框插件
- *===============
+ * 通过冒泡时间实现点击文档关闭弹出框
+ *==============================
  */
- $.fn.extend({
- 	"callface": function(){
- 		$('.hotFace').remove();
-		//获取对象的坐标，并设置提示框坐标
-		var _h=$(this).height();
-		var _x=$(this).offset().left;
-		var _y=$(this).offset().top+_h+6;
-		// 获取要输入内容的文本框的id;
-		var textarea_id;
-		if($(this).attr('action-id')){
-			textarea_id=$(this).attr('action-id');
-		}else{
-			// var input_detail=$(this).closest('p').prev('textarea');
-			// if(!input_detail.attr('id') || input_detail.attr('id')==''){
-			// 	var time=new Date();
-			// 	input_detail.attr('id',time.getTime());
-			// }
-			// textarea_id=input_detail.attr('id');
-		}
-		//创建提示框，显示后移除。
-		var face='';
-		face+='<div class="hotFace W_layer" action-id='+ textarea_id +'>';
-		face+='<div class="bg">';
-		face+='<div class="wrap">';
-		face+='<div class="content">';
-		face+='<ul class="profile_tab S_line1 clearfix ">';
-		face+='<li class="current S_line1"><a href="#">常用表情</a></li><li class="S_line1"><a href="#">魔法表情</a></li>';
-		face+='</ul>';
-		face+='<ul class="tab_nosep clearfix">';
-		face+='<li class="current"><a href="#">默认</a></li><li><a href="#">浪小花</a></li><li><a href="#">暴走漫画</a></li><li><a href="#">小恐龙</a></li><li><a href="#">圣诞新年</a></li>';
-		face+='</ul>';
-		face+='<ul class="faces_list clearfix">';
-		face+='</ul>';
-		face+='</div>';
-		face+='<a class="W_close" href="javascript:void(0);" title="关闭"></a>';
-		face+='</div>';
-		face+='</div>';
-		face+='<div class="arrow"></div>';
-		face+='</div>';
-		face+='<div class="face_mask"></div>';
-		$('body').append(face);
-		var hot_face=$('.hotFace');
-		var mask=$('.face_mask');
-		hot_face.css({left:_x,top:_y});
-		mask.width($(document).width()).height($(document).height());
-		close_btn=hot_face.find('.W_close');
-		close_btn.on('click',function(){
-			hot_face.remove();
-			mask.remove();
-		})
-		mask.on('click',function(){
-			close_btn.trigger('click');
-		})
-	}
-})
-
+ (function($){
+ 	$.fn.extend({
+ 		"callface": function(){
+ 			$('.hotFace').remove();
+			//获取对象的坐标，并设置提示框坐标
+			var _h=$(this).height();
+			var _x=$(this).offset().left;
+			var _y=$(this).offset().top+_h+6;
+			// 获取要输入内容的文本框的id;
+			var textarea_id;
+			if($(this).attr('action-id')){
+				textarea_id=$(this).attr('action-id');
+			}else{
+				// var input_detail=$(this).closest('p').prev('textarea');
+				// if(!input_detail.attr('id') || input_detail.attr('id')==''){
+				// 	var time=new Date();
+				// 	input_detail.attr('id',time.getTime());
+				// }
+				// textarea_id=input_detail.attr('id');
+			}
+			//创建提示框，显示后移除。
+			var face='';
+			face+='<div class="hotFace W_layer" action-id='+ textarea_id +'>';
+			face+='<div class="bg">';
+			face+='<div class="wrap">';
+			face+='<div class="content">';
+			face+='<ul class="profile_tab S_line1 clearfix ">';
+			face+='<li class="current S_line1"><a href="#">常用表情</a></li><li class="S_line1"><a href="#">魔法表情</a></li>';
+			face+='</ul>';
+			face+='<ul class="tab_nosep clearfix">';
+			face+='<li class="current"><a href="#">默认</a></li><li><a href="#">浪小花</a></li><li><a href="#">暴走漫画</a></li><li><a href="#">小恐龙</a></li><li><a href="#">圣诞新年</a></li>';
+			face+='</ul>';	
+			face+='</div>';
+			face+='<ul class="faces_list clearfix">';
+			face+='</ul>';
+			face+='<a class="W_close" href="javascript:void(0);" title="关闭"></a>';
+			face+='</div>';
+			face+='</div>';
+			face+='<div class="arrow"></div>';
+			face+='</div>';
+			$('body').append(face);
+			var hot_face=$('.hotFace');
+			hot_face.css({left:_x,top:_y});
+			close_btn=hot_face.find('.W_close');
+			//关闭弹出框按钮
+			close_btn.on('click',function(){
+				hot_face.remove();
+			})
+			//阻止冒泡
+			hot_face.find('.content').on('click',function(e){
+				e.stopPropagation();
+			})
+			//点击关闭窗口
+			$(document).on('click',function(){
+				close_btn.trigger('click');
+			})
+		}	
+	})
+})(jQuery);
 /**	
  *===============
  * modal弹出框插件
@@ -141,3 +145,37 @@
 		}
 	}
 });
+
+/**	
+ *===================
+ * 文本框当前位置插入文字
+ *===================
+ */
+ (function($){
+ 	$.fn.extend({
+ 		insertAtCaret: function(myValue){
+ 			var $t=$(this)[0];
+ 			if (document.selection) {
+ 				this.focus();
+ 				sel = document.selection.createRange();
+ 				sel.text = myValue;
+ 				this.focus();
+ 			}
+ 			else 
+ 				if ($t.selectionStart || $t.selectionStart == '0') {
+ 					var startPos = $t.selectionStart;
+ 					var endPos = $t.selectionEnd;
+ 					var scrollTop = $t.scrollTop;
+ 					$t.value = $t.value.substring(0, startPos) + myValue + $t.value.substring(endPos, $t.value.length);
+ 					this.focus();
+ 					$t.selectionStart = startPos + myValue.length;
+ 					$t.selectionEnd = startPos + myValue.length;
+ 					$t.scrollTop = scrollTop;
+ 				}
+ 				else {
+ 					this.value += myValue;
+ 					this.focus();
+ 				}
+ 			}
+ 		})	
+ })(jQuery);
