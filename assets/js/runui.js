@@ -106,6 +106,20 @@
 	}
 });
 
+
+
+/**	
+ *===============
+ * mask遮照层
+ *===============
+ */
+$.extend({
+	"mask":function(){
+		$('body').append('<div class="W_mask"></div>');
+		$('.W_mask').width($(document).width()).height($(document).height());
+	}
+})
+
 /**	
  *===============
  * modal弹出框插件

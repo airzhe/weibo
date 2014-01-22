@@ -49,17 +49,26 @@
 					<ul class="user clearfix">
 						<li class="username" ><a href="javascript:void(0)">air_zhe</a></li>
 						<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
-						<li class="msg" >
-							<a href="javascript:void(0)"><i></i></a>
+						<li class="msg">
+							<a href="javascript:void(0)"><i></i><em class="W_new"></em></a>
 							<ul>
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
+								<li><a href="#">@我的消息</a></li>
+								<li><a href="#">新的评论</a></li>
+								<li><a href="#">私信</a></li>
 							</ul>
+							
 						</li>
 						<li class="setting" ><a href="javascript:void(0)"><i></i></a></li>
 						<li class="member" ><a href="javascript:void(0)"><i></i></a></li>
 					</ul>
+					<div class="gn_tips">
+						<!--tip start-->
+						<a href="javascript:void(0);" class="W_ico12 icon_close"></a>
+						<ul class="tips_list">
+							<li>1条新私信，<a href="#">查看私信</a></li>
+						</ul>
+						<!--tip end-->
+					</div>
 				</div>
 			</div>
 		</div>

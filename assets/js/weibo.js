@@ -34,22 +34,39 @@ $(document).ready(function(){
 	*/ 
 	
 	$('body').on('click','.set_template .profile_tab li',function(){
+		//切换样式
 		var index=$(this).index();
-		var ControlPanel=$('.profile_tab').next('div');
-		ControlPanel.children('div').eq(index).show().siblings('div').hide();
+		var ControlPanel=$('.profile_tab').next('div').children('div').eq(index);
+		ControlPanel.show().siblings('div').hide();
 		$(this).addClass('current').siblings().removeClass('current');
+		//绑定数据
+		var id=ControlPanel.data('id');
+		if(ControlPanel.is(':empty')){
+			$.ajax({
+				url:site_url+'json/set_skin',
+				type:'post',
+				data:{id:id},
+				success:function(data){
+					ControlPanel.html(data);
+					ControlPanel.find('.tab_nosep').find('li').eq(0).addClass('current');
+					ControlPanel.find('ul:last').find('a').eq(0).addClass('current');
+				}
+			})
+		}
 	})
 	/**
 	*设置皮肤
 	*/
 	$('.set_skin').on('click',function(){
 		$.ajax({
-			url:'http://localhost/php/34.php',
+			url:site_url+'assets/data/set_skin.json',
 			dataType:'json',
 			success:function(data){
 				$a=data;
 				$('body').append($a);
 				$('.set_template').drag({drag:'.title'});
+				$.mask();
+				$('.set_template').find('.profile_tab').find('li').eq(0).trigger('click');
 			}
 		})
 	})

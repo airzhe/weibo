@@ -9,11 +9,12 @@ class face extends Front_Controller{
 		}
 		$face_url=base_url('assets/images/hotFace');
 		// 读取配置项获得表情数组
-		$this->config->load('face', TRUE);
-		$faces = $this->config->item('faces', 'face');
+		$this->config->load('W_face', TRUE);
+		$faces = $this->config->item('faces', 'W_face');
 		$face_list='';
 		foreach ($faces as $key => $value) {
-			$face_list.="<li><img src='{$face_url}/{$value}.gif' alt='{$key}' title='{$key}'>";
+			$_key=preg_replace('@\[(.+?)\]@', '\1', $key);
+			$face_list.="<li><img src='{$face_url}/{$value}.gif' alt='{$_key}' title='{$_key}'>";
 		}
 		die($face_list);
 	}

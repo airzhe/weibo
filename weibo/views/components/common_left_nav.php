@@ -12,7 +12,7 @@
 </script>
 <div class="left_nav left">
 	<ul>
-		<li><a href="#"><i class="W_ico20 ico_myhomepage"></i>首页<i class="new"></i></a></li>
+		<li><a href="#"><i class="W_ico20 ico_myhomepage"></i>首页<i class="W_new"></i></a></li>
 		<li>
 			<a href="#" data-type="msg"><i class="W_ico20 ico_message"></i><em class="W_new_count">2</em>消息</a>
 			<ul>
