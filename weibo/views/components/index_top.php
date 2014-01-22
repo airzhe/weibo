@@ -1,5 +1,5 @@
 <div class="profile_pic_top" style="background-image:url(<?php echo base_url('assets/images/015.jpg') ?>)">
-	<a class="set_skin" href="#" title="模板设置"></a>
+	<a class="set_skin" href="javascript:void(0)" title="模板设置"></a>
 </div>
 <div class="user_info clearfix">
 	<div class="head left">

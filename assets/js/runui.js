@@ -65,6 +65,49 @@
 })(jQuery);
 /**	
  *===============
+ * 移动层插件
+ *===============
+ */
+ $.fn.extend({
+ 	drag:function(options){
+		//默认配置
+		var _default={drag:'.drag'}
+		var opt = $.extend(_default, options);
+		//
+		var self=$(this);
+		var title=self.find(opt.drag);
+		//更改标题样式为小手
+		title.css({'cursor':'move','user-select':'none'});
+		/* 绑定鼠标左键按住事件 */
+		title.on('mousedown',function(e){
+			/* 获取需要拖动节点的left、top */
+		var o_d_l=self.offset().left;//left
+		var o_d_t=self.offset().top;//top
+		/* 获取当前鼠标的坐标 */
+		var o_m_l=e.pageX;
+		var o_m_t=e.pageY;
+		/* 绑定拖动事件 */
+		/* 由于拖动时，可能鼠标会移出元素，所以应该使用全局（document）元素 */
+		$(document).on('mousemove',function(e){
+			/* 获取当前鼠标的坐标 */
+			var n_m_l=e.pageX;
+			var n_m_t=e.pageY;
+			/* 计算鼠标移动了的位置 */
+			var d_l=n_m_l-o_m_l;
+			var d_t=n_m_t-o_m_t;
+			/* 设置移动后的元素坐标 */
+			self.offset({left:o_d_l + d_l,top:o_d_t + d_t});
+		})
+		/* 当鼠标左键松开，解除事件绑定 */
+		$(document).on('mouseup',function(){
+			$(this).off('mousemove');
+		})
+	})
+	}
+});
+
+/**	
+ *===============
  * modal弹出框插件
  *===============
  */

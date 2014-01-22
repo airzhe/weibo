@@ -28,5 +28,29 @@ $(document).ready(function(){
 	/**	
 	* 文本框自适应
 	*/
-	$('.comment').find('textarea').autosize();   
+	// $('.home .comment').find('textarea').autosize(); 
+	/**	
+	* 自定义皮肤选项卡
+	*/ 
+	
+	$('body').on('click','.set_template .profile_tab li',function(){
+		var index=$(this).index();
+		var ControlPanel=$('.profile_tab').next('div');
+		ControlPanel.children('div').eq(index).show().siblings('div').hide();
+		$(this).addClass('current').siblings().removeClass('current');
+	})
+	/**
+	*设置皮肤
+	*/
+	$('.set_skin').on('click',function(){
+		$.ajax({
+			url:'http://localhost/php/34.php',
+			dataType:'json',
+			success:function(data){
+				$a=data;
+				$('body').append($a);
+				$('.set_template').drag({drag:'.title'});
+			}
+		})
+	})
 })

@@ -1,3 +1,6 @@
+/*html{
+	position: relative;
+}*/
 body{
 	font: 12px/1.125 Arial,Helvetica,sans-serif;
 	color: #333;
@@ -1058,7 +1061,7 @@ body.login .container,body.signup .container{
  }
  .W_layer{
  	position: absolute;
- 	z-index: 9999;
+ 	z-index: 10000;
  }
  .W_layer .bg{
  	padding: 3px;
@@ -1113,7 +1116,6 @@ body.login .container,body.signup .container{
  	color: #333;
  }
  
- 
  .W_layer .tab_nosep{
 
  	line-height: 23px;
@@ -1145,6 +1147,16 @@ body.login .container,body.signup .container{
  }
  .W_layer .W_close:hover{
  	background-position: -100px -200px;
+ }
+ .W_mask{
+ 	position: absolute;
+ 	left:0;
+ 	top:0;
+ 	right: 0;
+ 	bottom:0;
+ 	opacity: 0.6;
+ 	background: #000;
+ 	z-index: 999;
  }
  /*表情弹出框*/
  .hotFace .wrap{
@@ -1179,15 +1191,14 @@ body.login .container,body.signup .container{
  	background: url(../images/layer_arrow.png) no-repeat;
  }
  
- .face_mask{
- 	position: absolute;
- 	left:0;
- 	top:0;
- 	right: 0;
- 	bottom:0;
- 	opacity: 0;
- }
+
  /*模板个性设置弹出框*/
+ .set_template{
+ 	left:50%;
+ 	top:50%;
+ 	margin-left:-288.5px;
+ 	margin-top:-197.5px;
+ }
  .set_template .wrap{
  	width: 569px;
  }
