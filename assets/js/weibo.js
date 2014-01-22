@@ -1,5 +1,19 @@
 $(document).ready(function(){
 	/**	
+	* 查看消息，设置时隐藏新消息提示框
+	*/
+	$('.global_nav  .msg,.global_nav .setting').hover(function(){
+		$('.gn_tips').hide();
+	},function(){
+		$('.gn_tips').show();
+	})
+	/**	
+	* 点击关闭新消息提示框
+	*/
+	$('.gn_tips').find('.icon_close').on('click',function(){
+		$('.gn_tips').hide();
+	})
+	/**	
 	* 点击表情按钮，调出表情对话框
 	*/
 	$("[action-type='face']").on('click',function(e){
@@ -22,7 +36,6 @@ $(document).ready(function(){
 	$('body').on('click','.faces_list li',function(){
 		var title = '['+$(this).find('img').attr('title')+']';
 		var obj_id=$(this).parents('.hotFace').attr('action-id');
-		console.log(obj_id);
 		$('#'+obj_id).insertAtCaret(title);
 	})
 	/**	
@@ -69,5 +82,9 @@ $(document).ready(function(){
 				$('.set_template').find('.profile_tab').find('li').eq(0).trigger('click');
 			}
 		})
+	})
+	// text
+	$('.forward').click(function(){
+		$(this).tips({type:'center'});
 	})
 })

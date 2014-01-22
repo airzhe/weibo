@@ -744,24 +744,27 @@ body.login .container,body.signup .container{
  .global_nav .user .msg:hover i{
  	background-position: -325px -4px;
  }
+ .global_nav .user .setting:hover i{
+ 	background-position: -375px -6px;
+ }
  .global_nav .user .msg .W_new{
  	position: absolute;
  	top: 9px;
  	right: 12px;
  }
- .global_nav .user .msg{
+ .global_nav .user .msg,.global_nav .user .setting{
  	position: relative;
  }
- .global_nav .user .msg:hover>a{
+ .global_nav .user .msg:hover>a,.global_nav .user .setting:hover>a{
  	position: relative;
  	padding-bottom: 10px;
  	z-index: 1;
  	background:  url(../images/bg_line.png) right -3px no-repeat;
  }
- .global_nav .user .msg:hover ul{
+ .global_nav .user .msg:hover ul,.global_nav .user .setting:hover ul{
  	display: block;
  }
- .global_nav .user .msg ul{
+ .global_nav .user .msg ul,.global_nav .user .setting ul{
  	display: none;
  	position: absolute;
  	left:-108px;
@@ -769,9 +772,28 @@ body.login .container,body.signup .container{
  	width:150px;
  	border:1px solid #333;
  	top:39px;
+ 	padding: 5px 0;
+ 	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
  }
- .global_nav .user .msg ul li{
- 	padding:10px;
+ .global_nav .user .msg ul li,.global_nav .user .setting ul li{
+ 	height: 26px;
+ 	line-height: 26px;
+ 	font-size: 12px;
+ }
+ .global_nav .user .msg ul li a,.global_nav .user .setting ul li a {
+ 	display: block;
+ 	padding: 0 15px;
+ 	white-space: nowrap;
+ 	color: #333;
+ 	text-decoration: none;
+ }
+ .global_nav .user .msg ul li a:hover,.global_nav .user .setting ul li a:hover{
+ 	background:#e6e6e6;
+ }
+ .global_nav .user .setting .logout{
+ 	background: #f2f2f2;
+ 	color: #0a8cd2;
+ 	margin-bottom: -5px;
  }
  .global_nav .gn_tips {
  	position: absolute;
@@ -1101,6 +1123,7 @@ body.login .container,body.signup .container{
  .W_layer{
  	position: absolute;
  	z-index: 10000;
+ 	overflow: hidden;
  }
  .W_layer .bg{
  	padding: 3px;
@@ -1117,13 +1140,12 @@ body.login .container,body.signup .container{
  	vertical-align: middle;
  }
  .W_layer .wrap{
- 	width: 417px;
  	background: #fff;
  	border:1px solid #ccc;
  }
 
  .W_layer .wrap .content{
- 	padding: 0px 20px 15px;
+ 	padding: 0px 20px;
  }
  .W_layer .profile_tab{
  	background: #fafafa;
@@ -1197,7 +1219,38 @@ body.login .container,body.signup .container{
  	background: #000;
  	z-index: 999;
  }
+ /*tips弹出框*/
+ .W_layer.tips .bg{
+ 	position: relative;
+ 	top:45px;
+ }
+ .W_layer.tips .wrap{
+ 	width: 122px;
+ }
+ .W_layer.tips .content{
+ 	text-align: center;
+ }
+ .W_layer.tips .content p{
+ 	margin:15px 0;
+ }
+ /**/
+ .W_layer.tips.center .wrap{
+ 	width: 175px;
+ }
+ .W_layer.tips.center .wrap i{
+ 	width: 25px;
+ 	height: 30px;
+ 	background-position:  -50px 0;
+ 	vertical-align: -10px;
+ 	font-size:14px;
+ }
+ .W_layer.tips.center .content p{
+ 	margin:25px 0;
+ }
  /*表情弹出框*/
+ .hotFace{
+ 	overflow: visible;
+ }
  .hotFace .wrap{
  	width: 417px;
  }
@@ -1205,7 +1258,7 @@ body.login .container,body.signup .container{
  	padding-bottom: 0;
  }
  .hotFace .faces_list{
- 	padding: 0 19px 15px;
+ 	padding: 0 19px 20px;
  	margin-left: 4px;
  }
  .hotFace .faces_list li{
@@ -1332,7 +1385,7 @@ body.login .container,body.signup .container{
  .set_template .btn {
  	border-top: 1px solid rgb(204, 204, 204);
  	padding: 10px 0px 0px;
- 	margin: 15px 0px 0px;
+ 	margin: 15px 0px;
  }
  .weibo .feed_nav h3{
  	padding: 0 10px;

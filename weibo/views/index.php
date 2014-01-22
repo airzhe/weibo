@@ -1,6 +1,5 @@
 <?php $this->load->view('components/index_top') ?>
 <div class="wrap clearfix">
-
 	<div class="main left">
 		<p class="tab_radious">
 			<a href="#" class="active"><strong>全部</strong><span class="tabarrow"></span></a>
@@ -24,7 +23,7 @@
 					</div>
 					<div class="func clearfix S_txt2">
 						<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">新浪微博</a> </div>
-						<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
+						<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="forward">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 					</div>
 				</div>
 			</div>
@@ -87,7 +86,7 @@
 					</div>
 					<div class="func clearfix S_txt2">
 						<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">iPhone客户端</a> </div>
-						<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
+						<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="forward">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
 					</div>
 				</div>
 			</div>

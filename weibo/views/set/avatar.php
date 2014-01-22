@@ -13,23 +13,23 @@
 				<div class="preview clearfix">
 					<div class="big left">
 						<div class="img_300">
-							<img src="./assets/images/up_bg.gif" alt="" width="300" height="300">
+							<img src="<?php echo base_url('/assets/images/up_bg.gif')?>" alt="" width="300" height="300">
 						</div>
 					</div>
 					<div class="small">
 						<p>您上传的图片将会自动生成三种尺寸头像，请注意中小尺寸的头像是否清晰</p>
 						<div class="avatar clearfix">
 							<div class="img_180 left">
-								<img id="img_180" src="./assets/images/blank.gif" alt="" width="180" height="180">
+								<img id="img_180" src="<?php echo base_url('/assets/images/blank.gif')?>" alt="" width="180" height="180">
 								<p>大尺寸头像,180*180像素</p>
 							</div>
 							<div class="right">
 								<div class="img_50">
-									<img id="img_50" src="./assets/images/blank.gif" alt="" width="50" height="50">
+									<img id="img_50" src="<?php echo base_url('/assets/images/blank.gif')?>" alt="" width="50" height="50">
 									<p>中尺寸头像</p><p>50*50像素</p><p>（自动生成）</p>
 								</div>
 								<div class="img_30">
-									<img id="img_30" src="./assets/images/blank.gif" alt="" width="30" height="30">
+									<img id="img_30" src="<?php echo base_url('/assets/images/blank.gif')?>" alt="" width="30" height="30">
 									<p>小尺寸头像</p><p>30*30像素</p><p>（自动生成）</p>
 								</div>
 							</div>

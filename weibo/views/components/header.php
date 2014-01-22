@@ -52,20 +52,32 @@
 						<li class="msg">
 							<a href="javascript:void(0)"><i></i><em class="W_new"></em></a>
 							<ul>
-								<li><a href="#">@我的消息</a></li>
-								<li><a href="#">新的评论</a></li>
-								<li><a href="#">私信</a></li>
+								<li><a href="#">查看评论</a></li>
+								<!-- 查看新评论 -->
+								<li><a href="#">查看@我</a></li>
+								<li><a href="#">查看私信</a></li>
+								<li><a href="#">查看粉丝</a></li>
 							</ul>
 							
 						</li>
-						<li class="setting" ><a href="javascript:void(0)"><i></i></a></li>
+						<li class="setting" >
+							<a href="javascript:void(0)"><i></i></a>
+							<ul>
+								<li><a href="#">帐号设置</a></li>
+								<li><a href="#">模板设置</a></li>
+								<li><a href="#" class="logout">退出</a></li>
+							</ul>
+						</li>
 						<li class="member" ><a href="javascript:void(0)"><i></i></a></li>
 					</ul>
 					<div class="gn_tips">
 						<!--tip start-->
 						<a href="javascript:void(0);" class="W_ico12 icon_close"></a>
 						<ul class="tips_list">
+							<li>1条新评论，<a href="#">查看评论</a></li>
+							<!-- 私信一直提示，其他刷新就不提示 -->
 							<li>1条新私信，<a href="#">查看私信</a></li>
+							<li>2条新@我，<a href="#">查看@我</a></li>
 						</ul>
 						<!--tip end-->
 					</div>

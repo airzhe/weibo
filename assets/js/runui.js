@@ -113,10 +113,73 @@
  * mask遮照层
  *===============
  */
-$.extend({
-	"mask":function(){
-		$('body').append('<div class="W_mask"></div>');
-		$('.W_mask').width($(document).width()).height($(document).height());
+ $.extend({
+ 	"mask":function(){
+ 		$('body').append('<div class="W_mask"></div>');
+ 		$('.W_mask').width($(document).width()).height($(document).height());
+ 	}
+ })
+
+
+
+//获得对象在页面中心的位置
+function get_pos(obj,top){
+	//位置
+	var pos = [];
+	//获取当前窗口距离页面顶部高度 
+	var scrolltop = $(document).scrollTop();
+	pos[0] = ($(window).width() - obj.width()) / 2;
+	pos[1] =top?top:($(window).height() - obj.height()) / 2 + scrolltop + 50;
+	return pos;
+}
+
+/**
+ *=================================
+ * 提示框（用于提示操作成功，或操作失败）
+ * 位置位于点击按钮的附近位置。
+ * 动画展示，默认1秒后移除提示框,可用来替代js默认的alert
+ * v_type （0,提示在对象上方。1,提示挡住对象）
+ *================================= 
+ */
+
+ $.fn.extend({
+ 	"tips": function(options){
+ 		var _default = {
+ 			type:'success',
+ 			text:'操作成功!',
+ 			v_type:1,
+ 			timeout:1,
+ 		};
+ 		var opt = $.extend(_default, options);
+ 		$('.W_layer').remove();
+
+
+		//创建提示框，显示后移除。
+		var _class='W_layer tips '+opt.type;
+		var _html='<div class="bg"><div class="wrap"><div class="content"><p><i class="icon_succ"></i>'+opt.text+'</p></div></div></div>'
+		$('body').append($('<div/>',{class:_class,html:_html}));
+
+		//获取对象的坐标，并设置提示框坐标
+		if(opt.type!='center'){
+			var _w=$(this).width();
+			var _h=$(this).height();
+			var _offsetY=opt.v_type?(54-_h)/2:58;
+			var _x=$(this).offset().left-((128-_w)/2);
+			var _y=$(this).offset().top-_offsetY;
+		}else{
+			$.mask();
+			var pos=get_pos($('.W_layer'));
+			var _x= pos[0];
+			var _y=pos[1];
+		}
+
+		$('.W_layer').offset({top:_y,left:_x});;
+		$('.W_layer').children('.bg').animate({top:0}).delay(opt.timeout*1000).animate({top:54},function(){
+			$(this).parent().remove();
+			if(opt.type=='center'){
+				$('.W_mask').remove();
+			}
+		});
 	}
 })
 
@@ -193,13 +256,7 @@ $.extend({
 			});
 			modal_bg.width($(document).width()).height($(document).height());
 		}
-		//获得对象在页面中心的位置
-		function get_pos(obj){
-		 var pos = [];//位置
-		 pos[0] = ($(window).width() - obj.width()) / 2;
-		 pos[1] = opt['top']?opt['top']:($(window).height() - obj.height()) / 2 - 50;
-		 return pos;
-		}
+		
 	}
 });
 
