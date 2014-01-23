@@ -135,7 +135,6 @@
  			switch(key)
  			{
  				case '0':
- 				console.log('run......');
  				msg_tips.find('._comment').show().find('span').html(obj[key]);
  				break;
  				case '1':
@@ -173,20 +172,22 @@ function get_pos(obj,top){
  $.fn.extend({
  	"tips": function(options){
  		var _default = {
- 			type:'success',
+ 			type:'',
  			text:'操作成功!',
  			v_type:1,
  			timeout:1,
  		};
  		var opt = $.extend(_default, options);
- 		$('.W_layer').remove();
-
+ 		$('.W_layer.tips').remove();
 
 		//创建提示框，显示后移除。
 		var _class='W_layer tips '+opt.type;
-		var _html='<div class="bg"><div class="wrap"><div class="content"><p><i class="icon_succ"></i>'+opt.text+'</p></div></div></div>'
+		
+		var _ico=opt.type?'icon_error':'icon_succ';
+		var _html='<div class="bg"><div class="wrap"><div class="content"><p><i class="'+_ico+'"></i>'+opt.text+'</p></div></div></div>'
 		$('body').append($('<div/>',{class:_class,html:_html}));
 
+		var tips=$('.W_layer.tips');
 		//获取对象的坐标，并设置提示框坐标
 		if(opt.type!='center'){
 			var _w=$(this).width();
@@ -196,16 +197,16 @@ function get_pos(obj,top){
 			var _y=$(this).offset().top-_offsetY;
 		}else{
 			$.mask();
-			var pos=get_pos($('.W_layer'));
+			var pos=get_pos(tips);
 			var _x= pos[0];
 			var _y=pos[1];
 		}
 
-		$('.W_layer').offset({top:_y,left:_x});;
-		$('.W_layer').children('.bg').animate({top:0}).delay(opt.timeout*1000).animate({top:54},function(){
+		tips.offset({top:_y,left:_x});;
+		tips.children('.bg').animate({top:0}).delay(opt.timeout*1000).animate({top:54},function(){
 			$(this).parent().remove();
 			if(opt.type=='center'){
-				$('.W_mask').remove();
+				tips.remove();
 			}
 		});
 	}
@@ -288,7 +289,7 @@ function get_pos(obj,top){
 	}
 });
 
- 
+
 /**	
  *===================
  * 文本框当前位置插入文字

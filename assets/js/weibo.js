@@ -78,10 +78,34 @@ $(document).ready(function(){
 				$a=data;
 				$('body').append($a);
 				$('.set_template').drag({drag:'.title'});
-				$.mask();
+				if($('body.home').length!=0)$.mask();
 				$('.set_template').find('.profile_tab').find('li').eq(0).trigger('click');
 			}
 		})
+	})
+	/**
+	*点击切换样式
+	*/
+	$('body').on('click','.diy_list a',function(){
+		var css=$(this).find('span').html();
+		if(css==''){
+			$(this).tips({type:'error',text:'样式不可用',timeout:1});
+			return;
+		}
+		$('.diy_list').find('a').removeClass('current');
+		$(this).addClass('current');
+		var href=site_url+"assets/css/skin/"+css;
+		if($('#css_skin').length==0){
+			$("<link>")
+			.attr({ id:'css_skin',
+				rel: "stylesheet",
+				type: "text/css",
+				href: href
+			})
+			.appendTo("head");
+		}else{
+			$('#css_skin').attr('href',href);
+		}
 	})
 	// text
 	$('.forward').click(function(){

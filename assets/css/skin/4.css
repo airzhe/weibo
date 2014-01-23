@@ -1,0 +1,16 @@
+/*主链接*/
+a,.S_func1:hover{
+	color:#0a8cd2;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+/*次链接*/
+.S_link2,.S_func2:hover{
+	color: #6cbae4;
+}
+/*转发次链接*/
+.S_func2{
+	color: #b1d8ed;
+}

@@ -28,7 +28,7 @@ class json extends Front_Controller{
 		}
 		$data.='<ul class="'.$class.' clearfix">';
 		foreach ($skin[$id]['templete_list'] as $key => $value) {
-			$data.='<li><a href=""><img src="./assets/images/skin/'.$id.'/'.$key.'"><span>'.$value.'</span></a></li>';
+			$data.='<li><a href="javascript:void(0)"><img src="./assets/images/skin/'.$id.'/'.$key.'"><span>'.$value.'</span></a></li>';
 		}
 		$data.='</ul>';
 		die($data);

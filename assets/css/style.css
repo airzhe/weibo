@@ -40,101 +40,6 @@ a:hover{
 	text-decoration: none;
 }
 
-/**	
- *===============
- * 皮肤2 粉红
- *===============
- */
-
-/*主文字*/
-body{
-	color:#595959;
-}
-/*主链接*/
-a,.S_func1:hover{
-	color:#da5882;
-}
-/*次链接*/
-.S_link2,.S_func2:hover{
-	color: #f453b0;
-}
-/*转发次链接*/
-.S_func2{
-	color: #eac1ca;
-}
-
-
-/**	
- *===============
- * 皮肤3 绿色
- *===============
- */
-
-/*主文字*/
-body{
-	color:#33463f;
-}
-/*主链接*/
-a,.S_func1:hover{
-	color:#49976b;
-}
-/*次链接*/
-.S_link2,.S_func2:hover{
-	color: #7cb4a3;
-}
-/*转发次链接*/
-.S_func2{
-	color: #7cb4a3;
-}
-
-/**	
- *===============
- * 皮肤4 黄色
- *===============
- */
-
-/*主文字*/
-body{
-	color:#423009;
-}
-/*主链接*/
-a,.S_func1:hover{
-	color:#8e6934;
-}
-/*次链接*/
-.S_link2,.S_func2:hover{
-	color: #90897a;
-}
-/*转发次链接*/
-.S_func2{
-	color: #a19680;
-}
-
-/**	
- *===============
- * 皮肤5 棕色
- *===============
- */
-
-/*主文字*/
-body{
-	color:#3e1e1e;
-}
-/*主链接*/
-a,.S_func1:hover{
-	color:#cf9e8b;
-}
-/*次链接*/
-.S_link2,.S_func2:hover{
-	color:#885a62;
-}
-/*转发次链接*/
-.S_func2{
-	color: #dec1b6;
-}
-
-
-/*============皮肤结束==========*/
 .S_line1_c {
 	color: #d9d9d9;
 }
@@ -1278,7 +1183,7 @@ body.login .container,body.signup .container{
  	top:0;
  	right: 0;
  	bottom:0;
- 	opacity: 0.6;
+ 	opacity: 0.3;
  	background: #000;
  	z-index: 999;
  }
@@ -1437,6 +1342,9 @@ body.login .container,body.signup .container{
  	display: block;
  	border:1px solid #CCC;
  	padding: 1px;
+ }
+ .set_template  .diy_list li a span{
+ 	display: none;
  }
  .set_template .diy_list a.current, .set_template  .diy_list li a:hover{
  	border-color:#FFB941;
