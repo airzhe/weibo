@@ -20,15 +20,22 @@ class json extends Front_Controller{
 				$data.='<p><span>推荐配色</span></p>';
 				break;
 			case 'cover':
-				$class="templete_list cover_list";
+				$class="template_list cover_list";
 				break;
 			default:
-				$class="templete_list";
+				$class="template_list";
 				break;
 		}
 		$data.='<ul class="'.$class.' clearfix">';
-		foreach ($skin[$id]['templete_list'] as $key => $value) {
-			$data.='<li><a href="javascript:void(0)"><img src="./assets/images/skin/'.$id.'/'.$key.'"><span>'.$value.'</span></a></li>';
+		$info=array();
+		foreach ($skin[$id]['template_list'] as $key => $value) {
+			if(strpos($value,'###')){
+				$info=explode('###',$value);
+			}else{
+				$info[0]=$value;
+				$info[1]='';
+			}
+			$data.='<li><a href="javascript:void(0)" data-link="'.$info[1].'"><img src="./assets/images/skin/'.$id.'/'.$key.'"><span>'.$info[0].'</span></a></li>';
 		}
 		$data.='</ul>';
 		die($data);

@@ -1,0 +1,10 @@
+body{
+	background-color: #f7f0e0;
+	background-image: none;
+}
+.miniblog{
+	background-image: url(images/body_bg.jpg);
+}
+.miniblog_fb{
+	background-image: none;
+}

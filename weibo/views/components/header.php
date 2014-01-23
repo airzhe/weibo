@@ -84,7 +84,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mail_active">
+		<div class="mail_active hide">
 			<div class="box">
 				<div>
 					<span class="icon_errorB"></span>

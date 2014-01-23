@@ -7,7 +7,7 @@ $config['skin']=array(
 			'会员',
 			'动态'
 			),
-		'templete_list'=>array(
+		'template_list'=>array(
 			'skin_001'=>'雨夜',
 			'skin_002'=>'太空',
 			'skin_003'=>'团团圆圆',
@@ -18,7 +18,7 @@ $config['skin']=array(
 			'skin_008'=>'下雪啦'
 			)
 		),
-	'bg'=>array(
+	'template'=>array(
 		'tab_nosep'=>array(
 			'童趣',
 			'时尚',
@@ -26,15 +26,19 @@ $config['skin']=array(
 			'节日',
 			'经典'
 			),
-		'templete_list'=>array(
-			'skin_001'=>'风轻云淡',
-			'skin_002'=>'我们结婚吧',
-			'skin_003'=>'猫趣',
-			'skin_004'=>'复古',
-			'skin_005'=>'漓彩',
-			'skin_006'=>'Iam 80后',
-			'skin_007'=>'带TA回家',
-			'skin_008'=>'梦幻'
+		'template_list'=>array(
+			'skin_001'=>'风轻云淡###1',
+			'skin_002'=>'我们结婚吧###2',
+			'skin_003'=>'猫趣###3',
+			'skin_004'=>'复古###4',
+			'skin_005'=>'漓彩###5',
+			'skin_006'=>'Iam 80后###6',
+			'skin_007'=>'带TA回家###7',
+			'skin_008'=>'梦幻###8',
+			'skin_009'=>'飞鸟鱼###9',
+			'skin_010'=>'名人会###10',
+			'skin_011'=>'情迷宝丽来###11',
+			'skin_012'=>'飘###12'
 			)
 		),
 	'cover'=>array(
@@ -47,11 +51,15 @@ $config['skin']=array(
 			'静物',
 			'风景'
 			),
-		'templete_list'=>array(
-			'001_s'=>'弹钢琴的小老鼠',
-			'002_s'=>'蝴蝶纷飞',
-			'003_s'=>'绮丽街景',
-			'004_s'=>'绿芽',
+		'template_list'=>array(
+			'001_s'=>'绮丽街景###1.jpg',
+			'002_s'=>'粉丝小花###2.jpg',
+			'003_s'=>'乐动###3.jpg',
+			'004_s'=>'啊狸###4.jpg',
+			'005_s'=>'绮丽街景###5.jpg',
+			'006_s'=>'粉丝小花###6.jpg',
+			'007_s'=>'乐动###7.jpg',
+			'008_s'=>'啊狸###8.jpg',
 			)
 		),
 	'style'=>array(
@@ -59,7 +67,7 @@ $config['skin']=array(
 			'自定义模板',
 			'自定义封面图'
 			),
-		'templete_list'=>array(
+		'template_list'=>array(
 			'1'=>'1.css',
 			'2'=>'2.css',
 			'3'=>'3.css',
@@ -72,4 +80,4 @@ $config['skin']=array(
 			'10'=>''
 			)
 		)
-);
+	);

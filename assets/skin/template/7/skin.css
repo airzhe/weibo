@@ -1,0 +1,12 @@
+body{
+	background-color: #361d07;
+	background-image: url(images/body_repeat.png);
+	background-repeat: repeat;
+	background-position: center 0;
+}
+.miniblog{
+	background-image: url(images/body_bg.png);
+}
+.miniblog_fb{
+	background-image: none;
+}

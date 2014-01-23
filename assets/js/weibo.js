@@ -84,6 +84,35 @@ $(document).ready(function(){
 		})
 	})
 	/**
+	*点击切换套装
+	*/
+	$('body').on('click','.sysControlPanel .template_list a',function(){
+		$('.sysControlPanel').find('.template_list').find('a').removeClass('current');
+		$(this).addClass('current');
+		var href=site_url+'assets/skin/template/'+$(this).data('link')+'/skin.css';
+		if($('#css_template').length==0){
+			$("<link>")
+			.attr({ id:'css_skin',
+				rel: "stylesheet",
+				type: "text/css",
+				href: href
+			})
+			.appendTo("head");
+		}else{
+			$('#css_template').attr('href',href);
+		}
+	})
+	/**
+	*点击切换封面图
+	*/
+	$('body').on('click','.cover_list a',function(){
+		$('.cover_list').find('a').removeClass('current');
+		$(this).addClass('current');
+		var bg_img=site_url+'assets/images/skin/cover/'+$(this).data('link');
+		console.log(bg_img);
+		$('.profile_pic_top').css('background-image','url('+bg_img+')');
+	})
+	/**
 	*点击切换样式
 	*/
 	$('body').on('click','.diy_list a',function(){
@@ -94,8 +123,8 @@ $(document).ready(function(){
 		}
 		$('.diy_list').find('a').removeClass('current');
 		$(this).addClass('current');
-		var href=site_url+"assets/css/skin/"+css;
-		if($('#css_skin').length==0){
+		var href=site_url+"assets/skin/style/"+css;
+		if($('#css_style').length==0){
 			$("<link>")
 			.attr({ id:'css_skin',
 				rel: "stylesheet",
@@ -104,8 +133,14 @@ $(document).ready(function(){
 			})
 			.appendTo("head");
 		}else{
-			$('#css_skin').attr('href',href);
+			$('#css_style').attr('href',href);
 		}
+	})
+	/**
+	*关闭按钮
+	*/
+	$('body').on('click','.set_template .W_close',function(){
+		$('.set_template').remove();
 	})
 	// text
 	$('.forward').click(function(){
