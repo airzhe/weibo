@@ -70,14 +70,14 @@
 						</li>
 						<li class="member" ><a href="javascript:void(0)"><i></i></a></li>
 					</ul>
-					<div class="gn_tips">
+					<div class="gn_tips hide">
 						<!--tip start-->
 						<a href="javascript:void(0);" class="W_ico12 icon_close"></a>
 						<ul class="tips_list">
-							<li>1条新评论，<a href="#">查看评论</a></li>
+							<li class="_comment"><span>1</span>条新评论，<a href="#">查看评论</a></li>
 							<!-- 私信一直提示，其他刷新就不提示 -->
-							<li>1条新私信，<a href="#">查看私信</a></li>
-							<li>2条新@我，<a href="#">查看@我</a></li>
+							<li class="_letter"><span>1</span>条新私信，<a href="#">查看私信</a></li>
+							<li class="_atme"><span>2</span>条新@我，<a href="#">查看@我</a></li>
 						</ul>
 						<!--tip end-->
 					</div>

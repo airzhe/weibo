@@ -831,6 +831,7 @@ body.login .container,body.signup .container{
  .global_nav .gn_tips .tips_list li {
  	padding: 0px 15px;
  	line-height: 21px;
+ 	display: none;
  }
  body.home .container{
  	margin:0 auto;

@@ -120,6 +120,34 @@
  	}
  })
 
+/**	
+ *===================
+ * 新信息提示插件
+ * obj参数为json对象
+ * 如：$a={0:9,1:9,2:9};
+ *===================
+ */
+ $.extend({
+ 	'msg':function(obj){
+ 		var msg_tips=$('.gn_tips');
+ 		msg_tips.show();
+ 		for(var key in obj){
+ 			switch(key)
+ 			{
+ 				case '0':
+ 				console.log('run......');
+ 				msg_tips.find('._comment').show().find('span').html(obj[key]);
+ 				break;
+ 				case '1':
+ 				msg_tips.find('._letter').show().find('span').html(obj[key]);
+ 				break;
+ 				case '2':
+ 				msg_tips.find('._atme').show().find('span').html(obj[key]);
+ 				break;
+ 			}
+ 		}
+ 	}
+ })
 
 
 //获得对象在页面中心的位置
@@ -260,6 +288,7 @@ function get_pos(obj,top){
 	}
 });
 
+ 
 /**	
  *===================
  * 文本框当前位置插入文字

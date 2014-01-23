@@ -87,4 +87,7 @@ $(document).ready(function(){
 	$('.forward').click(function(){
 		$(this).modal({type:'center'});
 	})
+	//消息提醒
+	var $a={0:2,1:6,2:8};
+	$.msg($a);
 })
