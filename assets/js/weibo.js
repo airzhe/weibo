@@ -85,6 +85,6 @@ $(document).ready(function(){
 	})
 	// text
 	$('.forward').click(function(){
-		$(this).tips({type:'center'});
+		$(this).modal({type:'center'});
 	})
 })

@@ -129,7 +129,7 @@ function get_pos(obj,top){
 	//获取当前窗口距离页面顶部高度 
 	var scrolltop = $(document).scrollTop();
 	pos[0] = ($(window).width() - obj.width()) / 2;
-	pos[1] =top?top:($(window).height() - obj.height()) / 2 + scrolltop + 50;
+	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2 + scrolltop + 50;
 	return pos;
 }
 
@@ -183,78 +183,78 @@ function get_pos(obj,top){
 	}
 })
 
+
 /**	
  *===============
  * modal弹出框插件
  *===============
  */
 
- $.extend({
+ $.fn.extend({
  	"modal": function (options) {
  		var _default = {
+ 			//显示类型，center为在屏幕中心显示
+ 			type:'',
+ 			//（0,提示在对象上方。1,提示在对象下方）
+ 			v_type:1,
+ 			//距离顶部多少像素
  			top:'',
- 			width: 400, 
- 			height:'',
- 			title: '提示', 
- 			body: '加载中...', 
- 			footer: '<button>确定</button> <button>取消</button>',
- 			c_type:1,
- 			callback: function (){}
+ 			title: '', 
+ 			content: '<p><i class="icon_ask"></i>确认要删除这条微博吗？</p>', 
+ 			btn: '<p><a class="W_btn_a"><span class="btn_30px W_f14">确定</span></a> <a class="W_btn_b close"><span class="btn_30px W_f14">取消</span></a></p>'
  		};
  		var opt = $.extend(_default, options);
 
  		$("div.modal").remove();
 
-			//创建弹出框
-			var div='';
-			div+='<div class="modal">';
-			div+='<div class="modal_title"><h2>'+ opt['title'] +'</h2><i class="close">×</i></div>';
-			div+='<div class="modal_body">'+ opt['body'] +'</div>';
-			if(opt.footer){
-				div+='<div class="modal_footer">'+ opt['footer'] +'</div>';
-			}
-			div+='</div>';
-			div+='<div class="modal_bg"></div>';
-			$(div).appendTo("body");
+			//创建提示框，显示后移除。
+			var _class='W_layer modal '+opt.type;
+			var _html='<div class="bg"><div class="title">'+opt.title+'</div><div class="wrap"><div class="content">'+opt.content+opt.btn+'</div></div></div>'
+			$('body').append($('<div/>',{class:_class,html:_html}));
 
-			//设置弹出框和背景遮照样式
+			//设置弹出框样式
 			var modal=$('div.modal');
-			modal.css({width:opt['width'],height:opt['height']});
-			var modal_bg=$('.modal_bg');
+
 			//回调函数
-			opt.callback(modal);
+			
 			//关闭弹出框
 			var close_btn=modal.find('.close'); 
 			close_btn.on('click',function(){
+				// opt.callback();
 				modal.fadeOut('fast',function(){
 					$(this).remove();
-					$(".modal_bg").remove();
+					if(opt.type=='center'){
+						$('.W_mask').remove();
+					}
 				})
 			})
-			//关闭的方式
-			if(opt.c_type==0){
-				$(document).on('keydown',function(e){
-					if(e.which===27)
-						close_btn.trigger('click');
-				})
-				modal_bg.on('click',function(){
-					close_btn.trigger('click')
-				})
-			}
-			position();
-			//改变窗口大小触发事件
-			window.onresize=function(){
-				position();
-			}
+			// //关闭的方式
+			// if(opt.c_type==0){
+			// 	$(document).on('keydown',function(e){
+			// 		if(e.which===27)
+			// 			close_btn.trigger('click');
+			// 	})
+			// }
+			position(this);
 		//设置弹出框的位置
-		function position(){
-			var pos=get_pos(modal);
+		function position(self){
+			if(opt.type!='center'){
+				var _w=$(self).width();
+				var _h=$(self).height();
+				var _offsetY=opt.v_type?-(_h+4):(modal.height()+4);
+				var _x=$(self).offset().left-((modal.width()-_w)/2);
+				var _y=$(self).offset().top-_offsetY;
+			}else{
+				$.mask();
+				var pos=get_pos($('.W_layer'),opt.top);
+				var _x= pos[0];
+				var _y=pos[1];
+			}
 			modal.css(
 			{
-				left: pos[0],
-				top: pos[1]
+				left: _x,
+				top:  _y
 			});
-			modal_bg.width($(document).width()).height($(document).height());
 		}
 		
 	}
