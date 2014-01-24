@@ -1,0 +1,11 @@
+body{
+	background-color: #ceebbe;
+	background-image: none;
+}
+.miniblog{
+	background-image: url(images/profile_body_bg.jpg);
+	background-position: center 0;
+}
+.miniblog_fb{
+	background-image: none;
+}

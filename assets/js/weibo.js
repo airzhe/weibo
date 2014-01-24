@@ -92,19 +92,21 @@ $(document).ready(function(){
 	$('body').on('click','.suitControlPanel .template_list a',function(){
 		$('.suitControlPanel').find('.template_list').find('a').removeClass('current');
 		$(this).addClass('current');
-		$('.profile_pic_top').css('background-image','none');
-		var href=site_url+'assets/skin/suit/'+$(this).data('link')+'/skin.css';
-		// if($('#css_template').length==0){
-		// 	$("<link>")
-		// 	.attr({ id:'css_skin',
-		// 		rel: "stylesheet",
-		// 		type: "text/css",
-		// 		href: href
-		// 	})
-		// 	.appendTo("head");
-		// }else{
-		// 	$('#css_template').attr('href',href);
-		// }
+		var link=site_url+'assets/skin/suit/'+$(this).data('link');
+		var cover=link+'/images/profile_cover.jpg';
+		$('.profile_pic_top').css('background-image','url('+ cover +')');
+		var href=link + '/skin.css';
+		if($('#css_template').length==0){
+			$("<link>")
+			.attr({ id:'css_skin',
+				rel: "stylesheet",
+				type: "text/css",
+				href: href
+			})
+			.appendTo("head");
+		}else{
+			$('#css_template').attr('href',href);
+		}
 	})
 	
 	/**
@@ -132,7 +134,7 @@ $(document).ready(function(){
 	$('body').on('click','.cover_list a',function(){
 		$('.cover_list').find('a').removeClass('current');
 		$(this).addClass('current');
-		var bg_img=site_url+'assets/images/skin/cover/'+$(this).data('link');
+		var bg_img=site_url+'assets/skin/cover/'+$(this).data('link');
 		console.log(bg_img);
 		$('.profile_pic_top').css('background-image','url('+bg_img+')');
 	})
