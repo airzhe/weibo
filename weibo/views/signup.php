@@ -76,9 +76,9 @@
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>所在地：</div>
 							<div class="inp" id="city">
-								<select class="province" data-val="浙江" data-title="选择省"></select>
-								<select class="city" data-val="杭州" data-title="选择市" disabled="disabled"></select>
-								<select class="area" data-val="西湖区" data-title="选择地区" disabled="disabled"></select>
+								<select class="province" data-val="浙江" data-title="选择省" name="locaotion[]"></select>
+								<select class="city" data-val="杭州" data-title="选择市" name="locaotion[]" disabled="disabled"></select>
+								<select class="area" data-val="西湖区" data-title="选择地区" name="locaotion[]" disabled="disabled"></select>
 							</div>
 							<div class="tips">
 								<label class="error"><i class="icon_rederrorS"></i>请选择性别</label>
@@ -98,7 +98,7 @@
 						</div>
 						<div class="info_list">
 							<div class="inp">
-								<a href="" class="W_btn_big W_btn_g"><span>立即注册</span></a>
+								<a href="javascript:void(0)" class="W_btn_big W_btn_g" id="submit"><span>立即注册</span></a>
 							</div>
 						</div>
 						<div class="info_list">
