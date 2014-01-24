@@ -9,6 +9,8 @@ class json extends Front_Controller{
 		// 读取配置项获得皮肤数组
 		$this->config->load('W_skin', TRUE);
 		$skin = $this->config->item('skin', 'W_skin');
+		//图片扩展名
+		$extension='.png';
 		$data='<ul class="tab_nosep clearfix">';
 		foreach ($skin[$id]['tab_nosep'] as  $value) {
 			$data.='<li><a href="#">'.$value.'</a></li>';
@@ -20,6 +22,7 @@ class json extends Front_Controller{
 				$data.='<p><span>推荐配色</span></p>';
 				break;
 			case 'cover':
+				$extension='.jpg';
 				$class="template_list cover_list";
 				break;
 			default:
@@ -35,7 +38,7 @@ class json extends Front_Controller{
 				$info[0]=$value;
 				$info[1]='';
 			}
-			$data.='<li><a href="javascript:void(0)" data-link="'.$info[1].'"><img src="./assets/images/skin/'.$id.'/'.$key.'"><span>'.$info[0].'</span></a></li>';
+			$data.='<li><a href="javascript:void(0)" data-link="'.$info[1].'"><img src="./assets/skin/'.$id.'/'.$key.$extension.'"><span>'.$info[0].'</span></a></li>';
 		}
 		$data.='</ul>';
 		die($data);

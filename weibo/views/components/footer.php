@@ -7,7 +7,7 @@
 </a>
 <!-- 返回顶部结束 -->
 </div>
-<div class="global_footer">
+<div class="global_footer S_bg4">
 	<div class="clearfix">
 		<dl class="list">
 			<dt>找找感兴趣的人</dt>

@@ -1,7 +1,7 @@
 <div class="profile_pic_top" style="background-image:url(<?php echo base_url('assets/images/015.jpg') ?>)">
 	<a class="set_skin" href="javascript:void(0)" title="模板设置"></a>
 </div>
-<div class="user_info clearfix">
+<div class="user_info S_bg5 clearfix">
 	<div class="head left">
 		<div class="avatar">
 			<img src="./assets/images/avatar.jpg" alt="">
@@ -39,7 +39,7 @@
 		<p class="edit"><a href="" class="W_btn_c"><span>编辑个人资料</span></a></p>
 	</div>
 </div>
-<div >
+<div class="S_bg4">
 	<ul class="core_nav clearfix">
 		<li class="current"><a href="#">我的主页</a></li>
 		<li><a href="#">微博</a></li>

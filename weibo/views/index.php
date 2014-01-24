@@ -1,5 +1,5 @@
 <?php $this->load->view('components/index_top') ?>
-<div class="wrap clearfix">
+<div class="wrap S_bg4 clearfix">
 	<div class="main left">
 		<p class="tab_radious">
 			<a href="#" class="active"><strong>全部</strong><span class="tabarrow"></span></a>

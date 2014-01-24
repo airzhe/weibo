@@ -230,7 +230,8 @@ function get_pos(obj,top){
  			top:'',
  			title: '', 
  			content: '<p><i class="icon_ask"></i>确认要删除这条微博吗？</p>', 
- 			btn: '<p><a class="W_btn_a"><span class="btn_30px W_f14">确定</span></a> <a class="W_btn_b close"><span class="btn_30px W_f14">取消</span></a></p>'
+ 			btn: '<p><a class="W_btn_a"><span class="btn_30px W_f14">确定</span></a> <a class="W_btn_b close"><span class="btn_30px W_f14">取消</span></a></p>',
+ 			close_handler: function () {}
  		};
  		var opt = $.extend(_default, options);
 
@@ -249,7 +250,8 @@ function get_pos(obj,top){
 			//关闭弹出框
 			var close_btn=modal.find('.close'); 
 			close_btn.on('click',function(){
-				// opt.callback();
+				// 关闭时回调函数
+				opt.close_handler();
 				modal.fadeOut('fast',function(){
 					$(this).remove();
 					if(opt.type=='center'){
@@ -279,13 +281,8 @@ function get_pos(obj,top){
 				var _x= pos[0];
 				var _y=pos[1];
 			}
-			modal.css(
-			{
-				left: _x,
-				top:  _y
-			});
+			modal.css({left: _x,top:_y});
 		}
-		
 	}
 });
 

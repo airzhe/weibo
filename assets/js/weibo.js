@@ -41,7 +41,25 @@ $(document).ready(function(){
 	/**	
 	* 文本框自适应
 	*/
-	// $('.home .comment').find('textarea').autosize(); 
+	// $('.home .comment').find('textarea').autosize();
+
+	/**
+	*设置皮肤
+	*/
+	$('.set_skin').on('click',function(){
+		$.ajax({
+			url:site_url+'assets/data/set_skin.json',
+			dataType:'json',
+			success:function(data){
+				$a=data;
+				$('body').append($a);
+				$('.set_template').drag({drag:'.title'});
+				if($('body.home').length!=0)$.mask();
+				$('.set_template').find('.profile_tab').find('li').eq(0).trigger('click');
+			}
+		})
+	})
+
 	/**	
 	* 自定义皮肤选项卡
 	*/ 
@@ -67,24 +85,30 @@ $(document).ready(function(){
 			})
 		}
 	})
-	/**
-	*设置皮肤
-	*/
-	$('.set_skin').on('click',function(){
-		$.ajax({
-			url:site_url+'assets/data/set_skin.json',
-			dataType:'json',
-			success:function(data){
-				$a=data;
-				$('body').append($a);
-				$('.set_template').drag({drag:'.title'});
-				if($('body.home').length!=0)$.mask();
-				$('.set_template').find('.profile_tab').find('li').eq(0).trigger('click');
-			}
-		})
-	})
+
 	/**
 	*点击切换套装
+	*/
+	$('body').on('click','.suitControlPanel .template_list a',function(){
+		$('.suitControlPanel').find('.template_list').find('a').removeClass('current');
+		$(this).addClass('current');
+		$('.profile_pic_top').css('background-image','none');
+		var href=site_url+'assets/skin/suit/'+$(this).data('link')+'/skin.css';
+		// if($('#css_template').length==0){
+		// 	$("<link>")
+		// 	.attr({ id:'css_skin',
+		// 		rel: "stylesheet",
+		// 		type: "text/css",
+		// 		href: href
+		// 	})
+		// 	.appendTo("head");
+		// }else{
+		// 	$('#css_template').attr('href',href);
+		// }
+	})
+	
+	/**
+	*点击切换模板
 	*/
 	$('body').on('click','.sysControlPanel .template_list a',function(){
 		$('.sysControlPanel').find('.template_list').find('a').removeClass('current');

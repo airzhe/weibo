@@ -39,6 +39,14 @@ a:hover{
 	color:#333;
 	text-decoration: none;
 }
+/*主页内容部分*/
+.S_bg4{
+	background-color: #fafafa;
+}
+/*主页头部分*/
+.S_bg5 {
+	background-color: #fff;
+}
 
 .S_line1_c {
 	color: #d9d9d9;
@@ -46,7 +54,7 @@ a:hover{
 .S_line2 {
 	border-color: #E6E6E6;
 }
-.S_bg4_c {
+.S_bg4_c{
 	color: #fafafa;
 }
 .W_btn_a,.W_btn_b:hover {
@@ -565,7 +573,7 @@ body.login .container,body.signup .container{
  /*全局导航*/
  body{
  	background-color: #bee1f5;
- 	background-image: url(./images/body_repeat.png);
+ 	background-image: url(../images/body_repeat.png);
  	background-repeat: repeat-x;
  }
  .miniblog {
@@ -1735,7 +1743,7 @@ body.login .container,body.signup .container{
  	/*用户个人主页*/
  	body.index .container{
  		position: relative;
- 		background: #fff;
+ 		background: transparent;
  	}
 
  	body.index .miniblog{
@@ -2767,7 +2775,6 @@ body.login .container,body.signup .container{
  		margin-top:10px;
  		width: 940px;
  		height: 168px;
- 		background:#fff;
  		padding:20px;
  	}
  	.global_footer .list{
