@@ -60,7 +60,7 @@
  							<a href="#" class="right">忘记密码</a>
  						</p>
  						<a href="#" class="W_btn_g"><span>登录</span></a>
- 						<p class="S_txt2 clearfix ">还没微博？<a href="#">立即注册！</a></p>
+ 						<p class="S_txt2 clearfix ">还没微博？<a href="signup">立即注册！</a></p>
  					</form>
  					<div class="login_mode">
  						

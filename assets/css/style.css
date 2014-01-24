@@ -1,3 +1,17 @@
+/*CI调试信息样式*/
+#codeigniter_profiler{
+	width: 980px;
+	margin:0 auto;
+	cursor: pointer;
+}
+#codeigniter_profiler fieldset{
+	display: none;
+}
+#codeigniter_profiler:hover fieldset{
+	display: block;
+}
+/*CI调试信息样式结束*/
+
 body{
 	font: 12px/1.125 Arial,Helvetica,sans-serif;
 	color: #333;

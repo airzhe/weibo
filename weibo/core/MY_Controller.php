@@ -19,6 +19,10 @@ class Front_Controller extends Base_Controller
 	
 	function __construct(){
 		parent::__construct();
+
+		$this->load->model('User_model');
+		$this->auth();
+		$this->output->enable_profiler(TRUE);
 	}
 	
 	/*
@@ -56,5 +60,17 @@ class Front_Controller extends Base_Controller
 			$this->load->view($view, $vars);
 		}
 	}
+	/**
+	 * 用户是否登录验证
+	 */
+	public function auth(){
+		$exception_uris = array(
+			'login', 
+			'signup'
+			);
+		if(in_array(uri_string(),$exception_uris)) return;
+		if ($this->User_model->loggedin() == FALSE) {
+			redirect('login');
+		}
+	}
 }
-

@@ -4,6 +4,11 @@ Class signup extends Front_Controller{
 		parent::__construct();
 	}
 	public function index(){
-		$this->partial('signup');
+		if($this->input->post()){
+			$data=$this->input->post();
+			p($data);
+		}else{
+			$this->partial('signup');
+		}
 	}
 }

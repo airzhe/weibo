@@ -10,29 +10,7 @@
 	<script src="<?php echo base_url('assets/js/jquery.validate.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery.calendar.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery.cxselect.min.js') ?>"></script>
-	<script>
-		$(document).ready(function(){
-			//生日
-			var myDate = new Date();
-			$("#dateSelector").DateSelector({
-				ctlYearId: 'idYear',
-				ctlMonthId: 'idMonth',
-				ctlDayId: 'idDay',
-				defYear: myDate.getFullYear(),
-				defMonth: (myDate.getMonth()+1),
-				defDay: myDate.getDate(),
-				minYear: 1900,
-				maxYear: (myDate.getFullYear()+1)
-			});
-
-			//地区
-			$.cxSelect.defaults.url="<?php echo base_url('assets/js/city.min.js') ?>";
-			$("#city").cxSelect({
-				selects:["province","city","area"],
-				nodata:"none"
-			});
-		})
-	</script>
+	<script src="<?php echo base_url('assets/js/signup.js') ?>"></script>
 </head>
 <body class="signup">
 	<div class="header_line">
@@ -47,7 +25,7 @@
 			<div class="reg_title"><a  class="cur">个人注册</a> <i class="vline">|</i> 企业注册</div>
 			<div class="reg_info clearfix">
 				<div class="W_reg_form  left">
-					<form action="">
+					<form action="signup" method="post">
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>邮箱：</div>
 							<div class="inp">
@@ -79,7 +57,7 @@
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>生日：</div>
 							<div class="inp">
-								<select id="idYear" name="idYear" data="1987"></select>年 <select id="idMonth" name="idMonth" data="1"></select>月 <select id="idDay" name="idDay" data="1"></select>日
+								<select id="idYear" name="birthday[]" data="1987"></select>年 <select id="idMonth" name="birthday[]" data="1"></select>月 <select id="idDay" name="birthday[]" data="1"></select>日
 							</div>
 							<div class="tips">
 								<label class="error"><i class="icon_rederrorS"></i>请选择生日</label>
@@ -116,7 +94,6 @@
 							<div class="tips">
 								<a href="javascript:void(0);" title="看不清，换一张" class="verify_refresh"></a>
 								<label class="error"><i class="icon_rederrorS"></i>请输入验证码</label>
-
 							</div>
 						</div>
 						<div class="info_list">
@@ -136,7 +113,7 @@
 					</form>
 				</div>
 				<div class="reg_sidebar right">
-					<p>已有帐号，<a href="">直接登录»</a></p>
+					<p>已有帐号，<a href="login">直接登录»</a></p>
 					<p>手机快速注册</p>
 					<p class="S_txt2">编辑短信：</p>
 					<p class="p3">6-16位数字</p>
