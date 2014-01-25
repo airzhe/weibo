@@ -501,24 +501,41 @@ body.login .container,body.signup .container{
  }
  .info_list .inp{
  	margin-left:160px;
+ 	line-height: 30px;
  }
  .info_list .attachment{
- 	padding-top:10px;
  	font-size: 12px;
  }
  .info_list .tips{
  	left: 375px;
  	position: absolute;
- 	top: 6px;
+ 	top: 8px;
  	font-size: 12px;
- 	width: 200px;
+ 	width: 230px;
+ 	display: none;
+ }
+  .info_list .tips:last-child{
+	top:12px;
+  }
+ .info_list .tips p{
+ 	margin:0;
+ 	line-height: 15px;
+ }
+/* .info_list select{
+ 	height: 22px;
+ 	padding: 2px 0;
+ }*/
+ .info_list .tips p i{
+ 	vertical-align: middle;
+ 	float: left;
+ }
+ .info_list .notice{
+ 	color:#808080;
  }
  .info_list .error{
  	color:#e64141;
  }
- .info_list .error i{ 
- 	background-position: 0 -250px;
- }
+ 
  .info_list .choose label {
  	line-height: 30px;
  	margin-right: 10px;
@@ -536,7 +553,7 @@ body.login .container,body.signup .container{
  	background: url(../images/verify_refresh.png) no-repeat;
  	display: inline-block;
  	height: 17px;
- 	margin-left: 7px;
+ 	margin-left: -10px;
  	margin-top: 7px;
  	overflow: hidden;
  	width: 18px;

@@ -19,6 +19,7 @@
 (function ($) {
     //SELECT控件设置函数
     function setSelectControl(oSelect, iStart, iLength, iIndex) {
+        console.log(iIndex);
         oSelect.empty();
         for (var i = 0; i < iLength; i++) {
             if ((parseInt(iStart) + i) == iIndex)
@@ -26,6 +27,7 @@
             else
                 oSelect.append("<option value='" + (parseInt(iStart) + i) + "'>" + (parseInt(iStart) + i) + "</option>");
         }
+        oSelect.append("<option value='0'>请选择</option>");
     }
 
     $.fn.DateSelector = function (options) {

@@ -22,30 +22,62 @@ $(document).ready(function(){
 	$('[name=account]').focus(function(){
 		if($(this).val()=='请输入您的常用邮箱')	$(this).val('');
 	})
+	$('[type=text],[type=password]').focus(function(){
+		$(this).parents('.info_list').find('.tips').show();
+	})
+	$("[name^=birthday]").val('0');
 	// 表单提交事件
 	$('#submit').on('click',function(){
+		$('select').not(':hidden').each(function(){
+			if(this.value==0){
+				var tips=$(this).parent('.inp').next('.tips');
+				tips.show().find('p').find('label').html('请选择');
+				return false;
+			}else{
+				var tips=$(this).parent('.inp').next('.tips');
+				tips.hide();
+				console.log('run....')
+			}
+		})
 		$('form').submit();
 	})
 	// 表单验证
 	$('form').validate({
 		debug:true,
-		onkeyup:false,
+		// onkeyup:false,
 		submitHandler:function(form){
 			alert('success');
+		},
+		errorPlacement: function(error, element) {
+			var p=element.parents('.info_list').find('.tips').find('p');
+			p.append(error);
+		},
+		success: function(element) {
+			var p=element.parents('.info_list').find('.tips').find('p');
+			p.find('label').remove();
+			p.remove('class').find('i').removeClass().addClass('icon_succ');
+		},
+		highlight: function(element, errorClass) {
+			var tips=$(element).parents('.info_list').find('.tips');
+			tips.show();
+			var p=tips.find('p');
+			p.find('label').remove();
+			p.find('i').removeClass().addClass('icon_rederrorS');
+			p.addClass('error')
 		},
 		rules:{
 			account:{
 				required:true,
 				email:true,
-				remote: {
-				    url: "?c=user&m=check_email",	//后台处理程序
-				    type: "post",               	//数据发送方式 
-				    data: {                     	//要传递的数据
-				    	email: function() {
-				    		return $("[name=email]").val();
-				    	}
-				    }
-				}
+				// remote: {
+				//     url: "?c=user&m=check_email",	//后台处理程序
+				//     type: "post",               	//数据发送方式 
+				//     data: {                     	//要传递的数据
+				//     	email: function() {
+				//     		return $("[name=email]").val();
+				//     	}
+				//     }
+				// }
 			},
 			passwd:{
 				required:true,
@@ -54,28 +86,29 @@ $(document).ready(function(){
 			username:{
 				required:true,
 				rangelength:[4,24],
-				userNameFormat:true,
-				remote: {
-				    url: "?c=user&m=check_user",	//后台处理程序
-				    type: "post",               	//数据发送方式 
-				    data: {                     	//要传递的数据
-				    	username: function() {
-				    		return $("[name=username]").val();
-				    	}
-				    }
-				}
+				// userNameFormat:true,
+				// remote: {
+				//     url: "?c=user&m=check_user",	//后台处理程序
+				//     type: "post",               	//数据发送方式 
+				//     data: {                     	//要传递的数据
+				//     	username: function() {
+				//     		return $("[name=username]").val();
+				//     	}
+				//     }
+				// }
 			},
+			sex:'required',
 			code:{
 				required:true,
-				remote: {
-					    url: "?c=user&m=check_code",	//后台处理程序
-					    type: "post",               	//数据发送方式 
-					    data: {                     	//要传递的数据
-					    	code: function() {
-					    		return $("[name=code]").val();
-					    	}
-					    }
-					}
+				// remote: {
+				// 	    url: "?c=user&m=check_code",	//后台处理程序
+				// 	    type: "post",               	//数据发送方式 
+				// 	    data: {                     	//要传递的数据
+				// 	    	code: function() {
+				// 	    		return $("[name=code]").val();
+				// 	    	}
+				// 	    }
+				// 	}
 				}
 			},
 			messages:{
@@ -93,6 +126,7 @@ $(document).ready(function(){
 					rangelength:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
 					remote:'用户名已经存在，请更换。'
 				},
+				sex:'请选择性别',
 				code:{
 					required:'请输入验证码',
 					remote:'验证码输入有误'

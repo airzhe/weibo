@@ -29,11 +29,11 @@
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>邮箱：</div>
 							<div class="inp">
-								<input class="W_input" type="text" value="请输入您的常用邮箱" name="account">
+								<input class="W_input" type="text" placeholder="请输入您的常用邮箱" name="account">
 								<div class="attachment">没有邮箱？<a href="#">用手机注册</a></div>
 							</div>
 							<div class="tips">
-								<label class="error"><i class="icon_rederrorS"></i>请输入正确的邮箱地址</label>
+								<p class="notice"><i class="icon_warn"></i><label>您输入的邮箱将作为微博登录名</label></p>
 							</div>
 						</div>
 						<div class="info_list clearfix">
@@ -42,7 +42,7 @@
 								<input class="W_input" type="password" name="passwd">
 							</div>
 							<div class="tips">
-								<label class="error"><i class="icon_rederrorS"></i>请输入密码</label>
+								<p class="notice"><i class="icon_warn"></i><label>请输入6-16位数字、字母或常用符号，字母区分大小写</label></p>
 							</div>
 						</div>
 						<div class="info_list clearfix">
@@ -51,16 +51,16 @@
 								<input class="W_input" type="text" name="username">
 							</div>
 							<div class="tips">
-								<label class="error"><i class="icon_rederrorS"></i>请输入昵称</label>
+								<p class="notice"><i class="icon_warn"></i><label>请输入4-24位字符：支持中文、英文、数字、“-”、“_”</label></p>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>生日：</div>
 							<div class="inp">
-								<select id="idYear" name="birthday[]" data="1987"></select>年 <select id="idMonth" name="birthday[]" data="1"></select>月 <select id="idDay" name="birthday[]" data="1"></select>日
+								<select id="idYear" name="birthday[]" data="0"></select> 年 <select id="idMonth" name="birthday[]" data="1"></select> 月 <select id="idDay" name="birthday[]" data="1"></select> 日
 							</div>
-							<div class="tips">
-								<label class="error"><i class="icon_rederrorS"></i>请选择生日</label>
+							<div class="tips" style="margin-left:80px;top:8px;">
+								<p class="error"><i class="icon_rederrorS"></i><label></label></p>
 							</div>
 						</div>
 						<div class="info_list clearfix">
@@ -70,18 +70,18 @@
 								<label><input type="radio" name="sex">女</label>
 							</div>
 							<div class="tips">
-								<label class="error"><i class="icon_rederrorS"></i>请选择性别</label>
+								<p class="notice"><i class="icon_rederrorS"></i></p>
 							</div>
 						</div>
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>所在地：</div>
 							<div class="inp" id="city">
 								<select class="province" data-val="浙江" data-title="选择省" name="locaotion[]"></select>
-								<select class="city" data-val="杭州" data-title="选择市" name="locaotion[]" disabled="disabled"></select>
-								<select class="area" data-val="西湖区" data-title="选择地区" name="locaotion[]" disabled="disabled"></select>
+								<select class="city" data-title="选择市" name="locaotion[]" disabled="disabled"></select>
+								<select class="area" data-title="选择地区" name="locaotion[]" disabled="disabled"></select>
 							</div>
-							<div class="tips">
-								<label class="error"><i class="icon_rederrorS"></i>请选择性别</label>
+							<div class="tips" style="margin-left:60px;">
+								<p class="error"><i class="icon_rederrorS"></i><label></label></p>
 							</div>
 						</div>
 						<div class="info_list clearfix">
@@ -89,11 +89,10 @@
 							<div class="inp">
 								<input class="W_input" type="text" name="code">
 								<img src="<?php echo base_url('assets/images/pincode.jpeg') ?>" alt="" id="code">
-
+								<a href="javascript:void(0);" title="看不清，换一张" class="verify_refresh"></a>
 							</div>
 							<div class="tips">
-								<a href="javascript:void(0);" title="看不清，换一张" class="verify_refresh"></a>
-								<label class="error"><i class="icon_rederrorS"></i>请输入验证码</label>
+								<p class="error"><i class="icon_warn"></i><label>请输入验证码</label></p>
 							</div>
 						</div>
 						<div class="info_list">

@@ -153,9 +153,9 @@
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>
 		<div class="user_info">
-			<img  width="80" height="80" src="<?php echo base_url('assets/images/avatar.jpg') ?>" alt="">
+			<a href="index"><img  width="80" height="80" src="<?php echo base_url('assets/images/avatar.jpg') ?>" alt=""></a>
 			<div>
-				<a href="" class="username S_func1">run5324</a>
+				<a href="index" class="username S_func1">run5324</a>
 				<br>
 				<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
 			</div>
