@@ -10,6 +10,9 @@
 	<script src="<?php echo base_url('assets/js/jquery.validate.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery.calendar.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery.cxselect.min.js') ?>"></script>
+	<script>
+		var site_url= '<?php echo site_url()?>'
+	</script>
 	<script src="<?php echo base_url('assets/js/signup.js') ?>"></script>
 </head>
 <body class="signup">
@@ -85,10 +88,10 @@
 							</div>
 						</div>
 						<div class="info_list clearfix">
-							<div class="tit left"><i>*</i>验证码：</div>
+							<div class="tit left" style="margin-top:8px;"><i>*</i>验证码：</div>
 							<div class="inp">
 								<input class="W_input" type="text" name="code">
-								<img src="<?php echo base_url('assets/images/pincode.jpeg') ?>" alt="" id="code">
+								<img src="<?php  echo 'code' ?>" alt="" id="code">
 								<a href="javascript:void(0);" title="看不清，换一张" class="verify_refresh"></a>
 							</div>
 							<div class="tips">

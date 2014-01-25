@@ -13,15 +13,16 @@ $(document).ready(function(){
 	});
 
 	//地区
-	$.cxSelect.defaults.url="assets/js/city.min.js";
+	$.cxSelect.defaults.url=site_url+"assets/js/city.min.js";
 	$("#city").cxSelect({
 		selects:["province","city","area"],
 		nodata:"none"
 	});
-	// 获取焦点时清空输框默认value
-	$('[name=account]').focus(function(){
-		if($(this).val()=='请输入您的常用邮箱')	$(this).val('');
+	//点击更改验证码
+	$("#code,.verify_refresh").on('click',function(){
+		$('#code').attr('src','code?'+Math.random());
 	})
+	//文本框获得焦点，显示提示信息。
 	$('[type=text],[type=password]').focus(function(){
 		$(this).parents('.info_list').find('.tips').show();
 	})
@@ -109,28 +110,28 @@ $(document).ready(function(){
 				// 	    	}
 				// 	    }
 				// 	}
-				}
+			}
+		},
+		messages:{
+			account:{
+				required:'请输入邮箱地址',
+				email:'请输入正确的邮箱地址',
+				remote:'邮箱地址已经存在，请更换。'
 			},
-			messages:{
-				account:{
-					required:'请输入邮箱地址',
-					email:'请输入正确的邮箱地址',
-					remote:'邮箱地址已经存在，请更换。'
-				},
-				passwd:{
-					required:'请输入密码',
-					rangelength:'请输入6-16位数字、字母或常用符号，字母区分大小写'
-				},
-				username:{
-					required:'请输入昵称',
-					rangelength:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
-					remote:'用户名已经存在，请更换。'
-				},
-				sex:'请选择性别',
-				code:{
-					required:'请输入验证码',
-					remote:'验证码输入有误'
-				}
+			passwd:{
+				required:'请输入密码',
+				rangelength:'请输入6-16位数字、字母或常用符号，字母区分大小写'
 			},
-		})
+			username:{
+				required:'请输入昵称',
+				rangelength:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
+				remote:'用户名已经存在，请更换。'
+			},
+			sex:'请选择性别',
+			code:{
+				required:'请输入验证码',
+				remote:'验证码输入有误'
+			}
+		},
+	})
 })

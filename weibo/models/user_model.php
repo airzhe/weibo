@@ -17,6 +17,6 @@ class User_model extends MY_Model {
 	 * return bool
 	 */
 	public function loggedin(){
-		return false;
+		return true;
 	}
 }

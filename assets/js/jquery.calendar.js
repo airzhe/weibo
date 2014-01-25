@@ -19,7 +19,6 @@
 (function ($) {
     //SELECT控件设置函数
     function setSelectControl(oSelect, iStart, iLength, iIndex) {
-        console.log(iIndex);
         oSelect.empty();
         for (var i = 0; i < iLength; i++) {
             if ((parseInt(iStart) + i) == iIndex)
