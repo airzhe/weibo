@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 	//点击更改验证码
 	$("#code,.verify_refresh").on('click',function(){
-		$('#code').attr('src','code?'+Math.random());
+		$('#code').attr('src',site_url+'signup/code?'+Math.random());
 	})
 	//文本框获得焦点，显示提示信息。
 	$('[type=text],[type=password]').focus(function(){
@@ -43,9 +43,12 @@ $(document).ready(function(){
 		$('form').submit();
 	})
 	// 表单验证
+	jQuery.validator.addMethod("userNameFormat", function(value) {  
+		return (/^[a-zA-Z_-]+$/.test(value));
+	});
 	$('form').validate({
 		debug:true,
-		// onkeyup:false,
+		onkeyup:false,
 		submitHandler:function(form){
 			alert('success');
 		},
@@ -70,15 +73,15 @@ $(document).ready(function(){
 			account:{
 				required:true,
 				email:true,
-				// remote: {
-				//     url: "?c=user&m=check_email",	//后台处理程序
-				//     type: "post",               	//数据发送方式 
-				//     data: {                     	//要传递的数据
-				//     	email: function() {
-				//     		return $("[name=email]").val();
-				//     	}
-				//     }
-				// }
+				remote: {
+				    url : site_url+'signup/account_exist',	//后台处理程序
+				    type: "post",               			//数据发送方式 
+				    data: {                     			//要传递的数据
+				    	account: function() {
+				    		return $("[name=account]").val();
+				    	}
+				    }
+				}
 			},
 			passwd:{
 				required:true,
@@ -87,51 +90,52 @@ $(document).ready(function(){
 			username:{
 				required:true,
 				rangelength:[4,24],
-				// userNameFormat:true,
-				// remote: {
-				//     url: "?c=user&m=check_user",	//后台处理程序
-				//     type: "post",               	//数据发送方式 
-				//     data: {                     	//要传递的数据
-				//     	username: function() {
-				//     		return $("[name=username]").val();
-				//     	}
-				//     }
-				// }
+				userNameFormat:true,
+				remote: {
+				    url : site_url+'signup/username_exist',	//后台处理程序
+				    type: "post",               			//数据发送方式 
+				    data: {                     			//要传递的数据
+				    	username: function() {
+				    		return $("[name=username]").val();
+				    	}
+				    }
+				}
 			},
 			sex:'required',
 			code:{
 				required:true,
-				// remote: {
-				// 	    url: "?c=user&m=check_code",	//后台处理程序
-				// 	    type: "post",               	//数据发送方式 
-				// 	    data: {                     	//要传递的数据
-				// 	    	code: function() {
-				// 	    		return $("[name=code]").val();
-				// 	    	}
-				// 	    }
-				// 	}
-			}
-		},
-		messages:{
-			account:{
-				required:'请输入邮箱地址',
-				email:'请输入正确的邮箱地址',
-				remote:'邮箱地址已经存在，请更换。'
+				remote: {
+					    url: site_url+'signup/auth_code',	//后台处理程序
+					    type: "post",               		//数据发送方式 
+					    data: {                     		//要传递的数据
+					    	code: function() {
+					    		return $("[name=code]").val();
+					    	}
+					    }
+					}
+				}
 			},
-			passwd:{
-				required:'请输入密码',
-				rangelength:'请输入6-16位数字、字母或常用符号，字母区分大小写'
+			messages:{
+				account:{
+					required:'请输入邮箱地址',
+					email:'请输入正确的邮箱地址',
+					remote:'帐号已经存在，请更换。'
+				},
+				passwd:{
+					required:'请输入密码',
+					rangelength:'请输入6-16位数字、字母或常用符号，字母区分大小写'
+				},
+				username:{
+					required:'请输入昵称',
+					rangelength:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
+					userNameFormat:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
+					remote:'用户名已经存在，请更换。'
+				},
+				sex:'请选择性别',
+				code:{
+					required:'请输入验证码',
+					remote:'验证码输入有误'
+				}
 			},
-			username:{
-				required:'请输入昵称',
-				rangelength:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
-				remote:'用户名已经存在，请更换。'
-			},
-			sex:'请选择性别',
-			code:{
-				required:'请输入验证码',
-				remote:'验证码输入有误'
-			}
-		},
-	})
+		})
 })

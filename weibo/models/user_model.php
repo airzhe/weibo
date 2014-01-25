@@ -6,7 +6,6 @@ class User_model extends MY_Model {
 	protected $_primary_filter = 'intval';
 	// protected $_order_by = 'id';
 	public $rules = array();
-	protected $_timestamps = FALSE;
 	
 	function __construct() {
 		parent::__construct();
@@ -19,4 +18,5 @@ class User_model extends MY_Model {
 	public function loggedin(){
 		return true;
 	}
+
 }

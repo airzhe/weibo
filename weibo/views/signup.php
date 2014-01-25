@@ -91,11 +91,11 @@
 							<div class="tit left" style="margin-top:8px;"><i>*</i>验证码：</div>
 							<div class="inp">
 								<input class="W_input" type="text" name="code">
-								<img src="<?php  echo 'code' ?>" alt="" id="code">
+								<img src="<?php  echo site_url('signup/code') ?>" alt="" id="code">
 								<a href="javascript:void(0);" title="看不清，换一张" class="verify_refresh"></a>
 							</div>
 							<div class="tips">
-								<p class="error"><i class="icon_warn"></i><label>请输入验证码</label></p>
+								<p class="notice"><i class="icon_warn"></i><label>请输入验证码</label></p>
 							</div>
 						</div>
 						<div class="info_list">

@@ -11,13 +11,61 @@ Class signup extends Front_Controller{
 			$data=$this->input->post();
 			p($data);
 		}else{
+			// session_id() || session_start();
+			// var_dump($_SESSION);
 			$this->partial('signup');
 		}
 	}
+
+
+	/**
+	 * 生成验证码
+	 */
 	public function code(){
+		session_id() || session_start();
 		$this->load->library('code');
-		$this->code->font_size=20;
+		$this->code->height=35;
+		$this->code->font_size=24;
 		$this->code->font='./assets/data/Quickie.ttf';
 		$this->code->show();
+	}
+	/**
+	 * 验证验证码
+	 */
+	public function auth_code(){
+		session_id() || session_start();
+		$code=$this->input->post('code');
+		if(strtoupper($code)!=$_SESSION['code']){
+			die('false');
+		}else{
+			die('true');
+		}
+	}
+	/**
+	 * 验证帐号是否存在
+	 */
+	public function account_exist(){
+		$data=$this->input->post();
+		$arr=$this->User_model->get_by($data);
+		//如果为真,则记录存在
+		if(empty($arr)){
+			die('true');
+		}else{
+			die('false');
+		}
+	}
+	/**
+	 * 验证昵称是否存在
+	 */
+	public function username_exist(){
+		$data=$this->input->post();
+		$this->load->model('User_info_model');
+		$arr=$this->User_info_model->get_by($data);
+		//如果为真,则记录存在
+		if(empty($arr)){
+			die('true');
+		}else{
+			die('false');
+		}
 	}
 }
