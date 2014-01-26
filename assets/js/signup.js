@@ -15,8 +15,7 @@ $(document).ready(function(){
 	//地区
 	$.cxSelect.defaults.url=site_url+"assets/js/city.min.js";
 	$("#city").cxSelect({
-		selects:["province","city","area"],
-		nodata:"none"
+		selects:["province","city"]
 	});
 	//点击更改验证码
 	$("#code,.verify_refresh").on('click',function(){
@@ -37,7 +36,6 @@ $(document).ready(function(){
 			}else{
 				var tips=$(this).parent('.inp').next('.tips');
 				tips.hide();
-				console.log('run....')
 			}
 		})
 		$('form').submit();
@@ -46,7 +44,7 @@ $(document).ready(function(){
 	jQuery.validator.addMethod("userNameFormat", function(value) {  
 		return (/^[a-zA-Z_-]+$/.test(value));
 	});
-	$('form').validate({
+	$('forms').validate({
 		debug:true,
 		onkeyup:false,
 		submitHandler:function(form){

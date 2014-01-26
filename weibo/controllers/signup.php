@@ -8,8 +8,19 @@ Class signup extends Front_Controller{
 	}
 	public function index(){
 		if($this->input->post()){
-			$data=$this->input->post();
-			p($data);
+			// php端表单字段验证
+			p($this->input->post());
+			$this->load->model('User_info_model');
+			$this->load->library('form_validation');
+			$rules = array_merge($this->User_model->rules,$this->User_info_model->rules);
+			$this->form_validation->set_rules($rules);
+			$this->form_validation->set_message('is_natural_no_zero', '%s 字段不能为空');
+			if ($this->form_validation->run() == TRUE) {
+				$data=$this->input->post();
+				p($data);
+			}else{
+				echo (validation_errors()); 
+			}
 		}else{
 			// session_id() || session_start();
 			// var_dump($_SESSION);
@@ -66,6 +77,15 @@ Class signup extends Front_Controller{
 			die('true');
 		}else{
 			die('false');
+		}
+	}
+	/**
+	*/
+	public function location_check($value){
+		// echo $value;
+		if(!$value){
+			$this->form_validation->set_message('location_check', '%s 字段不能为空');
+			return $value;
 		}
 	}
 }

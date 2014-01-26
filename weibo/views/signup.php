@@ -79,9 +79,8 @@
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>所在地：</div>
 							<div class="inp" id="city">
-								<select class="province" data-val="浙江" data-title="选择省" name="locaotion[]"></select>
-								<select class="city" data-title="选择市" name="locaotion[]" disabled="disabled"></select>
-								<select class="area" data-title="选择地区" name="locaotion[]" disabled="disabled"></select>
+								<select class="province" data-val="浙江" data-title="选择省" name="location[]"></select>
+								<select class="city" data-title="请选择" name="location[]" disabled="disabled"></select>
 							</div>
 							<div class="tips" style="margin-left:60px;">
 								<p class="error"><i class="icon_rederrorS"></i><label></label></p>
