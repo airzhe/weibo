@@ -24,7 +24,6 @@ class User_info_model extends MY_Model {
 		'location' => array(
 			'field' => 'location[]',
 			'label' => '所在地',
-			// 'rules' => 'xss_clean' 
 			'rules' => 'callback_location_check|xss_clean'
 			)
 		);
