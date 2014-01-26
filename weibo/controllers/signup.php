@@ -82,10 +82,11 @@ Class signup extends Front_Controller{
 	/**
 	*/
 	public function location_check($value){
-		// echo $value;
 		if(!$value){
 			$this->form_validation->set_message('location_check', '%s 字段不能为空');
-			return $value;
+			return false;
+		}else{
+			return true;
 		}
 	}
 }
