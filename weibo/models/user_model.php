@@ -33,5 +33,12 @@ class User_model extends MY_Model {
 	public function loggedin(){
 		return true;
 	}
-
+	/**
+	 * 密码加密函数
+	 * 返回128位长度字符
+	 */
+	public function hash ($string)
+	{
+		return hash('sha512', $string . config_item('encryption_key'));
+	}
 }

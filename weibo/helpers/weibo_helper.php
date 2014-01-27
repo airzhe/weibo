@@ -11,9 +11,9 @@ function p($arr){
  * @param string $url 要跳转的地址，默认浏览器后退。
  */
 function success($msg,$url=null){
-	$url=$url?"location.href='".base_url($url)."'":"window.history.go(-1)";
+	$url=$url?"location.href='".site_url($url)."'":"window.history.go(-1)";
 	$html=<<<str
-	<div style="background:#dff0d8;color:#468847;border:1px solid #d6e9c6;padding:20px;"><h2>:) $msg</h2></div>
+	{$msg}
 <script>
 setTimeout(function(){
 	{$url}

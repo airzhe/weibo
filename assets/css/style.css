@@ -577,7 +577,13 @@ body.login .container,body.signup .container{
  	font-size: 12px;
  	line-height: 20px;
  }
-
+.ico_loading{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-image: url(../images/loading.gif);
+	vertical-align: -2px;
+}
  .reg_sidebar{
  	width: 160px;
  	line-height: .8em;

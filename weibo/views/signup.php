@@ -69,8 +69,8 @@
 						<div class="info_list clearfix">
 							<div class="tit left"><i>*</i>性别：</div>
 							<div class="inp choose">
-								<label><input type="radio" name="sex">男</label>
-								<label><input type="radio" name="sex">女</label>
+								<label><input type="radio" value="1" name="sex">男</label>
+								<label><input type="radio" value="2" name="sex">女</label>
 							</div>
 							<div class="tips">
 								<p class="notice"><i class="icon_rederrorS"></i></p>

@@ -73,4 +73,14 @@ class Front_Controller extends Base_Controller
 			redirect('login');
 		}
 	}
+	/**
+	 * 获得post数据，并进行安全验证
+	 */
+	public function array_from_post($fields){
+		$data = array();
+		foreach ($fields as $field) {
+			$data[$field] = $this->input->post($field);
+		}
+		return $data;
+	}
 }

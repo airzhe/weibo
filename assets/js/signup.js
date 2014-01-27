@@ -42,13 +42,16 @@ $(document).ready(function(){
 	})
 	// 表单验证
 	jQuery.validator.addMethod("userNameFormat", function(value) {  
-		return (/^[a-zA-Z_-]+$/.test(value));
+		return (/^[a-zA-Z0-9_-]+$/.test(value));
 	});
-	$('forms').validate({
-		debug:true,
+	$('form').validate({
 		onkeyup:false,
 		submitHandler:function(form){
-			alert('success');
+			var span=$('#submit').find('span');
+			span.prepend($('<i/>',{class:'ico_loading'}));
+			var padding=(span.innerWidth()-span.width())/2-8;
+			span.css({'padding-left':padding,'padding-right':padding});
+			form.submit();
 		},
 		errorPlacement: function(error, element) {
 			var p=element.parents('.info_list').find('.tips').find('p');
