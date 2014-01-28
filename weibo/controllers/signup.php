@@ -91,6 +91,19 @@ Class signup extends Front_Controller{
 		}
 	}
 	/**
+	* 昵称正则验证
+	*/
+	public function username_check($value){
+		$preg='@^[a-zA-Z0-9_\-\x{4e00}-\x{9fa5}]+$@u';
+		if(!preg_match($preg, $value)){
+			$this->form_validation->set_message('username_check', '%s 字段格式不正确');
+			return false;
+		}else{
+			return true;
+		}
+	}
+	/**
+	* 所在地验证
 	*/
 	public function location_check($value){
 		if(!$value){

@@ -42,9 +42,9 @@ $(document).ready(function(){
 	})
 	// 表单验证
 	jQuery.validator.addMethod("userNameFormat", function(value) {  
-		return (/^[a-zA-Z0-9_-]+$/.test(value));
+		return (/^[a-zA-Z0-9_\-\u4E00-\u9FA5]+$/.test(value));
 	});
-	$('form').validate({
+	$('forms').validate({
 		onkeyup:false,
 		submitHandler:function(form){
 			var span=$('#submit').find('span');

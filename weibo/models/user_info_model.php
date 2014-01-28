@@ -8,8 +8,8 @@ class User_info_model extends MY_Model {
 	public $rules = array(
 		'username' => array(
 			'field' => 'username', 
-			'label' => '用户昵称', 
-			'rules' => 'trim|required|min_length[4]|max_length[24]|alpha_dash|is_unique[user_info.username]|xss_clean'
+			'label' => '昵称', 
+			'rules' => 'trim|required|min_length[4]|max_length[24]|callback_username_check|is_unique[user_info.username]|xss_clean'
 			),
 		'birthday' => array(
 			'field' => 'birthday[]',
