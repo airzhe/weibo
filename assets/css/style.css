@@ -279,7 +279,7 @@ body.login .container,body.signup .container{
  	height: 40px;
  	background: url(../images/logo.png) no-repeat;
  }
- body.login .content{border-top:2px solid #F62638;
+ body.login .container>.content{border-top:2px solid #F62638;
  	background: url(../images/main_bg.png) no-repeat 0 bottom;
  }
  .leftbox{
@@ -1140,7 +1140,6 @@ body.login .container,body.signup .container{
  .W_layer{
  	position: absolute;
  	z-index: 10000;
- 	overflow: hidden;
  }
  .W_layer .bg{
  	padding: 3px;

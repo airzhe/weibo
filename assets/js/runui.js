@@ -285,38 +285,62 @@ function get_pos(obj,top){
 		}
 	}
 });
-
-
+/**
+ *=================================
+ * validate 表单提示样式
+ *================================= 
+ */
+ $.fn.extend({
+ 	"form_tips":function(options){
+		//参数
+		var _default={
+			msg:'error'
+		}
+		var opt=$.extend(_default,options);
+		//创建提示
+		var _class='W_layer form_tips';
+		var _html='<div class="bg"><div class="wrap"><div class="content"><i class="icon_rederrorS"></i>'+opt.msg+'<a class="W_ico12 icon_close" href="javascript:void(0);" title="关闭"></a></div></div></div><div class="arrow_tips"></div>'
+		$('body').append($('<div/>',{class:_class,html:_html}));
+		//加载提示
+		var _width=$(this).outerWidth()+2;
+		var _left=$(this).offset().left-2;
+		var _top=$(this).offset().top-38;
+		$('.form_tips').css({width:_width,left:_left,top:_top}).find('label').text(opt.msg);
+		//点击关闭
+		$('.icon_close').on('click',function(){
+			$(this).parents('.form_tips').remove();
+		})
+	}
+})
 /**	
  *===================
  * 文本框当前位置插入文字
  *===================
  */
- (function($){
- 	$.fn.extend({
- 		insertAtCaret: function(myValue){
- 			var $t=$(this)[0];
- 			if (document.selection) {
+
+ $.fn.extend({
+ 	insertAtCaret: function(myValue){
+ 		var $t=$(this)[0];
+ 		if (document.selection) {
+ 			this.focus();
+ 			sel = document.selection.createRange();
+ 			sel.text = myValue;
+ 			this.focus();
+ 		}
+ 		else 
+ 			if ($t.selectionStart || $t.selectionStart == '0') {
+ 				var startPos = $t.selectionStart;
+ 				var endPos = $t.selectionEnd;
+ 				var scrollTop = $t.scrollTop;
+ 				$t.value = $t.value.substring(0, startPos) + myValue + $t.value.substring(endPos, $t.value.length);
  				this.focus();
- 				sel = document.selection.createRange();
- 				sel.text = myValue;
+ 				$t.selectionStart = startPos + myValue.length;
+ 				$t.selectionEnd = startPos + myValue.length;
+ 				$t.scrollTop = scrollTop;
+ 			}
+ 			else {
+ 				this.value += myValue;
  				this.focus();
  			}
- 			else 
- 				if ($t.selectionStart || $t.selectionStart == '0') {
- 					var startPos = $t.selectionStart;
- 					var endPos = $t.selectionEnd;
- 					var scrollTop = $t.scrollTop;
- 					$t.value = $t.value.substring(0, startPos) + myValue + $t.value.substring(endPos, $t.value.length);
- 					this.focus();
- 					$t.selectionStart = startPos + myValue.length;
- 					$t.selectionEnd = startPos + myValue.length;
- 					$t.scrollTop = scrollTop;
- 				}
- 				else {
- 					this.value += myValue;
- 					this.focus();
- 				}
- 			}
- 		})	
- })(jQuery);
+ 		}
+ 	});

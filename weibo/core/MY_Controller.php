@@ -66,7 +66,8 @@ class Front_Controller extends Base_Controller
 	public function auth(){
 		$exception_uris = array(
 			'login', 
-			'signup'
+			'signup',
+			'signup/code'
 			);
 		if(in_array(uri_string(),$exception_uris)) return;
 		if ($this->User_model->loggedin() == FALSE) {

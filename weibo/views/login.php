@@ -7,21 +7,15 @@
  	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
  	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
  	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
- 	<script>
- 		$(document).ready(function(){
- 			/**
- 			 * 登录文本框获得焦点隐藏提示文字，失去焦点显示提示文字
- 			 */
- 			 $('.W_input').on('focus',function(){
- 			 	$(this).next('span').hide();
- 			 })
- 			 $('.W_input').on('blur',function(){
- 			 	if($(this).val()==''){
- 			 		$(this).next('span').show();
- 			 	}
- 			 })
- 			})
- 	</script>
+ 	<script src="<?php echo base_url('assets/js/jquery.validate.js') ?>"></script>
+ 	<script src="<?php echo base_url('assets/js/runui.js') ?>"></script>
+ 	<script src="<?php echo base_url('assets/js/login.js') ?>"></script>
+ 	<style>
+ 	.form_tips{position:absolute;line-height: 28px;top:2px;}
+ 	.form_tips .icon_close{position:absolute;right:7px;top:11px;}
+	.form_tips .wrap .content{background: #fffae1;padding:0 5px;}
+	.arrow_tips{background:url(http://img.t.sinajs.cn/t5/style/images/layer/layer_arrow_tips.png) no-repeat;width:10px;height:8px;bottom:-4px;left:50%;margin-left:-7px;overflow:hidden;position:absolute}
+ 	</style>
  </head>
  <body class="login">
  	<div class="container">
@@ -43,13 +37,13 @@
  			<div class="loginbox right">
  				<div class="W_login_form">
  					<p class="title">普通登录<i class="W_vline S_txt2">|</i><a href="#">二维码登录</a></p>
- 					<form action="">
+ 					<form action="#" method="post">
  						<p>
- 							<input class="W_input" type="text" name="account">
+ 							<input class="W_input" type="text" name="account" maxlength="128">
  							<span>请输入帐号</span>
  						</p>
  						<p>
- 							<input class="W_input" type="text" name="passwd">
+ 							<input class="W_input" type="text" name="passwd" maxlength="24">
  							<span>请输入密码</span>
  						</p>
  						<p class="auto_login clearfix">
@@ -59,7 +53,7 @@
  							<i class="icon_ask"></i>
  							<a href="#" class="right">忘记密码</a>
  						</p>
- 						<a href="#" class="W_btn_g"><span>登录</span></a>
+ 						<a href="javascript:void(0)" class="W_btn_g" id="submit"><span>登录</span></a>
  						<p class="S_txt2 clearfix ">还没微博？<a href="signup">立即注册！</a></p>
  					</form>
  					<div class="login_mode">

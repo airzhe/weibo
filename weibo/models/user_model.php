@@ -31,7 +31,7 @@ class User_model extends MY_Model {
 	 * return bool
 	 */
 	public function loggedin(){
-		return true;
+		return false;
 	}
 	/**
 	 * 密码加密函数

@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	//生日
+	/**
+	 * 生日
+	 */
 	var myDate = new Date();
 	$("#dateSelector").DateSelector({
 		ctlYearId: 'idYear',
@@ -12,21 +14,29 @@ $(document).ready(function(){
 		maxYear: (myDate.getFullYear()+1)
 	});
 
-	//地区
+	/**
+	 * 地区
+	 */
 	$.cxSelect.defaults.url=site_url+"assets/js/city.min.js";
 	$("#city").cxSelect({
 		selects:["province","city"]
 	});
-	//点击更改验证码
+	/**
+	 * 点击更改验证码
+	 */
 	$("#code,.verify_refresh").on('click',function(){
 		$('#code').attr('src',site_url+'signup/code?'+Math.random());
 	})
-	//文本框获得焦点，显示提示信息。
+	/**
+	 * 文本框获得焦点，显示提示信息
+	 */
 	$('[type=text],[type=password]').focus(function(){
 		$(this).parents('.info_list').find('.tips').show();
 	})
 	$("[name^=birthday]").val('0');
-	// 表单提交事件
+	/**
+	 * 表单提交事件
+	 */
 	$('#submit').on('click',function(){
 		$('select').not(':hidden').each(function(){
 			if(this.value==0){
@@ -40,11 +50,13 @@ $(document).ready(function(){
 		})
 		$('form').submit();
 	})
-	// 表单验证
+	/**
+	 * 表单验证
+	 */
 	jQuery.validator.addMethod("userNameFormat", function(value) {  
 		return (/^[a-zA-Z0-9_\-\u4E00-\u9FA5]+$/.test(value));
 	});
-	$('forms').validate({
+	$('form').validate({
 		onkeyup:false,
 		submitHandler:function(form){
 			var span=$('#submit').find('span');
