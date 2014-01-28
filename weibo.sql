@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 01 月 26 日 11:25
+-- 生成日期: 2014 年 01 月 28 日 09:56
 -- 服务器版本: 5.5.35
 -- PHP 版本: 5.3.10-1ubuntu3.9
 
@@ -164,7 +164,8 @@ CREATE TABLE IF NOT EXISTS `t_sessions` (
 --
 
 INSERT INTO `t_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('302fab88bdae29b930b241db0694a0cf', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36', 1390706497, '');
+('72f08689a9e2b981103a2653f8dce02b', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.77 Safari/537.36', 1390744932, ''),
+('ad93c4a721ca929d1fcf54afbe43439a', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:26.0) Gecko/20100101 Firefox/26.0', 1390738472, '');
 
 -- --------------------------------------------------------
 
@@ -196,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `vemail` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '邮箱验证(0未验证，1已验证)',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户帐号表\n' AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户帐号表\n' AUTO_INCREMENT=18 ;
 
 --
 -- 转存表中的数据 `t_user`
@@ -204,7 +205,10 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 
 INSERT INTO `t_user` (`id`, `account`, `passwd`, `regis_time`, `lock`, `vemail`) VALUES
 (1, '532499602@qq.com', 'purple', 0, 0, 0),
-(2, 'purple@qq.com', 'ddd', 0, 0, 0);
+(2, 'purple@qq.com', 'ddd', 0, 0, 0),
+(15, 'air_zhes@163.com', 'f40461bbdcc82e9f1a5aa6b33d9398a7c6247b34eab8b5c5347a1711117a55d98aadd84231055d68dd2a8be0f47bb7295a10ef55bb02bbbacfb81ff0c01bb56c', 0, 0, 0),
+(16, 'air_zhe@qq.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 0, 0, 0),
+(17, 'air_zhe@126.com', '481e94e1a26f2e8b295765c25e4f4f4b31629a992c48b8c3fee6dfb6186385d638abce86c96aa701a5d4cb9e51ae1687a7523377b4133b4ec57528454a595e35', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -217,28 +221,31 @@ CREATE TABLE IF NOT EXISTS `t_user_info` (
   `username` varchar(45) NOT NULL DEFAULT '' COMMENT '用户昵称',
   `truename` varchar(45) NOT NULL DEFAULT '' COMMENT '真实姓名',
   `location` varchar(45) NOT NULL DEFAULT '' COMMENT '居住地',
-  `birthday` datetime NOT NULL COMMENT '生日(日期时间型)',
+  `birthday` date NOT NULL COMMENT '生日(日期时间型)',
   `sex` enum('男','女') NOT NULL DEFAULT '男' COMMENT '性别',
   `intro` varchar(100) NOT NULL DEFAULT '' COMMENT '一句话介绍自己',
   `avatar` varchar(60) NOT NULL DEFAULT '' COMMENT '头像(有180，50,30三个，图片名字相同，路径不同)',
-  `domain` varchar(100) NOT NULL DEFAULT '' COMMENT '个性域名',
+  `domain` varchar(100) DEFAULT NULL COMMENT '个性域名',
   `style` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '模板风格',
   `follow` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '关注数',
   `fans` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '粉丝数',
-  `weibo` int(10) unsigned NOT NULL COMMENT '发表微博数',
-  `uid` int(10) unsigned NOT NULL COMMENT '个性域名',
+  `weibo` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '发表微博数',
+  `uid` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `domain` (`domain`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户信息表' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户信息表' AUTO_INCREMENT=15 ;
 
 --
 -- 转存表中的数据 `t_user_info`
 --
 
 INSERT INTO `t_user_info` (`id`, `username`, `truename`, `location`, `birthday`, `sex`, `intro`, `avatar`, `domain`, `style`, `follow`, `fans`, `weibo`, `uid`) VALUES
-(1, 'purple', '', '', '0000-00-00 00:00:00', '男', '', '', '', 0, 0, 0, 0, 0);
+(1, 'purple', '', '', '0000-00-00', '男', '', '', '', 0, 0, 0, 0, 0),
+(12, 'airzhess', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"宁波";}', '1998-01-01', '男', '', '', NULL, 0, 0, 0, 0, 15),
+(13, 'runner', '', 'a:2:{i:0;s:6:"湖北";i:1;s:9:"神农架";}', '2012-01-01', '男', '', '', NULL, 0, 0, 0, 0, 16),
+(14, 'purpless', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"台州";}', '2014-01-01', '男', '', '', NULL, 0, 0, 0, 0, 17);
 
 -- --------------------------------------------------------
 
