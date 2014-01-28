@@ -17,10 +17,11 @@ function success($msg,$url=null){
 <script>
 setTimeout(function(){
 	{$url}
-},2000)
+},1000)
 </script>
 str;
 	echo $html;
+	die;
 }
 /**
  * 操作失败提示并跳转函数
@@ -28,15 +29,15 @@ str;
  * @param string $url 要跳转的地址，默认浏览器后退。
  */
 function error($msg,$url=null){
-	$url=is_null($url)?"window.history.go(-1)":"location.href='".base_url($url)."'";
+	$url=$url?"location.href='".site_url($url)."'":"window.history.go(-1)";
 	$html=<<<str
-<div style="background:#f2dede;color:#b94a48;border:1px solid #eed3d7;padding:20px;"><h2>:( $msg</h2></div>
+	{$msg}
 <script>
-	setTimeout(function(){
-		{$url}
-	},2000)
+setTimeout(function(){
+	{$url}
+},1000)
 </script>
 str;
 	echo $html;
-	die();
+	die;
 }

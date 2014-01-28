@@ -2,10 +2,10 @@
 Class home extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
-		$this->data['title'] = '我的首页';
-		$this->data['body_class'] = 'home';
+		$this->data['title'] = 'airzhe的微博|';
+		$this->data['body_class'] = 'index';
 	}
 	public function index(){
-		$this->view('home',$this->data);
+		$this->view('index',$this->data);
 	}
 }

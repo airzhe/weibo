@@ -63,6 +63,7 @@ $(document).ready(function(){
 			span.prepend($('<i/>',{class:'ico_loading'}));
 			var padding=(span.innerWidth()-span.width())/2-8;
 			span.css({'padding-left':padding,'padding-right':padding});
+			console.log('ok');
 			form.submit();
 		},
 		errorPlacement: function(error, element) {

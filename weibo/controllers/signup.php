@@ -5,6 +5,9 @@
 Class signup extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
+		
+		// 如果已经登录过，跳转至home页面
+		$this->User_model->loggedin() == FALSE || redirect(site_url());
 	}
 	public function index(){
 		if($this->input->post()){
@@ -13,28 +16,18 @@ Class signup extends Front_Controller{
 			$this->load->library('form_validation');
 			$rules = array_merge($this->User_model->rules,$this->User_info_model->rules);
 			$this->form_validation->set_rules($rules);
+			// 自定义错误信息验证生日不能为0
 			$this->form_validation->set_message('is_natural_no_zero', '%s 字段不完整');
 			if ($this->form_validation->run() == TRUE) {
-				// 获取注册账户密码
-				$user_data=$this->array_from_post(array('account','passwd'));
-				$user_data['passwd']=$this->User_model->hash($user_data['passwd']);
-				// 获得用户个人信息
-				$user_info_data=$this->array_from_post(array('username','birthday','sex','location'));
-				$user_info_data['birthday']=$user_info_data['birthday'][0].'-'.$user_info_data['birthday'][1].'-'.$user_info_data['birthday'][2];
-				$user_info_data['location']=serialize($user_info_data['location']);
-				//用户注册信息写入数据库
-				if($uid=$this->User_model->add($user_data)){
-					$user_info_data['uid']=$uid;
-					$this->User_info_model->add($user_info_data);
-					success('注册成功...','home');
-				};
-				
+				// 调用模型添加用户数据到数据库
+				if($uid=$this->User_model->insert()){
+					$this->User_info_model->insert($uid);
+					success('注册成功...','index');
+				}
 			}else{
 				echo (validation_errors()); 
 			}
 		}else{
-			// session_id() || session_start();
-			// var_dump($_SESSION);
 			$this->partial('signup');
 		}
 	}

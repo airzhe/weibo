@@ -25,13 +25,58 @@ class User_model extends MY_Model {
 	function __construct() {
 		parent::__construct();
 	}
-
+	/**
+	 * 添加用户
+	 */
+	public function insert ()
+	{
+		// 获取注册账户密码
+		$data=$this->array_from_post(array('account','passwd'));
+		$data['passwd']=$this->hash($data['passwd']);
+		$data['regis_time']=time();
+		// add
+		if($uid=$this->User_model->add($data)){
+			$data=array(
+				'id'=>$uid,
+				'account'=>$data['account'],
+				'loggedin' => TRUE
+				);
+			$this->session->set_userdata($data);
+			return $uid;
+		}
+	}
+	/**
+	 * 用户登录验证
+	 * 产生session
+	 */
+	public function login(){
+		$data=$this->array_from_post(array('account','passwd'));
+		$data['passwd']=$this->User_model->hash($data['passwd']);
+		$user=$this->get_by($data,TRUE);
+		if(count($user)){
+			// Log in user
+			$data=array(
+				'id'=>$user['id'],
+				'account'=>$user['account'],
+				'loggedin' => TRUE
+				);
+			$this->session->set_userdata($data);
+			return TRUE;
+		}
+	}
 	/**
 	 * 判断用户是否登录
 	 * return bool
 	 */
 	public function loggedin(){
-		return false;
+		return (bool) $this->session->userdata('loggedin');
+	}
+	/**
+	 * 安全退出
+	 */
+	public function logout ()
+	{
+		$this->session->sess_destroy();
 	}
 	/**
 	 * 密码加密函数
@@ -41,4 +86,5 @@ class User_model extends MY_Model {
 	{
 		return hash('sha512', $string . config_item('encryption_key'));
 	}
+	
 }

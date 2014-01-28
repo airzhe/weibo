@@ -13,7 +13,16 @@ class MY_Model extends CI_Model {
 		// echo 'my_model';
 	}
 	
-	
+	/**
+	 * 获得post数据，并进行安全验证
+	 */
+	public function array_from_post($fields){
+		$data = array();
+		foreach ($fields as $field) {
+			$data[$field] = $this->input->post($field);
+		}
+		return $data;
+	}
 	/**
 	 * 有id返回一条记录
 	 * single为真，返回一条记录。

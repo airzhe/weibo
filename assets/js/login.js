@@ -10,7 +10,9 @@ $(document).ready(function(){
 	 		$(this).next('span').show();
 	 	}
 	 })
-
+	 $('.W_input+span').on('click',function(){
+	 	 $(this).prev('.W_input').trigger('focus');
+	 })
 	/**
 	 * 表单提交事件
 	 */
@@ -28,7 +30,7 @@ $(document).ready(function(){
 	 * 登录验证
 	 */
 	 $('form').validate({
-	 	debug:true,
+	 	// debug:true,
 		//阻止键盘按下或失去焦点时出发验证事件。
 		onkeyup:false,
 		onfocusout:false,
@@ -49,6 +51,7 @@ $(document).ready(function(){
 		 //验证通过执行函数
 		 submitHandler:function(form){
 		 	$('#submit').find('span').prepend($('<i/>',{class:'ico_loading'}));
+		 	form.submit();
 		 },
 		 rules:{
 		 	account:'required',

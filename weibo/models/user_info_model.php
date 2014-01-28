@@ -32,4 +32,13 @@ class User_info_model extends MY_Model {
 		parent::__construct();
 	}
 	
+	public function insert($uid){
+		// 获得用户个人信息
+		$user_info_data=$this->array_from_post(array('username','birthday','sex','location'));
+		$user_info_data['birthday']=$user_info_data['birthday'][0].'-'.$user_info_data['birthday'][1].'-'.$user_info_data['birthday'][2];
+		$user_info_data['location']=serialize($user_info_data['location']);
+		$user_info_data['uid']=$uid;
+		// add
+		$this->User_info_model->add($user_info_data);
+	}
 }
