@@ -175,4 +175,12 @@ $(document).ready(function(){
 	//消息提醒
 	var $a={0:2,1:6,2:8};
 	$.msg($a);
+	/**
+	* 微博发表框获得焦点
+	*/
+	$('.send_weibo').find('textarea').on('focus',function(){
+		$(this).parent().addClass('clicked');
+	}).on('blur',function(){
+		$(this).parent().removeClass('clicked');
+	})
 })

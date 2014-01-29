@@ -1036,7 +1036,6 @@ body.login .container,body.signup .container{
  }
  /*微博发表成功提示*/
  .box_center .input .send_succpic{
- 	display: block;
  	width: 135px;
  	height: 48px;
  	position: absolute;

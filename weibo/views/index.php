@@ -7,10 +7,10 @@
 					有什么新鲜事想告诉大家？
 					<s></s>
 				</div>
-				<div class="input clicked">
+				<div class="input">
 					<textarea name="" title="微博输入框" class="input_detail" id="weibo_input_detail" cols="30" rows="10"></textarea>
 					<span class="arrow"></span>
-					<div class="send_succpic">
+					<div class="send_succpic hide">
 						<p class="icon_succB"></p>
 						<p class="txt">发布成功</p>
 					</div>
@@ -153,9 +153,9 @@
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>
 		<div class="user_info">
-			<a href="index"><img  width="80" height="80" src="<?php echo base_url('assets/images/avatar.jpg') ?>" alt=""></a>
+			<a href="home"><img  width="80" height="80" src='<?php echo base_url("assets/images/$user[avatar].gif") ?>' alt=""></a>
 			<div>
-				<a href="index" class="username S_func1">run5324</a>
+				<a href="home" class="username S_func1"><?php echo $user['username'] ?></a>
 				<br>
 				<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
 			</div>
@@ -163,19 +163,19 @@
 		<ul class="user_atten clearfix">
 			<li>
 				<a href="#" class="S_func1">
-					<strong>35</strong>
+					<strong><?php echo $user['follow'] ?></strong>
 					<span>关注</span>
 				</a>
 			</li>
 			<li>
 				<a href="#" class="S_func1">
-					<strong>8</strong>
+					<strong><?php echo $user['fans'] ?></strong>
 					<span>粉丝</span>
 				</a>
 			</li>
 			<li>
 				<a href="#" class="S_func1">
-					<strong>42</strong>
+					<strong><?php echo $user['weibo'] ?></strong>
 					<span>微博</span>
 				</a>
 			</li>

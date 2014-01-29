@@ -2,7 +2,7 @@
 class MY_Model extends CI_Model {
 	
 	protected $_table_name = '';
-	protected $_primary_key = 'id';
+	protected $_primary_key = 'uid';
 	protected $_primary_filter = 'intval';
 	protected $_order_by = '';
 	public $rules = array();
@@ -67,7 +67,7 @@ class MY_Model extends CI_Model {
 			$data['created'] = $now;
 		}
 		
-		!isset($data[$this->_primary_key]) || $data[$this->_primary_key] = NULL;
+		// !isset($data[$this->_primary_key]) || $data[$this->_primary_key] = NULL;
 		$this->db->set($data);
 		$this->db->insert($this->_table_name);
 		$id = $this->db->insert_id();
