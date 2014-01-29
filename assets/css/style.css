@@ -846,7 +846,7 @@ body.login .container,body.signup .container{
  	line-height: 21px;
  	display: none;
  }
- body.home .container{
+ body.index .container{
  	margin:0 auto;
  	position: relative;
  }
@@ -857,7 +857,7 @@ body.login .container,body.signup .container{
  .container.main{
  	background: #fff url(../images/repeat_bg_y.png) repeat-y;
  }
- body.home .left_nav li ul{
+ body.index .left_nav li ul{
  	display: none;
  }
  .left_nav{
@@ -1779,25 +1779,25 @@ body.login .container,body.signup .container{
  		background-position: -100px -100px;
  	}
  	/*用户个人主页*/
- 	body.index .container{
+ 	body.home .container{
  		position: relative;
  		background: transparent;
  	}
 
- 	body.index .miniblog{
+ 	body.home .miniblog{
  		padding-top:40px;
  	}
- 	body.index .profile_pic_top{
+ 	body.home .profile_pic_top{
  		height: 300px;
  		position: relative;
  		background-position: center bottom;
  		background-repeat: no-repeat;
  	}
- 	body.index .user_info{
+ 	body.home .user_info{
  		position: relative;
  		padding-bottom: 30px;
  	}
- 	body.index .user_info .head{
+ 	body.home .user_info .head{
  		position: absolute;
  		top: -108px;
  		left: 20px;
@@ -1805,24 +1805,24 @@ body.login .container,body.signup .container{
  		background:#fafafa;
  		padding:2px;
  	}
- 	body.index .user_info .avatar{
+ 	body.home .user_info .avatar{
  		display: block;
  		position: relative;
  	}
- 	body.index .user_info .change_avatar{
+ 	body.home .user_info .change_avatar{
  		position: absolute;
  		right: 12px;
  		bottom:12px;
  		display: none;
  	}
- 	body.index .user_info .avatar:hover .change_avatar{
+ 	body.home .user_info .avatar:hover .change_avatar{
  		display: block;
  	}
- 	body.index .user_info .user_atten{
+ 	body.home .user_info .user_atten{
  		margin:5px 0 4px 0;
  	}
 
- 	body.index .user_info .user_atten li{
+ 	body.home .user_info .user_atten li{
  		padding: 0 3px 3px;
  		float: left;
  		border-right-width: 1px;
@@ -1830,10 +1830,10 @@ body.login .container,body.signup .container{
  		text-align: center;
  		width: 53px;
  	}
- 	body.index .user_info .user_atten li:last-child{
+ 	body.home .user_info .user_atten li:last-child{
  		border:none;
  	}
- 	body.index .user_info .user_atten li strong{
+ 	body.home .user_info .user_atten li strong{
  		font-size: 20px;
  		line-height: 20px;
  		display: block;
@@ -1841,15 +1841,15 @@ body.login .container,body.signup .container{
  		font-family: Tahoma;
  		font-weight: 400;
  	}
- 	body.index .user_info .info{
+ 	body.home .user_info .info{
  		margin-left: 225px;
  		padding-top: 10px;
  		position: relative;
  	}
- 	body.index .user_info .info p{
+ 	body.home .user_info .info p{
  		margin-bottom:8px;
  	}
- 	body.index .user_info .info span.name{
+ 	body.home .user_info .info span.name{
  		font: normal 20px/30px "Microsoft Yahei";
  		margin-right: 3px;
  	}
