@@ -45,6 +45,8 @@ $(document).ready(function(){
 		var title = '['+$(this).find('img').attr('title')+']';
 		var obj_id=$(this).parents('.hotFace').attr('action-id');
 		$('#'+obj_id).insertAtCaret(title);
+		// 触发textarea的keyup事件
+		$('#'+obj_id).trigger('keyup');
 	})
 	/**	
 	* 文本框自适应
@@ -191,16 +193,43 @@ $(document).ready(function(){
 	}).on('blur',function(){
 		$(this).parent().removeClass('clicked');
 	})
-
+	/**
+	* 微博输入提示
+	*/
 	$('.send_weibo').find('textarea').on('keyup',function(){
-		var count=getMessageLength($(this).val());
+		var count=getMessageLength($.trim($(this).val()));
 		var num=140-count;
+		//判断输入的文字长度是否超过140
 		if(num>=0){
 			$('.tips_num').find('span').html('还可以输入');
 			$('#num_count').removeClass().html(num);
+			$('.send_btn').removeClass('W_btn_v_disable');
 		}else{
 			$('.tips_num').find('span').html('已经超过');
 			$('#num_count').addClass('S_error').html(Math.abs(num));
+			$('.send_btn').addClass('W_btn_v_disable');
+		}
+		//输入框内容为空按钮不可点击
+		if($.trim($(this).val())==''){
+			$('.send_btn').addClass('W_btn_v_disable');
 		}
 	})
+	/**
+	* 微博提交按钮
+	*/
+	$('.send_btn').on('click',function(){
+		if(!$(this).hasClass('W_btn_v_disable')){
+			console.log('run...');
+		}else{
+			$('.send_weibo').find('textarea').addClass('empty');
+			setTimeout(function(){
+				$('.send_weibo').find('textarea').removeClass('empty');
+			},800)
+		}
+	})
+	// $('.forwardContent').hover(function(){
+	// 	$(this).find('.time').hide();
+	// },function(){
+
+	// })
 })

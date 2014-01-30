@@ -7,8 +7,8 @@
 					有什么新鲜事想告诉大家？
 					<s></s>
 				</div>
-				<div class="input">
-					<textarea name="" title="微博输入框" class="input_detail" id="weibo_input_detail" cols="30" rows="10"></textarea>
+				<div class="W_input input">
+					<textarea name="" title="微博输入框" class="input_detail" id="weibo_input_detail"></textarea>
 					<span class="arrow"></span>
 					<div class="send_succpic hide">
 						<p class="icon_succB"></p>
@@ -24,7 +24,7 @@
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_qing"></i>话题</a>
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_chang"></i>长微博</a>
 					</div>
-					<a href="" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
+					<a href="javascript:void(0)" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
 				</div>
 			</div>
 			<div class="weibo">

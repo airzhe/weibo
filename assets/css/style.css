@@ -514,9 +514,9 @@ body.login .container,body.signup .container{
  	width: 230px;
  	display: none;
  }
-  .info_list .tips:last-child{
-	top:12px;
-  }
+ .info_list .tips:last-child{
+ 	top:12px;
+ }
  .info_list .tips p{
  	margin:0;
  	line-height: 15px;
@@ -524,332 +524,332 @@ body.login .container,body.signup .container{
 /* .info_list select{
  	height: 22px;
  	padding: 2px 0;
- }*/
- .info_list .tips p i{
- 	vertical-align: middle;
- 	float: left;
- }
- .info_list .notice{
- 	color:#808080;
- }
- .info_list .error{
- 	color:#e64141;
- }
- 
- .info_list .choose label {
- 	line-height: 30px;
- 	margin-right: 10px;
- }
- .info_list .choose input {
- 	vertical-align: -2px;
- }
- .W_reg_form input[name=code].W_input{
- 	width: 70px;
- }
- .info_list #code{
- 	vertical-align:middle;
- 	cursor: pointer;
- }
- .info_list .verify_refresh{
- 	background: url(../images/verify_refresh.png) no-repeat;
- 	display: inline-block;
- 	height: 17px;
- 	overflow: hidden;
- 	width: 18px;
- 	position: relative;
- 	top:5px;
- 	left: 5px;
- }
- .info_list .verify_refresh:hover{
- 	background-position: 0 -18px;
- }
- .info_list .verify_refresh + .error{
- 	position: relative;
- 	top:-5px;
- }
- /*立即注册按钮*/
- .W_btn_big span{
- 	padding-top: 5px;
- 	padding-bottom: 5px;
- 	font-size: 16px;
- }
- .W_reg_form .agreement{
- 	font-size: 12px;
- 	line-height: 20px;
- }
-.ico_loading{
-	width: 16px;
-	height: 16px;
-	display: inline-block;
-	background-image: url(../images/loading.gif);
-	vertical-align: -2px;
-}
- .reg_sidebar{
- 	width: 160px;
- 	line-height: .8em;
- }
- .reg_sidebar p:first-child{
- 	border-bottom: 1px dotted #ccc;
- 	padding-bottom: 14px;
- }
- .reg_sidebar .p3{
- 	color:#FFA00A;
- 	font-weight: bold;
- 	font-size: 16px;
- }
- body.signup .footer{	
- 	font-size: 12px;
- 	color:#6e9ab8;
- }
+ 	}*/
+ 	.info_list .tips p i{
+ 		vertical-align: middle;
+ 		float: left;
+ 	}
+ 	.info_list .notice{
+ 		color:#808080;
+ 	}
+ 	.info_list .error{
+ 		color:#e64141;
+ 	}
 
- .footer .footer_logo{
- 	display: inline-block;
- 	width: 26px;
- 	height: 21px;
- 	background: url(../images/reg_ico.png) no-repeat 0 4px;
- 	vertical-align: -4px;
- }
- /*全局导航*/
- body{
- 	background-color: #bee1f5;
- 	background-image: url(../images/body_repeat.png);
- 	background-repeat: repeat-x;
- }
- .miniblog {
- 	background-repeat: no-repeat;
- 	background-position: center 0;
- 	padding-top: 60px;
- 	background-image: url(../images/body_bg.png);
- 	min-width: 980px;
- }
- .miniblog_fb {
- 	background-image: url(../images/footer.png) center bottom no-repeat;
- }
- .global_nav {
- 	position: fixed;
- 	top: 0;
- 	left: 0;
- 	z-index: 9999;
- 	width: 100%;
- 	height: 41px;
- 	box-shadow: 0px 1px 3px 0px #000;
- 	background: url(../images/bg_line.png) repeat-x center 38px;
- 	
- }
- .global_nav .nav_bg{
- 	font-size:14px;
- 	width: 100%;
- 	height: 38px;
- 	background: url(../images/bg_nav.png) repeat-x;
- }
- .global_nav .logo, .global_nav .nav{
- 	display: inline-block;
- }
- .global_nav .logo a{
- 	display: inline-block;
- 	width: 150px;
- 	height: 39px;
- 	background: url(../images/WB_logo.png) -20px 0 no-repeat;
- }
- .global_nav .logo a:hover{
- 	background-position: -20px -39px;
- }
- .global_nav .nav{
+ 	.info_list .choose label {
+ 		line-height: 30px;
+ 		margin-right: 10px;
+ 	}
+ 	.info_list .choose input {
+ 		vertical-align: -2px;
+ 	}
+ 	.W_reg_form input[name=code].W_input{
+ 		width: 70px;
+ 	}
+ 	.info_list #code{
+ 		vertical-align:middle;
+ 		cursor: pointer;
+ 	}
+ 	.info_list .verify_refresh{
+ 		background: url(../images/verify_refresh.png) no-repeat;
+ 		display: inline-block;
+ 		height: 17px;
+ 		overflow: hidden;
+ 		width: 18px;
+ 		position: relative;
+ 		top:5px;
+ 		left: 5px;
+ 	}
+ 	.info_list .verify_refresh:hover{
+ 		background-position: 0 -18px;
+ 	}
+ 	.info_list .verify_refresh + .error{
+ 		position: relative;
+ 		top:-5px;
+ 	}
+ 	/*立即注册按钮*/
+ 	.W_btn_big span{
+ 		padding-top: 5px;
+ 		padding-bottom: 5px;
+ 		font-size: 16px;
+ 	}
+ 	.W_reg_form .agreement{
+ 		font-size: 12px;
+ 		line-height: 20px;
+ 	}
+ 	.ico_loading{
+ 		width: 16px;
+ 		height: 16px;
+ 		display: inline-block;
+ 		background-image: url(../images/loading.gif);
+ 		vertical-align: -2px;
+ 	}
+ 	.reg_sidebar{
+ 		width: 160px;
+ 		line-height: .8em;
+ 	}
+ 	.reg_sidebar p:first-child{
+ 		border-bottom: 1px dotted #ccc;
+ 		padding-bottom: 14px;
+ 	}
+ 	.reg_sidebar .p3{
+ 		color:#FFA00A;
+ 		font-weight: bold;
+ 		font-size: 16px;
+ 	}
+ 	body.signup .footer{	
+ 		font-size: 12px;
+ 		color:#6e9ab8;
+ 	}
 
- 	position: absolute;
- 	top:0;
- }
- 
- .global_nav .nav a{
- 	display: inline-block;
- 	padding: 11px 19px 11px 20px;
- 	text-decoration: none;
- 	color: #fff;
- 	float:left;
- }
- .global_nav .nav a.current{
- 	background: url(../images/bg_nav.png) repeat-x 0 -38px;
- }
- .global_nav .nav a:hover{
- 	background: url(../images/bg_nav.png) repeat-x 0 -76px;
- }
- .ico_down{
- 	border-width: 4px;
- 	margin-left:3px;
- 	vertical-align: -10px;
- 	border-style: solid dashed dashed;
- 	border-color: #fff transparent transparent;
- }
- .global_nav .search{
- 	position: absolute;
- 	left:450px;
- 	line-height: 38px;
- 	display: inline-block;
+ 	.footer .footer_logo{
+ 		display: inline-block;
+ 		width: 26px;
+ 		height: 21px;
+ 		background: url(../images/reg_ico.png) no-repeat 0 4px;
+ 		vertical-align: -4px;
+ 	}
+ 	/*全局导航*/
+ 	body{
+ 		background-color: #bee1f5;
+ 		background-image: url(../images/body_repeat.png);
+ 		background-repeat: repeat-x;
+ 	}
+ 	.miniblog {
+ 		background-repeat: no-repeat;
+ 		background-position: center 0;
+ 		padding-top: 60px;
+ 		background-image: url(../images/body_bg.png);
+ 		min-width: 980px;
+ 	}
+ 	.miniblog_fb {
+ 		background-image: url(../images/footer.png) center bottom no-repeat;
+ 	}
+ 	.global_nav {
+ 		position: fixed;
+ 		top: 0;
+ 		left: 0;
+ 		z-index: 9999;
+ 		width: 100%;
+ 		height: 41px;
+ 		box-shadow: 0px 1px 3px 0px #000;
+ 		background: url(../images/bg_line.png) repeat-x center 38px;
 
- }
- .global_nav .search input{
- 	font-size:12px;
- 	width: 218px;
- 	border-radius: 15px;
- 	height: 16px;
- 	min-height:16px;
- 	color:#808080;
- 	padding-left:10px;
- }
+ 	}
+ 	.global_nav .nav_bg{
+ 		font-size:14px;
+ 		width: 100%;
+ 		height: 38px;
+ 		background: url(../images/bg_nav.png) repeat-x;
+ 	}
+ 	.global_nav .logo, .global_nav .nav{
+ 		display: inline-block;
+ 	}
+ 	.global_nav .logo a{
+ 		display: inline-block;
+ 		width: 150px;
+ 		height: 39px;
+ 		background: url(../images/WB_logo.png) -20px 0 no-repeat;
+ 	}
+ 	.global_nav .logo a:hover{
+ 		background-position: -20px -39px;
+ 	}
+ 	.global_nav .nav{
 
- .global_nav .search input:hover{
- 	color:#333;
- }
+ 		position: absolute;
+ 		top:0;
+ 	}
 
- .global_nav .search .btn{
- 	position: absolute;
- 	right:4px;
- 	top:8px;
- 	display: inline-block;
- 	width: 20px;
- 	height: 20px;
- 	margin: 4px 0 0;
- 	background: url(../images/bg_line.png) no-repeat;
- 	background-position: -450px -6px;
- 	vertical-align: top;
- }
- .global_nav .user {
- 	position: absolute;
- 	right:0;
- 	top:0;
- 	margin:0;
- }
- .global_nav .user>li{
- 	float:left;
- }
- .global_nav .user>li>a{
- 	height:38px;
- 	line-height: 38px;
- 	padding:0 14px;
- 	display: inline-block;
- 	color:#fff;	
- 	text-decoration: none;
- }
- .global_nav .user>li:hover{
- 	background: url(../images/bg_nav.png) repeat-x 0 -76px;
- }
- .global_nav .user i{
- 	vertical-align: middle;
- 	background-image: url(../images/bg_line.png);
- 	background-repeat: no-repeat;
- 	width: 16px;
- 	height: 16px;
- 	display: inline-block;
- }
- .global_nav .user .editor i{
- 	background-position: -225px -6px;
- }
- .global_nav .user .msg i{
- 	background-position: -275px -6px;
- }
- .global_nav .user .setting i{
- 	background-position: -350px -6px;
- }
- .global_nav .user .member i{
- 	background-position: -400px -6px;
- }
+ 	.global_nav .nav a{
+ 		display: inline-block;
+ 		padding: 11px 19px 11px 20px;
+ 		text-decoration: none;
+ 		color: #fff;
+ 		float:left;
+ 	}
+ 	.global_nav .nav a.current{
+ 		background: url(../images/bg_nav.png) repeat-x 0 -38px;
+ 	}
+ 	.global_nav .nav a:hover{
+ 		background: url(../images/bg_nav.png) repeat-x 0 -76px;
+ 	}
+ 	.ico_down{
+ 		border-width: 4px;
+ 		margin-left:3px;
+ 		vertical-align: -10px;
+ 		border-style: solid dashed dashed;
+ 		border-color: #fff transparent transparent;
+ 	}
+ 	.global_nav .search{
+ 		position: absolute;
+ 		left:450px;
+ 		line-height: 38px;
+ 		display: inline-block;
 
- .global_nav .user .msg:hover i{
- 	background-position: -325px -4px;
- }
- .global_nav .user .setting:hover i{
- 	background-position: -375px -6px;
- }
- .global_nav .user .msg .W_new{
- 	position: absolute;
- 	top: 9px;
- 	right: 12px;
- }
- .global_nav .user .msg,.global_nav .user .setting{
- 	position: relative;
- }
- .global_nav .user .msg:hover>a,.global_nav .user .setting:hover>a{
- 	position: relative;
- 	padding-bottom: 10px;
- 	z-index: 1;
- 	background:  url(../images/bg_line.png) right -3px no-repeat;
- }
- .global_nav .user .msg:hover ul,.global_nav .user .setting:hover ul{
- 	display: block;
- }
- .global_nav .user .msg ul,.global_nav .user .setting ul{
- 	display: none;
- 	position: absolute;
- 	left:-108px;
- 	background: #fff;
- 	width:150px;
- 	border:1px solid #333;
- 	top:39px;
- 	padding: 5px 0;
- 	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
- }
- .global_nav .user .msg ul li,.global_nav .user .setting ul li{
- 	height: 26px;
- 	line-height: 26px;
- 	font-size: 12px;
- }
- .global_nav .user .msg ul li a,.global_nav .user .setting ul li a {
- 	display: block;
- 	padding: 0 15px;
- 	white-space: nowrap;
- 	color: #333;
- 	text-decoration: none;
- }
- .global_nav .user .msg ul li a:hover,.global_nav .user .setting ul li a:hover{
- 	background:#e6e6e6;
- }
- .global_nav .user .setting .logout{
- 	background: #f2f2f2;
- 	color: #0a8cd2;
- 	margin-bottom: -5px;
- }
- .global_nav .gn_tips {
- 	position: absolute;
- 	width: 190px;
- 	padding: 7px 0px 10px;
- 	border-top: medium none;
- 	border-bottom-left-radius: 2px;
- 	border-bottom-right-radius: 2px;
- 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
- 	top: 41px;
- 	right:0;
- 	background:#fff;
- 	z-index: 9998;
- 	border: 1px solid rgb(51, 51, 51);
- 	font-size: 12px;
- 	color: #333;
- }
- .global_nav .gn_tips a{
- 	color:#0a8cd2;
- }
- .global_nav .gn_tips .tips_list {
- 	padding: 3px 0px 0px;
- }
- .global_nav .gn_tips .icon_close {
- 	width: 15px;
- 	height: 15px;
- 	background: url('../images/bg_line.png') no-repeat 0px -25px;
- 	position: absolute;
- 	top: 3px;
- 	right: 3px;
- }
- .global_nav .gn_tips .icon_close:hover{
- 	background-position: -25px -25px;
- }
- .global_nav .gn_tips .tips_list li {
- 	padding: 0px 15px;
- 	line-height: 21px;
- 	display: none;
- }
- body.index .container{
- 	margin:0 auto;
- 	position: relative;
- }
+ 	}
+ 	.global_nav .search input{
+ 		font-size:12px;
+ 		width: 218px;
+ 		border-radius: 15px;
+ 		height: 16px;
+ 		min-height:16px;
+ 		color:#808080;
+ 		padding-left:10px;
+ 	}
+
+ 	.global_nav .search input:hover{
+ 		color:#333;
+ 	}
+
+ 	.global_nav .search .btn{
+ 		position: absolute;
+ 		right:4px;
+ 		top:8px;
+ 		display: inline-block;
+ 		width: 20px;
+ 		height: 20px;
+ 		margin: 4px 0 0;
+ 		background: url(../images/bg_line.png) no-repeat;
+ 		background-position: -450px -6px;
+ 		vertical-align: top;
+ 	}
+ 	.global_nav .user {
+ 		position: absolute;
+ 		right:0;
+ 		top:0;
+ 		margin:0;
+ 	}
+ 	.global_nav .user>li{
+ 		float:left;
+ 	}
+ 	.global_nav .user>li>a{
+ 		height:38px;
+ 		line-height: 38px;
+ 		padding:0 14px;
+ 		display: inline-block;
+ 		color:#fff;	
+ 		text-decoration: none;
+ 	}
+ 	.global_nav .user>li:hover{
+ 		background: url(../images/bg_nav.png) repeat-x 0 -76px;
+ 	}
+ 	.global_nav .user i{
+ 		vertical-align: middle;
+ 		background-image: url(../images/bg_line.png);
+ 		background-repeat: no-repeat;
+ 		width: 16px;
+ 		height: 16px;
+ 		display: inline-block;
+ 	}
+ 	.global_nav .user .editor i{
+ 		background-position: -225px -6px;
+ 	}
+ 	.global_nav .user .msg i{
+ 		background-position: -275px -6px;
+ 	}
+ 	.global_nav .user .setting i{
+ 		background-position: -350px -6px;
+ 	}
+ 	.global_nav .user .member i{
+ 		background-position: -400px -6px;
+ 	}
+
+ 	.global_nav .user .msg:hover i{
+ 		background-position: -325px -4px;
+ 	}
+ 	.global_nav .user .setting:hover i{
+ 		background-position: -375px -6px;
+ 	}
+ 	.global_nav .user .msg .W_new{
+ 		position: absolute;
+ 		top: 9px;
+ 		right: 12px;
+ 	}
+ 	.global_nav .user .msg,.global_nav .user .setting{
+ 		position: relative;
+ 	}
+ 	.global_nav .user .msg:hover>a,.global_nav .user .setting:hover>a{
+ 		position: relative;
+ 		padding-bottom: 10px;
+ 		z-index: 1;
+ 		background:  url(../images/bg_line.png) right -3px no-repeat;
+ 	}
+ 	.global_nav .user .msg:hover ul,.global_nav .user .setting:hover ul{
+ 		display: block;
+ 	}
+ 	.global_nav .user .msg ul,.global_nav .user .setting ul{
+ 		display: none;
+ 		position: absolute;
+ 		left:-108px;
+ 		background: #fff;
+ 		width:150px;
+ 		border:1px solid #333;
+ 		top:39px;
+ 		padding: 5px 0;
+ 		box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+ 	}
+ 	.global_nav .user .msg ul li,.global_nav .user .setting ul li{
+ 		height: 26px;
+ 		line-height: 26px;
+ 		font-size: 12px;
+ 	}
+ 	.global_nav .user .msg ul li a,.global_nav .user .setting ul li a {
+ 		display: block;
+ 		padding: 0 15px;
+ 		white-space: nowrap;
+ 		color: #333;
+ 		text-decoration: none;
+ 	}
+ 	.global_nav .user .msg ul li a:hover,.global_nav .user .setting ul li a:hover{
+ 		background:#e6e6e6;
+ 	}
+ 	.global_nav .user .setting .logout{
+ 		background: #f2f2f2;
+ 		color: #0a8cd2;
+ 		margin-bottom: -5px;
+ 	}
+ 	.global_nav .gn_tips {
+ 		position: absolute;
+ 		width: 190px;
+ 		padding: 7px 0px 10px;
+ 		border-top: medium none;
+ 		border-bottom-left-radius: 2px;
+ 		border-bottom-right-radius: 2px;
+ 		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+ 		top: 41px;
+ 		right:0;
+ 		background:#fff;
+ 		z-index: 9998;
+ 		border: 1px solid rgb(51, 51, 51);
+ 		font-size: 12px;
+ 		color: #333;
+ 	}
+ 	.global_nav .gn_tips a{
+ 		color:#0a8cd2;
+ 	}
+ 	.global_nav .gn_tips .tips_list {
+ 		padding: 3px 0px 0px;
+ 	}
+ 	.global_nav .gn_tips .icon_close {
+ 		width: 15px;
+ 		height: 15px;
+ 		background: url('../images/bg_line.png') no-repeat 0px -25px;
+ 		position: absolute;
+ 		top: 3px;
+ 		right: 3px;
+ 	}
+ 	.global_nav .gn_tips .icon_close:hover{
+ 		background-position: -25px -25px;
+ 	}
+ 	.global_nav .gn_tips .tips_list li {
+ 		padding: 0px 15px;
+ 		line-height: 21px;
+ 		display: none;
+ 	}
+ 	body.index .container{
+ 		margin:0 auto;
+ 		position: relative;
+ 	}
 
  /**
  * 左导航
@@ -998,42 +998,63 @@ body.login .container,body.signup .container{
  .send_weibo .input{
  	position: relative;
  	margin: 15px 0 0;
+ 	height: 88px;
+ 	background: #fff;
+ 	border-radius:3px;
+ 	border-color: #ccc;
  }
 
  .send_weibo .input_detail{
- 	font-family: "Tahoma", "SimSun";
- 	line-height: 18px;
- 	overflow-x: hidden;
- 	overflow-y: auto;
- 	word-wrap: break-word;
- 	outline: none;
+ 	margin: 2px 0px 0px 0px;
  	padding: 5px;
- 	resize:none;
- 	width: 548px;
- 	height: 88px;
+ 	border-style: none;
+ 	border-width: 0px;
  	font-size: 14px;
- 	border-radius: 3px;
- 	background: #FFF;
- 	border: 1px solid #ccc;
- 	box-shadow: 1px 1px 1px 0px #eaeaea inset;
+ 	font-family: Tahoma, 宋体;
+ 	word-wrap: break-word;
+ 	line-height: 18px;
+ 	overflow-y: auto;
+ 	overflow-x: hidden;
+ 	outline: none;
+ 	width: 544px;
+ 	height: 74px;
+ 	resize:none;
  }
-
  .send_weibo .input .arrow{
  	display: block;
  	width: 11px;
  	height: 19px;
  	position: absolute;
  	top: 19px;
- 	right: -10px;
+ 	right: -11px;
  	background:url(../images/all_iconbtn.png) -475px 0 no-repeat;
  	
  }
- .send_weibo .input.clicked .input_detail{
+ .send_weibo .input.clicked{
  	border-color:#ffb941;
  }
  .send_weibo .input.clicked .arrow{
  	background:url(../images/icon.png) -475px -51px no-repeat;
  }
+
+ /*输入内容为空动画效果*/
+
+ @keyframes ringing
+ {
+ 	0%{background:  rgb(255, 255, 255)}
+ 	50%{background: rgb(255, 187, 187)}
+ }
+ @-webkit-keyframes ringing
+ {
+ 	0%{background:  rgb(255, 255, 255)}
+ 	50%{background: rgb(255, 187, 187)}
+ }
+ .send_weibo .input_detail.empty
+ {
+ 	-webkit-animation:ringing .4s 2 ease 0.0s;
+ 	animation:ringing .4s 2 ease 0.2s;
+ }
+
  .S_spetxt, .S_error{
  	color: #E44443;
  }
