@@ -1,3 +1,11 @@
+/**	
+* /获得文字长度(英文两个算一个字符，中文汉字占一个字符。)
+*/
+function getMessageLength (b) { 
+	var a = b.match(/[^\x00-\x80]/g); 
+	var l=b.length + (!a ? 0 : a.length);
+	return Math.ceil(l/2); 
+}
 $(document).ready(function(){
 	/**	
 	* 查看消息，设置时隐藏新消息提示框
@@ -182,5 +190,17 @@ $(document).ready(function(){
 		$(this).parent().addClass('clicked');
 	}).on('blur',function(){
 		$(this).parent().removeClass('clicked');
+	})
+
+	$('.send_weibo').find('textarea').on('keyup',function(){
+		var count=getMessageLength($(this).val());
+		var num=140-count;
+		if(num>=0){
+			$('.tips_num').find('span').html('还可以输入');
+			$('#num_count').removeClass().html(num);
+		}else{
+			$('.tips_num').find('span').html('已经超过');
+			$('#num_count').addClass('S_error').html(Math.abs(num));
+		}
 	})
 })

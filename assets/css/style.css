@@ -983,13 +983,13 @@ body.login .container,body.signup .container{
  	background:url(../images/all_iconbtn.png) no-repeat;
  }
  /*还能输入140字*/
- .send_weibo .num{
+ .send_weibo .tips_num{
  	position: absolute;
  	top:0;
  	right:0;
  	line-height: 24px;
  }
- .send_weibo .num span {
+ .send_weibo .tips_num i {
  	font-weight: 700;
  	font-size: 22px;
  	font-style: italic;
@@ -1033,6 +1033,9 @@ body.login .container,body.signup .container{
  }
  .send_weibo .input.clicked .arrow{
  	background:url(../images/icon.png) -475px -51px no-repeat;
+ }
+ .S_spetxt, .S_error{
+ 	color: #E44443;
  }
  /*微博发表成功提示*/
  .box_center .input .send_succpic{

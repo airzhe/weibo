@@ -15,7 +15,7 @@
 						<p class="txt">发布成功</p>
 					</div>
 				</div>
-				<div class="num S_txt2">发言请遵守社区公约，还可以输入<span>140</span>字</div>
+				<div class="tips_num S_txt2">发言请遵守社区公约，<span>还可以输入</span><i id="num_count">140</i>字</div>
 				<div class="func_area clearfix">
 					<div class="kind_detail left">
 						<a href="javascript:void(0)" class="S_func1" action-type="face" action-id="weibo_input_detail"><i class="W_ico16 icon_face"></i>表情</a>
