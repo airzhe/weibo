@@ -1170,7 +1170,7 @@ body.login .container,body.signup .container{
  	background: url(../images/layer_bg.png);
  }
  .W_layer .title{
- 	background: none repeat scroll 0% 0% rgb(242, 242, 242);
+ 	background: #f2f2f2;
  	/*height: 30px;*/
  	line-height: 30px;
  	font-weight: 700;
@@ -1325,7 +1325,49 @@ body.login .container,body.signup .container{
  	display: block;
  	background: url(../images/layer_arrow.png) no-repeat;
  }
- 
+ /*微博上传图片弹出框*/
+ .image_upload{
+
+ }
+ .image_upload ul{
+ 	width: 410px;
+ 	/*padding: 10px 0;*/
+ 	margin: 10px -15px;
+ 	overflow: hidden;
+ }
+ .image_upload li{
+ 	float: left;
+ 	width: 195px;
+ 	height: 45px;
+ 	margin: -1px 0 0 -1px;
+ 	padding: 5px;
+ 	border-left-width: 1px;
+ 	border-left-style: solid;
+ 	border-top-width: 1px;
+ 	border-top-style: solid;
+ }
+ .image_upload li a{
+ 	display: inline-block;
+ 	width: 100%;
+ 	background: #fff;
+ 	overflow: hidden;
+ 	cursor: pointer;
+ 	vertical-align: middle;
+ 	text-align: center;
+ }
+ .image_upload li a span{
+ 	display: inline-block;
+ 	width: 100%;
+ 	height: 45px;
+ 	line-height: 45px;
+ 	font-size: 14px;
+ 	font-weight: bold;
+ 	vertical-align: middle;
+ 	color:#333;
+ }
+ .image_upload li a:hover span{
+ 	background: #f2f2f2;
+ }
  /*模板个性设置弹出框*/
  .set_template{
  	left:50%;
@@ -2086,7 +2128,7 @@ body.login .container,body.signup .container{
  	}
 
  	/*消息页面*/
- 	.box_center div.title{
+ 	.box_center div.titlsse{
  		margin: 0px 20px;
  		border-bottom: 2px solid rgb(234, 20, 41);
  		padding:0px 0px 8px 0;

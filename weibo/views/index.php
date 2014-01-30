@@ -26,6 +26,21 @@
 					</div>
 					<a href="javascript:void(0)" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
 				</div>
+				<div class="W_layer image_upload">
+					<div class="bg">
+						<div class="wrap">
+							<div class="title">图片上传</div>
+							<div class="content">
+								<ul class="clearfix">
+									<li class="S_line2"><a href="javascript:void(0)"><span></span></a></li>
+									<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_ones"></i>拼图上传</span></a></li>
+									<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_screenshot"></i>截屏上传</span></a></li>
+									<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_toalbum"></i>传至相册</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="weibo">
 				<div class="feed_nav">
