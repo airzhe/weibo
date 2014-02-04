@@ -37,8 +37,9 @@ class User_model extends MY_Model {
 		// add
 		if($uid=$this->User_model->add($data)){
 			$data=array(
-				'id'=>$uid,
+				'uid'=>$uid,
 				'account'=>$data['account'],
+				'username'=>$this->input->post('username'),
 				'loggedin' => TRUE
 				);
 			$this->session->set_userdata($data);
@@ -55,9 +56,11 @@ class User_model extends MY_Model {
 		$user=$this->get_by($data,TRUE);
 		if(count($user)){
 			// Log in user
+			$username=$this->db->select('username')->get_where('user_info',array('uid'=>$user['id']))->row_array();
 			$data=array(
-				'id'=>$user['id'],
+				'uid'=>$user['id'],
 				'account'=>$user['account'],
+				'username'=>current($username),
 				'loggedin' => TRUE
 				);
 			$this->session->set_userdata($data);

@@ -2,7 +2,7 @@
 class User_info_model extends MY_Model {
 	
 	protected $_table_name = 'user_info';
-	protected $_primary_key = 'id';
+	protected $_primary_key = 'uid';
 	protected $_primary_filter = 'intval';
 	protected $_order_by = 'id';
 	public $rules = array(
@@ -47,9 +47,19 @@ class User_info_model extends MY_Model {
 	 * 获得用户基本信息
 	 */
 	public function get_basic_info(){
-		$uid=$this->session->userdata('id');
+		$uid=$this->session->userdata('uid');
 		$arr=array('username','sex','avatar','domain','style','follow','fans','weibo');
 		$this->db->select($arr);
-		return $this->User_info_model->get($uid);
+		return $this->get($uid);
+	}
+	/**
+	 * 按昵称搜索用户
+	 */
+	public function search($keyword){
+		$uid=$this->session->userdata('uid');
+		$arr=array('uid','username','sex','avatar','location','intro','domain','style','follow','fans','weibo');
+		$this->db->select($arr);
+		$this->db->like(array('username'=>$keyword)); 
+		return $this->db->get_where($this->_table_name,array('uid !='=>$uid))->result_array();
 	}
 }

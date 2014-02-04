@@ -1,5 +1,63 @@
 <?php $this->load->view('components/common_left_nav');?>
+<style>
+	.uploadify .uploadify-button {
+		font-size: 12px;
+		height:30px;
+		line-height: 30px;
+		text-align: right;
+	}
+	.uploadify span{margin-right: 7px;}
+	.uploadify:hover .uploadify-button {
+		background-position: 0 -30px;
+		color:#fff;
+	}
+	.uploadify-queue{display: none;}
+</style>
 <div class="main clearfix">
+	<div class="box_right right">
+		<a class="set_skin" href="#" title="模板设置"></a>
+		<div class="user_info">
+			<a href="home"><img  width="80" height="80" src='<?php echo base_url("assets/images/$user[avatar].gif") ?>' alt=""></a>
+			<div>
+				<a href="home" class="username S_func1"><?php echo $user['username'] ?></a>
+				<br>
+				<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
+			</div>
+		</div>
+		<ul class="user_atten clearfix">
+			<li>
+				<a href="<?php echo site_url('follow') ?>" class="S_func1">
+					<strong id="my_follow"><?php echo $user['follow'] ?></strong>
+					<span>关注</span>
+				</a>
+			</li>
+			<li>
+				<a href="<?php echo site_url('fans') ?>" class="S_func1">
+					<strong id="my_fans"><?php echo $user['fans'] ?></strong>
+					<span>粉丝</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="S_func1">
+					<strong id="my_weibo"><?php echo $user['weibo'] ?></strong>
+					<span>微博</span>
+				</a>
+			</li>
+		</ul>
+		<div class="hot_topics">
+			<fieldset>
+				<legend class="S_txt2"><a href="#">热门话题</a></legend>
+			</fieldset>
+			<ul>
+				<li><a href="#">#汤唯遭遇电信诈骗#</a><span class="total S_txt2">2634万</span></li>
+				<li><a href="#">#当时忍住就好了#</a><span class="total S_txt2">328万</span></li>
+				<li><a href="#">#爱情公寓4#</a><span class="total S_txt2">285</span></li>
+				<li><a href="#">#孙悟空后人#</a><span class="total S_txt2">3万</span></li>
+				<li><a href="#">#来自星星的你#</a><span class="total S_txt2">854万</span></li>
+				<li><a href="#">#中国好歌曲#</a><span class="total S_txt2">677</span></li>
+			</ul>
+		</div>		
+	</div>
 	<div class="box_center left">
 		<div>
 			<div class="send_weibo">
@@ -19,27 +77,12 @@
 				<div class="func_area clearfix">
 					<div class="kind_detail left">
 						<a href="javascript:void(0)" class="S_func1" action-type="face" action-id="weibo_input_detail"><i class="W_ico16 icon_face"></i>表情</a>
-						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_img"></i>图片</a>
+						<a href="javascript:void(0)" class="S_func1" action-type="upload_image" action-id="weibo_input_detail"><i class="W_ico16 icon_img"></i>图片</a>
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_video"></i>视频</a>
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_qing"></i>话题</a>
 						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_chang"></i>长微博</a>
 					</div>
 					<a href="javascript:void(0)" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
-				</div>
-				<div class="W_layer image_upload">
-					<div class="bg">
-						<div class="wrap">
-							<div class="title">图片上传</div>
-							<div class="content">
-								<ul class="clearfix">
-									<li class="S_line2"><a href="javascript:void(0)"><span></span></a></li>
-									<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_ones"></i>拼图上传</span></a></li>
-									<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_screenshot"></i>截屏上传</span></a></li>
-									<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_toalbum"></i>传至相册</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="weibo">
@@ -164,49 +207,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="box_right right">
-		<a class="set_skin" href="#" title="模板设置"></a>
-		<div class="user_info">
-			<a href="home"><img  width="80" height="80" src='<?php echo base_url("assets/images/$user[avatar].gif") ?>' alt=""></a>
-			<div>
-				<a href="home" class="username S_func1"><?php echo $user['username'] ?></a>
-				<br>
-				<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
-			</div>
-		</div>
-		<ul class="user_atten clearfix">
-			<li>
-				<a href="#" class="S_func1">
-					<strong><?php echo $user['follow'] ?></strong>
-					<span>关注</span>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="S_func1">
-					<strong><?php echo $user['fans'] ?></strong>
-					<span>粉丝</span>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="S_func1">
-					<strong><?php echo $user['weibo'] ?></strong>
-					<span>微博</span>
-				</a>
-			</li>
-		</ul>
-		<div class="hot_topics">
-			<fieldset>
-				<legend class="S_txt2"><a href="#">热门话题</a></legend>
-			</fieldset>
-			<ul>
-				<li><a href="#">#汤唯遭遇电信诈骗#</a><span class="total S_txt2">2634万</span></li>
-				<li><a href="#">#当时忍住就好了#</a><span class="total S_txt2">328万</span></li>
-				<li><a href="#">#爱情公寓4#</a><span class="total S_txt2">285</span></li>
-				<li><a href="#">#孙悟空后人#</a><span class="total S_txt2">3万</span></li>
-				<li><a href="#">#来自星星的你#</a><span class="total S_txt2">854万</span></li>
-				<li><a href="#">#中国好歌曲#</a><span class="total S_txt2">677</span></li>
-			</ul>
-		</div>		
 	</div>
 </div>

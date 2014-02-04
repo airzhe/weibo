@@ -14,10 +14,11 @@
 	<script src="<?php echo base_url('assets/js/weibo.js') ?>"></script>
 	<?php if(isset($body_class)): ?>
 		<?php switch ($body_class) {
-			case 'home':
+			case 'index':
 			?>
-			<!-- home页js -->
+			<!-- index页js -->
 			<script src="<?php echo base_url('assets/js/jquery.autosize.min.js') ?>"></script>
+			<script src="<?php echo base_url('assets/js/Uploadify/jquery.uploadify.min.js') ?>"></script>
 			<?php 
 			break;
 
@@ -34,20 +35,22 @@
 			<div class="nav_bg">
 				<div class="container">
 					<div class="logo">
-						<a href=""></a>
+						<a href="<?php echo site_url() ?>"></a>
 					</div>
 					<div class="nav clearfix">
-						<a href="#" class="current">首页</a>
+						<a href="<?php echo site_url() ?>" class="current">首页</a>
 						<a href="#">热门<i class="ico_down"></i></a>
 						<a href="#">游戏<i class="ico_down"></i></a>
 						<a href="#">应用<i class="ico_down"></i></a>
 					</div>
 					<div class="search">
-						<input type="text" name="searchInput" value="大家都在搜：香格里拉大火">
-						<a href="javascript:void(0)" class="btn"></a>
+						<form action="<?php echo site_url('search') ?>">
+							<input type="text" name="searchInput" placeholder="大家都在搜：香格里拉大火">
+							<a href="javascript:void(0)" class="searchBtn"></a>
+						</form>
 					</div>
 					<ul class="user clearfix">
-						<li class="username" ><a href="javascript:void(0)">air_zhe</a></li>
+						<li class="username" ><a href="javascript:void(0)"><?php echo $this->session->userdata('username') ?></a></li>
 						<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
 						<li class="msg">
 							<a href="javascript:void(0)"><i></i><em class="W_new"></em></a>

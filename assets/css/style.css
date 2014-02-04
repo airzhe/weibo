@@ -701,7 +701,7 @@ body.login .container,body.signup .container{
  		color:#333;
  	}
 
- 	.global_nav .search .btn{
+ 	.global_nav .search .searchBtn{
  		position: absolute;
  		right:4px;
  		top:8px;
@@ -1239,7 +1239,7 @@ body.login .container,body.signup .container{
  	position: absolute;
  	z-index: 2;
  	right: 17px;
- 	top: 16px;
+ 	top: 10px;
  	display: inline-block;
  	width: 16px;
  	height: 16px;
@@ -1548,13 +1548,13 @@ body.login .container,body.signup .container{
  }
  .weibo_list .detail .media_prev {
  	margin-right: -20px;
- 	padding-bottom: 10px;
  }
  .weibo_list .detail .media_prev img{
  	cursor:url(../images/big.cur), auto!important;
  }
  .weibo_list .detail .func{
  	font-size: 12px;
+ 	padding-top:10px;
  }
  .weibo_list .detail .func i{
  	margin: 0 6px 0 8px;
@@ -1566,7 +1566,7 @@ body.login .container,body.signup .container{
  .weibo_list .detail .forwardContent{
  	border: 1px solid #d9d9d9;
  	padding: 10px 20px 10px;
- 	margin: 5px 0 15px;
+ 	margin: 5px 0 5px;
  	border-radius: 3px;
  	background-color:#f2f2f2;
  }
@@ -2961,6 +2961,9 @@ body.login .container,body.signup .container{
  		text-decoration: none;
  		cursor:default;
  	}
+ 	.s_from form{
+ 		display: inline-block;
+ 	}
  	.s_from input{
  		width: 530px;
  		height: 32px;
@@ -2970,7 +2973,7 @@ body.login .container,body.signup .container{
  		color: #333;
  		font-family: 微软雅黑;
  	}
- 	.searchBtn{
+ 	.s_from .searchBtn{
  		background: url(../images/search_btn.png) no-repeat;
  		width: 92px;
  		height: 34px;
@@ -2980,7 +2983,7 @@ body.login .container,body.signup .container{
  		vertical-align: top;
  		margin-left: 8px;
  	}
- 	.searchBtn:hover{
+ 	.s_from .searchBtn:hover{
  		background-position: 0 -42px;
  	}
  	.s_from span{
@@ -3018,12 +3021,16 @@ body.login .container,body.signup .container{
  		margin-left: 8px;
  	}
  	.S_content_l .item .detail{
- 		margin-left: 65px;
+ 		margin-left: 95px;
  		position: relative;
  	}
  	.S_content_l .item .detail .name{
  		font-size: 14px;
  		font-weight: 700;
+ 	}
+
+ 	.S_content_l .item .detail .num a{
+ 		margin-left: 5px;
  	}
  	.S_content_l .item .info{
  		line-height: 22px;
@@ -3073,6 +3080,10 @@ body.login .container,body.signup .container{
  		height: 14px;
  		overflow: hidden;
  		background: url(../images/connect_ico.png) no-repeat 0 0;
+ 	}
+ 	/*关注*/
+ 	.S_content_l .icon_connect.r_1{
+ 		background-position: 0 -36px;
  	}
  	.search_icon{
  		display: inline-block;

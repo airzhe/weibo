@@ -51,6 +51,7 @@
 			//关闭弹出框按钮
 			close_btn.on('click',function(){
 				hot_face.remove();
+				$(document).off('click');
 			})
 			//阻止冒泡
 			hot_face.find('.content').on('click',function(e){
@@ -59,6 +60,52 @@
 			//点击关闭窗口
 			$(document).on('click',function(){
 				close_btn.trigger('click');
+			})
+		}	
+	})
+})(jQuery);
+/**	
+ *==============================
+ * 上传图片弹出框插件
+ *==============================
+ */
+ (function($){
+ 	$.fn.extend({
+ 		"imageUpload": function(){
+ 			$('.W_layer').find('.W_close').trigger('click');
+			//获取对象的坐标，并设置提示框坐标
+			var _h=$(this).height();
+			var _x=$(this).offset().left-62;
+			var _y=$(this).offset().top+_h+6;
+			var textarea_id=$(this).attr('action-id');
+			
+			//创建提示框。
+			var upload_dialog='';
+			upload_dialog+='<div class="W_layer image_upload" action-id='+ textarea_id +'>';
+			upload_dialog+='<div class="bg">';
+			upload_dialog+='<div class="wrap">';
+			upload_dialog+='<div class="title">图片上传</div>';
+			upload_dialog+='<div class="content">';
+			upload_dialog+='<ul class="clearfix">';
+			upload_dialog+='<li class="S_line2"><input type="file" name="image_upload" id="image_upload" /></li>';
+			upload_dialog+='<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_ones"></i>拼图上传</span></a></li>';
+			upload_dialog+='<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_screenshot"></i>截屏上传</span></a></li>';
+			upload_dialog+='<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_toalbum"></i>传至相册</span></a></li>';
+			upload_dialog+='</ul>';
+			upload_dialog+='</div>';
+			upload_dialog+='<a class="W_close" href="javascript:void(0);" title="关闭"></a>';
+			upload_dialog+='</div>';
+			upload_dialog+='</div>';
+			upload_dialog+='</div>';
+
+			$('body').append(upload_dialog);
+			// alert(1)
+			var image_upload=$('.image_upload');
+			image_upload.css({left:_x,top:_y});
+			close_btn=image_upload.find('.W_close');
+			//关闭弹出框按钮
+			close_btn.on('click',function(){
+				image_upload.remove();
 			})
 		}	
 	})
@@ -156,7 +203,7 @@ function get_pos(obj,top){
 	//获取当前窗口距离页面顶部高度 
 	var scrolltop = $(document).scrollTop();
 	pos[0] = ($(window).width() - obj.width()) / 2;
-	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2 + scrolltop + 50;
+	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2 + scrolltop - 50;
 	return pos;
 }
 
@@ -206,7 +253,8 @@ function get_pos(obj,top){
 		tips.children('.bg').animate({top:0}).delay(opt.timeout*1000).animate({top:54},function(){
 			$(this).parent().remove();
 			if(opt.type=='center'){
-				tips.remove();
+				// tips.remove();
+				$('.W_mask').remove();
 			}
 		});
 	}
@@ -312,6 +360,7 @@ function get_pos(obj,top){
 		})
 	}
 })
+
 /**	
  *===================
  * 文本框当前位置插入文字

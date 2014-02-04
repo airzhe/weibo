@@ -49,6 +49,34 @@ $(document).ready(function(){
 		$('#'+obj_id).trigger('keyup');
 	})
 	/**	
+	* 点击插入图片按钮，调出插入图片对话框
+	*/
+	$("[action-type='upload_image']").on('click',function(e){
+		$(this).imageUpload();
+		var flag=1;
+		$('#image_upload').uploadify({
+			'buttonImage' : site_url+'assets/images/upload.png',
+			'buttonText' : '选择上传',
+			'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
+			'uploader' : '',
+			'width':'82',
+			'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
+			'fileSizeLimit':'5120',
+			'onUploadStart':function(){
+				// console.log('readyUpload');
+				var _val=$('#weibo_input_detail').val();
+				if (flag==1){
+					$('#weibo_input_detail').val(_val+'分享图片');
+					flag++;
+				}
+				$('.loading').show();
+			},
+			'onUploadSuccess' : function(file,data) {
+
+			}
+		})
+	})
+	/**	
 	* 文本框自适应
 	*/
 	// $('.home .comment').find('textarea').autosize();
@@ -219,7 +247,48 @@ $(document).ready(function(){
 	*/
 	$('.send_btn').on('click',function(){
 		if(!$(this).hasClass('W_btn_v_disable')){
-			console.log('run...');
+			$('.weibo_list').find('.notes').remove();
+			var weibo='';
+			var avatar=$('.user_info').find('img').attr('src');
+			var name=$('.user_info').find('.username').text();
+			weibo+='<div class="item clearfix hide">';
+			weibo+='<div class="face">';
+			weibo+='<img  width="50" height="50" src="' + avatar + '" alt="">';
+			weibo+='</div>';
+			weibo+='<div class="detail">';
+			weibo+='<div><a class="name S_func1" href="#">' + name + '</a></div>';
+			weibo+='<div class="content">';
+			weibo+='</div>';
+			weibo+='<div class="func clearfix S_txt2">';
+			weibo+='<div class="from left"><a href="#" class="S_link2 time"></a> 来自<a href="" class="S_link2">新浪微博</a> </div>';
+			weibo+='<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(0)</a><i class="S_txt3">|</i><a href="">转发(0)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(0)</a></div>';
+			weibo+='</div>';
+			weibo+='</div>';
+			weibo+='</div>';
+			$(weibo).prependTo('.weibo_list').fadeOut();
+			var content=$('#weibo_input_detail').val();
+			$.ajax({
+				type:'post',
+				url:site_url+'weibo/send',
+				dataType:'json',
+				data:{content:content},
+				success:function(data){
+					if(data.status==1){
+						//微博总数+1
+						$('#my_weibo').html(+$('#my_weibo').html()+1);
+						//
+						var _item=$('.item:hidden');
+						_item.fadeIn().find('.content').html(data.content);
+						_item.find('.time').html(data.time);
+						$('#weibo_input_detail').val('');
+						//提示发布成功
+						$('.send_succpic').fadeIn();
+						setTimeout(function(){
+							$('.send_succpic').fadeOut();
+						},1000)
+					}
+				}
+			})
 		}else{
 			$('.send_weibo').find('textarea').addClass('empty');
 			setTimeout(function(){
@@ -232,4 +301,34 @@ $(document).ready(function(){
 	// },function(){
 
 	// })
+	/**
+	* 顶部导航搜索按钮事件
+	*/
+	$('.searchBtn').on('click',function(){
+		var keyword=$(this).prev('[name=searchInput]').val();
+		if($.trim(keyword)=='')return;
+		$(this).parent('form').submit();
+	})
+	/**
+	* 加关注
+	*/
+	$('.W_addbtn').on('click',function(){
+		var self=$(this);
+		var follow_id=$(this).attr('uid');
+		var relation;
+		$.ajax({
+			type:'post',
+			url:site_url+'member/follow',
+			dataType:'json',
+			data:{follow_id:follow_id},
+			success:function(data){
+				if(data.status==1){
+					if(self.attr('relation')!=2) relation='r_1';
+					self.before('<img src="http://localhost/work/weibo/assets/images/transparent.gif" alt="" class="icon_connect '+ relation +'">');
+					self.tips({type:'center'})
+					self.remove();
+				}
+			}
+		})
+	})
 })

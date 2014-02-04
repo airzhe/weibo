@@ -113,7 +113,7 @@ class MY_Model extends CI_Model {
 	 */
 
 	public function inc($field,$id,$num=1){
-		$this->db->set("$field", "$field+$num", FALSE)->where(array('id'=>$id))->update($this->_table_name);
+		$this->db->set("$field", "$field+$num", FALSE)->where($this->_primary_key, $id)->update($this->_table_name);
 	}
 	
 }

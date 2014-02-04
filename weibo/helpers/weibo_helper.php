@@ -41,3 +41,16 @@ str;
 	echo $html;
 	die;
 }
+/**
+ * 检测微博长度
+ * @param string $b 要检测的内容
+ */
+function getMessageLength ($b) { 
+	$preg="@[^\x{00}-\x{80}]@u";
+	if(preg_match_all($preg, $b,$a)){
+		$len=strlen($b)-count($a[0]);
+		return ceil($len/2);
+	}else{
+		return strlen($b);
+	}
+}
