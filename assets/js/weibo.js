@@ -206,10 +206,6 @@ $(document).ready(function(){
 	$('body').on('click','.set_template .W_close',function(){
 		$('.set_template').remove();
 	})
-	// text
-	$('.forward').click(function(){
-		$(this).modal({type:'center'});
-	})
 	//消息提醒
 	var $a={0:2,1:6,2:8};
 	$.msg($a);
@@ -225,6 +221,7 @@ $(document).ready(function(){
 	* 微博输入提示
 	*/
 	$('.send_weibo').find('textarea').on('keyup',function(){
+		console.log('run....');
 		var count=getMessageLength($.trim($(this).val()));
 		var num=140-count;
 		//判断输入的文字长度是否超过140
@@ -269,7 +266,7 @@ $(document).ready(function(){
 			var content=$('#weibo_input_detail').val();
 			$.ajax({
 				type:'post',
-				url:site_url+'weibo/send',
+				url:site_url+'index/send',
 				dataType:'json',
 				data:{content:content},
 				success:function(data){
@@ -280,7 +277,7 @@ $(document).ready(function(){
 						var _item=$('.item:hidden');
 						_item.fadeIn().find('.content').html(data.content);
 						_item.find('.time').html(data.time);
-						$('#weibo_input_detail').val('');
+						$('#weibo_input_detail').val('').trigger('keyup');
 						//提示发布成功
 						$('.send_succpic').fadeIn();
 						setTimeout(function(){
@@ -330,5 +327,51 @@ $(document).ready(function(){
 				}
 			}
 		})
+	})
+	/**
+	* ==========================================测试代码========================================================
+	* index 页查看更多
+	*/
+	if($('.weibo_list').find('.item').length<12){
+		$('.PRF_feed_list_more').remove();
+		$('#page').show();
+	}
+	$('.PRF_feed_list_more').on('click',function(){
+		var self=$(this);
+		self.prepend('<i class="ico_loading"></i>');
+		var offset=$('.weibo_list').data('offset');
+		$.ajax({
+			type:'post',
+			url:site_url+'index/select',
+			dataType:'json',
+			data:{offset:offset},
+			success:function(data){
+				if(data.status==1){
+					self.find('i').remove();
+					$(data.weibo_list).appendTo($('.weibo_list'));
+					// 每次读取5条
+					$('.weibo_list').data('offset',offset+5);
+					var _offset=$('.weibo_list').data('offset');
+					// 每页读取20条
+					if(data.count<5 || _offset%20==0){
+						$('.PRF_feed_list_more').remove();
+						$('#page').show();
+						return;
+					}
+				}
+			}
+		})
+	})
+	/**
+	* 返回顶部
+	*/
+	$(document).scroll(function(){
+		if($(this).scrollTop()>300){
+			$('.gotop').fadeIn();
+		}
+	})
+	$('.gotop').on('click',function(){
+		$(document).scrollTop(0);
+		$(this).hide();
 	})
 })

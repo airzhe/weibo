@@ -17,9 +17,9 @@
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>
 		<div class="user_info">
-			<a href="home"><img  width="80" height="80" src='<?php echo base_url("assets/images/$user[avatar].gif") ?>' alt=""></a>
+			<a href="<?php echo site_url('home') ?>"><img  width="80" height="80" src="<?php echo base_url($user['avatar']) ?>" alt=""></a>
 			<div>
-				<a href="home" class="username S_func1"><?php echo $user['username'] ?></a>
+				<a href="<?php echo site_url('home') ?>" class="username S_func1"><?php echo $user['username'] ?></a>
 				<br>
 				<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
 			</div>
@@ -97,8 +97,35 @@
 						<a href="#">音乐</a>
 					</p>
 				</div>
-				<div class="weibo_list">
+				<div class="weibo_list" data-offset="<?php echo $weibo_offset ?>">
 					<a href="" class="notes">有 1 条新微博，点击查看</a>
+					<?php if (!count($weibo_list)): ?>
+						<a href="" class="notes">您还没有发表过微博，赶快发表篇试试吧。</a>
+					<?php else: ?>
+						<?php foreach ($weibo_list as $v): ?>
+							<div class="item clearfix">
+								<div class="face">
+									<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo base_url($v['avatar']) ?>" alt=""></a>
+								</div>
+								<div class="detail">
+									<div>
+										<a class="name S_func1" href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a>
+									</div>
+									<div class="content">
+										<?php echo $v['content'] ?>
+									</div>
+									<div class="func clearfix S_txt2">
+										<div class="from left">
+											<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
+										</div>
+										<div class="handle right">
+											<a href=""><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="">转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(<?php echo $v['collect'] ?>)</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php endforeach ?>
+					<?php endif ?>
 					<div class="item clearfix">
 						<div class="face">
 							<img  width="50" height="50" src="<?php echo base_url('assets/images/1.jpg') ?>" alt="">
@@ -126,7 +153,7 @@
 									<span class="S_bg4_c">◆</span>
 								</div>
 								<div class="W_loading">
-									<span>正在加载，请稍候...</span>
+									<i class="ico_loading"></i><span>正在加载，请稍候...</span>
 								</div>
 								<div class="W_tips tips_warn clearfix">
 									<p>
@@ -139,7 +166,7 @@
 								<p class="clearfix"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox">同时转发到我的微博<a href="" class="W_btn_b right"><span>评论</span></a></p>
 								<div class="C_item S_line1">
 									<div class="face left">
-										<img src="./assets/images/_1.jpg" width="30" height="30" alt="">
+										<img src="<?php echo site_url('assets/images/_1.jpg') ?>" width="30" height="30" alt="">
 									</div>
 									<div class="C_detail">
 										<p><a href="">D瓜哥-李_君</a>：回复<a href="">@叉色-xsir</a>:恩，说实话我对这块专门看过一些资料。所以问的比较多。哈哈<span class="S_txt2">(1月5日 22:07)</span></p>
@@ -148,7 +175,7 @@
 								</div>
 								<div class="C_item S_line1">
 									<div class="face left">
-										<img src="./assets/images/_2.jpg" width="30" height="30" alt="">
+										<img src="<?php echo site_url('assets/images/_2.jpg') ?>" width="30" height="30" alt="">
 									</div>
 									<div class="C_detail">
 										<p><a href="">叉色-xsir</a>：前端后端都有啊。。。前端优化问的还蛮细的<span class="S_txt2">(1月5日 22:07)</span></p>
@@ -205,6 +232,8 @@
 						</div>
 					</div>
 				</div>
+				<a class="PRF_feed_list_more SW_fun_bg S_line2" href="javascript:void(0)"><span>查看更多微博»</span></a>
+				<?php echo $page ?>
 			</div>
 		</div>
 	</div>

@@ -40,6 +40,9 @@
 
 $route['default_controller'] = "index";
 $route['404_override'] = '';
+// index页分页路由
+$route['^page$'] = "index";
+$route['^page/(\d)+$'] = "index/index/page/$1";
 // $route['(:any)'] = "welcome/$1";
 
 /* End of file routes.php */

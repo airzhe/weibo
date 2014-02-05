@@ -1156,6 +1156,10 @@ body.login .container,body.signup .container{
  .kind_detail i.icon_chang{
  	background-position: -275px -100px;
  }
+ /*分页*/
+ .page{
+	text-align: right;
+ }
  /*弹出框*/
  .W_layer a, .W_layer .S_link1, .W_layer .S_func1:hover, .W_layer .SW_fun:hover .S_func1 {
  	color: rgb(10, 140, 210);
@@ -1812,7 +1816,7 @@ body.login .container,body.signup .container{
  	/*返回顶部*/
  	.gotop{
  		width: 22px;
- 		display: block;
+ 		display: none;
  		background:#f2f2f2;
  		border:1px solid #ccc;
  		position: absolute;
@@ -2042,7 +2046,10 @@ body.login .container,body.signup .container{
  		line-height: 24px;
  		text-decoration: none;
  	}
-
+ 	.PRF_feed_list_more .ico_loading{
+ 		margin-right: 2px;
+ 		vertical-align: -4px;
+ 	}
  	/*赞图标*/
  	.icon_praised_b,.icon_praised_bc{
  		width: 13px;
@@ -2675,12 +2682,9 @@ body.login .container,body.signup .container{
  		text-align: center;
  		padding: 20px 0 10px;
  	}
- 	.W_loading span {
- 		background: url(../images/loading.gif) no-repeat 0 1px;
- 		padding: 0 0 0 20px;
- 		line-height: 18px;
- 		height: 18px;
- 		display: inline-block;
+ 	.W_loading .ico_loading {
+ 		margin-right:4px;
+ 		vertical-align: -4px;
  	}
  	.comment_list .item .face{
  		float: left;

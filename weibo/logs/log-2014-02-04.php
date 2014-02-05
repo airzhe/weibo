@@ -382,3 +382,123 @@ ERROR - 2014-02-04 21:03:15 --> Could not find the language line "profiler_sessi
 ERROR - 2014-02-04 21:03:23 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-04 21:03:26 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-04 21:03:47 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:35:54 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:36:03 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:36:07 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:39:34 --> Query error: Unknown column 'uid' in 'where clause'
+ERROR - 2014-02-04 21:39:56 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:40:22 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:40:42 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:40:49 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:40:55 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:40:58 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:41:05 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:49:59 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:50:13 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 21:59:26 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:00:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:03:27 --> Query error: Table 'weibo.t_mytable' doesn't exist
+ERROR - 2014-02-04 22:03:55 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:08:27 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:08:27 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:08:27 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:12:43 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:12:43 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:12:43 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:13:12 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:13:12 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:13:46 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:13:46 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:13:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:15:57 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:15:57 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:15:57 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:16:18 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:16:18 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:16:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:20:21 --> Severity: Notice  --> Undefined variable: follow /home/runner/www/work/weibo/weibo/controllers/index.php 27
+ERROR - 2014-02-04 22:20:21 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/controllers/index.php 27
+ERROR - 2014-02-04 22:20:21 --> Severity: Notice  --> Undefined variable: follow_id /home/runner/www/work/weibo/weibo/controllers/index.php 30
+ERROR - 2014-02-04 22:20:21 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:20:21 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:20:21 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:20:34 --> Severity: Notice  --> Undefined variable: follow_id /home/runner/www/work/weibo/weibo/controllers/index.php 28
+ERROR - 2014-02-04 22:20:34 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:20:34 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:20:34 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:21:05 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:21:05 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:21:05 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:21:59 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:21:59 --> Severity: Notice  --> Array to string conversion /home/runner/www/work/weibo/system/database/DB_active_rec.php 555
+ERROR - 2014-02-04 22:21:59 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:22:32 --> Severity: Warning  --> explode() expects parameter 2 to be string, array given /home/runner/www/work/weibo/weibo/controllers/index.php 32
+ERROR - 2014-02-04 22:22:32 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:22:51 --> Severity: Warning  --> explode() expects parameter 1 to be string, array given /home/runner/www/work/weibo/weibo/controllers/index.php 32
+ERROR - 2014-02-04 22:22:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:23:12 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:23:28 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:23:50 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:25:05 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:25:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:27:22 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:38:13 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '要执行的 SQL' at line 1
+ERROR - 2014-02-04 22:38:47 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:40:57 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:41:27 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:41:27 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', Array)' at line 1
+ERROR - 2014-02-04 22:42:08 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:42:08 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', Array)' at line 1
+ERROR - 2014-02-04 22:42:11 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:42:11 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', Array)' at line 1
+ERROR - 2014-02-04 22:42:22 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:42:22 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', Array)' at line 1
+ERROR - 2014-02-04 22:42:24 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:42:24 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', Array)' at line 1
+ERROR - 2014-02-04 22:42:51 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:42:51 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', array(10000,10001))' at line 1
+ERROR - 2014-02-04 22:43:15 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 22:43:15 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', array('10000','10001'))' at line 1
+ERROR - 2014-02-04 22:43:56 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 36
+ERROR - 2014-02-04 22:43:56 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', Array)' at line 1
+ERROR - 2014-02-04 22:44:10 --> Severity: 4096  --> Object of class CI_DB_mysqli_driver could not be converted to string /home/runner/www/work/weibo/weibo/controllers/index.php 36
+ERROR - 2014-02-04 22:44:10 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->where_in('uid', '10000,10001')' at line 1
+ERROR - 2014-02-04 22:50:33 --> Severity: Notice  --> Undefined variable: result_array /home/runner/www/work/weibo/weibo/controllers/index.php 37
+ERROR - 2014-02-04 22:50:47 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:51:10 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 22:53:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:11:20 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `uid` IN ('10001', '10003') 
+OR `uid` =  '10000'' at line 2
+ERROR - 2014-02-04 23:12:21 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:12:53 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `uid` IN ('10001', '10003') 
+OR `uid` =  '10000'' at line 2
+ERROR - 2014-02-04 23:13:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:13:45 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:23:19 --> Severity: Notice  --> Undefined variable: per_page /home/runner/www/work/weibo/weibo/views/index.php 208
+ERROR - 2014-02-04 23:23:19 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:23:37 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:23:41 --> 404 Page Not Found --> page
+ERROR - 2014-02-04 23:26:48 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:26:52 --> 404 Page Not Found --> page
+ERROR - 2014-02-04 23:27:00 --> 404 Page Not Found --> 2
+ERROR - 2014-02-04 23:32:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:33:04 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:35:25 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:35:36 --> Severity: Notice  --> Undefined variable: count /home/runner/www/work/weibo/weibo/controllers/index.php 35
+ERROR - 2014-02-04 23:35:36 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:37:29 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:42:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:42:59 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:43:13 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:43:19 --> 404 Page Not Found --> page
+ERROR - 2014-02-04 23:50:43 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:50:47 --> 404 Page Not Found --> page
+ERROR - 2014-02-04 23:56:00 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:56:08 --> 404 Page Not Found --> page
+ERROR - 2014-02-04 23:56:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:56:35 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:56:35 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:56:35 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:56:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:57:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-04 23:59:17 --> 404 Page Not Found --> index/page
