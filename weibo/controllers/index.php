@@ -9,6 +9,7 @@ Class index extends Front_Controller{
 		$this->data['body_class'] = 'index';
 		$this->load->model('User_info_model');
 		$this->load->model('Follow_model');
+		$this->load->library('weibo');
 	}
 	public function index(){
 		$user=$this->User_info_model->get_basic_info();
@@ -36,21 +37,22 @@ Class index extends Front_Controller{
 			$num=5;
 			$offset=$this->input->post('offset');
 		}
+		//配置每次读取数量
 		$this->per_page=$this->config->item('index_per_page', 'W_weibo');
 		$current_page=$this->uri->segment(2)?(int)$this->uri->segment(2):1;
+		//配置关联查询条件
 		$this->db->order_by("weibo.time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset);
 		$this->db->join('weibo', 'user_info.uid = weibo.uid');
 		$arr=array('username','avatar','sex','domain','content','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
 		$weibo_list=$this->db->select($arr)->get('user_info')->result_array();
-
-		$this->load->library('weibo');
+		//如果为空则返回
+		if(!count($weibo_list)) return;
 		$weibo_list=$this->weibo->format($weibo_list);
 		// 如果是ajax请求输入输入，否则赋值给$this->data
 		if(!$this->input->is_ajax_request()){
 			$this->data['weibo_list']=$weibo_list;
 			$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
 		}else{
-			
 			foreach ($weibo_list as $v) {
 				$v['avatar']=base_url($v['avatar']);
 				$_weibo=<<<str
@@ -86,7 +88,9 @@ str;
 	 * 发单条新微博
 	 */
 	public function send(){
-		$this->load->library('weibo');
+		if(!$this->input->is_ajax_request()){
+			show_404();
+		}
 		$this->weibo->send();
 	}
 	/**

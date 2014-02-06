@@ -23,7 +23,7 @@
 		<div class="result_list">
 			<?php foreach ($user as $v): ?>
 				<div class="item clearfix">
-					<div class="avatar left"> <a href="<?php echo $v['domain'] ?>" targte="_blank"><img src="assets/images/<?php echo $v['avatar'] ?>" width="80" height="80" alt=""></a></div>
+					<div class="avatar left"> <a href="<?php echo $v['domain'] ?>" targte="_blank"><img src="<?php echo site_url($v['avatar']) ?>" width="80" height="80" alt=""></a></div>
 					<div class="detail">
 						<div class="info">
 							<div class="name"><?php echo $v['username'] ?></div>

@@ -30,4 +30,12 @@ Class search extends Front_Controller{
 		$this->partial('components/header',$this->data);
 		$this->partial('search');
 	}
+	// 搜索页面加关注事件
+	public function follow(){
+		if(!$this->input->is_ajax_request()){
+			show_404();
+		}
+		$this->load->library('member');
+		$this->member->follow();
+	}
 }

@@ -315,7 +315,7 @@ $(document).ready(function(){
 		var relation;
 		$.ajax({
 			type:'post',
-			url:site_url+'member/follow',
+			url:site_url+'search/follow',
 			dataType:'json',
 			data:{follow_id:follow_id},
 			success:function(data){
@@ -356,9 +356,13 @@ $(document).ready(function(){
 					if(data.count<5 || _offset%20==0){
 						$('.PRF_feed_list_more').remove();
 						$('#page').show();
-						return;
 					}
 				}
+			},
+			//返回为空或为
+			error:function(){
+				$('.PRF_feed_list_more').remove();
+				$('#page').show();
 			}
 		})
 	})

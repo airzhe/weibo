@@ -30,6 +30,7 @@ class User_info_model extends MY_Model {
 	
 	function __construct() {
 		parent::__construct();
+		$this->uid=$this->session->userdata('uid');
 	}
 	/**
 	 * 添加新用户信息
@@ -47,19 +48,17 @@ class User_info_model extends MY_Model {
 	 * 获得用户基本信息
 	 */
 	public function get_basic_info(){
-		$uid=$this->session->userdata('uid');
 		$arr=array('username','sex','avatar','domain','style','follow','fans','weibo');
 		$this->db->select($arr);
-		return $this->get($uid);
+		return $this->get($this->uid);
 	}
 	/**
 	 * 按昵称搜索用户
 	 */
 	public function search($keyword){
-		$uid=$this->session->userdata('uid');
 		$arr=array('uid','username','sex','avatar','location','intro','domain','style','follow','fans','weibo');
 		$this->db->select($arr);
 		$this->db->like(array('username'=>$keyword)); 
-		return $this->db->get_where($this->_table_name,array('uid !='=>$uid))->result_array();
+		return $this->db->get_where($this->_table_name,array('uid !='=>$this->uid))->result_array();
 	}
 }

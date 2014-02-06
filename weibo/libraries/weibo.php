@@ -1,9 +1,10 @@
 <?php 
-class weibo extends Front_Controller{
+class weibo{
 	public function __construct(){
-		parent::__construct();
-		$this->load->model('Weibo_model');
-		$this->uid = $this->session->userdata('uid');
+
+		$this->CI=& get_instance();
+		$this->CI->load->model('Weibo_model');
+		$this->uid = $this->CI->session->userdata('uid');
 
 	}
 	
@@ -11,7 +12,7 @@ class weibo extends Front_Controller{
 	 * 发单条新微博
 	 */
 	public function send(){
-		$content=$this->input->post('content');
+		$content=$this->CI->input->post('content');
 		$len=getMessageLength($content);
 		if($len==0 || $len>140){
 			$data=array('status'=>0,'error'=>'微博长度应小与140');
@@ -19,10 +20,10 @@ class weibo extends Front_Controller{
 			//写入数据库
 			$time=time();
 			$weibo=array('content'=>$content,'time'=>$time,'uid'=>$this->uid);
-			$this->Weibo_model->add($weibo);
+			$this->CI->Weibo_model->add($weibo);
 			//微博总数+1
-			$this->load->model('User_info_model');
-			$this->User_info_model->inc('weibo',$this->uid);
+			$this->CI->load->model('User_info_model');
+			$this->CI->User_info_model->inc('weibo',$this->uid);
 
 			$preg='/(@.*?)\s/is';
 			if(preg_match_all($preg, $content, $at)){
@@ -41,8 +42,8 @@ class weibo extends Front_Controller{
 	 */
 	public function f_content($content){
 		// 读取配置项获得表情数组
-		$this->config->load('W_face', TRUE);
-		$faces = $this->config->item('faces', 'W_face');
+		$this->CI->config->load('W_face', TRUE);
+		$faces = $this->CI->config->item('faces', 'W_face');
 		foreach ($faces as $key=>$value) {
 			$_faces[$key]='<img src="'.site_url("assets/images/hotFace/{$value}.gif").'">';
 		}
@@ -57,10 +58,8 @@ class weibo extends Front_Controller{
 	{
 		$time = intval($time);
 		switch (true) {
-			case time()-$time == 0:
-				return '刚刚';
 			case time()-$time < 60:
-				return time()-$time.'秒前';
+				return '刚刚';
 			case time()-$time < 3600:
 				return floor((time()-$time)/60).'分钟前';
 			case $time > strtotime(date('Y-m-d',time())):
