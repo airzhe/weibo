@@ -309,13 +309,24 @@ $(document).ready(function(){
 	/**
 	* 加关注
 	*/
-	$('.W_addbtn').on('click',function(){
+	$('.addFollow').on('click',function(){
 		var self=$(this);
+		//通过什么关注
+		var from=self.attr('from');
 		var follow_id=$(this).attr('uid');
 		var relation;
+		var url;
+		switch (from) {
+			case 'search':
+			url=site_url+'search/follow';
+			break;
+			case 'fans':
+			url=site_url+'fans/follow';
+			break;
+		}
 		$.ajax({
 			type:'post',
-			url:site_url+'search/follow',
+			url:url,
 			dataType:'json',
 			data:{follow_id:follow_id},
 			success:function(data){
@@ -324,6 +335,43 @@ $(document).ready(function(){
 					self.before('<img src="http://localhost/work/weibo/assets/images/transparent.gif" alt="" class="icon_connect '+ relation +'">');
 					self.tips({type:'center'})
 					self.remove();
+				}
+			}
+		})
+	})
+	/**
+	* 取消关注
+	*/
+	$('.cancle_follow').on('click',function(){
+		var self=$(this);
+		var follow_id=self.attr('uid');
+		$.ajax({
+			type:'post',
+			url:site_url+'follow/cancle',
+			dataType:'json',
+			data:{follow_id:follow_id},
+			success:function(data){
+				if(data.status==1){
+					self.parents('.item').fadeOut(700);
+				}
+			}
+		})
+	})
+	/**
+	* 移除粉丝
+	*/
+	$('.remove_fans').on('click',function(){
+		// alert(88);
+		var self=$(this);
+		var fans_id=self.attr('uid');
+		$.ajax({
+			type:'post',
+			url:site_url+'fans/remove',
+			dataType:'json',
+			data:{fans_id:fans_id},
+			success:function(data){
+				if(data.status==1){
+					self.parents('.item').fadeOut(700);
 				}
 			}
 		})

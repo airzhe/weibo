@@ -17,7 +17,7 @@
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>
 		<div class="user_info">
-			<a href="<?php echo site_url('home') ?>"><img  width="80" height="80" src="<?php echo base_url($user['avatar']) ?>" alt=""></a>
+			<a href="<?php echo site_url('home') ?>"><img  width="80" height="80" src="<?php echo $user['avatar'] ?>" alt=""></a>
 			<div>
 				<a href="<?php echo site_url('home') ?>" class="username S_func1"><?php echo $user['username'] ?></a>
 				<br>
@@ -109,7 +109,7 @@
 					<?php foreach ($weibo_list as $v): ?>
 						<div class="item clearfix">
 							<div class="face">
-								<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo base_url($v['avatar']) ?>" alt=""></a>
+								<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
 							</div>
 							<div class="detail">
 								<div>

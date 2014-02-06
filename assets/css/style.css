@@ -2449,7 +2449,7 @@ body.login .container,body.signup .container{
  		margin-left:12px;
  	}
 
- 	.addFollow .addicon{
+ 	.W_btn_b.addFollow .addicon{
  		color: #FFA00A;
  		vertical-align: -2px;
  	}

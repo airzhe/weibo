@@ -111,9 +111,15 @@ class MY_Model extends CI_Model {
 	/**
 	 * 值加1
 	 */
-
 	public function inc($field,$id,$num=1){
 		$this->db->set("$field", "$field+$num", FALSE)->where($this->_primary_key, $id)->update($this->_table_name);
 	}
+
+	// /**
+	//  * 值减1
+	//  */
+	// public function dec($field,$id,$num=1){
+	// 	$this->db->set("$field", "$field-$num", FALSE)->where($this->_primary_key, $id)->update($this->_table_name);
+	// }
 	
 }

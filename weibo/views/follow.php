@@ -19,25 +19,29 @@
 				</div>
 			</div>
 			<div class="myfollow_list clearfix">
-				<?php foreach ($myfollow_list as $v): ?>
-					<div class="item">
-						<div class="avatar"> <a href="<?php echo $v['domain'] ?>"><img src="<?php echo site_url($v['avatar']) ?>" width="50" height="50" alt=""></a></div>
-						<div class="info">
-							<ul>
-								<li><a href="<?php echo $v['domain'] ?>" class="S_func1"><?php echo $v['username'] ?></a></li>
-								<?php if ($v['relation']==1): ?>
-									<li><i class="W_ico12 icon_addone"></i>已关注</li>
-								<?php else: ?>
-									<li><i class="W_ico12 icon_addtwo"></i>互相关注</li>
-								<?php endif ?>
-								<li><a href="#" class="S_link2">未分组</a></li>
-							</ul>
+				<?php if (!isset($myfollow_list)): ?>
+					<p>你还没有关注的人</p>
+				<?php else: ?>
+					<?php foreach ($myfollow_list as $v): ?>
+						<div class="item">
+							<div class="avatar"> <a href="<?php echo $v['domain'] ?>"><img src="<?php echo $v['avatar'] ?>" width="50" height="50" alt=""></a></div>
+							<div class="info">
+								<ul>
+									<li><a href="<?php echo $v['domain'] ?>" class="S_func1"><?php echo $v['username'] ?></a></li>
+									<?php if ($v['relation']==1): ?>
+										<li><i class="W_ico12 icon_addone"></i>已关注</li>
+									<?php else: ?>
+										<li><i class="W_ico12 icon_addtwo"></i>互相关注</li>
+									<?php endif ?>
+									<li><a href="#" class="S_link2">未分组</a></li>
+								</ul>
+							</div>
+							<div class="intro S_txt2">简介：<?php echo $v['intro'] ?></div>
+							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" class="cancle_follow">取消关注</a></div>
+							<div class="introHover S_txt2">通过 <a href="#" class="S_link2">iPhone客户端</a> 关注</div>
 						</div>
-						<div class="intro S_txt2">简介：<?php echo $v['intro'] ?></div>
-						<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" class="cancle_follow">取消关注</a></div>
-						<div class="introHover S_txt2">通过 <a href="#" class="S_link2">iPhone客户端</a> 关注</div>
-					</div>
-				<?php endforeach ?>
+					<?php endforeach ?>
+				<?php endif ?>
 				<div class="item">
 					<div class="avatar"> <img src="assets/images/2.jpg" width="50" height="50" alt=""></div>
 					<div class="info">

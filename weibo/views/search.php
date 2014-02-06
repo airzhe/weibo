@@ -23,7 +23,7 @@
 		<div class="result_list">
 			<?php foreach ($user as $v): ?>
 				<div class="item clearfix">
-					<div class="avatar left"> <a href="<?php echo $v['domain'] ?>" targte="_blank"><img src="<?php echo site_url($v['avatar']) ?>" width="80" height="80" alt=""></a></div>
+					<div class="avatar left"> <a href="<?php echo $v['domain'] ?>" targte="_blank"><img src="<?php echo $v['avatar'] ?>" width="80" height="80" alt=""></a></div>
 					<div class="detail">
 						<div class="info">
 							<div class="name"><?php echo $v['username'] ?></div>
@@ -36,7 +36,7 @@
 						<div class="operate">
 							<!-- 判断和用户之间的关系 -->
 							<?php if ($v['relation']==0 || $v['relation']==2): ?>
-								<a uid="<?php echo $v['uid'] ?>" relation="<?php echo $v['relation'] ?>" href="javascript:void(0);" class="W_addbtn"><span class="addicon">+</span>加关注</a>
+								<a uid="<?php echo $v['uid'] ?>" relation="<?php echo $v['relation'] ?>" from="search" href="javascript:void(0);" class="W_addbtn addFollow"><span class="addicon">+</span>加关注</a>
 							<?php else: ?>
 								<img src="<?php echo base_url('assets/images/transparent.gif') ?>" alt="" class="icon_connect r_<?php echo $v['relation'] ?>">
 							<?php endif ?>
