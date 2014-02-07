@@ -202,6 +202,12 @@ textarea.W_input {
 	line-height: 12px;
 	color: rgb(102, 102, 102);
 }
+.W_empty{
+	text-align: center;
+}
+.myfans_list .W_empty,.myfollow_list .W_empty{
+	margin: 40px 0;
+}
 /*icon*/
 .icon_error, .icon_del, .icon_succ, .icon_warn, .icon_ask, .icon_rederror, .icon_errorS, .icon_delS, .icon_succS, .icon_warnS, .icon_askS, .icon_rederrorS, .icon_errorM, .icon_delM, .icon_succM, .icon_warnM, .icon_questionM, .icon_rederrorM, .icon_errorB, .icon_delB, .icon_succB, .icon_warnB, .icon_questionB, .icon_rederrorB, .icon_promptS, .icon_noticeS {
 	width: 16px;

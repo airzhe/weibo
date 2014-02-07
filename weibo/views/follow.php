@@ -20,7 +20,7 @@
 			</div>
 			<div class="myfollow_list clearfix">
 				<?php if (!isset($myfollow_list)): ?>
-					<p>你还没有关注的人</p>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>你还没有关注的人</p>
 				<?php else: ?>
 					<?php foreach ($myfollow_list as $v): ?>
 						<div class="item">
@@ -36,8 +36,14 @@
 									<li><a href="#" class="S_link2">未分组</a></li>
 								</ul>
 							</div>
-							<div class="intro S_txt2">简介：<?php echo $v['intro'] ?></div>
-							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" class="cancle_follow">取消关注</a></div>
+							<div class="intro S_txt2">
+								<?php if ($v['intro']): ?>
+									简介：<?php echo $v['intro'] ?>
+								<?php else: ?>
+									他还没有填写个人简介
+								<?php endif ?>
+							</div>
+							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" class="cancle_follow">取消关注</a></div>
 							<div class="introHover S_txt2">通过 <a href="#" class="S_link2">iPhone客户端</a> 关注</div>
 						</div>
 					<?php endforeach ?>

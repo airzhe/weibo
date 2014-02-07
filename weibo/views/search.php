@@ -33,15 +33,18 @@
 								<div>简介： <?php echo $v['intro'] ?></div>
 							<?php endif ?>
 						</div>
-						<div class="operate">
-							<!-- 判断和用户之间的关系 -->
-							<?php if ($v['relation']==0 || $v['relation']==2): ?>
-								<a uid="<?php echo $v['uid'] ?>" relation="<?php echo $v['relation'] ?>" from="search" href="javascript:void(0);" class="W_addbtn addFollow"><span class="addicon">+</span>加关注</a>
-							<?php else: ?>
-								<img src="<?php echo base_url('assets/images/transparent.gif') ?>" alt="" class="icon_connect r_<?php echo $v['relation'] ?>">
-							<?php endif ?>
-							<p><a target="_blank" href="#" ><span class="search_icon searchper_icon"></span>TA的好友</a></p>
-						</div>
+						<!-- 如果搜索用户不能于当前用户才显示右边相关操作 -->
+						<?php if (!($v['uid']==$this->session->userdata('uid'))): ?>
+							<div class="operate">
+								<!-- 判断和用户之间的关系 -->
+								<?php if ($v['relation']==0 || $v['relation']==2): ?>
+									<a uid="<?php echo $v['uid'] ?>" relation="<?php echo $v['relation'] ?>" from="search" href="javascript:void(0);" class="W_addbtn addFollow"><span class="addicon">+</span>加关注</a>
+								<?php else: ?>
+									<img src="<?php echo base_url('assets/images/transparent.gif') ?>" alt="" class="icon_connect r_<?php echo $v['relation'] ?>">
+								<?php endif ?>
+								<p><a target="_blank" href="#" ><span class="search_icon searchper_icon"></span>TA的好友</a></p>
+							</div>
+						<?php endif ?>
 					</div>
 				</div>
 			<?php endforeach ?>

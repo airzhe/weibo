@@ -10,11 +10,11 @@ class member{
 	public function follow(){
 		$this->CI->load->model('Follow_model');
 		$follow_id=$this->CI->input->post('follow_id');
-		$this->CI->Follow_model->add(array('follow'=>$follow_id,'fans'=>$this->uid));
+		$from=$this->CI->input->post('from');//关注的来源
+		$this->CI->Follow_model->add(array('follow'=>$follow_id,'fans'=>$this->uid,'time'=>time(),'from'=>$from));
 		//关注总数+1
 		$this->CI->load->model('User_info_model');
 		$this->CI->User_info_model->inc('follow',$this->uid);
-
 		//被关注者粉丝数+1
 		$this->CI->User_info_model->inc('fans',$follow_id);
 		$data['status']=1;
@@ -24,7 +24,7 @@ class member{
 	 * 获取关注的用户
 	 */
 	public function get_follow(){
-		$follow_arr=$this->CI->db->select('follow')->get_where('follow',array('fans'=>$this->uid))->result_array();
+		$follow_arr=$this->CI->db->order_by("time", "desc")->select('follow')->get_where('follow',array('fans'=>$this->uid))->result_array();
 		if(count($follow_arr)){
 			$follow_id=array();
 			foreach ($follow_arr as $v) {

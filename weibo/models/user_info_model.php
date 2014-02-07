@@ -59,6 +59,6 @@ class User_info_model extends MY_Model {
 		$arr=array('uid','username','sex','avatar','location','intro','domain','style','follow','fans','weibo');
 		$this->db->select($arr);
 		$this->db->like(array('username'=>$keyword)); 
-		return $this->db->get_where($this->_table_name,array('uid !='=>$this->uid))->result_array();
+		return $this->db->get($this->_table_name)->result_array();
 	}
 }

@@ -17,7 +17,7 @@
 			</div>
 			<div class="myfans_list">
 				<?php if (!isset($myfans_list)): ?>
-					<p>目前还没有人关注你</p>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>目前还没有人关注你</p>
 				<?php else: ?>
 					<?php foreach ($myfans_list as $v): ?>
 						<div class="item clearfix">
@@ -34,7 +34,7 @@
 									<?php else: ?>
 										<a href="" class="W_btn_c"><span><i class="W_ico12 icon_addtwo"></i>互相关注</span></a>
 									<?php endif ?>
-									<a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a uid="<?php echo $v['uid'] ?>" href="javascript:void(0)" class="remove_fans">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
+									<a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" href="javascript:void(0)" class="remove_fans">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
 								</div>
 							</div>
 						</div>

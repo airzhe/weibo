@@ -205,6 +205,7 @@ $(document).ready(function(){
 	*/
 	$('body').on('click','.set_template .W_close',function(){
 		$('.set_template').remove();
+		$('.W_mask').remove();
 	})
 	//消息提醒
 	var $a={0:2,1:6,2:8};
@@ -328,7 +329,7 @@ $(document).ready(function(){
 			type:'post',
 			url:url,
 			dataType:'json',
-			data:{follow_id:follow_id},
+			data:{follow_id:follow_id,from:from},
 			success:function(data){
 				if(data.status==1){
 					if(self.attr('relation')!=2) relation='r_1';
@@ -344,6 +345,9 @@ $(document).ready(function(){
 	*/
 	$('.cancle_follow').on('click',function(){
 		var self=$(this);
+		var username=self.attr('username');
+		if(!confirm('确认要取消对'+username+'的关注吗？'))
+			return;
 		var follow_id=self.attr('uid');
 		$.ajax({
 			type:'post',
@@ -352,7 +356,7 @@ $(document).ready(function(){
 			data:{follow_id:follow_id},
 			success:function(data){
 				if(data.status==1){
-					self.parents('.item').fadeOut(700);
+					self.parents('.item').remove();
 				}
 			}
 		})
@@ -361,8 +365,10 @@ $(document).ready(function(){
 	* 移除粉丝
 	*/
 	$('.remove_fans').on('click',function(){
-		// alert(88);
 		var self=$(this);
+		var username=self.attr('username');
+		if(!confirm('确认要移除'+username+'？'))
+			return;
 		var fans_id=self.attr('uid');
 		$.ajax({
 			type:'post',
@@ -371,7 +377,7 @@ $(document).ready(function(){
 			data:{fans_id:fans_id},
 			success:function(data){
 				if(data.status==1){
-					self.parents('.item').fadeOut(700);
+					self.parents('.item').remove();
 				}
 			}
 		})
