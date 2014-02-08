@@ -10,8 +10,8 @@ class member{
 	public function follow(){
 		$this->CI->load->model('Follow_model');
 		$follow_id=$this->CI->input->post('follow_id');
-		$from=$this->CI->input->post('from');//关注的来源
-		$this->CI->Follow_model->add(array('follow'=>$follow_id,'fans'=>$this->uid,'time'=>time(),'from'=>$from));
+		$source=$this->CI->input->post('source');//关注的来源
+		$this->CI->Follow_model->add(array('follow'=>$follow_id,'fans'=>$this->uid,'time'=>time(),'source'=>$source));
 		//关注总数+1
 		$this->CI->load->model('User_info_model');
 		$this->CI->User_info_model->inc('follow',$this->uid);
@@ -21,34 +21,16 @@ class member{
 		die(json_encode($data));
 	}
 	/**
-	 * 获取关注的用户
+	 * 通过原生sql获取关注的用户
 	 */
 	public function get_follow(){
-		$follow_arr=$this->CI->db->order_by("time", "desc")->select('follow')->get_where('follow',array('fans'=>$this->uid))->result_array();
-		if(count($follow_arr)){
-			$follow_id=array();
-			foreach ($follow_arr as $v) {
-				$follow_id[]=current($v);
-			}
-			$this->CI->db->where_in('uid', $follow_id);
-			$arr=array('username','sex','intro','avatar','domain','uid');
-			return $this->CI->db->select($arr)->get('user_info')->result_array();
-		}
+		return $this->CI->db->query("select `username`, `sex`, `intro`, `avatar`, `domain`, `uid`,follow.time,follow.source from (select follow,time,source from {$this->CI->db->dbprefix}follow where  fans={$this->uid} ) as follow join {$this->CI->db->dbprefix}user_info as user_info on user_info.uid=follow.follow order by `time` desc")->result_array();
 	}
 	/**
 	 * 获取粉丝信息
 	 */
 	public function get_fans(){
-		$fans_arr=$this->CI->db->select('fans')->get_where('follow',array('follow'=>$this->uid))->result_array();
-		if(count($fans_arr)){
-			$fans_id=array();
-			foreach ($fans_arr as $v) {
-				$fans_id[]=current($v);
-			}
-			$this->CI->db->where_in('uid', $fans_id);
-			$arr=array('username','sex','intro','location','avatar','domain','follow','fans','weibo','uid');
-			return $this->CI->db->select($arr)->get('user_info')->result_array();
-		}
+		return $this->CI->db->query("select `username`, `sex`, `intro`, `location`, `avatar`,`domain`, user_info.follow,user_info.fans,`weibo`,`uid`,follow.time,follow.source from (select fans,time,source from {$this->CI->db->dbprefix}follow where  follow={$this->uid} ) as follow join {$this->CI->db->dbprefix}user_info as user_info on user_info.uid=follow.fans order by `time` desc")->result_array();
 	}
 	/**
 	 * 取消关注
@@ -86,5 +68,4 @@ class member{
 		$data['status']=1;
 		die(json_encode($data));
 	}
-	
 }

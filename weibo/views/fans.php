@@ -26,13 +26,20 @@
 								<div class="con_left left">
 									<div class="name"><?php echo $v['username'] ?> <span class="addr"><i class="W_ico12 male"></i><?php echo $v['location'] ?></span></div>
 									<div>关注 <a href="javascript:void(0)"><?php echo $v['follow'] ?></a><i class="W_vline S_line1_c">|</i>粉丝 <a href="#"><?php echo $v['fans'] ?></a><i class="W_vline S_line1_c">|</i>微博 <a href="javascript:void(0)"><?php echo $v['weibo'] ?></a></div>
-									<div>通过 <a href="#" class="S_link2">微博搜索</a> 关注 <a href="#" class="detail_more">更多</a></div>
+									<div>
+										<?php if ($v['source']=='search'): ?>
+											通过 <a href="#" class="S_link2">微博搜索</a>关注
+										<?php else: ?>
+											通过 <a href="#" class="S_link2">新浪微博</a>关注
+										<?php endif ?>
+										<a href="#" class="detail_more">更多</a>
+									</div>
 								</div>
 								<div class="con_right right">
 									<?php if ($v['relation']==2): ?>
-										<a uid="<?php echo $v['uid'] ?>" from="fans" href="javascript:void(0)" class="addFollow W_btn_b"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a>
+										<a uid="<?php echo $v['uid'] ?>" source="fans" href="javascript:void(0)" class="addFollow W_btn_b"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a>
 									<?php else: ?>
-										<a href="" class="W_btn_c"><span><i class="W_ico12 icon_addtwo"></i>互相关注</span></a>
+										<a href="javascript:void(0)" class="W_btn_c"><span><i class="W_ico12 icon_addtwo"></i>互相关注</span></a>
 									<?php endif ?>
 									<a href="#"><i class="W_chat_stat"></i>私信</a><i class="S_line1_c">|</i><a uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" href="javascript:void(0)" class="remove_fans">移除粉丝</a><i class="S_line1_c">|</i><a href="">举报</a>
 								</div>

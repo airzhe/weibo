@@ -38,7 +38,7 @@
 							<div class="operate">
 								<!-- 判断和用户之间的关系 -->
 								<?php if ($v['relation']==0 || $v['relation']==2): ?>
-									<a uid="<?php echo $v['uid'] ?>" relation="<?php echo $v['relation'] ?>" from="search" href="javascript:void(0);" class="W_addbtn addFollow"><span class="addicon">+</span>加关注</a>
+									<a uid="<?php echo $v['uid'] ?>" relation="<?php echo $v['relation'] ?>" source="search" href="javascript:void(0);" class="W_addbtn addFollow"><span class="addicon">+</span>加关注</a>
 								<?php else: ?>
 									<img src="<?php echo base_url('assets/images/transparent.gif') ?>" alt="" class="icon_connect r_<?php echo $v['relation'] ?>">
 								<?php endif ?>

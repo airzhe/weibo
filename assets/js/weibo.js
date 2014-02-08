@@ -313,11 +313,11 @@ $(document).ready(function(){
 	$('.addFollow').on('click',function(){
 		var self=$(this);
 		//通过什么关注
-		var from=self.attr('from');
+		var source=self.attr('source');
 		var follow_id=$(this).attr('uid');
 		var relation;
 		var url;
-		switch (from) {
+		switch (source) {
 			case 'search':
 			url=site_url+'search/follow';
 			break;
@@ -329,11 +329,18 @@ $(document).ready(function(){
 			type:'post',
 			url:url,
 			dataType:'json',
-			data:{follow_id:follow_id,from:from},
+			data:{follow_id:follow_id,source:source},
 			success:function(data){
 				if(data.status==1){
-					if(self.attr('relation')!=2) relation='r_1';
-					self.before('<img src="http://localhost/work/weibo/assets/images/transparent.gif" alt="" class="icon_connect '+ relation +'">');
+					switch (source) {
+						case 'search':
+						if(self.attr('relation')!=2) relation='r_1';
+						self.before('<img src="http://localhost/work/weibo/assets/images/transparent.gif" alt="" class="icon_connect '+ relation +'">');
+						break;
+						case 'fans':
+						self.before('<a href="javascript:void(0)" class="W_btn_c"><span><i class="W_ico12 icon_addtwo"></i>互相关注</span></a>');
+						break;
+					}
 					self.tips({type:'center'})
 					self.remove();
 				}

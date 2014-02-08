@@ -44,7 +44,13 @@
 								<?php endif ?>
 							</div>
 							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" class="cancle_follow">取消关注</a></div>
-							<div class="introHover S_txt2">通过 <a href="#" class="S_link2">iPhone客户端</a> 关注</div>
+							<div class="introHover S_txt2">
+								<?php if ($v['source']=='search'): ?>
+									通过 <a href="#" class="S_link2">微博搜索</a>关注
+								<?php else: ?>
+									通过 <a href="#" class="S_link2">新浪微博</a>关注
+								<?php endif ?>
+							</div>
 						</div>
 					<?php endforeach ?>
 				<?php endif ?>
