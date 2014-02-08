@@ -348,11 +348,47 @@ $(document).ready(function(){
 		})
 	})
 	/**
+	* 关注列表点击事件
+	*/
+	$('.myfollow_list').find('.item').on('click',function(){
+		if($(this).hasClass('selected')){
+			$(this).removeClass('selected');
+		}else{
+			$(this).addClass('selected');
+		}
+		var num=$('.myfollow_list').find('.item.selected').length;
+		// 获取uid、username集合
+		var uid=new Array;
+		var username=new Array;
+		$('.myfollow_list').find('.item.selected').find('.cancle_follow').each(function(){
+			uid.push($(this).attr('uid'));
+			username.push($(this).attr('username'))
+		});
+		console.log(uid,username);
+		if(num>0){
+			$('.tab_normal').find('.W_btn_c_disable').removeClass('W_btn_c_disable').addClass('W_btn_a');
+			$('.selectText,.cancel_select').show();
+			$('.selectText').find('span').text(num);
+			$('.tab_normal').find('.cancle_follow').attr({'uid':uid,'username':username});
+			console.log($('.tab_normal').find('.cancle_follow').attr('username'));
+		}else{
+			$('.tab_normal').find('.W_btn_a').removeClass('W_btn_a').addClass('W_btn_c_disable');
+			$('.selectText,.cancel_select').hide();
+		}
+	})
+	// 取消选择
+	$('.tab_normal').find('.cancel_select').on('click',function(){
+		$('.myfollow_list').find('.item.selected').removeClass('selected');
+		$('.selectText,.cancel_select').hide();
+		$('.tab_normal').find('.W_btn_a').removeClass().addClass('W_btn_c_disable');
+	})
+	/**
 	* 取消关注
 	*/
 	$('.cancle_follow').on('click',function(){
 		var self=$(this);
 		var username=self.attr('username');
+		if(username.indexOf(",") > 0 ) username='这些人';
 		if(!confirm('确认要取消对'+username+'的关注吗？'))
 			return;
 		var follow_id=self.attr('uid');
@@ -363,7 +399,7 @@ $(document).ready(function(){
 			data:{follow_id:follow_id},
 			success:function(data){
 				if(data.status==1){
-					self.parents('.item').remove();
+					// self.parents('.item').remove();
 				}
 			}
 		})

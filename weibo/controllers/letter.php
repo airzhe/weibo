@@ -5,6 +5,7 @@ Class letter extends Front_Controller{
 	}
 	public function index(){
 		$this->data['title'] = '我的私信';
+		$this->data['body_class'] = 'letter';
 		$this->view('letter',$this->data);
 	}
 	public function lists(){

@@ -3,6 +3,7 @@ Class follow extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->data['title'] = '我关注的人';
+		$this->data['body_class'] = 'follow';
 		$this->load->model('User_info_model');
 		$this->load->library('member');
 	}
