@@ -2150,7 +2150,7 @@ body.login .container,body.signup .container{
  	}
 
  	/*消息页面*/
- 	.box_center div.titlsse{
+ 	.box_center div.title{
  		margin: 0px 20px;
  		border-bottom: 2px solid rgb(234, 20, 41);
  		padding:0px 0px 8px 0;
@@ -2607,10 +2607,10 @@ body.login .container,body.signup .container{
  		background: #f2f2f2;
  		cursor: pointer;
  	}
- 	.personinfo .item:hover{
+ 	.personinfo .item:hover,.personinfo .item.active{
  		background: #fff;
  	}
- 	.personinfo .item:hover .acc_form{
+ 	.personinfo .item.active .acc_form{
  		display: block;
  	}
  	.personinfo ul{

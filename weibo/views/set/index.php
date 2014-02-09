@@ -6,6 +6,13 @@
 			<div class="personinfo">
 				<div class="item">
 					<ul class="clearfix">
+						<li>登录名</li>
+						<li class="S_txt2">ai*****</li>
+						<li><a href="<?php echo site_url('set/security') ?>">修改密码»</a></li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul class="clearfix">
 						<li>昵称</li>
 						<li class="S_txt2">昵称</li>
 						<li><a href="javascript:void(0)">编辑</a></li>
@@ -68,7 +75,7 @@
 						<li class="S_txt2">设置个性域名，让朋友更容易记住</li>
 						<li><a href="javascript:void(0)">编辑</a></li>
 					</ul>
-					<div class="acc_form domainname ">
+					<div class="acc_form domainname hide">
 						<p class="S_txt2">设置个性化域名，让朋友更容易记住自己的微博地址</p>
 						<div class="W_tips tips_error clearfix">
 							<span class="icon icon_errorS left"></span>

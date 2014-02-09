@@ -11,5 +11,9 @@ Class set extends Front_Controller{
 		$this->data['title'] = '头像设置';
 		$this->view('set/avatar',$this->data);
 	}
+	public function security(){
+		$this->data['title'] = '帐号安全';
+		$this->view('set/security',$this->data);
+	}
 
 }

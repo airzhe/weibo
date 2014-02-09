@@ -66,7 +66,7 @@
 						<li class="setting" >
 							<a href="javascript:void(0)"><i></i></a>
 							<ul>
-								<li><a href="#">帐号设置</a></li>
+								<li><a href="<?php echo site_url('set/info') ?>">帐号设置</a></li>
 								<li><a href="#">模板设置</a></li>
 								<li><a href="<?php echo site_url('logout') ?>" class="logout">退出</a></li>
 							</ul>
