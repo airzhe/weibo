@@ -54,7 +54,8 @@ Class index extends Front_Controller{
 			$this->data['weibo_list']=$weibo_list;
 			$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
 		}else{
-			// sleep(1);
+			//=============================测试代码===============================
+			sleep(1);
 			foreach ($weibo_list as $v) {
 				if($v['uid']==$this->uid){
 					$WB_screen=<<<str
