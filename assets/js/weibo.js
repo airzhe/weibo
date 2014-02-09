@@ -475,55 +475,60 @@ $(document).ready(function(){
 		$('.PRF_feed_list_more').remove();
 		$('#page').show();
 	}
-	// $(window).on("scroll",function() {
-	// 	if ($(document).scrollTop() + $(window).height() > $(document).height() - 300) {
-	// 		// var self=$(this);
-	// 		// self.prepend('<i class="ico_loading"></i>');
-	// 		document.title=$(document).height();
-	// 		var offset=$('.weibo_list').data('offset');
-	// 		$.ajax({
-	// 			type:'post',
-	// 			url:site_url+'index/select',
-	// 			dataType:'json',
-	// 			data:{offset:offset},
-	// 			success:function(data){
-	// 				if(data.status==1){
-	// 					// self.find('i').remove();
-	// 					$(data.weibo_list).appendTo($('.weibo_list'));
-	// 					// 每次读取5条
-	// 					$('.weibo_list').data('offset',offset+5);
-	// 					var _offset=$('.weibo_list').data('offset');
-	// 					console.log(_offset);
-	// 					// 每页读取20条
-	// 					if(data.count<5 || _offset%20==0){
-	// 						$('.PRF_feed_list_more').remove();
-	// 						$('#page').show();
-	// 						console.log('ddddddddddd');
-	// 						return;
-	// 					}
-	// 				}
-	// 			},
-	// 			//返回为空或为
-	// 			error:function(){
-	// 				$('.PRF_feed_list_more').remove();
-	// 				$('#page').show();
-	// 			}
-	// 		})
-	// 	}
-	// })
-	$('.PRF_feed_list_more').on('click',function(){
-		var self=$(this);
-		self.prepend('<i class="ico_loading"></i>');
-		var offset=$('.weibo_list').data('offset');
-		$.ajax({
-			type:'post',
-			url:site_url+'index/select',
-			dataType:'json',
-			data:{offset:offset},
-			success:function(data){
-				if(data.status==1){
-					self.find('i').remove();
-					$(data.weibo_list).appendTo($('.weibo_list'));
+	$(window).on("scroll",function lazyload(){
+		var bottom = $('body').height()-$(document).scrollTop()-$(window).height();
+		document.title = bottom;
+		// return;
+		if (bottom<340) {
+			$(window).off("scroll");
+			console.log(bottom);
+			// var self=$(this);
+			// self.prepend('<i class="ico_loading"></i>');
+			var offset=$('.weibo_list').data('offset');
+			$.ajax({
+				type:'post',
+				url:site_url+'index/select',
+				dataType:'json',
+				data:{offset:offset},
+				success:function(data){
+					if(data.status==1){
+						// self.find('i').remove();
+						$(data.weibo_list).appendTo($('.weibo_list'));
+						// 每次读取5条
+						$('.weibo_list').data('offset',offset+5);
+						var _offset=$('.weibo_list').data('offset');
+						// 每页读取20条
+						if(data.count<5 || _offset%20==0){
+							// $('.PRF_feed_list_more').remove();
+							$("[node-type='lazyload']").remove();
+							$('#page').show();
+						}
+						// 恢复scroll事件
+						$(window).on("scroll",lazyload);
+					}
+				},
+				//返回为空或为
+				error:function(){
+					//$('.PRF_feed_list_more').remove();
+					$("[node-type='lazyload']").remove();
+					$('#page').show();
+				}
+			})
+		}
+	})
+$('.PRF_feed_list_more').on('click',function(){
+	var self=$(this);
+	self.prepend('<i class="ico_loading"></i>');
+	var offset=$('.weibo_list').data('offset');
+	$.ajax({
+		type:'post',
+		url:site_url+'index/select',
+		dataType:'json',
+		data:{offset:offset},
+		success:function(data){
+			if(data.status==1){
+				self.find('i').remove();
+				$(data.weibo_list).appendTo($('.weibo_list'));
 					// 每次读取5条
 					$('.weibo_list').data('offset',offset+5);
 					var _offset=$('.weibo_list').data('offset');
@@ -540,7 +545,7 @@ $(document).ready(function(){
 				$('#page').show();
 			}
 		})
-	})
+})
 	/**
 	* 返回顶部
 	*/

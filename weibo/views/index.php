@@ -241,7 +241,9 @@
 					</div>
 				</div>
 			</div>
-			<a class="PRF_feed_list_more SW_fun_bg S_line2" href="javascript:void(0)"><span>查看更多微博»</span></a>
+			<div class="W_loading"  node-type="lazyload">
+				<i class="ico_loading"></i><span>正在加载，请稍候...</span>
+			</div>
 			<?php echo $page ?>
 		</div>
 	</div>
