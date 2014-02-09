@@ -73,7 +73,7 @@ class weibo{
 		foreach ($user as $k => $v) {
 			// 头像
 			if($v['avatar']==''){
-				$user[$k]['avatar']=$v['sex']=='男'?base_url('assets/images/male_avatar.gif'):base_url('assets/images/female_avatar.gif');
+				$user[$k]['avatar']=$v['sex']=='男'?base_url('assets/images/male_avatar_50.gif'):base_url('assets/images/female_avatar_50.gif');
 			}else{
 				$user[$k]['avatar']='';
 			}

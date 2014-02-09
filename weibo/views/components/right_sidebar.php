@@ -1,10 +1,10 @@
 <div class="sidebar right">
 	<!-- 关注/粉丝 -->
 	<div class="relation">
-		<h4><a href="#" class="S_func1">关注/粉丝</a><span class="S_txt2">我的关注和粉丝</span></h4>
+		<h4><a href="#" class="S_func1">关注/粉丝</a><span class="S_txt2"><?php echo $user['call'] ?>的关注和粉丝</span></h4>
 		<div>
 			<fieldset>
-				<legend class="title"><a href="#" class="S_func1">我的关注(36)</a></legend>
+				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的关注(36)</a></legend>
 				<a class="more" href="#">更多»</a>
 			</fieldset>
 			<ul class="clearfix">
@@ -14,7 +14,7 @@
 				<li><a href="#"><img src="./assets/images/4.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">糗事百科</a></li>
 			</ul>
 			<fieldset>
-				<legend class="title"><a href="#" class="S_func1">我的粉丝(11)</a></legend>
+				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的粉丝(11)</a></legend>
 				<a class="more" href="#">更多»</a>
 			</fieldset>
 			<ul class="clearfix">

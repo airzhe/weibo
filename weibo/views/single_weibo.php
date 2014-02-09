@@ -1,4 +1,4 @@
-<?php $this->load->view('components/index_top') ?>
+<?php $this->load->view('components/home_top') ?>
 <div class="wrap clearfix">
 	<div class="main left">
 		<div class="weibo_list feed_self">

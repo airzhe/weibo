@@ -50,7 +50,48 @@ class User_info_model extends MY_Model {
 	public function get_basic_info(){
 		$arr=array('username','sex','avatar','domain','style','follow','fans','weibo');
 		$this->db->select($arr);
-		return $this->get($this->uid);
+		$data=$this->get($this->uid);
+		return $this->format($data);
+	}
+	/**
+	 * 获得用户详细信息
+	 */
+	public function get_detail_info($uid){
+		$arr=array('username','location','intro','sex','avatar','domain','style','follow','fans','weibo');
+		$this->db->select($arr);
+		$data=$this->get($uid);
+		return count($data)?$this->format($data):null;
+	}
+	/**
+	 * 格式化用户信息
+	 */
+	public function format($user){
+		// 头像
+		if($user['avatar']==''){
+			$avatar=$user['sex']=='男'?'male_avatar':'female_avatar';
+			$user['avatar']['small']='';
+			$user['avatar']['middle']=base_url("assets/images/{$avatar}_50.gif");
+			$user['avatar']['big']=base_url("assets/images/{$avatar}_180.gif");
+		}else{
+			$user['avatar']['small']='';
+			$user['avatar']['middle']='';
+			$user['avatar']['big']='';	
+		}
+		// 性别
+		$user['sex_ico']=$user['sex']=='男'?'male':'female';
+		// 所在地
+		if (isset($user['location'])) {
+			$add=unserialize($user['location']);
+			$user['location']=implode('&nbsp;&nbsp;', $add);
+		}
+		// 自定义域名
+		if($user['domain']==''){
+			$user['domain']=site_url("u/$this->uid");
+		}else{
+			$domain= $user['domain'];
+			$user['domain']=site_url("$domain");
+		}
+		return $user;
 	}
 	/**
 	 * 按昵称搜索用户

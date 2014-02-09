@@ -14,12 +14,9 @@ Class index extends Front_Controller{
 	}
 	public function index(){
 		$user=$this->User_info_model->get_basic_info();
-		if($user['avatar']==''){
-			$user['avatar']=$user['sex']=='男'?base_url('assets/images/male_avatar.gif'):base_url('assets/images/female_avatar.gif');
-		}else{
-			
-		}
+		$user['avatar']=$user['avatar']['big'];
 		$this->data['user']=$user;
+		//载入分页配置文件
 		$this->config->load('W_weibo', TRUE);
 		$this->page();
 		$this->select();
