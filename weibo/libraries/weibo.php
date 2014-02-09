@@ -1,11 +1,9 @@
 <?php 
 class weibo{
 	public function __construct(){
-
 		$this->CI=& get_instance();
 		$this->CI->load->model('Weibo_model');
 		$this->uid = $this->CI->session->userdata('uid');
-
 	}
 	
 	/**
@@ -20,7 +18,7 @@ class weibo{
 			//写入数据库
 			$time=time();
 			$weibo=array('content'=>$content,'time'=>$time,'uid'=>$this->uid);
-			$this->CI->Weibo_model->add($weibo);
+			$id=$this->CI->Weibo_model->add($weibo);
 			//微博总数+1
 			$this->CI->load->model('User_info_model');
 			$this->CI->User_info_model->inc('weibo',$this->uid);
@@ -32,7 +30,7 @@ class weibo{
 			}
 			$_content=$this->f_content($content);
 			$_time=$this->f_time($time);
-			$data=array('status'=>1,'content'=>$_content,'time'=>$_time);
+			$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
 		};
 		die(json_encode($data));
 	}

@@ -107,7 +107,12 @@
 					<a href="" class="notes">您还没有发表过微博，赶快发表篇试试吧。</a>
 				<?php else: ?>
 					<?php foreach ($weibo_list as $v): ?>
-						<div class="item clearfix">
+						<div class="item clearfix" data-id="<?php echo $v['id'] ?>">
+							<?php if ($v['uid']==$this->session->userdata('uid')): ?>
+								<div class="WB_screen">
+									<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
+								</div>
+							<?php endif ?>
 							<div class="face">
 								<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
 							</div>

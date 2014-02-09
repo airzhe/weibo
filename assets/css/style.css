@@ -1529,6 +1529,7 @@ body.login .container,body.signup .container{
  	line-height: 23px;
  	text-align: center;
  }
+
  .weibo_list .item{
  	font-size:14px;
  	border-bottom: 1px solid #e6e6e6;
@@ -1538,6 +1539,14 @@ body.login .container,body.signup .container{
  }
  .weibo_list .item:only-child{
  	border-bottom: none;
+ }
+ .weibo_list .item .WB_screen {
+ 	position: absolute;
+ 	margin: -15px 0 0 544px;
+ 	display: none;
+ }
+ .weibo_list .item:hover .WB_screen {
+ 	display: block;
  }
  .weibo_list .item .face{
  	float: left;

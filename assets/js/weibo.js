@@ -249,7 +249,10 @@ $(document).ready(function(){
 			var weibo='';
 			var avatar=$('.user_info').find('img').attr('src');
 			var name=$('.user_info').find('.username').text();
-			weibo+='<div class="item clearfix hide">';
+			weibo+='<div class="item clearfix hide" data-id> ';
+			weibo+='<div class="WB_screen">';
+			weibo+='<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>';
+			weibo+='</div>';
 			weibo+='<div class="face">';
 			weibo+='<img  width="50" height="50" src="' + avatar + '" alt="">';
 			weibo+='</div>';
@@ -276,8 +279,9 @@ $(document).ready(function(){
 						$('#my_weibo').html(+$('#my_weibo').html()+1);
 						//
 						var _item=$('.item:hidden');
-						_item.fadeIn().find('.content').html(data.content);
-						_item.find('.time').html(data.time);
+						_item.data('id',data.id);
+						_item.find('.content').html(data.content);
+						_item.fadeIn().find('.time').html(data.time);
 						$('#weibo_input_detail').val('').trigger('keyup');
 						//提示发布成功
 						$('.send_succpic').fadeIn();
@@ -367,8 +371,8 @@ $(document).ready(function(){
 	function toggle_active(num,uid,username){
 		//设置参数默认值
 		var num = arguments[0] ? arguments[0] : 0;
-    	var uid = arguments[1] ? arguments[1] : '';
-    	var username = arguments[2] ? arguments[2] : '';
+		var uid = arguments[1] ? arguments[1] : '';
+		var username = arguments[2] ? arguments[2] : '';
 
 		var tab_normal=$('.tab_normal');
 		tab_normal.find("[action-type='cancle_follow']").attr({'uid':uid,'username':username});
@@ -442,6 +446,27 @@ $(document).ready(function(){
 			}
 		})
 	})
+	//删除微博
+	$('.weibo_list').on('click',"[action-type='weibo_delete']",function(){
+		if(!confirm('确认要删除这条微博吗？'))
+			return;
+		var item=$(this).parents('.item');
+		var id=item.data('id');
+		$.ajax({
+			type:'post',
+			url:site_url+'index/delete',
+			dataType:'json',
+			data:{id:id},
+			success:function(data){
+				if(data.status==1){
+					item.animate({height:0,opacity:0},600,function(){
+						item.remove();
+					});
+					$('#my_weibo').html(+$('#my_weibo').html()-1);
+				}
+			}
+		})
+	})
 	/**
 	* ==========================================测试代码========================================================
 	* index 页查看更多
@@ -450,6 +475,42 @@ $(document).ready(function(){
 		$('.PRF_feed_list_more').remove();
 		$('#page').show();
 	}
+	// $(window).on("scroll",function() {
+	// 	if ($(document).scrollTop() + $(window).height() > $(document).height() - 300) {
+	// 		// var self=$(this);
+	// 		// self.prepend('<i class="ico_loading"></i>');
+	// 		document.title=$(document).height();
+	// 		var offset=$('.weibo_list').data('offset');
+	// 		$.ajax({
+	// 			type:'post',
+	// 			url:site_url+'index/select',
+	// 			dataType:'json',
+	// 			data:{offset:offset},
+	// 			success:function(data){
+	// 				if(data.status==1){
+	// 					// self.find('i').remove();
+	// 					$(data.weibo_list).appendTo($('.weibo_list'));
+	// 					// 每次读取5条
+	// 					$('.weibo_list').data('offset',offset+5);
+	// 					var _offset=$('.weibo_list').data('offset');
+	// 					console.log(_offset);
+	// 					// 每页读取20条
+	// 					if(data.count<5 || _offset%20==0){
+	// 						$('.PRF_feed_list_more').remove();
+	// 						$('#page').show();
+	// 						console.log('ddddddddddd');
+	// 						return;
+	// 					}
+	// 				}
+	// 			},
+	// 			//返回为空或为
+	// 			error:function(){
+	// 				$('.PRF_feed_list_more').remove();
+	// 				$('#page').show();
+	// 			}
+	// 		})
+	// 	}
+	// })
 	$('.PRF_feed_list_more').on('click',function(){
 		var self=$(this);
 		self.prepend('<i class="ico_loading"></i>');

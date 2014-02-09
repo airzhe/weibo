@@ -7,6 +7,7 @@ Class index extends Front_Controller{
 		parent::__construct();
 		$this->data['title'] = '我的首页';
 		$this->data['body_class'] = 'index';
+		$this->uid=$this->session->userdata('uid');
 		$this->load->model('User_info_model');
 		$this->load->model('Follow_model');
 		$this->load->library('weibo');
@@ -43,7 +44,7 @@ Class index extends Front_Controller{
 		//配置关联查询条件
 		$this->db->order_by("weibo.time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset);
 		$this->db->join('weibo', 'user_info.uid = weibo.uid');
-		$arr=array('username','avatar','sex','domain','content','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
+		$arr=array('username','avatar','sex','domain','weibo.id','content','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
 		$weibo_list=$this->db->select($arr)->get('user_info')->result_array();
 		//如果为空则返回
 		if(!count($weibo_list)) return;
@@ -54,8 +55,16 @@ Class index extends Front_Controller{
 			$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
 		}else{
 			foreach ($weibo_list as $v) {
+				if($v['uid']==$this->uid){
+					$WB_screen=<<<str
+					<div class="WB_screen">
+						<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
+					</div>
+str;
+				}
 				$_weibo=<<<str
-				<div class="item clearfix">
+				<div class="item clearfix" data-id="{$v['id']}">
+					{$WB_screen}
 					<div class="face">
 						<a href="{$v['domain']}"><img width="50" height="50" src="{$v['avatar']}" alt=""></a>
 					</div>
@@ -124,5 +133,19 @@ str;
 			$this->db->where_in('weibo.uid', $follow_id);
 		}
 		$this->db->or_where(array('weibo.uid'=>$uid));
+	}
+	/**
+	 * 删除一条微博
+	 */
+	public function delete(){
+		if(!$this->input->is_ajax_request()){
+			show_404();
+		}
+		$id=$this->input->post('id');
+		$this->load->model('Weibo_model');
+		$this->Weibo_model->delete($id);
+		$uid=$this->session->userdata('uid');
+		$this->User_info_model->inc('weibo',$uid,'-1');
+		die(json_encode(array('status'=>1)));
 	}
 }
