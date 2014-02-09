@@ -351,42 +351,54 @@ $(document).ready(function(){
 	* 关注列表点击事件
 	*/
 	$('.myfollow_list').find('.item').on('click',function(){
-		if($(this).hasClass('selected')){
-			$(this).removeClass('selected');
-		}else{
-			$(this).addClass('selected');
-		}
-		var num=$('.myfollow_list').find('.item.selected').length;
+		$(this).toggleClass('selected');
+		var selected=$('.myfollow_list').find('.item.selected');
+		var num=selected.length;
 		// 获取uid、username集合
 		var uid=new Array;
 		var username=new Array;
-		$('.myfollow_list').find('.item.selected').find('.cancle_follow').each(function(){
+		selected.find("[action-type='cancle_follow']").each(function(){
 			uid.push($(this).attr('uid'));
 			username.push($(this).attr('username'))
 		});
-		console.log(uid,username);
+		toggle_active(num,uid,username);
+	})
+	//切换激活状态
+	function toggle_active(num,uid,username){
+		//设置参数默认值
+		var num = arguments[0] ? arguments[0] : 0;
+    	var uid = arguments[1] ? arguments[1] : '';
+    	var username = arguments[2] ? arguments[2] : '';
+
+		var tab_normal=$('.tab_normal');
+		tab_normal.find("[action-type='cancle_follow']").attr({'uid':uid,'username':username});
 		if(num>0){
-			$('.tab_normal').find('.W_btn_c_disable').removeClass('W_btn_c_disable').addClass('W_btn_a');
+			//切换按钮激活状态
+			tab_normal.find('.W_btn_c_disable').removeClass().addClass('W_btn_a');
 			$('.selectText,.cancel_select').show();
+			//显示选中个数
 			$('.selectText').find('span').text(num);
-			$('.tab_normal').find('.cancle_follow').attr({'uid':uid,'username':username});
-			console.log($('.tab_normal').find('.cancle_follow').attr('username'));
 		}else{
-			$('.tab_normal').find('.W_btn_a').removeClass('W_btn_a').addClass('W_btn_c_disable');
+			tab_normal.find('.W_btn_a').removeClass().addClass('W_btn_c_disable');
 			$('.selectText,.cancel_select').hide();
 		}
-	})
+	}
 	// 取消选择
 	$('.tab_normal').find('.cancel_select').on('click',function(){
 		$('.myfollow_list').find('.item.selected').removeClass('selected');
 		$('.selectText,.cancel_select').hide();
 		$('.tab_normal').find('.W_btn_a').removeClass().addClass('W_btn_c_disable');
+		toggle_active();
 	})
 	/**
 	* 取消关注
 	*/
-	$('.cancle_follow').on('click',function(){
+	$("[action-type='cancle_follow']").on('click',function(e){
+		// 阻止冒泡
+		e.stopPropagation();
 		var self=$(this);
+		// 如果按钮不可用就返回
+		if(self.hasClass('W_btn_c_disable')) return;
 		var username=self.attr('username');
 		if(username.indexOf(",") > 0 ) username='这些人';
 		if(!confirm('确认要取消对'+username+'的关注吗？'))
@@ -399,7 +411,12 @@ $(document).ready(function(){
 			data:{follow_id:follow_id},
 			success:function(data){
 				if(data.status==1){
-					// self.parents('.item').remove();
+					if(self.find('span').length>0){
+						$('.myfollow_list').find('.item.selected').remove();
+						toggle_active();
+					}else{
+						self.parents('.item').remove();
+					}
 				}
 			}
 		})

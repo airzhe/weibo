@@ -9,7 +9,7 @@
 					<a href="" class="W_btn_c"><span>全部关注</span></a>
 					<a href="" class="W_btn_c"><span>按关注时间排序</span></a>
 					<a href="javascript:void(0)" class="W_btn_c_disable"><span>添加到</span></a>
-					<a href="javascript:void(0)" uid="" username="" class="cancle_follow W_btn_c_disable"><span>取消关注</span></a>
+					<a href="javascript:void(0)" uid="" username="" action-type="cancle_follow" class="W_btn_c_disable"><span>取消关注</span></a>
 					<span class="selectText hide">已经选择<span class="S_spetxt">2</span>人</span>
 					<a href="javascript:void(0)" class="cancel_select hide">取消选择</a>
 				</div>
@@ -45,7 +45,7 @@
 									他还没有填写个人简介
 								<?php endif ?>
 							</div>
-							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" class="cancle_follow">取消关注</a></div>
+							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" action-type="cancle_follow">取消关注</a></div>
 							<div class="introHover S_txt2">
 								<?php if ($v['source']=='search'): ?>
 									通过 <a href="#" class="S_link2">微博搜索</a>关注

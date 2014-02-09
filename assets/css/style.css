@@ -1164,7 +1164,7 @@ body.login .container,body.signup .container{
  }
  /*分页*/
  .page{
-	text-align: right;
+ 	text-align: right;
  }
  /*弹出框*/
  .W_layer a, .W_layer .S_link1, .W_layer .S_func1:hover, .W_layer .SW_fun:hover .S_func1 {
@@ -2286,6 +2286,9 @@ body.login .container,body.signup .container{
  	body.follow .tab_normal{
  		background: #f1f1f1;
  		padding:5px;
+ 	}
+ 	body.follow .tab_normal a,.follow .tab_normal .selectText{
+ 		margin-right:10px;
  	}
  	.box_center .tab_normal .input_search{
  		position: relative;

@@ -36,18 +36,19 @@ class member{
 	 * 取消关注
 	 */
 	public function cancle_follow(){
-		$follow_id=(array)$this->CI->input->post('follow_id');
+		$follow_id=$this->CI->input->post('follow_id');
 		$follow_id=explode(',',$follow_id);
-		p($follow_id);die;
+		// p($follow_id);die;
 		//删除关注记录
-		$this->CI->db->where(array('follow'=>$follow_id,'fans'=>$this->uid));
-		$this->CI->db->limit(1);
+		$this->CI->db->where(array('fans'=>$this->uid))->where_in('follow',$follow_id);
 		$this->CI->db->delete('follow');
 		//关注数量减1
 		$this->CI->load->model('User_info_model');
-		$this->CI->User_info_model->inc('follow',$this->uid,'-1');
+		$this->CI->User_info_model->inc('follow',$this->uid,'-'.count($follow_id));
 		//对方粉丝数减1
-		$this->CI->User_info_model->inc('fans',$follow_id,'-1');
+		$this->CI->db->where_in('uid',$follow_id);
+		$this->CI->db->set('fans', "fans-1",FALSE);
+		$this->CI->db->update('user_info'); 		
 		
 		$data['status']=1;
 		die(json_encode($data));
