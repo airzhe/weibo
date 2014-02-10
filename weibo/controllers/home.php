@@ -7,34 +7,35 @@ Class home extends Front_Controller{
 		$this->load->model("Weibo_model");
 		$this->load->library('weibo');
 		$this->uid=$this->session->userdata('uid');
+		if($this->uri->segment(1)=='u'){
+			$this->uid=(int)$this->uri->segment(2);
+		};
 	}
 	// 我的主页
 	public function index(){
-		$this->user($this->uid);
+		$this->get_user();
+		$this->select($this->uid);
+		$this->page($this->uid);
+		$this->view('home',$this->data);
 	}
 	// 用户信息
-	public function user($uid){
-		$user=$this->User_info_model->get_detail_info($uid);
+	public function get_user(){
+		$user=$this->User_info_model->get_detail_info($this->uid);
 		if(empty($user)){
 			show_404();
 		}
 		$this->data['title'] = $user['username'].'的微博|';
-		if($uid==$this->uid){
+		if($this->uid==$this->session->userdata('uid')){
 			$user['me']=TRUE;
 			$user['call']='我';
 		}else{
 			$user['call']=$user['sex']=='男'?'他':'她';
 		}
 		$user['avatar']=$user['avatar']['big'];
-		
-		$this->page($uid);
-		$this->select($uid);
 		$this->data['user']=$user;
-
-		$this->view('home',$this->data);
 	}
 	//查询微博
-	public function select($uid){
+	public function select(){
 		// 如果是ajax请求
 		$num=5;
 		if(!$this->input->is_ajax_request()){
@@ -45,9 +46,9 @@ Class home extends Front_Controller{
 		//载入分页配置文件
 		$this->config->load('W_weibo', TRUE);
 		$this->per_page=$this->config->item('home_per_page', 'W_weibo');
-		$current_page=$this->uri->segment(3)?(int)$this->uri->segment(2):1;
+		$current_page=$this->uri->segment(3)?(int)$this->uri->segment(3):1;
 
-		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$uid))->result_array();
+		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$this->uid))->result_array();
 		foreach ($weibo_list as $k => $v) {
 			$weibo_list[$k]['content']=$this->weibo->f_content($v['content']);
 			$weibo_list[$k]['time']=$this->weibo->f_time($v['time']);
@@ -86,17 +87,17 @@ str;
 		}
 	}
 	//分页
-	private function page($uid){
+	private function page(){
 		//分页
-		$count=$this->db->where(array('uid'=>$uid))->from('weibo')->count_all_results();
+		$count=$this->db->where(array('uid'=>$this->uid))->from('weibo')->count_all_results();
 		$this->load->library('pagination');
-		$config['base_url'] = site_url('page');
+		$config['base_url'] = site_url('home/page');
 		$config['total_rows'] = $count;
 		$config['per_page'] = $this->config->item('index_per_page', 'W_weibo');
-		$config['uri_segment'] = 2;
+		$config['uri_segment'] = 3;
 		$config['use_page_numbers'] = TRUE;
 		$config['full_tag_open'] = '<p id="page" class="page hide">';
 		$this->pagination->initialize($config);
-		$this->data['page']= $this->pagination->create_links();		
+		$this->data['page']= $this->pagination->create_links();	
 	}
 }

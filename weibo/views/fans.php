@@ -21,10 +21,15 @@
 				<?php else: ?>
 					<?php foreach ($myfans_list as $v): ?>
 						<div class="item clearfix">
-							<div class="avatar left"> <img src="<?php echo $v['avatar'] ?>" width="50" height="50" alt=""></div>
+							<div class="avatar left"> 
+								<a href="<?php echo $v['domain'] ?>"><img src="<?php echo $v['avatar'] ?>" width="50" height="50" alt=""></a>
+							</div>
 							<div class="con clearfix">
 								<div class="con_left left">
-									<div class="name"><?php echo $v['username'] ?> <span class="addr"><i class="W_ico12 male"></i><?php echo $v['location'] ?></span></div>
+									<div class="name">
+										<a href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a>
+										<span class="addr"><i class="W_ico12 male"></i><?php echo $v['location'] ?></span>
+									</div>
 									<div>关注 <a href="javascript:void(0)"><?php echo $v['follow'] ?></a><i class="W_vline S_line1_c">|</i>粉丝 <a href="#"><?php echo $v['fans'] ?></a><i class="W_vline S_line1_c">|</i>微博 <a href="javascript:void(0)"><?php echo $v['weibo'] ?></a></div>
 									<div>
 										<?php if ($v['source']=='search'): ?>

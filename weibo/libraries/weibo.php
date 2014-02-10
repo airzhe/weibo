@@ -43,7 +43,7 @@ class weibo{
 		$this->CI->config->load('W_face', TRUE);
 		$faces = $this->CI->config->item('faces', 'W_face');
 		foreach ($faces as $key=>$value) {
-			$_faces[$key]='<img src="'.site_url("assets/images/hotFace/{$value}.gif").'">';
+			$_faces[$key]='<img src="'.base_url("assets/images/hotFace/{$value}.gif").'">';
 		}
 		$c=str_replace(array_keys($_faces),array_values($_faces),$content);
 		return $c;

@@ -38,6 +38,8 @@ Class index extends Front_Controller{
 		//配置每次读取数量
 		$this->per_page=$this->config->item('index_per_page', 'W_weibo');
 		$current_page=$this->uri->segment(2)?(int)$this->uri->segment(2):1;
+		//第一页时跳转到根url
+		if($this->uri->segment(1)=='page' and $current_page==1) redirect(site_url());
 		//配置关联查询条件
 		$this->db->order_by("weibo.time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset);
 		$this->db->join('weibo', 'user_info.uid = weibo.uid');

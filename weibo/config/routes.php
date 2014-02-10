@@ -44,7 +44,10 @@ $route['404_override'] = '';
 $route['^page$'] = "index";
 $route['^page/(\d+)$'] = "index/index/page/$1";
 // home页路由
-$route['^u/(\d+)$'] = "home/user/$1";
+$route['^u/(\d+)$'] = "home/index/$1";
+#分页路由
+$route['^home/page$'] = "home";
+$route['^home/page/(\d+)$'] = "home/index/$1";
 // $route['(:any)'] = "welcome/$1";
 
 /* End of file routes.php */

@@ -513,6 +513,7 @@ $(document).ready(function(){
 		})
 		//如果微博数少于10则解除绑定事件
 		if($('.weibo_list').find('.item').length<10){
+			$("[node-type='lazyload']").remove();
 			$('#page').show();
 			$(window).off("scroll");
 		}
@@ -532,7 +533,7 @@ $(document).ready(function(){
 		var offset=$('.weibo_list').data('offset');
 		$.ajax({
 			type:'post',
-			url:site_url+'home/select/10000',
+			url:site_url+'home/select/',
 			dataType:'json',
 			data:{offset:offset},
 			success:function(data){
