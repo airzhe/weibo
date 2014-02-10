@@ -13,4 +13,7 @@ class Weibo_model extends MY_Model {
 		parent::__construct();
 	}
 	
+	// public function get_list($uid){
+	// 	p($t)
+	// }
 }

@@ -8,7 +8,7 @@
 			<i class="S_txt3">|</i>
 			<a href="#">图片</a>
 		</p>
-		<div class="weibo_list" 
+		<div class="weibo_list feed_self" 
 		<?php if (isset($weibo_offset)): ?>
 			data-offset="<?php echo $weibo_offset ?>"
 		<?php endif ?> 
@@ -23,13 +23,9 @@
 							<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
 						</div>
 					<?php endif ?>
-					<div class="face">
-						<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
-					</div>
+					
 					<div class="detail">
-						<div>
-							<a class="name S_func1" href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a>
-						</div>
+						
 						<div class="content">
 							<?php echo $v['content'] ?>
 						</div>
@@ -129,7 +125,8 @@
 			</div>
 		</div>
 	</div> -->
-	<a class="PRF_feed_list_more SW_fun_bg S_line2" href="#"><span>查看更多微博»</span></a>
+	<a class="PRF_feed_list_more SW_fun_bg S_line2" href="javascript:void(0)"><span>查看更多微博»</span></a>
+	<?php echo $page ?>
 </div>
 <?php $this->load->view('components/right_sidebar') ?>
 </div>

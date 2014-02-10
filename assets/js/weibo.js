@@ -468,17 +468,12 @@ $(document).ready(function(){
 		})
 	})
 	/**
-	* ==========================================测试代码========================================================
+	* 
 	* index 页查看更多
 	*/
-	if($('.weibo_list').find('.item').length<12){
-		$('.PRF_feed_list_more').remove();
-		$('#page').show();
-	}
 	if($('body.index').length>0){
 		$(window).on("scroll",function lazyload(){
 			var bottom = $('body').height()-$(document).scrollTop()-$(window).height();
-			document.title = bottom;
 			if (bottom<340) {
 				$(window).off("scroll");
 				// var self=$(this);
@@ -516,23 +511,38 @@ $(document).ready(function(){
 				})
 			}
 		})
-}
-$('.PRF_feed_list_more').on('click',function(){
-	var self=$(this);
-	self.prepend('<i class="ico_loading"></i>');
-	var offset=$('.weibo_list').data('offset');
-	$.ajax({
-		type:'post',
-		url:site_url+'index/select',
-		dataType:'json',
-		data:{offset:offset},
-		success:function(data){
-			if(data.status==1){
-				self.find('i').remove();
-				$(data.weibo_list).appendTo($('.weibo_list'));
+		//如果微博数少于10则解除绑定事件
+		if($('.weibo_list').find('.item').length<10){
+			$('#page').show();
+			$(window).off("scroll");
+		}
+	}
+	/**
+	* 
+	* home 页查看更多
+	*/
+	if($('.weibo_list').find('.item').length<5){
+		$('#page').show();
+		$('.PRF_feed_list_more').remove();
+	}
+
+	$('.PRF_feed_list_more').on('click',function(){
+		var self=$(this);
+		self.prepend('<i class="ico_loading"></i>');
+		var offset=$('.weibo_list').data('offset');
+		$.ajax({
+			type:'post',
+			url:site_url+'home/select/10000',
+			dataType:'json',
+			data:{offset:offset},
+			success:function(data){
+				if(data.status==1){
+					self.find('i').remove();
+					$(data.weibo_list).appendTo($('.weibo_list'));
 					// 每次读取5条
 					$('.weibo_list').data('offset',offset+5);
 					var _offset=$('.weibo_list').data('offset');
+					console.log(_offset,data.count);
 					// 每页读取20条
 					if(data.count<5 || _offset%20==0){
 						$('.PRF_feed_list_more').remove();
@@ -546,7 +556,7 @@ $('.PRF_feed_list_more').on('click',function(){
 				$('#page').show();
 			}
 		})
-})
+	})
 	/**
 	* 修改个人信息
 	*/
@@ -559,6 +569,8 @@ $('.PRF_feed_list_more').on('click',function(){
 	$(document).scroll(function(){
 		if($(this).scrollTop()>300){
 			$('.gotop').fadeIn();
+		}else{
+			$('.gotop').fadeOut();
 		}
 	})
 	$('.gotop').on('click',function(){

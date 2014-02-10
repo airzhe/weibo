@@ -22,7 +22,7 @@
 			</li>
 			<li class="S_line1">
 				<a href="" class="S_func1">
-					<strong><?php echo $user['weibo'] ?></strong>
+					<strong id="my_weibo"><?php echo $user['weibo'] ?></strong>
 					<span>微博</span>
 				</a>
 			</li>

@@ -1319,3 +1319,454 @@ ERROR - 2014-02-09 19:56:39 --> 404 Page Not Found --> u
 ERROR - 2014-02-09 19:56:39 --> 404 Page Not Found --> u
 ERROR - 2014-02-09 19:56:41 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-09 19:57:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:21:32 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:21:37 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/libraries/weibo.php 75
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 76
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/libraries/weibo.php 81
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: sex /home/runner/www/work/weibo/weibo/libraries/weibo.php 89
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:22:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/views/home.php 27
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 31
+ERROR - 2014-02-09 22:29:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:44:58 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: domain /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Severity: Notice  --> Undefined index: username /home/runner/www/work/weibo/weibo/views/home.php 29
+ERROR - 2014-02-09 22:46:15 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:46:47 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:47:11 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:49:07 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 22:52:58 --> Severity: Notice  --> Undefined property: home::$CI_Model /home/runner/www/work/weibo/weibo/controllers/home.php 34
+ERROR - 2014-02-09 22:55:25 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:03:29 --> Query error: Unknown column 'weibo' in 'where clause'
+ERROR - 2014-02-09 23:04:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:06:52 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:09:29 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:16:12 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:16:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:18:38 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:18:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:19:30 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:21:03 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:24:56 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:25:31 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:30:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:33:04 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:34:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:36:02 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 49
+ERROR - 2014-02-09 23:36:02 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:36:24 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:36:45 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:36:49 --> Severity: Warning  --> Missing argument 1 for home::select() /home/runner/www/work/weibo/weibo/controllers/home.php 36
+ERROR - 2014-02-09 23:36:49 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 49
+ERROR - 2014-02-09 23:36:50 --> Severity: Notice  --> Undefined variable: weibo /home/runner/www/work/weibo/weibo/controllers/home.php 83
+ERROR - 2014-02-09 23:36:50 --> Severity: Notice  --> Undefined variable: weibo /home/runner/www/work/weibo/weibo/controllers/home.php 83
+ERROR - 2014-02-09 23:36:50 --> Severity: Warning  --> implode(): Invalid arguments passed /home/runner/www/work/weibo/weibo/controllers/home.php 83
+ERROR - 2014-02-09 23:36:58 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:37:01 --> Severity: Warning  --> Missing argument 1 for home::select() /home/runner/www/work/weibo/weibo/controllers/home.php 36
+ERROR - 2014-02-09 23:37:01 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 49
+ERROR - 2014-02-09 23:37:02 --> Severity: Notice  --> Undefined variable: weibo /home/runner/www/work/weibo/weibo/controllers/home.php 83
+ERROR - 2014-02-09 23:37:02 --> Severity: Notice  --> Undefined variable: weibo /home/runner/www/work/weibo/weibo/controllers/home.php 83
+ERROR - 2014-02-09 23:37:02 --> Severity: Warning  --> implode(): Invalid arguments passed /home/runner/www/work/weibo/weibo/controllers/home.php 83
+ERROR - 2014-02-09 23:39:15 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 9
+ERROR - 2014-02-09 23:39:52 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:40:03 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:40:06 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 9
+ERROR - 2014-02-09 23:40:32 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 9
+ERROR - 2014-02-09 23:40:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:40:41 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:41:01 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 4
+ERROR - 2014-02-09 23:41:01 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 9
+ERROR - 2014-02-09 23:41:20 --> Severity: Warning  --> Missing argument 1 for home::__construct(), called in /home/runner/www/work/weibo/system/core/CodeIgniter.php on line 308 and defined /home/runner/www/work/weibo/weibo/controllers/home.php 3
+ERROR - 2014-02-09 23:41:20 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 9
+ERROR - 2014-02-09 23:51:57 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:51:58 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:52:19 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:54:15 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:41 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:55:42 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:46 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:56 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:56:57 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:57:30 --> 404 Page Not Found --> u
+ERROR - 2014-02-09 23:58:17 --> Severity: Warning  --> Missing argument 1 for home::select() /home/runner/www/work/weibo/weibo/controllers/home.php 37
+ERROR - 2014-02-09 23:58:17 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/controllers/home.php 50
+ERROR - 2014-02-09 23:58:18 --> Severity: Notice  --> Undefined variable: weibo /home/runner/www/work/weibo/weibo/controllers/home.php 84
+ERROR - 2014-02-09 23:58:18 --> Severity: Notice  --> Undefined variable: weibo /home/runner/www/work/weibo/weibo/controllers/home.php 84
+ERROR - 2014-02-09 23:58:18 --> Severity: Warning  --> implode(): Invalid arguments passed /home/runner/www/work/weibo/weibo/controllers/home.php 84
