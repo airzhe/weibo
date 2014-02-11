@@ -520,7 +520,7 @@ $(document).ready(function(){
 	}
 	/**
 	* 
-	* home 页查看更多
+	* 用户 页查看更多
 	*/
 	if($('.weibo_list').find('.item').length<5){
 		$('#page').show();
@@ -533,7 +533,7 @@ $(document).ready(function(){
 		var offset=$('.weibo_list').data('offset');
 		$.ajax({
 			type:'post',
-			url:site_url+'home/select/',
+			url:site_url+'u/index/10000/select/',
 			dataType:'json',
 			data:{offset:offset},
 			success:function(data){

@@ -156,7 +156,7 @@ class CI_Pagination {
 		{
 			if ($CI->uri->segment($this->uri_segment) != $base_page)
 			{
-				$this->cur_page = $CI->uri->segment($this->uri_segment);
+				$this->cur_page = $CI->input->get('p');
 
 				// Prep the current page - no funny business!
 				$this->cur_page = (int) $this->cur_page;
@@ -218,7 +218,7 @@ class CI_Pagination {
 		}
 		else
 		{
-			$this->base_url = rtrim($this->base_url, '/') .'/';
+			$this->base_url = rtrim($this->base_url, '/') .'?p=';
 		}
 
 		// And here we go...

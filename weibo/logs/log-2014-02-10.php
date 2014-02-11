@@ -612,3 +612,5 @@ ERROR - 2014-02-10 12:03:10 --> 404 Page Not Found --> u
 ERROR - 2014-02-10 12:03:10 --> 404 Page Not Found --> u
 ERROR - 2014-02-10 12:03:10 --> 404 Page Not Found --> u
 ERROR - 2014-02-10 12:03:10 --> 404 Page Not Found --> u
+ERROR - 2014-02-10 18:54:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-10 18:54:51 --> Could not find the language line "profiler_session_data"

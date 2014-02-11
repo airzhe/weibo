@@ -50,7 +50,7 @@
 						</form>
 					</div>
 					<ul class="user clearfix">
-						<li class="username" ><a href="javascript:void(0)"><?php echo $this->session->userdata('username') ?></a></li>
+						<li class="username" ><a href="<?php echo base_url()?>"><?php echo $this->session->userdata('username') ?></a></li>
 						<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
 						<li class="msg">
 							<a href="javascript:void(0)"><i></i><em class="W_new"></em></a>

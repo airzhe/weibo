@@ -10,7 +10,7 @@ Class login extends Front_Controller{
 		if($this->input->post()){
 			$this->load->library('form_validation');
 			$rules =$this->User_model->rules;
-			//去除验证验证
+			//登录时去除验证验证
 			unset($rules['code']);
 			$rules['account']['rules']=$rules['passwd']['rules']='trim|required|xss_clean';
 

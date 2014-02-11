@@ -5,7 +5,11 @@
 		<div>
 			<fieldset>
 				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的关注(36)</a></legend>
-				<a class="more" href="#">更多»</a>
+				<?php if (isset($user['me'])): ?>
+					<a class="more" href="<?php echo site_url('follow') ?>">更多»</a>
+				<?php else: ?>
+					<a class="more" href="#">更多»</a>
+				<?php endif ?>
 			</fieldset>
 			<ul class="clearfix">
 				<li><a href="#"><img src="./assets/images/1.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">小殷爱录像</a></li>
@@ -15,7 +19,12 @@
 			</ul>
 			<fieldset>
 				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的粉丝(11)</a></legend>
-				<a class="more" href="#">更多»</a>
+				<?php if (isset($user['me'])): ?>
+					<a class="more" href="<?php echo site_url('fans') ?>">更多»</a>
+				<?php else: ?>
+					<a class="more" href="#">更多»</a>
+				<?php endif ?>
+				
 			</fieldset>
 			<ul class="clearfix">
 				<li><a href="#"><img src="./assets/images/01.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">Babyface_乖乖M</a></li>
