@@ -37,7 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['u/10000'] = "home";
 $route['default_controller'] = "index";
 $route['404_override'] = '';
 // index页分页路由

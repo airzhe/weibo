@@ -37,7 +37,7 @@ Class index extends Front_Controller{
 		}
 		//配置每次读取数量
 		$this->per_page=$this->config->item('index_per_page', 'W_weibo');
-		$current_page=$this->input->get('p');
+		$current_page=$this->input->get('p')?$this->input->get('p'):1;
 		//第一页时跳转到根url
 		if($this->uri->segment(1)=='page' and $current_page==1) redirect(site_url());
 		//配置关联查询条件

@@ -47,7 +47,7 @@ Class u extends Front_Controller{
 		//载入分页配置文件
 		$this->config->load('W_weibo', TRUE);
 		$this->per_page=$this->config->item('home_per_page', 'W_weibo');
-		$current_page=$this->input->get('p');
+		$current_page=$this->input->get('p')?$this->input->get('p'):1;
 
 		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$this->uid))->result_array();
 

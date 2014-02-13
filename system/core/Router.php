@@ -224,6 +224,7 @@ class CI_Router {
 	 */
 	function _set_request($segments = array())
 	{
+		// print_r($segments);
 		$segments = $this->_validate_request($segments);
 
 		if (count($segments) == 0)
