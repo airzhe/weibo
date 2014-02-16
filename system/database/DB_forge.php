@@ -38,7 +38,7 @@ class CI_DB_forge {
 	function __construct()
 	{
 		// Assign the main database object to $this->db
-		$CI =& get_instance();
+		// $CI =& get_instance();
 		$this->db =& $CI->db;
 		log_message('debug', "Database Forge Class Initialized");
 	}

@@ -1,7 +1,7 @@
 <div class="profile_pic_top" style="background-image:url(<?php echo base_url('assets/images/015.jpg') ?>)">
 	<a class="set_skin" href="javascript:void(0)" title="模板设置"></a>
 </div>
-<div class="user_info S_bg5 clearfix">
+<div class="user_info S_bg5 clearfix"  uid="<?php echo $user['uid'] ?>" >
 	<div class="head left">
 		<div class="avatar">
 			<img  width="180" height="180" src="<?php echo $user['avatar'] ?>" alt="">

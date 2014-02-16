@@ -4,22 +4,25 @@
 		<h4><a href="#" class="S_func1">关注/粉丝</a><span class="S_txt2"><?php echo $user['call'] ?>的关注和粉丝</span></h4>
 		<div>
 			<fieldset>
-				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的关注(36)</a></legend>
-				<?php if (isset($user['me'])): ?>
+				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的关注(<?php echo $user['follow'] ?>)</a></legend>
+				<?php if (isset($user['me']) and count($myfollow_list)): ?>
 					<a class="more" href="<?php echo site_url('follow') ?>">更多»</a>
 				<?php else: ?>
 					<a class="more" href="#">更多»</a>
 				<?php endif ?>
 			</fieldset>
 			<ul class="clearfix">
-				<li><a href="#"><img src="./assets/images/1.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">小殷爱录像</a></li>
-				<li><a href="#"><img src="./assets/images/2.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">包子包子肉肉</a></li>
-				<li><a href="#"><img src="./assets/images/3.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">梦境漫游指南</a></li>
-				<li><a href="#"><img src="./assets/images/4.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">糗事百科</a></li>
+				<?php if (count($myfollow_list)): ?>
+					<?php foreach ($myfollow_list as $v): ?>
+						<li><a href="<?php echo $v['domain'] ?>"><img src="<?php echo $v['avatar'] ?>" alt="" width="50" height="50"></a><a href="<?php echo $v['domain'] ?>" class="S_func1" title="<?php echo $v['username'] ?>"><?php echo $v['username'] ?></a></li>
+					<?php endforeach ?>
+				<?php else: ?>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>你还没有关注的人</p>
+				<?php endif ?>
 			</ul>
 			<fieldset>
-				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的粉丝(11)</a></legend>
-				<?php if (isset($user['me'])): ?>
+				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的粉丝(<?php echo $user['fans'] ?>)</a></legend>
+				<?php if (isset($user['me']) and count($myfans_list)): ?>
 					<a class="more" href="<?php echo site_url('fans') ?>">更多»</a>
 				<?php else: ?>
 					<a class="more" href="#">更多»</a>
@@ -27,10 +30,13 @@
 				
 			</fieldset>
 			<ul class="clearfix">
-				<li><a href="#"><img src="./assets/images/01.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">Babyface_乖乖M</a></li>
-				<li><a href="#"><img src="./assets/images/02.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">南方周末</a></li>
-				<li><a href="#"><img src="./assets/images/03.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">超级无敌小葡萄</a></li>
-				<li><a href="#"><img src="./assets/images/04.jpg" alt="" width="50" height="50"></a><a href="" class="S_func1">苍井空</a></li>
+				<?php if (count($myfans_list)): ?>
+					<?php foreach ($myfans_list as $v): ?>
+						<li><a href="<?php echo $v['domain'] ?>"><img src="<?php echo $v['avatar'] ?>" alt="" width="50" height="50"></a><a href="<?php echo $v['domain'] ?>" class="S_func1" title="<?php echo $v['username'] ?>"><?php echo $v['username'] ?></a></li>
+					<?php endforeach ?>
+				<?php else: ?>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>目前还没有人关注你</p>
+				<?php endif ?>
 			</ul>
 		</div>
 	</div>

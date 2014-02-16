@@ -6,17 +6,23 @@ Class u extends Front_Controller{
 		$this->load->model("User_info_model");
 		$this->load->model("Weibo_model");
 		$this->load->library('weibo');
+		$this->load->library('member');
 		$this->uid=(int)$this->uri->rsegment(3);
 		if(!$this->uid)die;
 	}
 	// 我的主页
 	public function index(){
-		// $segments	= $this->uri->segments;
-		// var_dump($segments);
-		// $this->_set_request();
+		//取得用户个人信息
 		$this->get_user();
-		$this->select($this->uid);
-		$this->page($this->uid);
+		//去的用户微博信息
+		$this->select();
+		//微博分页
+		$this->page();
+		// 侧边栏关注
+		$this->get_follow();
+		// 侧边栏粉丝
+		$this->get_fans();
+
 		$this->view('home',$this->data);
 	}
 	// 用户信息
@@ -33,6 +39,8 @@ Class u extends Front_Controller{
 			$user['call']=$user['sex']=='男'?'他':'她';
 		}
 		$user['avatar']=$user['avatar']['big'];
+		// 分配用户id，js分页用
+		$user['uid']=$this->uid;
 		$this->data['user']=$user;
 	}
 	//查询微博
@@ -108,5 +116,17 @@ str;
 		$config['full_tag_open'] = '<p id="page" class="page hide">';
 		$this->pagination->initialize($config);
 		$this->data['page']= $this->pagination->create_links();	
+	}
+	//获取用户关注
+	public function get_follow(){
+		$_myfollow_list=$this->member->get_follow($this->uid);
+		$myfollow_list=$this->weibo->format(array_slice($_myfollow_list,0,4));
+		$this->data['myfollow_list']=$myfollow_list;
+	}
+	//获取用户粉丝
+	public function get_fans(){
+		$_myfans_list=$this->member->get_fans($this->uid);
+		$myfans_list=$this->weibo->format(array_slice($_myfans_list,0,4));
+		$this->data['myfans_list']=$myfans_list;
 	}
 }

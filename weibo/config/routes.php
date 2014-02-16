@@ -37,26 +37,9 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-$route['u/10000'] = "home";
+$route['^home$'] = "u/index/10000";
 $route['default_controller'] = "index";
 $route['404_override'] = '';
-// index页分页路由
-$route['^page$'] = "index";
-$route['^page/(\d+)$'] = "index/index/page/$1";
-
-// home页路由
-$route['^u/(\d+)$'] = "u/index/$1";
-#分页路由
-$route['^u/(\d+)/p/(\d+)$'] = "u/index/$1/p/$2";
-$route['^airzhe/p/(\d+)$'] = "u/index/10000/p/$1";
-
-#个性域名路由
-$route['^home$'] = "u/index/10000";
-$route['^airzhe$'] = "u/index/10000";
-$route['^canglaoshi$'] = "u/index/10005";
-$route['^minmin$'] = "u/index/10004";
-
-
 
 // $route['(:any)'] = "welcome/$1";
 

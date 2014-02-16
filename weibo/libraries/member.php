@@ -23,14 +23,16 @@ class member{
 	/**
 	 * 通过原生sql获取关注的用户
 	 */
-	public function get_follow(){
-		return $this->CI->db->query("select `username`, `sex`, `intro`, `avatar`, `domain`, `uid`,follow.time,follow.source from (select follow,time,source from {$this->CI->db->dbprefix}follow where  fans={$this->uid} ) as follow join {$this->CI->db->dbprefix}user_info as user_info on user_info.uid=follow.follow order by `time` desc")->result_array();
+	public function get_follow($uid=NULL){
+		if(is_null($uid)) $uid=$this->uid;
+		return $this->CI->db->query("select `username`, `sex`, `intro`, `avatar`, `domain`, `uid`,follow.time,follow.source from (select follow,time,source from {$this->CI->db->dbprefix}follow where  fans={$uid} ) as follow join {$this->CI->db->dbprefix}user_info as user_info on user_info.uid=follow.follow order by `time` desc")->result_array();
 	}
 	/**
 	 * 获取粉丝信息
 	 */
-	public function get_fans(){
-		return $this->CI->db->query("select `username`, `sex`, `intro`, `location`, `avatar`,`domain`, user_info.follow,user_info.fans,`weibo`,`uid`,follow.time,follow.source from (select fans,time,source from {$this->CI->db->dbprefix}follow where  follow={$this->uid} ) as follow join {$this->CI->db->dbprefix}user_info as user_info on user_info.uid=follow.fans order by `time` desc")->result_array();
+	public function get_fans($uid=NULL){
+		if(is_null($uid)) $uid=$this->uid;
+		return $this->CI->db->query("select `username`, `sex`, `intro`, `location`, `avatar`,`domain`, user_info.follow,user_info.fans,`weibo`,`uid`,follow.time,follow.source from (select fans,time,source from {$this->CI->db->dbprefix}follow where  follow={$uid} ) as follow join {$this->CI->db->dbprefix}user_info as user_info on user_info.uid=follow.fans order by `time` desc")->result_array();
 	}
 	/**
 	 * 取消关注

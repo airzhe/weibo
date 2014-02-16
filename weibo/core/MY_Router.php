@@ -5,7 +5,6 @@ class My_Router extends CI_Router
 	function __construct()
 	{
 		parent::__construct();
-
 	}
 	
 	// this is here to add an additional layer to the routing system.
@@ -13,26 +12,20 @@ class My_Router extends CI_Router
 	function _parse_routes()
 	{
 		$segments	= $this->uri->segments;
-		
+
 		// Turn the segment array into a URI string
 		$uri = implode('/', $segments);
-		// var_dump($uri);
 		
-		print_r($this->routes) ;
 		// Is there a literal match?  If so we're done
-		// 非正则路由，直接路由
 		if (isset($this->routes[$uri]))
 		{
-			// echo "true";
-			//_set_request 设置当前class method
-			// return $this->_set_request(explode('/', $this->routes[$uri]));
+			return $this->_set_request(explode('/', $this->routes[$uri]));
 		}
 
 		// Loop through the route array looking for wild-cards
 		foreach ($this->routes as $key => $val)
 		{
 			// Convert wild-cards to RegEx
-			// 转换成正则
 			$key = str_replace(':any', '.+', str_replace(':num', '[0-9]+', $key));
 
 			// Does the RegEx match?
@@ -41,17 +34,15 @@ class My_Router extends CI_Router
 				// Do we have a back-reference?
 				if (strpos($val, '$') !== FALSE AND strpos($key, '(') !== FALSE)
 				{
-					// echo $val;die;
 					$val = preg_replace('#^'.$key.'$#', $val, $uri);
 				}
 
-				// return $this->_set_request(explode('/', $val));
+				return $this->_set_request(explode('/', $val));
 			}
 		}
 		
 		// now try the GoCart specific routing
 		$segments = array_splice($segments, -2, 2);
-		print_r($segments);die;
 
 		// Turn the segment array into a URI string
 		$uri = implode('/', $segments);
@@ -59,11 +50,10 @@ class My_Router extends CI_Router
 		//look through the database for a route that matches and apply the same logic as above :-)
 		//load the database connection information
 		require_once BASEPATH.'database/DB'.EXT;
-		// echo BASEPATH.'database/DB'.EXT;
-		// print_r(get_class_methods($this));
+		
 		if(count($segments) == 1)
 		{
-			// $row	= $this->_get_db_route($segments[0]);
+			$row	= $this->_get_db_route($segments[0]);
 			
 			if(!empty($row))
 			{
