@@ -509,3 +509,48 @@ ERROR - 2014-02-16 22:06:29 --> Could not find the language line "profiler_sessi
 ERROR - 2014-02-16 22:07:13 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-16 22:09:01 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-16 22:09:09 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:14:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:14:44 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 64
+ERROR - 2014-02-16 22:14:44 --> Severity: Notice  --> Undefined property: index::$sessioin /home/runner/www/work/weibo/weibo/controllers/index.php 16
+ERROR - 2014-02-16 22:14:59 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:15:04 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:15:07 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 64
+ERROR - 2014-02-16 22:15:07 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:15:29 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:18:32 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:21:48 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/views/components/header.php 10
+ERROR - 2014-02-16 22:21:48 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:22:27 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:22:31 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:22:42 --> Severity: Notice  --> Undefined variable: v /home/runner/www/work/weibo/weibo/views/components/header.php 11
+ERROR - 2014-02-16 22:22:42 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:22:54 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:23:10 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:27:48 --> 404 Page Not Found --> assets
+ERROR - 2014-02-16 22:29:07 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 12
+ERROR - 2014-02-16 22:29:07 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 15
+ERROR - 2014-02-16 22:29:07 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 18
+ERROR - 2014-02-16 22:29:07 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 21
+ERROR - 2014-02-16 22:29:07 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:29:24 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 12
+ERROR - 2014-02-16 22:29:24 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 15
+ERROR - 2014-02-16 22:29:24 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 18
+ERROR - 2014-02-16 22:29:24 --> Severity: Notice  --> Undefined variable: k /home/runner/www/work/weibo/weibo/views/components/header.php 21
+ERROR - 2014-02-16 22:29:24 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:29:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:29:39 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:15 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:16 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:23 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:24 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:30 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:48 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:54 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:32:59 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:35:01 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:36:35 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:36:50 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:37:02 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-16 22:37:53 --> Could not find the language line "profiler_session_data"

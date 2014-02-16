@@ -6,6 +6,23 @@
 	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
+	
+	<?php foreach ($this->session->userdata('style') as $key => $value): ?>
+		<?php switch ($key) {
+			case 'suit':
+				echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value/skin.css'>";
+				break;
+			case 'template':
+				echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value/skin.css'>";
+				break;
+			case 'cover':
+				# code...
+				break;
+			case 'style':
+				echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value'>";
+				break;
+		} ?>
+	<?php endforeach ?>
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/runui.js') ?>"></script>
 	<script>

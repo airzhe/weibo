@@ -25,6 +25,9 @@ Class skin extends Front_Controller{
 		foreach ($arr as $key => $value) {
 			if($value=='undefined') unset($arr[$key]);
 		}
+		$newdata = array('style'  => $arr);
+
+		$this->session->set_userdata($newdata);
 		$style=serialize($arr);
 		$this->load->model('User_info_model');
 		if($this->User_info_model->save(array('style'=>$style),$this->uid)){
