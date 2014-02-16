@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/follow_fans_left_nav');?>
 	<div class="main">
 		<div class="box_center">
-			<div class="title">已有<?php echo count($myfans_list) ?>人关注你 <a href="#"><i class="W_ico16 icon_trash"></i>垃圾箱 </a><a href="#" class="tips">没有尚未处理的关注请求</a></div>
+			<div class="title">已有<?php echo $total ?>人关注你 <a href="#"><i class="W_ico16 icon_trash"></i>垃圾箱 </a><a href="#" class="tips">没有尚未处理的关注请求</a></div>
 			<div class="tab_normal clearfix">
 				<div class="left">
 					<a href="" class="W_btn_c"><span>全部</span></a>

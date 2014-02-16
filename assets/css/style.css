@@ -146,7 +146,7 @@ a:hover{
 .W_btn_c_disable span,.W_btn_a_disable span,.W_btn_a_disable:hover span{
 	color:#ccc;
 }
-.W_btn_a .W_f14, .W_btn_b .W_f14, .W_btn_c .W_f14,.W_btn_a_disable .W_f14{
+.W_btn_a .W_f14, .W_btn_b .W_f14, .W_btn_c .W_f14,.W_btn_a_disable .W_f14,.W_f14{
 	font-size: 14px;
 }
 .W_btn_a .btn_30px, .W_btn_b .btn_30px, .W_btn_c .btn_30px, .W_btn_v .btn_30px,.W_btn_a_disable .btn_30px{
@@ -249,6 +249,11 @@ textarea.W_input {
 }
 .icon_warn, .icon_warnS {
 	background-position: 0px -200px;
+}
+.icon_warnM{
+	background-position: -50px -200px;
+	width: 32px;
+	height: 32px;
 }
 .icon_error, .icon_errorS{
 	background-position: 0 -100px;
@@ -1266,7 +1271,7 @@ body.login .container,body.signup .container{
  	bottom:0;
  	opacity: 0.3;
  	background: #000;
- 	z-index: 999;
+ 	z-index: 9999;
  }
  /*tips弹出框*/
  .W_layer.tips .bg{
@@ -1483,6 +1488,23 @@ body.login .container,body.signup .container{
  	border-top: 1px solid rgb(204, 204, 204);
  	padding: 10px 0px 0px;
  	margin: 15px 0px;
+ }
+ /*未保存关闭模板提示框*/
+ .M_confirm{
+ 	font-size:14px;
+ }
+ .M_confirm .wrap{
+	padding:5px 10px;
+	border-color:#fff;
+ }
+ .M_confirm .icon_warnM{
+	vertical-align: -10px;
+ }
+ .W_layer.M_confirm .btn{
+	text-align: right;
+ }
+ .W_layer.M_confirm .btn a{
+	margin-left:10px;
  }
  .weibo .feed_nav h3{
  	padding: 0 10px;

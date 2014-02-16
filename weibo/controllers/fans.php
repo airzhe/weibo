@@ -16,6 +16,9 @@ Class fans extends Front_Controller{
 			$this->load->library('weibo');
 			$myfans_list=$this->weibo->format($_myfans_list);
 			$this->data['myfans_list']=$myfans_list;
+			$this->data['total']=count($myfans_list);
+		}else{
+			$this->data['total']=0;
 		}
 		$this->view('fans',$this->data);
 	}

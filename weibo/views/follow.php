@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/follow_fans_left_nav');?>
 	<div class="main">
 		<div class="box_center">
-			<div class="title">全部关注 <span class="num">(35个)</span> <i class="icon_warnS"></i><a href="#" class="tips">开通微博会员</a><span class="S_txt2">可提高关注上限</span></div>
+			<div class="title">全部关注 <span class="num">(<?php echo $total ?>个)</span> <i class="icon_warnS"></i><a href="#" class="tips">开通微博会员</a><span class="S_txt2">可提高关注上限</span></div>
 			<div class="tab_normal clearfix">
 				<div class="left">
 					<a href="" class="W_btn_c"><span><i class="icon_recmd"></i>为你分组</span></a>

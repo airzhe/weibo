@@ -278,34 +278,46 @@ function get_pos(obj,top){
  			top:'',
  			title: '', 
  			content: '<p><i class="icon_ask"></i>确认要删除这条微博吗？</p>', 
- 			btn: '<p><a class="W_btn_a"><span class="btn_30px W_f14">确定</span></a> <a class="W_btn_b close"><span class="btn_30px W_f14">取消</span></a></p>',
- 			close_handler: function () {}
+ 			btn: '<p class="btn"><a class="W_btn_a ok"><span class="btn_30px W_f14">确定</span></a> <a class="W_btn_b cancle close"><span class="btn_30px W_f14">取消</span></a></p>',
+ 			close_handler: function () {},
+ 			ok_handler: function () {}
  		};
+ 		
  		var opt = $.extend(_default, options);
 
+ 		var tit_close=opt.title?'<a class="W_close close" href="javascript:void(0);" title="关闭"></a>':'';
  		$("div.modal").remove();
-
 			//创建提示框，显示后移除。
 			var _class='W_layer modal '+opt.type;
-			var _html='<div class="bg"><div class="title">'+opt.title+'</div><div class="wrap"><div class="content">'+opt.content+opt.btn+'</div></div></div>'
+			var _html='<div class="bg"><div class="title">'+opt.title+'</div><div class="wrap"><div class="content">'+opt.content+opt.btn+tit_close+'</div></div></div>'
+			$('.W_layer').css('z-index',100);
+			$('.W_mask').css('z-index',99);
 			$('body').append($('<div/>',{class:_class,html:_html}));
+			var modal=$('div.modal:last');
 
-			//设置弹出框样式
-			var modal=$('div.modal');
-
-			//回调函数
-			
-			//关闭弹出框
+			//取消按钮
 			var close_btn=modal.find('.close'); 
 			close_btn.on('click',function(){
-				// 关闭时回调函数
+				// 回调函数
 				opt.close_handler();
+				// 关闭弹出框
 				modal.fadeOut('fast',function(){
 					$(this).remove();
-					if(opt.type=='center'){
-						$('.W_mask').remove();
+					if(opt.type.indexOf("center")==0){
+						$('.W_mask:last').remove();
 					}
 				})
+			})
+			//确定按钮
+			var close_btn=modal.find('.ok'); 
+			close_btn.on('click',function(){
+				// 回调函数
+				opt.ok_handler();
+				// 关闭弹出框
+				modal.remove()
+				if(opt.type.indexOf("center")==0){
+					$('.W_mask:last').remove();
+				}
 			})
 			// //关闭的方式
 			// if(opt.c_type==0){
@@ -317,7 +329,7 @@ function get_pos(obj,top){
 			position(this);
 		//设置弹出框的位置
 		function position(self){
-			if(opt.type!='center'){
+			if(opt.type.indexOf("center") != 0 ){
 				var _w=$(self).width();
 				var _h=$(self).height();
 				var _offsetY=opt.v_type?-(_h+4):(modal.height()+4);
@@ -325,7 +337,7 @@ function get_pos(obj,top){
 				var _y=$(self).offset().top-_offsetY;
 			}else{
 				$.mask();
-				var pos=get_pos($('.W_layer'),opt.top);
+				var pos=get_pos($('.W_layer:last'),opt.top);
 				var _x= pos[0];
 				var _y=pos[1];
 			}

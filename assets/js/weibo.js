@@ -93,15 +93,22 @@ $(document).ready(function(){
 				$('body').append($a);
 				$('.set_template').drag({drag:'.title'});
 				if($('body.home').length!=0)$.mask();
-				$('.set_template').find('.profile_tab').find('li').eq(0).trigger('click');
+				$('.set_template').find('.profile_tab').children('li').eq(0).trigger('click');
 			}
 		})
 	})
 
 	/**	
+	* 通过attr('c')判断用户是否点击更改
+	*/
+	$('body').on('click',".set_template .Panel ul:not('.tab_nosep') li",function(){
+		console.log('run...ldd');
+		if(!$('.set_template').attr('c')==1)$('.set_template').attr('c',1);
+	})
+
+	/**	
 	* 自定义皮肤选项卡
 	*/ 
-	
 	$('body').on('click','.set_template .profile_tab li',function(){
 		//切换样式
 		var index=$(this).index();
@@ -204,8 +211,23 @@ $(document).ready(function(){
 	*关闭按钮
 	*/
 	$('body').on('click','.set_template .W_close',function(){
-		$('.set_template').remove();
-		$('.W_mask').remove();
+		if($('.set_template').attr('c')==1){
+			$(this).modal({
+				type:'center M_confirm',
+				title:'提示',
+				content:'<p><i class="icon_warnM"></i>您的个性化设置还没有保存，确认关闭吗？</p>',
+				ok_handler:function(){
+					$('.set_template').fadeOut('fast',function(){
+						$(this).remove();
+						$('.W_mask:last').remove();
+						window.location.reload();
+					})
+				}
+			});
+		}else{
+			$('.set_template').remove();
+			$('.W_mask').remove();
+		}
 	})
 	//消息提醒
 	var $a={0:2,1:6,2:8};
@@ -405,25 +427,39 @@ $(document).ready(function(){
 		if(self.hasClass('W_btn_c_disable')) return;
 		var username=self.attr('username');
 		if(username.indexOf(",") > 0 ) username='这些人';
-		if(!confirm('确认要取消对'+username+'的关注吗？'))
-			return;
-		var follow_id=self.attr('uid');
-		$.ajax({
-			type:'post',
-			url:site_url+'follow/cancle',
-			dataType:'json',
-			data:{follow_id:follow_id},
-			success:function(data){
-				if(data.status==1){
-					if(self.find('span').length>0){
-						$('.myfollow_list').find('.item.selected').remove();
-						toggle_active();
-					}else{
-						self.parents('.item').remove();
+		
+		$(this).modal({
+			type:'center M_confirm',
+			title:'提示',
+			content:'<p><i class="icon_warnM"></i>确认要取消对'+username+'的关注吗</p>',
+			ok_handler:function(){
+				// 移除确认对话框
+				$('.set_template').fadeOut('fast',function(){
+					$(this).remove();
+					$('.W_mask:last').remove();
+					
+				})
+				// 执行取消关注操作
+				var follow_id=self.attr('uid');
+				$.ajax({
+					type:'post',
+					url:site_url+'follow/cancle',
+					dataType:'json',
+					data:{follow_id:follow_id},
+					success:function(data){
+						if(data.status==1){
+							if(self.find('span').length>0){
+								$('.myfollow_list').find('.item.selected').remove();
+								toggle_active();
+							}else{
+								self.parents('.item').remove();
+							}
+						}
 					}
-				}
+				})
 			}
-		})
+		});
+		
 	})
 	/**
 	* 移除粉丝
@@ -431,41 +467,58 @@ $(document).ready(function(){
 	$('.remove_fans').on('click',function(){
 		var self=$(this);
 		var username=self.attr('username');
-		if(!confirm('确认要移除'+username+'？'))
-			return;
-		var fans_id=self.attr('uid');
-		$.ajax({
-			type:'post',
-			url:site_url+'fans/remove',
-			dataType:'json',
-			data:{fans_id:fans_id},
-			success:function(data){
-				if(data.status==1){
-					self.parents('.item').remove();
+		$(this).modal({
+			v_type:0,
+			content:'<p><i class="icon_warn"></i>确定要移除' + username + '？</p>',
+			ok_handler:function(){
+				$('.set_template').fadeOut('fast',function(){
+					$(this).remove();
+				})
+					// 执行移除粉丝操作
+					var fans_id=self.attr('uid');
+					$.ajax({
+						type:'post',
+						url:site_url+'fans/remove',
+						dataType:'json',
+						data:{fans_id:fans_id},
+						success:function(data){
+							if(data.status==1){
+								self.parents('.item').remove();
+							}
+						}
+					})
 				}
-			}
-		})
+			});
 	})
 	//删除微博
 	$('.weibo_list').on('click',"[action-type='weibo_delete']",function(){
-		if(!confirm('确认要删除这条微博吗？'))
-			return;
-		var item=$(this).parents('.item');
-		var id=item.data('id');
-		$.ajax({
-			type:'post',
-			url:site_url+'index/delete',
-			dataType:'json',
-			data:{id:id},
-			success:function(data){
-				if(data.status==1){
-					item.animate({height:0,opacity:0},600,function(){
-						item.remove();
-					});
-					$('#my_weibo').html(+$('#my_weibo').html()-1);
-				}
+		var self=$(this);
+		self.modal({
+			v_type:0,
+			content:'<p><i class="icon_warn"></i>确认要删除这条微博吗？</p>',
+			ok_handler:function(){
+				$('.set_template').fadeOut('fast',function(){
+					$(this).remove();
+				})
+				//执行删除操作
+				var item=self.parents('.item');
+				var id=item.data('id');
+				$.ajax({
+					type:'post',
+					url:site_url+'index/delete',
+					dataType:'json',
+					data:{id:id},
+					success:function(data){
+						if(data.status==1){
+							item.animate({height:0,opacity:0},600,function(){
+								item.remove();
+							});
+							$('#my_weibo').html(+$('#my_weibo').html()-1);
+						}
+					}
+				})
 			}
-		})
+		});
 	})
 	/**
 	* 
