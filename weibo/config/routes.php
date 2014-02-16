@@ -41,6 +41,9 @@ $route['^home$'] = "u/index/10000";
 $route['default_controller'] = "index";
 $route['404_override'] = '';
 
+#用户页面
+$route['^u/(\d+)$'] = "u/index/$1";
+
 // $route['(:any)'] = "welcome/$1";
 
 /* End of file routes.php */

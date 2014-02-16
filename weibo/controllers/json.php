@@ -4,7 +4,7 @@ class json extends Front_Controller{
 		if(!$this->input->is_ajax_request()){
 			show_404();
 		}
-		$id=$this->input->post('id');
+		$id=$this->input->post('type');
 		if(!$id)die;
 		// 读取配置项获得皮肤数组
 		$this->config->load('W_skin', TRUE);
@@ -31,6 +31,7 @@ class json extends Front_Controller{
 		}
 		$data.='<ul class="'.$class.' clearfix">';
 		$info=array();
+		$base_url=base_url();
 		foreach ($skin[$id]['template_list'] as $key => $value) {
 			if(strpos($value,'###')){
 				$info=explode('###',$value);
@@ -38,7 +39,7 @@ class json extends Front_Controller{
 				$info[0]=$value;
 				$info[1]='';
 			}
-			$data.='<li><a href="javascript:void(0)" data-link="'.$info[1].'"><img src="./assets/skin/'.$id.'/'.$key.$extension.'"><span>'.$info[0].'</span></a></li>';
+			$data.='<li><a href="javascript:void(0)" data-link="'.$info[1].'"><img src="'.base_url().'assets/skin/'.$id.'/'.$key.$extension.'"><span>'.$info[0].'</span></a></li>';
 		}
 		$data.='</ul>';
 		die($data);

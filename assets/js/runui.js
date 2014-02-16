@@ -203,7 +203,7 @@ function get_pos(obj,top){
 	//获取当前窗口距离页面顶部高度 
 	var scrolltop = $(document).scrollTop();
 	pos[0] = ($(window).width() - obj.width()) / 2;
-	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2 + scrolltop - 50;
+	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2   - 50;
 	return pos;
 }
 
@@ -223,6 +223,7 @@ function get_pos(obj,top){
  			text:'操作成功!',
  			v_type:1,
  			timeout:1,
+ 			callback_handler:function(){}
  		};
  		var opt = $.extend(_default, options);
  		$('.W_layer.tips').remove();
@@ -249,13 +250,14 @@ function get_pos(obj,top){
 			var _y=pos[1];
 		}
 
-		tips.offset({top:_y,left:_x});;
-		tips.children('.bg').animate({top:0}).delay(opt.timeout*1000).animate({top:54},function(){
+		tips.offset({top:_y,left:_x});
+		tips.children('.bg').css({top:54}).animate({top:0}).delay(opt.timeout*1000).animate({top:54},function(){
 			$(this).parent().remove();
 			if(opt.type=='center'){
 				// tips.remove();
 				$('.W_mask').remove();
 			}
+			opt.callback_handler();
 		});
 	}
 })
@@ -335,13 +337,16 @@ function get_pos(obj,top){
 				var _offsetY=opt.v_type?-(_h+4):(modal.height()+4);
 				var _x=$(self).offset().left-((modal.width()-_w)/2);
 				var _y=$(self).offset().top-_offsetY;
+				modal.css({left: _x,top:_y});
+				modal.find('.bg').css('top',modal.height()).animate({'top':0});
 			}else{
 				$.mask();
 				var pos=get_pos($('.W_layer:last'),opt.top);
 				var _x= pos[0];
 				var _y=pos[1];
+				
 			}
-			modal.css({left: _x,top:_y});
+			modal.css({left: _x,top:_y});	
 		}
 	}
 });

@@ -99,11 +99,18 @@ $(document).ready(function(){
 	})
 
 	/**	
-	* 通过attr('c')判断用户是否点击更改
+	* 通过attr('c')判断用户是否点击更改,并激活确定按钮
 	*/
+	window.click=0;
 	$('body').on('click',".set_template .Panel ul:not('.tab_nosep') li",function(){
-		console.log('run...ldd');
-		if(!$('.set_template').attr('c')==1)$('.set_template').attr('c',1);
+		var template=$('.set_template');
+		if(template.attr('c')!=1){
+			template.attr('c',1).find('.W_btn_a_disable').removeClass().addClass('W_btn_a');
+		}
+		// 获得点击总数
+		var click=window.click;
+		window.click=click+1;
+		console.log('count'+click);
 	})
 
 	/**	
@@ -116,12 +123,12 @@ $(document).ready(function(){
 		ControlPanel.show().siblings('div').hide();
 		$(this).addClass('current').siblings().removeClass('current');
 		//绑定数据
-		var id=ControlPanel.data('id');
+		var type=ControlPanel.data('type');
 		if(ControlPanel.is(':empty')){
 			$.ajax({
 				url:site_url+'json/set_skin',
 				type:'post',
-				data:{id:id},
+				data:{type:type},
 				success:function(data){
 					ControlPanel.html(data);
 					ControlPanel.find('.tab_nosep').find('li').eq(0).addClass('current');
@@ -137,7 +144,8 @@ $(document).ready(function(){
 	$('body').on('click','.suitControlPanel .template_list a',function(){
 		$('.suitControlPanel').find('.template_list').find('a').removeClass('current');
 		$(this).addClass('current');
-		var link=site_url+'assets/skin/suit/'+$(this).data('link');
+		var id=$(this).data('link');
+		var link=site_url+'assets/skin/suit/' + id;
 		var cover=link+'/images/profile_cover.jpg';
 		$('.profile_pic_top').css('background-image','url('+ cover +')');
 		var href=link + '/skin.css';
@@ -149,18 +157,25 @@ $(document).ready(function(){
 				href: href
 			})
 			.appendTo("head");
+			console.log(href);
 		}else{
 			$('#css_template').attr('href',href);
 		}
+		// 记录点击次数 及点击id
+		var count=window.click;
+		$('.suitControlPanel').data('click',++count).data('id',id);
+		// 保存
+		console.log('suit_click'+$('.suitControlPanel').data('click')+$('.suitControlPanel').data('sid'));
 	})
 	
 	/**
 	*点击切换模板
 	*/
-	$('body').on('click','.sysControlPanel .template_list a',function(){
-		$('.sysControlPanel').find('.template_list').find('a').removeClass('current');
+	$('body').on('click','.tmpControlPanel .template_list a',function(){
+		$('.tmpControlPanel').find('.template_list').find('a').removeClass('current');
 		$(this).addClass('current');
-		var href=site_url+'assets/skin/template/'+$(this).data('link')+'/skin.css';
+		var id=$(this).data('link');
+		var href=site_url+'assets/skin/template/'+ id +'/skin.css';
 		if($('#css_template').length==0){
 			$("<link>")
 			.attr({ id:'css_skin',
@@ -172,6 +187,10 @@ $(document).ready(function(){
 		}else{
 			$('#css_template').attr('href',href);
 		}
+		// 记录点击次数
+		var count=window.click;
+		$('.tmpControlPanel').data('click',++count).data('id',id);
+		console.log('template_click'+$('.tmpControlPanel').data('click'));
 	})
 	/**
 	*点击切换封面图
@@ -179,9 +198,14 @@ $(document).ready(function(){
 	$('body').on('click','.cover_list a',function(){
 		$('.cover_list').find('a').removeClass('current');
 		$(this).addClass('current');
-		var bg_img=site_url+'assets/skin/cover/'+$(this).data('link');
+		var id=$(this).data('link');
+		var bg_img=site_url+'assets/skin/cover/'+id;
 		console.log(bg_img);
 		$('.profile_pic_top').css('background-image','url('+bg_img+')');
+		// 记录点击次数
+		var count=window.click;
+		$('.coverControlPanel').data('click',++count).data('id',id);
+		console.log('cover_click'+$('.coverControlPanel').data('click'));
 	})
 	/**
 	*点击切换样式
@@ -206,11 +230,15 @@ $(document).ready(function(){
 		}else{
 			$('#css_style').attr('href',href);
 		}
+		// 记录点击次数
+		var count=window.click;
+		$('.diyControlPanel').data('click',++count).data('id',css);
+		console.log('diy_click'+$('.diyControlPanel').data('click'));
 	})
 	/**
 	*关闭按钮
 	*/
-	$('body').on('click','.set_template .W_close',function(){
+	$('body').on('click','.set_template .W_close,.set_template .W_btn_b',function(){
 		if($('.set_template').attr('c')==1){
 			$(this).modal({
 				type:'center M_confirm',
@@ -228,6 +256,34 @@ $(document).ready(function(){
 			$('.set_template').remove();
 			$('.W_mask').remove();
 		}
+	})
+	/**
+	*确定按钮
+	*/
+	$('body').on('click','.set_template .W_btn_a',function(){
+		var suit     = $('.suitControlPanel').data('click')	 +'#'+ $('.suitControlPanel').data('id');
+		var template = $('.tmpControlPanel').data('click')   +'#'+ $('.tmpControlPanel').data('id');
+		var cover    = $('.coverControlPanel').data('click') +'#'+ $('.coverControlPanel').data('id');
+		var style    = $('.diyControlPanel').data('click')	 +'#'+ $('.diyControlPanel').data('id');
+		$.ajax({
+			url:site_url+'skin/save',
+			type:'post',
+			dataType:'json',
+			data:{suit:suit,template:template,cover:cover,style:style},
+			success:function(data){
+				if(data.status==1){
+					$('.set_template').fadeOut(100,function(){
+						$(this).remove();
+						$('body').tips({
+							type:'center',
+							callback_handler:function(){
+								window.location.reload();
+							}
+						})
+					})
+				}
+			}
+		})
 	})
 	//消息提醒
 	var $a={0:2,1:6,2:8};
@@ -334,7 +390,7 @@ $(document).ready(function(){
 		$(this).parent('form').submit();
 	})
 	/**
-	* 加关注
+	* 搜索页面加关注
 	*/
 	$('.addFollow').on('click',function(){
 		var self=$(this);

@@ -1274,9 +1274,11 @@ body.login .container,body.signup .container{
  	z-index: 9999;
  }
  /*tips弹出框*/
+ .W_layer.tips{
+ 	overflow: hidden;
+ }
  .W_layer.tips .bg{
  	position: relative;
- 	top:45px;
  }
  .W_layer.tips .wrap{
  	width: 122px;
@@ -1302,6 +1304,12 @@ body.login .container,body.signup .container{
  	margin:25px 0;
  }
  /*modal弹出框*/
+  .W_layer.modal{
+  	overflow: hidden;
+  }
+ .W_layer.modal .bg{
+ 	position: relative;
+ }
  .W_layer.modal p{
  	text-align: center;
  }
@@ -1494,17 +1502,17 @@ body.login .container,body.signup .container{
  	font-size:14px;
  }
  .M_confirm .wrap{
-	padding:5px 10px;
-	border-color:#fff;
+ 	padding:5px 10px;
+ 	border-color:#fff;
  }
  .M_confirm .icon_warnM{
-	vertical-align: -10px;
+ 	vertical-align: -10px;
  }
  .W_layer.M_confirm .btn{
-	text-align: right;
+ 	text-align: right;
  }
  .W_layer.M_confirm .btn a{
-	margin-left:10px;
+ 	margin-left:10px;
  }
  .weibo .feed_nav h3{
  	padding: 0 10px;
@@ -1959,7 +1967,11 @@ body.login .container,body.signup .container{
  		font: normal 20px/30px "Microsoft Yahei";
  		margin-right: 3px;
  	}
-
+ 	body.home .user_info .info p:first-of-type{
+ 		overflow: hidden;
+ 		text-overflow: ellipsis;
+ 		white-space: nowrap;
+ 	}
 
  	/*可以集体定义*/
  	i.male, i.female{

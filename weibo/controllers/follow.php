@@ -18,7 +18,7 @@ Class follow extends Front_Controller{
 			$this->load->library('weibo');
 			$myfollow_list=$this->weibo->format($_myfollow_list);
 			$this->data['myfollow_list']=$myfollow_list;
-			$this->data['total']=count($myfans_list);
+			$this->data['total']=count($myfollow_list);
 		}else{
 			$this->data['total']=0;
 		}
