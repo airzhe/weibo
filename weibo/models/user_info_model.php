@@ -73,9 +73,13 @@ class User_info_model extends MY_Model {
 			$user['avatar']['middle']=base_url("assets/images/{$avatar}_50.gif");
 			$user['avatar']['big']=base_url("assets/images/{$avatar}_180.gif");
 		}else{
-			$user['avatar']['small']='';
-			$user['avatar']['middle']='';
-			$user['avatar']['big']='';	
+			$avatar=$user['avatar'];
+			$user['avatar']=array();
+			// 有值的时候不能像上面那样赋值，会像字符一样当数组从0开始算第一个元素
+			$user['avatar']['small']=base_url("images/avatar/30/{$avatar}");
+			$user['avatar']['middle']=base_url("images/avatar/50/{$avatar}");
+			$user['avatar']['big']=base_url("images/avatar/180/{$avatar}");
+			// echo $user['avatar']['big'];
 		}
 		// 性别
 		$user['sex_ico']=$user['sex']=='男'?'male':'female';

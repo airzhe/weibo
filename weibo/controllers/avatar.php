@@ -4,6 +4,17 @@ Class Avatar extends Front_Controller{
 		parent::__construct();
 		$this->load->library('upload');
 		$this->load->library('image_lib');
+		$this->load->model('User_info_model');
+		$this->uid=$this->session->userdata('uid');
+	}
+	/**
+	 * 保存用户头像
+	 */
+	public function save(){
+		$avatar=$this->crop();
+		if($this->User_info_model->save(array('avatar'=>$avatar),$this->uid)){
+			die(json_encode(array('status'=>1)));
+		}
 	}
 	/**
 	 * 用户上传头像
@@ -33,7 +44,7 @@ Class Avatar extends Front_Controller{
 				$arr=$this->upload->data();
 				$avatar=$config['upload_path'].$arr['file_name'];
 				$this->zoom($avatar,300,300);
-				die(base_url($avatar));
+				die($avatar);
 			}else{
 				echo $this->upload->display_errors();
 				die;
@@ -59,5 +70,40 @@ Class Avatar extends Front_Controller{
 		$this->image_lib->resize();
 
 	}
+	public function crop(){
+		$img=$this->input->post('sImg');
+		$file_name=basename($img);
+		
+		$arr=explode('/',$img);
+		$new_path=$arr[0].'/'.$arr[1].'/';
 
+		// p($new_path);
+
+		$config['source_image'] = $img;	
+		$config['maintain_ratio'] = FALSE;
+		$config['x_axis'] = $this->input->post('x'); 
+		$config['y_axis'] = $this->input->post('y');
+		$config['width']  = $this->input->post('w'); 
+		$config['height'] = $this->input->post('h'); 
+		$config['new_image'] = './assets/images/01dd_crop.jpg'; 
+		
+		foreach (array(180,50,30) as $v) {
+			if($v!=180){
+				$config['source_image'] = $new_path.'180/'.$arr[3].'/'.$file_name;	
+				$config['width']  = $v; 
+				$config['height']  = $v; 
+			}
+			$path=$new_path.$v.'/'.$arr[3];
+			is_dir($path) || mkdir($path,0777,TRUE);
+			$config['new_image'] = $path.'/'.$file_name;
+			$this->image_lib->initialize($config);
+			if($v==180){
+				$this->image_lib->crop();
+			}else{
+				$this->image_lib->resize();
+			}
+		}
+
+		return $arr[3].'/'.$arr[4];
+	}
 }

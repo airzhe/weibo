@@ -554,3 +554,135 @@ ERROR - 2014-02-17 18:08:09 --> 404 Page Not Found --> set/index
 ERROR - 2014-02-17 18:10:22 --> 404 Page Not Found --> set/index
 ERROR - 2014-02-17 18:11:09 --> 404 Page Not Found --> set/index
 ERROR - 2014-02-17 18:12:37 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 18:14:50 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 18:25:25 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:25:25 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:26:00 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:26:00 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:26:39 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:26:39 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:26:41 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:26:41 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:26:42 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:26:42 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:27:09 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:27:09 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:28:35 --> 404 Page Not Found --> avatar/Pcrop
+ERROR - 2014-02-17 18:28:38 --> 404 Page Not Found --> avatar/crop
+ERROR - 2014-02-17 18:28:47 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:28:47 --> Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.
+ERROR - 2014-02-17 18:29:10 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:10 --> Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.
+ERROR - 2014-02-17 18:29:11 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:11 --> Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.
+ERROR - 2014-02-17 18:29:12 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:12 --> Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.
+ERROR - 2014-02-17 18:29:16 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:16 --> Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.
+ERROR - 2014-02-17 18:29:23 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:23 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:29:28 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:28 --> Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.
+ERROR - 2014-02-17 18:29:36 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:29:36 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:30:31 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 18:30:33 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:30:33 --> Severity: Warning  --> copy(): Filename cannot be empty /home/runner/www/work/weibo/system/libraries/Image_lib.php 459
+ERROR - 2014-02-17 18:31:08 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:31:08 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 18:31:09 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:31:09 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 18:31:09 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:31:09 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 18:41:26 --> The path to the image is not correct.
+ERROR - 2014-02-17 18:41:26 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 19:47:24 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 19:54:06 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 19:56:56 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 19:57:03 --> The path to the image is not correct.
+ERROR - 2014-02-17 19:57:33 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 19:57:39 --> The path to the image is not correct.
+ERROR - 2014-02-17 19:58:19 --> The path to the image is not correct.
+ERROR - 2014-02-17 19:58:19 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 19:58:35 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 19:58:42 --> The path to the image is not correct.
+ERROR - 2014-02-17 19:58:42 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 19:59:33 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 19:59:38 --> The path to the image is not correct.
+ERROR - 2014-02-17 19:59:38 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2014-02-17 20:01:04 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:01:14 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:01:17 --> 404 Page Not Found --> set/images
+ERROR - 2014-02-17 20:01:39 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:17:10 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:18:00 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:19:27 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:23:08 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:23:18 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:25:46 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:29:00 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:30:49 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:31:30 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:32:34 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:32:51 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:33:14 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:33:25 --> Severity: Warning  --> mkdir(): No such file or directory /home/runner/www/work/weibo/weibo/controllers/avatar.php 81
+ERROR - 2014-02-17 20:33:25 --> Severity: Warning  --> imagejpeg(): Unable to open 'images/avatar/180/201402/1392640401594.jpg' for writing: No such file or directory /home/runner/www/work/weibo/system/libraries/Image_lib.php 1209
+ERROR - 2014-02-17 20:33:25 --> Unable to save the image.  Please make sure the image and file directory are writable.
+ERROR - 2014-02-17 20:33:25 --> Severity: Warning  --> mkdir(): No such file or directory /home/runner/www/work/weibo/weibo/controllers/avatar.php 81
+ERROR - 2014-02-17 20:33:25 --> Severity: Warning  --> imagejpeg(): Unable to open 'images/avatar/50/201402/1392640401594.jpg' for writing: No such file or directory /home/runner/www/work/weibo/system/libraries/Image_lib.php 1209
+ERROR - 2014-02-17 20:33:25 --> Unable to save the image.  Please make sure the image and file directory are writable.
+ERROR - 2014-02-17 20:33:25 --> Severity: Warning  --> mkdir(): No such file or directory /home/runner/www/work/weibo/weibo/controllers/avatar.php 81
+ERROR - 2014-02-17 20:33:25 --> Severity: Warning  --> imagejpeg(): Unable to open 'images/avatar/30/201402/1392640401594.jpg' for writing: No such file or directory /home/runner/www/work/weibo/system/libraries/Image_lib.php 1209
+ERROR - 2014-02-17 20:33:25 --> Unable to save the image.  Please make sure the image and file directory are writable.
+ERROR - 2014-02-17 20:34:04 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:34:37 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:35:13 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:35:42 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:40:22 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:48:03 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:49:52 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:51:27 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:52:37 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:53:42 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:56:09 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:56:36 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:57:14 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:57:28 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:58:19 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 20:59:29 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:00:31 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:00:38 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:01:09 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:02:48 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:03:15 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:03:47 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:04:18 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:04:49 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:05:54 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:09:19 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:12:16 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:13:02 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:21:49 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:22:56 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:23:33 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:25:14 --> 404 Page Not Found --> set/%EF%BF%BD
+ERROR - 2014-02-17 21:25:15 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 21:25:31 --> 404 Page Not Found --> %EF%BF%BD
+ERROR - 2014-02-17 21:29:50 --> 404 Page Not Found --> h
+ERROR - 2014-02-17 21:29:53 --> 404 Page Not Found --> h
+ERROR - 2014-02-17 21:29:55 --> 404 Page Not Found --> h
+ERROR - 2014-02-17 21:30:59 --> 404 Page Not Found --> h
+ERROR - 2014-02-17 21:33:14 --> 404 Page Not Found --> h
+ERROR - 2014-02-17 21:33:39 --> 404 Page Not Found --> h
+ERROR - 2014-02-17 21:34:29 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:34:50 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:35:17 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:35:38 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:36:01 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:36:18 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:36:49 --> 404 Page Not Found --> q
+ERROR - 2014-02-17 21:37:57 --> 404 Page Not Found --> images
+ERROR - 2014-02-17 21:38:11 --> 404 Page Not Found --> images
+ERROR - 2014-02-17 21:39:10 --> 404 Page Not Found --> images
+ERROR - 2014-02-17 21:41:07 --> 404 Page Not Found --> set/index

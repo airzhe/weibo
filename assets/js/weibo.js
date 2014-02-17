@@ -691,7 +691,7 @@ $(document).ready(function(){
 			if(data=='error')return;
 			$('.ico_loading_upload').hide();
 			$('.submit').show();
-			$('.preview').find('img').attr('src',data);
+			$('.preview').find('img').attr('src',site_url+data);
 			$('[name=sImg]').val(data);//表单input元素隐藏图片地址
 			//对图像进行js裁切
 			$('#img_300').Jcrop({
@@ -744,6 +744,25 @@ $(document).ready(function(){
 			top:'100',
 			content:'<p><i class="icon_warnM"></i>稍等，头像保存中。</p>',
 			btn:''
+		})
+		$.ajax({
+			type:'post',
+			url:site_url+'avatar/save/',
+			dataType:'json',
+			data:$("form").serialize(),
+			success:function(data){
+				if(data.status==1){
+					$('.W_layer').remove();
+					$(window).tips({
+						type:'center',
+						callback_handler:function(){
+							location.href=site_url+'home';
+						}
+					});
+				}else{
+					console.log(data.status);
+				}
+			}
 		})
 	})
 	/**
