@@ -6,17 +6,20 @@
 	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
-	
+	<!-- 遍历用户自定义模板样式 -->
 	<?php foreach ($this->session->userdata('style') as $key => $value): ?>
 		<?php switch ($key) {
 			case 'suit':
 				echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value/skin.css'>";
+				$cover=base_url("assets/skin/suit/{$value}/images/profile_cover.jpg");
+				$this->config->set_item('cover', $cover);
 				break;
 			case 'template':
 				echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value/skin.css'>";
 				break;
 			case 'cover':
-				# code...
+				$cover =base_url("assets/skin/cover/$value");
+				$this->config->set_item('cover', $cover);
 				break;
 			case 'style':
 				echo "<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value'>";

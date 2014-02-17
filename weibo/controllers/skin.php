@@ -2,6 +2,7 @@
 Class skin extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('User_info_model');
 		$this->uid=$this->session->userdata('uid');
 	}
 	public function index(){
@@ -25,11 +26,19 @@ Class skin extends Front_Controller{
 		foreach ($arr as $key => $value) {
 			if($value=='undefined') unset($arr[$key]);
 		}
-		$newdata = array('style'  => $arr);
 
+		// 查找数据库，比较原来数据和新数据，找出新数据不存在与老数据的数据。和新数据合并，存入数据库。
+		$_befor_arr=$this->db->select('style')->get_where('user_info',array('uid'=>$this->uid))->row_array();
+		$befor_arr=unserialize(current($_befor_arr));
+		// 查找第二个数组不在第一个数组中的键
+		$diff_arr=array_diff_key($befor_arr,$arr);
+		// 反转数组，把最新的操作放最后遍历
+		$arr=array_merge($diff_arr,$arr);
+
+		$newdata = array('style'  => $arr);
 		$this->session->set_userdata($newdata);
 		$style=serialize($arr);
-		$this->load->model('User_info_model');
+		
 		if($this->User_info_model->save(array('style'=>$style),$this->uid)){
 			die(json_encode(array('status'=>1)));
 		}
