@@ -1,4 +1,4 @@
-<div class="profile_pic_top" style="background-image:url(<?php echo $this->config->item('cover') ?>)">
+<div class="profile_pic_top" style="background-image:url(<?php echo $cover ?>)">
 	<a class="set_skin" href="javascript:void(0)" title="模板设置"></a>
 </div>
 <div class="user_info S_bg5 clearfix"  uid="<?php echo $user['uid'] ?>" >

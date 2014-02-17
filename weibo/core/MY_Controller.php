@@ -22,6 +22,7 @@ class Front_Controller extends Base_Controller
 
 		$this->load->model('User_model');
 		$this->auth();
+		$this->set_skin();
 		$this->output->enable_profiler(TRUE);
 		// $this->session->sess_destroy();
 	}
@@ -74,5 +75,33 @@ class Front_Controller extends Base_Controller
 			redirect('login');
 		}
 	}
-	
+	/**
+	 * 皮肤设置
+	 */
+	public function set_skin(){
+		$my_style='';
+		$style=$this->session->userdata('style');
+		$cover=base_url('assets/skin/cover/1.jpg');
+		if(is_array($style)){
+			foreach ($style as $key => $value) {
+				switch ($key) {
+					case 'suit':
+					$my_style.="<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value/skin.css'>";
+					$cover=base_url("assets/skin/suit/{$value}/images/profile_cover.jpg");
+					break;
+					case 'template':
+					$my_style.="<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value/skin.css'>";
+					break;
+					case 'cover':
+					$cover =base_url("assets/skin/cover/$value");
+					break;
+					case 'style':
+					$my_style.="<link rel='stylesheet' type='text/css' href='".base_url()."assets/skin/$key/$value'>";
+					break;
+				}
+			}
+		}
+		$this->data['style']=$my_style;
+		$this->data['cover']=$cover;
+	}
 }

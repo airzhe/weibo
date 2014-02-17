@@ -12,7 +12,6 @@ Class u extends Front_Controller{
 	}
 	// 我的主页
 	public function index(){
-		// p($this->session->userdata('style'));
 		//取得用户个人信息
 		$this->get_user();
 		//去的用户微博信息
