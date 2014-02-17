@@ -2633,10 +2633,12 @@ body.login .container,body.signup .container{
  	.img_50{
  		width: 50px;
  		height: 50px;
+ 		margin-left:10px;
  	}
  	.img_30{
  		width: 30px;
  		height: 30px;
+ 		margin-left:20px;
  	}
  	#img_180,#img_50,#img_30{
  		position: relative;

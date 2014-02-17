@@ -341,7 +341,7 @@ function get_pos(obj,top){
 				modal.find('.bg').css('top',modal.height()).animate({'top':0});
 			}else{
 				$.mask();
-				var pos=get_pos($('.W_layer:last'),opt.top);
+				var pos=get_pos($('.W_layer:last'),parseInt(opt.top));
 				var _x= pos[0];
 				var _y=pos[1];
 				

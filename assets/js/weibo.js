@@ -690,7 +690,9 @@ $(document).ready(function(){
 		'onUploadSuccess' : function(file,data) {
 			if(data=='error')return;
 			$('.ico_loading_upload').hide();
+			$('.submit').show();
 			$('.preview').find('img').attr('src',data);
+			$('[name=sImg]').val(data);//表单input元素隐藏图片地址
 			//对图像进行js裁切
 			$('#img_300').Jcrop({
 				onChange: updatePreview,
@@ -735,6 +737,15 @@ $(document).ready(function(){
 				}
 			}
 		})
+	//保存头像按钮事件
+	$("[action='save_avatar']").on('click',function(){
+		$(this).modal({
+			type:'center M_confirm',
+			top:'100',
+			content:'<p><i class="icon_warnM"></i>稍等，头像保存中。</p>',
+			btn:''
+		})
+	})
 	/**
 	* 返回顶部
 	*/

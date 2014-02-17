@@ -43,7 +43,14 @@
 						</div>
 					</div>
 				</div>
-				<p class="submit"><a href="" class="W_btn_a"><span>保存</span></a><a href="" class="W_btn_c"><span>取消</span></a></p>
+				<form action="?c=member&amp;m=crop" method="post">
+					<input type="hidden" id="x" name="x">
+					<input type="hidden" id="y" name="y">
+					<input type="hidden" id="w" name="w">
+					<input type="hidden" id="h" name="h">
+					<input type="hidden" name="sImg">
+					<p class="submit hide"><a href="javascript:void(0)" class="W_btn_a" action="save_avatar"><span>保存</span></a><a href="" class="W_btn_c"><span>取消</span></a></p>
+				</form>
 			</div>
 		</div>
 	</div>
