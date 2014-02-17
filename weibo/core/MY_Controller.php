@@ -22,7 +22,6 @@ class Front_Controller extends Base_Controller
 
 		$this->load->model('User_model');
 		$this->auth();
-		$this->set_skin();
 		$this->output->enable_profiler(TRUE);
 		// $this->session->sess_destroy();
 	}

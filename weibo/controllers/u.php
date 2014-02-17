@@ -2,13 +2,16 @@
 Class u extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
+		$this->uid=(int)$this->uri->rsegment(3);
+		if(!$this->uid)die;
+		
 		$this->data['body_class'] = 'home';
 		$this->load->model("User_info_model");
 		$this->load->model("Weibo_model");
 		$this->load->library('weibo');
 		$this->load->library('member');
-		$this->uid=(int)$this->uri->rsegment(3);
-		if(!$this->uid)die;
+		// 分配自定义模板
+		$this->set_skin();
 	}
 	// 我的主页
 	public function index(){

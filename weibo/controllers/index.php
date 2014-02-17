@@ -11,6 +11,8 @@ Class index extends Front_Controller{
 		$this->load->model('User_info_model');
 		$this->load->model('Follow_model');
 		$this->load->library('weibo');
+		// 分配自定义模板
+		$this->set_skin();
 	}
 	public function index(){
 		$user=$this->User_info_model->get_basic_info();
