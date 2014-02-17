@@ -10,15 +10,16 @@ Class set extends Front_Controller{
 	 */
 	public function info(){
 		$this->data['title'] = '个人信息';
+
 		$this->view('set/index',$this->data);
 	}
 	/**
 	 * 修改用户头像
 	 */
 	public function avatar(){
-		$user=$this->User_info_model->get_detail_info($this->uid);
 		$this->data['title'] = '头像设置';
-		
+		$this->data['body_class'] = 'avatar';
+		$user=$this->User_info_model->get_detail_info($this->uid);
 		$this->data['avatar']=$user['avatar'];
 		$this->view('set/avatar',$this->data);
 	}

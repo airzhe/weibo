@@ -674,6 +674,68 @@ $(document).ready(function(){
 		$(this).parent().toggleClass('active').siblings().removeClass('active');
 	})
 	/**
+	* 修改用户头像
+	*/
+	$('#avatar_upload').uploadify({
+		'buttonImage' : site_url+'assets/images/upload.png',
+		'buttonText' : '选择上传',
+		'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
+		'uploader' : site_url+'avatar/upload/',
+		'width':'82',
+		'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
+		'fileSizeLimit':'5120',
+		'onUploadStart':function(){
+			$('.ico_loading_upload').show();
+		},
+		'onUploadSuccess' : function(file,data) {
+			if(data=='error')return;
+			$('.ico_loading_upload').hide();
+			$('.preview').find('img').attr('src',data);
+			//对图像进行js裁切
+			$('#img_300').Jcrop({
+				onChange: updatePreview,
+				onSelect: updatePreview,
+				aspectRatio:1,
+				boxWidth:300,
+				boxHeight:300,
+				bgColor:'white'
+			},function(){
+				jcrop_api = this;
+					dim = jcrop_api.getBounds();//利用api获取图片实际宽度、高度。
+					dims = jcrop_api.getWidgetSize();//利用api获取图片在画布中的宽度、高度。
+					sizeRatio=jcrop_api.getScaleFactor();//图片缩放比例
+					$s=180*sizeRatio[0];//选框大小
+					if(dim[0]<$s)$s=dim[0];
+					if(dim[1]<$s)$s=dim[1];
+					jcrop_api.setSelect(getCoord());//设置初始化时选框
+					$('.jcrop-holder').css({'left':(300-dims[0])/2,'top':(300-dims[1])/2});//让上传的图片居中显示
+				})
+				function getCoord(){//获取初始化是选框坐标
+					x1=(dim[0]-$s)/2;
+					y1=(dim[1]-$s)/2;
+					x2=(dim[0]-$s)/2+$s;
+					y2=(dim[1]-$s)/2+$s;
+					return [x1,y1,x2,y2];
+				}
+				function updatePreview(c){
+					$('#x').val(c.x);
+					$('#y').val(c.y);
+					$('#w').val(c.w);
+					$('#h').val(c.h);
+					var arr=[180,50,30];//图像大小
+					for (var i = 0; i < arr.length; i++) {
+						var rx=arr[i]/c.w;
+						$('#img_'+arr[i]).css({//改变图片宽、高等样式
+							width:Math.round(dim[0]*rx),
+							height:Math.round(dim[1]*rx),
+							left:'-'+ Math.round(c.x*rx) +'px',
+							top:'-'+ Math.round(c.y*rx) +'px',
+						})
+					}
+				}
+			}
+		})
+	/**
 	* 返回顶部
 	*/
 	$(document).scroll(function(){

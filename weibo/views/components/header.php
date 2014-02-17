@@ -24,6 +24,14 @@
 			<script src="<?php echo base_url('assets/js/Uploadify/jquery.uploadify.min.js') ?>"></script>
 			<?php 
 			break;
+			case 'avatar':
+			?>
+			<!-- 修改用户头像js -->
+			<script src="<?php echo base_url('assets/js/Uploadify/jquery.uploadify.min.js') ?>"></script>
+			<script src="<?php echo base_url('assets/js/Jcrop/jquery.Jcrop.min.js') ?>"></script>
+			<link rel="stylesheet" href="<?php echo base_url('assets/js/Jcrop/jquery.Jcrop.css') ?>">
+			<?php 
+			break;
 
 			default:
 			# code...

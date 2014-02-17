@@ -69,7 +69,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'ch';
+$config['language']	= 'english';
 
 /*
 |--------------------------------------------------------------------------

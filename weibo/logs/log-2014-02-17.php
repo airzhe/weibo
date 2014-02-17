@@ -311,3 +311,198 @@ ERROR - 2014-02-17 12:30:20 --> Could not find the language line "profiler_sessi
 ERROR - 2014-02-17 12:30:32 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-17 12:33:13 --> Could not find the language line "profiler_session_data"
 ERROR - 2014-02-17 12:38:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:17:13 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:21:12 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:21:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:21:14 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:25:22 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:25:23 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:26:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:26:19 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:26:29 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:26:30 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:26:40 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:26:40 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:26:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:26:46 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:29:46 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:29:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:31:45 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:31:46 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:32:09 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:32:10 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:34:36 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:34:37 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 14:35:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:35:55 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:37:00 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:37:03 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:38:05 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:39:39 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:40:28 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:43:05 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:43:05 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 14:43:11 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 14:43:19 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:43:38 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:51:51 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 14:52:44 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:01:14 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:01:54 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:02:04 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:02:15 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:02:29 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:02:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:02:34 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:03:49 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:03:50 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:04:00 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:04:08 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:04:21 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:04:23 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:04:33 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 15:04:38 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 15:04:46 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 15:17:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:17:34 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:17:38 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/controllers/upload.php 8
+ERROR - 2014-02-17 15:17:38 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:18:16 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:18:17 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:18:21 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/controllers/upload.php 8
+ERROR - 2014-02-17 15:18:21 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:19:08 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:19:09 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:30:32 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/controllers/upload.php 9
+ERROR - 2014-02-17 15:30:32 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:31:11 --> Severity: Notice  --> Undefined index: avatar /home/runner/www/work/weibo/weibo/controllers/upload.php 9
+ERROR - 2014-02-17 15:31:11 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:32:46 --> Severity: Notice  --> Undefined variable: file /home/runner/www/work/weibo/weibo/controllers/upload.php 11
+ERROR - 2014-02-17 15:32:46 --> Severity: Notice  --> Undefined index: extension /home/runner/www/work/weibo/weibo/controllers/upload.php 16
+ERROR - 2014-02-17 15:32:46 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:33:27 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:33:27 --> 404 Page Not Found --> set/%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:34:08 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:34:09 --> 404 Page Not Found --> set/%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:34:23 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/controllers/upload.php 9
+ERROR - 2014-02-17 15:34:23 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:34:56 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:34:56 --> 404 Page Not Found --> set/error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:35:14 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:35:14 --> 404 Page Not Found --> set/error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:37:25 --> Severity: Notice  --> Undefined variable: config /home/runner/www/work/weibo/weibo/controllers/upload.php 5
+ERROR - 2014-02-17 15:37:25 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:40:28 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:40:28 --> 404 Page Not Found --> set/error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:44:52 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:44:52 --> 404 Page Not Found --> set/error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:45:13 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:45:14 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:45:17 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:45:17 --> 404 Page Not Found --> set/error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:46:01 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:46:02 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:46:05 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:46:05 --> 404 Page Not Found --> set/run.......error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:46:18 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:46:19 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:46:22 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:46:22 --> 404 Page Not Found --> set/run.......run.......error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:46:35 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/controllers/upload.php 13
+ERROR - 2014-02-17 15:46:35 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:46:52 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:46:52 --> 404 Page Not Found --> set/run.......run.......error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:47:07 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:47:08 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:47:11 --> 404 Page Not Found --> set/run.......
+ERROR - 2014-02-17 15:49:29 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:49:30 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:49:34 --> 404 Page Not Found --> set/run.......
+ERROR - 2014-02-17 15:49:58 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:49:59 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:50:38 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:50:39 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:50:56 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:51:17 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:51:17 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:51:33 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:51:34 --> 404 Page Not Found --> set/uploadify.swf
+ERROR - 2014-02-17 15:51:34 --> 404 Page Not Found --> set/uploadify.swf
+ERROR - 2014-02-17 15:51:34 --> 404 Page Not Found --> set/uploadify.swf
+ERROR - 2014-02-17 15:52:19 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:52:20 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:53:26 --> Could not find the language line "profiler_session_data"
+ERROR - 2014-02-17 15:53:26 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:53:29 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:53:29 --> 404 Page Not Found --> set/run.......error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:53:50 --> 您没有选择要上传的文件。
+ERROR - 2014-02-17 15:53:50 --> 404 Page Not Found --> set/run.......error%3Cp%3E%E6%82%A8%E6%B2%A1%E6%9C%89%E9%80%89%E6%8B%A9%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82%3C
+ERROR - 2014-02-17 15:54:38 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:54:41 --> You did not select a file to upload.
+ERROR - 2014-02-17 15:54:41 --> 404 Page Not Found --> set/run.......error%3Cp%3EYou%20did%20not%20select%20a%20file%20to%20upload.%3C
+ERROR - 2014-02-17 15:55:45 --> Severity: Notice  --> Undefined variable: file /home/runner/www/work/weibo/weibo/controllers/upload.php 31
+ERROR - 2014-02-17 15:55:45 --> You did not select a file to upload.
+ERROR - 2014-02-17 15:56:12 --> You did not select a file to upload.
+ERROR - 2014-02-17 15:57:13 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 15:57:16 --> You did not select a file to upload.
+ERROR - 2014-02-17 15:57:25 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/controllers/upload.php 13
+ERROR - 2014-02-17 15:59:28 --> 404 Page Not Found --> set/images
+ERROR - 2014-02-17 16:00:39 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:01:00 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:01:03 --> 404 Page Not Found --> set/images
+ERROR - 2014-02-17 16:01:13 --> 404 Page Not Found --> set/images
+ERROR - 2014-02-17 16:01:48 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:02:53 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:09:17 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:17:18 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:17:47 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:18:46 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:20:16 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/controllers/avatar.php 12
+ERROR - 2014-02-17 16:21:17 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:21:20 --> 404 Page Not Found --> set/iiiiiiiiiii
+ERROR - 2014-02-17 16:21:43 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:22:25 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:22:51 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:23:40 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:24:09 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:25:30 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:26:54 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:27:52 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:28:53 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:29:26 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:34:04 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:41:40 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:42:44 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:43:37 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:43:45 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:44:54 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:44:59 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:46:57 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:47:03 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:47:46 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:48:10 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:48:33 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:48:56 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:49:40 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:51:34 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:54:38 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:54:42 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:54:56 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:55:04 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:55:18 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:55:26 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:57:00 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:57:03 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 16:59:32 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 16:59:36 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 17:00:41 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:00:44 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 17:01:56 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:01:59 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 17:02:28 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:02:32 --> 404 Page Not Found --> assets
+ERROR - 2014-02-17 17:06:13 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:06:18 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:06:44 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:07:35 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-17 17:08:29 --> 404 Page Not Found --> set/index

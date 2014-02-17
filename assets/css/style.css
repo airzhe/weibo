@@ -1304,9 +1304,9 @@ body.login .container,body.signup .container{
  	margin:25px 0;
  }
  /*modal弹出框*/
-  .W_layer.modal{
-  	overflow: hidden;
-  }
+ .W_layer.modal{
+ 	overflow: hidden;
+ }
  .W_layer.modal .bg{
  	position: relative;
  }
@@ -2581,11 +2581,22 @@ body.login .container,body.signup .container{
  	.upload_avatar .preview{
  		height: 320px;
  		padding:10px 0;
+ 		
  	}
  	.upload_avatar .preview .big{
  		width:330px;
  		height: 100%;
  		border-right: 1px solid #d9d9d9;
+ 		position: relative;
+ 	}
+ 	.upload_avatar .ico_loading_upload{
+ 		width:15px;
+ 		height: 15px;
+ 		background-image: url(../images/upLoading.gif);
+ 		position: absolute;
+ 		top:142.5px;
+ 		left:142.5px;
+ 		display: none;
  	}
  	.upload_avatar .preview .small{
  		float: left;
@@ -2611,27 +2622,44 @@ body.login .container,body.signup .container{
  		color:#808080;
  	}
  	/*生成头像*/
- 	.upload_avatar #img_180{
+ 	.img_180,.img_50,.img_30{
+ 		overflow: hidden;
+ 		border:1px solid #ccc;
+ 	}
+ 	.img_180{
  		width: 180px;
  		height: 180px;
  	}
- 	.upload_avatar #img_50{
+ 	.img_50{
  		width: 50px;
  		height: 50px;
  	}
- 	.upload_avatar #img_30{
+ 	.img_30{
  		width: 30px;
  		height: 30px;
  	}
  	#img_180,#img_50,#img_30{
- 		border:1px solid #ccc;
- 		overflow: hidden;
+ 		position: relative;
  	}
+
  	.upload_avatar .preview .img_30{
  		margin-top:15px;
  	}
  	.upload_avatar .submit a{
  		margin-right: 10px;
+ 	}
+ 	body.avatar .uploadify .uploadify-button {
+ 		font-size: 12px;
+ 		height:30px;
+ 		line-height: 30px;
+ 		text-align: right;
+ 	}
+ 	body.avatar .uploadify:hover .uploadify-button {
+ 		background-position: 0 -30px;
+ 		color:#fff;
+ 	}
+ 	.uploadify-queue{
+ 		display: none;
  	}
  	/*设置个人信息*/
  	.personinfo .item{
