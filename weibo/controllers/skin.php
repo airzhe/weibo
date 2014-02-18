@@ -10,21 +10,24 @@ Class skin extends Front_Controller{
 	}
 	public function save(){
 		// 获取js传递过来的参数
-		$suit=$this->input->post('suit');
-		$template=$this->input->post('template');
-		$cover=$this->input->post('cover');
-		$style=$this->input->post('style');
+		$_suit=$this->input->post('suit');
+		$_template=$this->input->post('template');
+		$_cover=$this->input->post('cover');
+		$_style=$this->input->post('style');
 		// 分割字符串成数组 [0]为点击顺序[1]为要保存的id
-		$suit_arr=explode('#', $suit);
-		$template_arr=explode('#', $template);
-		$cover_arr=explode('#', $cover);
-		$style_arr=explode('#', $style);
-
-		$arr=array('suit'=>$suit_arr[0],'template'=>$template_arr[0],'cover'=>$cover_arr[0],'style'=>$style_arr[0]);
+		$suit=explode('#', $_suit);
+		$template=explode('#', $_template);
+		$cover=explode('#', $_cover);
+		$style=explode('#', $_style);
+		// 去除undefined,排序，赋值
+		$arr=array('suit'=>$suit[0],'template'=>$template[0],'cover'=>$cover[0],'style'=>$style[0]);
 		asort($arr);
-		$arr=array('suit'=>$suit_arr[1],'template'=>$template_arr[1],'cover'=>$cover_arr[1],'style'=>$style_arr[1]);
 		foreach ($arr as $key => $value) {
 			if($value=='undefined') unset($arr[$key]);
+		}
+		foreach ($arr as $key => $value) {
+			$_arr=$$key;
+			$arr[$key]=$_arr[1];
 		}
 
 		// 查找数据库，比较原来数据和新数据，找出新数据不存在与老数据的数据。和新数据合并，存入数据库。
