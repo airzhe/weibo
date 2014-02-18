@@ -31,3 +31,4 @@ ERROR - 2014-02-18 12:29:43 --> 404 Page Not Found --> assets
 ERROR - 2014-02-18 12:29:43 --> 404 Page Not Found --> assets
 ERROR - 2014-02-18 12:33:08 --> 404 Page Not Found --> assets
 ERROR - 2014-02-18 12:33:08 --> 404 Page Not Found --> assets
+ERROR - 2014-02-18 12:42:15 --> 404 Page Not Found --> set/index
