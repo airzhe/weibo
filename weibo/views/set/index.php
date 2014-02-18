@@ -29,7 +29,7 @@
 							<div class="tips"><span class="S_txt2">4-30个字符，支持中英文、数字、"_"或减号</span></div>
 						</div>
 						<div class="info_item clearfix">
-							<div class="inp btn"><a href="" class="W_btn_a"><span>保存</span></a><a href="" class="W_btn_b"><span>关闭</span></a></div>
+							<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
 						</div>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 							<div class="tips">请不要超过70个字</div>
 						</div>
 						<div class="info_item clearfix">
-							<div class="inp btn"><a href="" class="W_btn_a"><span>保存</span></a><a href="" class="W_btn_b"><span>关闭</span></a></div>
+							<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
 						</div>
 					</div>
 				</div>
@@ -81,14 +81,22 @@
 							<span class="icon icon_errorS left"></span>
 							<span class="txt">个性域名设置后不能更改</span>
 						</div>
-						<div class="info_item clearfix">
-							<div class="tit">http://weibo.runpur.com/</div>
-							<div class="inp"><input type="text" class="W_input"></div>
-							<div class="tips"><i class="icon_rederrorS"></i><span class="S_txt2">个性化域名请使用长度为4～20个字符的数字或者字母</span></div>
-						</div>
-						<div class="info_item clearfix">
-							<div class="inp btn"><a href="" class="W_btn_a"><span>保存</span></a><a href="" class="W_btn_b"><span>关闭</span></a></div>
-						</div>
+						<?php if (strpos($user['domain'],'u/')===false): ?>
+							<p> 您的域名：<?php echo $user['domain'] ?></p>
+						<?php else: ?>
+							<form action="" method="post" class="form_domain">
+								<div class="info_item clearfix">
+									<div class="tit"><?php echo base_url() ?></div>
+									<div class="inp"><input type="text" name="domain" class="W_input" required></div>
+									<div class="tips"><i class="icon_warn"></i><label class="S_txt2">个性化域名请使用长度为4～20个字符的数字或者字母</label></div>
+								</div>
+								<div class="info_item clearfix">
+									<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a save_info"  action="save_domain"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
+								</div>
+							</form>
+						<?php endif ?>
+						
+						
 					</div>
 				</div>
 			</div>

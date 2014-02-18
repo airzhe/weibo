@@ -5,7 +5,9 @@
 	<div class="head left">
 		<div class="avatar">
 			<img  width="180" height="180" src="<?php echo $user['avatar'] ?>" alt="">
-			<a href="<?php echo site_url('set/avatar') ?>" class="W_btn_c change_avatar"><span>更换头像</span></a>
+			<?php if (isset($user['me'])): ?>
+				<a href="<?php echo site_url('set/avatar') ?>" class="W_btn_c change_avatar"><span>更换头像</span></a>
+			<?php endif ?>
 		</div>
 		<ul class="user_atten clearfix">
 			<li class="S_line1">

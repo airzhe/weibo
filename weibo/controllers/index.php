@@ -116,7 +116,7 @@ str;
 		$config['base_url'] = site_url('');
 		$config['total_rows'] = $count;
 		$config['per_page'] = $this->config->item('index_per_page', 'W_weibo');
-		$config['uri_segment'] = $this->input->get('p');
+		// $config['uri_segment'] = $this->input->get('p');
 		$config['use_page_numbers'] = TRUE;
 		$config['full_tag_open'] = '<p id="page" class="page hide">';
 		$this->pagination->initialize($config);

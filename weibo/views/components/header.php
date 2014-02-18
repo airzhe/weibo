@@ -32,6 +32,12 @@
 			<link rel="stylesheet" href="<?php echo base_url('assets/js/Jcrop/jquery.Jcrop.css') ?>">
 			<?php 
 			break;
+			case 'set_info':
+			?>
+			<!-- 用户个人信息修改页js -->
+			<script src="<?php echo base_url('assets/js/jquery.validate.js') ?>"></script>
+			<?php 
+			break;
 
 			default:
 			# code...

@@ -1,0 +1,22 @@
+<?php 
+// 系统预留域名
+$config['reserve_domain']=array(
+	'at',
+	'avatar',
+	'comment',
+	'face',
+	'follow',
+	'index',
+	'json',
+	'letter',
+	'login',
+	'msg',
+	'search',
+	'security',
+	'set',
+	'sigle_weibo',
+	'ta',
+	'u',
+	'weibo',
+	'welcome',
+	);

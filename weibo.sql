@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 02 月 17 日 10:39
+-- 生成日期: 2014 年 02 月 18 日 20:56
 -- 服务器版本: 5.5.35
 -- PHP 版本: 5.3.10-1ubuntu3.9
 
@@ -160,18 +160,22 @@ CREATE TABLE IF NOT EXISTS `t_praise` (
 --
 
 CREATE TABLE IF NOT EXISTS `t_routes` (
-  `id` int(9) unsigned NOT NULL AUTO_INCREMENT,
-  `slug` varchar(255) NOT NULL,
-  `route` varchar(32) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `slug` varchar(45) NOT NULL DEFAULT '' COMMENT '路由规则',
+  `route` varchar(45) NOT NULL DEFAULT '' COMMENT '路由重定向的地址',
+  `uid` int(10) unsigned NOT NULL COMMENT '用户id',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uid` (`uid`),
+  UNIQUE KEY `slug` (`slug`),
+  UNIQUE KEY `route` (`route`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='路由表' AUTO_INCREMENT=2 ;
 
 --
 -- 转存表中的数据 `t_routes`
 --
 
-INSERT INTO `t_routes` (`id`, `slug`, `route`) VALUES
-(1, 'dingmingming', 'u/index/10001');
+INSERT INTO `t_routes` (`id`, `slug`, `route`, `uid`) VALUES
+(1, 'runner', 'u/index/10000', 10000);
 
 -- --------------------------------------------------------
 
@@ -194,8 +198,8 @@ CREATE TABLE IF NOT EXISTS `t_sessions` (
 --
 
 INSERT INTO `t_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('228f506e70830d30b976c86931d72f32', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392604448, 'a:6:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10000";s:7:"account";s:16:"532499602@qq.com";s:8:"username";s:6:"runner";s:5:"style";a:4:{s:8:"template";s:1:"4";s:5:"style";s:5:"2.css";s:5:"cover";s:5:"8.jpg";s:4:"suit";s:1:"2";}s:8:"loggedin";b:1;}'),
-('df82ff6d000176efcd03b987d6bd2b56', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392598136, 'a:6:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10000";s:7:"account";s:16:"532499602@qq.com";s:8:"username";s:6:"runner";s:5:"style";a:1:{s:4:"suit";s:2:"12";}s:8:"loggedin";b:1;}');
+('4d46872e3f8e2abaee36e6f7703938fa', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0', 1392724991, 'a:5:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10001";s:7:"account";s:15:"air_zhe@163.com";s:8:"username";s:6:"purple";s:8:"loggedin";b:1;}'),
+('53dfe5756667c5af5179cdf31e0d6196', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392728098, 'a:5:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10001";s:7:"account";s:15:"air_zhe@163.com";s:8:"username";s:6:"purple";s:8:"loggedin";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -271,8 +275,8 @@ CREATE TABLE IF NOT EXISTS `t_user_info` (
 --
 
 INSERT INTO `t_user_info` (`id`, `username`, `truename`, `location`, `birthday`, `sex`, `intro`, `avatar`, `domain`, `style`, `follow`, `fans`, `weibo`, `uid`) VALUES
-(1, 'runner', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1999-01-01', '男', '', '', NULL, 'a:4:{s:8:"template";s:1:"4";s:5:"style";s:5:"2.css";s:5:"cover";s:5:"8.jpg";s:4:"suit";s:1:"2";}', 1, 1, 23, 10000),
-(6, 'purple', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1998-01-01', '女', '', '', NULL, '0', 0, 0, 12, 10001),
+(1, 'runner', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1999-01-01', '男', '', '201402/1392728074371.jpg', 'runner', 'a:4:{s:5:"style";s:5:"2.css";s:8:"template";s:1:"4";s:5:"cover";s:5:"3.jpg";s:4:"suit";s:1:"7";}', 1, 1, 23, 10000),
+(6, 'purple', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1998-01-01', '女', '', '201402/1392728140354.jpg', NULL, 'a:2:{s:4:"suit";s:1:"6";s:5:"style";s:5:"1.css";}', 0, 0, 12, 10001),
 (8, '敏敏', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"天门";}', '2015-02-01', '女', '', '', NULL, '0', 0, 0, 0, 10004),
 (9, '苍老师', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"武汉";}', '2014-01-01', '女', '大家好！我是苍井空. 有时演电影,唱歌,有时在电视节目中露露脸。为了更好的交流.我在努力地学习中文ing 工作邮箱：solaaoi@sina.cn', '', NULL, '0', 1, 1, 1, 10005);
 

@@ -57,13 +57,13 @@ class weibo{
 		$time = intval($time);
 		switch (true) {
 			case time()-$time < 60:
-				return '刚刚';
+			return '刚刚';
 			case time()-$time < 3600:
-				return floor((time()-$time)/60).'分钟前';
+			return floor((time()-$time)/60).'分钟前';
 			case $time > strtotime(date('Y-m-d',time())):
-				return '今天'.date('H:i',$time);
+			return '今天'.date('H:i',$time);
 			default:
-				return date('Y-m-d H:i',$time);
+			return date('Y-m-d H:i',$time);
 		}
 	}
 	/**
@@ -75,7 +75,13 @@ class weibo{
 			if($v['avatar']==''){
 				$user[$k]['avatar']=$v['sex']=='男'?base_url('assets/images/male_avatar_50.gif'):base_url('assets/images/female_avatar_50.gif');
 			}else{
-				$user[$k]['avatar']='';
+				$avatar=$user[$k]['avatar'];
+				$user[$k]['avatar']=array();
+				// 有值的时候不能像上面那样赋值，会像字符一样当数组从0开始算第一个元素
+				$user[$k]['s_avatar']=base_url("images/avatar/30/{$avatar}");
+				$user[$k]['m_avatar']=base_url("images/avatar/50/{$avatar}");
+				$user[$k]['b_avatar']=base_url("images/avatar/180/{$avatar}");
+				$user[$k]['avatar']=$user[$k]['m_avatar'];
 			}
 			// 自定义域名
 			if($v['domain']==''){

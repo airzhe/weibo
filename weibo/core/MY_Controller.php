@@ -78,9 +78,19 @@ class Front_Controller extends Base_Controller
 	 * 皮肤设置
 	 */
 	public function set_skin(){
-		$my_style='';
-		$style=$this->session->userdata('style');
+		// 设置封面图
 		$cover=base_url('assets/skin/cover/1.jpg');
+		$this->data['cover']=$cover;
+		// 获取当前用户uid
+		$uid=(int)$this->uri->rsegment(3);
+		if(!$uid)$uid=$this->session->userdata('uid');
+
+		$style=$this->db->select('style')->get_where('user_info',array('uid'=>$uid))->row_array();
+		$_style=current($style);
+		if(empty($_style)) return;
+
+		$style=unserialize($_style);
+		$my_style='';
 		if(is_array($style)){
 			foreach ($style as $key => $value) {
 				switch ($key) {

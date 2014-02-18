@@ -39,10 +39,8 @@ Class skin extends Front_Controller{
 			// 反转数组，把最新的操作放最后遍历
 			$arr=array_merge($diff_arr,$arr);
 		}
-		$newdata = array('style'  => $arr);
-		$this->session->set_userdata($newdata);
+
 		$style=serialize($arr);
-		
 		if($this->User_info_model->save(array('style'=>$style),$this->uid)){
 			die(json_encode(array('status'=>1)));
 		}

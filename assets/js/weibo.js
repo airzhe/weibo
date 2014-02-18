@@ -640,9 +640,10 @@ $(document).ready(function(){
 		var self=$(this);
 		self.prepend('<i class="ico_loading"></i>');
 		var offset=$('.weibo_list').data('offset');
+		var uid=$('.user_info').attr('uid');
 		$.ajax({
 			type:'post',
-			url:site_url+'u/index/10000/select/',
+			url:site_url+'u/index/'+uid,
 			dataType:'json',
 			data:{offset:offset},
 			success:function(data){
@@ -673,25 +674,92 @@ $(document).ready(function(){
 	$('.personinfo ').find('.item').has('.acc_form').find('ul').on('click',function(){
 		$(this).parent().toggleClass('active').siblings().removeClass('active');
 	})
+	$("[action='close_item']").on('click',function(){
+		$(this).parents('.item').removeClass('active');
+	})
+	$(".save_info").on('click',function(){
+		$(this).parents('form').submit();
+	})
+	if($('body.set_info').length==1){
+		jQuery.validator.addMethod("domainFormat", function(value) {  
+			return (/^[a-zA-Z0-9]{4,20}$/.test(value));
+		});
+		$(".form_domain").validate({
+			onkeyup:false,
+			// debug:true,
+			submitHandler:function(form){
+				var submit=$(form).find('.btn .W_btn_a span');
+				submit.prepend($('<i/>',{class:'ico_loading'}));
+				var domain=$("[name=domain]").val();
+				console.log('run....');
+				$.ajax({
+					type:'post',
+					url:site_url+'set/domain/',
+					dataType:'json',
+					data:{domain:domain},
+					success:function(data){
+						if(data.status==1){
+							submit.tips({
+								text:'设置成功',
+								callback_handler:function(){
+									window.location.reload();
+								}
+							});
+						}
+					}
+				})
+			},
+			errorPlacement: function(error, element) {
+				element.parents('.info_item').find('.tips').append(error).find('.S_txt2').remove();
+				element.parents('.info_item').find('.tips').find('i').removeClass().addClass('icon_rederrorS');
+			},
+			success: function(element) {
+				element.parents('.info_item').find('.tips').find('i').removeClass().addClass('icon_succ');
+			},
+			rules:{
+				domain:{
+					required:true,
+					domainFormat:true,
+					remote: {
+					    url : site_url+'set/check_domain/',			//后台处理程序
+					    type: "post",               			//数据发送方式 
+					    data: {                     			//要传递的数据
+					    	account: function() {
+					    		return $("[name=domain]").val();
+					    	}
+					    }
+					}
+				}
+			},
+			messages:{
+				domain:{
+					required:'域名不能为空',
+					domainFormat:'个性化域名请使用长度为4～20个字符的数字或者字母',
+					remote:'域名已经存在，请更换。'
+				}
+			}
+		})
+}
 	/**
 	* 修改用户头像
 	*/
-	$('#avatar_upload').uploadify({
-		'buttonImage' : site_url+'assets/images/upload.png',
-		'buttonText' : '选择上传',
-		'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
-		'uploader' : site_url+'avatar/upload/',
-		'width':'82',
-		'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
-		'fileSizeLimit':'5120',
-		'onUploadStart':function(){
-			$('.ico_loading_upload').show();
-		},
-		'onUploadSuccess' : function(file,data) {
-			if(data=='error')return;
-			$('.ico_loading_upload').hide();
-			$('.submit').show();
-			$('.preview').find('img').attr('src',site_url+data);
+	if($('body.avatar').length==1){
+		$('#avatar_upload').uploadify({
+			'buttonImage' : site_url+'assets/images/upload.png',
+			'buttonText' : '选择上传',
+			'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
+			'uploader' : site_url+'avatar/upload/',
+			'width':'82',
+			'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
+			'fileSizeLimit':'5120',
+			'onUploadStart':function(){
+				$('.ico_loading_upload').show();
+			},
+			'onUploadSuccess' : function(file,data) {
+				if(data=='error')return;
+				$('.ico_loading_upload').hide();
+				$('.submit').show();
+				$('.preview').find('img').attr('src',site_url+data);
 			$('[name=sImg]').val(data);//表单input元素隐藏图片地址
 			//对图像进行js裁切
 			$('#img_300').Jcrop({
@@ -737,6 +805,7 @@ $(document).ready(function(){
 				}
 			}
 		})
+}
 	//保存头像按钮事件
 	$("[action='save_avatar']").on('click',function(){
 		$(this).modal({

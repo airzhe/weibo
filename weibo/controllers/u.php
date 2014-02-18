@@ -3,7 +3,7 @@ Class u extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->uid=(int)$this->uri->rsegment(3);
-		if(!$this->uid)die;
+		if(!$this->uid)$this->uid=$this->session->userdata('uid');
 		
 		$this->data['body_class'] = 'home';
 		$this->load->model("User_info_model");
@@ -29,7 +29,7 @@ Class u extends Front_Controller{
 		$this->view('home',$this->data);
 	}
 	// 用户信息
-	public function get_user(){
+	private function get_user(){
 		$user=$this->User_info_model->get_detail_info($this->uid);
 		if(empty($user)){
 			show_404();
@@ -47,7 +47,7 @@ Class u extends Front_Controller{
 		$this->data['user']=$user;
 	}
 	//查询微博
-	public function select(){
+	private function select(){
 		// 如果是ajax请求
 		$num=5;
 		if(!$this->input->is_ajax_request()){
@@ -104,13 +104,6 @@ str;
 		//分页
 		$count=$this->db->where(array('uid'=>$this->uid))->from('weibo')->count_all_results();
 		$this->load->library('pagination');
-		if($this->uri->segment(0)=='u'){
-			$config['base_url'] = site_url('u/10000/');
-			$config['uri_segment'] = 5;
-		}else{
-			$config['base_url'] = site_url('airzhe/');
-			$config['uri_segment'] = 3;
-		}
 		
 		$config['total_rows'] = $count;
 		$config['per_page'] = $this->config->item('index_per_page', 'W_weibo');
@@ -121,13 +114,13 @@ str;
 		$this->data['page']= $this->pagination->create_links();	
 	}
 	//获取用户关注
-	public function get_follow(){
+	private function get_follow(){
 		$_myfollow_list=$this->member->get_follow($this->uid);
 		$myfollow_list=$this->weibo->format(array_slice($_myfollow_list,0,4));
 		$this->data['myfollow_list']=$myfollow_list;
 	}
 	//获取用户粉丝
-	public function get_fans(){
+	private function get_fans(){
 		$_myfans_list=$this->member->get_fans($this->uid);
 		$myfans_list=$this->weibo->format(array_slice($_myfans_list,0,4));
 		$this->data['myfans_list']=$myfans_list;

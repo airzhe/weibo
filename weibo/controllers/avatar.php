@@ -77,33 +77,31 @@ Class Avatar extends Front_Controller{
 		$arr=explode('/',$img);
 		$new_path=$arr[0].'/'.$arr[1].'/';
 
-		// p($new_path);
-
 		$config['source_image'] = $img;	
 		$config['maintain_ratio'] = FALSE;
 		$config['x_axis'] = $this->input->post('x'); 
 		$config['y_axis'] = $this->input->post('y');
 		$config['width']  = $this->input->post('w'); 
 		$config['height'] = $this->input->post('h'); 
-		$config['new_image'] = './assets/images/01dd_crop.jpg'; 
 		
+		// 剪裁
+		$path=$new_path.'180/'.$arr[3];
+		is_dir($path) || mkdir($path,0777,TRUE);
+		$config['new_image'] = $path.'/'.$file_name;
+		$this->image_lib->initialize($config);
+		$this->image_lib->crop();
+
+		// 缩放
+		$config['source_image'] = $path.'/'.$file_name;	
 		foreach (array(180,50,30) as $v) {
-			if($v!=180){
-				$config['source_image'] = $new_path.'180/'.$arr[3].'/'.$file_name;	
-				$config['width']  = $v; 
-				$config['height']  = $v; 
-			}
-			$path=$new_path.$v.'/'.$arr[3];
+			$path=$path=$new_path.$v.'/'.$arr[3];
 			is_dir($path) || mkdir($path,0777,TRUE);
 			$config['new_image'] = $path.'/'.$file_name;
+			$config['width']  = $v; 
+			$config['height']  = $v;
 			$this->image_lib->initialize($config);
-			if($v==180){
-				$this->image_lib->crop();
-			}else{
-				$this->image_lib->resize();
-			}
+			$this->image_lib->resize();
 		}
-
 		return $arr[3].'/'.$arr[4];
 	}
 }
