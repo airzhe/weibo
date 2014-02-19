@@ -32,7 +32,7 @@
 	</div>
 	<div class="info">
 		<div>
-			<span class="name"><?php echo $user['username'] ?></span> 
+			<span class="username"><?php echo $user['username'] ?></span> 
 			<a href="" class="W_level_ico color3"><span class="W_level_num l7"></span></a>
 			<a href="<?php echo $user['domain'] ?>"><?php echo $user['domain'] ?></a>
 		</div>

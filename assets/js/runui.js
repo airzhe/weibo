@@ -203,7 +203,7 @@ function get_pos(obj,top){
 	//获取当前窗口距离页面顶部高度 
 	var scrolltop = $(document).scrollTop();
 	pos[0] = ($(window).width() - obj.width()) / 2;
-	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2   - 50;
+	pos[1] =top?top + scrolltop:($(window).height() - obj.height()) / 2 + scrolltop   - 50;
 	return pos;
 }
 

@@ -24,7 +24,7 @@ $(document).ready(function(){
 	/**	
 	* 点击表情按钮，调出表情对话框
 	*/
-	$("[action-type='face']").on('click',function(e){
+	$("body").on('click',"[action-type='face']",function(e){
 		//阻止冒泡
 		e.stopPropagation();
 		//调用弹出框插件
@@ -64,15 +64,16 @@ $(document).ready(function(){
 			'fileSizeLimit':'5120',
 			'onUploadStart':function(){
 				// console.log('readyUpload');
-				var _val=$('#weibo_input_detail').val();
-				if (flag==1){
-					$('#weibo_input_detail').val(_val+'分享图片');
-					flag++;
-				}
 				$('.loading').show();
 			},
 			'onUploadSuccess' : function(file,data) {
-
+				var _val=$('#weibo_input_detail').val();
+				if (_val=='' ){
+					if(flag==1){
+						$('#weibo_input_detail').val(_val+'分享图片');
+						flag++;
+					}
+				}
 			}
 		})
 	})
@@ -653,7 +654,7 @@ $(document).ready(function(){
 					// 每次读取5条
 					$('.weibo_list').data('offset',offset+5);
 					var _offset=$('.weibo_list').data('offset');
-					console.log(_offset,data.count);
+					// console.log(_offset,data.count);
 					// 每页读取20条
 					if(data.count<5 || _offset%20==0){
 						$('.PRF_feed_list_more').remove();
@@ -993,6 +994,165 @@ $(document).ready(function(){
 					console.log(data.status);
 				}
 			}
+		})
+	})
+	/**
+	* 微博评论
+	*/
+	$(".weibo_list").on('click','.comment .icon_close',function(){
+		$(this).parents('.W_tips').remove();
+	})
+	$(".weibo_list").on('click',"[action-type='comment']",function(){
+		var comment=$(this).parents('.item').find('.comment');
+		// 点击时如果有数据就移除
+		if(!comment.find('.WB_arrow').is(':only-child')) {
+			comment.find('.WB_arrow').nextAll().remove();
+			comment.hide();
+			return;
+		}
+		// 否则显示数据
+		comment.show().append('<div class="W_loading"><i class="ico_loading"></i><span>正在加载，请稍候...</span></div>');
+		var id=$(this).parents('.item').data('id');
+		$.ajax({
+			url:site_url+'single_weibo/select_comment/item',
+			type:'post',
+			dataType:'json',
+			data:{id:id},
+			success:function(data){
+				var id = new Date().getTime();
+				if(data.status==1){
+					comment.find('.W_loading').remove();
+					var title='\
+					<div class="W_tips tips_warn clearfix">\
+					<p>\
+					<span class="icon_warnS"></span>\
+					<span class="txt">新浪微博社区管理中心举报处理大厅，<a href="#">欢迎查阅！</a></span>\
+					<span class="close right"><a href="javascript:void(0);" class="W_ico12 icon_close"></a></span>\
+					</p>\
+					</div>\
+					<textarea name="" id="'+ id +'" class="W_input"></textarea>\
+					<p class="clearfix"><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox">同时转发到我的微博<a href="javascript:void(0)" class="W_btn_a right" action-type="post"><span class="btn_30px W_f14">评论</span></a></p>';
+					$(title).appendTo(comment);
+					console.log(data.comment);
+					$(data.result).each(function(i){
+						var _comment=data.result[i];
+						item='\
+						<div class="C_item S_line1">\
+						<div class="face left">\
+						<img src=""'+ _comment['avatar'] +' width="30" height="30" alt="">\
+						</div>\
+						<div class="C_detail">\
+						<p><a href="">'+ _comment['username'] +'</a>：回复<a href="">@叉色-xsir</a>:'+ _comment['content'] +'<span class="S_txt2">('+ _comment['time'] +')</span></p>\
+						<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="reply" data-cid=' + _comment['id'] + '>回复</a></p>\
+						</div>\
+						</div>\
+						';
+						$(item).appendTo(comment);
+					})
+				}
+				//文本框自适应高度
+				comment.find('textarea').autosize();
+			}
+		})
+		//
+	})
+	//评论回复事件
+	$('.weibo_list').on('click',"[action-type='reply']",function(){
+		
+		if(!$(this).parent('.info').is(':last-child')){
+			$(this).parent('.info').nextAll('.repeat').remove();
+			return;
+		}
+		var cid=$(this).data('cid');
+		// 文本框id
+		var id = new Date().getTime();
+		var replay='\
+		<div class="repeat S_line1 S_bg1" data-cid="'+ cid +'">\
+		<div class="WB_arrow"><em class="S_line1_c">◆</em><span class=" S_bg1_c">◆</span></div>\
+		<div class="S_line1 input clearfix">\
+		<textarea name="" id="'+id+'" class="W_input" cols="30" rows="10"></textarea>\
+		<p class="clearfix">\
+		<span class="left"><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox"> 同时转发到我的微博</span>\
+		<a href="javascript:void(0)" class="W_btn_a right" action-type="doReply"><span class="btn_30px W_f14">评论</span></a>\
+		</p>\
+		</div>\
+		</div>\
+		';
+		$(replay).insertAfter($(this).parent('.info'));
+		//文本框自适应高度
+		$(this).parents('.C_detail').find('textarea').autosize();
+	})
+	//评论提交按钮
+	$('.weibo_list').on('click',"[action-type='post'],[action-type='doReply']",function(){
+		var self=$(this);
+		var wid=self.parents('.item').data('id');
+		textarea=self.parent('p').prev('textarea');
+		var content=textarea.val();
+		var count=getMessageLength(content);
+		// 评论为空提示
+		if($.trim(content)=='' || count>140){
+			if($.trim(content)==''){
+				text="写点东西吧，评论内容不能为空哦。";
+			}else{
+				text="评论内容在140字以内";
+			}
+			$(window).modal({
+				type:'center M_confirm',
+				title:'提示',
+				content:'<p><i class="icon_warnM"></i>'+ text +'</p>',
+				btn:'<p class="btn"><a class="W_btn_a ok"><span class="btn_30px W_f14">确定</span></a></p>',
+				ok_handler:function(){
+					textarea.focus();
+				}
+			});
+			return;
+		}
+		var isreplay=self.parents('.repeat').data('cid');
+		$.ajax({
+			url:site_url+'single_weibo/send_comment/',
+			type:'post',
+			dataType:'json',
+			data:{wid:wid,content:content,isreplay:isreplay},
+			success:function(data){
+				if(data.status==1){
+					//清空文本框值
+					textarea.val('');
+					//删除回复节点
+					self.parents('.repeat').remove();
+					var avatar=$('.user_info').find('img').attr('src');
+					var username=$('.user_info').find('.username').text();
+					var _comment='\
+					<div class="C_item S_line1">\
+					<div class="face left">\
+					<img src="'+ avatar +'" width="30" height="30" alt="">\
+					</div>\
+					<div class="C_detail">\
+					<p><a href="">'+ username +'</a>：回复<a href="">@叉色-xsir</a>:恩，说实话我对这块专门看过一些资料。所以问的比较多。哈哈<span class="S_txt2">(1月5日 22:07)</span></p>\
+					<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="reply" data-cid=' + _comment['id'] + '>回复</a></p>\
+					</div>\
+					</div>\
+					';
+					$(_comment).insertAfter(self.parents('.comment').children('p'));
+					self.tips({
+						type:'center',
+						text:'评论发表成功',
+						callback_handler:function(){
+
+						}
+					});
+				}
+			}
+		})
+	//
+	})
+	/**
+	* 微博转发
+	*/
+	$('.weibo_list').on('click',"[action-type='turn']",function(){
+		var self=$(this);
+		self.modal({
+			title:'转发微博',
+			type:'center turn_weibo'
 		})
 	})
 	/**

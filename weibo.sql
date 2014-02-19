@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 02 月 18 日 20:56
+-- 生成日期: 2014 年 02 月 20 日 00:22
 -- 服务器版本: 5.5.35
 -- PHP 版本: 5.3.10-1ubuntu3.9
 
@@ -61,12 +61,13 @@ CREATE TABLE IF NOT EXISTS `t_comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(10) unsigned NOT NULL COMMENT '评论用户uid',
   `content` varchar(255) NOT NULL DEFAULT '' COMMENT '评论内容',
+  `isreplay` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '是否回复，回复则记录回复的评论id',
   `time` int(10) unsigned NOT NULL COMMENT 'i评论时间',
   `wid` int(10) unsigned NOT NULL COMMENT '所属微博id',
   PRIMARY KEY (`id`),
   KEY `wid` (`wid`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='评论表' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='评论表' AUTO_INCREMENT=21 ;
 
 -- --------------------------------------------------------
 
@@ -90,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `t_follow` (
 --
 
 INSERT INTO `t_follow` (`follow`, `fans`, `time`, `source`, `gid`) VALUES
+(10001, 10000, 1392782908, 'search', 0),
 (10000, 10005, 1392555157, 'search', 0),
 (10005, 10000, 1392555176, 'fans', 0);
 
@@ -168,14 +170,15 @@ CREATE TABLE IF NOT EXISTS `t_routes` (
   UNIQUE KEY `uid` (`uid`),
   UNIQUE KEY `slug` (`slug`),
   UNIQUE KEY `route` (`route`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='路由表' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='路由表' AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `t_routes`
 --
 
 INSERT INTO `t_routes` (`id`, `slug`, `route`, `uid`) VALUES
-(1, 'runner', 'u/index/10000', 10000);
+(1, 'runner', 'u/index/10000', 10000),
+(2, 'purple', 'u/index/10001', 10001);
 
 -- --------------------------------------------------------
 
@@ -198,8 +201,7 @@ CREATE TABLE IF NOT EXISTS `t_sessions` (
 --
 
 INSERT INTO `t_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('4d46872e3f8e2abaee36e6f7703938fa', '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0', 1392724991, 'a:5:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10001";s:7:"account";s:15:"air_zhe@163.com";s:8:"username";s:6:"purple";s:8:"loggedin";b:1;}'),
-('53dfe5756667c5af5179cdf31e0d6196', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392728098, 'a:5:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10001";s:7:"account";s:15:"air_zhe@163.com";s:8:"username";s:6:"purple";s:8:"loggedin";b:1;}');
+('996ce51ada4c9e32732e9bee142b71db', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392826750, 'a:5:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10000";s:7:"account";s:16:"532499602@qq.com";s:8:"username";s:6:"runner";s:8:"loggedin";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -238,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 --
 
 INSERT INTO `t_user` (`id`, `account`, `passwd`, `regis_time`, `lock`, `vemail`) VALUES
-(10000, '532499602@qq.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 0, 0, 0),
+(10000, '532499602@qq.com', '481e94e1a26f2e8b295765c25e4f4f4b31629a992c48b8c3fee6dfb6186385d638abce86c96aa701a5d4cb9e51ae1687a7523377b4133b4ec57528454a595e35', 0, 0, 0),
 (10001, 'air_zhe@163.com', '481e94e1a26f2e8b295765c25e4f4f4b31629a992c48b8c3fee6dfb6186385d638abce86c96aa701a5d4cb9e51ae1687a7523377b4133b4ec57528454a595e35', 1390923149, 0, 0),
 (10004, 'run@run.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 1391518379, 0, 0),
 (10005, '532499602@163.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 1391518425, 0, 0);
@@ -275,8 +277,8 @@ CREATE TABLE IF NOT EXISTS `t_user_info` (
 --
 
 INSERT INTO `t_user_info` (`id`, `username`, `truename`, `location`, `birthday`, `sex`, `intro`, `avatar`, `domain`, `style`, `follow`, `fans`, `weibo`, `uid`) VALUES
-(1, 'runner', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1999-01-01', '男', '', '201402/1392728074371.jpg', 'runner', 'a:4:{s:5:"style";s:5:"2.css";s:8:"template";s:1:"4";s:5:"cover";s:5:"3.jpg";s:4:"suit";s:1:"7";}', 1, 1, 23, 10000),
-(6, 'purple', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1998-01-01', '女', '', '201402/1392728140354.jpg', NULL, 'a:2:{s:4:"suit";s:1:"6";s:5:"style";s:5:"1.css";}', 0, 0, 12, 10001),
+(1, 'runner', '魏浩哲', 'a:2:{i:0;s:6:"河南";i:1;s:6:"郑州";}', '1999-01-01', '男', '生活因找到而快乐。', '201402/1392728074371.jpg', 'runner', 'a:4:{s:5:"style";s:5:"2.css";s:8:"template";s:1:"4";s:5:"cover";s:5:"3.jpg";s:4:"suit";s:1:"7";}', 2, 1, 22, 10000),
+(6, 'purple', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1998-01-01', '女', '', '201402/1392728140354.jpg', 'purple', 'a:2:{s:4:"suit";s:1:"6";s:5:"style";s:5:"1.css";}', 0, 1, 12, 10001),
 (8, '敏敏', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"天门";}', '2015-02-01', '女', '', '', NULL, '0', 0, 0, 0, 10004),
 (9, '苍老师', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"武汉";}', '2014-01-01', '女', '大家好！我是苍井空. 有时演电影,唱歌,有时在电视节目中露露脸。为了更好的交流.我在努力地学习中文ing 工作邮箱：solaaoi@sina.cn', '', NULL, '0', 1, 1, 1, 10005);
 
@@ -343,8 +345,7 @@ INSERT INTO `t_weibo` (`id`, `content`, `isturn`, `iscomment`, `time`, `praise`,
 (42, '这可是苍老师的第一次哦[害羞]', 0, 0, 1391696311, 0, 0, 0, 0, 10005),
 (46, '[青啤鸿运当头]', 0, 0, 1391925590, 0, 0, 0, 0, 10000),
 (48, '[围观]', 0, 0, 1391926153, 0, 0, 0, 0, 10000),
-(49, '[可爱]', 0, 0, 1391926191, 0, 0, 0, 0, 10000),
-(50, '[挖鼻屎]', 0, 0, 1391926257, 0, 0, 0, 0, 10000);
+(49, '[可爱]', 0, 0, 1391926191, 0, 0, 0, 0, 10000);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

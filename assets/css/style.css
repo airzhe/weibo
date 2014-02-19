@@ -1648,10 +1648,13 @@ body.login .container,body.signup .container{
  	margin: 10px 0px 15px;
  	border-radius: 3px;
  }
- .weibo_list .comment *{
+ .weibo_list .comment {
  	font-size: 12px;
  }
-
+ .weibo_list .comment>p .W_btn_a{
+ 	position: relative;
+ 	top:-5px;
+ }
  .weibo_list .comment textarea{
  	width: 99%;
  	height:23px;
@@ -1717,6 +1720,9 @@ body.login .container,body.signup .container{
  }
  .weibo_list .comment .repeat p{
  	margin: 5px 0  8px;
+ }
+  .weibo_list .comment .repeat p .left{
+ 	margin-top:5px;
  }
  .weibo_list .comment .repeat .WB_arrow{
  	margin: -23px 0 0 370px;
@@ -1963,7 +1969,7 @@ body.login .container,body.signup .container{
  	body.home .user_info .info p{
  		margin-bottom:8px;
  	}
- 	body.home .user_info .info span.name{
+ 	body.home .user_info .info span.username{
  		font: normal 20px/30px "Microsoft Yahei";
  		margin-right: 3px;
  	}

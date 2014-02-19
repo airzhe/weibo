@@ -36,3 +36,11 @@ ERROR - 2014-02-19 17:02:03 --> Severity: Notice  --> Undefined variable: myfoll
 ERROR - 2014-02-19 17:02:03 --> Severity: Notice  --> Undefined variable: user /home/runner/www/work/weibo/weibo/views/components/right_sidebar.php 24
 ERROR - 2014-02-19 17:02:03 --> Severity: Notice  --> Undefined variable: user /home/runner/www/work/weibo/weibo/views/components/right_sidebar.php 24
 ERROR - 2014-02-19 17:02:03 --> Severity: Notice  --> Undefined variable: myfans_list /home/runner/www/work/weibo/weibo/views/components/right_sidebar.php 33
+ERROR - 2014-02-19 18:09:47 --> Severity: Warning  --> json_decode() expects parameter 1 to be string, array given /home/runner/www/work/weibo/weibo/controllers/single_weibo.php 16
+ERROR - 2014-02-19 18:15:47 --> 404 Page Not Found --> %3C
+ERROR - 2014-02-19 22:23:00 --> Severity: Notice  --> Undefined variable: user /home/runner/www/work/weibo/weibo/views/components/header.php 71
+ERROR - 2014-02-19 23:15:11 --> Severity: Notice  --> Undefined property: single_weibo::$wid /home/runner/www/work/weibo/weibo/controllers/single_weibo.php 30
+ERROR - 2014-02-19 23:21:13 --> Query error: Unknown column 'isreplay' in 'field list'
+ERROR - 2014-02-19 23:21:20 --> Query error: Unknown column 'isreplay' in 'field list'
+ERROR - 2014-02-19 23:23:33 --> Query error: Field 'time' doesn't have a default value
+ERROR - 2014-02-19 23:23:39 --> Query error: Field 'time' doesn't have a default value
