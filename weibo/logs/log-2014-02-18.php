@@ -256,3 +256,7 @@ ERROR - 2014-02-18 20:54:25 --> 404 Page Not Found --> images
 ERROR - 2014-02-18 20:54:26 --> 404 Page Not Found --> set/index
 ERROR - 2014-02-18 20:55:02 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
 ERROR - 2014-02-18 20:55:32 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-18 22:40:26 --> Severity: Notice  --> Undefined variable: str /home/runner/www/work/weibo/weibo/controllers/set.php 27
+ERROR - 2014-02-18 22:40:46 --> Severity: Notice  --> Undefined variable: str /home/runner/www/work/weibo/weibo/controllers/set.php 27
+ERROR - 2014-02-18 23:20:59 --> 404 Page Not Found --> set/check_username
+ERROR - 2014-02-18 23:53:02 --> Could not find the language line "username_check"

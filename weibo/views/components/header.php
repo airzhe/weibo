@@ -36,6 +36,7 @@
 			?>
 			<!-- 用户个人信息修改页js -->
 			<script src="<?php echo base_url('assets/js/jquery.validate.js') ?>"></script>
+			<script src="<?php echo base_url('assets/js/jquery.cxselect.min.js') ?>"></script>
 			<?php 
 			break;
 
@@ -67,7 +68,7 @@
 						</form>
 					</div>
 					<ul class="user clearfix">
-						<li class="username" ><a href="<?php echo base_url()?>"><?php echo $this->session->userdata('username') ?></a></li>
+						<li class="username" ><a href="<?php echo $user['domain'] ?>"><?php echo $this->session->userdata('username') ?></a></li>
 						<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
 						<li class="msg">
 							<a href="javascript:void(0)"><i></i><em class="W_new"></em></a>

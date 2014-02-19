@@ -45,7 +45,7 @@
 				<p>他还没有填写个人简介</p>
 			<?php endif ?>
 		<?php endif ?>
-		<p><i class="W_ico12 <?php echo $user['sex_ico'] ?>"></i><i class="W_vline S_line1_c">|</i><a href="#">求交往</a><i class="W_vline S_line1_c">|</i><a href=""><?php echo $user['location'] ?></a></p>
+		<p><i class="W_ico12 <?php echo $user['sex_ico'] ?>"></i><i class="W_vline S_line1_c">|</i><a href="#">求交往</a><i class="W_vline S_line1_c">|</i><a href=""><?php echo implode('&nbsp;&nbsp;', $user['location']) ?></a></p>
 		<?php if (isset($user['me'])): ?>
 			<p class="edit"><a href="<?php echo site_url('set/info') ?>" class="W_btn_c"><span>编辑个人资料</span></a></p>
 		<?php else: ?>

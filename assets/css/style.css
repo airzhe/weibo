@@ -2713,13 +2713,16 @@ body.login .container,body.signup .container{
  		width: 222px;
  		margin-left: 70px;
  	}
+ 	.acc_form .info_item .inp input[type='radio']{
+ 		vertical-align: -2px;
+ 	}
  	.acc_form .info_item .tips{
  		position: absolute;
  		left: 280px;
  		top: 0px;
  		line-height: normal;
  	}
- 	.acc_form .info_item .inp input[type=text],.acc_form .info_item .inp textarea{
+ 	.acc_form .info_item .inp input[type=text],.acc_form .info_item .inp input[type=password],.acc_form .info_item .inp textarea{
 
  		width: 196px;
  	}

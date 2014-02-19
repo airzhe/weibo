@@ -128,7 +128,7 @@
 										<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
 									</div>
 									<div class="handle right">
-										<a href=""><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="">转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(<?php echo $v['collect'] ?>)</a>
+										<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论(<?php echo $v['collect'] ?>)</a>
 									</div>
 								</div>
 							</div>

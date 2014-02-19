@@ -58,7 +58,7 @@ class User_info_model extends MY_Model {
 	 * 获得用户详细信息
 	 */
 	public function get_detail_info($uid){
-		$arr=array('username','location','intro','sex','avatar','domain','style','follow','fans','weibo');
+		$arr=array('username','truename','location','intro','sex','avatar','domain','style','follow','fans','weibo');
 		$this->db->select($arr);
 		$data=$this->get($uid);
 		return count($data)?$this->format($data):null;
@@ -87,7 +87,7 @@ class User_info_model extends MY_Model {
 		// 所在地
 		if (isset($user['location'])) {
 			$add=unserialize($user['location']);
-			$user['location']=implode('&nbsp;&nbsp;', $add);
+			$user['location']=$add;
 		}
 		// 自定义域名
 		if($user['domain']==''){

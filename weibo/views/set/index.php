@@ -7,7 +7,7 @@
 				<div class="item">
 					<ul class="clearfix">
 						<li>登录名</li>
-						<li class="S_txt2">ai*****</li>
+						<li class="S_txt2"><?php echo mb_substr($user['username'],0,2) ?>*****</li>
 						<li><a href="<?php echo site_url('set/security') ?>">修改密码»</a></li>
 					</ul>
 				</div>
@@ -20,17 +20,19 @@
 					<div class="acc_form hide">
 						<div class="info_item clearfix">
 							<div class="tit">现昵称</div>
-							<div class="inp">airzhe</div>
+							<div class="inp"><?php echo $user['username'] ?></div>
 							<div class="tips"></div>
 						</div>
-						<div class="info_item clearfix">
-							<div class="tit">新昵称</div>
-							<div class="inp"><input class="W_input" type="text"></div>
-							<div class="tips"><span class="S_txt2">4-30个字符，支持中英文、数字、"_"或减号</span></div>
-						</div>
-						<div class="info_item clearfix">
-							<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
-						</div>
+						<form action="" class="form_username">
+							<div class="info_item clearfix">
+								<div class="tit">新昵称</div>
+								<div class="inp"><input class="W_input" name="username" type="text" required></div>
+								<div class="tips"><i></i><label class="S_txt2">4-30个字符，支持中英文、数字、"_"或减号</label></div>
+							</div>
+							<div class="info_item clearfix">
+								<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a save_info"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
+							</div>
+						</form>
 					</div>
 				</div>
 				<div class="item">
@@ -41,32 +43,37 @@
 					</ul>
 					<div class="acc_form hide">
 						<p class="S_txt2">以下信息将显示在个人资料页，方便大家了解你。</p>
-						<div class="info_item clearfix">
-							<div class="tit">真实姓名</div>
-							<div class="inp"><input class="W_input" type="text" name="truename"></div>
-							<div class="tips">填写真实姓名</div>
-						</div>
-						<div class="info_item clearfix">
-							<div class="tit">所在地</div>
-							<div class="inp"><select name="" id=""></select></div>
-						</div>
-						<div class="info_item clearfix">
-							<div class="tit">性别</div>
-							<div class="inp">
-								<label><input type="radio" name="sex">男</label>
-								<label><input type="radio" name="sex">女</label>
+						<form action="" class="form_info">
+							<div class="info_item clearfix">
+								<div class="tit">真实姓名</div>
+								<div class="inp"><input class="W_input" type="text" name="truename" value="<?php echo $user['truename'] ?>"></div>
+								<div class="tips">填写真实姓名</div>
 							</div>
-						</div>
-						<div class="info_item clearfix">
-							<div class="tit">简介</div>
-							<div class="inp">
-								<textarea class="W_input" name=""></textarea>	
+							<div class="info_item clearfix">
+								<div class="tit">所在地</div>
+								<div class="inp" id="city">
+									<select class="province" data-val="<?php echo $user['location'][0] ?>" data-title="选择省" name="location[]"></select>
+									<select class="city" data-title="<?php echo $user['location'][1] ?>" name="location[]" ></select>
+								</div>
 							</div>
-							<div class="tips">请不要超过70个字</div>
-						</div>
-						<div class="info_item clearfix">
-							<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
-						</div>
+							<div class="info_item clearfix">
+								<div class="tit">性别</div>
+								<div class="inp">
+									<label><input type="radio" value="男" name="sex" checked >男</label>
+									<label><input type="radio" value="女" name="sex" <?php if($user['sex']=='女') echo 'checked' ?>>女</label>
+								</div>
+							</div>
+							<div class="info_item clearfix">
+								<div class="tit">简介</div>
+								<div class="inp">
+									<textarea class="W_input" name="intro"><?php echo $user['intro'] ?></textarea>	
+								</div>
+								<div class="tips">请不要超过70个字</div>
+							</div>
+							<div class="info_item clearfix">
+								<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a save_info" id="save_info"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
+							</div>
+						</form>
 					</div>
 				</div>
 				<div class="item">
@@ -84,14 +91,14 @@
 						<?php if (strpos($user['domain'],'u/')===false): ?>
 							<p> 您的域名：<?php echo $user['domain'] ?></p>
 						<?php else: ?>
-							<form action="" method="post" class="form_domain">
+							<form action="" class="form_domain">
 								<div class="info_item clearfix">
 									<div class="tit"><?php echo base_url() ?></div>
 									<div class="inp"><input type="text" name="domain" class="W_input" required></div>
 									<div class="tips"><i class="icon_warn"></i><label class="S_txt2">个性化域名请使用长度为4～20个字符的数字或者字母</label></div>
 								</div>
 								<div class="info_item clearfix">
-									<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a save_info"  action="save_domain"><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
+									<div class="inp btn"><a href="javascript:void(0)" class="W_btn_a save_info" ><span>保存</span></a><a href="javascript:void(0)" class="W_btn_b" action="close_item"><span>关闭</span></a></div>
 								</div>
 							</form>
 						<?php endif ?>

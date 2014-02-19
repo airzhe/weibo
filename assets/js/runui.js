@@ -221,6 +221,7 @@ function get_pos(obj,top){
  		var _default = {
  			type:'',
  			text:'操作成功!',
+ 			// 0显示在上面，1显示在对象中间
  			v_type:1,
  			timeout:1,
  			callback_handler:function(){}

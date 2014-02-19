@@ -213,7 +213,7 @@ $(document).ready(function(){
 	$('body').on('click','.diy_list a',function(){
 		var css=$(this).find('span').html();
 		if(css==''){
-			$(this).tips({type:'error',text:'样式不可用',timeout:1});
+			$(this).tips({type:'error',v_type:0,text:'样式不可用',timeout:1});
 			return;
 		}
 		$('.diy_list').find('a').removeClass('current');
@@ -340,7 +340,7 @@ $(document).ready(function(){
 			weibo+='</div>';
 			weibo+='<div class="func clearfix S_txt2">';
 			weibo+='<div class="from left"><a href="#" class="S_link2 time"></a> 来自<a href="" class="S_link2">新浪微博</a> </div>';
-			weibo+='<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(0)</a><i class="S_txt3">|</i><a href="">转发(0)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(0)</a></div>';
+			weibo+='<div class="handle right"><a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(0)</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发(0)</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论(0)</a></div>';
 			weibo+='</div>';
 			weibo+='</div>';
 			weibo+='</div>';
@@ -677,21 +677,21 @@ $(document).ready(function(){
 	$("[action='close_item']").on('click',function(){
 		$(this).parents('.item').removeClass('active');
 	})
-	$(".save_info").on('click',function(){
+	// 保存按钮触发表单提交事件
+	$(".save_info:not('#save_info')").on('click',function(){
 		$(this).parents('form').submit();
 	})
 	if($('body.set_info').length==1){
+		//用户个性域名验证
 		jQuery.validator.addMethod("domainFormat", function(value) {  
 			return (/^[a-zA-Z0-9]{4,20}$/.test(value));
 		});
 		$(".form_domain").validate({
 			onkeyup:false,
-			// debug:true,
 			submitHandler:function(form){
 				var submit=$(form).find('.btn .W_btn_a span');
 				submit.prepend($('<i/>',{class:'ico_loading'}));
 				var domain=$("[name=domain]").val();
-				console.log('run....');
 				$.ajax({
 					type:'post',
 					url:site_url+'set/domain/',
@@ -705,6 +705,7 @@ $(document).ready(function(){
 									window.location.reload();
 								}
 							});
+							submit.find('i').fadeOut();
 						}
 					}
 				})
@@ -721,7 +722,7 @@ $(document).ready(function(){
 					required:true,
 					domainFormat:true,
 					remote: {
-					    url : site_url+'set/check_domain/',			//后台处理程序
+					    url : site_url+'set/domain_exist/',			//后台处理程序
 					    type: "post",               			//数据发送方式 
 					    data: {                     			//要传递的数据
 					    	account: function() {
@@ -739,7 +740,167 @@ $(document).ready(function(){
 				}
 			}
 		})
-}
+		//用户修改昵称验证
+		jQuery.validator.addMethod("userNameFormat", function(value) {  
+			return (/^[a-zA-Z0-9_\-\u4E00-\u9FA5]{4,24}$/.test(value));
+		});
+		$(".form_username").validate({
+			onkeyup:false,
+			submitHandler:function(form){
+				var submit=$(form).find('.btn .W_btn_a span');
+				submit.prepend($('<i/>',{class:'ico_loading'}));
+				var username=$("[name=username]").val();
+				$.ajax({
+					type:'post',
+					url:site_url+'set/username/',
+					dataType:'json',
+					data:{username:username},
+					success:function(data){
+						if(data.status==1){
+							submit.tips({
+								text:'设置成功',
+								callback_handler:function(){
+									window.location.reload();
+								}
+							});
+							submit.find('i').fadeOut();
+						}
+					}
+				})
+			},
+			errorPlacement: function(error, element) {
+				element.parents('.info_item').find('.tips').append(error).find('.S_txt2').remove();
+				element.parents('.info_item').find('.tips').find('i').removeClass().addClass('icon_rederrorS');
+			},
+			success: function(element) {
+				element.parents('.info_item').find('.tips').find('i').removeClass().addClass('icon_succ');
+			},
+			rules:{
+				username:{
+					required:true,
+					userNameFormat:true,
+					remote: {
+					    url : site_url+'set/username_exist/',	//后台处理程序
+					    type: "post",               			//数据发送方式 
+					    data: {                     			//要传递的数据
+					    	account: function() {
+					    		return $("[name=username]").val();
+					    	}
+					    }
+					}
+				}
+			},
+			messages:{
+				username:{
+					required:'用户昵称不能为空',
+					userNameFormat:'个性化域名请使用长度为4～20个字符的数字或者字母',
+					remote:'用户昵称已经存在，请更换。'
+				}
+			}
+		})
+		//用户修改密码验证
+		$(".form_passwd").validate({
+			onkeyup:false,
+			debug:true,
+			submitHandler:function(form){
+				var submit=$(form).find('.btn .W_btn_a span');
+				submit.prepend($('<i/>',{class:'ico_loading'}));
+				var passwd=$("[name=passwd]").val();
+				$.ajax({
+					type:'post',
+					url:site_url+'set/passwd/',
+					dataType:'json',
+					data:$('form').serialize(),
+					success:function(data){
+						if(data.status==1){
+							submit.tips({
+								text:'设置成功',
+								callback_handler:function(){
+									window.location.reload();
+								}
+							});
+							submit.find('i').fadeOut();
+						}
+					}
+				})
+			},
+			errorPlacement: function(error, element) {
+				element.parents('.info_item').find('.tips').append(error).find('.S_txt2').remove();
+				element.parents('.info_item').find('.tips').find('i').removeClass().addClass('icon_rederrorS');
+			},
+			success: function(element) {
+				element.parents('.info_item').find('.tips').find('i').removeClass().addClass('icon_succ');
+			},
+			rules:{
+				passwd:{
+					required:true,
+					remote: {
+					    url : site_url+'set/auth_passwd/',	//后台处理程序
+					    type: "post",               			//数据发送方式 
+					    data: {                     			//要传递的数据
+					    	account: function() {
+					    		return $("[name=passwd]").val();
+					    	}
+					    }
+					}
+				},
+				newPasswd:{
+					required:true,
+					rangelength:[6,16]
+				},
+				rePasswd:{
+					required:true,
+					rangelength:[6,16],
+					equalTo:"#newPasswd"
+				}
+			},
+			messages:{
+				passwd:{
+					required:'请输入当前密码',
+					remote:'当前密码错误'
+				},
+				newPasswd:{
+					required:'请设置密码',
+					rangelength:'密码长度为6-16位'
+				},
+				rePasswd:{
+					required:'请输入确认密码',
+					rangelength:'密码长度为6-16位',
+					equalTo:'两次密码不一致'
+				}
+			}
+		})
+		/**
+		 * 地区
+		 */
+		 $.cxSelect.defaults.url=site_url+"assets/js/city.min.js";
+		 $("#city").cxSelect({
+		 	selects:["province","city"]
+		 });
+		//用户个人资料修改
+		$("#save_info").on('click',function(){
+			var self=$(this);
+			self.find('span').prepend($('<i/>',{class:'ico_loading'}));
+			$.ajax({
+				type:'post',
+				url:site_url+'set/info/',
+				dataType:'json',
+				data:$('.form_info').serialize(),
+				success:function(data){
+					if(data.status==1){
+						self.tips({
+							text:'设置成功',
+							callback_handler:function(){
+								window.location.reload();
+							}
+						});
+						self.find('i').fadeOut();
+					}
+				}
+			})
+		})
+		//
+	}
 	/**
 	* 修改用户头像
 	*/

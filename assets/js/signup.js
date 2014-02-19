@@ -54,7 +54,7 @@ $(document).ready(function(){
 	 * 表单验证
 	 */
 	jQuery.validator.addMethod("userNameFormat", function(value) {  
-		return (/^[a-zA-Z0-9_\-\u4E00-\u9FA5]+$/.test(value));
+		return (/^[a-zA-Z0-9_\-\u4E00-\u9FA5]{4,24}$/.test(value));
 	});
 	$('form').validate({
 		onkeyup:false,
@@ -103,7 +103,6 @@ $(document).ready(function(){
 			},
 			username:{
 				required:true,
-				rangelength:[4,24],
 				userNameFormat:true,
 				remote: {
 				    url : site_url+'signup/username_exist',	//后台处理程序
@@ -141,7 +140,6 @@ $(document).ready(function(){
 				},
 				username:{
 					required:'请输入昵称',
-					rangelength:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
 					userNameFormat:'请输入4-24位字符：支持中文、英文、数字、“-”、“_”',
 					remote:'用户名已经存在，请更换。'
 				},
