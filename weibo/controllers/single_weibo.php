@@ -7,34 +7,66 @@ Class single_weibo extends Front_Controller{
 		$this->data['body_class'] = 'home';
 		$this->uid=$this->session->userdata('uid');
 		$this->load->model('Comment_model');
+		$this->load->model('Weibo_model');
+		$this->load->library('weibo');
+		// 加密类
+		$this->load->library('encrypt');
+		$this->encrypt->set_cipher(MCRYPT_BLOWFISH);
 	}
 	public function index(){
 		$this->view('single_weibo',$this->data);
 	}
 	//读取评论列表
 	public function select_comment($source=NULL){
+		
+		$wid=$this->input->post('id');
+		
+		//获得评论总数
+		$count=$this->db->where(array('wid'=>$wid))->from('comment')->count_all_results();
+		//没有评论就返回
+		if(!($count))
+			die(json_encode(array('status'=>1)));
+		//取得分页数据
 		$per_page=20;
 		if($source=='item') $per_page=10;
-		$wid=$this->input->post('id');
-		$comment="select * from t_comment where wid= $wid";
-		$comment[]=array('id'=>1000,'avatar'=>'ss','username'=>'地瓜哥','content'=>'恩，说实话我对这块专门看过一些资料。所以问的比较多。哈哈','time'=>'1月5日 22:07');
-		// p($comment);
-		$arr=array('status'=>1,'result'=>$comment);
+		$_comment=$this->db->query("select c.id,`username`,`avatar`,`domain`,`content`,`time`,c.uid from `{$this->db->dbprefix}user_info` as info join (select * from `{$this->db->dbprefix}comment` where `wid`= $wid) as c on info.uid=c.uid order by time desc limit {$per_page}")->result_array();
+		//格式化评论内容
+		$comment=$this->weibo->format($_comment);
+		//删除评论
+		if($this->db->where(array('id'=>$wid,'uid'=>$this->uid))->from('weibo')->count_all_results()){
+			#自己的微博客评论都可以删
+			foreach ($comment as $k => $v) {
+				$comment[$k]['me']=TRUE;
+			}
+		}else{
+			#别人的微博客只能删自己的评论
+			foreach ($comment as $k => $v) {
+				if($v['uid']==$this->uid){
+					$comment[$k]['me']=TRUE;
+				}
+			}
+		}
+
+		$arr=array('status'=>1,'result'=>$comment,'count'=>$count);
+		//评论条数超过10条就返回加密后的wid
+		if($count>10){
+			$_wid=urlencode($this->encrypt->encode($wid));
+			$arr+=array('_wid'=>$_wid);
+		}
+
 		die(json_encode($arr));
 	}
 	//发表评论
 	public function send_comment(){
-
+		$this->weibo->comment();
+	}
+	//删除评论
+	public function del_comment(){
+		$id=$this->input->post('cid');
 		$wid=$this->input->post('wid');
-		$content=$this->input->post('content');
-		$isreplay=$this->input->post('isreplay');
-
-		$data=array('uid'=>$this->uid,'content'=>$content,'isreplay'=>$isreplay,'wid'=>$wid,'time'=>time());
-		
-		if($this->Comment_model->add($data)){
+		if($this->db->where(array('id'=>$id,'uid'=>$this->uid))->delete('comment')){
+			$this->Weibo_model->inc('comment',$wid,'-1');
 			die(json_encode(array('status'=>1)));
 		}
-		die(json_encode(array('status'=>0)));
 	}
-	// 由
 }

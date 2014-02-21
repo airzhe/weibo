@@ -3,6 +3,7 @@ class weibo{
 	public function __construct(){
 		$this->CI=& get_instance();
 		$this->CI->load->model('Weibo_model');
+		$this->CI->load->model('Comment_model');
 		$this->uid = $this->CI->session->userdata('uid');
 	}
 	
@@ -13,7 +14,7 @@ class weibo{
 		$content=$this->CI->input->post('content');
 		$len=getMessageLength($content);
 		if($len==0 || $len>140){
-			$data=array('status'=>0,'error'=>'微博长度应小与140');
+			$data=array('status'=>0,'error'=>'微博长度应小于140');
 		}else{
 			//写入数据库
 			$time=time();
@@ -22,7 +23,7 @@ class weibo{
 			//微博总数+1
 			$this->CI->load->model('User_info_model');
 			$this->CI->User_info_model->inc('weibo',$this->uid);
-
+			//@某人 
 			$preg='/(@.*?)\s/is';
 			if(preg_match_all($preg, $content, $at)){
 				//微博@
@@ -32,6 +33,35 @@ class weibo{
 			$_time=$this->f_time($time);
 			$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
 		};
+		die(json_encode($data));
+	}
+	/**
+	 * 评论微博
+	 */
+	public function comment(){
+		$wid=$this->CI->input->post('wid');
+		$content=$this->CI->input->post('content');
+		$isreplay=$this->CI->input->post('isreplay');
+		$len=getMessageLength($content);
+		if($len==0 || $len>140){
+			$data=array('status'=>0,'error'=>'评论长度应小于140');
+		}else{
+			$time=time();
+			$comment=array('uid'=>$this->uid,'content'=>$content,'isreplay'=>$isreplay,'wid'=>$wid,'time'=>$time);
+			if($id=$this->CI->Comment_model->add($comment)){
+				// 微博评论总数+1
+				$this->CI->Weibo_model->inc('comment',$wid);
+				//@某人
+				$preg='/(@.*?)\s/is';
+				if(preg_match_all($preg, $content, $at)){
+					//微博@
+					// p($at);
+				}
+				$_content=$this->f_content($content);
+				$_time=$this->f_time($time);
+				$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
+			}
+		}
 		die(json_encode($data));
 	}
 	/**
@@ -92,8 +122,10 @@ class weibo{
 				$user[$k]['domain']=site_url("$domain");
 			}
 			// 性别
-			if ($v['sex']) {
-				$user[$k]['sex_ico']=$v['sex']=='男'?'male':'female';
+			if (isset($v['sex'])) {
+				if ($v['sex']) {
+					$user[$k]['sex_ico']=$v['sex']=='男'?'male':'female';
+				}
 			}
 			// 所在地
 			if (isset($v['location'])) {

@@ -64,6 +64,8 @@ Class index extends Front_Controller{
 						<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
 					</div>
 str;
+				}else{
+					$WB_screen='';
 				}
 				$_weibo=<<<str
 				<div class="item clearfix" data-id="{$v['id']}">
@@ -83,7 +85,7 @@ str;
 								<a href="#" class="S_link2 time">{$v['time']}</a> 来自<a href="" class="S_link2">新浪微博</a> 
 							</div>
 							<div class="handle right">
-								<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>({$v['praise']})</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发({$v['turn']})</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论({$v['collect']})</a>
+								<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>({$v['praise']})</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发({$v['turn']})</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论({$v['comment']})</a>
 							</div>
 						</div>
 					</div>
