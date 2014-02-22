@@ -106,7 +106,8 @@ class MY_Model extends CI_Model {
 		}
 		$this->db->where($this->_primary_key, $id);
 		$this->db->limit(1);
-		return $this->db->delete($this->_table_name);
+	    $this->db->delete($this->_table_name);
+	    return $this->db->affected_rows();
 	}
 	/**
 	 * 值加1

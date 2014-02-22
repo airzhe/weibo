@@ -8,6 +8,35 @@ function getMessageLength (b) {
 }
 $(document).ready(function(){
 	/**	
+	* 定义共用变量
+	*/
+	var user={};
+	user.name=$('.global_nav').find('.username').children('a').text();
+	var avatar=$('.global_nav').find('.username').attr('avatar');
+	user.avatar=site_url+'images/avatar/50/'+avatar;
+	user.domain=$('.global_nav').find('.username').children('a').attr('href');
+
+	//weibo
+	var weibo='\
+	<div class="item clearfix hide" data-id> \
+	<div class="WB_screen">\
+	<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>\
+	</div>\
+	<div class="face">\
+	<a href="'+ user.domain +'"><img  width="50" height="50" src="' + user.avatar + '" alt=""></a>\
+	</div>\
+	<div class="detail">\
+	<div><a class="name S_func1" href="'+ user.domain +'">' + user.name + '</a></div>\
+	<div class="content">\
+	</div>\
+	<div class="func clearfix S_txt2">\
+	<div class="from left"><a href="#" class="S_link2 time"></a> 来自<a href="" class="S_link2">新浪微博</a> </div>\
+	<div class="handle right"><a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(0)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn">转发(0)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(0)</a></div>\
+	</div>\
+	</div>\
+	</div>\
+	';
+	/**	
 	* 查看消息，设置时隐藏新消息提示框
 	*/
 	$('.global_nav  .msg,.global_nav .setting').hover(function(){
@@ -325,26 +354,6 @@ $(document).ready(function(){
 	$('.send_btn').on('click',function(){
 		if(!$(this).hasClass('W_btn_v_disable')){
 			$('.weibo_list').find('.notes').remove();
-			var weibo='';
-			var avatar=$('.user_info').find('img').attr('src');
-			var name=$('.user_info').find('.username').text();
-			weibo+='<div class="item clearfix hide" data-id> ';
-			weibo+='<div class="WB_screen">';
-			weibo+='<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>';
-			weibo+='</div>';
-			weibo+='<div class="face">';
-			weibo+='<img  width="50" height="50" src="' + avatar + '" alt="">';
-			weibo+='</div>';
-			weibo+='<div class="detail">';
-			weibo+='<div><a class="name S_func1" href="#">' + name + '</a></div>';
-			weibo+='<div class="content">';
-			weibo+='</div>';
-			weibo+='<div class="func clearfix S_txt2">';
-			weibo+='<div class="from left"><a href="#" class="S_link2 time"></a> 来自<a href="" class="S_link2">新浪微博</a> </div>';
-			weibo+='<div class="handle right"><a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(0)</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发(0)</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论(0)</a></div>';
-			weibo+='</div>';
-			weibo+='</div>';
-			weibo+='</div>';
 			$(weibo).prependTo('.weibo_list').fadeOut();
 			var content=$('#weibo_input_detail').val();
 			$.ajax({
@@ -1025,8 +1034,6 @@ $(document).ready(function(){
 				var id = new Date().getTime();
 				if(data.status==1){
 					comment.find('.W_loading').remove();
-					//显示数据库评论总条数
-					if(data.count) self.text('评论('+(parseInt(data.count))+')');
 					//评论框加载
 					var title='\
 					<div class="W_tips tips_warn clearfix">\
@@ -1039,6 +1046,12 @@ $(document).ready(function(){
 					<textarea name="" id="'+ id +'" class="W_input"></textarea>\
 					<p class="clearfix"><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox">同时转发到我的微博<a href="javascript:void(0)" class="W_btn_a right" action-type="post"><span class="btn_30px W_f14">评论</span></a></p>';
 					$(title).appendTo(comment);
+					//显示数据库评论总条数
+					if(!data.count){
+						self.text('评论(0)');
+						return;
+					}
+					self.text('评论('+(parseInt(data.count))+')');
 					//遍历评论加载
 					$(data.result).each(function(i){
 						var _comment=data.result[i];
@@ -1164,25 +1177,23 @@ $(document).ready(function(){
 					comment_count.text('评论('+(parseInt(num)+1)+')');
 					//清空文本框值
 					textarea.val('');
-					//删除回复节点
-					self.parents('.repeat').remove();
+					
 					// 添加评论到评论列表
-					var avatar=$('.user_info').find('img').attr('src');
-					var username=$('.user_info').find('.username').text();
-					var href=$('.user_info').find('.username').attr('href');
 					var content='';
 					var _comment='\
 					<div class="C_item S_line1">\
 					<div class="face left">\
-					<a href="'+href +'"><img src="'+ avatar +'" width="30" height="30" alt=""></a>\
+					<a href="'+user.domain +'"><img src="'+ user.avatar +'" width="30" height="30" alt=""></a>\
 					</div>\
 					<div class="C_detail">\
-					<p><a href="'+ href +'" class="username">'+ username +'</a>：'+ data.content +'<span class="S_txt2">('+ data.time +')</span></p>\
-					<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="reply" data-cid=' + 1 + '>回复</a></p>\
+					<p><a href="'+ user.domain +'" class="username">'+ user.name +'</a>：'+ data.content +'<span class="S_txt2">('+ data.time +')</span></p>\
+					<p class="info"><a href="javascript:void(0);" action-type="delete" data-cid=' + data.id +'>删除</a><i class="S_txt3 hover">|</i><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="reply" data-cid=' + 1 + '>回复</a></p>\
 					</div>\
 					</div>\
 					';
 					$(_comment).insertAfter(self.parents('.comment').children('p').first());
+					//如果为回复则删除回复节点
+					self.parents('.repeat').remove();
 					self.tips({
 						type:'center',
 						text:'评论发表成功',
@@ -1193,17 +1204,83 @@ $(document).ready(function(){
 				}
 			}
 		})
-	//
-})
+		//
+	})
 	/**
 	* 微博转发
 	*/
 	$('.weibo_list').on('click',"[action-type='turn']",function(){
 		var self=$(this);
+		var id = new Date().getTime();
+		var weibo=self.parents('.item');
+		var wid=weibo.data('id');
+		var username=weibo.find('.name').eq(0).text();
+		var href=weibo.find('.name').eq(0).attr('href');
+		var weibo_content=weibo.find('.content').eq(0).html();
+		var content='\
+		<div class="forward_content" data-wid='+ wid +'><a class="S_func1" href="'+ href +'" target="_top">@'+ username +'</a>'+ weibo_content +'</div>\
+		<textarea name="content" class="W_input" id='+ id +' cols="30" rows="10"></textarea>\
+		<p class="clearfix"><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox">同时评论给'+ username +'<a href="javascript:void(0)" class="W_btn_a right" action-type="turn_submit"><span class="btn_30px W_f14">转发</span></a></p>\
+		';
 		self.modal({
 			title:'转发微博',
-			type:'center turn_weibo'
+			type:'center turn_weibo',
+			content:content,
+			btn:''
 		})
+	})
+	$('body').on('click',"[action-type='turn_submit']",function(){
+		var self=$(this);
+		var turn=self.parents('.turn_weibo');
+		var content=$.trim(turn.find("[name='content']").val());
+		if(content=='') content="转发微博";
+		var isturn=turn.find('.forward_content').data('wid');
+		$.post(site_url+'single_weibo/turn',{isturn:isturn,content:content},function(data){
+			if(data.status==1){
+				// 添加转发到列表
+				if($('.W_chat_stat').length==0){
+					$('.weibo_list').find('.notes').remove();
+					//微博总数+1
+					$('#my_weibo').html(+$('#my_weibo').html()+1);
+					//转发数+1
+					var original_weibo=$('[data-id='+isturn+']');
+					var forward_count=original_weibo.find("[action-type='turn']");
+					num=/\d+/.exec(forward_count.text());
+					forward_count.text('转发('+(parseInt(num)+1)+')');
+
+					//转发的微博内容
+					var _weibo=original_weibo.find('.detail').clone();
+					_weibo.attr('class','forwardContent');
+					_weibo.find('.comment').remove();
+					_weibo.find('.forwardContent').remove();
+					_weibo.find('.name').text('@'+_weibo.find('.name').text());
+					_weibo.find('.func').find('a').not(':has(s)').addClass('S_func2');
+					//转发、评论按钮链接到该微博单条页面
+					_weibo.find("[action-type='collect']").next('i').andSelf().remove();
+					_weibo.find("[action-type='comment']").attr('href',site_url+'single_weibo/'+data._wid);
+					_weibo.find('.handle').find('a').removeAttr('action-type');
+
+					$(weibo).prependTo('.weibo_list').fadeOut();
+
+					var _item=$('.item:hidden');
+					_item.data('id',data.id);
+					_item.find('.content').html(data.content);
+					//插入转发微博内容
+					_item.find('.content').after(_weibo);
+					_item.find('.time').html(data.time);
+					_item.fadeIn();
+				}
+				// 关闭转发提示框架
+				turn.fadeOut(100,function(){
+					$(this).remove();
+					$('body').tips({
+						type:'center',
+						text:'转发成功'
+					})
+				})
+			}
+		},'json');
+		//
 	})
 	/**
 	* 返回顶部

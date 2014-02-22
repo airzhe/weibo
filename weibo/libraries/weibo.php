@@ -4,13 +4,16 @@ class weibo{
 		$this->CI=& get_instance();
 		$this->CI->load->model('Weibo_model');
 		$this->CI->load->model('Comment_model');
-		$this->uid = $this->CI->session->userdata('uid');
+		$this->CI->load->library('encrypt');
+		$this->CI->encrypt->set_cipher(MCRYPT_BLOWFISH);
+		$this->uid = $this->CI->session->userdata('uid');	
 	}
 	
 	/**
 	 * 发单条新微博
 	 */
-	public function send(){
+	public function send($turn=FALSE){
+
 		$content=$this->CI->input->post('content');
 		$len=getMessageLength($content);
 		if($len==0 || $len>140){
@@ -19,10 +22,18 @@ class weibo{
 			//写入数据库
 			$time=time();
 			$weibo=array('content'=>$content,'time'=>$time,'uid'=>$this->uid);
+			//如果是转发，记录转发id
+			if($turn) {
+				$isturn=$this->CI->input->post('isturn');
+				$weibo+=array('isturn'=>$isturn);
+			}
+			//
 			$id=$this->CI->Weibo_model->add($weibo);
 			//微博总数+1
 			$this->CI->load->model('User_info_model');
 			$this->CI->User_info_model->inc('weibo',$this->uid);
+			//如果是转发，被转发的微博转发数+1
+			if($turn) $this->CI->Weibo_model->inc('turn',$isturn);
 			//@某人 
 			$preg='/(@.*?)\s/is';
 			if(preg_match_all($preg, $content, $at)){
@@ -32,6 +43,7 @@ class weibo{
 			$_content=$this->f_content($content);
 			$_time=$this->f_time($time);
 			$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
+			if($turn) $data+=array('_wid'=>urlencode($this->CI->encrypt->encode($isturn)));
 		};
 		die(json_encode($data));
 	}

@@ -46,7 +46,7 @@
 		</ul>
 		<div class="hot_topics">
 			<fieldset>
-				<legend class="S_txt2"><a href="#">热门话题</a></legend>
+				<legend class="S_txt2"><a href="#">推荐用户</a></legend>
 			</fieldset>
 			<ul>
 				<li><a href="#">#汤唯遭遇电信诈骗#</a><span class="total S_txt2">2634万</span></li>
@@ -123,12 +123,34 @@
 								<div class="content">
 									<?php echo $v['content'] ?>
 								</div>
+								<?php if ($v['isturn']):$wid=$v['isturn'] ?>
+									<div class="forwardContent">
+										<?php if (isset($forward_list[$wid])): ?>
+											<div>
+												<a class="name S_func1" href="<?php echo $forward_list[$wid]['domain'] ?>">@<?php echo $forward_list[$wid]['username'] ?></a>
+											</div>
+											<div class="content">
+												<?php echo $forward_list[$wid]['content'] ?>
+											</div>
+											<div class="func clearfix S_txt2">
+												<div class="from left">
+													<a href="#" class="S_func2 time"><?php echo $forward_list[$wid]['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
+												</div>
+												<div class="handle right">
+													<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward_list[$wid]['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward_list[$wid]['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward_list[$wid]['comment'] ?>)</a>
+												</div>
+											</div>
+										<?php else: ?>
+											该微博已经被删除
+										<?php endif ?>
+									</div>
+								<?php endif ?>
 								<div class="func clearfix S_txt2">
 									<div class="from left">
 										<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
 									</div>
 									<div class="handle right">
-										<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
+										<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
 									</div>
 								</div>
 								<!-- 评论 -->

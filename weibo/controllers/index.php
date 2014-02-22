@@ -50,8 +50,26 @@ Class index extends Front_Controller{
 		//如果为空则返回
 		if(!count($weibo_list)) return;
 		$weibo_list=$this->weibo->format($weibo_list);
+		//转发的原微博
+		$forward_arr=array();
+		foreach ($weibo_list as $k => $v) {
+			if($v['isturn']){
+				$forward_arr[]=$v['isturn'];
+			}
+		}
+		$forward_list=array();
+		if(!empty($forward_arr)){
+			$this->db->join('user_info', 'user_info.uid = weibo.uid');
+			$_forward_list=$this->db->where_in('weibo.id',$forward_arr)->select($arr)->get('weibo')->result_array();
+			$forward_list=array();
+			foreach ($_forward_list as $k => $v) {
+				$forward_list[$v['id']]=$v;
+			}
+			$forward_list=$this->weibo->format($forward_list);
+		}
 		// 如果是ajax请求输入输入，否则赋值给$this->data
 		if(!$this->input->is_ajax_request()){
+			$this->data['forward_list']=$forward_list;
 			$this->data['weibo_list']=$weibo_list;
 			$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
 		}else{

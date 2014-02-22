@@ -1310,7 +1310,7 @@ body.login .container,body.signup .container{
  .W_layer.modal .bg{
  	position: relative;
  }
- .W_layer.modal p{
+ .W_layer.modal p.btn{
  	text-align: center;
  }
  /*表情弹出框*/
@@ -1686,10 +1686,10 @@ body.login .container,body.signup .container{
  .weibo_list .comment .C_detail .info .S_txt3{
  	margin:0px 6px 0px 8px;
  }
- .weibo_list .comment .C_detail .info .hover{
+ .weibo_list .comment .C_detail .hover{
  	visibility: hidden;
  }
- .weibo_list .comment .C_detail .info:hover .hover{
+ .weibo_list .comment .C_detail:hover .hover{
  	visibility: visible;
  }
  .weibo_list .comment .W_tips {
@@ -1743,7 +1743,30 @@ body.login .container,body.signup .container{
  	vertical-align: -4px;
  	margin-right: 10px;
  }
+ /*转发微博*/
+ .W_layer.turn_weibo .wrap{
+ 	border-color: #fff;
+ }
 
+ .W_layer.turn_weibo .forward_content .S_func1{
+ 	font-weight: 700;
+ 	/*color:#333;*/
+ }
+ .W_layer.turn_weibo .forward_content {
+ 	width: 425px;
+ 	margin: 15px 0px 5px;
+ 	padding: 6px 10px;
+ 	line-height: 18px;
+ 	word-wrap: break-word;
+ 	overflow: hidden;
+ 	background-color: rgb(242, 242, 242);
+ }
+ .W_layer.turn_weibo .forward_content img{
+ 	vertical-align: -2px;
+ }
+ .W_layer.turn_weibo .W_input{
+ 	height: 100px;
+ }
  /*个人页面微博样式*/
 
  .weibo_list.feed_self .detail{

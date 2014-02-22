@@ -1,5 +1,7 @@
 <?php 
-// 单条微博处理类
+/**
+ * 单条微博处理类
+ */
 Class single_weibo extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
@@ -16,7 +18,9 @@ Class single_weibo extends Front_Controller{
 	public function index(){
 		$this->view('single_weibo',$this->data);
 	}
-	//读取评论列表
+	/**
+	* 读取评论列表
+	*/
 	public function select_comment($source=NULL){
 		
 		$wid=$this->input->post('id');
@@ -39,7 +43,7 @@ Class single_weibo extends Front_Controller{
 				$comment[$k]['me']=TRUE;
 			}
 		}else{
-			#别人的微博客只能删自己的评论
+			#别人的微博只能删自己的评论
 			foreach ($comment as $k => $v) {
 				if($v['uid']==$this->uid){
 					$comment[$k]['me']=TRUE;
@@ -53,20 +57,51 @@ Class single_weibo extends Front_Controller{
 			$_wid=urlencode($this->encrypt->encode($wid));
 			$arr+=array('_wid'=>$_wid);
 		}
-
 		die(json_encode($arr));
 	}
-	//发表评论
+	/**
+	* 发表评论
+	*/
 	public function send_comment(){
 		$this->weibo->comment();
 	}
-	//删除评论
+	/**
+	* 删除评论
+	*/
 	public function del_comment(){
 		$id=$this->input->post('cid');
-		$wid=$this->input->post('wid');
-		if($this->db->where(array('id'=>$id,'uid'=>$this->uid))->delete('comment')){
+		$_wid=$this->db->select('wid')->get_where('comment',array('id'=>$id))->row_array();
+		$wid=current($_wid);
+
+		$me=FALSE;
+		if($this->db->where(array('id'=>$wid,'uid'=>$this->uid))->from('weibo')->count_all_results()){
+			#自己的微博
+			if($this->Comment_model->delete($id)){
+				$me=TRUE;
+			}
+		}else{
+			#别人的微博
+			$_uid=$this->db->select('uid')->get_where('weibo',array('id'=>$wid))->row_array();
+			$uid=current($_uid);
+			//如果这条评论是我发出的评论
+			if($uid=$this->uid){
+				if($this->Comment_model->delete($id)){
+					$me=TRUE;
+				}
+			}
+
+		}
+		// 微博表微博评论总数-1
+		if($me){
 			$this->Weibo_model->inc('comment',$wid,'-1');
 			die(json_encode(array('status'=>1)));
 		}
+	}
+
+	/**
+	* 转发微博
+	*/
+	public function turn(){
+		$this->weibo->send($turn=TRUE);
 	}
 }
