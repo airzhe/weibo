@@ -109,25 +109,27 @@ $(document).ready(function(){
 					$('.image_upload').find('ul.btn').css({'position':'absolute','z-index':'-1'});
 					$('.image_upload').find('.hide').show();
 				}
-
-				var li='<li><img src="'+ site_url+'assets/images/blank.gif"></li>';
+				// 插入li元素
+				var li='<li><img src="'+ site_url+'assets/images/blank.gif"><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>';
 				$('.image_upload').find('.add').before(li).prev('li').append($('<i>',{class:'ico_loading_upload'}));
+				//判断图片数量是否达到9个
+				num=0;
+				if($('.image_upload').find('.list').find("li:not('.add')").length==9){
+					num=9;
+				}
 			},
 			'onUploadSuccess' : function(file,data) {
+				//判断图片数量是否达到9个
+				if(num==9) $('.image_upload').find('.add').hide();
+				
 				// 判断只执行一次
 				if($('.add').find('#image_upload').length==0){
 					$('#image_upload').appendTo('.add');
 				}
-
 				$('.image_upload').find('.ico_loading_upload').remove();
-
 				check_textarea_empty();
 				//加载上传的图片
-				var li='<li><img src="'+ site_url+data + '"></li>';
-				
-				if($('.image_upload').find('.list').find('li').length==9){
-					$('.image_upload').find('.add').hide();
-				}
+				$('.image_upload').find('.add').prev('li').find('img').attr('src',site_url+data);				
 			}
 		})
 		//
@@ -135,7 +137,12 @@ $(document).ready(function(){
 	//删除上传图片
 	$('body').on('click',"[action-type='deleteImg']",function(){
 		$(this).parent('li').remove();
-		check_textarea_empty();
+		var textarea=$('#weibo_input_detail');
+		//检测微博发布框是否为空
+		function check_textarea_empty(){
+			if($.trim(textarea.val())==''){textarea.val('分享图片')}
+		}
+		//显示上传按钮
 		if($('.image_upload').find('.add').is(':hidden')){
 			$('.image_upload').find('.add').show()
 		}

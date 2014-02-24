@@ -125,3 +125,6 @@ ERROR - 2014-02-24 16:57:07 --> 404 Page Not Found --> assets
 ERROR - 2014-02-24 16:57:57 --> 404 Page Not Found --> assets
 ERROR - 2014-02-24 16:58:24 --> 404 Page Not Found --> assets
 ERROR - 2014-02-24 16:58:50 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:03:13 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:04:47 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-24 18:04:54 --> 404 Page Not Found --> assets

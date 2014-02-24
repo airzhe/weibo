@@ -98,7 +98,6 @@
 			</ul>\
 			<p class="pic_list_count hide" node-type="picsInfo">共1张，还能上传8张<em class="S_txt2">（按住ctrl可选择多张）</em></p>\
 			<ul class="list hide clearfix">\
-			<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>\
 			<li class="add"></li>\
 			</ul>\
 			</div>\
