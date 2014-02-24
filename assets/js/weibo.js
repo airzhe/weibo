@@ -81,31 +81,64 @@ $(document).ready(function(){
 	* 点击插入图片按钮，调出插入图片对话框
 	*/
 	$("[action-type='upload_image']").on('click',function(e){
-		$(this).imageUpload();
-		var flag=1;
+		var textarea=$('#weibo_input_detail');
+		//检测微博发布框是否为空
+		function check_textarea_empty(){
+			if($.trim(textarea.val())==''){textarea.val('分享图片')}
+		}
+		//关闭图片上传框时候检测微博内容
+		$(this).imageUpload({
+			callback_handler:function(){
+				if($.trim(textarea.val())=='分享图片'){
+					textarea.val('');
+				}
+			}
+		});
+
 		$('#image_upload').uploadify({
-			'buttonImage' : site_url+'assets/images/weibo_upload_img_btn.png',
 			'buttonText' : '',
 			'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
 			'uploader' : '',
 			'width':'195',
-			'height':'45',
+			'height':'84',
 			'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
 			'fileSizeLimit':'5120',
 			'onUploadStart':function(){
-				// console.log('readyUpload');
-				$('.loading').show();
+				// 判断只执行一次
+				if($('.add').find('#image_upload').length==0){
+					$('.image_upload').find('ul.btn').css({'position':'absolute','z-index':'-1'});
+					$('.image_upload').find('.hide').show();
+				}
+
+				var li='<li><img src="'+ site_url+'assets/images/blank.gif"></li>';
+				$('.image_upload').find('.add').before(li).prev('li').append($('<i>',{class:'ico_loading_upload'}));
 			},
 			'onUploadSuccess' : function(file,data) {
-				var _val=$('#weibo_input_detail').val();
-				if (_val=='' ){
-					if(flag==1){
-						$('#weibo_input_detail').val(_val+'分享图片');
-						flag++;
-					}
+				// 判断只执行一次
+				if($('.add').find('#image_upload').length==0){
+					$('#image_upload').appendTo('.add');
+				}
+
+				$('.image_upload').find('.ico_loading_upload').remove();
+
+				check_textarea_empty();
+				//加载上传的图片
+				var li='<li><img src="'+ site_url+data + '"></li>';
+				
+				if($('.image_upload').find('.list').find('li').length==9){
+					$('.image_upload').find('.add').hide();
 				}
 			}
 		})
+		//
+	})
+	//删除上传图片
+	$('body').on('click',"[action-type='deleteImg']",function(){
+		$(this).parent('li').remove();
+		check_textarea_empty();
+		if($('.image_upload').find('.add').is(':hidden')){
+			$('.image_upload').find('.add').show()
+		}
 	})
 	/**	
 	* 文本框自适应
@@ -331,7 +364,6 @@ $(document).ready(function(){
 	* 微博输入提示
 	*/
 	$('.send_weibo').find('textarea').on('keyup',function(){
-		console.log('run....');
 		var count=getMessageLength($.trim($(this).val()));
 		var num=140-count;
 		//判断输入的文字长度是否超过140

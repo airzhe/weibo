@@ -1,44 +1,9 @@
 <?php $this->load->view('components/common_left_nav');?>
 <style>
-	.uploadify .uploadify-button {
-		font-size: 12px;
-		height:30px;
-		line-height: 30px;
-		text-align: right;
-	}
-	.uploadify span{margin-right: 7px;}
-	.uploadify:hover .uploadify-button {
-		background-position: 0 -45px;
-		color:#fff;
-	}
-	.uploadify-queue{display: none;}
-</style>
-<div class="W_layer image_upload" action-id="weibo_input_detail" style="left: 354.5px; top: 238px;">
-	<div class="bg">			
-		<div class="wrap">	
-			<div class="title">本地上传</div>	
-			<div class="content">	
-				<p class="pic_list_count" node-type="picsInfo">共1张，还能上传8张<em class="S_txt2">（按住ctrl可选择多张）</em></p>
-				<ul class="list clearfix">
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
-				</ul>	
-			</div>
-			<a class="W_close" href="javascript:void(0);" title="关闭"></a>			
-		</div>			
-	</div>			
-	<div class="arrow arrow_t" node-type="arrow" style="left: 72px;">
 
-	</div>			
-</div>
+
+</style>
+
 <div class="main clearfix">
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>

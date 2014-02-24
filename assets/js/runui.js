@@ -71,7 +71,11 @@
  */
  (function($){
  	$.fn.extend({
- 		"imageUpload": function(){
+ 		"imageUpload": function(options){
+ 			var _default = {
+ 				callback_handler:function(){}
+ 			};
+ 			var opt = $.extend(_default, options);
  			$('.W_layer').find('.W_close').trigger('click');
 			//获取对象的坐标，并设置提示框坐标
 			var _h=$(this).height();
@@ -92,6 +96,11 @@
 			<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_screenshot"></i>截屏上传</span></a></li>\
 			<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_toalbum"></i>传至相册</span></a></li>\
 			</ul>\
+			<p class="pic_list_count hide" node-type="picsInfo">共1张，还能上传8张<em class="S_txt2">（按住ctrl可选择多张）</em></p>\
+			<ul class="list hide clearfix">\
+			<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>\
+			<li class="add"></li>\
+			</ul>\
 			</div>\
 			<a class="W_close" href="javascript:void(0);" title="关闭"></a>\
 			</div>\
@@ -107,6 +116,7 @@
 			close_btn=image_upload.find('.W_close');
 			//关闭弹出框按钮
 			close_btn.on('click',function(){
+				opt.callback_handler();
 				image_upload.remove();
 			})
 		}	
