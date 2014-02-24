@@ -1148,6 +1148,9 @@ body.login .container,body.signup .container{
  .kind_detail a{
  	margin-right: 14px;
  }
+ .kind_detail a.disabled{
+ 	color:#333;
+ }
  .kind_detail .W_ico16{
  	margin: 0 4px 0 0;
  	vertical-align: -4px;
@@ -1349,17 +1352,19 @@ body.login .container,body.signup .container{
  	background: url(../images/layer_arrow.png) no-repeat;
  }
  /*微博上传图片弹出框*/
- .image_upload{
-
+ .W_layer.image_upload .wrap .content{
+ 	padding-right: 0;
  }
- .image_upload ul{
+ .image_upload ul li{
+ 	float: left;
+ }
+ .image_upload ul.btn{
  	width: 410px;
  	/*padding: 10px 0;*/
  	margin: 10px -15px;
  	overflow: hidden;
  }
- .image_upload li{
- 	float: left;
+ .image_upload .btn li{
  	width: 195px;
  	height: 45px;
  	margin: -1px 0 0 -1px;
@@ -1369,7 +1374,7 @@ body.login .container,body.signup .container{
  	border-top-width: 1px;
  	border-top-style: solid;
  }
- .image_upload li a{
+ .image_upload .btn li a{
  	display: inline-block;
  	width: 100%;
  	background: #fff;
@@ -1378,7 +1383,7 @@ body.login .container,body.signup .container{
  	vertical-align: middle;
  	text-align: center;
  }
- .image_upload li a span{
+ .image_upload .btn li a span{
  	display: inline-block;
  	width: 100%;
  	height: 45px;
@@ -1388,9 +1393,37 @@ body.login .container,body.signup .container{
  	vertical-align: middle;
  	color:#333;
  }
- .image_upload li a:hover span{
+ .image_upload .btn li a:hover span{
  	background: #f2f2f2;
  }
+ /*list*/
+ .image_upload .list{
+ 	width: 464px;
+ 	margin-bottom: 30px;
+ }
+ .image_upload .list li{
+ 	display: block;
+ 	width: 80px;
+ 	height: 80px;
+ 	position: relative;
+ 	margin: 0 6px 6px 0;
+ 	border: 1px solid #ccc;
+ 	border-radius: 1px;
+ 	background: url(../images/img_default.png) no-repeat 1px 1px;
+ 	text-align: center;
+ 	padding: 1px;
+ 	overflow: hidden;
+ }
+ .W_layer .arrow {
+ 	width: 14px;
+ 	height: 9px;
+ 	top: -5px;
+ 	position: absolute;
+ 	overflow: hidden;
+ 	display: block;
+ 	background: url(../images/layer_arrow.png) no-repeat;
+ }
+
  /*模板个性设置弹出框*/
  .set_template{
  	left:50%;
@@ -1587,6 +1620,9 @@ body.login .container,body.signup .container{
  	margin-left:65px;
  	padding:4px 0px;
  }
+ .weibo_list .item .detail img{
+ 	vertical-align: text-bottom;
+ }
  .weibo_list .detail .name{
  	font-weight: 700;
  }
@@ -1618,6 +1654,28 @@ body.login .container,body.signup .container{
  	margin: 5px 0 5px;
  	border-radius: 3px;
  	background-color:#f2f2f2;
+ 	position: relative;
+ }
+ .weibo_list .detail .forwardContent .WB_arrow{
+ 	position: absolute;
+ 	z-index: 0;
+ 	margin: -18px 0 0;
+ 	width: 22px;
+ 	cursor: default;
+ }
+ .weibo_list .detail .forwardContent .WB_arrow *{
+ 	font-family: "SimSun";
+ 	overflow: hidden;
+ 	font-size: 12px;
+ 	line-height: 1.231;
+ 	display: block;
+ 	height: 12px;
+ }
+ .weibo_list .detail .forwardContent .WB_arrow span {
+ 	margin: -11px 0 0;
+ }
+ .weibo_list .detail .forwardContent .WB_arrow span{
+ 	margin: -11px 0 0;
  }
  .weibo_list .detail .forwardContent .name{
  	font-size:12px;
@@ -1639,6 +1697,9 @@ body.login .container,body.signup .container{
  	width: 255px;
  	margin-left: -5px;
  	font-size: 0;
+ }
+ .WB_deltxt{
+ 	font-size: 12px;
  }
  .weibo_list .comment{
  	background: #FAFAFA;
@@ -2237,6 +2298,7 @@ body.login .container,body.signup .container{
  		color: #333;
  		height: 24px;
  		line-height: 28px;
+ 		
  	}
  	.box_center div.title a.tit{
  		font-size:14px;
@@ -2245,6 +2307,17 @@ body.login .container,body.signup .container{
  		height: 24px;
  		line-height: 28px;
  		margin-right: 20px;
+ 		position: relative;
+ 	}
+ 	.box_center div.title .current{
+ 		/*position: relative;*/
+ 		top: 20px;
+ 		left:10px;
+ 		width: 44px;
+ 		height: 8px;
+ 		background: #fafafa url(../images/icon.png) no-repeat -500px -75px;
+ 		font-size: 0;
+ 		position: absolute;
  	}
  	.box_center .tab_normal{
  		margin: 0px 20px;
@@ -2834,6 +2907,9 @@ body.login .container,body.signup .container{
  		background-color: #f2f2f2;
  		line-height: 21px;
  	}
+ 	.comment_list .comment img{
+ 		vertical-align: text-bottom;
+ 	}
  	.comment_list .comment p{
  		margin:0;
  	}
@@ -2842,6 +2918,9 @@ body.login .container,body.signup .container{
  	}
  	.comment_list .item:hover .del{
  		display: block;
+ 	}
+ 	.comment_list .comment p.info{
+ 		margin-top:5px;
  	}
 
  	/*收到的评论*/

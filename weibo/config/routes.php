@@ -43,7 +43,9 @@ $route['404_override'] = '';
 
 #用户页面
 $route['^u/(\d+)$'] = "u/index/$1";
-
+#单条微博页面
+// $route['^weibo/(:any)'] = "u/weibo/1004$1";
+// $route['^single_weibo/(:any)'] = "single_weibo/index/$1";
 // $route['(:any)'] = "welcome/$1";
 
 /* End of file routes.php */

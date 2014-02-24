@@ -84,11 +84,12 @@ $(document).ready(function(){
 		$(this).imageUpload();
 		var flag=1;
 		$('#image_upload').uploadify({
-			'buttonImage' : site_url+'assets/images/upload.png',
-			'buttonText' : '选择上传',
+			'buttonImage' : site_url+'assets/images/weibo_upload_img_btn.png',
+			'buttonText' : '',
 			'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
 			'uploader' : '',
-			'width':'82',
+			'width':'195',
+			'height':'45',
 			'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
 			'fileSizeLimit':'5120',
 			'onUploadStart':function(){
@@ -1075,7 +1076,7 @@ $(document).ready(function(){
 					})
 					//显示后面还有多少条记录
 					if(data.count-10>0){
-						var url=site_url+'single_weibo/'+data.wid;
+						var url=site_url+'single_weibo/'+data._wid;
 						var remainder=data.count-10;
 						var more='\
 						<p class="more S_line1">\
@@ -1097,10 +1098,9 @@ $(document).ready(function(){
 	$('.weibo_list').on('click',".C_item [action-type='delete']",function(){
 		var self=$(this);
 		var cid=$(this).data('cid');
-		var wid=$(this).parents('.item').data('id');
-		$.post(site_url+'single_weibo/del_comment',{cid:cid,wid:wid},function(data){
+		$.post(site_url+'single_weibo/del_comment',{cid:cid},function(data){
 			if(data.status==1){
-				//评论+1
+				//评论-1
 				var comment_count=self.parents('.detail').find("[action-type='comment']");
 				num=/\d+/.exec(comment_count.text());
 				comment_count.text('评论('+(parseInt(num)-1)+')');
@@ -1126,7 +1126,7 @@ $(document).ready(function(){
 		<div class="repeat S_line1 S_bg1" data-cid="'+ cid +'">\
 		<div class="WB_arrow"><em class="S_line1_c">◆</em><span class=" S_bg1_c">◆</span></div>\
 		<div class="S_line1 input clearfix">\
-		<textarea name="" id="'+id+'" class="W_input" cols="30" rows="10">回复:@'+ username +'</textarea>\
+		<textarea name="" id="'+id+'" class="W_input" cols="30" rows="10"></textarea>\
 		<p class="clearfix">\
 		<span class="left"><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox"> 同时转发到我的微博</span>\
 		<a href="javascript:void(0)" class="W_btn_a right" action-type="doReply"><span class="btn_30px W_f14">评论</span></a>\
@@ -1136,7 +1136,7 @@ $(document).ready(function(){
 		';
 		$(replay).insertAfter($(this).parent('.info'));
 		//文本框自适应高度
-		$(this).parents('.C_detail').find('textarea').autosize();
+		$(this).parents('.C_detail').find('textarea').focus().val('回复@'+ username +':').autosize();
 	})
 	//评论提交按钮
 	$('.weibo_list').on('click',"[action-type='post'],[action-type='doReply']",function(){
@@ -1229,6 +1229,7 @@ $(document).ready(function(){
 			btn:''
 		})
 	})
+	// 转发按钮提交事件
 	$('body').on('click',"[action-type='turn_submit']",function(){
 		var self=$(this);
 		var turn=self.parents('.turn_weibo');
@@ -1250,7 +1251,14 @@ $(document).ready(function(){
 
 					//转发的微博内容
 					var _weibo=original_weibo.find('.detail').clone();
+					var WB_arrow='\
+					<div class="WB_arrow">\
+					<em class="S_line1_c">◆</em>\
+					<span class="S_bg1_c">◆</span>\
+					</div>\
+					';
 					_weibo.attr('class','forwardContent');
+					_weibo.prepend($(WB_arrow));
 					_weibo.find('.comment').remove();
 					_weibo.find('.forwardContent').remove();
 					_weibo.find('.name').text('@'+_weibo.find('.name').text());
@@ -1281,6 +1289,75 @@ $(document).ready(function(){
 			}
 		},'json');
 		//
+	})
+	/**
+	* 微博收藏
+	*/
+	$('.weibo_list').on('click',"[action-type='collect']",function(){
+		var self=$(this);
+		var id=self.parents('.item').data('id');
+		$.post(site_url+'single_weibo/collect',{id:id},function(data){
+			if(data.status==1){
+				self.tips({text:'收藏成功'});
+				self.text('取消收藏');
+				self.attr('action-type','del_collect');
+			}
+		},'json')
+	})
+	// 取消收藏
+	$('.weibo_list').on('click',"[action-type='del_collect']",function(){
+		var self=$(this);
+		var id=self.parents('.item').data('id');
+		self.modal({
+			v_type:0,
+			content:'<p><i class="icon_warn"></i>确定要取消收藏么？</p>',
+			ok_handler:function(){
+				$.post(site_url+'single_weibo/del_collect',{id:id},function(data){
+					if(data.status==1){
+						self.tips({v_type:0,text:'取消成功'});
+						self.attr('action-type','collect');
+						self.text('收藏');
+					}
+				},'json')
+			}
+		})
+		
+	})
+	/**
+	* 微博点赞
+	*/
+	$('.weibo_list').on('click',"[action-type='praise']",function(){
+		var self=$(this);
+		var id=self.parents('.item').data('id');
+		if(!self.hasClass('active')){
+			//点赞
+			$.post(site_url+'single_weibo/praise',{id:id},function(data){
+				if(data.status==1){
+					self.addClass('active').find('s').addClass('icon_praised_bc');
+				}
+			},'json')
+		}else{
+			//取消赞
+			$.post(site_url+'single_weibo/del_praise',{id:id},function(data){
+				if(data.status==1){
+					self.removeClass().find('s').removeClass('icon_praised_bc');
+				}
+			},'json')
+		}
+	})
+	/**
+	* 发出的评论页删除评论
+	*/
+	$('.comment_list').on('click',"[action-type='delete']",function(){
+		var self=$(this);
+		var cid=$(this).data('cid');
+		$.post(site_url+'single_weibo/del_comment',{cid:cid},function(data){
+			if(data.status==1){
+				self.parents('.item').fadeOut(function(){
+					$(this).remove();
+				})
+			}
+		},'json');
 	})
 	/**
 	* 返回顶部

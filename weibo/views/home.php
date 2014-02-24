@@ -42,7 +42,7 @@
 			<?php endforeach ?>
 		<?php endif ?>
 	</div>
-	<!-- <div class="weibo_list feed_self">
+	<div class="weibo_list feed_self">
 		<div class="item">
 			<div class="detail">
 				<div class="content">
@@ -77,7 +77,11 @@
 				<div class="content">
 					有几个是拼图的，这种小的尺寸全部是用一般的胶水冷压的，热激活胶水是粘超大型木皮用的。做这种其实不难，拼图案更复杂些。//<a href="#">@发粪涂墙的胖子</a>: 看起来要完贴皮啊 ，而且妥妥的手工制作了， 机器好像不怎么派得上用场。 <a href="#">@小殷爱录像</a> 说的那种热敏胶有卖的？
 				</div>
-				<div class="forwardContent"> 
+				<div class="forwardContent">
+					<div class="WB_arrow">
+						<em class="S_line1_c">◆</em>
+						<span class="S_bg1_c">◆</span>
+					</div>
 					<div><a class="name" href="#">@湖边的森林6</a></div>
 					<div class="content">
 						随着年龄的增长我觉得自己越来越稳重拉阿哈哈哈哈哈叉腰仰天长笑！！
@@ -124,7 +128,7 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<a class="PRF_feed_list_more SW_fun_bg S_line2" href="javascript:void(0)"><span>查看更多微博»</span></a>
 	<?php echo $page ?>
 </div>

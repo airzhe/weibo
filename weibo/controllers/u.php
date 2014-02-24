@@ -17,7 +17,7 @@ Class u extends Front_Controller{
 	public function index(){
 		//取得用户个人信息
 		$this->get_user();
-		//去的用户微博信息
+		//取得用户微博信息
 		$this->select();
 		//微博分页
 		$this->page();

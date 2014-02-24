@@ -95,10 +95,10 @@
 						<!--tip start-->
 						<a href="javascript:void(0);" class="W_ico12 icon_close"></a>
 						<ul class="tips_list">
-							<li class="_comment"><span>1</span>条新评论，<a href="#">查看评论</a></li>
+							<li class="_comment"><span>1</span>条新评论，<a href="<?php echo base_url('comment/inbox') ?>">查看评论</a></li>
 							<!-- 私信一直提示，其他刷新就不提示 -->
-							<li class="_letter"><span>1</span>条新私信，<a href="#">查看私信</a></li>
-							<li class="_atme"><span>2</span>条新@我，<a href="#">查看@我</a></li>
+							<li class="_letter"><span>1</span>条新私信，<a href="<?php echo base_url('letter') ?>">查看私信</a></li>
+							<li class="_atme"><span>2</span>条新@我，<a href="<?php echo base_url('at') ?>">查看@我</a></li>
 						</ul>
 						<!--tip end-->
 					</div>

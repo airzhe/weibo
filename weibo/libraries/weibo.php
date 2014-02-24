@@ -4,8 +4,7 @@ class weibo{
 		$this->CI=& get_instance();
 		$this->CI->load->model('Weibo_model');
 		$this->CI->load->model('Comment_model');
-		$this->CI->load->library('encrypt');
-		$this->CI->encrypt->set_cipher(MCRYPT_BLOWFISH);
+		$this->CI->load->library('encry');
 		$this->uid = $this->CI->session->userdata('uid');	
 	}
 	
@@ -43,7 +42,7 @@ class weibo{
 			$_content=$this->f_content($content);
 			$_time=$this->f_time($time);
 			$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
-			if($turn) $data+=array('_wid'=>urlencode($this->CI->encrypt->encode($isturn)));
+			if($turn) $data+=array('_wid'=>$this->CI->encry->encrypt($isturn));
 		};
 		die(json_encode($data));
 	}
@@ -144,9 +143,13 @@ class weibo{
 				$add=unserialize($v['location']);
 				$user[$k]['location']=implode('&nbsp;&nbsp;', $add);
 			}
-			// 微博内容
+			// 微博内容，可能是评论内容，私信内容
 			if (isset($v['content'])) {
 				$user[$k]['content']=$this->f_content($v['content']);
+			}
+			// 微博内容
+			if (isset($v['weibo'])) {
+				$user[$k]['weibo']=$this->f_content($v['weibo']);
 			}
 			// 微博发表时间
 			if (isset($v['time'])) {

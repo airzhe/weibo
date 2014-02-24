@@ -2,8 +2,23 @@
 	<?php $this->load->view('components/common_left_nav');?>
 	<div class="main clearfix">
 		<div class="box_center left">
-			<div class="title"><a href="#" class="tit">收到的评论</a><a href="#" class="tit">发出的评论</a></div>
+			<div class="title">
+				<a href="<?php echo site_url('comment/inbox') ?>" class="tit">收到的评论</a>
+				<a href="#" class="tit">发出的评论<span class="current"></span></a>
+			</div>
 			<div class="comment_list">
+				<?php foreach ($comment as $v): ?>
+					<div class="item clearfix">
+						<div class="face">
+							<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
+						</div>
+						<div class="comment">
+							<p><?php echo $v['content'] ?></p>
+							<p class="S_txt2">评论<a href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a> 的微博：<a href="#">"<?php echo $v['weibo'] ?>"</a></p>
+							<p class="S_txt2 info"><?php echo $v['time'] ?> 来自<a href="">iPhone客户端</a><a class="del hide" href="javascript:void(0)" action-type="delete" data-cid="<?php echo $v['id'] ?>">删除</a></p>
+						</div>
+					</div>
+				<?php endforeach ?>
 				<div class="item clearfix">
 					<div class="face">
 						<img width="50" height="50" src="http://localhost/work/weibo/assets/images/2.jpg" alt="">

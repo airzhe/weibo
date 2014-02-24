@@ -80,23 +80,25 @@
 			var textarea_id=$(this).attr('action-id');
 			
 			//创建提示框。
-			var upload_dialog='';
-			upload_dialog+='<div class="W_layer image_upload" action-id='+ textarea_id +'>';
-			upload_dialog+='<div class="bg">';
-			upload_dialog+='<div class="wrap">';
-			upload_dialog+='<div class="title">图片上传</div>';
-			upload_dialog+='<div class="content">';
-			upload_dialog+='<ul class="clearfix">';
-			upload_dialog+='<li class="S_line2"><input type="file" name="image_upload" id="image_upload" /></li>';
-			upload_dialog+='<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_ones"></i>拼图上传</span></a></li>';
-			upload_dialog+='<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_screenshot"></i>截屏上传</span></a></li>';
-			upload_dialog+='<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_toalbum"></i>传至相册</span></a></li>';
-			upload_dialog+='</ul>';
-			upload_dialog+='</div>';
-			upload_dialog+='<a class="W_close" href="javascript:void(0);" title="关闭"></a>';
-			upload_dialog+='</div>';
-			upload_dialog+='</div>';
-			upload_dialog+='</div>';
+			var upload_dialog='\
+			<div class="W_layer image_upload" action-id='+ textarea_id +'>\
+			<div class="bg">\
+			<div class="wrap">\
+			<div class="title">图片上传</div>\
+			<div class="content">\
+			<ul class="btn clearfix">\
+			<li class="S_line2"><input type="file" name="image_upload" id="image_upload" /></li>\
+			<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_ones"></i>拼图上传</span></a></li>\
+			<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_screenshot"></i>截屏上传</span></a></li>\
+			<li class="S_line2"><a href="javascript:void(0)"><span><i class="ico_l_toalbum"></i>传至相册</span></a></li>\
+			</ul>\
+			</div>\
+			<a class="W_close" href="javascript:void(0);" title="关闭"></a>\
+			</div>\
+			</div>\
+			<div class="arrow arrow_t" node-type="arrow" style="left: 72px;"></div>\
+			</div>\
+			';
 
 			$('body').append(upload_dialog);
 			// alert(1)

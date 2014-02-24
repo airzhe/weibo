@@ -8,11 +8,37 @@
 	}
 	.uploadify span{margin-right: 7px;}
 	.uploadify:hover .uploadify-button {
-		background-position: 0 -30px;
+		background-position: 0 -45px;
 		color:#fff;
 	}
 	.uploadify-queue{display: none;}
 </style>
+<div class="W_layer image_upload" action-id="weibo_input_detail" style="left: 354.5px; top: 238px;">
+	<div class="bg">			
+		<div class="wrap">	
+			<div class="title">本地上传</div>	
+			<div class="content">	
+				<p class="pic_list_count" node-type="picsInfo">共1张，还能上传8张<em class="S_txt2">（按住ctrl可选择多张）</em></p>
+				<ul class="list clearfix">
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+					<li><img src="http://ww2.sinaimg.cn/square/483c5cd8tw1educw7rrr3j20cs0csq4q.jpg" alt=""></li>
+				</ul>	
+			</div>
+			<a class="W_close" href="javascript:void(0);" title="关闭"></a>			
+		</div>			
+	</div>			
+	<div class="arrow arrow_t" node-type="arrow" style="left: 72px;">
+
+	</div>			
+</div>
 <div class="main clearfix">
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>
@@ -78,9 +104,9 @@
 					<div class="kind_detail left">
 						<a href="javascript:void(0)" class="S_func1" action-type="face" action-id="weibo_input_detail"><i class="W_ico16 icon_face"></i>表情</a>
 						<a href="javascript:void(0)" class="S_func1" action-type="upload_image" action-id="weibo_input_detail"><i class="W_ico16 icon_img"></i>图片</a>
-						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_video"></i>视频</a>
-						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_qing"></i>话题</a>
-						<a href="javascript:void(0)" class="S_func1"><i class="W_ico16 icon_chang"></i>长微博</a>
+						<a href="javascript:void(0)" class="S_func1 disabled"><i class="W_ico16 icon_video"></i>视频</a>
+						<a href="javascript:void(0)" class="S_func1 disabled"><i class="W_ico16 icon_qing"></i>话题</a>
+						<a href="javascript:void(0)" class="S_func1 disabled"><i class="W_ico16 icon_chang"></i>长微博</a>
 					</div>
 					<a href="javascript:void(0)" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
 				</div>
@@ -125,6 +151,10 @@
 								</div>
 								<?php if ($v['isturn']):$wid=$v['isturn'] ?>
 									<div class="forwardContent">
+										<div class="WB_arrow">
+											<em class="S_line1_c">◆</em>
+											<span class="S_bg1_c">◆</span>
+										</div>
 										<?php if (isset($forward_list[$wid])): ?>
 											<div>
 												<a class="name S_func1" href="<?php echo $forward_list[$wid]['domain'] ?>">@<?php echo $forward_list[$wid]['username'] ?></a>
@@ -141,7 +171,9 @@
 												</div>
 											</div>
 										<?php else: ?>
-											该微博已经被删除
+											<div class="WB_deltxt">
+												抱歉，此微博已被作者删除。查看帮助：<a href="">http://t.cn/zWSudZc</a>
+											</div>
 										<?php endif ?>
 									</div>
 								<?php endif ?>
@@ -150,7 +182,7 @@
 										<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
 									</div>
 									<div class="handle right">
-										<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
+										<a href="javascript:void(0)" action-type="praise"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
 									</div>
 								</div>
 								<!-- 评论 -->

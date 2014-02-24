@@ -2,8 +2,33 @@
 	<?php $this->load->view('components/common_left_nav');?>
 	<div class="main clearfix">
 		<div class="box_center left">
-			<div class="title"><a href="#" class="tit">收到的评论</a><a href="#" class="tit">发出的评论</a></div>
+			<div class="title">
+				<a href="#" class="tit">收到的评论<span class="current"></span></a>
+				<a href="<?php echo site_url('comment/outbox') ?>" class="tit">发出的评论</a>
+			</div>
 			<div class="comment_list">
+				<?php foreach ($comment as $v): ?>
+					<div class="item clearfix">
+						<div class="face">
+							<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
+						</div>
+						<div class="comment">
+							<div class="message_arrow">
+								<em class="S_line1_c">◆</em>
+								<span class="S_bg1_c">◆</span>
+							</div>
+							<p><a href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a>：<?php echo $v['content']?></p>
+							<p class="S_txt2">
+								<?php if ($v['isreplay']): ?>
+									回复我的评论<a href="" class="S_link2"><?php echo $v['weibo'] ?></a>
+								<?php else: ?>
+									评论我的微博<a href="" class="S_link2"><?php echo $v['weibo'] ?></a>
+								<?php endif ?>
+							</p>
+							<p class="S_txt2 info"><?php echo $v['time']?>来自<a href="" class="S_link2">新浪微博</a><span class="right"> <a href="">回复</a></span></p>
+						</div>
+					</div>
+				<?php endforeach ?>
 				<div class="item clearfix">
 					<div class="face">
 						<img width="50" height="50" src="http://localhost/work/weibo/assets/images/001.jpg" alt="">

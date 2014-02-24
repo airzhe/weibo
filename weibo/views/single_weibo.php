@@ -1,5 +1,5 @@
 <?php $this->load->view('components/home_top') ?>
-<div class="wrap clearfix">
+<div class="wrap  S_bg4  clearfix">
 	<div class="main left">
 		<div class="weibo_list feed_self">
 			<div class="item">

@@ -12,10 +12,10 @@ Class single_weibo extends Front_Controller{
 		$this->load->model('Weibo_model');
 		$this->load->library('weibo');
 		// 加密类
-		$this->load->library('encrypt');
-		$this->encrypt->set_cipher(MCRYPT_BLOWFISH);
+		$this->load->library('encry');
 	}
 	public function index(){
+		die('此功能尚未开放...');
 		$this->view('single_weibo',$this->data);
 	}
 	/**
@@ -54,7 +54,7 @@ Class single_weibo extends Front_Controller{
 		$arr=array('status'=>1,'result'=>$comment,'count'=>$count);
 		//评论条数超过10条就返回加密后的wid
 		if($count>10){
-			$_wid=urlencode($this->encrypt->encode($wid));
+			$_wid=$this->encry->encrypt($wid);
 			$arr+=array('_wid'=>$_wid);
 		}
 		die(json_encode($arr));
@@ -104,4 +104,61 @@ Class single_weibo extends Front_Controller{
 	public function turn(){
 		$this->weibo->send($turn=TRUE);
 	}
+	/**
+	 * 收藏微博
+	 */
+	public function collect(){
+		$wid=$this->input->post('id');
+		$this->load->model('Collect_model');
+		$data=array('uid'=>$this->uid,'wid'=>$wid);
+		if(!$this->db->where($data)->from('collect')->count_all_results()){
+			$data+=array('time'=>time());
+			if($this->Collect_model->add($data)){
+				die(json_encode(array('status'=>1)));
+			}
+		}else{
+			die(json_encode(array('status'=>1)));
+		}
+	}
+	/**
+	 * 取消收藏
+	 */
+	public function del_collect(){
+		$wid=$this->input->post('id');
+		$arr=array('uid'=>$this->uid,'wid'=>$wid);
+		$this->db->where($arr)->delete('collect');
+		if($this->db->affected_rows()){
+			die(json_encode(array('status'=>1)));
+		}
+	}
+
+	/**
+	 * 赞
+	 */
+	public function praise(){
+		$wid=$this->input->post('id');
+		$this->load->model('Praise_model');
+		$data=array('uid'=>$this->uid,'wid'=>$wid);
+		if(!$this->db->where($data)->from('praise')->count_all_results()){
+			$data+=array('time'=>time());
+			if($this->Praise_model->add($data)){
+				die(json_encode(array('status'=>1)));
+			}
+		}else{
+			die(json_encode(array('status'=>1)));
+		}
+	}
+	/**
+	 * 取消赞
+	 */
+	public function del_praise(){
+		$wid=$this->input->post('id');
+		$arr=array('uid'=>$this->uid,'wid'=>$wid);
+		$this->db->where($arr)->delete('praise');
+		if($this->db->affected_rows()){
+			die(json_encode(array('status'=>1)));
+		}
+	}
+
+
 }
