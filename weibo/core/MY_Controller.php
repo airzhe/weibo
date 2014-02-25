@@ -79,7 +79,7 @@ class Front_Controller extends Base_Controller
 	 */
 	public function set_skin(){
 		// 设置封面图
-		$cover=base_url('assets/skin/cover/1.jpg');
+		$cover=base_url('assets/skin/cover/016.jpg');
 		$this->data['cover']=$cover;
 		// 获取当前用户uid
 		$uid=(int)$this->uri->rsegment(3);

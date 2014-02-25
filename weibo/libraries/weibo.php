@@ -56,7 +56,7 @@ class weibo{
 		if($avatar['error']==0 and is_uploaded_file($avatar['tmp_name'])){
 			$info = pathinfo($avatar['name']);
 			// 路径
-			$upload_path='images/content/source/'.date("Ym").'/';
+			$upload_path='images/content/large/'.date("Ym").'/';
 			is_dir($upload_path) || mkdir($upload_path,0777,TRUE);
 			// 文件名
 			$file_name=time().mt_rand(0,1000).'.'.$info['extension'];
@@ -66,9 +66,9 @@ class weibo{
 			$config['file_name'] = $file_name;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
 			// 默认0,系统配置文件中上传大小,单位k
-			$config['max_size'] = '1000';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '1024';
+			$config['max_size'] = '2000';
+			$config['max_width']  = '2024';
+			$config['max_height']  = '2024';
 			$this->CI->upload->initialize($config);
 			
 			if ($this->CI->upload->do_upload('Filedata'))
@@ -98,10 +98,10 @@ class weibo{
 
 		//原图1024,大图440,中图120,小图80
 		$images=array(
-			'big'	=>array('w'=>440),
-			'source'=>array('size'=>1024),
-			'medium'=>array('size'=>120),
-			'small'	=>array('w'=>80,'h'=>80)
+			'thumbnail'=>array('w'=>120,'h'=>120),
+			'bmiddle'	=>array('w'=>440,'h'=>440/$info[0]*$info[1]),
+			'large'=>array('w'=>1024,'h'=>1024),
+			'square'=>array('w'=>80,'h'=>80)
 			);
 		//配置缩放参数
 		$config['source_image'] = $img;
@@ -110,19 +110,26 @@ class weibo{
 		foreach ($images as $k => $v) {
 			$path=$new_path.$k.'/'.$arr[3];
 			is_dir($path) || mkdir($path,0777,TRUE);
-			if($k=='source' || $k=='medium'){
-				//宽高最大值固定
-				$config['width'] = $v['size'];
-				$config['height'] = $v['size'];
-			}elseif($k=='big'){
-				//宽度固定
-				$config['width'] = $v['w'];
+			if($k=='large' || $k=='thumbnail' ){
+				if($info[0]>$v['w'] || $info[1]>$v['h']) {
+					// 原图、单张图宽高最大值固定
+					$config['width'] = $v['w'];
+					$config['height'] = $v['h'];
+				}
+			}elseif($k=='bmiddle'){
+				if($info[0]>$v['w']) {
+					// 大图宽度固定
+					$config['width'] = $v['w'];
+					$config['height'] = $v['h'];
+				}
 			}else{
-				//中图
+				//列表图
 			}
 			$config['new_image'] = $path.'/'.$file_name;
 			$this->CI->image_lib->initialize($config);
 			$this->CI->image_lib->resize();
+			// 重置宽高参数
+			$config['width']=$config['height']=0;
 		}
 	}
 	/**
