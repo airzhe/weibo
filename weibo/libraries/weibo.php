@@ -16,20 +16,35 @@ class weibo{
 	public function send($turn=FALSE){
 
 		$content=$this->CI->input->post('content');
+		$img_arr=$this->CI->input->post('img');
 		$len=getMessageLength($content);
 		if($len==0 || $len>140){
 			$data=array('status'=>0,'error'=>'微博长度应小于140');
 		}else{
-			//写入数据库
+			//微博内容写入数据库
 			$time=time();
 			$weibo=array('content'=>$content,'time'=>$time,'uid'=>$this->uid);
+
+			//记录微博配图数量
+			if(is_array($img_arr) && count($img_arr)){
+				$weibo+=array('picture'=>count($img_arr));
+			}
 			//如果是转发，记录转发id
 			if($turn) {
 				$isturn=$this->CI->input->post('isturn');
 				$weibo+=array('isturn'=>$isturn);
 			}
-			//
+
+			//返回插入的id
 			$id=$this->CI->Weibo_model->add($weibo);
+			//微博配图写入数据库
+			if(is_array($img_arr) && count($img_arr)){
+				var_dump($img_arr);die;
+				foreach ($img_arr as $v) {
+					$img_data=array('wid'=>$id,'picture'=>$v);
+					$this->CI->db->insert('picture', $img_data); 
+				}
+			}
 			//微博总数+1
 			$this->CI->load->model('User_info_model');
 			$this->CI->User_info_model->inc('weibo',$this->uid);

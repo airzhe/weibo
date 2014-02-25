@@ -1158,9 +1158,16 @@ body.login .container,body.signup .container{
  .kind_detail i.icon_face{
  	background-position: -275px -0px;
  }
+ .kind_detail i.icon_face:hover{
+ 	background-position: -250px -0px;
+ }
  .kind_detail i.icon_img{
  	background-position: -275px -25px;
  }
+ .kind_detail i.icon_img:hover{
+ 	background-position: -250px -25px;
+ }
+
  .kind_detail i.icon_video{
  	background-position: -275px -50px;
  }
@@ -1761,6 +1768,16 @@ body.login .container,body.signup .container{
  	width: 255px;
  	margin-left: -5px;
  	font-size: 0;
+ }
+ .weibo_list .media_prev .inner_width{
+ 	width: 170px;
+ }
+ .weibo_list .media_expand {
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	padding: 10px 20px 10px;
+ 	margin: 5px 0 15px;
+ 	border-radius: 3px;
  }
  .WB_deltxt{
  	font-size: 12px;

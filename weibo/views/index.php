@@ -114,6 +114,30 @@
 								<div class="content">
 									<?php echo $v['content'] ?>
 								</div>
+								<!-- 微博配图 -->
+								<?php if ($v['picture']): ?>
+									<div class="media_prev">
+										<ul <?php if(isset($v['pic_class'])) echo "class='{$v['pic_class']} clearfix'" ?>>
+											<?php foreach ($v['pic'] as $key => $_v): ?>
+												<li>
+													<a href="javascript:void(0)"><img src="<?php echo base_url().$v['pic_path'].$_v['picture'] ?>" alt=""></a>
+												</li>
+											<?php endforeach ?>
+										</ul>
+									</div>
+									<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
+										<p class="medis_func S_txt3">
+											<a action-type="feed_list_media_toSmall" href="javascript:void(0);" class="retract" ><em class="W_ico12 ico_retract"></em>收起</a>
+											<i class="W_vline">|</i>
+											<a action-type="widget_photoview" href="javascript:;" class="show_big"><em class="W_ico12 ico_showbig"></em>查看大图</a>
+											<i class="W_vline">|</i>
+											<a action-type="feed_list_media_toLeft" href="javascript:void(0);" class="turn_left"><em class="W_ico12 ico_turnleft"></em>向左转</a>
+											<i class="W_vline">|</i>
+											<a action-type="feed_list_media_toRight"  href="javascript:void(0);" class="turn_right"><em class="W_ico12 ico_turnright"></em>向右转</a>
+										</p>
+									</div>
+								<?php endif ?>
+								<!-- 转发 -->
 								<?php if ($v['isturn']):$wid=$v['isturn'] ?>
 									<div class="forwardContent">
 										<div class="WB_arrow">

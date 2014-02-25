@@ -69,3 +69,29 @@ ERROR - 2014-02-25 09:58:31 --> Severity: Notice  --> Undefined index: height /h
 ERROR - 2014-02-25 10:10:45 --> 404 Page Not Found --> images
 ERROR - 2014-02-25 10:11:22 --> 404 Page Not Found --> images
 ERROR - 2014-02-25 11:40:57 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-25 12:34:32 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-25 13:31:53 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-25 15:07:10 --> Severity: Warning  --> trim() expects parameter 1 to be string, array given /home/runner/www/work/weibo/system/database/DB_active_rec.php 84
+ERROR - 2014-02-25 15:07:10 --> Severity: Warning  --> trim() expects parameter 1 to be string, array given /home/runner/www/work/weibo/system/database/DB_active_rec.php 84
+ERROR - 2014-02-25 15:07:16 --> Severity: Notice  --> Undefined variable: pic_arr /home/runner/www/work/weibo/weibo/controllers/index.php 54
+ERROR - 2014-02-25 15:07:31 --> Severity: Warning  --> trim() expects parameter 1 to be string, array given /home/runner/www/work/weibo/system/database/DB_active_rec.php 84
+ERROR - 2014-02-25 15:07:31 --> Severity: Warning  --> trim() expects parameter 1 to be string, array given /home/runner/www/work/weibo/system/database/DB_active_rec.php 84
+ERROR - 2014-02-25 15:07:33 --> Severity: Notice  --> Undefined variable: pic_arr /home/runner/www/work/weibo/weibo/controllers/index.php 54
+ERROR - 2014-02-25 15:08:10 --> Severity: Notice  --> Undefined variable: pic_arr /home/runner/www/work/weibo/weibo/controllers/index.php 54
+ERROR - 2014-02-25 15:08:22 --> Severity: Notice  --> Undefined variable: pic_arr /home/runner/www/work/weibo/weibo/controllers/index.php 54
+ERROR - 2014-02-25 15:09:50 --> Severity: Notice  --> Undefined variable: pic_arr /home/runner/www/work/weibo/weibo/controllers/index.php 55
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:11:34 --> Severity: Notice  --> Undefined index: picture /home/runner/www/work/weibo/weibo/controllers/index.php 52
+ERROR - 2014-02-25 15:44:35 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-25 15:46:44 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-25 15:52:41 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/libraries/weibo.php 42
+ERROR - 2014-02-25 15:52:48 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/libraries/weibo.php 42
+ERROR - 2014-02-25 16:03:53 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61

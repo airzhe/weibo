@@ -21,6 +21,7 @@ Class index extends Front_Controller{
 		//载入分页配置文件
 		$this->config->load('W_weibo', TRUE);
 		$this->page();
+		//取得微博数据
 		$this->select();
 		$this->view('index',$this->data);
 	}
@@ -45,10 +46,29 @@ Class index extends Front_Controller{
 		//配置关联查询条件
 		$this->db->order_by("weibo.time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset);
 		$this->db->join('weibo', 'user_info.uid = weibo.uid');
-		$arr=array('username','avatar','sex','domain','weibo.id','content','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
+		$arr=array('username','avatar','sex','domain','weibo.id','content','picture','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
 		$weibo_list=$this->db->select($arr)->get('user_info')->result_array();
 		//如果为空则返回
 		if(!count($weibo_list)) return;
+		//获得微博配图
+		foreach ($weibo_list as $key => $value) {
+			$pic_count=$value['picture'];
+			if($pic_count){
+				$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
+				$weibo_list[$key]['pic']=$_pic;
+				//分配图片路径
+				if($pic_count==1){
+					$weibo_list[$key]['pic_path']='images/content/thumbnail/';
+				}else{
+					$weibo_list[$key]['pic_path']='images/content/square/';
+					if($pic_count==2 || $pic_count==4){
+						$weibo_list[$key]['pic_class']='lotspic_list inner_width';
+					}else{
+						$weibo_list[$key]['pic_class']='lotspic_list';
+					}
+				}
+			}
+		}
 		$weibo_list=$this->weibo->format($weibo_list);
 		//转发的原微博
 		$forward_arr=array();
@@ -67,7 +87,7 @@ Class index extends Front_Controller{
 			}
 			$forward_list=$this->weibo->format($forward_list);
 		}
-		// 如果是ajax请求输入输入，否则赋值给$this->data
+		// 如果是ajax请求输出json数据，否则赋值给$this->data
 		if(!$this->input->is_ajax_request()){
 			$this->data['forward_list']=$forward_list;
 			$this->data['weibo_list']=$weibo_list;
@@ -172,9 +192,15 @@ str;
 		}
 		$id=$this->input->post('id');
 		$this->load->model('Weibo_model');
-		$this->Weibo_model->delete($id);
-		$uid=$this->session->userdata('uid');
-		$this->User_info_model->inc('weibo',$uid,'-1');
-		die(json_encode(array('status'=>1)));
+		$this->db->where(array('id'=>$id,'uid'=>$this->uid))->delete('weibo');
+
+		if($this->db->affected_rows()){
+			//删除微博配图记录
+			$this->db->where(array('wid'=>$id))->delete('picture');
+			//用户微博数量 -1
+			$this->User_info_model->inc('weibo',$this->uid,'-1');
+			die(json_encode(array('status'=>1)));
+		}
+		die(json_encode(array('status'=>0)));
 	}
 }

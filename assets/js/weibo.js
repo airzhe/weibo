@@ -106,7 +106,7 @@ $(document).ready(function(){
 					$('.image_upload').find('.hide').show();
 				}
 				// 插入li元素
-				var li='<li><img src="'+ site_url+'assets/images/blank.gif" width="80" height="80"><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>';
+				var li='<li><img src="'+ site_url+'assets/images/blank.gif" action-data width="80" height="80"><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>';
 				$('.image_upload').find('.add').before(li).prev('li').append($('<i>',{class:'ico_loading_upload'}));
 				//判断图片数量是否达到9个
 				num=0;
@@ -126,7 +126,8 @@ $(document).ready(function(){
 				//检测微博发布框是否为空
 				if($.trim(textarea.val())=='') textarea.val('分享图片').trigger('keyup');
 				//加载上传的图片
-				$('.image_upload').find('.add').prev('li').find('img').attr('src',site_url+data);				
+				var img=data.replace("images/content/square/","");
+				$('.image_upload').find('.add').prev('li').find('img').attr({'src':site_url+data,'action-data':img});				
 			}
 		})
 		//
@@ -155,6 +156,91 @@ $(document).ready(function(){
 	*/
 	// $('.home .comment').find('textarea').autosize();
 
+	//消息提醒
+	var $a={0:2,1:6,2:8};
+	$.msg($a);
+	/**
+	* 微博发表框获得焦点
+	*/
+	$('.send_weibo').find('textarea').on('focus',function(){
+		$(this).parent().addClass('clicked');
+	}).on('blur',function(){
+		$(this).parent().removeClass('clicked');
+	})
+	/**
+	* 微博输入提示
+	*/
+	$('.send_weibo').find('textarea').on('keyup',function(){
+		var count=getMessageLength($.trim($(this).val()));
+		var num=140-count;
+		//判断输入的文字长度是否超过140
+		if(num>=0){
+			$('.tips_num').find('span').html('还可以输入');
+			$('#num_count').removeClass().html(num);
+			$('.send_btn').removeClass('W_btn_v_disable');
+		}else{
+			$('.tips_num').find('span').html('已经超过');
+			$('#num_count').addClass('S_error').html(Math.abs(num));
+			$('.send_btn').addClass('W_btn_v_disable');
+		}
+		//输入框内容为空按钮不可点击
+		if($.trim($(this).val())==''){
+			$('.send_btn').addClass('W_btn_v_disable');
+		}
+	})
+	/**
+	* 微博提交按钮
+	*/
+	$('.send_btn').on('click',function(){
+		if(!$(this).hasClass('W_btn_v_disable')){
+			// 微博配图
+			var img=[];
+			if($('.image_upload').length!=0){
+				$('.image_upload').find('.list').find('img').each(function(){
+					var _img=$(this).attr('action-data');
+					img.push(_img);
+				})
+			}
+			$('.weibo_list').find('.notes').remove();
+			$(weibo).prependTo('.weibo_list').fadeOut();
+			var content=$('#weibo_input_detail').val();
+			$.ajax({
+				type:'post',
+				url:site_url+'index/send',
+				dataType:'json',
+				data:{content:content,img:img},
+				success:function(data){
+					if(data.status==1){
+						//移除图片列表
+						if($('.image_upload').length!=0)$('.image_upload').remove();
+						//微博总数+1
+						$('#my_weibo').html(+$('#my_weibo').html()+1);
+						//
+						var _item=$('.item:hidden');
+						_item.data('id',data.id);
+						_item.find('.content').html(data.content);
+						_item.fadeIn().find('.time').html(data.time);
+						$('#weibo_input_detail').val('').trigger('keyup');
+						//提示发布成功
+						$('.send_succpic').fadeIn();
+						setTimeout(function(){
+							$('.send_succpic').fadeOut();
+						},1000)
+					}
+				}
+			})
+		}else{
+			$('.send_weibo').find('textarea').addClass('empty');
+			setTimeout(function(){
+				$('.send_weibo').find('textarea').removeClass('empty');
+			},800)
+		}
+	})
+	// $('.forwardContent').hover(function(){
+	// 	$(this).find('.time').hide();
+	// },function(){
+
+	// })
 	/**
 	*设置皮肤
 	*/
@@ -359,81 +445,6 @@ $(document).ready(function(){
 			}
 		})
 	})
-	//消息提醒
-	var $a={0:2,1:6,2:8};
-	$.msg($a);
-	/**
-	* 微博发表框获得焦点
-	*/
-	$('.send_weibo').find('textarea').on('focus',function(){
-		$(this).parent().addClass('clicked');
-	}).on('blur',function(){
-		$(this).parent().removeClass('clicked');
-	})
-	/**
-	* 微博输入提示
-	*/
-	$('.send_weibo').find('textarea').on('keyup',function(){
-		var count=getMessageLength($.trim($(this).val()));
-		var num=140-count;
-		//判断输入的文字长度是否超过140
-		if(num>=0){
-			$('.tips_num').find('span').html('还可以输入');
-			$('#num_count').removeClass().html(num);
-			$('.send_btn').removeClass('W_btn_v_disable');
-		}else{
-			$('.tips_num').find('span').html('已经超过');
-			$('#num_count').addClass('S_error').html(Math.abs(num));
-			$('.send_btn').addClass('W_btn_v_disable');
-		}
-		//输入框内容为空按钮不可点击
-		if($.trim($(this).val())==''){
-			$('.send_btn').addClass('W_btn_v_disable');
-		}
-	})
-	/**
-	* 微博提交按钮
-	*/
-	$('.send_btn').on('click',function(){
-		if(!$(this).hasClass('W_btn_v_disable')){
-			$('.weibo_list').find('.notes').remove();
-			$(weibo).prependTo('.weibo_list').fadeOut();
-			var content=$('#weibo_input_detail').val();
-			$.ajax({
-				type:'post',
-				url:site_url+'index/send',
-				dataType:'json',
-				data:{content:content},
-				success:function(data){
-					if(data.status==1){
-						//微博总数+1
-						$('#my_weibo').html(+$('#my_weibo').html()+1);
-						//
-						var _item=$('.item:hidden');
-						_item.data('id',data.id);
-						_item.find('.content').html(data.content);
-						_item.fadeIn().find('.time').html(data.time);
-						$('#weibo_input_detail').val('').trigger('keyup');
-						//提示发布成功
-						$('.send_succpic').fadeIn();
-						setTimeout(function(){
-							$('.send_succpic').fadeOut();
-						},1000)
-					}
-				}
-			})
-		}else{
-			$('.send_weibo').find('textarea').addClass('empty');
-			setTimeout(function(){
-				$('.send_weibo').find('textarea').removeClass('empty');
-			},800)
-		}
-	})
-	// $('.forwardContent').hover(function(){
-	// 	$(this).find('.time').hide();
-	// },function(){
-
-	// })
 	/**
 	* 顶部导航搜索按钮事件
 	*/
