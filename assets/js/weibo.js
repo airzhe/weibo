@@ -82,15 +82,12 @@ $(document).ready(function(){
 	*/
 	$("[action-type='upload_image']").on('click',function(e){
 		var textarea=$('#weibo_input_detail');
-		//检测微博发布框是否为空
-		function check_textarea_empty(){
-			if($.trim(textarea.val())==''){textarea.val('分享图片')}
-		}
+		
 		//关闭图片上传框时候检测微博内容
 		$(this).imageUpload({
 			callback_handler:function(){
 				if($.trim(textarea.val())=='分享图片'){
-					textarea.val('');
+					textarea.val('').trigger('keyup');
 				}
 			}
 		});
@@ -126,7 +123,8 @@ $(document).ready(function(){
 					$('#image_upload').appendTo('.add');
 				}
 				$('.image_upload').find('.ico_loading_upload').remove();
-				check_textarea_empty();
+				//检测微博发布框是否为空
+				if($.trim(textarea.val())=='') textarea.val('分享图片').trigger('keyup');
 				//加载上传的图片
 				$('.image_upload').find('.add').prev('li').find('img').attr('src',site_url+data);				
 			}
@@ -136,11 +134,17 @@ $(document).ready(function(){
 	//删除上传图片
 	$('body').on('click',"[action-type='deleteImg']",function(){
 		$(this).parent('li').remove();
+		//检测微博发布框
 		var textarea=$('#weibo_input_detail');
-		//检测微博发布框是否为空
-		function check_textarea_empty(){
-			if($.trim(textarea.val())==''){textarea.val('分享图片')}
+		var li_count=$('.image_upload').find('.list').find("li:not('.add')").length;
+		var content= $.trim(textarea.val());
+		//如果有图片文本框为空则让文本框内容为“分享图片”
+		if(li_count>0 && content==''){
+			textarea.val('分享图片');
+		}else if(li_count==0 && content=='分享图片'){
+			textarea.val('');
 		}
+		textarea.trigger('keyup');
 		//显示上传按钮
 		if($('.image_upload').find('.add').is(':hidden')){
 			$('.image_upload').find('.add').show()
