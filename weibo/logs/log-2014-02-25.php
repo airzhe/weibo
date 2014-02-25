@@ -68,3 +68,4 @@ ERROR - 2014-02-25 09:58:31 --> Severity: Notice  --> Undefined index: width /ho
 ERROR - 2014-02-25 09:58:31 --> Severity: Notice  --> Undefined index: height /home/runner/www/work/weibo/weibo/libraries/weibo.php 111
 ERROR - 2014-02-25 10:10:45 --> 404 Page Not Found --> images
 ERROR - 2014-02-25 10:11:22 --> 404 Page Not Found --> images
+ERROR - 2014-02-25 11:40:57 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61

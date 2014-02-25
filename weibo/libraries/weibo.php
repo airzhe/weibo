@@ -75,7 +75,10 @@ class weibo{
 			{
 				$arr=$this->CI->upload->data();
 				$img=$config['upload_path'].$arr['file_name'];
+				//缩放图片为large、bmiddle、thumbnail、square
 				$this->zoom($img);
+				//裁切图片为80*80方形图
+				$img=$this->crop($img);
 				die($img);
 			}else{
 				echo $this->CI->upload->display_errors();
@@ -123,7 +126,16 @@ class weibo{
 					$config['height'] = $v['h'];
 				}
 			}else{
-				//列表图
+				// 方形图，缩放图像到宽高80比例
+				if($info[0]<$info[1]){
+					//宽度小于高度
+					$config['width'] = $v['w'];
+					$config['height']=$v['w']/$info[0]*$info[1];
+				}else{
+					//高度小于大于宽度
+					$config['width']=$v['h']/$info[1]*$info[0];
+					$config['height'] = $v['h'];
+				}
 			}
 			$config['new_image'] = $path.'/'.$file_name;
 			$this->CI->image_lib->initialize($config);
@@ -131,6 +143,33 @@ class weibo{
 			// 重置宽高参数
 			$config['width']=$config['height']=0;
 		}
+	}
+	/**
+	 * 裁切图片为80*80方形图
+	 */
+	public function crop($img){
+		$img=str_replace('large', 'square', $img);
+		if(!is_file($img)) return;
+		$info=getimagesize($img);
+
+		$config['source_image'] = $img;
+		$config['maintain_ratio'] = FALSE;
+		$config['width']=80;
+		$config['height']=80;
+
+		if($info[0]>$info[1]){
+			//图片宽度大于高度
+			$config['x_axis']=($info[0]-80)/2;
+			$config['y_axis']=0;
+		}else{
+			//图片高度大于等于宽度
+			$config['x_axis']=0;
+			$config['y_axis']=($info[1]-80)/2;
+		}
+		
+		$this->CI->image_lib->initialize($config);
+		$this->CI->image_lib->crop();
+		return $img;
 	}
 	/**
 	 * 评论微博

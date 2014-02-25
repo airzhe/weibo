@@ -1437,9 +1437,13 @@ body.login .container,body.signup .container{
  	position: absolute;
  	left: 61px;
  	top:1px;
+ 	display: none;
  }
  .image_upload .list .ico_delpic:hover {
-	background-position: -50px -25px;
+ 	background-position: -50px -25px;
+ }
+ .image_upload .list li:hover .ico_delpic{
+ 	display: block;
  }
  .image_upload .list li.add{
  	width: 80px;
