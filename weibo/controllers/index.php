@@ -125,6 +125,12 @@ str;
 		$this->weibo->send();
 	}
 	/**
+	 * 发单条新微博
+	 */
+	public function image(){
+		$this->weibo->image();	
+	}
+	/**
 	 * 分页
 	 */
 	private function page(){

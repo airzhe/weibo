@@ -94,11 +94,10 @@ $(document).ready(function(){
 				}
 			}
 		});
-
 		$('#image_upload').uploadify({
 			'buttonText' : '',
 			'swf'      : site_url+'assets/js/Uploadify/uploadify.swf',
-			'uploader' : '',
+			'uploader' : site_url+'index/image',
 			'width':'195',
 			'height':'84',
 			'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
@@ -110,7 +109,7 @@ $(document).ready(function(){
 					$('.image_upload').find('.hide').show();
 				}
 				// 插入li元素
-				var li='<li><img src="'+ site_url+'assets/images/blank.gif"><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>';
+				var li='<li><img src="'+ site_url+'assets/images/blank.gif" width="80" height="80"><a href="javascript:;" action-type="deleteImg" class="ico_delpic"></a></li>';
 				$('.image_upload').find('.add').before(li).prev('li').append($('<i>',{class:'ico_loading_upload'}));
 				//判断图片数量是否达到9个
 				num=0;

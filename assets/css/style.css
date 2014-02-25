@@ -1412,7 +1412,6 @@ body.login .container,body.signup .container{
  	margin: 0 6px 6px 0;
  	border: 1px solid #ccc;
  	border-radius: 1px;
- 	background: url(../images/img_default.png) no-repeat 1px 1px;
  	padding: 1px;
  	overflow: hidden;
  }

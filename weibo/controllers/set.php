@@ -33,6 +33,9 @@ Class set extends Front_Controller{
 		$this->load->library('form_validation');
 		$this->uid=$this->session->userdata('uid');	
 	}
+	public function index(){
+
+	}
 	/**
 	 * 修改个人信息
 	 */

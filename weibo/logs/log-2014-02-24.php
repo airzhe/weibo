@@ -128,3 +128,116 @@ ERROR - 2014-02-24 16:58:50 --> 404 Page Not Found --> assets
 ERROR - 2014-02-24 18:03:13 --> 404 Page Not Found --> assets
 ERROR - 2014-02-24 18:04:47 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
 ERROR - 2014-02-24 18:04:54 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:54:29 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:54:29 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 18:54:58 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 18:55:46 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:55:46 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 18:56:11 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:57:05 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:59:51 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 18:59:51 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:00:18 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:00:18 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:00:21 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:00:37 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:00:37 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:00:41 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:01:27 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:01:56 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:02:15 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:03:53 --> 404 Page Not Found --> index/images
+ERROR - 2014-02-24 19:03:55 --> 404 Page Not Found --> index/images
+ERROR - 2014-02-24 19:04:33 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:04:33 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:06:37 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:06:37 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:07:10 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:07:10 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:08:22 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:08:22 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:08:37 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:11:28 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:11:28 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:12:05 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:12:05 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:12:33 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:14:14 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:14:14 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:14:28 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:14:39 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:15:15 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:15:53 --> 404 Page Not Found --> aa.php
+ERROR - 2014-02-24 19:15:53 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:16:16 --> 404 Page Not Found --> aa
+ERROR - 2014-02-24 19:16:16 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:16:39 --> 404 Page Not Found --> aa
+ERROR - 2014-02-24 19:17:11 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:20:20 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-24 19:20:29 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:20:57 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-24 19:21:48 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 19:24:53 --> Severity: Notice  --> Undefined property: index::$upload /home/runner/www/work/weibo/weibo/controllers/index.php 148
+ERROR - 2014-02-24 19:25:45 --> Severity: Notice  --> Undefined property: index::$upload /home/runner/www/work/weibo/weibo/controllers/index.php 148
+ERROR - 2014-02-24 19:26:18 --> 404 Page Not Found --> avatar/image
+ERROR - 2014-02-24 19:28:59 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:30:19 --> 404 Page Not Found --> avatar/image
+ERROR - 2014-02-24 19:30:35 --> 404 Page Not Found --> avatar/image
+ERROR - 2014-02-24 19:30:57 --> 404 Page Not Found --> avatar/image
+ERROR - 2014-02-24 19:31:03 --> 404 Page Not Found --> img
+ERROR - 2014-02-24 19:31:20 --> 404 Page Not Found --> img
+ERROR - 2014-02-24 19:31:27 --> 404 Page Not Found --> img
+ERROR - 2014-02-24 19:33:18 --> 404 Page Not Found --> imagessss
+ERROR - 2014-02-24 19:34:02 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:34:08 --> 404 Page Not Found --> 333
+ERROR - 2014-02-24 19:40:07 --> 404 Page Not Found --> 
+ERROR - 2014-02-24 19:41:20 --> 404 Page Not Found --> 7777
+ERROR - 2014-02-24 19:42:07 --> 404 Page Not Found --> images
+ERROR - 2014-02-24 19:42:20 --> 404 Page Not Found --> images
+ERROR - 2014-02-24 19:42:27 --> 404 Page Not Found --> images
+ERROR - 2014-02-24 19:47:14 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-24 19:48:07 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/libraries/weibo.php 53
+ERROR - 2014-02-24 22:25:21 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-24 22:25:37 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:31:43 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:42:11 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:42:11 --> Severity: Notice  --> Undefined property: weibo::$upload /home/runner/www/work/weibo/weibo/libraries/weibo.php 71
+ERROR - 2014-02-24 22:43:18 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:43:18 --> Severity: Notice  --> Undefined property: weibo::$upload /home/runner/www/work/weibo/weibo/libraries/weibo.php 71
+ERROR - 2014-02-24 22:44:29 --> 404 Page Not Found --> url
+ERROR - 2014-02-24 22:45:53 --> 404 Page Not Found --> http:
+ERROR - 2014-02-24 22:47:17 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:47:45 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:48:27 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:48:27 --> Severity: Notice  --> Undefined property: weibo::$upload /home/runner/www/work/weibo/weibo/libraries/weibo.php 70
+ERROR - 2014-02-24 22:49:44 --> Severity: Notice  --> Undefined property: weibo::$upload /home/runner/www/work/weibo/weibo/libraries/weibo.php 70
+ERROR - 2014-02-24 22:50:17 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-24 22:50:42 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:51:20 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:51:52 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:52:15 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-24 22:53:16 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-24 22:54:06 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:54:08 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:54:21 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:54:26 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:54:38 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:59:12 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 22:59:38 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-24 23:03:10 --> 404 Page Not Found --> set/index
+ERROR - 2014-02-24 23:05:06 --> 404 Page Not Found --> assets
+ERROR - 2014-02-24 23:06:50 --> Severity: Notice  --> Undefined property: weibo::$upload /home/runner/www/work/weibo/weibo/libraries/weibo.php 70
+ERROR - 2014-02-24 23:07:03 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/libraries/weibo.php 53
+ERROR - 2014-02-24 23:09:38 --> Severity: Notice  --> Undefined index: Filedata /home/runner/www/work/weibo/weibo/controllers/avatar.php 23
+ERROR - 2014-02-24 23:14:33 --> Severity: Notice  --> Undefined property: weibo::$upload /home/runner/www/work/weibo/weibo/libraries/weibo.php 70
+ERROR - 2014-02-24 23:33:42 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:33:42 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:33:42 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:33:42 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:34:17 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:34:17 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:34:17 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:34:17 --> Severity: Notice  --> Undefined offset: 3 /home/runner/www/work/weibo/weibo/libraries/weibo.php 101
+ERROR - 2014-02-24 23:48:15 --> Severity: Notice  --> Undefined property: weibo::$image_lib /home/runner/www/work/weibo/weibo/libraries/weibo.php 120
+ERROR - 2014-02-24 23:56:29 --> The image you are attempting to upload exceedes the maximum height or width.
+ERROR - 2014-02-24 23:56:29 --> 404 Page Not Found --> %3Cp%3EThe%20image%20you%20are%20attempting%20to%20upload%20exceedes%20the%20maximum%20height%20or%20width.%3C

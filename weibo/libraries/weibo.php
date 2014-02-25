@@ -4,6 +4,8 @@ class weibo{
 		$this->CI=& get_instance();
 		$this->CI->load->model('Weibo_model');
 		$this->CI->load->model('Comment_model');
+		$this->CI->load->library('upload');
+		$this->CI->load->library('image_lib');
 		$this->CI->load->library('encry');
 		$this->uid = $this->CI->session->userdata('uid');	
 	}
@@ -45,6 +47,83 @@ class weibo{
 			if($turn) $data+=array('_wid'=>$this->CI->encry->encrypt($isturn));
 		};
 		die(json_encode($data));
+	}
+	/**
+	 * 微博图片处理
+	 */
+	public function image(){
+		$avatar=$_FILES['Filedata'];
+		if($avatar['error']==0 and is_uploaded_file($avatar['tmp_name'])){
+			$info = pathinfo($avatar['name']);
+			// 路径
+			$upload_path='images/content/source/'.date("Ym").'/';
+			is_dir($upload_path) || mkdir($upload_path,0777,TRUE);
+			// 文件名
+			$file_name=time().mt_rand(0,1000).'.'.$info['extension'];
+
+			// 配置项
+			$config['upload_path'] = $upload_path;
+			$config['file_name'] = $file_name;
+			$config['allowed_types'] = 'gif|jpg|jpeg|png';
+			// 默认0,系统配置文件中上传大小,单位k
+			$config['max_size'] = '1000';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '1024';
+			$this->CI->upload->initialize($config);
+			
+			if ($this->CI->upload->do_upload('Filedata'))
+			{
+				$arr=$this->CI->upload->data();
+				$img=$config['upload_path'].$arr['file_name'];
+				$this->zoom($img);
+				die($img);
+			}else{
+				echo $this->CI->upload->display_errors();
+				die;
+			}
+		}
+	}
+	/**
+	 * 缩放微博图片
+	 */
+	public function zoom($img){
+		if(!is_file($img)) return;
+
+		$file_name=basename($img);
+		$arr=explode('/',$img);
+		$new_path=$arr[0].'/'.$arr[1].'/';
+
+		$info=getimagesize($img);
+		// p($info);die;
+
+		//原图1024,大图440,中图120,小图80
+		$images=array(
+			'big'	=>array('w'=>440),
+			'source'=>array('size'=>1024),
+			'medium'=>array('size'=>120),
+			'small'	=>array('w'=>80,'h'=>80)
+			);
+		//配置缩放参数
+		$config['source_image'] = $img;
+		$config['maintain_ratio'] = TRUE;
+
+		foreach ($images as $k => $v) {
+			$path=$new_path.$k.'/'.$arr[3];
+			is_dir($path) || mkdir($path,0777,TRUE);
+			if($k=='source' || $k=='medium'){
+				//宽高最大值固定
+				$config['width'] = $v['size'];
+				$config['height'] = $v['size'];
+			}elseif($k=='big'){
+				//宽度固定
+				$config['width'] = $v['w'];
+			}else{
+				//中图
+			}
+			$config['new_image'] = $path.'/'.$file_name;
+			$this->CI->image_lib->initialize($config);
+			$this->CI->image_lib->resize();
+		}
 	}
 	/**
 	 * 评论微博

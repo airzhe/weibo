@@ -94,7 +94,7 @@ Class Avatar extends Front_Controller{
 		// 缩放
 		$config['source_image'] = $path.'/'.$file_name;	
 		foreach (array(180,50,30) as $v) {
-			$path=$path=$new_path.$v.'/'.$arr[3];
+			$path=$new_path.$v.'/'.$arr[3];
 			is_dir($path) || mkdir($path,0777,TRUE);
 			$config['new_image'] = $path.'/'.$file_name;
 			$config['width']  = $v; 
