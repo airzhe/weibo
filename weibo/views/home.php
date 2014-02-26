@@ -23,111 +23,108 @@
 							<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
 						</div>
 					<?php endif ?>
-					
 					<div class="detail">
-						
 						<div class="content">
 							<?php echo $v['content'] ?>
 						</div>
+						<!-- 微博配图 -->
+						<?php if ($v['picture']): ?>
+							<div class="media_prev">
+								<ul <?php if(isset($v['pic_class'])) echo "class='{$v['pic_class']} clearfix'" ?>>
+									<?php foreach ($v['pic'] as $key => $_v): ?>
+										<li>
+											<a href="javascript:void(0)"><img src="<?php echo base_url().$v['pic_path'].$_v['picture'] ?>" alt=""></a>
+											<!-- <i class="ico_loading"></i> -->
+										</li>
+									<?php endforeach ?>
+								</ul>
+							</div>
+							<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
+								<p class="medis_func S_txt3">
+									<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
+									<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
+									<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
+									<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
+								</p>
+								<div>
+									<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
+
+								</div>
+							</div>
+						<?php endif ?>
+						<!-- 转发 -->
+						<?php if ($v['isturn']):$wid=$v['isturn'] ?>
+							<div class="forwardContent">
+								<div class="WB_arrow">
+									<em class="S_line1_c">◆</em>
+									<span class="S_bg1_c">◆</span>
+								</div>
+								<?php if (isset($forward_list[$wid])):$forward=$forward_list[$wid] ?>
+									<div>
+										<a class="name S_func1" href="<?php echo $forward_list[$wid]['domain'] ?>">@<?php echo $forward_list[$wid]['username'] ?></a>
+									</div>
+									<div class="content">
+										<?php echo $forward_list[$wid]['content'] ?>
+									</div>
+									<!-- 转发的微博配图 -->
+									<?php if ($forward['picture']): ?>
+										<div class="media_prev">
+											<ul <?php if(isset($forward['pic_class'])) echo "class='{$forward['pic_class']} clearfix'" ?>>
+												<?php foreach ($forward['pic'] as $key => $_v): ?>
+													<li>
+														<a href="javascript:void(0)"><img src="<?php echo base_url().$forward['pic_path'].$_v['picture'] ?>" alt=""></a>
+														<!-- <i class="ico_loading"></i> -->
+													</li>
+												<?php endforeach ?>
+											</ul>
+										</div>
+										<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
+											<p class="medis_func S_txt3">
+												<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
+												<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
+												<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
+												<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
+											</p>
+											<div>
+												<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
+											</div>
+										</div>
+									<?php endif ?>
+									<div class="func clearfix S_txt2">
+										<div class="from left">
+											<a href="#" class="S_func2 time"><?php echo $forward_list[$wid]['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
+										</div>
+										<div class="handle right">
+											<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward_list[$wid]['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward_list[$wid]['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward_list[$wid]['comment'] ?>)</a>
+										</div>
+									</div>
+								<?php else: ?>
+									<div class="WB_deltxt">
+										抱歉，此微博已被作者删除。查看帮助：<a href="">http://t.cn/zWSudZc</a>
+									</div>
+								<?php endif ?>
+							</div>
+						<?php endif ?>
 						<div class="func clearfix S_txt2">
 							<div class="from left">
 								<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
 							</div>
 							<div class="handle right">
-								<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论(<?php echo $v['collect'] ?>)</a>
+								<a href="javascript:void(0)" action-type="praise"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
 							</div>
 						</div>
+						<!-- 评论 -->
+						<div class="comment S_line1 hide">
+							<div class="WB_arrow">
+								<em class="S_line1_c">◆</em>
+								<span class="S_bg4_c">◆</span>
+							</div>
+						</div>
+						<!-- 评论结束 -->
 					</div>
 				</div>
 			<?php endforeach ?>
 		<?php endif ?>
-	</div>
-	<div class="weibo_list feed_self">
-		<div class="item">
-			<div class="detail">
-				<div class="content">
-					这个很适合我，我的小马好累吖
-				</div>
-				<div class="media_prev">
-					<ul>
-						<li>
-							<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/abb9e8d9jw1ec436y9swrj20a008s74i.jpg') ?>" alt=""></a>
-						</li>
-					</ul>
-				</div>
-				<div class="func clearfix S_txt2">
-					<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">新浪微博</a> </div>
-					<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="forward">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<div class="detail">
-				<div class="content">
-					今天考试，开卷我就蒙了，不会写，监考老师转圈，将近30分钟，我一个字没写，老师看看我，我看看老师。40分钟的时候，我卷子写满。
-				</div>
-				<div class="func clearfix S_txt2">
-					<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">iPhone客户端</a> </div>
-					<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<div class="detail">
-				<div class="content">
-					有几个是拼图的，这种小的尺寸全部是用一般的胶水冷压的，热激活胶水是粘超大型木皮用的。做这种其实不难，拼图案更复杂些。//<a href="#">@发粪涂墙的胖子</a>: 看起来要完贴皮啊 ，而且妥妥的手工制作了， 机器好像不怎么派得上用场。 <a href="#">@小殷爱录像</a> 说的那种热敏胶有卖的？
-				</div>
-				<div class="forwardContent">
-					<div class="WB_arrow">
-						<em class="S_line1_c">◆</em>
-						<span class="S_bg1_c">◆</span>
-					</div>
-					<div><a class="name" href="#">@湖边的森林6</a></div>
-					<div class="content">
-						随着年龄的增长我觉得自己越来越稳重拉阿哈哈哈哈哈叉腰仰天长笑！！
-					</div>	
-					<div class="media_prev">
-						<ul class="lotspic_list clearfix">
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img1.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img2.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img3.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img4.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img5.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img6.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img7.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img8.jpg') ?>" alt=""></a>
-							</li>
-							<li>
-								<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/img9.jpg') ?>" alt=""></a>
-							</li>
-						</ul>
-					</div>
-					<div class="func clearfix S_txt2">
-						<div class="from left"><a href="#" class="time">1月11日 23:01</a> 来自<a href="">pull</a> </div>
-						<div class="handle right"><a href=""><s class="icon_praised_b"></s>(19)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
-					</div>
-				</div>
-				<div class="func clearfix S_txt2">
-					<div class="from left"><a href="#" class="time">今天 07:48</a> 来自<a href="">iPhone客户端</a> </div>
-					<div class="handle right"><a href=""><s class="icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="forward">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
-				</div>
-			</div>
-		</div>
 	</div>
 	<a class="PRF_feed_list_more SW_fun_bg S_line2" href="javascript:void(0)"><span>查看更多微博»</span></a>
 	<?php echo $page ?>

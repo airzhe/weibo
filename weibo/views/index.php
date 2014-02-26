@@ -1,9 +1,4 @@
 <?php $this->load->view('components/common_left_nav');?>
-<style>
-
-
-</style>
-
 <div class="main clearfix">
 	<div class="box_right right">
 		<a class="set_skin" href="#" title="模板设置"></a>
@@ -135,7 +130,6 @@
 										</p>
 										<div>
 											<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
-
 										</div>
 									</div>
 								<?php endif ?>
@@ -146,19 +140,43 @@
 											<em class="S_line1_c">◆</em>
 											<span class="S_bg1_c">◆</span>
 										</div>
-										<?php if (isset($forward_list[$wid])): ?>
+										<?php if (isset($forward_list[$wid])): $forward=$forward_list[$wid]?>
 											<div>
-												<a class="name S_func1" href="<?php echo $forward_list[$wid]['domain'] ?>">@<?php echo $forward_list[$wid]['username'] ?></a>
+												<a class="name S_func1" href="<?php echo $forward['domain'] ?>">@<?php echo $forward['username'] ?></a>
 											</div>
 											<div class="content">
-												<?php echo $forward_list[$wid]['content'] ?>
+												<?php echo $forward['content'] ?>
 											</div>
+											<!-- 转发的微博配图 -->
+											<?php if ($forward['picture']): ?>
+												<div class="media_prev">
+													<ul <?php if(isset($forward['pic_class'])) echo "class='{$forward['pic_class']} clearfix'" ?>>
+														<?php foreach ($forward['pic'] as $key => $_v): ?>
+															<li>
+																<a href="javascript:void(0)"><img src="<?php echo base_url().$forward['pic_path'].$_v['picture'] ?>" alt=""></a>
+																<!-- <i class="ico_loading"></i> -->
+															</li>
+														<?php endforeach ?>
+													</ul>
+												</div>
+												<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
+													<p class="medis_func S_txt3">
+														<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
+														<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
+														<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
+														<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
+													</p>
+													<div>
+														<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
+													</div>
+												</div>
+											<?php endif ?>
 											<div class="func clearfix S_txt2">
 												<div class="from left">
-													<a href="#" class="S_func2 time"><?php echo $forward_list[$wid]['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
+													<a href="#" class="S_func2 time"><?php echo $forward['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
 												</div>
 												<div class="handle right">
-													<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward_list[$wid]['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward_list[$wid]['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward_list[$wid]['comment'] ?>)</a>
+													<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward['comment'] ?>)</a>
 												</div>
 											</div>
 										<?php else: ?>
@@ -188,111 +206,6 @@
 						</div>
 					<?php endforeach ?>
 				<?php endif ?>
-				<div class="item clearfix">
-					<div class="face">
-						<img  width="50" height="50" src="<?php echo base_url('assets/images/1.jpg') ?>" alt="">
-					</div>
-					<div class="detail">
-						<div><a class="name S_func1" href="#">小殷爱录像</a></div>
-						<div class="content">
-							从前有个国王,他两个女儿的眼泪都会变成钻石.大女儿嫁给了一个用她的眼泪创造了一个个城堡的王子,小女儿却嫁给了牧羊人.国王临死见到他们的时候,大女儿满身金银珠宝,而小女儿和牧羊人仍是贫穷.国王很惊讶的说:明明她的一滴眼泪就够你们生活的很好. 牧羊人说:可是我舍不得让她哭啊.....
-						</div>
-						<div class="media_prev">
-							<ul>
-								<li>
-									<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/7cff6573jw1ebibx4063cj20c60fhgmn.jpg') ?>" alt=""></a>
-								</li>
-							</ul>
-						</div>
-						<div class="func clearfix S_txt2">
-							<div class="from left"><a href="#" class="S_link2 time">今天 07:48</a> 来自<a href="" class="S_link2">新浪微博</a> </div>
-							<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
-						</div>
-						<!-- 评论 -->
-						<div class="comment S_line1">
-							<div class="WB_arrow">
-								<em class="S_line1_c">◆</em>
-								<span class="S_bg4_c">◆</span>
-							</div>
-							<div class="W_loading">
-								<i class="ico_loading"></i><span>正在加载，请稍候...</span>
-							</div>
-							<div class="W_tips tips_warn clearfix">
-								<p>
-									<span class="icon_warnS"></span>
-									<span class="txt">新浪微博社区管理中心举报处理大厅，<a href="#">欢迎查阅！</a></span>
-									<span class="close right"><a href="javascript:void(0);" class="W_ico12 icon_close"></a></span>
-								</p>
-							</div>
-							<textarea name="" id="" class="W_input"></textarea>
-							<p class="clearfix"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox">同时转发到我的微博<a href="" class="W_btn_b right"><span>评论</span></a></p>
-							<div class="C_item S_line1">
-								<div class="face left">
-									<img src="<?php echo site_url('assets/images/_1.jpg') ?>" width="30" height="30" alt="">
-								</div>
-								<div class="C_detail">
-									<p><a href="">D瓜哥-李_君</a>：回复<a href="">@叉色-xsir</a>:恩，说实话我对这块专门看过一些资料。所以问的比较多。哈哈<span class="S_txt2">(1月5日 22:07)</span></p>
-									<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">查看对话</a><i class="S_txt3">|</i><a href="#">回复</a></p>
-								</div>
-							</div>
-							<div class="C_item S_line1">
-								<div class="face left">
-									<img src="<?php echo site_url('assets/images/_2.jpg') ?>" width="30" height="30" alt="">
-								</div>
-								<div class="C_detail">
-									<p><a href="">叉色-xsir</a>：前端后端都有啊。。。前端优化问的还蛮细的<span class="S_txt2">(1月5日 22:07)</span></p>
-									<p class="info"><a href="#"><i class="W_ico20 icon_praised_b"></i></a><i class="S_txt3">|</i><a href="#">回复</a></p>
-									<!-- 回复对话框 -->
-									<div class="repeat S_line1 S_bg1">
-										<div class="WB_arrow"><em class="S_line1_c">◆</em><span class=" S_bg1_c">◆</span></div>
-										<div class="S_line1 input clearfix">
-											<textarea name="" class="W_input" cols="30" rows="10"></textarea>
-											<p class="clearfix">
-												<span class="left"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><input type="checkbox" name="" class="W_checkbox"> 同时转发到我的微博</span>
-												<a href="" class="W_btn_a right"><span>评论</span></a>
-											</p>
-										</div>
-									</div>
-									<!-- 回复对话框 -->
-								</div>
-							</div>
-						</div>
-						<!-- 评论结束 -->
-					</div>
-				</div>
-				<div class="item clearfix">
-					<div class="face">
-						<img  width="50" height="50" src="<?php echo base_url('assets/images/2.jpg') ?>" alt="">
-					</div>
-					<div class="detail">
-						<div><a class="name S_func1" href="#">包子包子肉肉</a></div>
-						<div class="content">
-							转发微博
-						</div>
-						<div class="forwardContent"> 
-							<div><a class="name S_func1" href="#">@收集世上的美景</a></div>
-							<div class="content">
-								【中国最美五大沙漠】巴丹吉林沙漠，塔克拉玛干沙漠，鸣沙山—月牙泉，古尔班通古特沙漠，沙坡头。一生一定要去次沙漠，体验烈日风沙，体味孤独辽远，它在那里等你，等候了千年。什么时候启程吧！
-							</div>	
-							<div class="media_prev">
-								<ul>
-									<li>
-										<a href="javascript:void(0)"><img src="<?php echo base_url('assets/images/c31ab1f2jw1ecfxy8kvhej20c811xaga.jpg') ?>" alt=""></a>
-									</li>
-								</ul>
-							</div>
-							<div class="func clearfix S_txt2">
-								<div class="from left"><a href="#" class="S_func2 time">1月11日 23:01</a> 来自<a href="" class="S_func2">pull</a> </div>
-								<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(19)</a><i class="S_txt3">|</i><a href="" class="S_func2">转发(71)</a><i class="S_txt3">|</i><a href="" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="" class="S_func2">评论(22)</a></div>
-							</div>
-						</div>
-
-						<div class="func clearfix S_txt2">
-							<div class="from left"><a href="#" class="time S_link2">今天 07:48</a> 来自<a href="" class="S_link2">新浪微博</a> </div>
-							<div class="handle right"><a href=""><s class="W_ico20 icon_praised_b"></s>(29)</a><i class="S_txt3">|</i><a href="">转发(71)</a><i class="S_txt3">|</i><a href="">收藏</a><i class="S_txt3">|</i><a href="">评论(22)</a></div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="W_loading"  node-type="lazyload">
 				<i class="ico_loading"></i><span>正在加载，请稍候...</span>

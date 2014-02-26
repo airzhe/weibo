@@ -259,7 +259,6 @@ $(document).ready(function(){
 	/**	
 	* 微博配图js效果
 	*/
-	
 	//点击小图显示loading,大图加载完成显示大图.隐藏小图。移除loading...
 	function hide_media_prev(obj){
 		//移除loading

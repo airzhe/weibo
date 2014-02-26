@@ -1738,7 +1738,7 @@ body.login .container,body.signup .container{
  	margin-right: 7px;
  }
  /*转发*/
- .weibo_list .detail .forwardContent{
+ .weibo_list .forwardContent{
  	border: 1px solid #d9d9d9;
  	padding: 10px 20px 10px;
  	margin: 5px 0 5px;
@@ -1746,14 +1746,14 @@ body.login .container,body.signup .container{
  	background-color:#f2f2f2;
  	position: relative;
  }
- .weibo_list .detail .forwardContent .WB_arrow{
+ .weibo_list .forwardContent .WB_arrow{
  	position: absolute;
  	z-index: 0;
  	margin: -18px 0 0;
  	width: 22px;
  	cursor: default;
  }
- .weibo_list .detail .forwardContent .WB_arrow *{
+ .weibo_list .forwardContent .WB_arrow *{
  	font-family: "SimSun";
  	overflow: hidden;
  	font-size: 12px;
@@ -1761,19 +1761,25 @@ body.login .container,body.signup .container{
  	display: block;
  	height: 12px;
  }
- .weibo_list .detail .forwardContent .WB_arrow span {
+ .weibo_list .forwardContent .WB_arrow span {
  	margin: -11px 0 0;
  }
- .weibo_list .detail .forwardContent .WB_arrow span{
+ .weibo_list .forwardContent .WB_arrow span{
  	margin: -11px 0 0;
  }
- .weibo_list .detail .forwardContent .name{
+ .weibo_list .forwardContent .name{
  	font-size:12px;
  }
- .weibo_list .detail .forwardContent .content{
+ .weibo_list .forwardContent .content{
  	font-size:12px;
  	line-height: 21px;
  }
+ .weibo_list .forwardContent .media_expand {
+ 	border-width: 0;
+ 	padding: 10px 0;
+	margin:0;
+ }
+
  .weibo_list .media_prev .lotspic_list li{
  	float: left;
  	display: inline;
@@ -2305,7 +2311,7 @@ i.female{
 	height: 8px;
 	left:0;
 	top:22px;
-	background: #fff url(../images/all_iconbtn.png) -410px 0px no-repeat;
+	background: #fafafa url(../images/all_iconbtn.png) -410px 0px no-repeat;
 }
 .tab_radious  .S_txt3{
 	line-height: 22px;

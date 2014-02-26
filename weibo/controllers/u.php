@@ -62,11 +62,71 @@ Class u extends Front_Controller{
 
 		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$this->uid))->result_array();
 
+		//读取微博配图
+		foreach ($weibo_list as $key => $value) {
+			$pic_count=$value['picture'];
+			if($pic_count){
+				$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
+				$weibo_list[$key]['pic']=$_pic;
+				//分配图片路径
+				if($pic_count==1){
+					$weibo_list[$key]['pic_path']='images/content/thumbnail/';
+				}else{
+					$weibo_list[$key]['pic_path']='images/content/square/';
+					if($pic_count==2 || $pic_count==4){
+						$weibo_list[$key]['pic_class']='lotspic_list inner_width';
+					}else{
+						$weibo_list[$key]['pic_class']='lotspic_list';
+					}
+				}
+			}
+		}
+
 		foreach ($weibo_list as $k => $v) {
 			$weibo_list[$k]['content']=$this->weibo->f_content($v['content']);
 			$weibo_list[$k]['time']=$this->weibo->f_time($v['time']);
 		}
+
+		//转发的原微博
+		$arr=array('username','domain','weibo.id','content','picture','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
+		$forward_arr=array();
+		foreach ($weibo_list as $k => $v) {
+			if($v['isturn']){
+				$forward_arr[]=$v['isturn'];
+			}
+		}
+		$forward_list=array();
+		if(!empty($forward_arr)){
+			$this->db->join('user_info', 'user_info.uid = weibo.uid');
+			$_forward_list=$this->db->where_in('weibo.id',$forward_arr)->select($arr)->get('weibo')->result_array();
+			$forward_list=array();
+			foreach ($_forward_list as $k => $v) {
+				$forward_list[$v['id']]=$v;
+			}
+			foreach ($forward_list as $key => $value) {
+				//格式化内容和发布时间
+				$forward_list[$key]['content']=$this->weibo->f_content($value['content']);
+				$forward_list[$key]['time']=$this->weibo->f_time($value['time']);
+				$pic_count=$value['picture'];
+				if($pic_count){
+					$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
+					$forward_list[$key]['pic']=$_pic;
+					//分配图片路径
+					if($pic_count==1){
+						$forward_list[$key]['pic_path']='images/content/thumbnail/';
+					}else{
+						$forward_list[$key]['pic_path']='images/content/square/';
+						if($pic_count==2 || $pic_count==4){
+							$forward_list[$key]['pic_class']='lotspic_list inner_width';
+						}else{
+							$forward_list[$key]['pic_class']='lotspic_list';
+						}
+					}
+				}
+			}
+		}
 		if(!$this->input->is_ajax_request()){
+			$this->data['forward_list']=$forward_list;
 			$this->data['weibo_list']=$weibo_list;
 			$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
 		}else{

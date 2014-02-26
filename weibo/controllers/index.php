@@ -85,8 +85,27 @@ Class index extends Front_Controller{
 			foreach ($_forward_list as $k => $v) {
 				$forward_list[$v['id']]=$v;
 			}
+			foreach ($forward_list as $key => $value) {
+				$pic_count=$value['picture'];
+				if($pic_count){
+					$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
+					$forward_list[$key]['pic']=$_pic;
+					//分配图片路径
+					if($pic_count==1){
+						$forward_list[$key]['pic_path']='images/content/thumbnail/';
+					}else{
+						$forward_list[$key]['pic_path']='images/content/square/';
+						if($pic_count==2 || $pic_count==4){
+							$forward_list[$key]['pic_class']='lotspic_list inner_width';
+						}else{
+							$forward_list[$key]['pic_class']='lotspic_list';
+						}
+					}
+				}
+			}
 			$forward_list=$this->weibo->format($forward_list);
 		}
+		// p($forward_list);die;
 		// 如果是ajax请求输出json数据，否则赋值给$this->data
 		if(!$this->input->is_ajax_request()){
 			$this->data['forward_list']=$forward_list;
