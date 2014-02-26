@@ -21,6 +21,7 @@ class weibo{
 		if($len==0 || $len>140){
 			$data=array('status'=>0,'error'=>'微博长度应小于140');
 		}else{
+
 			//微博内容写入数据库
 			$time=time();
 			$weibo=array('content'=>$content,'time'=>$time,'uid'=>$this->uid);
@@ -51,12 +52,8 @@ class weibo{
 			$this->CI->User_info_model->inc('weibo',$this->uid);
 			//如果是转发，被转发的微博转发数+1
 			if($turn) $this->CI->Weibo_model->inc('turn',$isturn);
-			//@某人 
-			$preg='/(@.*?)\s/is';
-			if(preg_match_all($preg, $content, $at)){
-				//微博@
-				// p($at);
-			}
+			//@某人
+			$this->at($id,$content);
 			$_content=$this->f_content($content);
 			$_time=$this->f_time($time);
 			$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
@@ -203,18 +200,31 @@ class weibo{
 			if($id=$this->CI->Comment_model->add($comment)){
 				// 微博评论总数+1
 				$this->CI->Weibo_model->inc('comment',$wid);
-				//@某人
-				$preg='/(@.*?)\s/is';
-				if(preg_match_all($preg, $content, $at)){
-					//微博@
-					// p($at);
-				}
+				//@某人 
+				// $this->at($id,$content);
 				$_content=$this->f_content($content);
 				$_time=$this->f_time($time);
 				$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
 			}
 		}
 		die(json_encode($data));
+	}
+	/**
+	 * [at 某人]
+	 * @param  $id 微博id
+	 * @param  $content 正则匹配的内容
+	 */
+	public function at($id,$content){
+		//@某人 
+		$preg='/ *@([\x{4e00}-\x{9fa5}A-Za-z0-9_-]*) ?/u';
+		if(preg_match_all($preg, $content, $at)){
+				//微博@
+			$uid=$this->CI->db->select('uid')->where_in('username',$at[1])->get('user_info')->result_array();
+			foreach ($uid as $v) {
+				$at_arr=array('wid'=>$id,'uid'=>$v['uid']);
+				$this->CI->db->insert('at',$at_arr);
+			}
+		}
 	}
 	/**
 	 * 格式化微博内容 (替换表情文字)
@@ -228,6 +238,8 @@ class weibo{
 			$_faces[$key]='<img src="'.base_url("assets/images/hotFace/{$value}.gif").'">';
 		}
 		$c=str_replace(array_keys($_faces),array_values($_faces),$content);
+		$site_url=site_url();
+		$c=preg_replace("/ *@([\x{4e00}-\x{9fa5}A-Za-z0-9_-]*) ?/u", " <a href='{$site_url}n/\\1' target='_blank'>@\\1</a> ", $c);
 		return $c;
 	}
 	/**

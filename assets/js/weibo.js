@@ -720,6 +720,30 @@ $(document).ready(function(){
 			}
 		});
 	})
+	//删除at记录
+	$('.weibo_list').on('click',"[action-type='at_delete']",function(){
+		var self=$(this);
+		self.modal({
+			type:'center M_confirm',
+			content:'<p><i class="icon_warn"></i>确认要隐藏这条@我的微博吗？</p>',
+			ok_handler:function(){
+				$('.set_template').fadeOut('fast',function(){
+					$(this).remove();
+				})
+				//执行删除操作
+				var item=self.parents('.item');
+				var id=item.data('atid');
+
+				$.post(site_url+'at/delete',{id:id},function(data){
+					if(data.status==1){
+						item.animate({height:0,opacity:0},400,function(){
+							item.remove();
+						});
+					}
+				},'json')
+			}
+		});
+	})
 	/**
 	* 
 	* index 页查看更多

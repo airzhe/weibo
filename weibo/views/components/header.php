@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php if(isset($title)) echo $title?> 新浪微博-随时随地分享身边的新鲜事儿</title>
-	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<!-- 调用用户自定义模板样式 -->

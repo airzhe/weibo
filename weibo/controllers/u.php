@@ -25,7 +25,8 @@ Class u extends Front_Controller{
 		$this->get_follow();
 		// 侧边栏粉丝
 		$this->get_fans();
-
+		// 侧边栏相册
+		$this->get_picture();
 		$this->view('home',$this->data);
 	}
 	// 用户信息
@@ -184,5 +185,15 @@ str;
 		$_myfans_list=$this->member->get_fans($this->uid);
 		$myfans_list=$this->weibo->format(array_slice($_myfans_list,0,4));
 		$this->data['myfans_list']=$myfans_list;
+	}
+	//获取用户相册
+	private function get_picture(){
+		$sql="SELECT p.`picture`
+		FROM `{$this->db->dbprefix}picture` AS p
+		JOIN `{$this->db->dbprefix}weibo` AS w ON w.id = p.wid
+		AND w.uid =$this->uid 
+		ORDER BY w.`time` DESC";
+		$picture_list=$this->db->query($sql)->result_array();
+		$this->data['picture_list']=$picture_list;
 	}
 }

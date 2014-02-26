@@ -83,135 +83,131 @@
 						<a href="#">音乐</a>
 					</p>
 				</div>
-				<div class="weibo_list" 
-				<?php if (isset($weibo_offset)): ?>
-					data-offset="<?php echo $weibo_offset ?>"
-				<?php endif ?> 
-				>
-				<a href="" class="notes">有 1 条新微博，点击查看</a>
-				<?php if (!isset($weibo_list)): ?>
-					<a href="" class="notes">您还没有发表过微博，赶快发表篇试试吧。</a>
-				<?php else: ?>
-					<?php foreach ($weibo_list as $v): ?>
-						<div class="item clearfix" data-id="<?php echo $v['id'] ?>">
-							<?php if ($v['uid']==$this->session->userdata('uid')): ?>
-								<div class="WB_screen">
-									<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
-								</div>
-							<?php endif ?>
-							<div class="face">
-								<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
-							</div>
-							<div class="detail">
-								<div>
-									<a class="name S_func1" href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a>
-								</div>
-								<div class="content">
-									<?php echo $v['content'] ?>
-								</div>
-								<!-- 微博配图 -->
-								<?php if ($v['picture']): ?>
-									<div class="media_prev">
-										<ul <?php if(isset($v['pic_class'])) echo "class='{$v['pic_class']} clearfix'" ?>>
-											<?php foreach ($v['pic'] as $key => $_v): ?>
-												<li>
-													<a href="javascript:void(0)"><img src="<?php echo base_url().$v['pic_path'].$_v['picture'] ?>" alt=""></a>
-													<!-- <i class="ico_loading"></i> -->
-												</li>
-											<?php endforeach ?>
-										</ul>
-									</div>
-									<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
-										<p class="medis_func S_txt3">
-											<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
-											<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
-											<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
-											<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
-										</p>
-										<div>
-											<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
-										</div>
+				<div class="weibo_list" <?php if (isset($weibo_offset)){echo "data-offset=$weibo_offset";} ?> >
+					<a href="" class="notes">有 1 条新微博，点击查看</a>
+					<?php if (!isset($weibo_list)): ?>
+						<a href="" class="notes">您还没有发表过微博，赶快发表篇试试吧。</a>
+					<?php else: ?>
+						<?php foreach ($weibo_list as $v): ?>
+							<div class="item clearfix" data-id="<?php echo $v['id'] ?>">
+								<?php if ($v['uid']==$this->session->userdata('uid')): ?>
+									<div class="WB_screen">
+										<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
 									</div>
 								<?php endif ?>
-								<!-- 转发 -->
-								<?php if ($v['isturn']):$wid=$v['isturn'] ?>
-									<div class="forwardContent">
-										<div class="WB_arrow">
-											<em class="S_line1_c">◆</em>
-											<span class="S_bg1_c">◆</span>
+								<div class="face">
+									<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
+								</div>
+								<div class="detail">
+									<div>
+										<a class="name S_func1" href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a>
+									</div>
+									<div class="content">
+										<?php echo $v['content'] ?>
+									</div>
+									<!-- 微博配图 -->
+									<?php if ($v['picture']): ?>
+										<div class="media_prev">
+											<ul <?php if(isset($v['pic_class'])) echo "class='{$v['pic_class']} clearfix'" ?>>
+												<?php foreach ($v['pic'] as $key => $_v): ?>
+													<li>
+														<a href="javascript:void(0)"><img src="<?php echo base_url().$v['pic_path'].$_v['picture'] ?>" alt=""></a>
+														<!-- <i class="ico_loading"></i> -->
+													</li>
+												<?php endforeach ?>
+											</ul>
 										</div>
-										<?php if (isset($forward_list[$wid])): $forward=$forward_list[$wid]?>
+										<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
+											<p class="medis_func S_txt3">
+												<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
+												<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
+												<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
+												<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
+											</p>
 											<div>
-												<a class="name S_func1" href="<?php echo $forward['domain'] ?>">@<?php echo $forward['username'] ?></a>
+												<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
 											</div>
-											<div class="content">
-												<?php echo $forward['content'] ?>
+										</div>
+									<?php endif ?>
+									<!-- 转发 -->
+									<?php if ($v['isturn']):$wid=$v['isturn'] ?>
+										<div class="forwardContent">
+											<div class="WB_arrow">
+												<em class="S_line1_c">◆</em>
+												<span class="S_bg1_c">◆</span>
 											</div>
-											<!-- 转发的微博配图 -->
-											<?php if ($forward['picture']): ?>
-												<div class="media_prev">
-													<ul <?php if(isset($forward['pic_class'])) echo "class='{$forward['pic_class']} clearfix'" ?>>
-														<?php foreach ($forward['pic'] as $key => $_v): ?>
-															<li>
-																<a href="javascript:void(0)"><img src="<?php echo base_url().$forward['pic_path'].$_v['picture'] ?>" alt=""></a>
-																<!-- <i class="ico_loading"></i> -->
-															</li>
-														<?php endforeach ?>
-													</ul>
+											<?php if (isset($forward_list[$wid])): $forward=$forward_list[$wid]?>
+												<div>
+													<a class="name S_func1" href="<?php echo $forward['domain'] ?>">@<?php echo $forward['username'] ?></a>
 												</div>
-												<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
-													<p class="medis_func S_txt3">
-														<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
-														<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
-														<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
-														<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
-													</p>
-													<div>
-														<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
+												<div class="content">
+													<?php echo $forward['content'] ?>
+												</div>
+												<!-- 转发的微博配图 -->
+												<?php if ($forward['picture']): ?>
+													<div class="media_prev">
+														<ul <?php if(isset($forward['pic_class'])) echo "class='{$forward['pic_class']} clearfix'" ?>>
+															<?php foreach ($forward['pic'] as $key => $_v): ?>
+																<li>
+																	<a href="javascript:void(0)"><img src="<?php echo base_url().$forward['pic_path'].$_v['picture'] ?>" alt=""></a>
+																	<!-- <i class="ico_loading"></i> -->
+																</li>
+															<?php endforeach ?>
+														</ul>
+													</div>
+													<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">
+														<p class="medis_func S_txt3">
+															<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>
+															<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>
+															<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>
+															<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>
+														</p>
+														<div>
+															<img src="<?php echo base_url('assets/images/blank.gif') ?>" alt="">
+														</div>
+													</div>
+												<?php endif ?>
+												<div class="func clearfix S_txt2">
+													<div class="from left">
+														<a href="#" class="S_func2 time"><?php echo $forward['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
+													</div>
+													<div class="handle right">
+														<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward['comment'] ?>)</a>
 													</div>
 												</div>
+											<?php else: ?>
+												<div class="WB_deltxt">
+													抱歉，此微博已被作者删除。查看帮助：<a href="">http://t.cn/zWSudZc</a>
+												</div>
 											<?php endif ?>
-											<div class="func clearfix S_txt2">
-												<div class="from left">
-													<a href="#" class="S_func2 time"><?php echo $forward['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
-												</div>
-												<div class="handle right">
-													<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward['comment'] ?>)</a>
-												</div>
-											</div>
-										<?php else: ?>
-											<div class="WB_deltxt">
-												抱歉，此微博已被作者删除。查看帮助：<a href="">http://t.cn/zWSudZc</a>
-											</div>
-										<?php endif ?>
+										</div>
+									<?php endif ?>
+									<div class="func clearfix S_txt2">
+										<div class="from left">
+											<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
+										</div>
+										<div class="handle right">
+											<a href="javascript:void(0)" action-type="praise"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
+										</div>
 									</div>
-								<?php endif ?>
-								<div class="func clearfix S_txt2">
-									<div class="from left">
-										<a href="#" class="S_link2 time"><?php echo $v['time'] ?></a> 来自<a href="" class="S_link2">新浪微博</a> 
+									<!-- 评论 -->
+									<div class="comment S_line1 hide">
+										<div class="WB_arrow">
+											<em class="S_line1_c">◆</em>
+											<span class="S_bg4_c">◆</span>
+										</div>
 									</div>
-									<div class="handle right">
-										<a href="javascript:void(0)" action-type="praise"><s class="W_ico20 icon_praised_b"></s>(<?php echo $v['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发(<?php echo $v['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论(<?php echo $v['comment'] ?>)</a>
-									</div>
+									<!-- 评论结束 -->
 								</div>
-								<!-- 评论 -->
-								<div class="comment S_line1 hide">
-									<div class="WB_arrow">
-										<em class="S_line1_c">◆</em>
-										<span class="S_bg4_c">◆</span>
-									</div>
-								</div>
-								<!-- 评论结束 -->
 							</div>
-						</div>
-					<?php endforeach ?>
-				<?php endif ?>
+						<?php endforeach ?>
+					<?php endif ?>
+				</div>
+				<div class="W_loading"  node-type="lazyload">
+					<i class="ico_loading"></i><span>正在加载，请稍候...</span>
+				</div>
+				<?php echo $page ?>
 			</div>
-			<div class="W_loading"  node-type="lazyload">
-				<i class="ico_loading"></i><span>正在加载，请稍候...</span>
-			</div>
-			<?php echo $page ?>
 		</div>
 	</div>
-</div>
 </div>

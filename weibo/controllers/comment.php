@@ -1,4 +1,4 @@
-<?php 
+<?php
 Class comment extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
