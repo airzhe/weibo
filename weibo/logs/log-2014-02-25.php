@@ -95,3 +95,12 @@ ERROR - 2014-02-25 15:46:44 --> Severity: Notice  --> Undefined index: style /ho
 ERROR - 2014-02-25 15:52:41 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/libraries/weibo.php 42
 ERROR - 2014-02-25 15:52:48 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/libraries/weibo.php 42
 ERROR - 2014-02-25 16:03:53 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-25 17:00:20 --> 404 Page Not Found --> http:
+ERROR - 2014-02-25 17:09:31 --> 404 Page Not Found --> images
+ERROR - 2014-02-25 17:23:47 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given /home/runner/www/work/weibo/weibo/views/index.php 132
+ERROR - 2014-02-25 17:23:47 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given /home/runner/www/work/weibo/weibo/views/index.php 132
+ERROR - 2014-02-25 17:23:47 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given /home/runner/www/work/weibo/weibo/views/index.php 132
+ERROR - 2014-02-25 17:23:51 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given /home/runner/www/work/weibo/weibo/views/index.php 132
+ERROR - 2014-02-25 17:23:51 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given /home/runner/www/work/weibo/weibo/views/index.php 132
+ERROR - 2014-02-25 17:23:51 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given /home/runner/www/work/weibo/weibo/views/index.php 132
+ERROR - 2014-02-25 22:00:33 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61

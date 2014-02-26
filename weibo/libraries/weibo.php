@@ -27,6 +27,7 @@ class weibo{
 
 			//记录微博配图数量
 			if(is_array($img_arr) && count($img_arr)){
+				$img_arr=array_splice($img_arr,0,9);
 				$weibo+=array('picture'=>count($img_arr));
 			}
 			//如果是转发，记录转发id
@@ -39,7 +40,7 @@ class weibo{
 			$id=$this->CI->Weibo_model->add($weibo);
 			//微博配图写入数据库
 			if(is_array($img_arr) && count($img_arr)){
-				var_dump($img_arr);die;
+				// var_dump($img_arr);die;
 				foreach ($img_arr as $v) {
 					$img_data=array('wid'=>$id,'picture'=>$v);
 					$this->CI->db->insert('picture', $img_data); 

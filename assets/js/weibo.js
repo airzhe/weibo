@@ -6,6 +6,20 @@ function getMessageLength (b) {
 	var l=b.length + (!a ? 0 : a.length);
 	return Math.ceil(l/2); 
 }
+/**	
+* 判断图片是否加载完成。
+*/
+function loadImage(url,callback,obj) {
+    var img = new Image(); //创建一个Image对象，实现图片的预下载
+    img.src = url;
+    if(img.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数
+    	callback.call(obj);
+        return; // 直接返回，不用再处理onload事件
+    }
+    img.onload = function () { //图片下载完毕时异步调用callback函数。
+        callback.call(obj);//将回调函数的this替换为Image对象
+    };
+};
 $(document).ready(function(){
 	/**	
 	* 定义共用变量
@@ -115,19 +129,25 @@ $(document).ready(function(){
 				}
 			},
 			'onUploadSuccess' : function(file,data) {
-				//判断图片数量是否达到9个
-				if(num==9) $('.image_upload').find('.add').hide();
-				
-				// 判断只执行一次
-				if($('.add').find('#image_upload').length==0){
-					$('#image_upload').appendTo('.add');
-				}
 				$('.image_upload').find('.ico_loading_upload').remove();
 				//检测微博发布框是否为空
 				if($.trim(textarea.val())=='') textarea.val('分享图片').trigger('keyup');
 				//加载上传的图片
 				var img=data.replace("images/content/square/","");
 				$('.image_upload').find('.add').prev('li').find('img').attr({'src':site_url+data,'action-data':img});				
+
+				//判断图片数量是否达到9个
+				if(num==9) {
+					$('#image_upload').uploadify('stop');
+					$('#image_upload').uploadify('cancel','*');
+					$('.image_upload').find('.add').addClass('transparent');
+				}
+			},
+			'onQueueComplete':function(){
+				// 判断只执行一次
+				if($('.add').find('#image_upload').length==0){
+					$('#image_upload').appendTo('.add');
+				}
 			}
 		})
 		//
@@ -147,8 +167,8 @@ $(document).ready(function(){
 		}
 		textarea.trigger('keyup');
 		//显示上传按钮
-		if($('.image_upload').find('.add').is(':hidden')){
-			$('.image_upload').find('.add').show()
+		if($('.image_upload').find('.add.transparent').length==1){
+			$('.image_upload').find('.add').removeClass('transparent');
 		}
 	})
 	/**	
@@ -236,11 +256,72 @@ $(document).ready(function(){
 			},800)
 		}
 	})
-	// $('.forwardContent').hover(function(){
-	// 	$(this).find('.time').hide();
-	// },function(){
-
-	// })
+	/**	
+	* 微博配图js效果
+	*/
+	
+	//点击小图显示loading,大图加载完成显示大图.隐藏小图。移除loading...
+	function hide_media_prev(obj){
+		//移除loading
+		$(this).parents('li').find('i').remove();
+		//隐藏小图区域
+		$(this).parents('.media_prev').hide().next('.media_expand').show();
+	}
+	//点击显示大图
+	$('.weibo_list').on('click','.media_prev img',function(){
+		//loading
+		$(this).parents('li').append($("<i>",{'class':'ico_loading'}));
+		var _img_url=$(this).attr('src');
+		//中图url
+		var img_url=_img_url.replace(/content\/(\w+?)\//,"content/bmiddle/");
+		//大图url
+		var large_img_url=_img_url.replace(/content\/(\w+?)\//,"content/large/");
+		//执行函数加载图片隐藏小图
+		loadImage(img_url,hide_media_prev,this);
+		//
+		$(this).parents('.media_prev')
+		.next('.media_expand').find('img').attr('src',img_url)
+		.parents('.media_expand').find('.show_big').attr('href',large_img_url);
+	})
+	//收起大图，显示小图
+	$('.weibo_list').on('click','.media_expand img,.media_expand .retract',function(){
+		$(this).parents('.media_expand').hide()
+		.prev('.media_prev').show();
+	})
+	//图片向左转
+	$('.weibo_list').on('click','.media_expand .turn_left',function(){
+		var img=$(this).parent().next().find('img');
+		var rot;
+		switch (img.attr('class')) {
+			case undefined:
+			rot='rot3';
+			break;
+			case 'rot3':
+			rot='rot2';
+			break;
+			case 'rot2':
+			rot='rot1'
+			break;
+		}
+		img.removeAttr('class').addClass(rot);
+	})
+	//图片向右边
+	$('.weibo_list').on('click','.media_expand .turn_right',function(){
+		var img=$(this).parent().next().find('img');
+		var rot;
+		switch (img.attr('class')) {
+			case undefined:
+			rot='rot1';
+			break;
+			case 'rot1':
+			rot='rot2';
+			break;
+			case 'rot2':
+			rot='rot3'
+			break;
+		}
+		img.removeAttr('class').addClass(rot);
+	})
 	/**
 	*设置皮肤
 	*/

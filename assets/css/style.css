@@ -11,7 +11,6 @@
 	display: block;
 }
 /*CI调试信息样式结束*/
-
 body{
 	font: 12px/1.125 Arial,Helvetica,sans-serif;
 	color: #333;
@@ -1462,6 +1461,11 @@ body.login .container,body.signup .container{
  .image_upload .list li.add:hover{
  	border-color:#ffa306;
  }
+ .image_upload .list li.transparent{
+ 	opacity: 0;
+ 	height: 0;
+ 	border: none;
+ }
  .W_layer .arrow {
  	width: 14px;
  	height: 9px;
@@ -1705,8 +1709,22 @@ body.login .container,body.signup .container{
  .weibo_list .detail .media_prev {
  	margin-right: -20px;
  }
+ .weibo_list .detail .media_prev li {
+ 	position: relative;
+ 	display: inline-block;
+ }
+ .weibo_list .detail .media_prev li .ico_loading {
+ 	position: absolute;
+ 	left:50%;
+ 	top:50%;
+ 	margin-left:-8px;
+ 	margin-top:-8px;
+ }
  .weibo_list .detail .media_prev img{
  	cursor:url(../images/big.cur), auto!important;
+ }
+ .weibo_list .detail .media_expand img{
+ 	cursor:url(../images/small.cur), auto!important;
  }
  .weibo_list .detail .func{
  	font-size: 12px;
@@ -1719,6 +1737,7 @@ body.login .container,body.signup .container{
  .weibo_list .detail .func .time{
  	margin-right: 7px;
  }
+ /*转发*/
  .weibo_list .detail .forwardContent{
  	border: 1px solid #d9d9d9;
  	padding: 10px 20px 10px;
@@ -1778,7 +1797,50 @@ body.login .container,body.signup .container{
  	padding: 10px 20px 10px;
  	margin: 5px 0 15px;
  	border-radius: 3px;
+ 	display: none;
  }
+
+ .weibo_list .media_expand a{
+ 	font-size: 12px;
+ }
+ .weibo_list .media_expand .medis_func{
+ 	margin:0;
+ 	padding-bottom: 10px;
+ }
+ .weibo_list .media_expand div{
+ 	text-align: center;
+ 	overflow: hidden;
+ }
+ .ico_retract {
+ 	background-position: -175px 0px;
+ 	vertical-align: -2px;
+ }
+ .ico_showbig {
+ 	background-position: -175px -25px;
+ 	vertical-align: -2px;
+ }
+ .ico_turnleft {
+ 	background-position: -175px -50px;
+ 	vertical-align: -2px;
+ }
+ .ico_turnright {
+ 	background-position: -175px -75px;
+ 	vertical-align: -2px;
+ }
+ /*定义图像向左转，向右转样式*/
+ .rot1{
+ 	transform:rotate(90deg);
+ 	-webkit-transform:rotate(90deg);
+ }
+ .rot2{
+ 	transform:rotate(180deg); 
+ 	-webkit-transform:rotate(180deg); 
+ }
+ .rot3{
+ 	transform:rotate(270deg); 
+ 	-webkit-transform:rotate(270deg); 
+ }
+
  .WB_deltxt{
  	font-size: 12px;
  }
