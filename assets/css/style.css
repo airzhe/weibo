@@ -891,6 +891,9 @@ body.login .container,body.signup .container{
  	text-decoration: none;
  	padding-left:20px;
  }
+ .left_nav .disable{
+ 	color:#ccc;
+ }
  .left_nav .group a{
  	padding-left:30px;
  	font-size: 12px;
@@ -1153,8 +1156,8 @@ body.login .container,body.signup .container{
  .kind_detail a{
  	margin-right: 14px;
  }
- .kind_detail a.disabled{
- 	color:#333;
+ .kind_detail a.disable{
+ 	color:#ccc;
  }
  .kind_detail .W_ico16{
  	margin: 0 4px 0 0;
@@ -2465,7 +2468,6 @@ i.female{
 	position: relative;
 }
 .box_center div.title .current{
-	/*position: relative;*/
 	top: 20px;
 	left:10px;
 	width: 44px;
@@ -2516,6 +2518,15 @@ i.female{
 	line-height: 21px;
 	position: relative;
 	top:-5px;
+}
+.box_center .msg_list .msg_main div{
+	height: 21px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.box_center .msg_list .msg_main .icon_praised_bc{
+	vertical-align: -2px;
 }
 .msg_main .msg_title{
 	font-weight: 700;

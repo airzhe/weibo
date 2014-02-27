@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/common_left_nav');?>
 	<div class="main clearfix">
 		<div class="box_center left">
-			<div class="title">@我的微博</div>
+			<div class="title"><a href="#" class="tit">@我的微博<span class="current"></span></a></div>
 			<div class="tab_normal clearfix">
 				<div class="left">
 					<a href="">所有人</a>	<i class="W_vline S_txt2">|</i><a href="">所有微博</a>

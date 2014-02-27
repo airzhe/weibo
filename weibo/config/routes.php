@@ -43,7 +43,8 @@ $route['404_override'] = '';
 
 #用户页面
 $route['^u/(\d+)$'] = "u/index/$1";
-#单条微博页面
+#用户昵称重定向
+$route['^n/(:any)'] = "n/index/$1";
 // $route['^weibo/(:any)'] = "u/weibo/1004$1";
 // $route['^single_weibo/(:any)'] = "single_weibo/index/$1";
 // $route['(:any)'] = "welcome/$1";

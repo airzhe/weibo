@@ -14,22 +14,22 @@
 				</div>
 			</div>
 			<div class="msg_list">
-				<div class="item">
-					<div class="avatar"> <img src="assets/images/1.jpg" width="50" height="50" alt=""></div>
-					<div class="msg_main">
-						<div><a href="#"><strong>runpur</strong></a>赞了你的微博<span class="W_ico20 icon_praised_bc"></span></div>
-						<div class="S_txt2">对我的微博： <a href="#">“我正在使用“绮丽街景”...”</a></div>
-						<div class="S_txt2"><span>2013-9-19 11:41</span>来自<a href="#">新浪微博</a></div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="avatar"> <img src="assets/images/2.jpg" width="50" height="50" alt=""></div>
-					<div class="msg_main">
-						<div><a href="#"><strong>runpur</strong>r</a>赞了你的微博<span class="W_ico20 icon_praised_bc"></span></div>
-						<div class="S_txt2">对我的微博： <a href="#">“我刚换了“风轻云淡”模...”</a></div>
-						<div class="S_txt2"><span>2013-9-19 11:41</span>来自<a href="#">新浪微博</a></div>
-					</div>
-				</div>
+				<?php if (!count($praise)): ?>
+					<a href="" class="notes">没有内容哦~~</a>
+				<?php else: ?>
+					<?php foreach ($praise as $v): ?>
+						<div class="item">
+							<div class="avatar">
+								<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a> 
+							</div>
+							<div class="msg_main">
+								<div><a href="#"><strong><?php echo $v['username'] ?></strong></a>赞了你的微博<span class="W_ico20 icon_praised_bc"></span></div>
+								<div class="S_txt2">对我的微博： <a href="#"><?php echo $v['weibo'] ?></a></div>
+								<div class="S_txt2"><span><?php echo $v['time'] ?></span> 来自 <a href="#">新浪微博</a></div>
+							</div>
+						</div>
+					<?php endforeach ?>
+				<?php endif ?>
 			</div>
 		</div>
 		<div class="box_right right">

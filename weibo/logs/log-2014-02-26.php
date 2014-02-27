@@ -137,3 +137,32 @@ ERROR - 2014-02-26 17:32:38 --> 404 Page Not Found --> assets
 ERROR - 2014-02-26 17:32:48 --> 404 Page Not Found --> assets
 ERROR - 2014-02-26 17:32:54 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
 ERROR - 2014-02-26 17:38:07 --> Severity: Notice  --> Undefined variable: forward_list /home/runner/www/work/weibo/weibo/controllers/at.php 83
+ERROR - 2014-02-26 17:52:52 --> 404 Page Not Found --> n
+ERROR - 2014-02-26 22:47:50 --> Severity: Warning  --> preg_match(): Compilation failed: character value in \x{...} sequence is too large at offset 25 /home/runner/www/work/weibo/weibo/core/MY_Router.php 32
+ERROR - 2014-02-26 22:47:50 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-26 22:47:58 --> Severity: Warning  --> preg_match(): Compilation failed: character value in \x{...} sequence is too large at offset 25 /home/runner/www/work/weibo/weibo/core/MY_Router.php 32
+ERROR - 2014-02-26 22:47:58 --> 404 Page Not Found --> n/%E8%8B%8D%E8%80%81%E5%B8%88
+ERROR - 2014-02-26 22:57:46 --> Query error: Unknown column '0' in 'where clause'
+ERROR - 2014-02-26 23:01:05 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 15
+ERROR - 2014-02-26 23:01:09 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-02-26 23:01:09 --> 404 Page Not Found --> 
+ERROR - 2014-02-26 23:01:25 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 15
+ERROR - 2014-02-26 23:01:28 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-02-26 23:01:38 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 15
+ERROR - 2014-02-26 23:01:42 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-02-26 23:03:39 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 16
+ERROR - 2014-02-26 23:03:56 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 18
+ERROR - 2014-02-26 23:05:24 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-02-26 23:05:27 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 19
+ERROR - 2014-02-26 23:05:30 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-02-26 23:10:38 --> 404 Page Not Found --> collect
+ERROR - 2014-02-26 23:14:43 --> 404 Page Not Found --> praise
+ERROR - 2014-02-26 23:15:40 --> 404 Page Not Found --> praise
+ERROR - 2014-02-26 23:15:42 --> 404 Page Not Found --> praise
+ERROR - 2014-02-26 23:28:23 --> Severity: Notice  --> Undefined variable: sql /home/runner/www/work/weibo/weibo/controllers/praise.php 10
+ERROR - 2014-02-26 23:28:23 --> Invalid query: 
+ERROR - 2014-02-26 23:40:47 --> 404 Page Not Found --> assets
+ERROR - 2014-02-26 23:40:51 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-26 23:46:44 --> Severity: Notice  --> Undefined variable: picture_list /home/runner/www/work/weibo/weibo/views/components/right_sidebar.php 46
+ERROR - 2014-02-26 23:53:18 --> Severity: Notice  --> Undefined index: content /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-26 23:53:18 --> Severity: Notice  --> Undefined index: content /home/runner/www/work/weibo/weibo/views/praise.php 27

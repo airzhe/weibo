@@ -192,7 +192,8 @@ str;
 		FROM `{$this->db->dbprefix}picture` AS p
 		JOIN `{$this->db->dbprefix}weibo` AS w ON w.id = p.wid
 		AND w.uid =$this->uid 
-		ORDER BY w.`time` DESC";
+		ORDER BY w.`time` DESC
+		LIMIT 0 , 8";
 		$picture_list=$this->db->query($sql)->result_array();
 		$this->data['picture_list']=$picture_list;
 	}

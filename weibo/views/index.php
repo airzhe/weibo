@@ -64,9 +64,9 @@
 					<div class="kind_detail left">
 						<a href="javascript:void(0)" class="S_func1" action-type="face" action-id="weibo_input_detail"><i class="W_ico16 icon_face"></i>表情</a>
 						<a href="javascript:void(0)" class="S_func1" action-type="upload_image" action-id="weibo_input_detail"><i class="W_ico16 icon_img"></i>图片</a>
-						<a href="javascript:void(0)" class="S_func1 disabled"><i class="W_ico16 icon_video"></i>视频</a>
-						<a href="javascript:void(0)" class="S_func1 disabled"><i class="W_ico16 icon_qing"></i>话题</a>
-						<a href="javascript:void(0)" class="S_func1 disabled"><i class="W_ico16 icon_chang"></i>长微博</a>
+						<a href="javascript:void(0)" class="S_func1 disable"><i class="W_ico16 icon_video"></i>视频</a>
+						<a href="javascript:void(0)" class="S_func1 disable"><i class="W_ico16 icon_qing"></i>话题</a>
+						<a href="javascript:void(0)" class="S_func1 disable"><i class="W_ico16 icon_chang"></i>长微博</a>
 					</div>
 					<a href="javascript:void(0)" class="send_btn W_btn_v W_btn_v_disable right "><span>发布</span></a>
 				</div>
