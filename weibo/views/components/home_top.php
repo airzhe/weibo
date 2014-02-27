@@ -55,7 +55,7 @@
 					<a class="S_link2" href="javascript:void(0);">取消</a>
 				</span>
 			</div>
-			<a class="W_btn_c"><span action-type="webim.conversation"><i class="W_chat_stat"></i>私信</span></a>
+			<a action-data="uid=2206381882&username=包子包子肉肉" href="javascript:void(0)" class="W_btn_c" action-type="conversation" ><span><i class="W_chat_stat"></i>私信</span></a>
 		<?php endif ?>
 	</div>
 </div>

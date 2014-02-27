@@ -963,8 +963,7 @@ body.login .container,body.signup .container{
  	background-position: 0 -124px;
  }
 
- .curr .ico_message
- {
+ .curr .ico_message{
  	background-position: -25px -25px;
  }
  .box_center{
@@ -2804,8 +2803,12 @@ body.follow .tab_normal a,.follow .tab_normal .selectText{
 	text-decoration: none;
 	margin-right: 2px;
 }
+/*没有内容的提示*/
+.weibo_list a.notes{
+	margin:20px;
+}
 /*atme*/
-.weibo_list.atme .item{
+.weibo_list.atme .item,.weibo_list.collect .item{
 	margin: 0 20px;
 }
 /*头像设置*/
@@ -3171,8 +3174,45 @@ body.avatar .uploadify:hover .uploadify-button {
 .curr .ico_lev_leave{
 	background-position: -25px -248px;
 }
-
+.curr .ico_favor{
+	background-position: -25px -50px;
+}
 /*私信*/
+.W_private_letter .wrap .content{
+	padding:10px 20px;
+}
+.W_private_letter .wrap{
+	border-color:#fff;
+}
+.W_private_letter .form_private>div{
+	margin-top:5px;
+}
+.W_private_letter .tit,.W_private_letter .inp{
+	float: left;
+	line-height: 28px;
+}
+.W_private_letter .tit{
+	margin-right: 5px;
+}
+.W_private_letter .form_private .text {
+	height: 24px;
+	padding: 0 3px;
+	vertical-align: 5px;
+	line-height: 24px;
+	width: 137px;
+}
+.W_private_letter .form_private .text, .W_private_letter .form_private textarea {
+	border: 1px solid #e8e8e8;
+}
+.W_private_letter .form_private  textarea{
+	width: 335px;
+	height: 52px;
+	overflow: auto;
+}
+.W_private_letter p{
+	text-align: right;
+	margin-top:-22px;
+}
 .W_new_count {
 	display: inline-block;
 	padding: 0 2px;

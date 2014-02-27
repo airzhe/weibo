@@ -23,7 +23,7 @@
 				<!-- <li><a href="" class="disable"><i class="W_ico20 ico_lev_leave"></i>未关注人的私信</a></li> -->
 			</ul>
 		</li>
-		<li><a href="<?php echo site_url('collect') ?>"><i class="W_ico20 ico_favor"></i>收藏</a></li>
+		<li><a href="<?php echo site_url('collect') ?>" data-type="collect"><i class="W_ico20 ico_favor"></i>收藏</a></li>
 		<li><a href="#" class="disable"><i class="W_ico20 ico_sendtome"></i>发给我的</a></li>
 	</ul>
 	<ul class="goodfriend">

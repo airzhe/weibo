@@ -20,6 +20,20 @@ function loadImage(url,callback,obj) {
         callback.call(obj);//将回调函数的this替换为Image对象
     };
 };
+/**
+ * 获取get参数
+ * @return {[object]} [返回数组对象]
+ */
+function getArgs(url){
+	var args = {};
+	var match = null;
+	var search = url;
+	var reg = /(?:([^&]+)=([^&]+))/g;
+	while((match = reg.exec(search))!==null){
+		args[match[1]] = match[2];
+	}
+	return args;
+}
 $(document).ready(function(){
 	/**	
 	* 定义共用变量
@@ -1516,6 +1530,44 @@ $(document).ready(function(){
 			}
 		},'json');
 	})
+	/**
+	 * 私信
+	 */
+	 $("[action-type='conversation']").on('click',function(){
+	 	var self=$(this);
+	 	var data=self.attr('action-data');
+	 	var user=getArgs(data);
+	 	var id = new Date().getTime();
+	 	var form='<div class="form_private clearfix">\
+	 	<div class="clearfix">\
+	 	<div class="tit">发给：</div>\
+	 	<div class="inp"><input class="text" type="text" name="truename" value="'+ user.username+'"></div>\
+	 	</div>\
+	 	<div class="clearfix">\
+	 	<div class="tit">内容：</div>\
+	 	<div class="inp">\
+	 	<textarea name="truename" id="'+ id +'"></textarea>\
+	 	<div><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a></div>\
+	 	</div>\
+	 	</div>\
+	 	</div>\
+	 	';
+	 	var btn='<p><a action-data="'+ data +'" action-type="submit" href="javascript:void(0)" class="W_btn_b"><span class="btn_30px W_f14"><em node-type="btnText">发送</em></span></a></p>';
+	 	self.modal({
+	 		type:'center W_private_letter',
+	 		title:'发私信',
+	 		content:form,
+	 		btn:btn
+	 	})
+	 	$('.W_private_letter').drag({drag:'.title'});
+	 })
+	 //发送私信按钮
+	 $('body').on('click',"[action-type='submit']",function(){
+	 	var self=$(this);
+	 	var data=self.attr('action-data');
+	 	var user=getArgs(data);
+	 	console.log(user.uid,user.username);
+	 })
 	/**
 	* 返回顶部
 	*/

@@ -24,7 +24,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="S_func1">
+				<a href="<?php echo site_url('home') ?>" class="S_func1">
 					<strong id="my_weibo"><?php echo $user['weibo'] ?></strong>
 					<span>微博</span>
 				</a>

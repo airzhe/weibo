@@ -1,33 +1,32 @@
 <?php 
-// at 类
-Class at extends Front_Controller{
+// 收藏 类
+Class Collect extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
-		$this->data['title'] = '@我的微博';
+		$this->data['title'] = '我的收藏';
 		$this->uid=$this->session->userdata('uid');
 		$this->load->library('weibo');
 	}
-	// 获取at列表
+	// 获取收藏列表
 	public function index(){
-		//取得at微博数据
+		//取得收藏微博数据
 		$this->select();
-
-		$this->view('at',$this->data);
+		$this->view('collect',$this->data);
 	}
-	// 获取at列表
+	// 获取收藏列表
 	public function select(){
-		$sql="SELECT `username`,`avatar`,`sex`,`domain`,w.`id`,`content`,`picture`,`isturn`,`iscomment`,`time`,`praise`,`turn`,`collect`,`comment`,w.`uid`,a.`id` atid
-		FROM {$this->db->dbprefix}at a
-		JOIN {$this->db->dbprefix}weibo AS w ON a.wid = w.id
+		$sql="SELECT `username`,`avatar`,`sex`,`domain`,w.`id`,`content`,`picture`,`isturn`,`iscomment`,w.`time`,`praise`,`turn`,`collect`,`comment`,w.`uid`
+		FROM {$this->db->dbprefix}collect c
+		JOIN {$this->db->dbprefix}weibo AS w ON c.wid = w.id
 		JOIN {$this->db->dbprefix}user_info AS u ON w.uid = u.uid
-		AND a.uid =$this->uid
-		ORDER BY `time` DESC
+		AND c.uid =$this->uid
+		ORDER BY c.`time` DESC
 		LIMIT 0 , 30";
 		$weibo_list=$this->db->query($sql)->result_array();
+
 		//如果为空则返回
 		if(!count($weibo_list)) return;
 		//获得微博配图
-		$arr=array('username','avatar','sex','domain','weibo.id','content','picture','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
 		foreach ($weibo_list as $key => $value) {
 			$pic_count=$value['picture'];
 			if($pic_count){
@@ -48,6 +47,7 @@ Class at extends Front_Controller{
 		}
 		$weibo_list=$this->weibo->format($weibo_list);
 		//转发的原微博
+		$arr=array('username','avatar','sex','domain','weibo.id','content','picture','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
 		$forward_arr=array();
 		foreach ($weibo_list as $k => $v) {
 			if($v['isturn']){
@@ -81,26 +81,8 @@ Class at extends Front_Controller{
 			}
 			$forward_list=$this->weibo->format($forward_list);
 			$this->data['forward_list']=$forward_list;
-		}	
+		}
+		// p($weibo_list);
 		$this->data['weibo_list']=$weibo_list;
-	}
-	/**
-	 * [删除at我的信息数据]
-	 */
-	public function delete(){
-		if(!$this->input->is_ajax_request()){
-			show_404();
-		}
-		$id=$this->input->post('id');
-
-		//记录所属用户id
-		$count=$this->db->where(array('id'=>$id,'uid'=>$this->uid))->from('at')->count_all_results();
-		if($count){
-			$this->db->where(array('id'=>$id))->delete('at');
-			if($this->db->affected_rows()){
-				die(json_encode(array('status'=>1)));
-			}
-		}
-		die(json_encode(array('status'=>0)));
 	}
 }
