@@ -10,7 +10,7 @@ Class comment extends Front_Controller{
 	}
 	public function inbox(){
 		$this->data['title'] = '收到的评论';
-		$sql="SELECT c.content, c.isreplay,c.time, u.username, u.avatar, u.domain, weibo.content weibo 
+		$sql="SELECT c.content, c.isreplay,c.time, u.uid,u.username,u.sex, u.avatar, u.domain, weibo.content weibo 
 		FROM {$this->db->dbprefix}comment AS c
 		JOIN (
 			SELECT id, content

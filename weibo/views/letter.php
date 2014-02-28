@@ -14,35 +14,30 @@
 				</div>
 			</div>
 			<div class="msg_list">
-				<div>
-					<div class="item S_bg1">
-						<div class="avatar"> <img src="assets/images/01.jpg" width="50" height="50" alt=""></div>
-						<div class="msg_main msg_new ">
-							<div class="msg_title">Babyface_乖乖M</div>
-							<div class="msg_new_state"><em class="W_new_count">2</em></div>
-							<div class="msg_detail S_txt2">我们的成熟是由两部分组成，一半是对美好的追求，一半是对残缺的接纳。我们的成熟是由两部分组成，一半是对美好的追求，一半是对残缺的接纳.</div>
-							<span class="msg_time S_txt2">2013-5-4 22:31</span>
+				<?php if (!isset($letter_list)): ?>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>咦？暂时没有内容哦，稍后再来试试吧~~</p>
+				<?php else: ?>
+					<?php foreach ($letter_list as $v): ?>
+						
+						<div class="item">
+
+							<div class="avatar">
+								<a href="<?php echo $v['domain'] ?>">
+									<img src="<?php echo $v['avatar'] ?>" width="50" height="50" alt="">
+								</a>
+							</div>
+							<div class="msg_main">
+								<div class="msg_title"><?php echo $v['username'] ?></div>
+								<a href="<?php echo site_url('letter/lists') ?>">
+									<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span><?php echo $v['content'] ?></div>
+									<span class="msg_time S_txt2"><?php echo $v['time'] ?></span>
+								</a>
+							</div>
+							
 						</div>
-					</div>
-				</div>
-				<div>
-					<div class="item">
-						<div class="avatar"> <img src="assets/images/0" width="50" height="50" alt=""></div>
-						<div class="msg_main">
-							<div class="msg_title">微博小秘书 ：</div>
-							<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span>好吧</div>
-							<span class="msg_time S_txt2">2013-9-19 11:41</span>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="avatar"> <img src="assets/images/04.jpg" width="50" height="50" alt=""></div>
-					<div class="msg_main">
-						<div class="msg_title">苍井空</div>
-						<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span>好的，我知道了</div>
-						<span class="msg_time S_txt2">2013-4-5 22:26</span>
-					</div>
-				</div>
+						
+					<?php endforeach ?>
+				<?php endif ?>
 			</div>
 		</div>
 		<div class="box_right right">

@@ -2231,6 +2231,9 @@ body.home .user_info .info p:first-of-type{
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+body.home .user_info  .addicon{
+	vertical-align: middle;
+}
 body.home .user_info .icon_addone{
 	vertical-align: middle;
 	margin-right: 5px;
@@ -2541,6 +2544,9 @@ i.female{
 	margin-right: 2em;
 	font-size: 14px;
 }
+.msg_main .msg_detail img{
+	vertical-align:text-bottom;
+}
 .msg_main .msg_time{
 	position: absolute;
 	top:0;
@@ -2786,7 +2792,7 @@ body.follow .tab_normal a,.follow .tab_normal .selectText{
 
 .W_btn_b.addFollow .addicon{
 	color: #FFA00A;
-	vertical-align: -2px;
+	vertical-align: -1px;
 }
 .W_btn_b:hover .addicon{
 	color: #fff;

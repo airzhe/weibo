@@ -58,7 +58,6 @@ Class u extends Front_Controller{
 	}
 	//取得微博及转发的微博数据
 	private function select(){
-		
 		$weibo_list=$this->_select_weibo_list();
 		$forward_list=$this->_select_forward_list($weibo_list);
 		//判断是否是ajax请求

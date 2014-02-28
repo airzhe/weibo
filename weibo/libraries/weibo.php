@@ -273,6 +273,7 @@ class weibo{
 	 * 格式化微博内容
 	 */
 	public function format($user){
+		if(empty($user)) return;
 		foreach ($user as $k => $v) {
 			// 头像
 			if($v['avatar']==''){

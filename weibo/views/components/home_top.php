@@ -53,7 +53,7 @@
 		<?php else: ?>
 			<!-- 关注关系 -->
 			<?php if ($user['relation']==0): ?>
-				<a uid="<?php echo $user['uid'] ?>" source="weibo" href="javascript:void(0)" class="add_follow W_btn_b"><span><i class="W_ico12 icon_addone"></i><em class="W_vline S_txt2">|</em><em class="addicon">+</em>关注</span></a>
+				<a uid="<?php echo $user['uid'] ?>" source="weibo" href="javascript:void(0)" class="add_follow W_btn_b"><span><em class="addicon">+</em>关注</span></a>
 			<?php else: ?>
 				<div class="W_btn_c">
 					<span>
