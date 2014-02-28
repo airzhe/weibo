@@ -14,13 +14,13 @@
 		<ul class="user_atten clearfix">
 			<li class="S_line1">
 				<a href="<?php if (isset($user['me'])) echo site_url('follow') ?>" class="S_func1">
-					<strong><?php echo $user['follow'] ?></strong>
+					<strong id="my_follow"><?php echo $user['follow'] ?></strong>
 					<span>关注</span>
 				</a>
 			</li>
 			<li class="S_line1">
 				<a href="<?php if (isset($user['me'])) echo site_url('fans') ?>" class="S_func1">
-					<strong><?php echo $user['fans'] ?></strong>
+					<strong id="my_fans"><?php echo $user['fans'] ?></strong>
 					<span>粉丝</span>
 				</a>
 			</li>
@@ -52,8 +52,8 @@
 			<p class="edit"><a href="<?php echo site_url('set/info') ?>" class="W_btn_c"><span>编辑个人资料</span></a></p>
 		<?php else: ?>
 			<!-- 关注关系 -->
-			<?php if ($user['relation']==0): ?>
-				<a uid="<?php echo $user['uid'] ?>" source="weibo" href="javascript:void(0)" class="add_follow W_btn_b"><span><em class="addicon">+</em>关注</span></a>
+			<?php if ($user['relation']==0 || $user['relation']==2): ?>
+				<a uid="<?php echo $user['uid'] ?>" username="<?php echo $user['username'] ?>" relation="<?php echo $user['relation'] ?>" action-type='add_follow' source="weibo" href="javascript:void(0)" class="add_follow W_btn_b"><span><em class="addicon">+</em>关注</span></a>
 			<?php else: ?>
 				<div class="W_btn_c">
 					<span>
@@ -62,7 +62,7 @@
 						<?php else: ?>
 							<em class="W_ico12 icon_addtwo"></em>互相关注<em class="W_vline S_txt2">|</em>
 						<?php endif ?>
-						<a class="S_link2" action-type="cancle_follow" href="javascript:void(0);">取消</a>
+						<a class="S_link2" relation="<?php echo $user['relation'] ?>" action-type="cancle_follow" uid="<?php echo $user['uid'] ?>" username="<?php echo $user['username'] ?>" href="javascript:void(0);">取消</a>
 					</span>
 				</div>
 			<?php endif ?>

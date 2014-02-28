@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/common_left_nav');?>
 	<div class="main clearfix">
 		<div class="box_center left">
-			<div class="title">与 runpur 的对话</div>
+			<div class="title">与 <?php echo $user['username'] ?> 的对话</div>
 			<div class="tab_normal clearfix">
 				<div class="left">
 					<a href="" class="W_btn_b"><span>批量删除</span></a>
@@ -14,85 +14,44 @@
 			</div>
 			<div class="send_private_msgbox">
 				<p style="line-height:24px;">
-					<span class="left"><em class="icon_mes"></em>发私信给：runpur</span><span class="right">还可以输入10000</span>
+					<span class="left"><em class="icon_mes"></em>发私信给：<?php echo $user['username'] ?></span><span class="right">私信字数在1000以内</span>
 				</p>
-				<textarea class="W_input" placeholder="发私信" title="输入要发送的私信">发私信</textarea>
-				<p class="clearfix"><a href="javascript:void(0)" action-type="face"><i class="W_ico16 ico_faces"></i></a><a href="" class="W_btn_b right"><span>发送</span></a></p>
+				<input type="hidden" name="username" value="<?php echo $user['username'] ?>">
+				<textarea id="letter" name="letter_content" class="W_input" placeholder="发私信" title="输入要发送的私信"></textarea>
+				<p class="hide clearfix"><a href="javascript:void(0)" action-type="face" action-id="letter"><i class="W_ico16 ico_faces"></i></a><a href="javascript:void(0)" action-type="submit_letter" <?php echo "action-data='uid={$user['uid']}&username={$user['username']}'" ?>  class="conversation W_btn_b right "><span>发送</span></a></p>
 			</div>
 			<div class="comment_list msg_dialogue">
-
-				<div class="item item_my clearfix">
-					<fieldset class="S_line2 msg_time_line">
-						<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
-					</fieldset>
-					<div class="face">
-						<img width="50" height="50" src="http://localhost/work/weibo/assets/images/avatar.jpg" alt="">
-					</div>
-					<div class="comment">
-						<div class="message_arrow">
-							<em class="S_line1_c">◆</em>
-							<span class="S_bg1_c">◆</span>
+				<?php if (!isset($letter_list)): ?>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>咦？暂时没有内容哦，稍后再来试试吧~~</p>
+				<?php else: ?>
+					<?php foreach ($letter_list as $v): ?>
+						<div class="item item_<?php echo $v['class'] ?> clearfix">
+							<fieldset class="S_line2 msg_time_line">
+								<legend class="time_tit S_txt3"><?php echo $v['time'] ?></legend>
+							</fieldset>
+							<?php if ($v['class']=='me'): ?>
+								<div class="face">
+									<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
+								</div>
+							<?php endif ?>
+							<div class="comment">
+								<div class="message_arrow">
+									<em class="S_line1_c">◆</em>
+									<span class="S_bg1_c">◆</span>
+								</div>
+								<p>
+									<?php echo $v['content'] ?>
+								</p>
+							</div>
+							<?php if ($v['class']=='ta'): ?>
+								<div class="face">
+									<a href="<?php echo $v['domain'] ?>"><img width="50" height="50" src="<?php echo $v['avatar'] ?>" alt=""></a>
+								</div>
+							<?php endif ?>
 						</div>
-						<p>
-							<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
-						</p>
-					</div>
-				</div>
-				<div class="item item_ta clearfix">
-					<fieldset class="S_line2 msg_time_line">
-						<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
-					</fieldset>
 
-					<div class="comment">
-						<div class="message_arrow">
-							<em class="S_line1_c">◆</em>
-							<span class="S_bg1_c">◆</span>
-						</div>
-						<p>
-							<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
-						</p>
-					</div>
-					<div class="face">
-						<img width="50" height="50" src="http://localhost/work/weibo/assets/images/_01.jpg" alt="">
-					</div>
-				</div>
-				<div class="item item_my clearfix">
-					<fieldset class="S_line2 msg_time_line">
-						<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
-					</fieldset>
-					<div class="face">
-						<img width="50" height="50" src="http://localhost/work/weibo/assets/images/avatar.jpg" alt="">
-					</div>
-					<div class="comment">
-						<div class="message_arrow">
-							<em class="S_line1_c">◆</em>
-							<span class="S_bg1_c">◆</span>
-						</div>
-						<p>
-							<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
-						</p>
-					</div>
-				</div>
-				<div class="item item_ta clearfix">
-					<fieldset class="S_line2 msg_time_line">
-						<legend class="time_tit S_txt3">2013-7-8 10:28</legend>
-					</fieldset>
-
-					<div class="comment">
-						<div class="message_arrow">
-							<em class="S_line1_c">◆</em>
-							<span class="S_bg1_c">◆</span>
-						</div>
-						<p>
-							<a href="#">微博小秘书</a>：用户您好，微博网友<a href="#">@冷笑话</a> 在#随手拍#活动中发布了随手拍照片，您可以通过点评照片赢取各类大奖。点评越多中奖机会越多，手机、相机等你拿！立即参加：http://t.cn/zTR4ab2
-						</p>
-					</div>
-					<div class="face">
-						<img width="50" height="50" src="http://localhost/work/weibo/assets/images/_01.jpg" alt="">
-					</div>
-				</div>
-
-
+					<?php endforeach ?>
+				<?php endif ?>
 			</div>
 		</div>
 		<div class="box_right right">

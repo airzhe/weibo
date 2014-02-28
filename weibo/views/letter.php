@@ -18,9 +18,7 @@
 					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>咦？暂时没有内容哦，稍后再来试试吧~~</p>
 				<?php else: ?>
 					<?php foreach ($letter_list as $v): ?>
-						
-						<div class="item">
-
+						<div class="item" href="<?php echo site_url('letter/lists').'/'.$v['uid'] ?>">
 							<div class="avatar">
 								<a href="<?php echo $v['domain'] ?>">
 									<img src="<?php echo $v['avatar'] ?>" width="50" height="50" alt="">
@@ -28,14 +26,10 @@
 							</div>
 							<div class="msg_main">
 								<div class="msg_title"><?php echo $v['username'] ?></div>
-								<a href="<?php echo site_url('letter/lists') ?>">
-									<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span><?php echo $v['content'] ?></div>
-									<span class="msg_time S_txt2"><?php echo $v['time'] ?></span>
-								</a>
+								<div class="msg_detail S_txt2"><span class="msg_ico msg_ico_reply"></span><?php echo $v['content'] ?></div>
+								<span class="msg_time S_txt2"><?php echo $v['time'] ?></span>
 							</div>
-							
 						</div>
-						
 					<?php endforeach ?>
 				<?php endif ?>
 			</div>

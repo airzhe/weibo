@@ -78,3 +78,70 @@ ERROR - 2014-02-28 11:45:04 --> 404 Page Not Found --> letter/list
 ERROR - 2014-02-28 11:45:40 --> 404 Page Not Found --> letter/list
 ERROR - 2014-02-28 11:46:31 --> 404 Page Not Found --> letter/list
 ERROR - 2014-02-28 11:48:06 --> 404 Page Not Found --> letter/list
+ERROR - 2014-02-28 11:54:04 --> 404 Page Not Found --> letter/lists10001
+ERROR - 2014-02-28 12:01:09 --> Severity: Warning  --> Missing argument 1 for letter::lists() /home/runner/www/work/weibo/weibo/controllers/letter.php 25
+ERROR - 2014-02-28 12:24:45 --> 404 Page Not Found --> single_weibo/undefined
+ERROR - 2014-02-28 12:26:35 --> 404 Page Not Found --> single_weibo/undefined
+ERROR - 2014-02-28 12:26:48 --> 404 Page Not Found --> 10001
+ERROR - 2014-02-28 12:27:06 --> 404 Page Not Found --> 10001
+ERROR - 2014-02-28 12:31:52 --> The image you are attempting to upload exceedes the maximum height or width.
+ERROR - 2014-02-28 12:31:52 --> 404 Page Not Found --> %3Cp%3EThe%20image%20you%20are%20attempting%20to%20upload%20exceedes%20the%20maximum%20height%20or%20width.%3C
+ERROR - 2014-02-28 12:32:02 --> 404 Page Not Found --> %3Cp%3EThe%20image%20you%20are%20attempting%20to%20upload%20exceedes%20the%20maximum%20height%20or%20width.%3C
+ERROR - 2014-02-28 14:52:05 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-28 14:52:10 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-02-28 14:52:58 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-28 15:04:27 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECTu.`uid`, u.`username`, u.`avatar`, u.`sex`, u.`domain`, l.`content` , l.`t' at line 1
+ERROR - 2014-02-28 15:12:16 --> Severity: Notice  --> Undefined variable: variable /home/runner/www/work/weibo/weibo/views/letter_list.php 43
+ERROR - 2014-02-28 15:12:16 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/views/letter_list.php 43
+ERROR - 2014-02-28 15:12:35 --> Severity: Notice  --> Undefined variable: variable /home/runner/www/work/weibo/weibo/views/letter_list.php 43
+ERROR - 2014-02-28 15:12:35 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/views/letter_list.php 43
+ERROR - 2014-02-28 15:13:49 --> Severity: Notice  --> Undefined variable: variable /home/runner/www/work/weibo/weibo/views/letter_list.php 26
+ERROR - 2014-02-28 15:13:49 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/views/letter_list.php 26
+ERROR - 2014-02-28 15:36:41 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 5
+ERROR - 2014-02-28 15:36:41 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 17
+ERROR - 2014-02-28 15:36:41 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 19
+ERROR - 2014-02-28 15:36:41 --> Severity: Notice  --> Undefined variable: uid /home/runner/www/work/weibo/weibo/views/letter_list.php 21
+ERROR - 2014-02-28 15:36:41 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 21
+ERROR - 2014-02-28 15:37:10 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 5
+ERROR - 2014-02-28 15:37:10 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 17
+ERROR - 2014-02-28 15:37:10 --> Severity: Notice  --> Undefined variable: username /home/runner/www/work/weibo/weibo/views/letter_list.php 19
+ERROR - 2014-02-28 15:51:47 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-28 16:01:36 --> 404 Page Not Found --> http:
+ERROR - 2014-02-28 16:02:11 --> 404 Page Not Found --> http:
+ERROR - 2014-02-28 16:07:59 --> Severity: Notice  --> Undefined index: uid /home/runner/www/work/weibo/weibo/libraries/weibo.php 268
+ERROR - 2014-02-28 16:07:59 --> Severity: Notice  --> Undefined index: id /home/runner/www/work/weibo/weibo/libraries/weibo.php 268
+ERROR - 2014-02-28 16:07:59 --> Severity: Notice  --> Undefined index: uid /home/runner/www/work/weibo/weibo/libraries/weibo.php 268
+ERROR - 2014-02-28 16:07:59 --> Severity: Notice  --> Undefined index: id /home/runner/www/work/weibo/weibo/libraries/weibo.php 268
+ERROR - 2014-02-28 16:07:59 --> Severity: Notice  --> Undefined index: url /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-28 16:07:59 --> Severity: Notice  --> Undefined index: url /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-28 16:08:24 --> Severity: Notice  --> Undefined index: id /home/runner/www/work/weibo/weibo/libraries/weibo.php 268
+ERROR - 2014-02-28 16:08:24 --> Severity: Notice  --> Undefined index: id /home/runner/www/work/weibo/weibo/libraries/weibo.php 268
+ERROR - 2014-02-28 16:08:24 --> Severity: Notice  --> Undefined index: url /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-28 16:08:24 --> Severity: Notice  --> Undefined index: url /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-28 16:08:58 --> Severity: Notice  --> Undefined index: url /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-28 16:08:58 --> Severity: Notice  --> Undefined index: url /home/runner/www/work/weibo/weibo/views/praise.php 27
+ERROR - 2014-02-28 16:17:37 --> Unable to load the requested class: contentpage
+ERROR - 2014-02-28 16:19:38 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 132
+ERROR - 2014-02-28 16:19:38 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 150
+ERROR - 2014-02-28 16:25:15 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 132
+ERROR - 2014-02-28 16:25:15 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 150
+ERROR - 2014-02-28 16:25:18 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 132
+ERROR - 2014-02-28 16:25:18 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 150
+ERROR - 2014-02-28 16:28:38 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 133
+ERROR - 2014-02-28 16:28:38 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 151
+ERROR - 2014-02-28 16:28:40 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 133
+ERROR - 2014-02-28 16:28:40 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 151
+ERROR - 2014-02-28 16:29:14 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 134
+ERROR - 2014-02-28 16:29:14 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 152
+ERROR - 2014-02-28 16:35:50 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 132
+ERROR - 2014-02-28 16:35:50 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 150
+ERROR - 2014-02-28 16:36:16 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 132
+ERROR - 2014-02-28 16:36:16 --> Severity: Notice  --> Undefined property: contentpage::$total /home/runner/www/work/weibo/weibo/libraries/Contentpage.php 150
+ERROR - 2014-02-28 17:36:02 --> 404 Page Not Found --> 
+ERROR - 2014-02-28 17:36:06 --> 404 Page Not Found --> 
+ERROR - 2014-02-28 17:42:59 --> 404 Page Not Found --> u/add_follow
+ERROR - 2014-02-28 17:45:16 --> Query error: BIGINT UNSIGNED value is out of range in '(`weibo`.`t_user_info`.`fans` - 1)'
+ERROR - 2014-02-28 18:49:12 --> Query error: BIGINT UNSIGNED value is out of range in '(`weibo`.`t_user_info`.`follow` + -(1))'
+ERROR - 2014-02-28 18:55:44 --> Query error: BIGINT UNSIGNED value is out of range in '(`weibo`.`t_user_info`.`fans` - 1)'
+ERROR - 2014-02-28 19:04:32 --> Query error: BIGINT UNSIGNED value is out of range in '(`weibo`.`t_user_info`.`follow` + -(1))'
+ERROR - 2014-02-28 19:07:57 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61

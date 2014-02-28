@@ -227,7 +227,9 @@ str;
 	}
 	//单条微博
 	public function weibo($uid,$wid){
-
+		//解密id
+		$wid=$this->encry->decrypt($wid);
+		if(!$wid) show_404();
 		//取得用户个人信息
 		$this->get_user();
 		//获取单条微博信息
@@ -307,4 +309,25 @@ str;
 		}
 		return $forward;
 	}
+	/**
+	 * 添加关注
+	 * @return [type] [description]
+	 */
+	public function follow(){
+		if(!$this->input->is_ajax_request()){
+			show_404();
+		}
+		$this->member->follow();
+	}
+	/**
+	 * 取消关注
+	 * @return [type] [description]
+	 */
+	public function cancle_follow(){
+		if(!$this->input->is_ajax_request()){
+			show_404();
+		}
+		$this->member->cancle_follow();
+	}
+	
 }

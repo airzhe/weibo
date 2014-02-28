@@ -143,6 +143,7 @@ function loadImage(url,callback,obj) {
 				}
 			},
 			'onUploadSuccess' : function(file,data) {
+				console.log(typeof(data));
 				$('.image_upload').find('.ico_loading_upload').remove();
 				//检测微博发布框是否为空
 				if($.trim(textarea.val())=='') textarea.val('分享图片').trigger('keyup');
@@ -298,7 +299,7 @@ function loadImage(url,callback,obj) {
 	})
 	//收起大图，显示小图
 	$('.weibo_list').on('click','.media_expand img,.media_expand .retract',function(){
-		$(this).parents('.media_expand').hide()
+		$(this).removeClass().parents('.media_expand').hide()
 		.prev('.media_prev').show();
 	})
 	//图片向左转
@@ -1251,7 +1252,7 @@ function loadImage(url,callback,obj) {
 					})
 					//显示后面还有多少条记录
 					if(data.count-limit>0){
-						var url=site_url+'single_weibo/'+data._wid;
+						var url=site_url+data.url;
 						var remainder=data.count-10;
 						var more='\
 						<p class="more S_line1">\
@@ -1562,7 +1563,7 @@ function loadImage(url,callback,obj) {
 	 	</form>\
 	 	</div>\
 	 	';
-	 	var btn='<p><a action-data="'+ data +'" action-type="submit" href="javascript:void(0)" class="W_btn_b"><span class="btn_30px W_f14"><em node-type="btnText">发送</em></span></a></p>';
+	 	var btn='<p><a action-data="'+ data +'" action-type="submit_letter" href="javascript:void(0)" class="W_btn_b"><span class="btn_30px W_f14"><em node-type="btnText">发送</em></span></a></p>';
 	 	self.modal({
 	 		type:'center W_private_letter',
 	 		title:'发私信',
@@ -1572,7 +1573,7 @@ function loadImage(url,callback,obj) {
 	 	$('.W_private_letter').drag({drag:'.title'});
 	 })
 	 //发送私信按钮
-	 $('body').on('click',"[action-type='submit']",function(){
+	 $('body').on('click',"[action-type='submit_letter']",function(){
 	 	// 判断非空
 	 	var username=$("[name='username']");
 	 	var content=$("[name='letter_content']");
@@ -1601,6 +1602,9 @@ function loadImage(url,callback,obj) {
 	 			$('body').tips({
 	 				type:'center',
 	 				text:'发送成功',
+	 				callback_handler:function(){
+	 					if((self.hasClass('conversation'))) window.location.reload();
+	 				}
 	 			});
 	 		}
 	 	},'json')
@@ -1608,24 +1612,65 @@ function loadImage(url,callback,obj) {
 	/**
 	 * 个人主页添加关注按钮
 	 */
-	 $('.info').find("[action-type='add_follow']").on('click',function(){
+	 $('.info').on('click',"[action-type='add_follow']",function(){
 	 	var self=$(this);
-	 	$.post(site_url+'u/add_follow',{follow_id:follow_id},function(data){
+	 	var follow_id=self.attr('uid');
+	 	var username=self.attr('username');
+	 	$.post(site_url+'u/follow',{follow_id:follow_id},function(data){
 	 		if(data.status==1){
-
+	 			//关注数+1
+	 			$('#my_fans').html(+$('#my_fans').html()+1);
+	 			var relation=self.attr('relation');
+	 			var text,_rela;
+	 			if(relation==0){
+	 				//已关注
+	 				text='已关注';
+	 				_rela=1;
+	 				ico='icon_addone';
+	 			}else{
+	 				//相互关注
+	 				text='互相关注';
+	 				_rela=3;
+	 				ico='icon_addtwo';
+	 			}
+	 			var _relation='<div class="W_btn_c">\
+	 			<span>\
+	 			<em class="W_ico12 '+ ico +'"></em>'+ text +'<em class="W_vline S_txt2">|</em>\
+	 			<a class="S_link2" relation="'+ _rela +'" action-type="cancle_follow" uid="'+ follow_id +'" username="'+ username +'" href="javascript:void(0);">取消</a>\
+	 			</span>\
+	 			</div>';
+	 			self.replaceWith(_relation);
 	 		}
-	 	})
+	 	},'json')
 	 })
 	/**
 	 * 个人主页取消关注按钮
 	 */
-	 $('.info').find("[action-type='cancle_follow']").on('click',function(){
+	 $('.info').on('click',"[action-type='cancle_follow']",function(){
 	 	var self=$(this);
-	 	$.post(site_url+'u/cancle_follow',{follow_id:follow_id},function(data){
-	 		if(data.status==1){
+	 	var follow_id=self.attr('uid');
+	 	var username=self.attr('username');
+	 	$(this).modal({
+	 		v_type:0,
+	 		content:'<p><i class="icon_warn"></i>确认要取消对'+username+'的关注吗</p>',
+	 		ok_handler:function(){
+				// 移除确认对话框
+				$('.set_template').fadeOut('fast',function(){
+					$(this).remove();
+					$('.W_mask:last').remove();
+				})
+				$.post(site_url+'u/cancle_follow',{follow_id:follow_id},function(data){
+					if(data.status==1){
+						var relation=self.attr('relation');
+						var _rela=relation==1?0:2;
 
-	 		}
-	 	})
+						$('#my_fans').html(+$('#my_fans').html()-1);
+						var _relation='<a uid="'+ follow_id +'" username="'+ username +'" relation="'+ _rela +'" action-type="add_follow" source="weibo" href="javascript:void(0)" class="add_follow W_btn_b"><span><em class="addicon">+</em>关注</span></a>';
+						self.parents('.W_btn_c').replaceWith(_relation);
+					}
+				},'json')
+			}
+		})
 	 })
 	/**
 	 * 单条微博页面js
@@ -1636,6 +1681,17 @@ function loadImage(url,callback,obj) {
 
 	 	$("[action-type='comment']").trigger('click',['weibo']);
 	 }
+	 /**
+	  * 私信页面js
+	  */
+	  $('body.letter').find('.item').on('click',function(){
+	  	var url=$(this).attr('href');
+	  	window.location.href = url;
+	  })
+	  $('.send_private_msgbox textarea').on('focus',function(){
+
+	  	$(this).css('height',70).next('p').show();
+	  })
 	/**
 	* 返回顶部
 	*/

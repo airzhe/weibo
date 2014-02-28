@@ -24,7 +24,7 @@
 							</div>
 							<div class="msg_main">
 								<div><a href="#"><strong><?php echo $v['username'] ?></strong></a>赞了你的微博<span class="W_ico20 icon_praised_bc"></span></div>
-								<div class="S_txt2">对我的微博： <a href="#"><?php echo $v['weibo'] ?></a></div>
+								<div class="S_txt2">对我的微博： <a href="<?php echo $v['url'] ?>"><?php echo $v['weibo'] ?></a></div>
 								<div class="S_txt2"><span><?php echo $v['time'] ?></span> 来自 <a href="#">新浪微博</a></div>
 							</div>
 						</div>

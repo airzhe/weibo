@@ -94,7 +94,7 @@ class weibo{
 				$img=$this->crop($img);
 				die($img);
 			}else{
-				echo $this->CI->upload->display_errors();
+				// echo $this->CI->upload->display_errors();
 				die;
 			}
 		}
@@ -264,9 +264,8 @@ class weibo{
 	 * 返回单条微博url
 	 * @param arr $arr 数组
 	 */
-	function f_url($arr)
-	{
-		$arr['url']=$arr['uid'].'/Ay'.$arr['id'];
+	function f_url($arr){
+		$arr['url']=$arr['uid'].'/Ay'.$this->CI->encry->encrypt($arr['id']);
 		return $arr;
 	}
 	/**

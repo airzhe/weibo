@@ -24,7 +24,7 @@ Class single_weibo extends Front_Controller{
 	public function select_comment($source=NULL){
 		
 		$wid=$this->input->post('id');
-		
+
 		//获得评论总数
 		$count=$this->db->where(array('wid'=>$wid))->from('comment')->count_all_results();
 		//没有评论就返回
@@ -54,8 +54,10 @@ Class single_weibo extends Front_Controller{
 		$arr=array('status'=>1,'result'=>$comment,'count'=>$count);
 		//评论条数超过10条就返回加密后的wid
 		if($count>10){
+			//获得用户id
+			$_uid=$this->db->select('uid')->get_where('weibo',array('id'=>$wid))->row_array();
 			$_wid=$this->encry->encrypt($wid);
-			$arr+=array('_wid'=>$_wid);
+			$arr+=array('url'=>current($_uid).'/Ay'.$_wid);
 		}
 		die(json_encode($arr));
 	}

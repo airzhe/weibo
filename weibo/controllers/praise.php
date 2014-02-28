@@ -7,7 +7,7 @@ Class praise extends Front_Controller{
 	}
 	public function index(){
 		//收到的赞
-		$sql="SELECT p.time, u.username, u.avatar, u.domain, weibo.content weibo
+		$sql="SELECT p.time, u.username, u.avatar, u.domain, weibo.id ,weibo.content weibo
 		FROM {$this->db->dbprefix}praise AS p
 		JOIN (
 			SELECT id, content
@@ -19,6 +19,11 @@ Class praise extends Front_Controller{
 		LIMIT 0 , 30";
 		$praise=$this->db->query($sql)->result_array();
 		$praise=$this->weibo->format($praise);
+
+		foreach ($praise as $key => $value) {
+			$value['uid']=$this->session->userdata('uid');
+			$praise[$key]=$this->weibo->f_url($value);
+		}
 		$this->data['praise']=$praise;
 		$this->view('praise',$this->data);
 	}
