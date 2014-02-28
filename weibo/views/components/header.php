@@ -24,6 +24,12 @@
 			<script src="<?php echo base_url('assets/js/Uploadify/jquery.uploadify.min.js') ?>"></script>
 			<?php 
 			break;
+			case 'home my_index':
+			?>
+			<!-- home页js -->
+			<script src="<?php echo base_url('assets/js/jquery.autosize.min.js') ?>"></script>
+			<?php 
+			break;
 			case 'avatar':
 			?>
 			<!-- 修改用户头像js -->

@@ -5,6 +5,7 @@ Class search extends Front_Controller{
 		$this->data['title'] = '微博搜索';
 		$this->data['body_class'] = 'search';
 		$this->data['keyword']='';
+		$this->data['user']=array();
 		$this->load->model('User_info_model');
 	}
 	public function index(){
@@ -13,20 +14,21 @@ Class search extends Front_Controller{
 			$this->data['keyword']=$keyword;
 			$user=$this->User_info_model->search($keyword);
 			
-			// 用户关系表
-			$this->load->model('Follow_model');
-			foreach ($user as $k => $v) {
+			if(count($user)){
+				// 用户关系表
+				$this->load->model('Follow_model');
+				foreach ($user as $k => $v) {
 				// 关系
-				$user[$k]['relation']=$this->Follow_model->relation($v['uid']);
+					$user[$k]['relation']=$this->Follow_model->relation($v['uid']);
 
+				}
+				$this->load->library('weibo');
+				$user=$this->weibo->format($user);
+
+				// p($user);
+				$this->data['user']=$user;
 			}
-			$this->load->library('weibo');
-			$user=$this->weibo->format($user);
-
-			// p($user);
-			$this->data['user']=$user;
 		}
-	
 		$this->partial('components/header',$this->data);
 		$this->partial('search');
 	}

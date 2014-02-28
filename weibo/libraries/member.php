@@ -73,4 +73,25 @@ class member{
 		$data['status']=1;
 		die(json_encode($data));
 	}
+	/**
+	 * 发私信
+	 */
+	public function letter(){
+		
+		$this->CI->load->library('form_validation');
+		$this->CI->form_validation->set_rules('username', 'username', 'trim|required|max_length[300]|xss_clean');
+		$this->CI->form_validation->set_rules('content', 'content', 'trim|required|max_length[300]|xss_clean');
+
+		if ($this->CI->form_validation->run() == TRUE) {
+			
+			$content=$this->CI->input->post('content');
+			$uid=$this->CI->input->post('uid');
+
+			$data=array('from'=>$this->uid,'content'=>$content,'time'=>time(),'uid'=>$uid);
+			if($this->CI->db->insert('letter',$data)){
+				die(json_encode(array('status'=>1)));
+			}
+		}
+		die(json_encode(array('status'=>0)));
+	}
 }

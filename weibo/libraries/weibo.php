@@ -261,6 +261,15 @@ class weibo{
 		}
 	}
 	/**
+	 * 返回单条微博url
+	 * @param arr $arr 数组
+	 */
+	function f_url($arr)
+	{
+		$arr['url']=$arr['uid'].'/Ay'.$arr['id'];
+		return $arr;
+	}
+	/**
 	 * 格式化微博内容
 	 */
 	public function format($user){

@@ -5,12 +5,12 @@
 			<div class="title">私信</div>
 			<div class="tab_normal clearfix">
 				<div class="left">
-					<a href="" class="W_btn_a"><span><i class="icon_mes"></i>发私信</span></a>
-					<a href="" class="W_btn_b"><span>清空所有私信</span></a>
+					<a action-type="conversation" href="javascript:void(0)" class="W_btn_a"><span><i class="icon_mes"></i>发私信</span></a>
+					<a href="javascript:void(0)" class="W_btn_b"><span>清空所有私信</span></a>
 				</div>
 				<div class="right">
 					<span class="S_txt2"><i class="icon_lock"></i>消息箱功能设置设置</span>
-					<a href="#" class="set">设置</a>
+					<a href="javascript:void(0)" class="set">设置</a>
 				</div>
 			</div>
 			<div class="msg_list">

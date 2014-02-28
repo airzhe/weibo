@@ -70,17 +70,18 @@ class User_info_model extends MY_Model {
 		// 头像
 		if($user['avatar']==''){
 			$avatar=$user['sex']=='男'?'male_avatar':'female_avatar';
-			$user['avatar']['small']='';
-			$user['avatar']['middle']=base_url("assets/images/{$avatar}_50.gif");
-			$user['avatar']['big']=base_url("assets/images/{$avatar}_180.gif");
+			$user['s_avatar']='';
+			$user['m_avatar']=base_url("assets/images/{$avatar}_50.gif");
+			$user['b_avatar']=base_url("assets/images/{$avatar}_180.gif");
+			$user['avatar']=$user['b_avatar'];
 		}else{
 			$avatar=$user['avatar'];
 			$user['avatar']=array();
 			// 有值的时候不能像上面那样赋值，会像字符一样当数组从0开始算第一个元素
-			$user['avatar']['small']=base_url("images/avatar/30/{$avatar}");
-			$user['avatar']['middle']=base_url("images/avatar/50/{$avatar}");
-			$user['avatar']['big']=base_url("images/avatar/180/{$avatar}");
-			// echo $user['avatar']['big'];
+			$user['s_avatar']=base_url("images/avatar/30/{$avatar}");
+			$user['m_avatar']=base_url("images/avatar/50/{$avatar}");
+			$user['b_avatar']=base_url("images/avatar/180/{$avatar}");
+			$user['avatar']=$user['b_avatar'];
 		}
 		// 性别
 		$user['sex_ico']=$user['sex']=='男'?'male':'female';

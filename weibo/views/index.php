@@ -172,7 +172,7 @@
 														<a href="#" class="S_func2 time"><?php echo $forward['time'] ?></a> 来自<a href="" class="S_func2">新浪微博</a> 
 													</div>
 													<div class="handle right">
-														<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward['praise'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">转发(<?php echo $forward['turn'] ?>)</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" class="S_func2">评论(<?php echo $forward['comment'] ?>)</a>
+														<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>(<?php echo $forward['praise'] ?>)</a><i class="S_txt3">|</i><a href="<?php echo $forward['url'] ?>" class="S_func2">转发(<?php echo $forward['turn'] ?>)</a><i class="S_txt3">|</i><a href="<?php echo $forward['url'] ?>" class="S_func2">评论(<?php echo $forward['comment'] ?>)</a>
 													</div>
 												</div>
 											<?php else: ?>

@@ -16,7 +16,6 @@ Class index extends Front_Controller{
 	}
 	public function index(){
 		$user=$this->User_info_model->get_basic_info();
-		$user['avatar']=$user['avatar']['big'];
 		$this->data['user']=$user;
 		//载入分页配置文件
 		$this->config->load('W_weibo', TRUE);
@@ -52,6 +51,7 @@ Class index extends Front_Controller{
 		if(!count($weibo_list)) return;
 		//获得微博配图
 		foreach ($weibo_list as $key => $value) {
+
 			$pic_count=$value['picture'];
 			if($pic_count){
 				$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
@@ -86,6 +86,7 @@ Class index extends Front_Controller{
 				$forward_list[$v['id']]=$v;
 			}
 			foreach ($forward_list as $key => $value) {
+				$forward_list[$key]=$this->weibo->f_url($value);
 				$pic_count=$value['picture'];
 				if($pic_count){
 					$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();

@@ -12,7 +12,7 @@ class Follow_model extends MY_Model {
 	function __construct() {
 		parent::__construct();
 	}
-	//求 $uid和$id之间的关系，1:我关注他、2:我被他关注、3:相互关注
+	//求 $uid和$id之间的关系，0：没有关系、1:我关注他、2:我被他关注、3:相互关注
 	public function relation($id){
 		$uid = $this->session->userdata('uid');
 		$result=array();

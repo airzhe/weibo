@@ -17,7 +17,7 @@
 						<li><a href="<?php echo $v['domain'] ?>"><img src="<?php echo $v['avatar'] ?>" alt="" width="50" height="50"></a><a href="<?php echo $v['domain'] ?>" class="S_func1" title="<?php echo $v['username'] ?>"><?php echo $v['username'] ?></a></li>
 					<?php endforeach ?>
 				<?php else: ?>
-					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>你还没有关注的人</p>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>还没有关注的人</p>
 				<?php endif ?>
 			</ul>
 			<fieldset>
@@ -35,7 +35,7 @@
 						<li><a href="<?php echo $v['domain'] ?>"><img src="<?php echo $v['avatar'] ?>" alt="" width="50" height="50"></a><a href="<?php echo $v['domain'] ?>" class="S_func1" title="<?php echo $v['username'] ?>"><?php echo $v['username'] ?></a></li>
 					<?php endforeach ?>
 				<?php else: ?>
-					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>目前还没有人关注你</p>
+					<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>目前还没有人关注</p>
 				<?php endif ?>
 			</ul>
 		</div>

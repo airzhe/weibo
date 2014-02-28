@@ -24,17 +24,17 @@ function loadImage(url,callback,obj) {
  * 获取get参数
  * @return {[object]} [返回数组对象]
  */
-function getArgs(url){
-	var args = {};
-	var match = null;
-	var search = url;
-	var reg = /(?:([^&]+)=([^&]+))/g;
-	while((match = reg.exec(search))!==null){
-		args[match[1]] = match[2];
-	}
-	return args;
-}
-$(document).ready(function(){
+ function getArgs(url){
+ 	var args = {};
+ 	var match = null;
+ 	var search = url;
+ 	var reg = /(?:([^&]+)=([^&]+))/g;
+ 	while((match = reg.exec(search))!==null){
+ 		args[match[1]] = match[2];
+ 	}
+ 	return args;
+ }
+ $(document).ready(function(){
 	/**	
 	* 定义共用变量
 	*/
@@ -633,7 +633,7 @@ $(document).ready(function(){
 	/**
 	* 取消关注
 	*/
-	$("[action-type='cancle_follow']").on('click',function(e){
+	$('.myfollow_list ').find("[action-type='cancle_follow']").on('click',function(e){
 		// 阻止冒泡
 		e.stopPropagation();
 		var self=$(this);
@@ -1183,7 +1183,11 @@ $(document).ready(function(){
 	$(".weibo_list").on('click','.comment .icon_close',function(){
 		$(this).parents('.W_tips').remove();
 	})
-	$(".weibo_list").on('click',"[action-type='comment']",function(){
+	$(".weibo_list").on('click',"[action-type='comment']",function(event,source){
+		//每次请求显示最大条数
+		var source= arguments[1] ? arguments[1] : 'item';
+		var limit = source=='item'?10:20;
+
 		var self=$(this);
 		var comment=self.parents('.item').find('.comment');
 		// 点击时如果有数据就移除
@@ -1198,7 +1202,7 @@ $(document).ready(function(){
 		comment.show().append('<div class="W_loading"><i class="ico_loading"></i><span>正在加载，请稍候...</span></div>');
 		var id=self.parents('.item').data('id');
 		$.ajax({
-			url:site_url+'single_weibo/select_comment/item',
+			url:site_url+'single_weibo/select_comment/' + source,
 			type:'post',
 			dataType:'json',
 			data:{id:id},
@@ -1246,7 +1250,7 @@ $(document).ready(function(){
 						$(item).appendTo(comment);
 					})
 					//显示后面还有多少条记录
-					if(data.count-10>0){
+					if(data.count-limit>0){
 						var url=site_url+'single_weibo/'+data._wid;
 						var remainder=data.count-10;
 						var more='\
@@ -1256,9 +1260,9 @@ $(document).ready(function(){
 						';
 						$(more).appendTo(comment)
 					}
+					//文本框自适应高度
+					if(source='item') comment.find('textarea').autosize();
 				}
-				//文本框自适应高度
-				comment.find('textarea').autosize();
 			}
 		})
 		//
@@ -1284,7 +1288,6 @@ $(document).ready(function(){
 	})
 	//评论回复事件
 	$('.weibo_list').on('click',".C_item [action-type='reply']",function(){
-		
 		if(!$(this).parent('.info').is(':last-child')){
 			$(this).parent('.info').nextAll('.repeat').remove();
 			return;
@@ -1536,20 +1539,27 @@ $(document).ready(function(){
 	 $("[action-type='conversation']").on('click',function(){
 	 	var self=$(this);
 	 	var data=self.attr('action-data');
-	 	var user=getArgs(data);
+	 	if(data){
+	 		var user=getArgs(data);
+	 		username=user.username;
+	 	}else{
+	 		username='';
+	 	}
 	 	var id = new Date().getTime();
 	 	var form='<div class="form_private clearfix">\
+	 	<form>\
 	 	<div class="clearfix">\
 	 	<div class="tit">发给：</div>\
-	 	<div class="inp"><input class="text" type="text" name="truename" value="'+ user.username+'"></div>\
+	 	<div class="inp"><input class="text" type="text" name="username" value="'+ username+'" required></div>\
 	 	</div>\
 	 	<div class="clearfix">\
 	 	<div class="tit">内容：</div>\
 	 	<div class="inp">\
-	 	<textarea name="truename" id="'+ id +'"></textarea>\
+	 	<textarea name="letter_content" id="'+ id +'" required></textarea>\
 	 	<div><a href="javascript:void(0)" action-type="face" action-id="'+ id +'"><i class="W_ico16 ico_faces"></i></a></div>\
 	 	</div>\
 	 	</div>\
+	 	</form>\
 	 	</div>\
 	 	';
 	 	var btn='<p><a action-data="'+ data +'" action-type="submit" href="javascript:void(0)" class="W_btn_b"><span class="btn_30px W_f14"><em node-type="btnText">发送</em></span></a></p>';
@@ -1563,11 +1573,69 @@ $(document).ready(function(){
 	 })
 	 //发送私信按钮
 	 $('body').on('click',"[action-type='submit']",function(){
+	 	// 判断非空
+	 	var username=$("[name='username']");
+	 	var content=$("[name='letter_content']");
+	 	var arr = [username,content];
+	 	for (var i = 0; i<arr.length; i++) {
+	 		if(arr[i].val()==''){
+	 			arr[i].addClass('empty');
+	 			setTimeout(function(){
+	 				arr[i].removeClass('empty');
+	 			},800)
+	 			return;
+	 		}
+	 	};
+
 	 	var self=$(this);
 	 	var data=self.attr('action-data');
-	 	var user=getArgs(data);
-	 	console.log(user.uid,user.username);
+	 	if(data){
+	 		var user=getArgs(data);
+	 		var uid=user.uid;
+	 	}else{
+	 		var uid='';
+	 	}
+	 	$.post(site_url+'u/send_letter',{username:username.val(),content:content.val(),uid:uid},function(data){
+	 		if(data.status==1){
+	 			$('.W_private_letter').remove();
+	 			$('body').tips({
+	 				type:'center',
+	 				text:'发送成功',
+	 			});
+	 		}
+	 	},'json')
 	 })
+	/**
+	 * 个人主页添加关注按钮
+	 */
+	 $('.info').find("[action-type='add_follow']").on('click',function(){
+	 	var self=$(this);
+	 	$.post(site_url+'u/add_follow',{follow_id:follow_id},function(data){
+	 		if(data.status==1){
+
+	 		}
+	 	})
+	 })
+	/**
+	 * 个人主页取消关注按钮
+	 */
+	 $('.info').find("[action-type='cancle_follow']").on('click',function(){
+	 	var self=$(this);
+	 	$.post(site_url+'u/cancle_follow',{follow_id:follow_id},function(data){
+	 		if(data.status==1){
+
+	 		}
+	 	})
+	 })
+	/**
+	 * 单条微博页面js
+	 */
+	 if($('body.single_weibo').length==1){
+	 	$('.core_nav').find('li.current').removeClass();
+	 	$('.core_nav').find("li:contains('微博')").addClass('current');
+
+	 	$("[action-type='comment']").trigger('click',['weibo']);
+	 }
 	/**
 	* 返回顶部
 	*/

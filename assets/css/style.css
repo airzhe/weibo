@@ -892,7 +892,7 @@ body.login .container,body.signup .container{
  	padding-left:20px;
  }
  .left_nav .disable{
- 	color:#ccc;
+ 	/*color:#ccc;*/
  }
  .left_nav .group a{
  	padding-left:30px;
@@ -1067,7 +1067,7 @@ body.login .container,body.signup .container{
  	0%{background:  rgb(255, 255, 255)}
  	50%{background: rgb(255, 187, 187)}
  }
- .send_weibo .input_detail.empty
+ .send_weibo .input_detail.empty,.W_private_letter .empty
  {
  	-webkit-animation:ringing .4s 2 ease 0.0s;
  	animation:ringing .4s 2 ease 0.2s;
@@ -1156,7 +1156,7 @@ body.login .container,body.signup .container{
  	margin-right: 14px;
  }
  .kind_detail a.disable{
- 	color:#ccc;
+ 	/*color:#ccc;*/
  }
  .kind_detail .W_ico16{
  	margin: 0 4px 0 0;
@@ -2770,9 +2770,9 @@ body.follow .tab_normal a,.follow .tab_normal .selectText{
 	margin-right: 8px;
 }
 
-.con_right .W_ico12 {
+.con_right .W_ico12,.info .W_ico12{
 	margin-right: 2px;
-	vertical-align: middle;
+	vertical-align:-2px;
 }
 .con_right .S_line1_c{
 	margin:0 5px;
@@ -2804,7 +2804,7 @@ body.follow .tab_normal a,.follow .tab_normal .selectText{
 	margin-right: 2px;
 }
 /*没有内容的提示*/
-.weibo_list a.notes{
+body.home .weibo_list a.notes{
 	margin:20px;
 }
 /*atme*/
