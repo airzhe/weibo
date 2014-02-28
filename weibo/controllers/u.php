@@ -56,91 +56,15 @@ Class u extends Front_Controller{
 		$this->data['user']=$user;
 		// p($user);
 	}
-	//查询微博
+	//取得微博及转发的微博数据
 	private function select(){
-		// 如果是ajax请求
-		$num=5;
+		
+		$weibo_list=$this->_select_weibo_list();
+		$forward_list=$this->_select_forward_list($weibo_list);
+		//判断是否是ajax请求
 		if(!$this->input->is_ajax_request()){
-			$offset=0;
-		}else{
-			$offset=$this->input->post('offset');
-		}
-		//载入分页配置文件
-		$this->config->load('W_weibo', TRUE);
-		$this->per_page=$this->config->item('home_per_page', 'W_weibo');
-		$current_page=$this->input->get('p')?$this->input->get('p'):1;
-
-		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$this->uid))->result_array();
-
-		if(empty($weibo_list)) return;
-
-		//读取微博配图
-		foreach ($weibo_list as $key => $value) {
-			//格式化微博内容和发布时间
-			$weibo_list[$key]['content']=$this->weibo->f_content($value['content']);
-			$weibo_list[$key]['time']=$this->weibo->f_time($value['time']);
-			$pic_count=$value['picture'];
-			if($pic_count){
-				$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
-				$weibo_list[$key]['pic']=$_pic;
-				//分配图片路径
-				if($pic_count==1){
-					$weibo_list[$key]['pic_path']='images/content/thumbnail/';
-				}else{
-					$weibo_list[$key]['pic_path']='images/content/square/';
-					if($pic_count==2 || $pic_count==4){
-						$weibo_list[$key]['pic_class']='lotspic_list inner_width';
-					}else{
-						$weibo_list[$key]['pic_class']='lotspic_list';
-					}
-				}
-			}
-		}
-
-		//转发的原微博
-		$arr=array('username','domain','weibo.id','content','picture','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
-		$forward_arr=array();
-		foreach ($weibo_list as $k => $v) {
-			if($v['isturn']){
-				$forward_arr[]=$v['isturn'];
-			}
-		}
-		$forward_list=array();
-		if(!empty($forward_arr)){
-			$this->db->join('user_info', 'user_info.uid = weibo.uid');
-			$forward_list=$this->db->where_in('weibo.id',$forward_arr)->select($arr)->get('weibo')->result_array();
-			if(!empty($forward_list)){
-				foreach ($forward_list as $k => $v) {
-					$forward_list[$v['id']]=$v;
-				}
-				foreach ($forward_list as $key => $value) {
-				//格式化内容和发布时间
-					$forward_list[$key]=$this->weibo->f_url($value);
-					$forward_list[$key]['content']=$this->weibo->f_content($value['content']);
-					$forward_list[$key]['time']=$this->weibo->f_time($value['time']);
-					$pic_count=$value['picture'];
-					if($pic_count){
-						$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
-						$forward_list[$key]['pic']=$_pic;
-					//分配图片路径
-						if($pic_count==1){
-							$forward_list[$key]['pic_path']='images/content/thumbnail/';
-						}else{
-							$forward_list[$key]['pic_path']='images/content/square/';
-							if($pic_count==2 || $pic_count==4){
-								$forward_list[$key]['pic_class']='lotspic_list inner_width';
-							}else{
-								$forward_list[$key]['pic_class']='lotspic_list';
-							}
-						}
-					}
-				}
-			}
-		}
-		if(!$this->input->is_ajax_request()){
-			$this->data['forward_list']=$forward_list;
-			$this->data['weibo_list']=$weibo_list;
-			$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
+			if(count($weibo_list))  $this->data['weibo_list']=$weibo_list;
+			if(count($forward_list)) $this->data['forward_list']=$forward_list;
 		}else{
 			//=============================测试代码===============================
 			sleep(1);
@@ -171,7 +95,94 @@ str;
 			die(json_encode($arr));
 		}
 	}
-	//分页
+	//查询微博
+	private function _select_weibo_list(){
+		// 如果是ajax请求
+		$num=5;
+		if(!$this->input->is_ajax_request()){
+			$offset=0;
+		}else{
+			$offset=$this->input->post('offset');
+		}
+		//载入分页配置文件
+		$this->config->load('W_weibo', TRUE);
+		$this->per_page=$this->config->item('home_per_page', 'W_weibo');
+		$current_page=$this->input->get('p')?$this->input->get('p'):1;
+		//分配当前面页面开始id
+		$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
+
+		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$this->uid))->result_array();
+
+		if(empty($weibo_list)) return;
+
+		//读取微博配图
+		foreach ($weibo_list as $key => $value) {
+			//格式化微博内容和发布时间
+			$weibo_list[$key]['content']=$this->weibo->f_content($value['content']);
+			$weibo_list[$key]['time']=$this->weibo->f_time($value['time']);
+			$pic_count=$value['picture'];
+			if($pic_count){
+				$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
+				$weibo_list[$key]['pic']=$_pic;
+				//分配图片路径
+				if($pic_count==1){
+					$weibo_list[$key]['pic_path']='images/content/thumbnail/';
+				}else{
+					$weibo_list[$key]['pic_path']='images/content/square/';
+					if($pic_count==2 || $pic_count==4){
+						$weibo_list[$key]['pic_class']='lotspic_list inner_width';
+					}else{
+						$weibo_list[$key]['pic_class']='lotspic_list';
+					}
+				}
+			}
+		}
+		return $weibo_list;
+	}
+	//取得转发的微博
+	private function _select_forward_list($weibo_list){
+		if(empty($weibo_list)) return;
+		//转发的原微博
+		$arr=array('username','domain','weibo.id','content','picture','isturn','iscomment','time','praise','turn','collect','comment','weibo.uid');
+		$forward_arr=array();
+		foreach ($weibo_list as $k => $v) {
+			if($v['isturn']){
+				$forward_arr[]=$v['isturn'];
+			}
+		}
+		$forward_list=array();
+		if(empty($forward_arr)) return;
+		$this->db->join('user_info', 'user_info.uid = weibo.uid');
+		$forward_list=$this->db->where_in('weibo.id',$forward_arr)->select($arr)->get('weibo')->result_array();
+		if(empty($forward_list)) return;
+		foreach ($forward_list as $k => $v) {
+			$forward_list[$v['id']]=$v;
+		}
+		foreach ($forward_list as $key => $value) {
+				//格式化内容和发布时间
+			$forward_list[$key]=$this->weibo->f_url($value);
+			$forward_list[$key]['content']=$this->weibo->f_content($value['content']);
+			$forward_list[$key]['time']=$this->weibo->f_time($value['time']);
+			$pic_count=$value['picture'];
+			if($pic_count){
+				$_pic=$this->db->get_where('picture',array('wid'=>$value['id']))->result_array();
+				$forward_list[$key]['pic']=$_pic;
+					//分配图片路径
+				if($pic_count==1){
+					$forward_list[$key]['pic_path']='images/content/thumbnail/';
+				}else{
+					$forward_list[$key]['pic_path']='images/content/square/';
+					if($pic_count==2 || $pic_count==4){
+						$forward_list[$key]['pic_class']='lotspic_list inner_width';
+					}else{
+						$forward_list[$key]['pic_class']='lotspic_list';
+					}
+				}
+			}
+		}
+		return $forward_list;
+	}
+		//分页
 	private function page(){
 		//分页
 		$count=$this->db->where(array('uid'=>$this->uid))->from('weibo')->count_all_results();
