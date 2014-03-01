@@ -108,7 +108,7 @@ function loadImage(url,callback,obj) {
 	* 点击关闭新消息提示框
 	*/
 	$('.gn_tips').find('.icon_close').on('click',function(){
-		$('.gn_tips').hide();
+		$('.gn_tips').find('li').andSelf().hide();
 		$.post(site_url+'common/flush_msg');
 	})
 	/**	
