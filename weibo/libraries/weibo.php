@@ -205,6 +205,11 @@ class weibo{
 				$_content=$this->f_content($content);
 				$_time=$this->f_time($time);
 				$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
+				//将评论提醒写入缓存
+				//评论给谁的用户id
+				$uid=$this->CI->db->select('uid')->get_where('weibo',array('id'=>$wid))->row_array();
+				$uid=current($uid);
+				set_msg($uid,1);
 			}
 		}
 		die(json_encode($data));
@@ -223,6 +228,8 @@ class weibo{
 			foreach ($uid as $v) {
 				$at_arr=array('wid'=>$id,'uid'=>$v['uid']);
 				$this->CI->db->insert('at',$at_arr);
+				//将at提醒写入缓存
+				set_msg($v['uid'],3);
 			}
 		}
 	}

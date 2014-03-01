@@ -89,6 +89,8 @@ class member{
 
 			$data=array('from'=>$this->uid,'content'=>$content,'time'=>time(),'uid'=>$uid);
 			if($this->CI->db->insert('letter',$data)){
+				//将私信提醒写入缓存
+				set_msg($uid,2);
 				die(json_encode(array('status'=>1)));
 			}
 		}

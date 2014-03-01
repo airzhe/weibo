@@ -34,6 +34,32 @@ function loadImage(url,callback,obj) {
  	}
  	return args;
  }
+ /**
+ * 异步轮询取得用户消息通知
+ */
+ function get_msg(){
+ 	$.getJSON(site_url+'common/get_msg',function(data){
+ 		if(data.status==1){
+ 			//消息提醒 1:评论、2：私信、3@我
+ 			var msg;
+ 			var num=0;
+ 			if(msg=data.data){
+ 				for(var key in msg){
+ 					num+=msg[key];
+ 				}
+ 				//顶部导航栏新消息图标提醒
+ 				$('.global_nav').find('.W_new').show();
+ 				//左侧导航栏消息总条数提醒
+ 				$('.left_nav').find('.W_new_count').text(num).show();
+ 				//调用显示消息插件
+ 				$.msg(msg);
+ 			}
+ 		}
+ 		setTimeout(function(){
+ 			get_msg();
+ 		},30000)
+ 	})
+ }
  $(document).ready(function(){
 	/**	
 	* 定义共用变量
@@ -197,9 +223,6 @@ function loadImage(url,callback,obj) {
 	*/
 	// $('.home .comment').find('textarea').autosize();
 
-	//消息提醒 1:评论、2：私信、3@我
-	var $a={1:2,2:6,3:8};
-	$.msg($a);
 	/**
 	* 微博发表框获得焦点
 	*/
@@ -1699,6 +1722,10 @@ function loadImage(url,callback,obj) {
 
 	  	$(this).css('height',70).next('p').show();
 	  })
+  	/**
+    * 异步轮询取得用户消息通知
+    */
+    get_msg();
 	/**
 	* 返回顶部
 	*/

@@ -780,6 +780,7 @@ body.login .container,body.signup .container{
  		position: absolute;
  		top: 9px;
  		right: 12px;
+ 		display: none;
  	}
  	.global_nav .user .msg,.global_nav .user .setting{
  		position: relative;
@@ -3247,6 +3248,7 @@ body.avatar .uploadify:hover .uploadify-button {
 .left_nav li .W_new_count{
 	margin: 11px 5px 0 0;
 	float: right;
+	display: none;
 }
 .msg_ico{
 	display: inline-block;
