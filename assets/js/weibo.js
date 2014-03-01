@@ -109,6 +109,7 @@ function loadImage(url,callback,obj) {
 	*/
 	$('.gn_tips').find('.icon_close').on('click',function(){
 		$('.gn_tips').hide();
+		$.post(site_url+'common/flush_msg');
 	})
 	/**	
 	* 点击表情按钮，调出表情对话框
@@ -218,10 +219,6 @@ function loadImage(url,callback,obj) {
 			$('.image_upload').find('.add').removeClass('transparent');
 		}
 	})
-	/**	
-	* 文本框自适应
-	*/
-	// $('.home .comment').find('textarea').autosize();
 
 	/**
 	* 微博发表框获得焦点
@@ -1566,7 +1563,10 @@ function loadImage(url,callback,obj) {
 	/**
 	 * 私信
 	 */
-	 $("[action-type='conversation']").on('click',function(){
+	 $("[action-type='conversation']").on('click',function(e){
+	 	// 阻止冒泡
+		e.stopPropagation();
+
 	 	var self=$(this);
 	 	var data=self.attr('action-data');
 	 	if(data){

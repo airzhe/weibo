@@ -2,7 +2,7 @@
 	<?php $this->load->view('components/follow_fans_left_nav');?>
 	<div class="main">
 		<div class="box_center">
-			<div class="title">全部关注 <span class="num">(<?php echo $total ?>个)</span> <i class="icon_warnS"></i><a href="#" class="tips">开通微博会员</a><span class="S_txt2">可提高关注上限</span></div>
+			<div class="title">全部关注 <span class="num">(<?php echo $follow_total ?>个)</span> <i class="icon_warnS"></i><a href="#" class="tips">开通微博会员</a><span class="S_txt2">可提高关注上限</span></div>
 			<div class="tab_normal clearfix">
 				<div class="left">
 					<a href="" class="W_btn_c"><span><i class="icon_recmd"></i>为你分组</span></a>
@@ -45,7 +45,7 @@
 									他还没有填写个人简介
 								<?php endif ?>
 							</div>
-							<div class="introHover S_txt2"><a href="javascript:void(0)"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" action-type="cancle_follow">取消关注</a></div>
+							<div class="introHover S_txt2"><a href="javascript:void(0)" action-type="conversation" action-data="uid=<?php echo $v['uid'] ?>&username=<?php echo $v['username'] ?>"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" action-type="cancle_follow">取消关注</a></div>
 							<div class="introHover S_txt2">
 								<?php if ($v['source']=='search'): ?>
 									通过 <a href="#" class="S_link2">微博搜索</a>关注

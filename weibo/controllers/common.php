@@ -29,4 +29,12 @@ class Common extends Front_Controller{
 		if(count($msg)) $arr['data']=$msg;
 		die(json_encode($arr));
 	}
+	/**
+	 * 清空评论,@消息提醒队列
+	 * @return [type] [description]
+	 */
+	public function flush_msg(){
+		set_msg($this->uid,1,TRUE);
+		set_msg($this->uid,3,TRUE);
+	}
 }

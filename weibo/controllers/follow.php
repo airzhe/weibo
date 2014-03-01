@@ -18,9 +18,15 @@ Class follow extends Front_Controller{
 			$this->load->library('weibo');
 			$myfollow_list=$this->weibo->format($_myfollow_list);
 			$this->data['myfollow_list']=$myfollow_list;
-			$this->data['total']=count($myfollow_list);
+			$this->data['follow_total']=count($myfollow_list);
 		}else{
-			$this->data['total']=0;
+			$this->data['follow_total']=0;
+		}
+		//粉丝总数
+		if($fans_list=$this->member->get_fans()){
+			$this->data['fans_total']=count($fans_list);
+		}else{
+			$this->data['fans_total']=0;
 		}
 		$this->view('follow',$this->data);
 	}
