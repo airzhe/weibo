@@ -145,3 +145,6 @@ ERROR - 2014-02-28 18:49:12 --> Query error: BIGINT UNSIGNED value is out of ran
 ERROR - 2014-02-28 18:55:44 --> Query error: BIGINT UNSIGNED value is out of range in '(`weibo`.`t_user_info`.`fans` - 1)'
 ERROR - 2014-02-28 19:04:32 --> Query error: BIGINT UNSIGNED value is out of range in '(`weibo`.`t_user_info`.`follow` + -(1))'
 ERROR - 2014-02-28 19:07:57 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-28 23:43:54 --> 404 Page Not Found --> assets
+ERROR - 2014-02-28 23:44:00 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-02-28 23:45:41 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61

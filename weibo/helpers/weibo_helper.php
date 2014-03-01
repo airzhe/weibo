@@ -55,3 +55,38 @@ function getMessageLength ($b) {
 		return strlen($b);
 	}
 }
+/**
+ * 将消息提醒写如缓存
+ * @param  [int]  $uid     [用户uid]
+ * @param  [int]  $type    [1:评论,2:私信,3:@用户]
+ * @param  boolean $flush  [消息总条数是否清0]
+ */
+function get_msg($uid,$type,$flush=FALSE){
+	$CI = &get_instance();
+	$CI->load->driver('cache', 'file'));
+	switch ($type) {
+		case '1':
+			$name='comment';
+			break;
+		case '2':
+			$name='letter';
+			break;
+		case '3':
+			$name='at';
+			break;
+	}
+	if($flush){
+		$data=$CI->cache->get('usermsg'.$uid);
+		$data[$name]=0;
+		return;
+	}
+	//如果有缓存数据直接操作缓存
+	if($CI->cache->get('usermsg'.$uid)){
+		$data=$CI->cache->get('usermsg'.$uid);
+	}else{
+		//如果没有就初始化变量
+		$data=array('comment'=>0,'letter'=>0,'at'=>0);
+	}
+	$data[$name]++;
+	$CI->cache->save('usermsg'.$uid,$data,0);
+}

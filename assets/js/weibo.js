@@ -40,8 +40,14 @@ function loadImage(url,callback,obj) {
 	*/
 	var user={};
 	user.name=$('.global_nav').find('.username').children('a').text();
+	//用户头像
 	var avatar=$('.global_nav').find('.username').attr('avatar');
-	user.avatar=site_url+'images/avatar/50/'+avatar;
+	if(avatar){
+		user.avatar=site_url+'images/avatar/50/'+avatar;
+	}else{
+		var sex=$('.global_nav').find('.username').attr('sex');
+		user.avatar = sex=='男'?site_url + 'assets/images/male_avatar_50.gif':site_url + 'assets/images/female_avatar_50.gif';
+	}
 	user.domain=$('.global_nav').find('.username').children('a').attr('href');
 
 	//weibo
@@ -191,8 +197,8 @@ function loadImage(url,callback,obj) {
 	*/
 	// $('.home .comment').find('textarea').autosize();
 
-	//消息提醒
-	var $a={0:2,1:6,2:8};
+	//消息提醒 1:评论、2：私信、3@我
+	var $a={1:2,2:6,3:8};
 	$.msg($a);
 	/**
 	* 微博发表框获得焦点
@@ -1618,6 +1624,7 @@ function loadImage(url,callback,obj) {
 	 	var username=self.attr('username');
 	 	$.post(site_url+'u/follow',{follow_id:follow_id},function(data){
 	 		if(data.status==1){
+	 			self.tips();
 	 			//关注数+1
 	 			$('#my_fans').html(+$('#my_fans').html()+1);
 	 			var relation=self.attr('relation');

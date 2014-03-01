@@ -192,13 +192,16 @@
  		for(var key in obj){
  			switch(key)
  			{
- 				case '0':
+ 				//评论
+ 				case '1':
  				msg_tips.find('._comment').show().find('span').html(obj[key]);
  				break;
- 				case '1':
+ 				//私信
+ 				case '2':
  				msg_tips.find('._letter').show().find('span').html(obj[key]);
  				break;
- 				case '2':
+ 				//@我
+ 				case '3':
  				msg_tips.find('._atme').show().find('span').html(obj[key]);
  				break;
  			}

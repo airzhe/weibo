@@ -56,13 +56,14 @@ class User_model extends MY_Model {
 		$user=$this->get_by($data,TRUE);
 		if(count($user)){
 			// Log in user
-			$user_info=$this->db->select('username,avatar')->get_where('user_info',array('uid'=>$user['id']))->row_array();
+			$user_info=$this->db->select('username,avatar,sex')->get_where('user_info',array('uid'=>$user['id']))->row_array();
 			// 把用户样式以数组存入session
 			$style=unserialize($user_info['style']);
 			$data=array(
 				'uid'=>$user['id'],
 				'account'=>$user['account'],
 				'username'=>$user_info['username'],
+				'sex'=>$user_info['sex'],
 				'avatar'=>$user_info['avatar'],
 				'loggedin' => TRUE
 				);
