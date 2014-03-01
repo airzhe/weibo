@@ -40,7 +40,7 @@ function loadImage(url,callback,obj) {
  function get_msg(){
  	$.getJSON(site_url+'common/get_msg',function(data){
  		if(data.status==1){
- 			//消息提醒 1:评论、2：私信、3@我
+ 			//消息提醒 1:评论、2：私信、3@我、0：首页动态
  			var msg;
  			var num=0;
  			if(msg=data.data){
@@ -53,6 +53,9 @@ function loadImage(url,callback,obj) {
  				$('.left_nav').find('.W_new_count').text(num).show();
  				//调用显示消息插件
  				$.msg(msg);
+ 			}
+ 			if(news=data.news){
+ 				$('.left_nav').find('.W_new').show();
  			}
  		}
  		setTimeout(function(){

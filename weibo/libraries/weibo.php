@@ -6,6 +6,7 @@ class weibo{
 		$this->CI->load->model('Comment_model');
 		$this->CI->load->library('upload');
 		$this->CI->load->library('image_lib');
+		$this->CI->load->library('member');
 		$this->CI->load->library('encry');
 		$this->uid = $this->CI->session->userdata('uid');	
 	}
@@ -54,12 +55,44 @@ class weibo{
 			if($turn) $this->CI->Weibo_model->inc('turn',$isturn);
 			//@某人
 			$this->at($id,$content);
+			//给粉丝发新动态
+			$this->news();
+
 			$_content=$this->f_content($content);
 			$_time=$this->f_time($time);
 			$data=array('status'=>1,'id'=>$id,'content'=>$_content,'time'=>$_time);
 			if($turn) $data+=array('_wid'=>$this->CI->encry->encrypt($isturn));
 		};
 		die(json_encode($data));
+	}
+	/**
+	 * [at 某人]
+	 * @param  $id 微博id
+	 * @param  $content 正则匹配的内容
+	 */
+	public function at($id,$content){
+		//@某人 
+		$preg='/ *@([\x{4e00}-\x{9fa5}A-Za-z0-9_-]*) ?/u';
+		if(preg_match_all($preg, $content, $at)){
+				//微博@
+			$uid=$this->CI->db->select('uid')->where_in('username',$at[1])->get('user_info')->result_array();
+			foreach ($uid as $v) {
+				$at_arr=array('wid'=>$id,'uid'=>$v['uid']);
+				$this->CI->db->insert('at',$at_arr);
+				//将at提醒写入缓存
+				set_msg($v['uid'],3);
+			}
+		}
+	}
+	/**
+	 * [给粉丝发新动态提醒]
+	 */
+	public function news(){
+		$fans_list=$this->CI->member->get_fans();
+		if(empty($fans_list)) return;
+		foreach ($fans_list as $v) {
+			set_msg($v['uid'],0);
+		}
 	}
 	/**
 	 * 微博图片处理
@@ -213,25 +246,6 @@ class weibo{
 			}
 		}
 		die(json_encode($data));
-	}
-	/**
-	 * [at 某人]
-	 * @param  $id 微博id
-	 * @param  $content 正则匹配的内容
-	 */
-	public function at($id,$content){
-		//@某人 
-		$preg='/ *@([\x{4e00}-\x{9fa5}A-Za-z0-9_-]*) ?/u';
-		if(preg_match_all($preg, $content, $at)){
-				//微博@
-			$uid=$this->CI->db->select('uid')->where_in('username',$at[1])->get('user_info')->result_array();
-			foreach ($uid as $v) {
-				$at_arr=array('wid'=>$id,'uid'=>$v['uid']);
-				$this->CI->db->insert('at',$at_arr);
-				//将at提醒写入缓存
-				set_msg($v['uid'],3);
-			}
-		}
 	}
 	/**
 	 * 格式化微博内容 (替换表情文字)

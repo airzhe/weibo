@@ -918,6 +918,7 @@ body.login .container,body.signup .container{
  .left_nav .W_new{
  	float: right;
  	margin: 12px 8px 0 0;
+ 	display: none;
  }
  .left_nav .goodfriend{
  	padding:10px 0;
@@ -1844,6 +1845,7 @@ body.login .container,body.signup .container{
  }
  /*定义图像向左转，向右转样式*/
  .rot1{
+ 	max-height: 440px;
  	transform:rotate(90deg);
  	-webkit-transform:rotate(90deg);
  }
@@ -1852,6 +1854,7 @@ body.login .container,body.signup .container{
  	-webkit-transform:rotate(180deg); 
  }
  .rot3{
+ 	max-height: 440px;
  	transform:rotate(270deg); 
  	-webkit-transform:rotate(270deg); 
  }

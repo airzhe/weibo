@@ -58,13 +58,16 @@ function getMessageLength ($b) {
 /**
  * 将消息提醒写入缓存
  * @param  [int]  $uid     [用户uid]
- * @param  [int]  $type    [1:评论,2:私信,3:@用户]
+ * @param  [int]  $type    [0：首页新微博、1:评论,2:私信,3:@用户]
  * @param  boolean $flush  [消息总条数是否清0]
  */
 function set_msg($uid,$type,$flush=FALSE){
 	$CI = &get_instance();
 	$CI->load->driver('cache', array('adapter' => 'file'));
 	switch ($type) {
+		case '0':
+			$name='news';
+			break;
 		case '1':
 			$name='comment';
 			break;
@@ -93,7 +96,7 @@ function set_msg($uid,$type,$flush=FALSE){
 		//如果清0直接返回
 		if($flush) return;
 		//如果没有就初始化变量
-		$data=array('comment'=>0,'letter'=>0,'at'=>0);
+		$data=array('news'=>0,'comment'=>0,'letter'=>0,'at'=>0);
 	}
 	$data[$name]++;
 	//消息提醒写入缓存，缓存两年

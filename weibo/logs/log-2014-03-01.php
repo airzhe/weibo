@@ -20,3 +20,5 @@ ERROR - 2014-03-01 14:24:23 --> Severity: Notice  --> Undefined variable: total 
 ERROR - 2014-03-01 14:24:48 --> Severity: Notice  --> Undefined variable: fans_total /home/runner/www/work/weibo/weibo/views/components/follow_fans_left_nav.php 28
 ERROR - 2014-03-01 14:27:47 --> Severity: Notice  --> Undefined variable: follow_total /home/runner/www/work/weibo/weibo/views/components/follow_fans_left_nav.php 20
 ERROR - 2014-03-01 14:27:49 --> Severity: Notice  --> Undefined variable: follow_total /home/runner/www/work/weibo/weibo/views/components/follow_fans_left_nav.php 20
+ERROR - 2014-03-01 16:00:40 --> Severity: Notice  --> Undefined index: news /home/runner/www/work/weibo/weibo/controllers/common.php 20
+ERROR - 2014-03-01 16:00:41 --> Severity: Notice  --> Undefined index: news /home/runner/www/work/weibo/weibo/controllers/common.php 20

@@ -16,6 +16,10 @@ class Common extends Front_Controller{
 		$arr=array('status'=>1);
 		$msg=array();
 		if($data=$this->cache->get('usermsg_'.$this->uid)){
+			//最新动态
+			if($data['news']){
+				$news=$data['news'];
+			}
 			if($data['comment']){
 				$msg+=array('1'=>$data['comment']);
 			}
@@ -26,7 +30,8 @@ class Common extends Front_Controller{
 				$msg+=array('3'=>$data['at']);
 			}
 		}
-		if(count($msg)) $arr['data']=$msg;
+		if(count($msg)) $arr['msg']=$msg;
+		if($news) $arr['news']=$news;
 		die(json_encode($arr));
 	}
 	/**
