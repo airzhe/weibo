@@ -6,9 +6,9 @@
 			<fieldset>
 				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的关注(<?php echo $user['follow'] ?>)</a></legend>
 				<?php if (isset($user['me']) and count($myfollow_list)): ?>
-					<a class="more" href="<?php echo site_url('follow') ?>">更多»</a>
+					<a class="more S_bg4" href="<?php echo site_url('follow') ?>">更多»</a>
 				<?php else: ?>
-					<a class="more" href="#">更多»</a>
+					<a class="more S_bg4" href="#">更多»</a>
 				<?php endif ?>
 			</fieldset>
 			<ul class="clearfix">
@@ -23,9 +23,9 @@
 			<fieldset>
 				<legend class="title"><a href="#" class="S_func1"><?php echo $user['call'] ?>的粉丝(<?php echo $user['fans'] ?>)</a></legend>
 				<?php if (isset($user['me']) and count($myfans_list)): ?>
-					<a class="more" href="<?php echo site_url('fans') ?>">更多»</a>
+					<a class="more S_bg4" href="<?php echo site_url('fans') ?>">更多»</a>
 				<?php else: ?>
-					<a class="more" href="#">更多»</a>
+					<a class="more S_bg4" href="#">更多»</a>
 				<?php endif ?>
 				
 			</fieldset>

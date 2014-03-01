@@ -1666,8 +1666,7 @@ body.login .container,body.signup .container{
  	color:#333;
  	cursor:default;
  }
- .weibo_list a.notes
- {
+ .weibo_list a.notes{
  	font-size:12px;
  	background: #fefded;
  	color: #F48C12;
@@ -1676,6 +1675,10 @@ body.login .container,body.signup .container{
  	height: 23px;
  	line-height: 23px;
  	text-align: center;
+ 	margin:20px;
+ }
+ body.index  .weibo_list a.notes{
+ 	margin:0;
  }
 
  .weibo_list .item{
@@ -2277,19 +2280,15 @@ i.female{
 	border-color: #d9d9d9;
 	background:#f2f2f2;
 }
-.core_nav li.current{
-	background:#fff;
-}
 .core_nav li.current a{
 	border-bottom: none;
 	padding:8px 0px 3px;
-	background: #fff;
+	background: #fafafa;
 }
 .core_nav li:last-of-type{
 	border-right-width: 1px;
 
 }
-
 .core_nav li a{
 	display: block;
 	width: 116px;
@@ -2326,7 +2325,9 @@ i.female{
 	height: 8px;
 	left:0;
 	top:22px;
-	background: #fafafa url(../images/all_iconbtn.png) -410px 0px no-repeat;
+	background-image: url(../images/all_iconbtn.png);
+	background-position: -410px 0px;
+	background-repeat:  no-repeat;
 }
 .tab_radious  .S_txt3{
 	line-height: 22px;
@@ -2407,7 +2408,7 @@ i.female{
 	position: absolute;
 	top:0;
 	right: 0;
-	background: #fff;
+	background: #fafafa;
 	padding-left:10px;
 }
 .wrap .sidebar .relation fieldset legend{
@@ -3036,7 +3037,7 @@ body.avatar .uploadify:hover .uploadify-button {
 /*个性域名*/
 .domainname .info_item .tit
 {
-	width: 100px;
+	width: 148px;
 }
 .domainname .info_item .inp {
 	margin-left: 148px;

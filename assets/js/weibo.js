@@ -43,7 +43,7 @@ function loadImage(url,callback,obj) {
  			//消息提醒 1:评论、2：私信、3@我、0：首页动态
  			var msg;
  			var num=0;
- 			if(msg=data.data){
+ 			if(msg=data.msg){
  				for(var key in msg){
  					num+=msg[key];
  				}
@@ -56,11 +56,20 @@ function loadImage(url,callback,obj) {
  			}
  			if(news=data.news){
  				$('.left_nav').find('.W_new').show();
+ 				//主页新微博提示
+ 				if($('body.index').length==1){
+ 					if($('.weibo_list').find('.notes').length==1){
+ 						$('.weibo_list').find('.notes').children('span').text(news);
+ 					}else{
+ 						var notes='<a href="javascript:void(0)" class="notes">有 <span>'+ news +'</span> 条新微博，点击查看</a>'
+ 						$('.weibo_list').prepend($(notes));
+ 					}
+ 				}
  			}
  		}
  		setTimeout(function(){
  			get_msg();
- 		},30000)
+ 		},5000)
  	})
  }
  $(document).ready(function(){
@@ -799,21 +808,21 @@ function loadImage(url,callback,obj) {
 				$(window).off("scroll");
 				// var self=$(this);
 				// self.prepend('<i class="ico_loading"></i>');
-				var offset=$('.weibo_list').data('offset');
+				var start=$('.weibo_list').data('start');
 				$.ajax({
 					type:'post',
 					url:site_url+'index/select',
 					dataType:'json',
-					data:{offset:offset},
+					data:{start:start},
 					success:function(data){
 						if(data.status==1){
 							// self.find('i').remove();
 							$(data.weibo_list).appendTo($('.weibo_list'));
 							// 每次读取5条
-							$('.weibo_list').data('offset',offset+5);
-							var _offset=$('.weibo_list').data('offset');
+							$('.weibo_list').data('start',start+5);
+							var _start=$('.weibo_list').data('start');
 							// 每页读取20条
-							if(data.count<5 || _offset%20==0){
+							if(data.count<5 || _start%20==0){
 								// $('.PRF_feed_list_more').remove();
 								$("[node-type='lazyload']").remove();
 								$('#page').show();
@@ -851,23 +860,23 @@ function loadImage(url,callback,obj) {
 	$('.PRF_feed_list_more').on('click',function(){
 		var self=$(this);
 		self.prepend('<i class="ico_loading"></i>');
-		var offset=$('.weibo_list').data('offset');
+		var start=$('.weibo_list').data('start');
 		var uid=$('.user_info').attr('uid');
 		$.ajax({
 			type:'post',
 			url:site_url+'u/index/'+uid,
 			dataType:'json',
-			data:{offset:offset},
+			data:{start:start},
 			success:function(data){
 				if(data.status==1){
 					self.find('i').remove();
 					$(data.weibo_list).appendTo($('.weibo_list'));
 					// 每次读取5条
-					$('.weibo_list').data('offset',offset+5);
-					var _offset=$('.weibo_list').data('offset');
-					// console.log(_offset,data.count);
+					$('.weibo_list').data('start',start+5);
+					var _start=$('.weibo_list').data('start');
+					// console.log(_start,data.count);
 					// 每页读取20条
-					if(data.count<5 || _offset%20==0){
+					if(data.count<5 || _start%20==0){
 						$('.PRF_feed_list_more').remove();
 						$('#page').show();
 					}

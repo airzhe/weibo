@@ -2,13 +2,13 @@
 <div class="wrap S_bg4 clearfix">
 	<div class="main left">
 		<p class="tab_radious">
-			<a href="#" class="active"><strong>全部</strong><span class="tabarrow"></span></a>
+			<a href="#" class="active"><strong>全部</strong><span class="tabarrow S_bg4"></span></a>
 			<i class="S_txt3">|</i>
 			<a href="#">原创</a>
 			<i class="S_txt3">|</i>
 			<a href="#">图片</a>
 		</p>
-		<div class="weibo_list feed_self" <?php if (isset($weibo_offset)) echo "data-offset={$weibo_offset}"; ?>> 
+		<div class="weibo_list feed_self" <?php if (isset($weibo_start)) echo "data-start={$weibo_start}"; ?>> 
 			<?php if (!isset($weibo_list)): ?>
 				<p class="W_tips W_empty S_txt2"><i class="icon_warnS"></i>咦？暂时没有内容哦，稍后再来试试吧~~</p>
 			<?php else: ?>

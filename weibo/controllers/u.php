@@ -12,6 +12,8 @@ Class u extends Front_Controller{
 		$this->load->model("Weibo_model");
 		$this->load->library('weibo');
 		$this->load->library('member');
+		//载入分页配置文件
+		$this->config->load('W_weibo', TRUE);
 		// 加密类
 		$this->load->library('encry');
 		// 分配自定义模板
@@ -97,21 +99,17 @@ str;
 	//查询微博
 	private function _select_weibo_list(){
 		// 如果是ajax请求
-		$num=5;
+		$offset=5;
 		if(!$this->input->is_ajax_request()){
-			$offset=0;
+			$start=0;
 		}else{
-			$offset=$this->input->post('offset');
+			$start=$this->input->post('start');
 		}
-		//载入分页配置文件
-		$this->config->load('W_weibo', TRUE);
 		$this->per_page=$this->config->item('home_per_page', 'W_weibo');
 		$current_page=$this->input->get('p')?$this->input->get('p'):1;
 		//分配当前面页面开始id
-		$this->data['weibo_offset']=($current_page-1)*$this->per_page+$num;
-
-		$weibo_list=$this->db->order_by("time", "desc")->limit($num,($current_page-1)*$this->per_page+$offset)->get_where('weibo',array('uid'=>$this->uid))->result_array();
-
+		$this->data['weibo_start']=($current_page-1)*$this->per_page+$offset;
+		$weibo_list=$this->db->order_by("time", "desc")->limit($offset,($current_page-1)*$this->per_page+$start)->get_where('weibo',array('uid'=>$this->uid))->result_array();
 		if(empty($weibo_list)) return;
 
 		//读取微博配图
@@ -152,9 +150,9 @@ str;
 		$forward_list=array();
 		if(empty($forward_arr)) return;
 		$this->db->join('user_info', 'user_info.uid = weibo.uid');
-		$forward_list=$this->db->where_in('weibo.id',$forward_arr)->select($arr)->get('weibo')->result_array();
-		if(empty($forward_list)) return;
-		foreach ($forward_list as $k => $v) {
+		$_forward_list=$this->db->where_in('weibo.id',$forward_arr)->select($arr)->get('weibo')->result_array();
+		if(empty($_forward_list)) return;
+		foreach ($_forward_list as $k => $v) {
 			$forward_list[$v['id']]=$v;
 		}
 		foreach ($forward_list as $key => $value) {

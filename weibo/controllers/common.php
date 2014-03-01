@@ -31,7 +31,7 @@ class Common extends Front_Controller{
 			}
 		}
 		if(count($msg)) $arr['msg']=$msg;
-		if($news) $arr['news']=$news;
+		if(isset($news)) $arr['news']=$news;
 		die(json_encode($arr));
 	}
 	/**

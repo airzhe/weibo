@@ -83,8 +83,7 @@
 						<a href="#">音乐</a>
 					</p>
 				</div>
-				<div class="weibo_list" <?php if (isset($weibo_offset)){echo "data-offset=$weibo_offset";} ?> >
-					<a href="" class="notes">有 1 条新微博，点击查看</a>
+				<div class="weibo_list" <?php if (isset($weibo_start)){echo "data-start=$weibo_start";} ?> >
 					<?php if (!isset($weibo_list)): ?>
 						<a href="" class="notes">您还没有发表过微博，赶快发表篇试试吧。</a>
 					<?php else: ?>
