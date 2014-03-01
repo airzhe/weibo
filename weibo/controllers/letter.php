@@ -58,6 +58,8 @@ Class letter extends Front_Controller{
 		$letter_list=$this->weibo->format($letter_list);
 		if(count($letter_list)) $this->data['letter_list']=$letter_list;
 		$this->data['user']=array('uid'=>$uid,'username'=>$username);
+		//私信消息提醒总数清空
+		set_msg($this->uid,2,TRUE);
 		$this->view('letter_list',$this->data);
 	}
 }

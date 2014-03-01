@@ -12,3 +12,4 @@ ERROR - 2014-03-01 13:10:22 --> Severity: Notice  --> Undefined index: style /ho
 ERROR - 2014-03-01 13:12:24 --> Severity: Notice  --> Undefined variable: arr /home/runner/www/work/weibo/weibo/controllers/common.php 28
 ERROR - 2014-03-01 13:14:29 --> Severity: Notice  --> Undefined variable: arr /home/runner/www/work/weibo/weibo/controllers/common.php 28
 ERROR - 2014-03-01 13:16:51 --> Severity: Notice  --> Undefined variable: arr /home/runner/www/work/weibo/weibo/controllers/common.php 29
+ERROR - 2014-03-01 13:57:31 --> 404 Page Not Found --> assets

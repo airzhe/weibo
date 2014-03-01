@@ -23,6 +23,8 @@ Class comment extends Front_Controller{
 		// p($comment);
 		$comment=$this->weibo->format($comment);
 		$this->data['comment']=$comment;
+		//评论消息提醒总数清空
+		set_msg($this->uid,1,TRUE);
 		$this->view('comment_inbox',$this->data);
 	}
 	public function outbox(){

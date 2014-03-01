@@ -14,7 +14,7 @@
 	<ul>
 		<li><a href="<?php echo site_url() ?>"><i class="W_ico20 ico_myhomepage"></i>首页<i class="W_new"></i></a></li>
 		<li>
-			<a href="<?php echo site_url('msg') ?>" data-type="msg"><i class="W_ico20 ico_message"></i><em class="W_new_count">2</em>消息</a>
+			<a href="<?php echo site_url('msg') ?>" data-type="msg"><i class="W_ico20 ico_message"></i><em class="W_new_count">0</em>消息</a>
 			<ul>
 				<li><a href="<?php echo site_url('at') ?>" data-type="at"><i class="W_ico20 ico_lev_at"></i>提到我的</a></li>
 				<li><a href="<?php echo site_url('comment/inbox') ?>" data-type="comment"><i class="W_ico20 ico_lev_comment"></i>评论</a></li>

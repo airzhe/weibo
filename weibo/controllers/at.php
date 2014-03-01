@@ -11,7 +11,8 @@ Class at extends Front_Controller{
 	public function index(){
 		//取得at微博数据
 		$this->select();
-
+		//@消息提醒总数清空
+		set_msg($this->uid,3,TRUE);
 		$this->view('at',$this->data);
 	}
 	// 获取at列表

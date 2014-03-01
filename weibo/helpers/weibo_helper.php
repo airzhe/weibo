@@ -75,9 +75,11 @@ function set_msg($uid,$type,$flush=FALSE){
 			$name='at';
 			break;
 	}
+	//清空消息条数，并返回。
 	if($flush){
 		$data=$CI->cache->get('usermsg_'.$uid);
 		$data[$name]=0;
+		$CI->cache->save('usermsg_'.$uid,$data,60*60*24*365*2);
 		return;
 	}
 	//如果有缓存数据直接操作缓存
