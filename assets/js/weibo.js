@@ -72,6 +72,19 @@ function loadImage(url,callback,obj) {
  		},5000)
  	})
  }
+ var media_expand='\
+ <div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">\
+ <p class="medis_func S_txt3">\
+ <a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>\
+ <a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>\
+ <a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>\
+ <a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>\
+ </p>\
+ <div>\
+ <img src="'+ site_url +'assets/images/blank.gif" alt="">\
+ </div>\
+ </div>\
+ ';
  /**
  * 格式化、组合微博
  * @return {[type]} [description]
@@ -116,25 +129,11 @@ function loadImage(url,callback,obj) {
 					pic=weibo['pic'][i];
 					item+='<li><a href="javascript:void(0)"><img src="'+ site_url + weibo['pic_path'] + pic['picture'] +'" alt=""></a></li>';
 				})
-			item+='</ul>\
-			</div>\
-			<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">\
-			<p class="medis_func S_txt3">\
-			<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>\
-			<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>\
-			<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>\
-			<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>\
-			</p>\
-			<div>\
-			<img src="'+ site_url +'assets/images/blank.gif" alt="">\
-			</div>\
-			</div>\
-			';
+			item+='</ul></div>'+ media_expand;
 		}
 		//转发
 		if(weibo['isturn']!=0){
 			var wid=weibo['isturn'];
-			console.log(wid);
 			item+='<div class="forwardContent">\
 			<div class="WB_arrow">\
 			<em class="S_line1_c">◆</em>\
@@ -161,20 +160,7 @@ function loadImage(url,callback,obj) {
   				 		pic=forward['pic'][i];
   				 		item+='<li><a href="javascript:void(0)"><img src="'+ site_url + forward['pic_path'] + pic['picture'] +'" alt=""></a></li>';
   				 	})
-					item+='</ul>\
-					</div>\
-					<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">\
-					<p class="medis_func S_txt3">\
-					<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>\
-					<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>\
-					<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>\
-					<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>\
-					</p>\
-					<div>\
-					<img src="'+ site_url +'assets/images/blank.gif" alt="">\
-					</div>\
-					</div>\
-					';
+					item+='</ul></div>'+ media_expand;
 				}
 				item+='<div class="func clearfix S_txt2">\
 				<div class="from left">\
@@ -417,7 +403,39 @@ $(document).ready(function(){
 				})
 			}
 			$('.weibo_list').find('.notes').remove();
-			$(weibo).prependTo('.weibo_list').fadeOut();
+			var item=weibo;
+			// 如果有图片发布
+			if(img.length>0){
+				var pic_node='';
+				// 得到相应数据
+				var img_count=img.length;
+				if(img_count==1){
+					var pic_path='images/content/thumbnail/';
+				}else{
+					var pic_path='images/content/square/';
+					if(img_count==2 || img_count==4){
+						var _class='lotspic_list inner_width';
+					}else{
+						var _class='lotspic_list';
+					}
+				}
+				// 组合变量
+				pic_node+='<div class="media_prev">\
+				<ul class="'+ _class +' clearfix">\
+				';
+				var picture;
+				for(var key in img){
+					//列表图
+					picture=img[key];
+					pic_node+='<li><a href="javascript:void(0)"><img src="'+ site_url + pic_path + picture +'" alt=""></a></li>';
+				}
+				pic_node +='</ul></div>'+ media_expand;
+				pic_node += media_expand;
+			}
+			$(item).prependTo('.weibo_list').fadeOut();
+			//插入图片节点
+			var _item=$('.item:hidden');
+			_item.find('.content').after(pic_node);
 			var content=$('#weibo_input_detail').val();
 			$.ajax({
 				type:'post',
@@ -431,7 +449,7 @@ $(document).ready(function(){
 						//微博总数+1
 						$('#my_weibo').html(+$('#my_weibo').html()+1);
 						//
-						var _item=$('.item:hidden');
+						
 						_item.data('id',data.id);
 						_item.find('.content').html(data.content);
 						_item.fadeIn().find('.time').html(data.time);
@@ -479,8 +497,12 @@ $(document).ready(function(){
 	})
 	//收起大图，显示小图
 	$('.weibo_list').on('click','.media_expand img,.media_expand .retract',function(){
-		$(this).removeClass().parents('.media_expand').hide()
-		.prev('.media_prev').show();
+		$(this).parents('.media_expand').hide().prev('.media_prev').show();
+		if($(this).is($('img'))) {
+			$(this).removeClass()
+		}else{
+			$(this).parents('.media_expand').find('img').removeClass()
+		}
 	})
 	//图片向左转
 	$('.weibo_list').on('click','.media_expand .turn_left',function(){
@@ -959,7 +981,11 @@ $(document).ready(function(){
 					success:function(data){
 						if(data.status==1){
 							// self.find('i').remove();
-							$(data.weibo_list).appendTo($('.weibo_list'));
+							var weibo_list=data.weibo_list;
+							var forward_list=data.forward_list;
+							var item=f_weibo(weibo_list,forward_list);
+
+							$(item).appendTo($('.weibo_list'));
 							// 每次读取5条
 							$('.weibo_list').data('start',start+5);
 							var _start=$('.weibo_list').data('start');

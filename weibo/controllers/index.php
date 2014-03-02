@@ -113,6 +113,7 @@ foreach ($weibo_list as $key => $value) {
 	}
 }
 $weibo_list=$this->weibo->format($weibo_list);
+// p($weibo_list);
 return $weibo_list;
 }
 private function _select_forward_list($weibo_list){

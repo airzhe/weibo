@@ -111,7 +111,6 @@
 												<?php foreach ($v['pic'] as $key => $_v): ?>
 													<li>
 														<a href="javascript:void(0)"><img src="<?php echo base_url().$v['pic_path'].$_v['picture'] ?>" alt=""></a>
-														<!-- <i class="ico_loading"></i> -->
 													</li>
 												<?php endforeach ?>
 											</ul>
