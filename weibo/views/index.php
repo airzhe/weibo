@@ -89,7 +89,7 @@
 					<?php else: ?>
 						<?php foreach ($weibo_list as $v): ?>
 							<div class="item clearfix" data-id="<?php echo $v['id'] ?>">
-								<?php if ($v['uid']==$this->session->userdata('uid')): ?>
+								<?php if(isset($v['me'])): ?>
 									<div class="WB_screen">
 										<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
 									</div>

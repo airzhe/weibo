@@ -61,7 +61,7 @@ function loadImage(url,callback,obj) {
  					if($('.weibo_list').find('.notes').length==1){
  						$('.weibo_list').find('.notes').children('span').text(news);
  					}else{
- 						var notes='<a href="javascript:void(0)" class="notes">有 <span>'+ news +'</span> 条新微博，点击查看</a>'
+ 						var notes='<a href="javascript:void(0)" action-type="load_news" class="notes">有 <span>'+ news +'</span> 条新微博，点击查看</a>'
  						$('.weibo_list').prepend($(notes));
  					}
  				}
@@ -72,7 +72,145 @@ function loadImage(url,callback,obj) {
  		},5000)
  	})
  }
- $(document).ready(function(){
+ /**
+ * 格式化、组合微博
+ * @return {[type]} [description]
+ */
+ function f_weibo(weibo_list,forward_list){
+ 	var item;
+ 	$(weibo_list).each(function(i){
+ 		var weibo=weibo_list[i];
+		//微博              
+		item+='<div class="item clearfix" data-id="'+ weibo['id'] +'">';
+		//是否可以删除
+		if(weibo['me']){
+			item+='<div class="WB_screen">\
+			<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>\
+			</div>\
+			';
+		}
+		item+='<div class="face">\
+		<a href="'+ weibo['domain'] +'"><img width="50" height="50" src="'+  weibo['avatar'] +'" alt=""></a>\
+		</div>\
+		<div class="detail">\
+		<div>\
+		<a class="name S_func1" href="'+ weibo['domain'] +'">'+ weibo['username'] +'</a>\
+		</div>\
+		<div class="content">\
+		'+ weibo['content'] +'\
+		</div>\
+		';
+		//微博配图
+		if(weibo['picture']){
+			if(weibo['pic_class']) var _class=weibo['pic_class'];
+			item+='<div class="media_prev">\
+			<ul class="'+ _class +' clearfix">\
+			';
+			var pic;
+			$(weibo['pic']).each(function(i){
+					//列表图
+					pic=weibo['pic'][i];
+					item+='<li><a href="javascript:void(0)"><img src="'+ site_url + weibo['pic_path'] + pic['picture'] +'" alt=""></a></li>';
+				})
+			item+='</ul>\
+			</div>\
+			<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">\
+			<p class="medis_func S_txt3">\
+			<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>\
+			<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>\
+			<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>\
+			<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>\
+			</p>\
+			<div>\
+			<img src="'+ site_url +'assets/images/blank.gif" alt="">\
+			</div>\
+			</div>\
+			';
+		}
+		//转发
+		if(weibo['isturn']!=0){
+			var wid=weibo['isturn'];
+			console.log(wid);
+			item+='<div class="forwardContent">\
+			<div class="WB_arrow">\
+			<em class="S_line1_c">◆</em>\
+			<span class="S_bg1_c">◆</span>\
+			</div>\
+			';
+			if(forward_list[wid]){
+				var forward=forward_list[wid];
+				item+='<div>\
+				<a class="name S_func1" href="'+ forward['domain'] +'">@'+ forward['username'] +'</a>\
+				</div>\
+				<div class="content">\
+				'+ forward['content'] +'\
+				</div>\
+				';
+				if(forward['picture']){
+					if(forward['pic_class']) var _class=forward['pic_class'];
+					item+='<div class="media_prev">\
+					<ul class="'+ _class +' clearfix">\
+					';
+					var pic;
+					$(forward['pic']).each(function(i){
+  				 		//列表图
+  				 		pic=forward['pic'][i];
+  				 		item+='<li><a href="javascript:void(0)"><img src="'+ site_url + forward['pic_path'] + pic['picture'] +'" alt=""></a></li>';
+  				 	})
+					item+='</ul>\
+					</div>\
+					<div class="media_expand SW_fun2 S_line1 S_bg1"  node-type="feed_list_media_disp">\
+					<p class="medis_func S_txt3">\
+					<a class="retract" href="javascript:void(0);"><em class="W_ico12 ico_retract"></em>收起</a><i class="W_vline">|</i>\
+					<a class="show_big" href="javascript:void(0);" target="_blank"><em class="W_ico12 ico_showbig"></em>查看大图</a><i class="W_vline">|</i>\
+					<a class="turn_left" href="javascript:void(0);" ><em class="W_ico12 ico_turnleft"></em>向左转</a><i class="W_vline">|</i>\
+					<a class="turn_right" href="javascript:void(0);"><em class="W_ico12 ico_turnright"></em>向右转</a>\
+					</p>\
+					<div>\
+					<img src="'+ site_url +'assets/images/blank.gif" alt="">\
+					</div>\
+					</div>\
+					';
+				}
+				item+='<div class="func clearfix S_txt2">\
+				<div class="from left">\
+				<a href="#" class="S_func2 time">'+ forward['time'] +'</a> 来自<a href="" class="S_func2">新浪微博</a> \
+				</div>\
+				<div class="handle right">\
+				<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>('+ forward['praise'] +')</a><i class="S_txt3">|</i><a href="'+ forward['url'] +'" class="S_func2">转发('+ forward['turn'] +')</a><i class="S_txt3">|</i><a href="'+ forward['url'] +'" class="S_func2">评论('+ forward['comment'] +')</a>\
+				</div>\
+				</div>\
+				';
+			}else{
+				item+='<div class="WB_deltxt">\
+				抱歉，此微博已被作者删除。查看帮助：<a href="">http://t.cn/zWSudZc</a>\
+				</div>';
+			}
+			item+='</div>';
+		}							
+		item+='<div class="func clearfix S_txt2">\
+		<div class="from left">\
+		<a href="#" class="S_link2 time">'+ weibo['time'] +'</a> 来自<a href="" class="S_link2">新浪微博</a> \
+		</div>\
+		<div class="handle right">\
+		<a href="javascript:void(0)" action-type="praise"><s class="W_ico20 icon_praised_b"></s>('+ weibo['praise'] +')</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="turn" >转发('+ weibo['turn'] +')</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="collect">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)" action-type="comment">评论('+ weibo['comment'] +')</a>\
+		</div>\
+		</div>\
+		<!-- 评论 -->\
+		<div class="comment S_line1 hide">\
+		<div class="WB_arrow">\
+		<em class="S_line1_c">◆</em>\
+		<span class="S_bg4_c">◆</span>\
+		</div>\
+		</div>\
+		<!-- 评论结束 -->\
+		</div>\
+		</div>\
+		';
+	})
+return item;
+}
+$(document).ready(function(){
 	/**	
 	* 定义共用变量
 	*/
@@ -1577,7 +1715,7 @@ function loadImage(url,callback,obj) {
 	 */
 	 $("[action-type='conversation']").on('click',function(e){
 	 	// 阻止冒泡
-		e.stopPropagation();
+	 	e.stopPropagation();
 
 	 	var self=$(this);
 	 	var data=self.attr('action-data');
@@ -1738,6 +1876,24 @@ function loadImage(url,callback,obj) {
     * 异步轮询取得用户消息通知
     */
     get_msg();
+    /**
+     * 主页点击加载最新微博客
+     */
+     $('.weibo_list').on('click',"[action-type='load_news']",function(){
+     	var self=$(this);
+     	var offset=self.find('span').text();
+     	$.post(site_url+'index/select',{offset:offset},function(data){
+     		if(data.status==1){
+     			var weibo_list=data.weibo_list;
+     			var forward_list=data.forward_list;
+     			var item=f_weibo(weibo_list,forward_list);
+				$('.weibo_list').find('.notes').remove();
+				$(item).prependTo($('.weibo_list'));
+			}
+		//
+	},'json')
+		//
+	})
 	/**
 	* 返回顶部
 	*/
