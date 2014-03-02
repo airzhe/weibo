@@ -42,4 +42,11 @@ class Common extends Front_Controller{
 		set_msg($this->uid,1,TRUE);
 		set_msg($this->uid,3,TRUE);
 	}
+	/**
+	 * 清空主页新微博提醒队列
+	 * @return [type] [description]
+	 */
+	public function flush_news(){
+		set_msg($this->uid,0,TRUE);
+	}
 }

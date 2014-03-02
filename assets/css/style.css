@@ -1666,6 +1666,19 @@ body.login .container,body.signup .container{
  	color:#333;
  	cursor:default;
  }
+ /*新微博分割线*/
+ .weibo_list .between_line{
+ 	margin:10px 0px 20px;
+ 	padding: 0 0 0 204px;
+ }
+ .weibo_list .between_line legend {
+ 	width: 160px;
+ 	text-align: center;
+ }
+
+ .weibo_list .weibo_new{
+ 	border-bottom: none !important;
+ }
  .weibo_list a.notes{
  	font-size:12px;
  	background: #fefded;

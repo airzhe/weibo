@@ -44,6 +44,7 @@ Class index extends Front_Controller{
 			$arr=array('status'=>1);
 			if(count($weibo_list)) 	 $arr['weibo_list']=$weibo_list;
 			if(count($forward_list)) $arr['forward_list']=$forward_list;
+			if($time=$this->input->post('time')) $arr['_time']=$this->weibo->f_time($time);
 			die(json_encode($arr));
 		}
 	}

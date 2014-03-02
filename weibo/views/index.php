@@ -83,7 +83,7 @@
 						<a href="#">音乐</a>
 					</p>
 				</div>
-				<div class="weibo_list" <?php if (isset($weibo_start)){echo "data-start=$weibo_start";} ?> >
+				<div class="weibo_list" <?php if (isset($weibo_start)){echo "data-start=$weibo_start";} ?> load-time=<?php echo time() ?> >
 					<?php if (!isset($weibo_list)): ?>
 						<a href="" class="notes">您还没有发表过微博，赶快发表篇试试吧。</a>
 					<?php else: ?>

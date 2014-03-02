@@ -78,10 +78,14 @@ function loadImage(url,callback,obj) {
  */
  function f_weibo(weibo_list,forward_list){
  	var item;
+ 	var count=weibo_list.length;
+ 	var new_weibo_class='';
  	$(weibo_list).each(function(i){
+ 		// 定义最后一个微博class
+ 		if(i==(count-1)) new_weibo_class=' weibo_new';
  		var weibo=weibo_list[i];
 		//微博              
-		item+='<div class="item clearfix" data-id="'+ weibo['id'] +'">';
+		item+='<div class="item clearfix'+ new_weibo_class +'" data-id="'+ weibo['id'] +'">';
 		//是否可以删除
 		if(weibo['me']){
 			item+='<div class="WB_screen">\
@@ -1877,19 +1881,33 @@ $(document).ready(function(){
     */
     get_msg();
     /**
-     * 主页点击加载最新微博客
+     * 主页点击加载最新微博
      */
      $('.weibo_list').on('click',"[action-type='load_news']",function(){
      	var self=$(this);
      	var offset=self.find('span').text();
-     	$.post(site_url+'index/select',{offset:offset},function(data){
+     	//页面加载时间，求时间差
+     	var time=$('.weibo_list').attr('load-time');
+     	$.post(site_url+'index/select',{offset:offset,time:time},function(data){
      		if(data.status==1){
+     			//清空消息提醒
+     			$.post(site_url+'common/flush_news');
+     			//取得返回数据
      			var weibo_list=data.weibo_list;
      			var forward_list=data.forward_list;
+     			var time=data._time;
      			var item=f_weibo(weibo_list,forward_list);
-				$('.weibo_list').find('.notes').remove();
-				$(item).prependTo($('.weibo_list'));
-			}
+     			//移除之前的时间线
+     			$('fieldset.between_line').remove();
+     			$('.weibo_new').removeClass('weibo_new');
+     			//时间分割线
+     			item+='<fieldset class="S_line2 between_line" node-type="feed_list_timeTip">\
+     			<legend class="S_txt3" node-type="feed_list_timeText">'+ time +'，你看到这里</legend>\
+     			</fieldset>\
+     			';
+     			$('.weibo_list').find('.notes').remove();
+     			$(item).prependTo($('.weibo_list'));
+     		}
 		//
 	},'json')
 		//
