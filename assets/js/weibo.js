@@ -140,7 +140,7 @@ function loadImage(url,callback,obj) {
 			<span class="S_bg1_c">◆</span>\
 			</div>\
 			';
-			if(forward_list[wid]){
+			if(forward_list && forward_list[wid]){
 				var forward=forward_list[wid];
 				item+='<div>\
 				<a class="name S_func1" href="'+ forward['domain'] +'">@'+ forward['username'] +'</a>\
@@ -242,7 +242,7 @@ $(document).ready(function(){
 	$('.global_nav  .msg,.global_nav .setting').hover(function(){
 		$('.gn_tips').hide();
 	},function(){
-		$('.gn_tips').show();
+		if(!$('.gn_tips').hasClass('hide'))	$('.gn_tips').show();
 	})
 	/**	
 	* 点击关闭新消息提示框

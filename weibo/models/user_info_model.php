@@ -109,4 +109,10 @@ class User_info_model extends MY_Model {
 		$this->db->like(array('username'=>$keyword)); 
 		return $this->db->get($this->_table_name)->result_array();
 	}
+	/**
+	 * 推荐用户
+	 */
+	public function recommend_user(){
+		return $this->db->select('uid,username,domain,fans')->order_by("fans", "desc")->limit(10)->get('user_info')->result_array();
+	}
 }

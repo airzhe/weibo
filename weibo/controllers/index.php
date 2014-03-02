@@ -24,7 +24,11 @@ Class index extends Front_Controller{
 		$this->select();
 		//载入分页配置文件
 		$this->_page();
+		//推荐用户
+		$recommend_user=$this->_recommend_user();
+		
 		$this->data['user']=$user;
+		$this->data['recommend_user']=$recommend_user;
 		$this->view('index',$this->data);
 	}
 	/**
@@ -80,7 +84,7 @@ Class index extends Front_Controller{
 			SELECT `follow` uid
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
-			) AS f ON w.uid = f.uid
+			) AS f ON w.uid = f.uid 
 OR w.uid =$this->uid
 JOIN `{$this->db->dbprefix}user_info` u
 ON w.uid=u.uid
@@ -206,12 +210,36 @@ $this->data['page']= $this->pagination->create_links();
 		$this->db->where(array('id'=>$id,'uid'=>$this->uid))->delete('weibo');
 
 		if($this->db->affected_rows()){
-			//删除微博配图记录
+			//删除微博配图文件
+			$picture=$this->db->select('picture')->get_where('picture',array('wid'=>$id))->result_array();
+			foreach ($picture as $v) {
+				$path='images/content/';
+				foreach (array('large','bmiddle','thumbnail','square') as $_v) {
+					@unlink($path.$_v.'/'.$v['picture']);
+				}
+			}
+			//删除微博配图数据库记录
 			$this->db->where(array('wid'=>$id))->delete('picture');
 			//用户微博数量 -1
 			$this->User_info_model->inc('weibo',$this->uid,'-1');
 			die(json_encode(array('status'=>1)));
 		}
 		die(json_encode(array('status'=>0)));
+	}
+	/**
+	 * 推荐用户
+	 */
+	private function _recommend_user(){
+		$user=$this->User_info_model->recommend_user();
+		foreach ($user as $k => $v) {
+			if($v['domain']){
+				$domain= $v['domain'];
+				$user[$k]['domain']=site_url($domain);
+			}else{
+				$uid= $v['uid'];
+				$user[$k]['domain']=site_url("u/$uid");
+			}
+		}
+		return $user;
 	}
 }

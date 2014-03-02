@@ -188,7 +188,7 @@
  $.extend({
  	'msg':function(obj){
  		var msg_tips=$('.gn_tips');
- 		msg_tips.show();
+ 		msg_tips.show().removeClass('hide');
  		for(var key in obj){
  			switch(key)
  			{

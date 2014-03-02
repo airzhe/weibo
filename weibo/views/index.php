@@ -35,12 +35,9 @@
 				<legend class="S_txt2"><a href="#">推荐用户</a></legend>
 			</fieldset>
 			<ul>
-				<li><a href="#">#汤唯遭遇电信诈骗#</a><span class="total S_txt2">2634万</span></li>
-				<li><a href="#">#当时忍住就好了#</a><span class="total S_txt2">328万</span></li>
-				<li><a href="#">#爱情公寓4#</a><span class="total S_txt2">285</span></li>
-				<li><a href="#">#孙悟空后人#</a><span class="total S_txt2">3万</span></li>
-				<li><a href="#">#来自星星的你#</a><span class="total S_txt2">854万</span></li>
-				<li><a href="#">#中国好歌曲#</a><span class="total S_txt2">677</span></li>
+				<?php foreach ($recommend_user as $v): ?>
+					<li><a href="<?php echo $v['domain'] ?>"><?php echo $v['username'] ?></a><span class="total S_txt2"><?php echo $v['fans'] ?> 粉丝</span></li>
+				<?php endforeach ?>
 			</ul>
 		</div>		
 	</div>
