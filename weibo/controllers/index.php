@@ -35,8 +35,7 @@ Class index extends Front_Controller{
 	 * 查询所有关注人的微博列表
 	 */
 	public function select(){
-		//========================测试代码============================
-		sleep(2);
+		
 		$weibo_list=$this->_select_weibo_list();
 		$forward_list=$this->_select_forward_list($weibo_list);
 		
@@ -62,6 +61,8 @@ Class index extends Front_Controller{
 		}else{
 			//加载好友新微博
 			if($offset=$this->input->post('offset')){
+				//========================测试代码============================
+				sleep(2);
 				$start=0;
 			}else{
 				//加载更多
@@ -87,9 +88,10 @@ Class index extends Front_Controller{
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
 			) AS f ON w.uid = f.uid 
+OR w.uid =$this->uid
 JOIN `{$this->db->dbprefix}user_info` u
 ON w.uid=u.uid
-OR w.uid =$this->uid
+GROUP BY w.id
 ORDER BY w.time DESC
 LIMIT $start,$offset";
 
@@ -184,15 +186,13 @@ private function _select_forward_list($weibo_list){
 	 */
 	private function _page(){
 		// 查询条件
-		$sql="SELECT COUNT( * ) 
+		$sql="SELECT COUNT( distinct w.id ) 
 		FROM `{$this->db->dbprefix}weibo` w
 		JOIN (
 			SELECT `follow` uid
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
 			) AS f ON w.uid = f.uid
-JOIN `{$this->db->dbprefix}user_info` u
-ON w.uid=u.uid
 OR w.uid =$this->uid";
 		//分页
 $_count=$this->db->query($sql)->row_array();

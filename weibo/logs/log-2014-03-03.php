@@ -31,3 +31,9 @@ ERROR - 2014-03-03 11:15:55 --> Severity: Warning  --> Invalid argument supplied
 ERROR - 2014-03-03 11:16:16 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/controllers/index.php 130
 ERROR - 2014-03-03 11:16:17 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/controllers/index.php 130
 ERROR - 2014-03-03 11:23:20 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 12:49:16 --> 404 Page Not Found --> assets
+ERROR - 2014-03-03 12:49:19 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 13:11:53 --> 404 Page Not Found --> assets
+ERROR - 2014-03-03 13:11:56 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 13:45:14 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 14:21:52 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17

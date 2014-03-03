@@ -1009,7 +1009,7 @@ $(document).ready(function(){
 	}
 	/**
 	* 
-	* 用户 页查看更多
+	* 用户页查看更多
 	*/
 	if($('.weibo_list').find('.item').length<5){
 		$('#page').show();
@@ -1392,7 +1392,7 @@ $(document).ready(function(){
 			return;
 		}
 		/**
-		* 显示微博列表
+		* 显示评论列表
 		*/
 		comment.show().append('<div class="W_loading"><i class="ico_loading"></i><span>正在加载，请稍候...</span></div>');
 		var id=self.parents('.item').data('id');
@@ -1871,7 +1871,7 @@ $(document).ready(function(){
 		})
 	 })
 	/**
-	 * 单条微博页面js
+	 * 单条微博页面js触发click
 	 */
 	 if($('body.single_weibo').length==1){
 	 	$('.core_nav').find('li.current').removeClass();
