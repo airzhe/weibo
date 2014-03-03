@@ -46,8 +46,7 @@ Class Avatar extends Front_Controller{
 				$this->zoom($avatar,300,300);
 				die($avatar);
 			}else{
-				echo $this->upload->display_errors();
-				die;
+				die('error');
 			}
 		}
 	}

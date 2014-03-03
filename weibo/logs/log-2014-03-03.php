@@ -176,3 +176,13 @@ ERROR - 2014-03-03 16:31:41 --> Severity: Notice  --> Undefined index: at /home/
 ERROR - 2014-03-03 16:32:46 --> Severity: Notice  --> Undefined index: comment /home/runner/www/work/weibo/weibo/controllers/common.php 23
 ERROR - 2014-03-03 16:32:46 --> Severity: Notice  --> Undefined index: letter /home/runner/www/work/weibo/weibo/controllers/common.php 26
 ERROR - 2014-03-03 16:32:46 --> Severity: Notice  --> Undefined index: at /home/runner/www/work/weibo/weibo/controllers/common.php 29
+ERROR - 2014-03-03 17:54:27 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 17:54:43 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/controllers/praise.php 27
+ERROR - 2014-03-03 17:54:54 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/runner/www/work/weibo/weibo/controllers/praise.php 27
+ERROR - 2014-03-03 17:55:18 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 17:55:48 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 17:58:05 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 18:03:46 --> The image you are attempting to upload exceedes the maximum height or width.
+ERROR - 2014-03-03 18:03:47 --> 404 Page Not Found --> http:
+ERROR - 2014-03-03 18:04:08 --> The image you are attempting to upload exceedes the maximum height or width.
+ERROR - 2014-03-03 18:06:11 --> The image you are attempting to upload exceedes the maximum height or width.

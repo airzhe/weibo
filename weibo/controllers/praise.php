@@ -1,9 +1,13 @@
 <?php 
+/**
+ * 收到的赞类
+ */
 Class praise extends Front_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->data['title'] = '收到的赞';
 		$this->load->library('weibo');
+		$this->uid=$this->session->userdata('uid');
 	}
 	public function index(){
 		//收到的赞
@@ -12,7 +16,7 @@ Class praise extends Front_Controller{
 		JOIN (
 			SELECT id, content
 			FROM {$this->db->dbprefix}weibo
-			WHERE uid =10000
+			WHERE uid =$this->uid
 		) AS weibo ON p.wid = weibo.id
 		JOIN {$this->db->dbprefix}user_info AS u ON p.uid = u.uid
 		ORDER BY p.time DESC 

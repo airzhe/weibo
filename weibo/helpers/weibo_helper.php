@@ -29,7 +29,7 @@ die;
  * @param string $msg 提示信息
  * @param string $url 要跳转的地址，默认浏览器后退。
  */
-function error($msg,$url=null){
+function error($msg,$url=NULL){
 	$url=$url?"location.href='".site_url($url)."'":"window.history.go(-1)";
 	$html=<<<str
 	{$msg}
@@ -78,7 +78,6 @@ function set_msg($uid,$type,$flush=FALSE){
 		$name='at';
 		break;
 	}
-	
 	
 	if($CI->cache->get('usermsg_'.$uid)){
 		//如果有缓存数据直接操作缓存

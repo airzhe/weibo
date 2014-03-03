@@ -1615,7 +1615,7 @@ $(document).ready(function(){
 					//转发数+1
 					var original_weibo=$('[data-id='+isturn+']');
 					var forward_count=original_weibo.find("[action-type='turn']");
-					num=/\d+/.exec(forward_count.text());
+					var num=/\d+/.exec(forward_count.text());
 					forward_count.text('转发('+(parseInt(num)+1)+')');
 
 					//转发的微博内容
@@ -1702,14 +1702,22 @@ $(document).ready(function(){
 			//点赞
 			$.post(site_url+'single_weibo/praise',{id:id},function(data){
 				if(data.status==1){
-					self.addClass('active').find('s').addClass('icon_praised_bc');
+					self.addClass('active');
+					//赞数+1
+					var num=/\d+/.exec(self.text());
+					self.html('<s class="W_ico20 icon_praised_b icon_praised_bc"></s>('+(parseInt(num)+1)+')');
+				}else if(data.status==0){
+					return;
 				}
 			},'json')
 		}else{
 			//取消赞
 			$.post(site_url+'single_weibo/del_praise',{id:id},function(data){
 				if(data.status==1){
-					self.removeClass().find('s').removeClass('icon_praised_bc');
+					self.removeClass();
+					//赞数-1
+					var num=/\d+/.exec(self.text());
+					self.html('<s class="W_ico20 icon_praised_b"></s>('+(parseInt(num)-1)+')');
 				}
 			},'json')
 		}

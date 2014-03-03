@@ -14,7 +14,7 @@ Class single_weibo extends Front_Controller{
 		// 加密类
 		$this->load->library('encry');
 	}
-	public function index(){
+	private function index(){
 		die('此功能尚未开放...');
 		$this->view('single_weibo',$this->data);
 	}
@@ -91,7 +91,6 @@ Class single_weibo extends Front_Controller{
 					$me=TRUE;
 				}
 			}
-
 		}
 		// 微博表微博评论总数-1
 		if($me){
@@ -143,11 +142,14 @@ Class single_weibo extends Front_Controller{
 		$data=array('uid'=>$this->uid,'wid'=>$wid);
 		if(!$this->db->where($data)->from('praise')->count_all_results()){
 			$data+=array('time'=>time());
+			//赞表添加记录
 			if($this->Praise_model->add($data)){
+				//微博表添加记录
+				$this->Weibo_model->inc('praise',$wid);
 				die(json_encode(array('status'=>1)));
 			}
 		}else{
-			die(json_encode(array('status'=>1)));
+			die(json_encode(array('status'=>0)));
 		}
 	}
 	/**
@@ -156,8 +158,11 @@ Class single_weibo extends Front_Controller{
 	public function del_praise(){
 		$wid=$this->input->post('id');
 		$arr=array('uid'=>$this->uid,'wid'=>$wid);
+		//赞表删除记录
 		$this->db->where($arr)->delete('praise');
 		if($this->db->affected_rows()){
+			//微博表删除记录
+			$this->Weibo_model->inc('praise',$wid,'-1');
 			die(json_encode(array('status'=>1)));
 		}
 	}
