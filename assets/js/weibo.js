@@ -1924,7 +1924,6 @@ $(document).ready(function(){
      			$('.weibo_list').children('.notes').remove();
      			$('.weibo_list').children('.W_loading').remove();
      			$('.left_nav').find('.W_new').hide();
-     			console.log('run...');
      			$(item).prependTo($('.weibo_list'));
      		}
 		//
