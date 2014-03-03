@@ -22,20 +22,20 @@
 						<div class="avatar clearfix">
 							<div class="left">
 								<div class="img_180 ">
-									<img id="img_180" src="<?php echo $avatar['big'] ?>" alt="" width="180" height="180">
+									<img id="img_180" src="<?php echo $avatar ?>" alt="" width="180" height="180">
 								</div>
 								<p>大尺寸头像,180*180像素</p>
 							</div>
 							<div class="right">
 								<div>
 									<div class="img_50">
-										<img id="img_50" src="<?php echo $avatar['big'] ?>" alt="" width="50" height="50">
+										<img id="img_50" src="<?php echo $avatar ?>" alt="" width="50" height="50">
 									</div>
 									<p>中尺寸头像</p><p>50*50像素</p><p>（自动生成）</p>
 								</div>
 								<div>
 									<div class="img_30">
-										<img id="img_30" src="<?php echo $avatar['big'] ?>" alt="" width="30" height="30">
+										<img id="img_30" src="<?php echo $avatar ?>" alt="" width="30" height="30">
 									</div>
 									<p>小尺寸头像</p><p>30*30像素</p><p>（自动生成）</p>
 								</div>

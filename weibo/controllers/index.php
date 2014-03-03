@@ -35,6 +35,8 @@ Class index extends Front_Controller{
 	 * 查询所有关注人的微博列表
 	 */
 	public function select(){
+		//========================测试代码============================
+		sleep(2);
 		$weibo_list=$this->_select_weibo_list();
 		$forward_list=$this->_select_forward_list($weibo_list);
 		
@@ -85,12 +87,14 @@ Class index extends Front_Controller{
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
 			) AS f ON w.uid = f.uid 
-OR w.uid =$this->uid
 JOIN `{$this->db->dbprefix}user_info` u
 ON w.uid=u.uid
+OR w.uid =$this->uid
 ORDER BY w.time DESC
 LIMIT $start,$offset";
+
 $weibo_list=$this->db->query($sql)->result_array();
+// echo $this->db->last_query();
 		//如果为空则返回
 if(!count($weibo_list)) return;
 		//获得微博配图
@@ -121,6 +125,7 @@ $weibo_list=$this->weibo->format($weibo_list);
 return $weibo_list;
 }
 private function _select_forward_list($weibo_list){
+	if(empty($weibo_list)) return;
 		//转发的原微博
 	$forward_arr=array();
 	foreach ($weibo_list as $k => $v) {
@@ -186,6 +191,8 @@ private function _select_forward_list($weibo_list){
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
 			) AS f ON w.uid = f.uid
+JOIN `{$this->db->dbprefix}user_info` u
+ON w.uid=u.uid
 OR w.uid =$this->uid";
 		//分页
 $_count=$this->db->query($sql)->row_array();

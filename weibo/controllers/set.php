@@ -160,7 +160,7 @@ Class set extends Front_Controller{
 		$this->data['title'] = '头像设置';
 		$this->data['body_class'] = 'avatar';
 		$user=$this->User_info_model->get_detail_info($this->uid);
-		$this->data['avatar']=$user['avatar'];
+		$this->data['avatar']=$user['b_avatar'];
 		$this->view('set/avatar',$this->data);
 	}
 	/**

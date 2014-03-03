@@ -67,32 +67,14 @@ Class u extends Front_Controller{
 			if(count($weibo_list))  $this->data['weibo_list']=$weibo_list;
 			if(count($forward_list)) $this->data['forward_list']=$forward_list;
 		}else{
-			//=============================测试代码===============================
-			sleep(1);
-			foreach ($weibo_list as $v) {
-				$_weibo=<<<str
-				<div class="item clearfix" data-id="{$v['id']}">
-					<div class="WB_screen">
-						<a title="删除此条微博" class="W_ico12 icon_close" action-type="weibo_delete" href="javascript:;"></a>
-					</div>
-					<div class="detail">
-						<div class="content">
-							{$v['content']}
-						</div>
-						<div class="func clearfix S_txt2">
-							<div class="from left">
-								<a href="#" class="S_link2 time">{$v['time']}</a> 来自<a href="" class="S_link2">新浪微博</a> 
-							</div>
-							<div class="handle right">
-								<a href="javascript:void(0)"><s class="W_ico20 icon_praised_b"></s>({$v['praise']})</a><i class="S_txt3">|</i><a href="javascript:void(0)">转发({$v['turn']})</a><i class="S_txt3">|</i><a href="javascript:void(0)">收藏</a><i class="S_txt3">|</i><a href="javascript:void(0)">评论({$v['collect']})</a>
-							</div>
-						</div>
-					</div>
-				</div>
-str;
-				$weibo[]=$_weibo;
+			//加载更多
+			if(count($weibo_list)) {
+				$arr=array('status'=>1);
+				$arr['weibo_list']=$weibo_list;
+				if(count($forward_list)) $arr['forward_list']=$forward_list;
+			}else{
+				$arr=array('status'=>0);
 			}
-			$arr=array('status'=>1,'count'=>count($weibo),'weibo_list'=>implode('', $weibo));
 			die(json_encode($arr));
 		}
 	}
@@ -114,6 +96,10 @@ str;
 
 		//读取微博配图
 		foreach ($weibo_list as $key => $value) {
+			//标记微博客是否是我的微博
+			if($value['uid']==$this->session->userdata('uid')){
+				$weibo_list[$key]['me']=TRUE;
+			}
 			//格式化微博内容和发布时间
 			$weibo_list[$key]['content']=$this->weibo->f_content($value['content']);
 			$weibo_list[$key]['time']=$this->weibo->f_time($value['time']);

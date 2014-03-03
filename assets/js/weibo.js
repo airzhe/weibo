@@ -89,7 +89,7 @@ function loadImage(url,callback,obj) {
  * 格式化、组合微博
  * @return {[type]} [description]
  */
- function f_weibo(weibo_list,forward_list){
+ function f_weibo(weibo_list,forward_list,source){
  	var item;
  	var count=weibo_list.length;
  	var new_weibo_class='';
@@ -106,17 +106,22 @@ function loadImage(url,callback,obj) {
 			</div>\
 			';
 		}
-		item+='<div class="face">\
-		<a href="'+ weibo['domain'] +'"><img width="50" height="50" src="'+  weibo['avatar'] +'" alt=""></a>\
-		</div>\
-		<div class="detail">\
-		<div>\
-		<a class="name S_func1" href="'+ weibo['domain'] +'">'+ weibo['username'] +'</a>\
-		</div>\
-		<div class="content">\
-		'+ weibo['content'] +'\
-		</div>\
-		';
+		if (source!='home') {
+			//用户个人主页不显示头像
+			item+='<div class="face">\
+			<a href="'+ weibo['domain'] +'"><img width="50" height="50" src="'+  weibo['avatar'] +'" alt=""></a>\
+			</div>\
+			';
+		};
+		item+='<div class="detail">';
+		if (source!='home') {
+			//用户个人主页不显示昵称
+			item+='<div>\
+			<a class="name S_func1" href="'+ weibo['domain'] +'">'+ weibo['username'] +'</a>\
+			</div>\
+			';
+		}
+		item+='<div class="content">'+ weibo['content'] +'</div>';
 		//微博配图
 		if(weibo['picture']){
 			if(weibo['pic_class']) var _class=weibo['pic_class'];
@@ -216,7 +221,7 @@ $(document).ready(function(){
 	}
 	user.domain=$('.global_nav').find('.username').children('a').attr('href');
 
-	//weibo
+	//首页发新weibo
 	var weibo='\
 	<div class="item clearfix hide" data-id> \
 	<div class="WB_screen">\
@@ -248,7 +253,7 @@ $(document).ready(function(){
 	* 点击关闭新消息提示框
 	*/
 	$('.gn_tips').find('.icon_close').on('click',function(){
-		$('.gn_tips').find('li').andSelf().hide();
+		$('.gn_tips').addClass('hide').find('li').andSelf().hide();
 		$.post(site_url+'common/flush_msg');
 	})
 	/**	
@@ -920,20 +925,16 @@ $(document).ready(function(){
 				//执行删除操作
 				var item=self.parents('.item');
 				var id=item.data('id');
-				$.ajax({
-					type:'post',
-					url:site_url+'index/delete',
-					dataType:'json',
-					data:{id:id},
-					success:function(data){
-						if(data.status==1){
-							item.animate({height:0,opacity:0},600,function(){
-								item.remove();
-							});
-							$('#my_weibo').html(+$('#my_weibo').html()-1);
-						}
+				$.post(site_url+'index/delete',{id:id},function(data){
+					if(data.status==1){
+						item.animate({height:0,opacity:0},600,function(){
+							item.remove();
+						});
+						$('#my_weibo').html(+$('#my_weibo').html()-1);
+						var start = $('.weibo_list').data('start');
+						$('.weibo_list').data('start',start-1);
 					}
-				})
+				},'json')
 			}
 		});
 	})
@@ -973,13 +974,8 @@ $(document).ready(function(){
 				// var self=$(this);
 				// self.prepend('<i class="ico_loading"></i>');
 				var start=$('.weibo_list').data('start');
-				$.ajax({
-					type:'post',
-					url:site_url+'index/select',
-					dataType:'json',
-					data:{start:start},
-					success:function(data){
-						if(data.status==1){
+				$.post(site_url+'index/select',{start:start},function(data){
+					if(data.status==1){
 							// self.find('i').remove();
 							var weibo_list=data.weibo_list;
 							var forward_list=data.forward_list;
@@ -990,23 +986,18 @@ $(document).ready(function(){
 							$('.weibo_list').data('start',start+5);
 							var _start=$('.weibo_list').data('start');
 							// 每页读取20条
-							if(data.count<5 || _start%20==0){
-								// $('.PRF_feed_list_more').remove();
+							if(weibo_list.length<5 || _start%20==0){
 								$("[node-type='lazyload']").remove();
 								$('#page').show();
 							}else{
 								// 恢复scroll事件
 								$(window).on("scroll",lazyload);
 							}
+						}else{
+							$("[node-type='lazyload']").remove();
+							$('#page').show();
 						}
-					},
-					//返回为空或为
-					error:function(){
-						//$('.PRF_feed_list_more').remove();
-						$("[node-type='lazyload']").remove();
-						$('#page').show();
-					}
-				})
+					},'json')
 			}
 		})
 		//如果微博数少于10则解除绑定事件
@@ -1030,32 +1021,29 @@ $(document).ready(function(){
 		self.prepend('<i class="ico_loading"></i>');
 		var start=$('.weibo_list').data('start');
 		var uid=$('.user_info').attr('uid');
-		$.ajax({
-			type:'post',
-			url:site_url+'u/index/'+uid,
-			dataType:'json',
-			data:{start:start},
-			success:function(data){
-				if(data.status==1){
+		$.post(site_url+'u/index/'+uid,{start:start},function(data){
+			if(data.status==1){
+					//移除loading
 					self.find('i').remove();
-					$(data.weibo_list).appendTo($('.weibo_list'));
+					var weibo_list=data.weibo_list;
+					var forward_list=data.forward_list;
+					var item=f_weibo(weibo_list,forward_list,'home');
+
+					$(item).appendTo($('.weibo_list'));
 					// 每次读取5条
 					$('.weibo_list').data('start',start+5);
 					var _start=$('.weibo_list').data('start');
 					// console.log(_start,data.count);
 					// 每页读取20条
-					if(data.count<5 || _start%20==0){
+					if(weibo_list.length<5 || _start%20==0){
 						$('.PRF_feed_list_more').remove();
 						$('#page').show();
 					}
+				}else{
+					$('.PRF_feed_list_more').remove();
+					$('#page').show();
 				}
-			},
-			//返回为空或为
-			error:function(){
-				$('.PRF_feed_list_more').remove();
-				$('#page').show();
-			}
-		})
+			},'json')
 	})
 	/**
 	* 修改个人信息
@@ -1899,7 +1887,6 @@ $(document).ready(function(){
 	  	window.location.href = url;
 	  })
 	  $('.send_private_msgbox textarea').on('focus',function(){
-
 	  	$(this).css('height',70).next('p').show();
 	  })
   	/**
@@ -1912,6 +1899,8 @@ $(document).ready(function(){
      $('.weibo_list').on('click',"[action-type='load_news']",function(){
      	var self=$(this);
      	var offset=self.find('span').text();
+     	//loading
+     	self.replaceWith('<div class="W_loading"><i class="ico_loading"></i><span>正在加载，请稍候...</span></div>');
      	//页面加载时间，求时间差
      	var time=$('.weibo_list').attr('load-time');
      	$.post(site_url+'index/select',{offset:offset,time:time},function(data){
@@ -1931,7 +1920,11 @@ $(document).ready(function(){
      			<legend class="S_txt3" node-type="feed_list_timeText">'+ time +'，你看到这里</legend>\
      			</fieldset>\
      			';
-     			$('.weibo_list').find('.notes').remove();
+     			//隐藏提示
+     			$('.weibo_list').children('.notes').remove();
+     			$('.weibo_list').children('.W_loading').remove();
+     			$('.global_nav').find('.W_new').hide();
+
      			$(item).prependTo($('.weibo_list'));
      		}
 		//
