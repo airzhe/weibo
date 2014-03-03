@@ -69,7 +69,7 @@ function loadImage(url,callback,obj) {
  		}
  		setTimeout(function(){
  			get_msg();
- 		},5000)
+ 		},10000)
  	})
  }
  var media_expand='\
@@ -1923,8 +1923,8 @@ $(document).ready(function(){
      			//隐藏提示
      			$('.weibo_list').children('.notes').remove();
      			$('.weibo_list').children('.W_loading').remove();
-     			$('.global_nav').find('.W_new').hide();
-
+     			$('.left_nav').find('.W_new').hide();
+     			console.log('run...');
      			$(item).prependTo($('.weibo_list'));
      		}
 		//

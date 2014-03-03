@@ -20,13 +20,13 @@ class Common extends Front_Controller{
 			if($data['news']){
 				$news=$data['news'];
 			}
-			if($data['comment']){
+			if(isset($data['comment']) && $data['comment']){
 				$msg+=array('1'=>$data['comment']);
 			}
-			if($data['letter']){
+			if(isset($data['letter']) && $data['letter']){
 				$msg+=array('2'=>$data['letter']);
 			}
-			if($data['at']){
+			if(isset($data['at']) && $data['at']){
 				$msg+=array('3'=>$data['at']);
 			}
 		}
