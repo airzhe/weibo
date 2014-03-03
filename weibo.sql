@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 03 月 03 日 14:24
+-- 生成日期: 2014 年 03 月 04 日 00:05
 -- 服务器版本: 5.5.35
 -- PHP 版本: 5.3.10-1ubuntu3.9
 
@@ -33,13 +33,14 @@ CREATE TABLE IF NOT EXISTS `t_at` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `wid` (`wid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='at表' AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='at表' AUTO_INCREMENT=20 ;
 
 --
 -- 转存表中的数据 `t_at`
 --
 
 INSERT INTO `t_at` (`id`, `uid`, `wid`) VALUES
+(18, 10000, 376),
 (2, 10001, 172),
 (3, 10005, 172),
 (5, 10001, 173),
@@ -63,13 +64,14 @@ CREATE TABLE IF NOT EXISTS `t_collect` (
   PRIMARY KEY (`id`),
   KEY `wid` (`wid`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='收藏表' AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='收藏表' AUTO_INCREMENT=21 ;
 
 --
 -- 转存表中的数据 `t_collect`
 --
 
 INSERT INTO `t_collect` (`id`, `uid`, `time`, `wid`) VALUES
+(20, 10007, 1393856909, 346),
 (15, 10000, 1393576693, 177);
 
 -- --------------------------------------------------------
@@ -88,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `t_comment` (
   PRIMARY KEY (`id`),
   KEY `wid` (`wid`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='评论表' AUTO_INCREMENT=152 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='评论表' AUTO_INCREMENT=168 ;
 
 --
 -- 转存表中的数据 `t_comment`
@@ -118,7 +120,9 @@ INSERT INTO `t_comment` (`id`, `uid`, `content`, `time`, `isreplay`, `wid`) VALU
 (98, 10000, '虚荣，别自以为是；放下你容易被诱惑的眼睛，听从自己的内心；放下你的自私，学会懂得感恩；虚荣，别自以为是；放下你容易被诱惑的眼睛，听从自己的内心；放下你的自私，学会懂得感恩；', 1393561471, 0, 132),
 (148, 10000, '【外拍人像时11点技巧】1.不要使用自动对焦；2.把焦点放在眼睛；3.全开光圈，小景深；4.用50mm或以上的镜头拍摄；5.拍摄raw文件；6.带一张灰纸记录进程；7.尽量避免直射阳光；8.多云时是拍摄的最佳时机；', 1393825361, 0, 178),
 (149, 10001, '回复@runner:很好。', 1393825376, 148, 178),
-(150, 10000, '摄影师Marcus Yam是个多重曝光高手，他每一次按快门都是经过深思熟虑，谨慎安排每一个画面。他的一张作品最多花费将近400小时来创作。', 1393825395, 0, 178),
+(156, 10000, '你好', 1393832535, 0, 375),
+(157, 10000, '[马到成功]', 1393832564, 0, 375),
+(158, 10001, '[笑哈哈]', 1393832847, 0, 187),
 (144, 10000, '6.绝大部分时间我们都以拍摄清晰的图像为最终目的，有时候虚焦能产生另外一种情绪和感觉；7.加入人物动感；8.拍摄有情绪的照片；9.突出照片人物的趣味点。', 1393825220, 0, 178),
 (140, 10000, '【POSE合集】从儿童，到男人！从女人，到婚礼！从群体照，到单人照！pose大汇集啦！', 1393825175, 0, 178),
 (141, 10000, '【寻找照片中的“白” 认识白平衡】解决相片颜色不对，找到照片中的“白”，认识白平衡。', 1393825193, 0, 178),
@@ -134,7 +138,17 @@ INSERT INTO `t_comment` (`id`, `uid`, `content`, `time`, `isreplay`, `wid`) VALU
 (145, 10000, '你必须掌握的12条经典摄影技巧法则】提升摄影技术是经验的积累，借鉴前人的知识和技巧能够快速提高我们的拍摄照片水平。这些简', 1393825235, 0, 178),
 (146, 10000, '我们生来就是孤独。当梵高先生遇上移轴摄影。', 1393825242, 0, 178),
 (147, 10000, '【"侧面人像"摄影技法】是不是更喜欢看人物的侧面轮廓，有种性感而神秘的赶脚吧~ 其实大片中的侧面特写并不是很难~', 1393825248, 0, 178),
-(151, 10000, '是制造戏剧张力的有力因素；4.让你的照片更加简单；5.尝试不同的景深；6.快门速度是魔法棒让你的照片与众不同；', 1393825420, 0, 178);
+(159, 10000, '[疑问]', 1393836948, 0, 375),
+(160, 10000, '很漂亮的图片。[moc转发]', 1393855304, 0, 387),
+(161, 10000, '很漂亮的图', 1393855618, 0, 387),
+(155, 10006, '回复@runner:你好[太开心]', 1393832396, 154, 375),
+(154, 10000, 'df ', 1393832371, 0, 375),
+(162, 10007, '回复@runner:[ali哇]', 1393855771, 161, 387),
+(163, 10007, '回复@runner:呵呵', 1393856217, 160, 387),
+(164, 10007, '回复@runner:谢谢评价。', 1393856513, 161, 387),
+(165, 10000, '[马到成功]', 1393856557, 0, 388),
+(166, 10007, '[笑哈哈]', 1393856636, 0, 178),
+(167, 10007, '[ali哇]', 1393856642, 0, 178);
 
 -- --------------------------------------------------------
 
@@ -158,8 +172,11 @@ CREATE TABLE IF NOT EXISTS `t_follow` (
 --
 
 INSERT INTO `t_follow` (`follow`, `fans`, `time`, `source`, `gid`) VALUES
-(10000, 10001, 1393585682, 'fans', 0),
-(10001, 10000, 1393674737, 'search', 0);
+(10000, 10001, 1393833113, '0', 0),
+(10000, 10006, 1393831092, '0', 0),
+(10001, 10006, 1393831107, 'search', 0),
+(10001, 10000, 1393674737, 'search', 0),
+(10006, 10000, 1393831783, 'search', 0);
 
 -- --------------------------------------------------------
 
@@ -189,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `t_letter` (
   `uid` int(10) unsigned NOT NULL COMMENT '收件人',
   PRIMARY KEY (`id`,`uid`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='私信表' AUTO_INCREMENT=23 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='私信表' AUTO_INCREMENT=30 ;
 
 --
 -- 转存表中的数据 `t_letter`
@@ -217,7 +234,14 @@ INSERT INTO `t_letter` (`id`, `from`, `content`, `time`, `uid`) VALUES
 (19, 10001, '[青啤鸿运当头][lt火车票]', 1393676671, 10000),
 (20, 10000, 'ccc', 1393810356, 10004),
 (21, 10001, '你好', 1393810464, 10000),
-(22, 10001, '[求红包]', 1393810644, 10000);
+(22, 10001, '[求红包]', 1393810644, 10000),
+(23, 10001, '这是一条私信[moc转发]', 1393832893, 10000),
+(24, 10000, '我给你 的回复。', 1393832999, 10001),
+(25, 10000, '你好。', 1393836489, 10006),
+(26, 10006, '好啊。', 1393836506, 10000),
+(27, 10000, '好什么？', 1393836731, 10006),
+(28, 10007, '[嘻嘻]这是我给你发的私信息。[给力]', 1393857898, 10000),
+(29, 10000, '你好。[moc转发]', 1393858232, 10007);
 
 -- --------------------------------------------------------
 
@@ -231,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `t_picture` (
   `wid` int(10) unsigned NOT NULL COMMENT '所属微博id',
   PRIMARY KEY (`id`),
   KEY `wid` (`wid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='微博配图' AUTO_INCREMENT=93 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='微博配图' AUTO_INCREMENT=123 ;
 
 --
 -- 转存表中的数据 `t_picture`
@@ -266,16 +290,19 @@ CREATE TABLE IF NOT EXISTS `t_praise` (
   PRIMARY KEY (`id`),
   KEY `wid` (`wid`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='赞 表' AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='赞 表' AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `t_praise`
 --
 
 INSERT INTO `t_praise` (`id`, `uid`, `time`, `wid`) VALUES
-(12, 10001, 1393429257, 159),
-(9, 10000, 1393169244, 137),
-(18, 10000, 1393460920, 173);
+(3, 10000, 1393840110, 379),
+(8, 10000, 1393840203, 378),
+(11, 10000, 1393840522, 375),
+(13, 10001, 1393840701, 375),
+(14, 10000, 1393855170, 388),
+(15, 10000, 1393855267, 387);
 
 -- --------------------------------------------------------
 
@@ -292,7 +319,7 @@ CREATE TABLE IF NOT EXISTS `t_routes` (
   UNIQUE KEY `uid` (`uid`),
   UNIQUE KEY `slug` (`slug`),
   UNIQUE KEY `route` (`route`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='路由表' AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='路由表' AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `t_routes`
@@ -300,7 +327,9 @@ CREATE TABLE IF NOT EXISTS `t_routes` (
 
 INSERT INTO `t_routes` (`id`, `slug`, `route`, `uid`) VALUES
 (1, 'runner', 'u/index/10000', 10000),
-(2, 'purple', 'u/index/10001', 10001);
+(2, 'purple', 'u/index/10001', 10001),
+(3, 'houdunwang', 'u/index/10006', 10006),
+(4, 'houdun', 'u/index/10007', 10007);
 
 -- --------------------------------------------------------
 
@@ -323,9 +352,8 @@ CREATE TABLE IF NOT EXISTS `t_sessions` (
 --
 
 INSERT INTO `t_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('16342fdc35b03cc730184c51d3273c2c', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1393823069, 'a:7:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10001";s:7:"account";s:15:"air_zhe@163.com";s:8:"username";s:6:"purple";s:3:"sex";s:3:"女";s:6:"avatar";s:24:"201402/1392728140354.jpg";s:8:"loggedin";b:1;}'),
-('a8224ab5c3a1a1589936ad5f442780e1', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1393827708, 'a:7:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10000";s:7:"account";s:16:"532499602@qq.com";s:8:"username";s:6:"runner";s:3:"sex";s:3:"男";s:6:"avatar";s:24:"201402/1393256000690.jpg";s:8:"loggedin";b:1;}'),
-('ea46fc6b2ce6866733198526aa9ff4f0', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1393827632, 'a:7:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10004";s:7:"account";s:11:"run@run.com";s:8:"username";s:6:"敏敏";s:3:"sex";s:3:"女";s:6:"avatar";s:0:"";s:8:"loggedin";b:1;}');
+('e21875597dc5d465a8b9b4151b692bc4', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1393862217, 'a:7:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10006";s:7:"account";s:18:"houdunwang@163.com";s:8:"username";s:15:"后盾网学员";s:3:"sex";s:3:"女";s:6:"avatar";s:24:"201403/1393862284769.jpg";s:8:"loggedin";b:1;}'),
+('f927f4f3e8bf489cf71027d13b9ff42e', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1393862611, 'a:7:{s:9:"user_data";s:0:"";s:3:"uid";s:5:"10007";s:7:"account";s:14:"houdun@163.com";s:8:"username";s:15:"后盾网学院";s:3:"sex";s:3:"男";s:6:"avatar";s:24:"201403/1393862647121.jpg";s:8:"loggedin";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -357,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `vemail` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '邮箱验证(0未验证，1已验证)',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户帐号表\n' AUTO_INCREMENT=10006 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户帐号表\n' AUTO_INCREMENT=10008 ;
 
 --
 -- 转存表中的数据 `t_user`
@@ -367,7 +395,9 @@ INSERT INTO `t_user` (`id`, `account`, `passwd`, `regis_time`, `lock`, `vemail`)
 (10000, '532499602@qq.com', '481e94e1a26f2e8b295765c25e4f4f4b31629a992c48b8c3fee6dfb6186385d638abce86c96aa701a5d4cb9e51ae1687a7523377b4133b4ec57528454a595e35', 0, 0, 0),
 (10001, 'air_zhe@163.com', '481e94e1a26f2e8b295765c25e4f4f4b31629a992c48b8c3fee6dfb6186385d638abce86c96aa701a5d4cb9e51ae1687a7523377b4133b4ec57528454a595e35', 1390923149, 0, 0),
 (10004, 'run@run.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 1391518379, 0, 0),
-(10005, '532499602@163.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 1391518425, 0, 0);
+(10005, '532499602@163.com', '7663658e53704ee7caaf2b4eb449fde9c06ebd99043bdfa5fa8f96adab89d8f064346a1ff35c5782ef09d5903788bd9acc48acbe5b50d14d8133e524608d2a14', 1391518425, 0, 0),
+(10006, 'houdunwang@163.com', '481e94e1a26f2e8b295765c25e4f4f4b31629a992c48b8c3fee6dfb6186385d638abce86c96aa701a5d4cb9e51ae1687a7523377b4133b4ec57528454a595e35', 1393831064, 0, 0),
+(10007, 'houdun@163.com', '9ba21bd668c010fb6158757fd3837e0bbd11f365979a8d7a688948254d07f9f7bb3663746fddd0b1880961e706e8b4c3f24207cf81aad22721f052f147b7fd8e', 1393847398, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -394,17 +424,19 @@ CREATE TABLE IF NOT EXISTS `t_user_info` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `domain` (`domain`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户信息表' AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户信息表' AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `t_user_info`
 --
 
 INSERT INTO `t_user_info` (`id`, `username`, `truename`, `location`, `birthday`, `sex`, `intro`, `avatar`, `domain`, `style`, `follow`, `fans`, `weibo`, `uid`) VALUES
-(1, 'runner', '魏浩哲', 'a:2:{i:0;s:6:"河南";i:1;s:6:"郑州";}', '1999-01-01', '男', '生活因找到而快乐。', '201402/1393256000690.jpg', 'runner', 'a:4:{s:8:"template";s:1:"4";s:5:"cover";s:5:"3.jpg";s:5:"style";s:5:"5.css";s:4:"suit";s:1:"7";}', 1, 1, 13, 10000),
-(6, 'purple', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1998-01-01', '女', '', '201402/1392728140354.jpg', 'purple', 'a:2:{s:4:"suit";s:1:"6";s:5:"style";s:5:"1.css";}', 1, 1, 16, 10001),
+(1, 'runner', '魏浩哲', 'a:2:{i:0;s:6:"河南";i:1;s:6:"郑州";}', '1999-01-01', '男', '生活因找到而快乐。', '201403/1393862522206.jpg', 'runner', 'a:4:{s:8:"template";s:1:"4";s:5:"cover";s:5:"3.jpg";s:5:"style";s:5:"5.css";s:4:"suit";s:1:"7";}', 2, 2, 13, 10000),
+(6, 'purple', '', 'a:2:{i:0;s:6:"浙江";i:1;s:6:"杭州";}', '1998-01-01', '女', '', '201403/1393862553378.jpg', 'purple', 'a:2:{s:4:"suit";s:1:"6";s:5:"style";s:5:"1.css";}', 1, 2, 16, 10001),
 (8, '敏敏', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"天门";}', '2015-02-01', '女', '', '', NULL, '0', 0, 0, 5, 10004),
-(9, '苍老师', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"武汉";}', '2014-01-01', '女', '大家好！我是苍井空. 有时演电影,唱歌,有时在电视节目中露露脸。为了更好的交流.我在努力地学习中文ing 工作邮箱：solaaoi@sina.cn', '', NULL, '0', 0, 0, 1, 10005);
+(9, '苍老师', '', 'a:2:{i:0;s:6:"湖北";i:1;s:6:"武汉";}', '2014-01-01', '女', '大家好！我是苍井空. 有时演电影,唱歌,有时在电视节目中露露脸。为了更好的交流.我在努力地学习中文ing 工作邮箱：solaaoi@sina.cn', '', NULL, '0', 0, 0, 1, 10005),
+(10, '后盾网学员', '魏浩哲', 'a:2:{i:0;s:6:"北京";i:1;s:9:"东城区";}', '1987-01-01', '女', '生活因找到而快乐。', '201403/1393862595793.jpg', 'houdunwang', 'a:4:{s:5:"cover";s:5:"3.jpg";s:8:"template";s:1:"4";s:4:"suit";s:1:"6";s:5:"style";s:5:"1.css";}', 2, 1, 0, 10006),
+(11, '后盾网学院', '魏浩哲', 'a:2:{i:0;s:6:"河南";i:1;s:6:"郑州";}', '1987-03-01', '男', '生活因找到而快乐。', '201403/1393862647121.jpg', 'houdun', 'a:4:{s:5:"cover";s:5:"3.jpg";s:8:"template";s:1:"4";s:4:"suit";s:2:"11";s:5:"style";s:5:"5.css";}', 0, 0, 0, 10007);
 
 -- --------------------------------------------------------
 
@@ -426,7 +458,7 @@ CREATE TABLE IF NOT EXISTS `t_weibo` (
   `uid` int(10) unsigned NOT NULL COMMENT '所属用户id',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='微博表' AUTO_INCREMENT=371 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='微博表' AUTO_INCREMENT=396 ;
 
 --
 -- 转存表中的数据 `t_weibo`
@@ -450,7 +482,7 @@ INSERT INTO `t_weibo` (`id`, `content`, `picture`, `isturn`, `iscomment`, `time`
 (16, '人人秀舞：看社交手游的动与静】12月，手游市场依旧风起云涌，好戏连台。企鹅屡放大招，搭上微信快车的天天家族不多说了，《全民英雄》、《水果忍者》、《全民飞机大战》等数不过来的作品狂轰乱炸。如今手游市场已进入平稳期，以往圈一笔快钱就跑路的打法还奏效吗？看雷哥分析', 0, 0, 0, 1391585081, 0, 0, 0, 0, 10001),
 (17, '据说这是每一个女汉纸都会的技能。。。冬天必备啊！|图：imgur', 0, 0, 0, 1391585105, 0, 0, 0, 0, 10001),
 (60, '[可爱]', 0, 0, 0, 1391962327, 0, 0, 0, 0, 10000),
-(346, '分享图片', 1, 0, 0, 1393814813, 0, 0, 0, 0, 10001),
+(346, '分享图片', 1, 0, 0, 1393814813, 0, 1, 0, 0, 10001),
 (179, '美丽的图片', 9, 0, 0, 1393562007, 0, 0, 0, 0, 10000),
 (178, '@runner 呵呵，不错哦。', 0, 159, 0, 1393465873, 0, 0, 0, 12, 10001),
 (75, '[熊猫]', 0, 0, 0, 1393054657, 0, 4, 0, 0, 10000),
@@ -463,7 +495,7 @@ INSERT INTO `t_weibo` (`id`, `content`, `picture`, `isturn`, `iscomment`, `time`
 (32, '[神马]', 0, 0, 0, 1391625357, 0, 0, 0, 0, 10000),
 (33, '要睡觉了，好好休息下吧。[爱你]', 0, 0, 0, 1391626058, 0, 0, 0, 0, 10000),
 (34, 'purple，我要睡觉了啊。好梦。。[挤眼]', 0, 0, 0, 1391626158, 0, 0, 0, 0, 10000),
-(345, '这是一首简单的小情歌[话筒]', 0, 0, 0, 1393814770, 0, 0, 0, 0, 10001),
+(345, '这是一首简单的小情歌[话筒]', 0, 0, 0, 1393814770, 0, 1, 0, 0, 10001),
 (42, '这可是苍老师的第一次哦[害羞]', 0, 0, 0, 1391696311, 0, 0, 0, 0, 10005),
 (158, '从前有个国王,他两个女儿的眼泪都会变成钻石.大女儿嫁给了一个用她的眼泪创造了一个个城堡的王子,小女儿却嫁给了牧羊人.国王临死见到他们的时候,大女儿满身金银珠宝,而小女儿和牧羊人仍是贫穷.国王很惊讶的说:明明她的一滴眼泪就够你们生活的很好. 牧羊人说:可是我舍不得让她哭啊..... ', 1, 0, 0, 1393379588, 0, 0, 0, 0, 10001),
 (159, '放下你的浮躁，静下心来阅读；放下你的贪婪，有失必有得；放下你的自卑，相信你自己；放下你的虚荣，别自以为是；放下你容易被诱惑的眼睛，听从自己的内心；放下你的自私，学会懂得感恩；放下你的懒惰，该好好努力了。', 1, 0, 0, 1393379676, 0, 2, 0, 0, 10000),
@@ -474,7 +506,7 @@ INSERT INTO `t_weibo` (`id`, `content`, `picture`, `isturn`, `iscomment`, `time`
 (181, '[嘻嘻]', 0, 0, 0, 1393602766, 0, 0, 0, 0, 10004),
 (182, '[可爱]', 0, 0, 0, 1393602851, 0, 0, 0, 0, 10004),
 (183, '[求红包]', 0, 0, 0, 1393603526, 0, 0, 0, 0, 10004),
-(187, '@purple 真是美好的一天啊。', 0, 0, 0, 1393647833, 0, 0, 0, 2, 10000),
+(187, '@purple 真是美好的一天啊。', 0, 0, 0, 1393647833, 0, 0, 0, 3, 10000),
 (340, '来自星星的你。', 1, 0, 0, 1393752941, 0, 1, 0, 0, 10001);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
