@@ -186,3 +186,17 @@ ERROR - 2014-03-03 18:03:46 --> The image you are attempting to upload exceedes 
 ERROR - 2014-03-03 18:03:47 --> 404 Page Not Found --> http:
 ERROR - 2014-03-03 18:04:08 --> The image you are attempting to upload exceedes the maximum height or width.
 ERROR - 2014-03-03 18:06:11 --> The image you are attempting to upload exceedes the maximum height or width.
+ERROR - 2014-03-03 19:32:33 --> 404 Page Not Found --> images
+ERROR - 2014-03-03 19:34:46 --> 404 Page Not Found --> assets
+ERROR - 2014-03-03 19:34:50 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 19:36:34 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 19:37:07 --> 404 Page Not Found --> images
+ERROR - 2014-03-03 19:37:21 --> 404 Page Not Found --> images
+ERROR - 2014-03-03 19:51:51 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 21:37:38 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 21:39:58 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61
+ERROR - 2014-03-03 21:55:04 --> 404 Page Not Found --> images
+ERROR - 2014-03-03 22:31:16 --> Severity: Notice  --> Undefined variable: site_url /home/runner/www/work/weibo/weibo/controllers/n.php 17
+ERROR - 2014-03-03 23:20:03 --> Severity: Notice  --> Undefined variable: img /home/runner/www/work/weibo/weibo/controllers/avatar.php 48
+ERROR - 2014-03-03 23:20:03 --> Severity: Warning  --> getimagesize(): Filename cannot be empty /home/runner/www/work/weibo/weibo/controllers/avatar.php 48
+ERROR - 2014-03-03 23:57:16 --> Severity: Notice  --> Undefined index: style /home/runner/www/work/weibo/weibo/models/user_model.php 61

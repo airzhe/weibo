@@ -53,7 +53,7 @@
 								<div class="tit">所在地</div>
 								<div class="inp" id="city">
 									<select class="province" data-val="<?php echo $user['location'][0] ?>" data-title="选择省" name="location[]"></select>
-									<select class="city" data-title="<?php echo $user['location'][1] ?>" name="location[]" ></select>
+									<select class="city" data-val="<?php echo $user['location'][1] ?>" name="location[]" ></select>
 								</div>
 							</div>
 							<div class="info_item clearfix">

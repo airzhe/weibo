@@ -13,6 +13,8 @@ Class Avatar extends Front_Controller{
 	public function save(){
 		$avatar=$this->crop();
 		if($this->User_info_model->save(array('avatar'=>$avatar),$this->uid)){
+			//更新session
+			$this->session->set_userdata(array('avatar'=>$avatar));
 			die(json_encode(array('status'=>1)));
 		}
 	}
@@ -35,15 +37,20 @@ Class Avatar extends Front_Controller{
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
 			// 默认0,系统配置文件中上传大小,单位k
 			$config['max_size'] = '1000';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '1024';
+			$config['max_width']  = '2024';
+			$config['max_height']  = '2024';
 			$this->upload->initialize($config);
 			
 			if ($this->upload->do_upload('Filedata'))
 			{
 				$arr=$this->upload->data();
 				$avatar=$config['upload_path'].$arr['file_name'];
-				$this->zoom($avatar,300,300);
+				$info=getimagesize($avatar);
+				// 宽或高小于300 进行缩放
+				if($info[0]<300 || $info[1]<300){
+					$this->zoom($avatar,300,300);
+				}
+				// 否则输出高清原图
 				die($avatar);
 			}else{
 				die('error');

@@ -74,7 +74,7 @@
 						</form>
 					</div>
 					<ul class="user clearfix">
-						<li class="username" avatar="<?php echo $this->session->userdata('avatar') ?>" sex="<?php echo $this->session->userdata('sex') ?>" ><a href="<?php echo site_url('home') ?>"><?php echo $this->session->userdata('username') ?></a></li>
+						<li class="username" avatar="<?php echo $this->session->userdata('avatar') ?>" sex="<?php echo $this->session->userdata('sex') ?>" ><a href="<?php echo site_url('home') ?>" title="<?php echo $this->session->userdata('username') ?>"><?php echo $this->session->userdata('username') ?></a></li>
 						<li class="editor" ><a href="javascript:void(0)"><i></i></a></li>
 						<li class="msg">
 							<a href="javascript:void(0)"><i></i><em class="W_new"></em></a>

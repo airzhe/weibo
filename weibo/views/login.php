@@ -43,7 +43,7 @@
  							<span>请输入帐号</span>
  						</p>
  						<p>
- 							<input class="W_input" type="text" name="passwd" maxlength="24">
+ 							<input class="W_input" type="password" name="passwd" maxlength="24">
  							<span>请输入密码</span>
  						</p>
  						<p class="auto_login clearfix">

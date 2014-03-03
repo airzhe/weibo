@@ -48,15 +48,15 @@
 							<div class="introHover S_txt2"><a href="javascript:void(0)" action-type="conversation" action-data="uid=<?php echo $v['uid'] ?>&username=<?php echo $v['username'] ?>"><s class="W_chat_stat"></s>私信</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)" uid="<?php echo $v['uid'] ?>" username="<?php echo $v['username'] ?>" action-type="cancle_follow">取消关注</a></div>
 							<div class="introHover S_txt2">
 								<?php if ($v['source']=='search'): ?>
-									通过 <a href="#" class="S_link2">微博搜索</a>关注
+									通过 <a href="#" class="S_link2">微博搜索</a> 关注
 								<?php else: ?>
-									通过 <a href="#" class="S_link2">新浪微博</a>关注
+									通过 <a href="#" class="S_link2">新浪微博</a> 关注
 								<?php endif ?>
 							</div>
 						</div>
 					<?php endforeach ?>
 				<?php endif ?>
-				<div class="item">
+			<!-- 	<div class="item">
 					<div class="avatar"> <img src="assets/images/2.jpg" width="50" height="50" alt=""></div>
 					<div class="info">
 						<ul>
@@ -78,20 +78,20 @@
 							<li><a href="#" class="S_link2">未分组</a></li>
 						</ul>
 					</div>
-					<div class="intro S_txt2">简介：简介：93后财经和传媒双专业学生。摩羯女，慢吞吞。</div>
+					<div class="intro S_txt2">简介：93后财经和传媒双专业学生。摩羯女，慢吞吞。</div>
 					<div class="introHover S_txt2"><a href="javascript:void(0)">求关注</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)">取消关注</a></div>
 					<div class="introHover S_txt2">通过 <a href="#" class="S_link2">iPhone客户端</a> 关注</div>
 				</div>
 				<div class="item">
-					<div class="avatar"> <img src="assets/images/1.jpg" width="50" height="50" alt=""></div>
+					<div class="avatar"> <img src="assets/images/_1.jpg" width="50" height="50" alt=""></div>
 					<div class="info">
 						<ul>
-							<li><a href="#" class="S_func1">小殷爱录像</a></li>
+							<li><a href="#" class="S_func1">D瓜哥-李_君</a></li>
 							<li><i class="W_ico12 icon_addone"></i>已关注</li>
 							<li><a href="#" class="S_link2">未分组</a></li>
 						</ul>
 					</div>
-					<div class="intro S_txt2">简介：简介：×菊花教教主× MR曼秀雷敦</div>
+					<div class="intro S_txt2">简介：業精於勤，荒於嬉；行成於思，毀於隨。“地瓜哥”博客网：http://www.diguage.com/ </div>
 					<div class="introHover S_txt2"><a href="javascript:void(0)">求关注</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)">取消关注</a></div>
 					<div class="introHover S_txt2">通过 <a href="#" class="S_link2">iPhone客户端</a> 关注</div>
 				</div>
@@ -146,7 +146,7 @@
 					<div class="intro S_txt2">简介：What goes around comes back around.[英语视频听译者;科技评论者,安卓应用汉化者]</div>
 					<div class="introHover S_txt2"><a href="javascript:void(0)">求关注</a><i class="S_line1_c">|</i><a href="#">设置备注</a><i class="S_line1_c">|</i><a href="javascript:void(0)">取消关注</a></div>
 					<div class="introHover S_txt2">通过 <a href="#" class="S_link2">新浪微博</a> 关注</div>
-				</div>
+				</div> -->
 			</div>
 			<!-- <p class="page">
 				<a href="#"><span>1</span></a><a href="#"><span>2</span></a><a href="#"><span>下一页</span></a>

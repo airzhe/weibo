@@ -18,8 +18,8 @@ Class letter extends Front_Controller{
 			FROM (SELECT * FROM t_letter ORDER BY `time` desc ) `temp`
 			WHERE uid = $this->uid
 			GROUP BY  `from`
-			ORDER BY TIME DESC 
-			) AS l ON  u.`uid` = l.`from` ";
+			) AS l ON  u.`uid` = l.`from` 
+			ORDER BY TIME DESC ";
 			
 			$letter_list=$this->db->query($sql)->result_array();
 			$letter_list=$this->weibo->format($letter_list);

@@ -749,6 +749,12 @@ body.login .container,body.signup .container{
  	.global_nav .user>li:hover{
  		background: url(../images/bg_nav.png) repeat-x 0 -76px;
  	}
+ 	.global_nav .user>li.username a{
+ 		width: 70px;
+ 		overflow: hidden;
+ 		text-overflow:ellipsis;
+ 		white-space:nowrap;
+ 	}
  	.global_nav .user i{
  		vertical-align: middle;
  		background-image: url(../images/bg_line.png);

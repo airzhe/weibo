@@ -254,7 +254,12 @@ $(document).ready(function(){
 	*/
 	$('.gn_tips').find('.icon_close').on('click',function(){
 		$('.gn_tips').addClass('hide').find('li').andSelf().hide();
-		$.post(site_url+'common/flush_msg');
+		$.post(site_url+'common/flush_msg',function(){
+			//顶部导航栏新消息图标提醒
+			$('.global_nav').find('.W_new').hide();
+ 			//左侧导航栏消息总条数提醒
+ 			$('.left_nav').find('.W_new_count').text(0).hide();
+ 		});
 	})
 	/**	
 	* 点击表情按钮，调出表情对话框
@@ -841,7 +846,7 @@ $(document).ready(function(){
 	/**
 	* 取消关注
 	*/
-	$('.myfollow_list ').find("[action-type='cancle_follow']").on('click',function(e){
+	$('body.follow ').find("[action-type='cancle_follow']").on('click',function(e){
 		// 阻止冒泡
 		e.stopPropagation();
 		var self=$(this);
@@ -1170,7 +1175,7 @@ $(document).ready(function(){
 			messages:{
 				username:{
 					required:'用户昵称不能为空',
-					userNameFormat:'个性化域名请使用长度为4～20个字符的数字或者字母',
+					userNameFormat:'4-30个字符，支持中英文、数字、"_"或减号',
 					remote:'用户昵称已经存在，请更换。'
 				}
 			}
@@ -1456,10 +1461,15 @@ $(document).ready(function(){
 						$(more).appendTo(comment)
 					}
 					//文本框自适应高度
-					if(source='item') comment.find('textarea').autosize();
+					if(source=='item'){
+						comment.find('textarea').autosize();
+					}else{
+						 //解除click事件
+						 self.removeAttr('action-type');
+						} 
+					}
 				}
-			}
-		})
+			})
 		//
 	})
 	/**	
