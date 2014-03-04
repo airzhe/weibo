@@ -62,7 +62,7 @@ Class index extends Front_Controller{
 			//加载好友新微博
 			if($offset=$this->input->post('offset')){
 				//========================测试代码============================
-				sleep(2);
+				sleep(1);
 				$start=0;
 			}else{
 				//加载更多
@@ -83,15 +83,14 @@ Class index extends Front_Controller{
 		$start=($current_page-1)*$this->per_page+$start;
 		$sql="SELECT `username`,`avatar`,`sex`,`domain`,`content`,`picture`,`isturn`,`iscomment`,`time`,`praise`,`turn`,`collect`,`comment`,w.`id`,w.`uid`
 		FROM `{$this->db->dbprefix}weibo` w
-		JOIN (
+		JOIN `{$this->db->dbprefix}user_info` u
+		ON w.uid=u.uid
+		WHERE w.uid IN (
 			SELECT `follow` uid
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
-			) AS f ON w.uid = f.uid 
+			)
 OR w.uid =$this->uid
-JOIN `{$this->db->dbprefix}user_info` u
-ON w.uid=u.uid
-GROUP BY w.id
 ORDER BY w.time DESC
 LIMIT $start,$offset";
 
@@ -186,13 +185,13 @@ private function _select_forward_list($weibo_list){
 	 */
 	private function _page(){
 		// 查询条件
-		$sql="SELECT COUNT( distinct w.id ) 
+		$sql="SELECT COUNT(*) 
 		FROM `{$this->db->dbprefix}weibo` w
-		JOIN (
+		WHERE w.uid IN (
 			SELECT `follow` uid
 			FROM `{$this->db->dbprefix}follow`
 			WHERE `fans` =$this->uid
-			) AS f ON w.uid = f.uid
+			)
 OR w.uid =$this->uid";
 		//分页
 $_count=$this->db->query($sql)->row_array();

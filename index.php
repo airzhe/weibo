@@ -18,14 +18,15 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	switch (dirname(__FILE__)) {
-		case '/home/runner/www/work/weibo':
-			define('ENVIRONMENT', 'development');
-			break;
-		default:
-			define('ENVIRONMENT', 'production');
-			break;
-	}
+	// switch (dirname(__FILE__)) {
+	// 	case '/home/runner/www/work/weibo':
+	// 		define('ENVIRONMENT', 'development');
+	// 		break;
+	// 	default:
+	// 		define('ENVIRONMENT', 'production');
+	// 		break;
+	// }
+	define('ENVIRONMENT', 'production');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

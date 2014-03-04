@@ -1,4 +1,7 @@
 <?php 
+/**
+ * 更换皮肤类
+ */
 Class skin extends Front_Controller{
 	public function __construct(){
 		parent::__construct();

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>新浪微博注册</title>
-	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon .ico') ?>">
+	<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.ico') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/reset.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
 	<script src="<?php echo base_url('assets/js/jquery-1.8.2.min.js') ?>"></script>

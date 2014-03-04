@@ -1938,6 +1938,9 @@ $(document).ready(function(){
      			<legend class="S_txt3" node-type="feed_list_timeText">'+ time +'，你看到这里</legend>\
      			</fieldset>\
      			';
+     			//更新页面loading时间
+     			var new_time=String(new Date().getTime()).substr(0,10);
+     			$('.weibo_list').attr('load-time',new_time)
      			//隐藏提示
      			$('.weibo_list').children('.notes').remove();
      			$('.weibo_list').children('.W_loading').remove();

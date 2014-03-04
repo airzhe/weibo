@@ -92,7 +92,6 @@ class User_info_model extends MY_Model {
 		}
 		// 自定义域名
 		if($user['domain']==''){
-			// $uid=(int)$this->uri->rsegment(3);
 			$user['domain']=site_url("u/$this->uid");
 		}else{
 			$domain= $user['domain'];
