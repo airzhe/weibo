@@ -1,9 +1,13 @@
 $(document).ready(function(){
+	// 如果有默认值隐藏提示
+	$('.W_input').each(function(){
+		if($(this).val()!='') $(this).next('span').hide();
+	})
 	/**
 	 * 登录文本框获得焦点隐藏提示文字，失去焦点显示提示文字
 	 */
 	 $('.W_input').on('focus',function(){
-	 	$(this).next('span').hide();
+	 	$(this).val('').next('span').hide();
 	 })
 	 $('.W_input').on('blur',function(){
 	 	if($(this).val()==''){

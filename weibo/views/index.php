@@ -1,7 +1,7 @@
 <?php $this->load->view('components/common_left_nav');?>
 <div class="main clearfix">
 	<div class="box_right right">
-		<a class="set_skin" href="#" title="模板设置"></a>
+		<a class="set_skin" href="javascript:void(0)" action-type="set_skin" title="模板设置"></a>
 		<div class="user_info">
 			<a href="<?php echo site_url('home') ?>"><img  width="80" height="80" src="<?php echo $user['avatar'] ?>" alt=""></a>
 			<div>

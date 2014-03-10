@@ -1,6 +1,6 @@
 <div class="profile_pic_top" style="background-image:url(<?php echo $cover ?>)">
 	<?php if (isset($user['me'])): ?>
-		<a class="set_skin" href="javascript:void(0)" title="模板设置"></a>
+		<a class="set_skin" href="javascript:void(0)" action-type="set_skin" title="模板设置"></a>
 	<?php endif ?>
 </div>
 <div class="user_info S_bg5 clearfix"  uid="<?php echo $user['uid'] ?>" >

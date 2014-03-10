@@ -458,8 +458,9 @@ $(document).ready(function(){
 						if($('.image_upload').length!=0)$('.image_upload').remove();
 						//微博总数+1
 						$('#my_weibo').html(+$('#my_weibo').html()+1);
-						//
-						
+						//更新页面loading时间
+						var new_time=String(new Date().getTime()).substr(0,10);
+     					$('.weibo_list').attr('load-time',new_time)
 						_item.data('id',data.id);
 						_item.find('.content').html(data.content);
 						_item.fadeIn().find('.time').html(data.time);
@@ -551,7 +552,7 @@ $(document).ready(function(){
 	/**
 	*设置皮肤
 	*/
-	$('.set_skin').on('click',function(){
+	$("[action-type='set_skin']").on('click',function(){
 		$.ajax({
 			url:site_url+'assets/data/set_skin.json',
 			dataType:'json',

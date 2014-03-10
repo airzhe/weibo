@@ -125,7 +125,7 @@
 			</div>
 		</div>
 		<p class="footer clearfix">
-			<span class="left"><i class="footer_logo"></i>北京微梦创科网络技术有限公司 京网文[2011]0398-130号 京ICP证100780号</span> <span class="right">Copyright © 1996-2013 SINA</span> 
+			<span class="left"><i class="footer_logo"></i>北京微梦创科网络技术有限公司 京网文[2011]0398-130号 京ICP证100780号 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5832878'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D5832878' type='text/javascript'%3E%3C/script%3E"));</script></span> <span class="right">Copyright © 1996-2013 SINA</span> 
 		</p>
 	</div>
 </body>

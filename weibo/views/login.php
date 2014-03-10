@@ -28,7 +28,7 @@
  			<div class="leftbox left">
  				<div class="top">
  					还没有微博帐号？现在加入
- 					<a href="" class="btn_reg_red"><span>立即注册</span></a>
+ 					<a href="signup" class="btn_reg_red"><span>立即注册</span></a>
  				</div>
  				<div class="show_img">
  					<img src="<?php echo base_url('assets/images/wireless.jpg') ?>" alt="">
@@ -39,12 +39,12 @@
  					<p class="title">普通登录<i class="W_vline S_txt2">|</i><a href="#">二维码登录</a></p>
  					<form action="#" method="post">
  						<p>
- 							<input class="W_input" type="text" name="account" maxlength="128">
- 							<span>请输入帐号</span>
+ 							<input class="W_input" type="text" name="account" maxlength="128" value="test@163.com" >
+ 							<span class="hide">请输入帐号</span>
  						</p>
  						<p>
- 							<input class="W_input" type="password" name="passwd" maxlength="24">
- 							<span>请输入密码</span>
+ 							<input class="W_input" type="password" name="passwd" maxlength="24" value="test888">
+ 							<span class="hide">请输入密码</span>
  						</p>
  						<p class="auto_login clearfix">
  							<label for="login_form_savestate" title="建议在网吧或公共电脑上取消该选项。" >
@@ -78,6 +78,7 @@
  				<a href="#">开放平台</a><i>|</i>
  				<a href="#">微博招聘</a><i>|</i>
  				<a href="#">新浪网导航</a><i>|</i>
+ 				<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5832878'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D5832878' type='text/javascript'%3E%3C/script%3E"));</script>
  			</p>
  			<p>Copyright © 1996-2013 SINA 北京微梦创科网络技术有限公司京网文[2011]0398-130号京ICP证号全国人大常委会关于加强网络信息保护的决定</p>
  		</div>

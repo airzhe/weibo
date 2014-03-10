@@ -8,3 +8,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 # 重写 URL 规则
 RewriteRule ^(.*)$ index.php\/$1 [L]
 </IFModule>
+
+<IfModule mod_security.c>
+	SecFilterScanPOST Off
+</IfModule>

@@ -69,7 +69,7 @@
 					</div>
 					<div class="search">
 						<form action="<?php echo site_url('search') ?>">
-							<input type="text" name="searchInput" placeholder="大家都在搜：香格里拉大火">
+							<input type="text" name="searchInput" placeholder="用户搜索">
 							<a href="javascript:void(0)" class="searchBtn"></a>
 						</form>
 					</div>
@@ -91,7 +91,7 @@
 							<a href="javascript:void(0)"><i></i></a>
 							<ul>
 								<li><a href="<?php echo site_url('set/info') ?>">帐号设置</a></li>
-								<li><a href="#">模板设置</a></li>
+								<li><a href="javascript:void(0)" action-type="set_skin">模板设置</a></li>
 								<li><a href="<?php echo site_url('logout') ?>" class="logout">退出</a></li>
 							</ul>
 						</li>

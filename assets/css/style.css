@@ -284,7 +284,7 @@ body.login .container,body.signup .container{
  *注册页面
  */
  body.login{
- 	background: url(../images/bg_repeat_reg.png) repeat-x
+ 	background: #bee1f5 url(../images/bg_repeat_reg.png) repeat-x
  }
  
  body.login .header{

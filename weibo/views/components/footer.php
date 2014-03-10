@@ -44,7 +44,8 @@
 		<p><i class="W_ico16 ico_weibo"></i>微博帮助　 意见反馈　 开放平台　 微博招聘　 新浪网导航 社区管理中心　 微博社区公约</p>
 		<p class="S_txt2">客服电话：4000 960 960（个人） 4000 980 980（企业） （按当地市话标准计算）</p>
 		<p>
-			<span class="S_txt2">北京微梦创科网络技术有限公司</span> <a href="#">京网文[2011]0398-130号</a> <a href="#">京ICP证100780号</a>
+			<span class="S_txt2">北京微梦创科网络技术有限公司</span> <a href="#">京网文[2011]0398-130号</a> <a href="#">京ICP证100780号</a> 
+			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5832878'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D5832878' type='text/javascript'%3E%3C/script%3E"));</script>
 			<span class="right">Copyright © 1996-2014 SINA</span>
 		</p>
 	</div>

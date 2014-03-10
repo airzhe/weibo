@@ -62,12 +62,12 @@ Class index extends Front_Controller{
 			//加载好友新微博
 			if($offset=$this->input->post('offset')){
 				//========================测试代码============================
-				sleep(1);
+				// sleep(1);
 				$start=0;
 			}else{
 				//加载更多
 				//=============================测试代码===============================
-				sleep(1);
+				// sleep(1);
 				$start=$this->input->post('start');
 				$offset=5;
 			}
@@ -178,7 +178,7 @@ private function _select_forward_list($weibo_list){
 	 * 新微博图片处理 包括上传、裁切、缩放
 	 */
 	public function image(){
-		$this->weibo->image();	
+		$this->weibo->image();
 	}
 	/**
 	 * 分页
