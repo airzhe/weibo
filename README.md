@@ -12,4 +12,4 @@
 评论、转发、收藏、点赞、@，私信、
 以及异步轮询的方式实现消息的及时推送。
 
-演示地址：[http://weiboo.sinaapp.com/](http://weiboo.sinaapp.com/)
+演示地址：[http://weiboo.applinzi.com/](http://weiboo.applinzi.com/)
