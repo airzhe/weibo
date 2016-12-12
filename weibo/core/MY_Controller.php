@@ -22,6 +22,9 @@ class Front_Controller extends Base_Controller
 
 		$this->load->model('User_model');
 		$this->auth();
+		if($this->input->is_ajax_request()){
+            		header('Content-Type: application/json');
+        	}
 		// $this->output->enable_profiler(TRUE);
 		// $this->session->sess_destroy();
 	}
