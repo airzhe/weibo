@@ -39,7 +39,7 @@
  					<p class="title">普通登录<i class="W_vline S_txt2">|</i><a href="#">二维码登录</a></p>
  					<form action="#" method="post">
  						<p>
- 							<input class="W_input" type="text" name="account" maxlength="128" value="test@163.com" >
+ 							<input class="W_input" type="text" name="account" maxlength="128" value="air_zhe@163.com" >
  							<span class="hide">请输入帐号</span>
  						</p>
  						<p>

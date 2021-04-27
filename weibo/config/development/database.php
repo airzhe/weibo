@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'purple';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'weibo';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = 't_';

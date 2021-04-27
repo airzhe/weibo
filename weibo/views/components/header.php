@@ -63,9 +63,9 @@
 					</div>
 					<div class="nav clearfix">
 						<a href="<?php echo site_url() ?>" class="current">首页</a>
-						<a href="#">热门<i class="ico_down"></i></a>
-						<a href="#">游戏<i class="ico_down"></i></a>
-						<a href="#">应用<i class="ico_down"></i></a>
+						<a href="#" class="disable">热门<i class="ico_down"></i></a>
+						<a href="#" class="disable">游戏<i class="ico_down"></i></a>
+						<a href="#" class="disable">应用<i class="ico_down"></i></a>
 					</div>
 					<div class="search">
 						<form action="<?php echo site_url('search') ?>">

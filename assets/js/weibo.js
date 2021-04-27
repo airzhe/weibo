@@ -269,12 +269,14 @@ $(document).ready(function(){
 		e.stopPropagation();
 		//调用弹出框插件
 		$(this).callface();
+		
 		//ajax请求表情gif地址
 		$.ajax(
 		{
 			url:site_url+'face',
+			dataType:'json',
 			success:function(data){
-				$('.faces_list').html(data);
+				$('.faces_list').html(data.data);
 			}
 		})
 	})
@@ -598,7 +600,7 @@ $(document).ready(function(){
 				type:'post',
 				data:{type:type},
 				success:function(data){
-					ControlPanel.html(data);
+					ControlPanel.html(data.data);
 					ControlPanel.find('.tab_nosep').find('li').eq(0).addClass('current');
 					ControlPanel.find('ul:last').find('a').eq(0).addClass('current');
 				}

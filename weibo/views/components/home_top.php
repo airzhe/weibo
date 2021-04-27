@@ -73,11 +73,11 @@
 <div class="S_bg4">
 	<ul class="core_nav clearfix">
 		<li class="current"><a href="#"><?php echo $user['call'] ?>的主页</a></li>
-		<li><a href="#">微博</a></li>
-		<li><a href="#">个人资料</a></li>
-		<li><a href="#">相册</a></li>
-		<li><a href="#">赞</a></li>
-		<li><a href="#">足迹</a></li>
-		<li><a href="#">更多</a></li>
+		<li><a href="#" class="disable">微博</a></li>
+		<li><a href="#" class="disable">个人资料</a></li>
+		<li><a href="#" class="disable">相册</a></li>
+		<li><a href="#" class="disable">赞</a></li>
+		<li><a href="#" class="disable">足迹</a></li>
+		<li><a href="#" class="disable">更多</a></li>
 	</ul>
 </div>

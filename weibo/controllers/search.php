@@ -12,6 +12,7 @@ Class search extends Front_Controller{
 		$keyword=trim($this->input->get('searchInput'));
 		if($keyword){
 			$this->data['keyword']=$keyword;
+		
 			$user=$this->User_info_model->search($keyword);
 			
 			if(count($user)){

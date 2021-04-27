@@ -26,7 +26,7 @@
 	// 		define('ENVIRONMENT', 'production');
 	// 		break;
 	// }
-	define('ENVIRONMENT', 'production');
+	define('ENVIRONMENT', 'development');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -41,7 +41,7 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
-			error_reporting(E_ALL | E_STRICT);
+			error_reporting(0);
 		break;
 	
 		case 'testing':

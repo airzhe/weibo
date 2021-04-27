@@ -13,7 +13,7 @@
 		faces+='<div class="bg">';
 		faces+='<div class="content">';
 		faces+='<ul class="title S_line1 clearfix ">';
-		faces+='<li class="current S_line1"><a href="#">常用表情</a></li><li class="S_line1"><a href="#">魔法表情</a></li>';
+		faces+='<li class="current S_line1"><a href="#">常用表情</a></li><li class="S_line1"><a href="#" class="disable">魔法表情</a></li>';
 		faces+='</ul>';
 		faces+='<ul class="tab clearfix">';
 		faces+='<li class="current"><a href="#">默认</a></li><li><a href="#">浪小花</a></li><li><a href="#">暴走漫画</a></li><li><a href="#">小恐龙</a></li><li><a href="#">圣诞新年</a></li>';

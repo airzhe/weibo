@@ -16,6 +16,6 @@ class face extends Front_Controller{
 			$_key=preg_replace('@\[(.+?)\]@', '\1', $key);
 			$face_list.="<li><img src='{$face_url}/{$value}.gif' alt='{$_key}' title='{$_key}'>";
 		}
-		die($face_list);
+		die(json_encode(['data'=>$face_list]));
 	}
 }

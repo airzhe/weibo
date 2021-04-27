@@ -42,6 +42,6 @@ class json extends Front_Controller{
 			$data.='<li><a href="javascript:void(0)" data-link="'.$info[1].'"><img src="'.base_url().'assets/skin/'.$id.'/'.$key.$extension.'"><span>'.$info[0].'</span></a></li>';
 		}
 		$data.='</ul>';
-		die($data);
+		die(json_encode(['data'=>$data]));
 	}
 }
