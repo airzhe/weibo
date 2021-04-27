@@ -5,8 +5,9 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -21,7 +22,7 @@
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Pagination
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/pagination.html
  */
 class CI_Pagination {
@@ -156,7 +157,7 @@ class CI_Pagination {
 		{
 			if ($CI->uri->segment($this->uri_segment) != $base_page)
 			{
-				$this->cur_page = $CI->input->get('p');
+				$this->cur_page = $CI->uri->segment($this->uri_segment);
 
 				// Prep the current page - no funny business!
 				$this->cur_page = (int) $this->cur_page;
@@ -218,7 +219,7 @@ class CI_Pagination {
 		}
 		else
 		{
-			$this->base_url = rtrim($this->base_url, '/') .'?p=';
+			$this->base_url = rtrim($this->base_url, '/') .'/';
 		}
 
 		// And here we go...
